@@ -110,7 +110,7 @@
         .hero {
             width: 100%;
             height: auto; /* pełna wysokość widoku */
-            background-image: url('assets/HeroBackground.png'); 
+            /* background-image: url('assets/HeroBackground.png'); */
             background-size: contain; /* ważne: NIE przycina obrazka */
             background-repeat: no-repeat;
             background-position: right center; /* obraz trzyma się prawej strony */
@@ -133,12 +133,13 @@
         .profile {
             padding-left: 4vw;
             width: 96%;
+            max-width: 600px;
         }
         .profileImg {
-            width: 40%;
+            width: 100%;
             height: auto;
-            border-radius: 4%;
             padding-left: 10%;
+            padding-bottom: 20%;
             /*box-shadow: 0 1px 16px rgba(0,0,0,0.04);*/
         }
         .buttonPrimary {
@@ -256,6 +257,10 @@
                 padding-top: 0;
                 padding-right: 4vw;
                 width: 80%;
+            }
+            .profileImg {
+                padding-left: 0%;
+                padding-bottom: 0%;
             }
             .hero {
                 padding-top: 240px;
