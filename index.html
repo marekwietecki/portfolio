@@ -1,9 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Marek Wietecki - Projekt PlanetRoad</title>
+    <title>Marek Wietecki</title>
+    <link rel="icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="assest/favicon.svg" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon-32x32.png"
+    />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,8 +24,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-
     <style>
+      /*
+      >>>
+        dodatkowo podpisy projektów się chyba nie skalują
+        */
       body {
         width: 100%;
         font-family: "Outfit", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif,
@@ -32,8 +45,13 @@
         width: 100%;
         /*background-color: aqua;*/
       }
-      h1 {
-        font-size: 80px;
+      h2 {
+        align-items: center;
+        font-size: clamp(1.5rem, calc(3vw + 1rem), 3rem);
+        line-height: 1;
+        color: #444;
+        margin: 0px 0px;
+        font-family: "Outfit", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       }
       p {
         text-align: left;
@@ -46,11 +64,20 @@
       a {
         text-align: left;
         text-decoration: none;
-        color: #fff;
+        color: white;
         font-size: 16px;
       }
       a:hover {
         color: rgb(148, 148, 148);
+      }
+      text {
+        text-align: left;
+        color: #1e6ed6;
+      }
+      .miniText {
+        font-size: clamp(0.5rem, calc(1vw + 0.33rem), 1.25rem);
+        font-weight: 300;
+        margin-left: 2px;
       }
       /*Header*/
       header {
@@ -113,24 +140,123 @@
         left: 6vw;
         justify-content: center;
       }
-      /* Breadcrumbs */
-      .arrow {
-        font-size: smaller;
-        color: #555555;
+      /*Hero*/
+      .spaceX {
+        width: 100%;
+        padding-top: 0px;
       }
-      .breadcrumbs {
-        color: #555555;
-        margin-left: 4vw;
+      .container {
+        width: 100%;
+        height: auto;
+        margin: auto;
+        /*padding: 20px;*/
+        text-align: center;
+        /*background-color: aqua;*/
       }
-      .breadcrumbs:hover {
-        text-decoration: underline;
-        text-decoration-color: rgb(148, 148, 148);
+      .hero {
+        width: 100%;
+        /*height: auto; */ /* pełna wysokość widoku */
+        /* background-image: url('assets/HeroBackground.png'); */
+        background-size: contain; /* ważne: NIE przycina obrazka */
+        background-repeat: no-repeat;
+        background-position: right center; /* obraz trzyma się prawej strony */
+        /*z-index: 0;*/
+        /*min-height: 100vh*/
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        /*gap: 4%;*/
       }
-      .currentCard {
-        opacity: 64%;
+      .gapp {
+        padding-top: 24px;
       }
-      .breadcrumbsWrapper {
-        padding-top: 2%;
+      .gap2 {
+        padding-top: 4px;
+      }
+      .profile {
+        padding-left: 4vw;
+        width: 80%;
+        max-width: 600px;
+      }
+      .profileImg {
+        width: 100%;
+        height: auto;
+        padding-left: 10%;
+        padding-bottom: 20%;
+        /*box-shadow: 0 1px 16px rgba(0,0,0,0.04);*/
+      }
+      .buttonPrimary {
+        font-weight: 600;
+        color: white;
+        padding: 16px 32px;
+        border-radius: 32px;
+        background-color: #1e6ed6;
+        border: none;
+        font-size: clamp(0.5rem, calc(1vw + 0.5rem), 2rem);
+        transition: transform 0.2s ease, background-color 0.3s;
+        box-shadow: 0 4px 12px rgba(30, 110, 214, 0.2);
+      }
+      .buttonPrimary:hover {
+        background-color: #1e5aaa;
+        color: white;
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(30, 110, 214, 0.2);
+      }
+      .buttonSecondary {
+        padding-left: 4px;
+        font-weight: 600;
+        color: #444444;
+        background-color: #1e6ed600;
+        border: none;
+        font-size: clamp(0.5rem, calc(1vw + 0.5rem), 2rem);
+        transition: transform 0.2s ease, background-color 0.3s;
+      }
+      .buttonSecondary:hover {
+        transform: scale(1.05);
+      }
+      .buttonWrapper {
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        row-gap: 28px; /* pionowy odstęp */
+        column-gap: 48px; /* poziomy odstęp */
+      }
+      /*Gallery*/
+      .mojeProjekty {
+        padding-top: 148px;
+        padding-bottom: 24px;
+      }
+      .description {
+        text-align: center;
+        padding-top: 12px;
+        padding-bottom: 80px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #696969;
+      }
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+      }
+      .gallery img {
+        max-width: 100%;
+        width: min(35em, 88%);
+        height: min(21em, 53%);
+        margin-bottom: 4px;
+        border-radius: 10px;
+        box-shadow: 0 1px 16px rgba(0, 0, 0, 0.04);
+        transition: transform 0.3s;
+        aspect-ratio: 5/3;
+      }
+      .gallery img:hover {
+        transform: scale(1.05);
       }
       /*Footer*/
       footer {
@@ -220,6 +346,11 @@
         padding-top: 20px;
         padding-left: 20px;
       }
+      @media (min-width: 1400px) {
+        .hero {
+          margin-top: -12vh;
+        }
+      }
       @media (max-width: 740px) {
         /* Header */
         header {
@@ -247,6 +378,34 @@
         }
         .headerLinks.show {
           display: flex;
+        }
+        /* Hero */
+        .profile {
+          padding-top: 0;
+          padding-right: 4vw;
+          width: 80%;
+        }
+        .profileImg {
+          padding-left: 0%;
+          padding-bottom: 0%;
+        }
+        .hero {
+          padding-top: 12px;
+          flex-direction: column;
+        }
+        .buttonWrapper {
+          margin-top: 20px;
+          row-gap: 20px; /* pionowy odstęp */
+          column-gap: 48px; /* poziomy odstęp */
+        }
+        .gapp {
+          padding-top: 12px;
+        }
+        .gap2 {
+          padding-top: 2px;
+        }
+        .buttonPrimary {
+          padding: 12px 24px;
         }
         /* Footer */
         .logoWithLinks {
@@ -280,13 +439,75 @@
       </div>
     </header>
     <section class="spaceX" id="spaceX"></section>
-    <!-- Breadcrumbsy -->
-    <div>
-      <a href="index.html#projects" class="breadcrumbs">Projekty</a>
-      <span class="arrow">&nbsp;>&nbsp;</span>
-      <span class="currentCard">PlanetRoad</span>
-    </div>
-    <h1>Projekt PlanatRoad</h1>
+    <section class="hero" id="hero">
+      <div class="profile">
+        <p>Nazywam się</p>
+        <h2 class="ja">Marek Wietecki</h2>
+        <div class="gapp"></div>
+        <p>Jestem <text>UX/UI Designerem.</text></p>
+        <p>
+          Specjalizuje się w projektowaniu stron internetowych i aplikacji
+          mobilnych.
+        </p>
+        <div class="gap2"></div>
+        <p class="miniText">
+          Dbam o to, by proces był jak najmniej problematyczny dla użytkownika,
+          a projekt estetyczny – co bezpośrednio przekłada się na wyniki
+          biznesowe.
+        </p>
+        <div class="buttonWrapper">
+          <a class="buttonPrimary" href="#projects">Zobacz moje prace</a>
+          <a class="buttonSecondary" href="contact.html"
+            >Skontaktuj się ze mną</a
+          >
+        </div>
+      </div>
+      <div class="profilePicture">
+        <img src="assets/mw.png" alt="Moje zdjęcie" class="profileImg" />
+      </div>
+    </section>
+    <!-- PROJECTS -->
+    <section id="projects" class="container">
+      <h2 class="mojeProjekty">Moje projekty</h2>
+      <div class="gallery">
+        <div class="container">
+          <img
+            src="assets/HabitHeroes.jpg"
+            alt="Zdjęcie ilustruje Projekt Aplikacji Mobilnej HabitHero"
+          />
+          <p class="description">Projekt Aplikacji Mobilnej HabitHero</p>
+        </div>
+        <a href="projectPlanetRoad.html">
+          <div class="container">
+            <img
+              src="assets/PlanetRoad.jpg"
+              alt="Zdjęcie przedstawia Stronę Internetową PlanetRoad"
+            />
+            <p class="description">Projekt Strony Internetowej PlanetRoad</p>
+          </div>
+        </a>
+        <a href="projectHelpHub.html">
+          <div class="container">
+            <img
+              src="assets/HelpHub.jpg"
+              alt="Zdjęcie przedstawia projekt Style Guide dla aplikacji charytatywnej o nazwie HelpHub"
+            />
+            <p class="description">
+              Style Guide dla Aplikacji charytatywnej HelpHub
+            </p>
+          </div>
+        </a>
+        <a href="projectReNote.html">
+          <div class="container">
+            <img
+              src="assets/ReNote.jpg"
+              alt="Zdjęcie przedstawia projekt Projekt Aplikacji do notowania o nazwie ReNote"
+            />
+            <p class="description">Projekt Aplikacji do notowania ReNote</p>
+          </div>
+        </a>
+      </div>
+    </section>
 
     <footer>
       <div class="logoWithLinks">
@@ -400,6 +621,7 @@
         <p class="footerText">marekwietecki10@gmail.com</p>
       </div>
     </footer>
+
     <script>
       const header = document.querySelector("header");
       const spacex = document.querySelector(".spaceX");
@@ -409,7 +631,7 @@
           if (!entry.isIntersecting) {
             header.classList.add("headerShadow");
           } else {
-            header.classList.add("headerShadow");
+            header.classList.remove("headerShadow");
           }
         },
         { threshold: 0.1 } // reaguje, gdy choć 10% hero jest widoczne
