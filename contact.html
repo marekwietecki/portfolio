@@ -14,6 +14,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <!-- 
+      >> 
+      breadcrumbs ciut odsunąć od góry
+    -->
     <style>
       body {
         width: 100%;
@@ -120,7 +124,17 @@
       }
       .breadcrumbs {
         color: #555555;
-        padding-left: 4vw;
+        margin-left: 4vw;
+      }
+      .breadcrumbs:hover {
+        text-decoration: underline;
+        text-decoration-color: rgb(148, 148, 148);
+      }
+      .currentCard {
+        opacity: 64%;
+      }
+      .breadcrumbsWrapper {
+        padding-top: 2%;
       }
       /* form */
       .spaceX {
@@ -128,15 +142,26 @@
         padding-top: 0px;
       }
       form {
-        max-width: 800px;
+        max-width: 480px;
         margin: auto;
         background: white;
-        padding: 32px;
+        padding: 40px;
         border-radius: 24px;
         box-shadow: 0 0.1px 16px rgba(0, 0, 0, 0.02);
         display: flex;
         flex-direction: column;
         gap: 8px;
+      }
+      .headingWrapper {
+        display: flex;
+        width: 100%;
+        align-self: center;
+        justify-content: center;
+      }
+      .formWrapper {
+        padding: 4vw 16vw; /* Góra i dół ; prawa i lewa*/
+        justify-content: center;
+        align-items: center;
       }
       label {
         font-weight: 600;
@@ -195,6 +220,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
         padding-left: 16vw;
         padding-right: 16vw;
         padding-bottom: 4vh;
@@ -213,7 +239,7 @@
         color: #1e6ed6; /* Kolor po najechaniu (LinkedIn Blue) */
       }
       .logoFooter {
-        width: clamp(140px, 34%, 200px);
+        width: clamp(40px, 16%, 120px);
         height: auto;
         align-self: center;
       }
@@ -231,18 +257,25 @@
       .link {
         color: #444;
         font-weight: 600;
-        font-size: clamp(0.66rem, calc(1vw + 0.5rem), 1.25rem);
+        font-size: clamp(0.4rem, calc(1vw + 0.5rem), 1.25rem);
         text-align: left;
       }
       .icons {
-        width: auto;
-        height: 16px;
-        padding: 2px;
+        width: 1em;
+        height: 1em;
+        padding: 1px;
+        color: #dddddd;
+      }
+      .navLinks {
+        color: #dddddd;
+        font-size: clamp(0.4rem, calc(1vw + 0.5rem), 1.25rem);
       }
       .linkWithIcon {
         display: flex;
-        gap: 4px;
+        gap: 0.3em;
         justify-content: center;
+        font-size: clamp(0.4rem, calc(1vw + 0.5rem), 1.25rem);
+        align-items: center;
       }
       .footerText {
         font-weight: lighter;
@@ -296,8 +329,8 @@
         }
         /* Footer */
         .logoWithLinks {
-          padding-left: 8vw;
-          padding-right: 8vw;
+          padding-left: 12vw;
+          padding-right: 12vw;
         }
         .social-icon i {
           font-size: 20px;
@@ -311,7 +344,7 @@
     <header>
       <div class="headerNav">
         <img
-          src="assets/marekwietecki.plDark.svg"
+          src="assets/marekwieteckiDark.svg"
           alt="Logo tekstowe - marekwietecki.pl"
           class="logo"
         />
@@ -320,31 +353,48 @@
         </button>
       </div>
       <div class="headerLinks">
-        <a class="headerLink" href="#projects">Moje Prace</a>
+        <a class="headerLink" href="index.html#projects">Moje Prace</a>
         <a class="headerLink" href="certificates.html">Certyfikaty</a>
         <a class="headerLink" href="contact.html">Kontakt</a>
       </div>
     </header>
     <section class="spaceX" id="spaceX"></section>
-    <!-- Breadcrumbsy -->
-    <p><a href="index.html#projects" class="breadcrumbs">Strona Główna</a> <span class="arrow">&nbsp;>&nbsp;</span> Kontakt</p>
-    <h1>Napisz do mnie!</h1>
-    <form action="https://formspree.io/f/mzzeyjbd" method="POST">
-      <label for="name">Imię i Nazwisko / Nazwa:</label>
-      <input type="text" id="name" name="name" required />
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbsWrapper">
+      <a href="index.html#hero" class="breadcrumbs">Strona Główna</a>
+      <span class="arrow">&nbsp;>&nbsp;</span>
+      <span class="currentCard">Kontakt</span>
+    </div>
+    <!-- Form -->
+    <section>
+      <div class="formWrapper">
+        <div class="headingWrapper"><h1>Napisz do mnie!</h1></div>
+        <form action="https://formspree.io/f/mzzeyjbd" method="POST">
+          <label for="name">Imię i Nazwisko / Nazwa:</label>
+          <input type="text" id="name" name="name" required />
 
-      <label for="email">Adres e-mail:</label>
-      <input type="email" id="email" name="email" required />
+          <label for="email">Adres e-mail:</label>
+          <input type="email" id="email" name="email" required />
 
-      <label for="message">Wiadomość:</label>
-      <textarea id="message" name="message" rows="6" required></textarea>
+          <label for="message">Wiadomość:</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
 
-      <button class="submitForm" type="submit">Wyślij wiadomość</button>
-    </form>
+          <button class="submitForm" type="submit">Wyślij wiadomość</button>
+        </form>
+      </div>
+    </section>
+    <!--
+    <section class="contact">
+        <p>Łomianki / Warszawa</p>
+        <p>marekwietecki10@gmail.com</p>
+        <a class="link" href="https://www.linkedin.com/in/marekwietecki/">Linkedin</a>
+    </section>
+    -->
+    <!-- Footer -->
     <footer>
       <div class="logoWithLinks">
         <img
-          src="assets/marekwietecki.plLight.svg"
+          src="assets/mini-logo.svg"
           alt="Logo tekstowe - marekwietecki.pl"
           class="logoFooter"
         />
@@ -388,7 +438,7 @@
               clip-rule="evenodd"
             />
           </svg>
-          <a href="#hero">O mnie</a>
+          <a class="navLinks" href="#hero">O mnie</a>
           <!-- hero -->
         </div>
 
@@ -406,7 +456,7 @@
               clip-rule="evenodd"
             />
           </svg>
-          <a href="#projects">Moje Projekty</a>
+          <a class="navLinks" href="#projects">&nbsp;Moje Projekty</a>
           <!-- projects -->
         </div>
 
@@ -425,7 +475,7 @@
               d="m19 8.839-7.77 3.885a2.75 2.75 0 0 1-2.46 0L1 8.839V14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.839Z"
             />
           </svg>
-          <a href="contact.html">Kontakt</a>
+          <a class="navLinks" href="contact.html">&nbsp;Kontakt</a>
         </div>
         <div class="linkWithIcon">
           <svg
@@ -441,14 +491,14 @@
               clip-rule="evenodd"
             />
           </svg>
-          <a href="certificates.html">Certyfikaty</a>
+          <a class="navLinks" href="certificates.html">Certyfikaty</a>
           <!-- Certyfikaty -->
         </div>
 
         <!-- testimonials -->
       </div>
       <div class="footerTexts">
-        <p class="footerText">2025 Marek Wietecki</p>
+        <p class="footerText">2025&nbsp;&nbsp;Marek Wietecki</p>
         <p class="footerText">|</p>
         <p class="footerText">marekwietecki10@gmail.com</p>
       </div>
