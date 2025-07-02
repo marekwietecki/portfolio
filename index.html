@@ -28,7 +28,12 @@
       /*
       >>>
         dodatkowo podpisy projektów się chyba nie skalują
-        */
+      >>>  
+        projekty na głównej też mają mieć grid jakiś chyba  
+      */
+     
+
+      /* Config */
       body {
         width: 100%;
         font-family: "Outfit", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif,
@@ -62,13 +67,17 @@
         margin-left: 2px;
       }
       a {
-        text-align: left;
+        color: #dddddd;
         text-decoration: none;
-        color: white;
         font-size: 16px;
+        transition: color 0.2s ease;
       }
       a:hover {
         color: rgb(148, 148, 148);
+      }
+      a svg {
+        fill: currentColor;
+        transition: fill 0.2s ease;
       }
       text {
         text-align: left;
@@ -79,7 +88,7 @@
         font-weight: 300;
         margin-left: 2px;
       }
-      /*Header*/
+      /* Header */
       header {
         background: #f6f6f7;
         font-size: 28px;
@@ -140,16 +149,18 @@
         left: 6vw;
         justify-content: center;
       }
-      /*Hero*/
+      /* Hero */
       .spaceX {
         width: 100%;
         padding-top: 0px;
+      }
+      .ja {
+        color: #1e6ed6;
       }
       .container {
         width: 100%;
         height: auto;
         margin: auto;
-        /*padding: 20px;*/
         text-align: center;
         /*background-color: aqua;*/
       }
@@ -167,6 +178,7 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        padding-top: 4vh;
         /*gap: 4%;*/
       }
       .gapp {
@@ -181,16 +193,14 @@
         max-width: 600px;
       }
       .profileImg {
-        width: 100%;
+        width: 50%;
         height: auto;
-        padding-left: 10%;
-        padding-bottom: 20%;
         /*box-shadow: 0 1px 16px rgba(0,0,0,0.04);*/
       }
       .buttonPrimary {
         font-weight: 600;
         color: white;
-        padding: 16px 32px;
+        padding: 13px 26px;
         border-radius: 32px;
         background-color: #1e6ed6;
         border: none;
@@ -226,7 +236,7 @@
         row-gap: 28px; /* pionowy odstęp */
         column-gap: 48px; /* poziomy odstęp */
       }
-      /*Gallery*/
+      /* Gallery */
       .mojeProjekty {
         padding-top: 148px;
         padding-bottom: 24px;
@@ -258,7 +268,7 @@
       .gallery img:hover {
         transform: scale(1.05);
       }
-      /*Footer*/
+      /* Footer */
       footer {
         background-color: #222;
         color: white;
@@ -319,18 +329,12 @@
         width: 1em;
         height: 1em;
         padding: 1px;
-        color: #dddddd;
       }
       .navLinks {
-        color: #dddddd;
-        font-size: clamp(0.4rem, calc(1vw + 0.5rem), 1.25rem);
-      }
-      .linkWithIcon {
         display: flex;
-        gap: 0.3em;
-        justify-content: center;
-        font-size: clamp(0.4rem, calc(1vw + 0.5rem), 1.25rem);
         align-items: center;
+        gap: 0.2em;
+        font-size: clamp(0.4rem, calc(1vw + 0.5rem), 1.25rem);
       }
       .footerText {
         font-weight: lighter;
@@ -388,6 +392,7 @@
         .profileImg {
           padding-left: 0%;
           padding-bottom: 0%;
+          padding-top: 24%;
         }
         .hero {
           padding-top: 12px;
@@ -405,7 +410,7 @@
           padding-top: 2px;
         }
         .buttonPrimary {
-          padding: 12px 24px;
+          padding: 10px 20px;
         }
         /* Footer */
         .logoWithLinks {
@@ -441,19 +446,18 @@
     <section class="spaceX" id="spaceX"></section>
     <section class="hero" id="hero">
       <div class="profile">
+        <!--
         <p>Nazywam się</p>
         <h2 class="ja">Marek Wietecki</h2>
+        -->
+        <h2 class="ja">UX/UI Designer.</h2>
         <div class="gapp"></div>
-        <p>Jestem <text>UX/UI Designerem.</text></p>
         <p>
-          Specjalizuje się w projektowaniu stron internetowych i aplikacji
-          mobilnych.
+          Projektuję intuicyjne i estetyczne produkty cyfrowe, które realnie wspierają cele biznesowe.
         </p>
         <div class="gap2"></div>
         <p class="miniText">
-          Dbam o to, by proces był jak najmniej problematyczny dla użytkownika,
-          a projekt estetyczny – co bezpośrednio przekłada się na wyniki
-          biznesowe.
+          Prosto dla użytkownika, estetycznie dla oka i skutecznie dla biznesu.
         </p>
         <div class="buttonWrapper">
           <a class="buttonPrimary" href="#projects">Zobacz moje prace</a>
@@ -463,12 +467,13 @@
         </div>
       </div>
       <div class="profilePicture">
-        <img src="assets/mw.png" alt="Moje zdjęcie" class="profileImg" />
+        <img src="assets/MiniMhappy.png" onmouseover="this.src='assets/MiniMsmile.png'"
+        onmouseout="this.src='assets/MiniMhappy.png'" alt="Moje zdjęcie" class="profileImg" />
       </div>
     </section>
     <!-- PROJECTS -->
     <section id="projects" class="container">
-      <h2 class="mojeProjekty">Moje projekty</h2>
+      <h2 class="mojeProjekty">Moje Projekty</h2>
       <div class="gallery">
         <div class="container">
           <img
@@ -542,76 +547,35 @@
       </div>
 
       <div class="footerLinks">
-        <div class="linkWithIcon">
-          <svg
-            class="icons"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            class="size-5"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M9.293 2.293a1 1 0 0 1 1.414 0l7 7A1 1 0 0 1 17 11h-1v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6H3a1 1 0 0 1-.707-1.707l7-7Z"
-              clip-rule="evenodd"
-            />
+        <a class="navLinks" href="#hero">
+          <svg class="icons size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M9.293 2.293a1 1 0 0 1 1.414 0l7 7A1 1 0 0 1 17 11h-1v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6H3a1 1 0 0 1-.707-1.707l7-7Z" clip-rule="evenodd"/>
           </svg>
-          <a class="navLinks" href="#hero">O mnie</a>
-          <!-- hero -->
-        </div>
-
-        <div class="linkWithIcon">
-          <svg
-            class="icons"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            class="size-5"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M1 5.25A2.25 2.25 0 0 1 3.25 3h13.5A2.25 2.25 0 0 1 19 5.25v9.5A2.25 2.25 0 0 1 16.75 17H3.25A2.25 2.25 0 0 1 1 14.75v-9.5Zm1.5 5.81v3.69c0 .414.336.75.75.75h13.5a.75.75 0 0 0 .75-.75v-2.69l-2.22-2.219a.75.75 0 0 0-1.06 0l-1.91 1.909.47.47a.75.75 0 1 1-1.06 1.06L6.53 8.091a.75.75 0 0 0-1.06 0l-2.97 2.97ZM12 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"
-              clip-rule="evenodd"
-            />
+          <span>&nbsp;O mnie</span>
+        </a>
+        
+        <a class="navLinks" href="#projects">
+          <svg class="icons size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M1 5.25A2.25 2.25 0 0 1 3.25 3h13.5A2.25 2.25 0 0 1 19 5.25v9.5A2.25 2.25 0 0 1 16.75 17H3.25A2.25 2.25 0 0 1 1 14.75v-9.5Zm1.5 5.81v3.69c0 .414.336.75.75.75h13.5a.75.75 0 0 0 .75-.75v-2.69l-2.22-2.219a.75.75 0 0 0-1.06 0l-1.91 1.909.47.47a.75.75 0 1 1-1.06 1.06L6.53 8.091a.75.75 0 0 0-1.06 0l-2.97 2.97ZM12 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"/>
           </svg>
-          <a class="navLinks" href="#projects">&nbsp;Moje Projekty</a>
-          <!-- projects -->
-        </div>
-
-        <div class="linkWithIcon">
-          <svg
-            class="icons"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            class="size-5"
-          >
-            <path
-              d="M3 4a2 2 0 0 0-2 2v1.161l8.441 4.221a1.25 1.25 0 0 0 1.118 0L19 7.162V6a2 2 0 0 0-2-2H3Z"
-            />
-            <path
-              d="m19 8.839-7.77 3.885a2.75 2.75 0 0 1-2.46 0L1 8.839V14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.839Z"
-            />
+          <span>&nbsp;Moje Projekty</span>
+        </a>
+        
+        <a class="navLinks" href="contact.html">
+          <svg class="icons size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M3 4a2 2 0 0 0-2 2v1.161l8.441 4.221a1.25 1.25 0 0 0 1.118 0L19 7.162V6a2 2 0 0 0-2-2H3Z"/>
+            <path d="m19 8.839-7.77 3.885a2.75 2.75 0 0 1-2.46 0L1 8.839V14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.839Z"/>
           </svg>
-          <a class="navLinks" href="contact.html">&nbsp;Kontakt</a>
-        </div>
-        <div class="linkWithIcon">
-          <svg
-            class="icons"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            class="size-5"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M3 3.5A1.5 1.5 0 0 1 4.5 2h6.879a1.5 1.5 0 0 1 1.06.44l4.122 4.12A1.5 1.5 0 0 1 17 7.622V16.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 3 16.5v-13Zm10.857 5.691a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 0 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
-              clip-rule="evenodd"
-            />
+          <span>&nbsp;Kontakt</span>
+        </a>
+        
+        <a class="navLinks" href="certificates.html">
+          <svg class="icons size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M3 3.5A1.5 1.5 0 0 1 4.5 2h6.879a1.5 1.5 0 0 1 1.06.44l4.122 4.12A1.5 1.5 0 0 1 17 7.622V16.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 3 16.5v-13Zm10.857 5.691a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 0 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd"/>
           </svg>
-          <a class="navLinks" href="certificates.html">Certyfikaty</a>
-          <!-- Certyfikaty -->
-        </div>
+          <span>Certyfikaty</span>
+        </a>
+        
 
         <!-- testimonials -->
       </div>
