@@ -215,11 +215,6 @@
       .colorFlashHint {
         animation: colorFlash 0.6s ease-in-out;
       }
-      @media (hover: hover) and (pointer: fine) {
-        #profileImg:hover {
-          content: url("assets/MiniMsmile.png");
-        }
-      }
       .buttonPrimary {
         font-weight: 600;
         color: white;
@@ -666,23 +661,38 @@
     <script>
       const profileImg = document.getElementById("profileImg");
       const isTouchDevice = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
-
+    
+      let flashTriggered = false;
+    
       // ✨ 1. Tap-to-smile na mobile
       if (isTouchDevice) {
         let revertTimeout;
-
+    
         profileImg.addEventListener("click", () => {
           profileImg.src = "assets/MiniMsmile.png";
           clearTimeout(revertTimeout);
           revertTimeout = setTimeout(() => {
             profileImg.src = "assets/MiniMhappy.png";
-          }, 1500);
+          }, 1000);
+    
+          flashTriggered = true; // 🔕 wyłącz hint, skoro user kliknął
+        });
+      } else {
+        // ✨ 2. Hover smile na desktopie
+        const originalSrc = "assets/MiniMhappy.png";
+        const hoverSrc = "assets/MiniMsmile.png";
+    
+        profileImg.addEventListener("mouseenter", () => {
+          profileImg.src = hoverSrc;
+          flashTriggered = true; // 🔕 wyłącz hint, skoro user najechał myszką
+        });
+    
+        profileImg.addEventListener("mouseleave", () => {
+          profileImg.src = originalSrc;
         });
       }
-
-      // ✨ 2. Mikroanimacja po 5 sekundach (na wszystkich urządzeniach)
-      let flashTriggered = false;
-
+    
+      // ✨ 3. Mikroanimacja jeśli użytkownik jeszcze nie wykonał interakcji
       setTimeout(() => {
         if (!flashTriggered) {
           profileImg.classList.add("colorFlashHint");
@@ -696,6 +706,6 @@
           flashTriggered = true;
         }
       }, 5000);
-    </script>
+    </script>    
   </body>
 </html>
