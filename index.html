@@ -24,12 +24,13 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <link rel="preload" as="image" href="assets/MiniMsmile.png">
     <style>
       /*
       >>>
         dodatkowo podpisy projektów się chyba nie skalują
       >>>  
-        projekty na głównej też mają mieć grid jakiś chyba  
+        projekty na głównej mają mieć poziomy Content, a nie tylko podpis do zdjęcia - mini pitch +   
       */
      
 
@@ -45,6 +46,10 @@
         height: auto;
         display: flex;
         flex-direction: column;
+        overflow-x: hidden;
+      }
+      *, *::before, *::after {
+        box-sizing: border-box;
       }
       section {
         width: 100%;
@@ -165,21 +170,24 @@
         /*background-color: aqua;*/
       }
       .hero {
-        width: 100%;
-        /*height: auto; */ /* pełna wysokość widoku */
-        /* background-image: url('assets/HeroBackground.png'); */
-        background-size: contain; /* ważne: NIE przycina obrazka */
-        background-repeat: no-repeat;
-        background-position: right center; /* obraz trzyma się prawej strony */
-        /*z-index: 0;*/
-        /*min-height: 100vh*/
-        text-align: center;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
         align-items: center;
-        padding-top: 4vh;
-        /*gap: 4%;*/
+        justify-content: space-between;
+        text-align: center;
+        flex: auto;
+
+        width: 100%;
+        max-width: 1000px;               /* kontroluje szerokość całego kontenera */
+        margin-left: auto;
+        margin-right: auto;             /* centrowanie całego .hero */
+
+        padding: 12vh 2vw 6vh 6vw;      /* TOP RIGHT BOTTOM LEFT */
+        gap: 4vw;
+        
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center; /* wcześniej miałeś 'right center', co zaburzało balans */
       }
       .gapp {
         padding-top: 24px;
@@ -188,14 +196,28 @@
         padding-top: 4px;
       }
       .profile {
-        padding-left: 4vw;
         width: 80%;
-        max-width: 600px;
+        max-width: 800px;
       }
       .profileImg {
-        width: 50%;
+        width: 64%;
         height: auto;
-        /*box-shadow: 0 1px 16px rgba(0,0,0,0.04);*/
+        box-shadow: 0 0.05px 20px rgba(0,0,0,0.007);
+        border-radius: 999px;
+        margin-bottom: 7vh;
+      }
+      @keyframes colorFlash {
+        0% { filter: none; }
+        50% { filter: brightness(1.1) contrast(1.1); }
+        100% { filter: none; }
+      }
+      .colorFlashHint {
+        animation: colorFlash 0.6s ease-in-out;
+      }
+      @media (hover: hover) and (pointer: fine) {
+        #profileImg:hover {
+          content: url("assets/MiniMsmile.png");
+        }
       }
       .buttonPrimary {
         font-weight: 600;
@@ -215,7 +237,7 @@
         box-shadow: 0 4px 12px rgba(30, 110, 214, 0.2);
       }
       .buttonSecondary {
-        padding-left: 4px;
+        padding-left: 2px;
         font-weight: 600;
         color: #444444;
         background-color: #1e6ed600;
@@ -238,7 +260,7 @@
       }
       /* Gallery */
       .mojeProjekty {
-        padding-top: 148px;
+        padding-top: 16vh; /* 148px */
         padding-bottom: 24px;
       }
       .description {
@@ -350,11 +372,6 @@
         padding-top: 20px;
         padding-left: 20px;
       }
-      @media (min-width: 1400px) {
-        .hero {
-          margin-top: -12vh;
-        }
-      }
       @media (max-width: 740px) {
         /* Header */
         header {
@@ -386,20 +403,23 @@
         /* Hero */
         .profile {
           padding-top: 0;
-          padding-right: 4vw;
           width: 80%;
+          max-width: 600px;
         }
         .profileImg {
           padding-left: 0%;
           padding-bottom: 0%;
-          padding-top: 24%;
+          margin-top: 12%;
+          margin-bottom: 0;
+          width: 54%;
         }
         .hero {
           padding-top: 12px;
           flex-direction: column;
+          max-width: 100%; /* pozwól sekcji rosnąć na full width w mobile */
         }
         .buttonWrapper {
-          margin-top: 20px;
+          margin-top: 8%;
           row-gap: 20px; /* pionowy odstęp */
           column-gap: 48px; /* poziomy odstęp */
         }
@@ -412,6 +432,10 @@
         .buttonPrimary {
           padding: 10px 20px;
         }
+        /* Gallery */
+        .mojeProjekty {
+          padding-top: 10vh;
+        }
         /* Footer */
         .logoWithLinks {
           padding-left: 12vw;
@@ -421,6 +445,9 @@
           font-size: 20px;
           color: #fff;
           transition: color 0.3s;
+        }
+        .footerText {
+          font-size: 8px;
         }
       }
     </style>
@@ -467,8 +494,12 @@
         </div>
       </div>
       <div class="profilePicture">
-        <img src="assets/MiniMhappy.png" onmouseover="this.src='assets/MiniMsmile.png'"
-        onmouseout="this.src='assets/MiniMhappy.png'" alt="Moje zdjęcie" class="profileImg" />
+        <img
+          id="profileImg"
+          src="assets/MiniMhappy.png"
+          alt="Moje zdjęcie"
+          class="profileImg"
+        />
       </div>
     </section>
     <!-- PROJECTS -->
@@ -537,8 +568,8 @@
             <i class="fab fa-behance"></i>
           </a>
           <a
-            href="https://www.youtube.com/c/twoj-link"
-            target="_blank"
+          href="https://www.youtube.com/@marekwietecki"
+          target="_blank"
             class="social-icon"
           >
             <i class="fab fa-youtube"></i>
@@ -575,7 +606,6 @@
           </svg>
           <span>Certyfikaty</span>
         </a>
-        
 
         <!-- testimonials -->
       </div>
@@ -632,6 +662,40 @@
             updatePadding();
           });
       });
+    </script>
+    <script>
+      const profileImg = document.getElementById("profileImg");
+      const isTouchDevice = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+
+      // ✨ 1. Tap-to-smile na mobile
+      if (isTouchDevice) {
+        let revertTimeout;
+
+        profileImg.addEventListener("click", () => {
+          profileImg.src = "assets/MiniMsmile.png";
+          clearTimeout(revertTimeout);
+          revertTimeout = setTimeout(() => {
+            profileImg.src = "assets/MiniMhappy.png";
+          }, 1500);
+        });
+      }
+
+      // ✨ 2. Mikroanimacja po 5 sekundach (na wszystkich urządzeniach)
+      let flashTriggered = false;
+
+      setTimeout(() => {
+        if (!flashTriggered) {
+          profileImg.classList.add("colorFlashHint");
+          profileImg.addEventListener(
+            "animationend",
+            () => {
+              profileImg.classList.remove("colorFlashHint");
+            },
+            { once: true }
+          );
+          flashTriggered = true;
+        }
+      }, 5000);
     </script>
   </body>
 </html>
