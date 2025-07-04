@@ -6,14 +6,8 @@
     <title>Marek Wietecki</title>
     <link rel="icon" href="assets/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="assest/favicon.svg" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/favicon-32x32.png"
-    />
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,6 +21,9 @@
     <link rel="preload" as="image" href="assets/MiniMsmile.png">
     <style>
       /*
+      >>>
+        ciut duży wydaje się ten padding po prawej na tablecie w hero 
+        -> jeszcze tam przydało by się coś lekko dostosować
       >>>
         dodatkowo podpisy projektów się chyba nie skalują
       >>>  
@@ -157,6 +154,7 @@
         left: 6vw;
         justify-content: center;
         cursor: pointer;
+        shape-rendering: geometricPrecision;
       }
       /* Hero */
       .spaceX {
@@ -622,7 +620,7 @@
       </div>
 
       <div class="footerLinks">
-        <a class="navLinks" href="index.html#hero">
+        <a class="navLinks" href="index.html#top">
           <svg class="icons size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M9.293 2.293a1 1 0 0 1 1.414 0l7 7A1 1 0 0 1 17 11h-1v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6H3a1 1 0 0 1-.707-1.707l7-7Z" clip-rule="evenodd"/>
           </svg>
