@@ -35,6 +35,9 @@
      
 
       /* Config */
+      html {
+        scroll-behavior: smooth;
+      }
       body {
         width: 100%;
         font-family: "Outfit", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif,
@@ -78,7 +81,7 @@
         transition: color 0.2s ease;
       }
       a:hover {
-        color: rgb(148, 148, 148);
+        color: #949494;
       }
       a svg {
         fill: currentColor;
@@ -163,6 +166,9 @@
       .ja {
         color: #1e6ed6;
       }
+      .lineBreak {
+        display: block;
+      }
       .container {
         width: 100%;
         height: auto;
@@ -179,7 +185,7 @@
         flex: auto;
 
         width: 100%;
-        max-width: 1000px;               /* kontroluje szerokość całego kontenera */
+        max-width: 1200px;               /* kontroluje szerokość całego kontenera */
         margin-left: auto;
         margin-right: auto;             /* centrowanie całego .hero */
 
@@ -233,7 +239,7 @@
         box-shadow: 0 4px 12px rgba(30, 110, 214, 0.2);
       }
       .buttonSecondary {
-        padding-left: 2px;
+        padding: 0px 13px;
         font-weight: 600;
         color: #444444;
         background-color: #1e6ed600;
@@ -249,14 +255,34 @@
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
-        justify-content: center;
         align-items: center;
         row-gap: 28px; /* pionowy odstęp */
         column-gap: 48px; /* poziomy odstęp */
+        width: 100%;
+        text-align: initial;
+      }
+      .buttonWrapper a {
+        display: inline-block;
+      }
+      .chevronDownWrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        padding-top: 8vh;
+      }
+      .fa-chevron-down {
+        color: #444444;
+        font-size: 24px;
+      }
+      .fa-chevron-down:hover {
+        color: #949494;
+        transform: scale(1.1);
       }
       /* Gallery */
       .mojeProjekty {
-        margin-top: 20vh; /* 148px */
+        margin-top: 18vh; /* 148px */
         padding-bottom: 24px;
       }
       .description {
@@ -367,7 +393,7 @@
         padding-top: 20px;
         padding-left: 20px;
       }
-      @media (max-width: 740px) {
+      @media (max-width: 794px) {
         /* Header */
         header {
           flex-direction: column;
@@ -412,12 +438,12 @@
           padding-top: 12px;
           flex-direction: column;
           max-width: 100%; /* pozwól sekcji rosnąć na full width w mobile */
-          padding: 4vh 2vw 0vh 2vw;      /* TOP RIGHT BOTTOM LEFT */
+          padding: 4vh 16vw 0vh 16vw;      /* TOP RIGHT BOTTOM LEFT */
         }
         .buttonWrapper {
           margin-top: 8%;
           row-gap: 20px; /* pionowy odstęp */
-          column-gap: 48px; /* poziomy odstęp */
+          column-gap: 24px; /* poziomy odstęp */
         }
         .gapp {
           padding-top: 12px;
@@ -444,6 +470,22 @@
         }
         .footerText {
           font-size: 8px;
+        }
+      }
+      @media (max-width: 650px){
+        .hero {
+          padding: 4vh 8vw 0vh 8vw;      /* TOP RIGHT BOTTOM LEFT */
+        }
+      }
+      @media (max-width: 432px){
+        .lineBreak {
+          display: inline;
+        }
+        .hero {
+          padding: 4vh 8vw 0vh 8vw;      /* TOP RIGHT BOTTOM LEFT */
+        }
+        .buttonWrapper {
+          margin-top: 12%;
         }
       }
     </style>
@@ -477,7 +519,7 @@
         <h2 class="ja">UX/UI Designer.</h2>
         <div class="gapp"></div>
         <p>
-          Projektuję intuicyjne i estetyczne produkty cyfrowe, które realnie wspierają cele biznesowe.
+          Projektuję intuicyjne i estetyczne produkty cyfrowe, <span class="lineBreak"> które realnie wspierają cele biznesowe.
         </p>
         <div class="gap2"></div>
         <p class="miniText">
@@ -499,6 +541,11 @@
         />
       </div>
     </section>
+    <div class="chevronDownWrapper">
+      <a href="#projects">
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
+    </div>
     <!-- PROJECTS -->
     <section id="projects" class="container">
       <h2 class="mojeProjekty">Moje Projekty</h2>
@@ -662,7 +709,18 @@
       const profileImg = document.getElementById("profileImg");
       const isTouchDevice = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
     
-      let flashTriggered = false;
+      const hintKey = "profileHintSeen";
+      const hintTimestamp = localStorage.getItem(hintKey);
+      const now = Date.now();
+      const twoWeeksInMs = 14 * 24 * 60 * 60 * 1000;
+    
+      // ✨ Zmienna stanu, zaczytana z localStorage
+      let flashTriggered = hintTimestamp && now - parseInt(hintTimestamp) < twoWeeksInMs;
+    
+      const markHintAsSeen = () => {
+        flashTriggered = true;
+        localStorage.setItem(hintKey, Date.now().toString());
+      };
     
       // ✨ 1. Tap-to-smile na mobile
       if (isTouchDevice) {
@@ -675,7 +733,7 @@
             profileImg.src = "assets/MiniMhappy.png";
           }, 1000);
     
-          flashTriggered = true; // 🔕 wyłącz hint, skoro user kliknął
+          markHintAsSeen(); // 🔕 kliknięcie = wyłącz hint
         });
       } else {
         // ✨ 2. Hover smile na desktopie
@@ -684,7 +742,7 @@
     
         profileImg.addEventListener("mouseenter", () => {
           profileImg.src = hoverSrc;
-          flashTriggered = true; // 🔕 wyłącz hint, skoro user najechał myszką
+          markHintAsSeen(); // 🔕 hover = wyłącz hint
         });
     
         profileImg.addEventListener("mouseleave", () => {
@@ -692,7 +750,7 @@
         });
       }
     
-      // ✨ 3. Mikroanimacja jeśli użytkownik jeszcze nie wykonał interakcji
+      // ✨ 3. Mikroanimacja po 5 sekundach, tylko jeśli jeszcze nie kliknięto
       setTimeout(() => {
         if (!flashTriggered) {
           profileImg.classList.add("colorFlashHint");
@@ -703,9 +761,33 @@
             },
             { once: true }
           );
-          flashTriggered = true;
+          markHintAsSeen(); // uznaj, że hint już widziany
         }
       }, 5000);
-    </script>    
+    </script>   
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const wrapper = document.querySelector(".buttonWrapper");
+
+      function updateJustify() {
+        const children = Array.from(wrapper.children);
+        const gap = 48;
+        const totalWidth = children.reduce((sum, el) => sum + el.offsetWidth, 0) + gap;
+        const wrapperWidth = wrapper.offsetWidth;
+
+        if (totalWidth > wrapperWidth) {
+          wrapper.style.justifyContent = "center";
+        } else {
+          wrapper.style.justifyContent = "flex-start";
+        }
+
+        console.log("total:", totalWidth, "wrapper:", wrapperWidth, "→", wrapper.style.justifyContent);
+      }
+
+      window.addEventListener("load", updateJustify);
+      window.addEventListener("resize", updateJustify);
+    });
+
+    </script>     
   </body>
 </html>
