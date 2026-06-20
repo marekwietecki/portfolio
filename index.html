@@ -369,6 +369,55 @@
       .projectContainer:hover {
         transform: scale(1.05);
       }
+
+      .disabled-project {
+        position: relative;
+        cursor: not-allowed;
+        opacity: 0.56;
+        overflow: visible !important;
+      }
+
+      .disabled-project::before {
+        content: attr(data-tooltip);
+        position: absolute;
+        bottom: 104%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #1a1a1a;
+        color: #ffffff;
+        padding: 8px 14px;
+        font-size: 13px;
+        font-family: sans-serif;
+        border-radius: 8px;
+        white-space: nowrap;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.15s ease-in-out;
+        z-index: 99;
+      }
+
+      .disabled-project::after {
+        content: "";
+        position: absolute;
+        bottom: 104%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 6px;
+        border-style: solid;
+        border-color: #1a1a1a transparent transparent transparent;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.15s ease-in-out;
+        z-index: 99;
+      }
+
+      .disabled-project:hover::before,
+      .disabled-project:hover::after {
+        opacity: 1;
+      }
+
       .projectContainerInactive {
         overflow: hidden;
         padding: 16px;
@@ -877,7 +926,10 @@
         </a>
 
         <!-- <a href="strona-internetowa-PlanetRoad.html"> -->
-        <div class="projectContainerInactive">
+        <div
+          class="projectContainer disabled-project"
+          data-tooltip="Dostępne wkrótce!"
+        >
           <img
             src="assets/index/Kasia4.png"
             alt="Zdjęcie przedstawia Stronę Internetową PlanetRoad"
@@ -898,7 +950,10 @@
         <!-- </a> -->
 
         <!-- <a href="strona-internetowa-PlanetRoad.html" > -->
-        <div class="projectContainerInactive">
+        <div
+          class="projectContainer disabled-project"
+          data-tooltip="Dostępne wkrótce!"
+        >
           <img
             src="assets/index/habitbubbl.png"
             alt="Zdjęcie przedstawia Progresywną Aplikację HabitBubbl"
