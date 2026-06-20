@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aplikacja Mobilna: monexo - Marek Wietecki</title>
+    <meta name="description" content="Projekt identyfikacji wizualnej PlanetRoad autorstwa Marka Wieteckiego. Profesjonalny branding i design system dla firmy zajmującej się projektowanie dróg.">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="assets/brand/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js"></script>
+    <!-- Google Tag Manager 
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KP2BLH2V');
+    </script>
+     End Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5WEZ1GN7W6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      // 🔴 DOMYŚLNA ZGODA (BRAK ZGODY)
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        analytics_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied'
+      });
+
+      gtag('js', new Date());
+
+      // GA4
+      gtag('config', 'G-5WEZ1GN7W6', {
+        anonymize_ip: true
+      });
+
+      // Google Ads
+      gtag('config', 'AW-17997930573');
+    </script>
+    <style>
+      /* Config */
+      html {
+        scroll-behavior: smooth; /* działa też dla wewnętrznych odnośników */
+      }
+      body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        font-family: "Outfit", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif,
+          sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f6f6f7;
+        color: #555555;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+      }
+      section {
+        width: 100%;
+        /*background-color: aqua;*/
+      }
+      h1 {
+        font-size: 36px;
+        line-height: 36px;
+        margin-bottom: .5vh;
+      }
+      h2 {
+        font-size: 24px;
+      }
+      h3 {
+        font-size: 16px;
+        margin-bottom: 1vh; 
+        padding-bottom: 0px;
+      }
+      p {
+        text-align: left;
+        font-size: clamp(0.7rem, calc(0.5vw + 0.5rem), 1.2rem);
+        font-weight: 400;
+        line-height: 1.4em;
+        margin: 4px 4px;
+        margin-left: 2px;
+        max-width: 90ch;
+        width: calc(100% - 8vw);
+        margin-right: 8vw;
+      }
+      a {
+        text-decoration: none;
+        transition: color 0.2s ease;
+        cursor: pointer;
+        color: #555555;
+      }
+      a:hover {
+        opacity: 72%;
+      }
+      a svg {
+        fill: currentColor;
+        transition: fill 0.2s ease;
+      }
+      img {
+        transition: transform 0.3s;
+      }
+      img:hover {
+        transform: scale(1.05);
+      }
+      /* Header */
+      header {
+        background: #f6f6f7;
+        font-size: 28px;
+        text-align: left;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 32px 6vw;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        z-index: 1000;
+        box-shadow: 0 0px 32px #f0f0f0;
+      }
+      .headerNav {
+        display: flex;
+        flex-direction: row;
+        align-items: center; /* wyrównanie do środka */
+        justify-content: space-between; /* albo inny układ */
+        width: 60%;
+      }
+      .menuToggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #000;
+      }
+      .menuToggle:hover {
+        color: #696969;
+      }
+      .menuToggle:active {
+        color: #696969;
+      }
+      .headerShadow {
+        box-shadow: 0 0px 32px #dddddd;
+        /*transition: border 0.3s ease-in-out;*/
+      }
+      .headerLink {
+        color: #444444;
+        font-weight: 700;
+        font-size: clamp(0.4rem, calc(0.5vw + 0.7rem), 1.1rem);
+      }
+      .headerLink:hover {
+        opacity: 64%;
+      }
+      .headerLinks {
+        display: flex;
+        flex-direction: row;
+        gap: clamp(16px, 3vw, 40px);
+      }
+      .logo {
+        width: clamp(140px, 34%, 200px);
+        height: auto;
+        align-self: left;
+        justify-content: center;
+        cursor: pointer;
+      }
+      /* Content */
+      .projectLayout {
+        display: grid;
+        grid-template-columns:64% 9% 20% 2%; /* margines – treść – nav – margines */
+        gap: 3rem;
+        max-width: 1400px;
+        margin: 0 auto;
+        width: 88vw;
+        padding-inline: 4vw;
+      }
+      .projectContent {
+        flex: 1;
+        grid-column: 1; /* boczne menu w trzeciej kolumnie */
+        max-width: 1000px;
+      }
+      .gradientBackground {
+        background: linear-gradient(45deg, #070814, #151e4d, #0f1a5a);
+        background-size: 400% 400%;
+        animation: gradientMove 6s ease infinite;
+        width: 88%;
+        height: auto;
+        margin-top: 3vh;
+        border-radius: 16px;
+        aspect-ratio: 16/9;
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+      .gradientBackground:hover {
+        transform: scale(1.05);
+      }
+      @keyframes gradientMove {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      .imageFigure {
+        width: 92%;
+        margin: 0 0 2vh 0; /* left aligned */
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+      }
+
+      .imageFigure img {
+        width: 100%;
+        display: block;
+        border-radius: 24px;
+      }
+
+      .imageFigure figcaption {
+        /* 
+        text-align: left;
+        padding-left: 4vw;
+        */
+        text-align: center;
+        color: #b8b8b8;
+        margin-top: 1vh;
+        font-size: 9px;
+      }
+      .processWrapper {
+        display: flex;
+        flex-direction: column;
+        padding-top: 10px;
+        gap: 1.5vh;
+        width: 100%; /* dopasowuje się do kolumny grida */
+        box-sizing: border-box;
+        margin-bottom: 4vh;
+      }
+      .processPhoto {
+        width: 88%; 
+        border-radius: 16px;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        transition: transform 0.3s ease; /* płynne przejście */
+        cursor: pointer;
+      }
+      .processPhoto:hover {
+        transform: scale(1.05);
+      }
+      .caveat {
+        font-family: 'Caveat', cursive;
+      }
+      .siteLink {
+        color: #444;
+        font-weight: 600;
+        font-size: clamp(0.7rem, calc(0.5vw + 0.5rem), 1.2rem);
+        text-decoration: underline;
+      }
+      .siteLink:hover {
+        opacity: 64%;
+      }
+      .mini-gallery {
+        display: flex;
+        justify-content: center;
+        padding-right: 8vw;
+        gap: 2vw;
+        flex-wrap: wrap;
+        margin-top: 4vh;
+      }
+      .mini-gallery img {
+        width: auto;
+        height: 40px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+      .mini-gallery img:hover {
+        transform: scale(1.04);
+      }
+      .sideNav {
+        position: sticky;
+        grid-column: 3; /* boczne menu w trzeciej kolumnie */
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end; /* 🔑 pcha wrapper maksymalnie w prawo */
+        gap: 0.5rem;
+        height: fit-content;
+        padding-right: 4vw;
+      }
+      .sideNav.stop {
+        position: absolute;
+        top: auto;
+        bottom: 4vh; /* możesz dopasować */
+        transform: none;
+      }
+      .sideNav a {
+        text-decoration: none;
+        color: #555;
+        font-weight: 500;
+        transition: color 0.2s, font-weight 0.2s;
+        cursor: pointer;
+      }
+      .sideNav a:hover,
+      .sideNav a.active {
+        color: #1e6ed6;
+        font-weight: 600;
+      }
+      .sideNavWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* 🔑 linki wyrównane do lewej */
+        gap: 0.5rem;      
+      }
+      .sideNavWrapper a {
+        color: #777;
+        text-decoration: none;
+        transition: color 0.3s ease, transform 0.2s ease;
+        cursor: pointer;
+      }
+      .sideNavWrapper a:hover {
+        color: #0070f3;
+        transform: translateX(-4px);
+      }
+      .sideNavWrapper a.active {
+        color: #0070f3;
+        font-weight: 600;
+      }
+      .navLoopWrapper {
+        padding-top: 20vh;
+        padding-bottom: 8vh;
+        padding-left: 4vw;
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box; /* uwzględnia padding w szerokości */
+      }
+      .navLoop {
+        flex: 1;
+        text-align: center;
+        line-height: 130%;
+      }
+      .loopLink {
+        cursor: pointer;
+        text-align: center;
+        color:#444;
+        font-weight: 600; 
+        text-decoration: underline;
+      }
+      .loopLink:hover {
+        opacity: 64%;
+      }
+      /* Footer */
+      footer {
+        background-color: #222;
+        color: white;
+        text-align: center;
+        padding-top: 80px;
+        padding-bottom: 20px;
+        margin-top: 40px;
+        font-size: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        gap: 4vh;
+      }
+      .logoWithLinks {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 16vw;
+        padding-right: 16vw;
+        padding-bottom: 4vh;
+      }
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+      .social-icon i {
+        font-size: 30px;
+        color: #fff;
+        transition: color 0.3s;
+      }
+      .social-icon i:hover {
+        color: #1e6ed6; /* Kolor po najechaniu (LinkedIn Blue) */
+      }
+      .logoFooter {
+        width: clamp(64px, 10vw, 112px);
+        height: auto;
+        align-self: center;
+      }
+      .logoFooter:hover {
+        opacity: 64%;
+      }
+      .footerLinks {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 4vw;
+        flex-wrap: wrap;
+        padding-bottom: 20px;
+      }
+      .ja {
+        text-align: left;
+      }
+      .link {
+        color: #444;
+        font-weight: 600;
+        font-size: clamp(0.66rem, calc(1vw + 0.5rem), 1.25rem);
+        text-align: left;
+      }
+      .icons {
+        width: auto;
+        height: 16px;
+        padding: 1px;
+        margin-top: 1.5px;
+
+      }
+      .navLinks {
+        color: #dddddd;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.2em;
+        font-size: clamp(0.4rem, calc(1vw + 0.5rem), 1.25rem);
+        transition: color 0.2s ease;
+      }
+      .navLinks:hover {
+        opacity: 64%;
+      }
+      .footerText {
+        font-weight: lighter;
+        font-size: 12px;
+        color: #c4c4c4;
+        text-align: center;
+      }
+      .footerTexts {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-top: 1px solid #444444;
+        padding-top: 20px;
+        padding-left: 20px;
+      }
+      @media (max-width: 740px) {
+        /* Config */
+        h1 {
+          font-size: 32px;
+          margin-bottom: 1vh;
+        }
+        /* Header */
+        header {
+          flex-direction: column;
+          padding: 20px 6vw;
+        }
+        .headerLinks {
+          padding-top: 4vh;
+          flex-direction: column;
+          display: none;
+          width: 100%;
+          align-items: center;
+        }
+        .headerLink {
+          text-align: center;
+        }
+        .menuToggle {
+          display: block;
+          align-self: flex-end;
+          margin-top: 8px;
+          right: 4vw;
+          transform: translateY(-22%); /* wyśrodkuj pionowo względem headera */
+        }
+        .headerNav {
+          width: 100%;
+        }
+        .headerLinks.show {
+          display: flex;
+        }
+        /* Content */
+        .sideNav {
+          display: none;
+        }
+        .projectLayout {
+          flex-direction: column;
+          gap: 2rem;
+          grid-template-columns:98% 2%; /* margines – treść – nav – margines */
+        }
+        .projectIntro {
+          width: 82%;
+        }
+        .processProgress {
+            width: 88vw;
+            margin-bottom: -20px;
+        }
+        .processPhoto {
+            width: 80vw;
+            border-radius: 16px;
+        }
+        /* Footer */
+        .logoWithLinks {
+          padding-left: 12vw;
+          padding-right: 12vw;
+        }
+        .social-icon i {
+          font-size: 20px;
+          color: #fff;
+          transition: color 0.3s;
+        }
+        .footerText {
+          font-size: 9px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="headerNav">
+        <a class="headerLink" style="font-size: clamp(0.6rem, calc(0.75vw + 1.05rem), 1.65rem);" href="index.html">
+          marekwietecki
+        </a>
+        <button class="menuToggle" id="menuToggle" onclick="toggleMenu()"> ☰ </button>
+      </div>
+      <div class="headerLinks">
+        <a class="headerLink" href="certyfikaty.html">Certyfikaty</a>
+        <a class="headerLink" href="kontakt.html">Kontakt</a>
+      </div>
+    </header>
+  
+    <section class="spaceX" id="spaceX"></section>
+  
+    <div class="projectLayout">
+      <main class="projectContent">
+  
+        <!-- O PROJEKCIE -->
+        <section style="padding-top: 8vh;" id="o-projekcie">
+          <h1>Monexo - aplikacja mobilna do wymiany walut</h1>
+          <p style="padding-top: 0vh;">
+            Monexo to mobilna aplikacji do wymiany walut, którą zaprojektowałem
+            jako odpowiedź na realne problemy użytkowników korzystających z istniejących
+            rozwiązań FinTech.
+          </p>
+
+          <p style="padding-top: 3vh;"><b>Rola:</b> UX Designer; Front-end Developer</p>
+
+          <p style="padding-top: 1vh;"><b>Zakres odpowiedzialności:</b> Research, Koncept produktu, Architektura informacji, Projekt interfejsu, Testy użyteczności</p>
+
+          <p style="padding-top: 1vh;"><b>Czas trwania:</b> 13 tygodni </p>
+         
+          <p style="padding-top: 1vh;"><b>Metodyka:</b> Lean UX / Design Thinking  – iteracyjne projektowanie oparte na badaniach użytkowników, testach użyteczności i analizie konkurencji, z priorytetyzacją funkcji w ramach MVP.</p>
+
+          <a href="assets/index/monexo.png" data-lightbox="monexo-process" data-title="Mockup aplikacji mobilnej do wymiany walut">
+            <img style="width: 88%; border-radius: 32px; margin-top: 40px;" src="assets/index/monexo.png" alt="Mockup aplikacji mobilnej do wymiany walut"/>
+          </a>
+
+          <h3 style="padding-top: 3vh; margin-bottom: 1vh;">Kontekst</h3>
+          <p>
+            Analiza rynku wykazała, że wiele istniejących aplikacji do wymiany walut jest
+            nieczytelnych, przeładowanych informacjami i opartych na niejasnym modelu
+            prowizji, co stworzyło niepotrzebną barierę dla użytkowników chcących wykonać
+            prostą wymianę walut.
+          </p>
+          
+          <h3 style="padding-top: 3vh; margin-bottom: 1vh;">Problem</h3>
+          <p>
+            Użytkownicy często nie mieli pewności co do rzeczywistego kosztu transakcji,
+            gubili się w interfejsie i musieli przechodzić przez zbyt wiele kroków,
+            aby wykonać podstawową operację.
+          </p>
+
+          <h3 style="padding-top: 3vh; margin-bottom: 1vh;">Cele</h3>
+          <p>🎯 <b>Uproszczenie procesu wymiany walut</b> do maksymalnie kilku intuicyjnych kroków.</p>
+          <p>🎯 <b>Pełna transparentność kursów i opłat</b> — brak ukrytych prowizji i niejasnych przeliczeń.</p>
+          <p>🎯 <b>Budowa zaufania do produktu FinTech</b> poprzez czytelną komunikację i przewidywalność procesu.</p>
+  
+          <h3 style="padding-top: 3vh; margin-bottom: 1vh;">Ograniczenia</h3>
+          <p>⚠️ <b>Wysokie wymagania dotyczące zaufania</b> — aplikacja finansowa musi być postrzegana jako bezpieczna i wiarygodna.</p>
+          <p>⚠️ <b>Konieczność jasnego komunikowania kosztów</b> bez przeciążania użytkownika danymi.</p>
+          <p>⚠️ <b>Minimalizacja złożoności interfejsu</b> przy zachowaniu pełnej kontroli użytkownika.</p>
+          <p>⚠️ <b>Projekt mobile-first</b>, dostosowany do szybkiego i częstego użycia.</p>
+  
+          
+        </section>
+  
+  
+        <section id="badania">
+          <h2 style="padding-top: 8vh; ">Badania i Wnioski</h2>
+          
+          <h3 style="margin-bottom: 1vw;">Czy ludzie potrzbują naszego produktu? - Analiza rynku i trendów branżowych</h3>
+          <p>
+            Przeanalizowałem rynek i trendy w branży, przeglądając raporty oraz topowe aplikacje, aby zrozumieć, czego naprawdę potrzebują użytkownicy. Zauważyłem, że przy rosnących wymaganiach użytkowników <b>podstawowe funkcje są często ukrywane, by uwydatnić nowe możliwości</b>. W mojej aplikacji postawiłem na spełnianie podstawowych potrzeb w pierwszej kolejności, a funkcje dodatkowe zostały bardziej zagnieżdżone, tak by nie przeszkadzały w codziennym szybkim zarządzaniu finansami. 
+          </p>
+          <p>
+            Jednocześnie zidentyfikowałem popularne funkcjonalności, takie jak <b>portfele wielowalutowe, automatyczne zlecenia zakupu walut</b> czy <b>obsługa kryptowalut</b>, które odpowiadają na realne potrzeby użytkowników w planowaniu transakcji i zarządzaniu pieniędzmi, umożliwiając im pełniejszą kontrolę nad finansami.
+          </p>
+          
+          <h3 style="padding-top: 3vh; margin-bottom: 1vw;">Analiza problemów konkurencji</h3>
+          <p>
+            Podczas analizy konkurencyjnych aplikacji i opinii użytkowników zidentyfikowałem kluczowe problemy, które znacząco wpływają na odczucia użytkownika:
+            <br>
+            • <b>Zbyt skomplikowane menu</b> – użytkownicy wyrażając opinie na temat konkurencji często skarżą się na chaos w opcjach i trudności w szybkim wykonaniu podstawowych operacji.
+            <br>
+            • <b>Nieintuicyjna nawigacja</b> – Użytkownicy często miewają również problemy z dotarciem do pożądanej funkcji w apolikacji.
+            <br>
+            • <b>Brak transparentności w opłatach</b> – użytkownicy odczuwają brak przejrzystości i spójności w opłatach i niepewność co do zwrotów oraz oprocentowania.
+          </p>
+          <p style="padding-top: 2vh;">
+            Analiza pozwoliła mi zidentyfikować kluczowe problemy użytkowników, które miałem zamiar rozwiązać w następujący sposób:
+            <br>
+            • <b>Uproszczeniu menu i hierarchii funkcji</b>, aby kluczowe działania były dostępne w 2–3 krokach;
+            <br>
+            • <b>Wprowadzenie podglądu transakcji</b>, a także informowania użytkownika na bieżąco o opłatach i statusach wymian;
+            <br>
+            • <b>Zapewnienie transparentności kosztów i komunikacji</b>, aby użytkownik zawsze wiedział, jakie opłaty i oprocentowanie obowiązują jego środki.
+          </p>
+        </section>
+
+        <!-- IDEACJA -->
+        <section id="ideacja">
+          <h2 style="padding-top: 8vh;">Ideacja</h2>
+          <h3 style="margin-bottom: 1vw;">Dla kogo będzie nasza aplikacja?</h3>
+          <p>
+            Kształtowanie produktu rozpocząłem od stworzenia trzech <b>person</b> dla naszego produktu. To pokazało mi, że
+          </p>
+
+          <figure class="imageFigure">
+            <a href="assets/projects/aplikacja-mobilna-monexo/monexo_Persony.png" data-lightbox="monexo-process" data-title="User Persony">
+              <img src="assets/projects/aplikacja-mobilna-monexo/monexo_Persony.png" alt="User Persony" />
+            </a>
+            <figcaption>User Persony</figcaption>
+          </figure>          
+          
+          <p style="margin-bottom: 2vh;">
+            <b>Głównymi potrzebami</b> naszych użytkowników okazały się być: 
+            <br>
+            • Szybkość dostępu do najważniejszych funkcji
+            <br>
+            • Prostota w obsłudze aplikacji
+            <br>
+            • Transparentność w opłatach za tranzakcje oraz
+            <br>
+            • Poczucie kontroli nad tranzakcjami w aplikacji
+          </p>
+          
+
+          <h3 style="padding-top: 3vh; margin-bottom: 1vw;">Co będzie najważniejsze? - Prioretyzacja</h3>
+          <p>
+            Używając <b>MoSCow</b> ustaliłem, które funkcje będą kluczowe, które najlepiej żeby się znalazły, a które są jedynie opcjonalnymi usprawnieniami.
+          </p>
+
+          <figure class="imageFigure">
+            <a href="assets/projects/aplikacja-mobilna-monexo/monexo_MoSCoW.png" data-lightbox="monexo-process" data-title="Priorytetyzacja techniką MoSCoW">
+              <img src="assets/projects/aplikacja-mobilna-monexo/monexo_MoSCoW.png" alt="Priorytetyzacja techniką MoSCoW" />
+            </a>
+            <figcaption>Priorytetyzacja techniką MoSCoW</figcaption>
+          </figure>
+
+          <p>
+            W ramy <b>MVP</b> weszły funkcjonalności: <br>• Wirtualnego portfela z możliwościa podglądu posiadanych walut <br>• Przeglądu kursów NBP <br>• Wymiany walut <br>• Historii tranzakcji <br>• Doładowania konta <br>• Rejestracji, Logowania, Zmiany hasła i Usunięcia konta
+          </p>
+
+          <h3 style="padding-top: 3vh; margin-bottom: 1vw;">W jakim stylu?</h3>
+          <p>
+            Stworzyłem skromny <b> Style Guide</b> z podstawowymi elementami interfejsu, tak aby aplikacja była spójna i estetyczna.
+          </p>
+          <figure class="imageFigure">
+            <a href="assets/projects/aplikacja-mobilna-monexo/monexo_Typography.png" data-lightbox="monexo-process" data-title="Style Guide - Typography">
+              <img src="assets/projects/aplikacja-mobilna-monexo/monexo_Typography.png" alt="Style Guide - Typography" />
+            </a>
+            <figcaption>Style Guide - Typography</figcaption>
+          </figure>
+
+          <figure class="imageFigure">
+            <a href="assets/projects/aplikacja-mobilna-monexo/monexo_Components&Rules.png" data-lightbox="monexo-process" data-title="Style Guide - Components & Rules">
+              <img src="assets/projects/aplikacja-mobilna-monexo/monexo_Components&Rules.png" alt="Style Guide - Components & Rules" />
+            </a>
+            <figcaption>Style Guide - Components & Rules</figcaption>
+          </figure>
+
+        <figure class="imageFigure">
+          <a href="assets/projects/aplikacja-mobilna-monexo/monexo_Colors&Themes.png" data-lightbox="monexo-process" data-title="Style Guide - Colors & Themes">
+            <img src="assets/projects/aplikacja-mobilna-monexo/monexo_Colors&Themes.png" alt="Style Guide - Colors & Themes" />
+          </a>
+          <figcaption>Style Guide - Colors & Themes</figcaption>
+        </figure>
+          
+          <p>
+            Interfejs aplikacji został zaprojektowany w estetyce minimalistycznej,
+            z jedną główną akcją użytkownika — „Wymień walutę”. A kolorystyka i typografia wspierają czytelność, spokój oraz poczucie bezpieczeństwa,
+            co jest kluczowe w produktach FinTech.
+          </p>
+
+          <h3 style="padding-top: 3vh; margin-bottom: 1vh;">Teraz pytanie gdzie co umieścić?</h3>
+          <p>
+            Wykorzystując <b>wireframe'y</b> rozmieściłem elementy na ekranach aplikacji tak, aby wyczerpać główne zapotrzebowania naszej grupy docelowej oraz priorytetowe funkcje aplikacji.
+          </p>
+
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/aplikacja-mobilna-monexo/monexo_Wireframes1.png"
+              data-lightbox="monexo-process"
+              data-title="Wireframe'y cz.1"
+            >
+              <img
+                src="assets/projects/aplikacja-mobilna-monexo/monexo_Wireframes1.png"
+                alt="Wireframe'y cz.1"
+              />
+            </a>
+            <figcaption>Wireframe'y cz.1</figcaption>
+          </figure>
+
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/aplikacja-mobilna-monexo/monexo_Wireframes2.png"
+              data-lightbox="monexo-process"
+              data-title="Wireframe'y cz.2"
+            >
+              <img
+                src="assets/projects/aplikacja-mobilna-monexo/monexo_Wireframes2.png"
+                alt="Wireframe'y cz.2"
+              />
+            </a>
+            <figcaption>Wireframe'y cz.2</figcaption>
+          </figure>
+          
+          <h3 style="padding-top: 3vh; margin-bottom: 1vh;">I dokąd z tych ekranów będzie można przejść..</h3>
+          <p>
+            Zająłem się więc zaprojektowaniem<b> Breadboardów</b> - wszystkich możliwych ścieżek z poszczególnych ekranów, tak aby użytkownik mógł w łatwy sposób dostać się tam gdzie tego potrzebuje. W aplikacji wykorzystuje tab navigation, co już znacznie ułatwia przemieszczanie się pomiędzy ekranami, a linki w dobrych miejscach jedynie podpowiadają co i gdzie zrobić jako następny krok. Na tym etapie dodałem np. ...
+          </p>
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/aplikacja-mobilna-monexo/monexo_Breadboards1.png"
+              data-lightbox="monexo-process"
+              data-title="Breadboardy cz.1"
+            >
+              <img
+                src="assets/projects/aplikacja-mobilna-monexo/monexo_Breadboards1.png"
+                alt="Breadboardy cz.1"
+              />
+            </a>
+            <figcaption>Breadboardy cz.1</figcaption>
+          </figure>
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/aplikacja-mobilna-monexo/monexo_Breadboards2.png"
+              data-lightbox="monexo-process"
+              data-title="Breadboardy cz.2"
+            >
+              <img
+                src="assets/projects/aplikacja-mobilna-monexo/monexo_Breadboards2.png"
+                alt="Breadboardy cz.2"
+              />
+            </a>
+            <figcaption>Breadboardy cz.2</figcaption>
+          </figure>
+
+        </section>
+
+        <section id="iteracje">
+          <h2 style="padding-top: 8vh; margin-bottom: 1vh;">Iteracje</h2>
+          <p>
+            Projekt właściwego produktu przeprowadzałem iteracyjnie, implementując poszczególne funkcjonalności, testując je i dostosowując je do potrzeb użytkowników produktu.
+          </p>
+          
+          <h3 style="padding-top: 3vh; margin-bottom: 1vh;">Na początku to co kluczowe do funkcjonowania aplikacji - MVP & walidacja podstawowych flow</h3>
+          <p style="margin-bottom: 1.5vh;">
+            Zaprojektowałem MVP obejmujące kluczowe funkcje: sprawdzanie kursów oraz wymianę walut. Celem tej iteracji było szybkie zweryfikowanie głównych założeń produktu, struktury informacji oraz podstawowego flow wymiany.
+          </p>
+
+          <!-- może tu fota ekranów przed?-->
+          <h3 style="padding-top: 3vh; margin-bottom: 1vh;"> Czemu lista kursów sortowana alfabetycznie nie będzie dobrym wyjściem?</h3>
+          <p style="margin-bottom: 1.5vh;">
+            Podczas projektowania ekranu kursów zdałem sobie sprawę, że lista walut z Api Narodowego Banku Polskiego wydaje listę walut w porządku alfabetycznym. Wiedziałem, że taki porządek schowa głęboko np. Amerykańskiego Dolara czy też Euro. Zdecydowałem się tutaj na zagłebienie się w to, które waluty są w polsce wymieniane najczęściej. Okazało się, że poza Dolarem, Euro czy Funtem dalej popularny jest Frank Szwajcarski oraz Korona Czeska, które to waluty wywindowałem priorytetowo na początek listy.
+          </p>
+          <p style="margin-bottom: 1.5vh;">
+            Następnie poddałem prototyp testom użyteczności, na klikalnym prototypie, aby sprawdzić czy wybrane rozwiązania spełniają potrzeby użytkowników. Owe testy wykazały, że język użyty w niektórych miejscach sprawiał problem użytkownikom i wprowadzał ich w zakłopotanie, oraz że doładowywanie konta jest niepotrzebnie schowane i zbyt zagnieżdżone, a dostanie się do niego sprawia użytkownikom niemały problem.
+          </p>
+
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/aplikacja-mobilna-monexo/monexo_Iteracja1.png"
+              data-lightbox="monexo-process"
+              data-title="Walidacja podstawowych flow"
+            >
+              <img
+                src="assets/projects/aplikacja-mobilna-monexo/monexo_Iteracja1.png"
+                alt="Walidacja podstawowych flow"
+              />
+            </a>
+            <figcaption>Walidacja podstawowych flow</figcaption>
+          </figure>
+
+          <a href="https://www.figma.com/make/nXrTiyjF4gV6UOPohcmK5s/monexo-Interactive-Prototype---MVP?t=Qlo3DL8PfSoHjQs7-20&fullscreen=1"
+            target="_blank"
+            class="siteLink">
+            Otwórz interaktywny prototyp
+          </a>
+          <p style="color: #888888; margin-bottom: 3vh">(dostępny tylko na PC i Laptopy, ze względu na ograniczenia Figma Make)</p>
+
+          <h3 style="padding-top: 3vh; margin-bottom: 1vh;">Do których funkcji dostęp powinien być najwygodniejszy? - Priorytetyzacja kluczowych akcji w nawigacji</h3>
+
+          <p style="margin-bottom: 1.5vh;">
+            Wnioski z testów użyteczności jasno pokazały, że użytkownicy mieli <b>trudność
+            z odnalezieniem funkcji doładowania konta</b>. Kluczowa akcja była ukryta zbyt
+            głęboko w strukturze profilu, co powodowało frustrację i wydłużało czas realizacji zadania.
+          </p>
+
+          <p style="margin-bottom: 1.5vh;">
+            Na podstawie tych obserwacji zdecydowałem się na przebudowę dolnej nawigacji.
+            Ekran profilu został usunięty z głównego paska tabów, a jego miejsce zajęła
+            funkcja doładowania konta — jedna z najważniejszych akcji w całym systemie.
+            Przeniosłem profil użytkownika do kompaktowej ikony dostępnej na wszystkich głównych ekranach, tak aby dalej był bardzo dostępny.
+          </p>
+
+          <p style="margin-bottom: 1.5vh;">
+            Zmiana ta znacząco skróciła ścieżkę do wykonania transakcji oraz uczyniła
+            interfejs bardziej intuicyjnym. Po iteracji użytkownicy bez dodatkowych wskazówek
+            potrafili szybko zasilić konto i przejść do wymiany walut.
+          </p>
+
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/aplikacja-mobilna-monexo/monexo_Iteracja2.png"
+              data-lightbox="monexo-process"
+              data-title="Priorytetyzacja kluczowych funkcji"
+            >
+              <img
+                src="assets/projects/aplikacja-mobilna-monexo/monexo_Iteracja2.png"
+                alt="Priorytetyzacja kluczowych funkcji"
+              />
+            </a>
+            <figcaption>Priorytetyzacja kluczowych funkcji</figcaption>
+          </figure>
+
+
+          <p style="margin-bottom: 1.5vh;">
+            W kolejnych testach tym razem niemoderowanych testach użyteczności i First-Click użytkownicy znacznie szybciej wykonywali zadanie - cały proces zakupu waluty.
+          </p>
+
+          <p style="margin-bottom: 1.5vh;">
+            Efekt: użytkownik może szybciej i bezbłędnie ocenić stan finansów i zrealizować transakcję
+            w krótszym czasie, co zwiększa wygodę i satysfakcję z korzystania z aplikacji.
+          </p>
+
+          <h3 style="padding-top: 3vh; margin-bottom: 1vh;">W jaki sposób ułatwiam proces użytkownikowi? - Doprecyzowanie komunikatów systemowych</h3>
+
+          <p style="margin-bottom: 1.5vh;">
+            Testy użyteczności wykazały, że przekaz na niektórych ekranach był zbyt domyślny i niejednoznaczne,
+            co powodowało dezorientację użytkowników oraz obawy przed błędnym wykonaniem operacji.
+          </p>
+
+          <p style="margin-bottom: 1.5vh;">
+            W odpowiedzi na ten problem wzbogaciłem ekrany o krótkie, zrozumiałe informacje uzupełniające, aby użytkownicy wiedzieli
+            o wszystkich kosztach i zasadach działania systemu, aby upewnić ich i uspokoić podczas ich działań w aplikacji.
+          </p>
+
+          <p style="margin-bottom: 1.5vh;">
+            Przeprowadziłem walidację komunikatów systemowych, aby sprawdzić, czy są zrozumiałe
+            dla użytkowników. Testy wykazały, że techniczne i niejednoznaczne komunikaty
+            wprowadzały dezorientację i obawy przed błędnym wykonaniem operacji.
+          </p>
+
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/aplikacja-mobilna-monexo/monexo_Iteracja3.1.png"
+              data-lightbox="monexo-process"
+              data-title="Ulepszenie Komunikacji Kursu Walut"
+            >
+              <img
+                src="assets/projects/aplikacja-mobilna-monexo/monexo_Iteracja3.1.png"
+                alt="Ulepszenie Komunikacji Kursu Walut"
+              />
+            </a>
+            <figcaption>Ulepszenie Komunikacji Kursu Walut</figcaption>
+          </figure>
+
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/aplikacja-mobilna-monexo/monexo_Iteracja3.2.png"
+              data-lightbox="monexo-process"
+              data-title="Ulepszenie Komunikacji Kosztów Transackji"
+            >
+              <img
+                src="assets/projects/aplikacja-mobilna-monexo/monexo_Iteracja3.2.png"
+                alt="Ulepszenie Komunikacji Kosztów Transackji"
+              />
+            </a>
+            <figcaption>Ulepszenie Komunikacji Kosztów Transackji</figcaption>
+          </figure>
+
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/aplikacja-mobilna-monexo/monexo_Iteracja3.3.png"
+              data-lightbox="monexo-process"
+              data-title="Poprawa Widoczności Linków na Ekranie Głównym"
+            >
+              <img
+                src="assets/projects/aplikacja-mobilna-monexo/monexo_Iteracja3.3.png"
+                alt="Poprawa Widoczności Linków na Ekranie Głównym"
+              />
+            </a>
+            <figcaption>Poprawa Widoczności Linków na Ekranie Głównym</figcaption>
+          </figure>
+
+          <!-- dodać zmianę ikonek!! na bardziej intuicyjne -->
+
+          <p style="margin-bottom: 1vh;">
+            Dodatkowo zoptymalizowałem nawigację pod najczęstszy scenariusz użycia (sprawdzenie kursu → doładowanie → wymiana), skracając czas realizacji celu poprzez ustawienie kart w kolejności najczęściej powtarzanego flow. Oraz podmieniłem niektóre ikony na bardziej intuicyjne odpowiedniki tak, aby użytkownik jeszcze szybciej i łatwiej dostawał się w porządane miejsce.
+          </p>
+
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/aplikacja-mobilna-monexo/monexo_Iteracja3.4.png"
+              data-lightbox="monexo-process"
+              data-title="Poprawa Intuciyjności Menu"
+            >
+              <img
+                src="assets/projects/aplikacja-mobilna-monexo/monexo_Iteracja3.4.png"
+                alt="Poprawa Intuciyjności Menu"
+              />
+            </a>
+            <figcaption>Poprawa Intuciyjności Menu</figcaption>
+          </figure>
+
+
+          <p style="margin-bottom: 1.5vh;">
+            Efekt: użytkownicy czują większą kontrolę nad procesem i zaufanie do aplikacji,
+            co przekłada się na płynniejsze i pewniejsze korzystanie z funkcji wymiany walut.
+          </p>
+
+        </section>
+  
+        <!-- EFEKT -->
+        <section id="efekt-koncowy">
+          <h2 style="padding-top: 8vh;">Efekt Końcowy</h2>
+
+          <h3 style="margin-bottom: 1vh;">Co ostatecznie powstało?</h3>
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/aplikacja-mobilna-monexo/monexo_FinalLight1.png"
+              data-lightbox="monexo-process"
+              data-title="Finalne Jasne Ekrany cz.1"
+            >
+              <img
+                src="assets/projects/aplikacja-mobilna-monexo/monexo_FinalLight1.png"
+                alt="Finalne Jasne Ekrany cz.1"
+              />
+            </a>
+            <figcaption>Finalne Jasne Ekrany cz.1</figcaption>
+          </figure>
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/aplikacja-mobilna-monexo/monexo_FinalLight2.png"
+              data-lightbox="monexo-process"
+              data-title="Finalne Jasne Ekrany cz.2"
+            >
+              <img
+                src="assets/projects/aplikacja-mobilna-monexo/monexo_FinalLight2.png"
+                alt="Finalne Jasne Ekrany cz.2"
+              />
+            </a>
+            <figcaption>Finalne Jasne Ekrany cz.2</figcaption>
+          </figure>
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/aplikacja-mobilna-monexo/monexo_FinalDark1.png"
+              data-lightbox="monexo-process"
+              data-title="Finalne Ciemne Ekrany cz.1"
+            >
+              <img
+                src="assets/projects/aplikacja-mobilna-monexo/monexo_FinalDark1.png"
+                alt="Finalne Ciemne Ekrany cz.1"
+              />
+            </a>
+            <figcaption>Finalne Ciemne Ekrany cz.1</figcaption>
+          </figure>
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/aplikacja-mobilna-monexo/monexo_FinalDark2.png"
+              data-lightbox="monexo-process"
+              data-title="Finalne Ciemne Ekrany cz.2"
+            >
+              <img
+                src="assets/projects/aplikacja-mobilna-monexo/monexo_FinalDark2.png"
+                alt="Finalne Ciemne Ekrany cz.2"
+              />
+            </a>
+            <figcaption>Finalne Ciemne Ekrany cz.2</figcaption>
+          </figure>
+          <p>
+            Projekt Monexo pozwolił mi przejść przez pełny proces projektowy — od analizy
+            problemu i rynku, przez ideację i testy użyteczności, aż po iteracyjne
+            doskonalenie interfejsu i komunikacji.
+          </p>
+          <p>
+            Skupiłem się na projektowaniu rozwiązań, które są proste dla użytkownika,
+            przewidywalne w działaniu i wspierają cele biznesowe poprzez budowanie
+            zaufania do produktu finansowego.
+          </p>
+          <p>✅ Zaprojektowana aplikacja upraszcza proces wymiany walut spełniając przede wszsytkim główne potrzeby przeciętnego użytkownika.</p>
+          <p>✅ Transparentna komunikacja kursów i opłat buduje zaufanie użytkowników i chęć długofalowej relacji z produktem.</p>
+          <p>👨‍💻 Projekt jest w pełni zaimplementowany i dostępny w repozytorium GitHub. Znajdziesz tam kompletną aplikację mobilną, integrację z API NBP, logikę biznesową Web Service oraz bazę danych. Repozytorium zawiera też instrukcję uruchomienia, co pozwala przetestować działanie aplikacji np. na własnym urządzeniu.</p>
+        
+          <div class="mini-gallery">
+            <a href="assets/index/monexo.png" data-lightbox="galeria-monexo">
+              <img src="assets/index/monexo.png" alt="Miniatura 1" />
+            </a>
+            <!--
+            <a href="assets/projects/aplikacja-mobilna-monexo/monexo_Persony.png" data-lightbox="galeria-monexo">
+              <img src="assets/projects/aplikacja-mobilna-monexo/monexo_Persony.png" alt="Miniatura 1" />
+            </a>
+            -->
+            <!--
+            <a href="assets/projects/aplikacja-mobilna-monexo/monexo_MoSCoW.png" data-lightbox="galeria-monexo">
+              <img src="assets/projects/aplikacja-mobilna-monexo/monexo_MoSCoW.png" alt="Miniatura 1" />
+            </a>
+            -->
+            <a href="assets/projects/aplikacja-mobilna-monexo/monexo_Typography.png" data-lightbox="galeria-monexo">
+              <img src="assets/projects/aplikacja-mobilna-monexo/monexo_Typography.png" alt="Miniatura 1" />
+            </a>
+            <a href="assets/projects/aplikacja-mobilna-monexo/monexo_Components&Rules.png" data-lightbox="galeria-monexo">
+              <img src="assets/projects/aplikacja-mobilna-monexo/monexo_Components&Rules.png" alt="Miniatura 1" />
+            </a>
+            <a href="assets/projects/aplikacja-mobilna-monexo/monexo_Colors&Themes.png" data-lightbox="galeria-monexo">
+              <img src="assets/projects/aplikacja-mobilna-monexo/monexo_Colors&Themes.png" alt="Miniatura 1" />
+            </a>
+            <!--
+            <a href="assets/projects/aplikacja-mobilna-monexo/monexo_Persony.png" data-lightbox="galeria-monexo">
+              <img src="assets/projects/aplikacja-mobilna-monexo/monexo_Persony.png" alt="Miniatura 1" />
+            </a>
+            -->
+            <a href="assets/projects/aplikacja-mobilna-monexo/monexo_Wireframes1.png" data-lightbox="galeria-monexo">
+              <img src="assets/projects/aplikacja-mobilna-monexo/monexo_Wireframes1.png" alt="Miniatura 1" />
+            </a>
+            <a href="assets/projects/aplikacja-mobilna-monexo/monexo_Wireframes2.png" data-lightbox="galeria-monexo">
+              <img src="assets/projects/aplikacja-mobilna-monexo/monexo_Wireframes2.png" alt="Miniatura 1" />
+            </a>
+            <!--
+            <a href="assets/projects/aplikacja-mobilna-monexo/monexo_Breadboards1.png" data-lightbox="galeria-monexo">
+              <img src="assets/projects/aplikacja-mobilna-monexo/monexo_Breadboards1.png" alt="Miniatura 1" />
+            </a>
+            <a href="assets/projects/aplikacja-mobilna-monexo/monexo_Breadboards2.png" data-lightbox="galeria-monexo">
+              <img src="assets/projects/aplikacja-mobilna-monexo/monexo_Breadboards2.png" alt="Miniatura 1" />
+            </a>
+            -->
+            <a href="assets/projects/aplikacja-mobilna-monexo/monexo_Iteracja1.png" data-lightbox="galeria-monexo">
+              <img src="assets/projects/aplikacja-mobilna-monexo/monexo_Iteracja1.png" alt="Miniatura 1" />
+            </a>
+            <a href="assets/projects/aplikacja-mobilna-monexo/monexo_Iteracja2.png" data-lightbox="galeria-monexo">
+              <img src="assets/projects/aplikacja-mobilna-monexo/monexo_Iteracja2.png" alt="Miniatura 1" />
+            </a>
+            <a href="assets/projects/aplikacja-mobilna-monexo/monexo_Iteracja3.1.png" data-lightbox="galeria-monexo">
+              <img src="assets/projects/aplikacja-mobilna-monexo/monexo_Iteracja3.1.png" alt="Miniatura 1" />
+            </a>
+            <a href="assets/projects/aplikacja-mobilna-monexo/monexo_Iteracja3.2.png" data-lightbox="galeria-monexo">
+              <img src="assets/projects/aplikacja-mobilna-monexo/monexo_Iteracja3.2.png" alt="Miniatura 1" />
+            </a>
+            <a href="assets/projects/aplikacja-mobilna-monexo/monexo_Iteracja3.3.png" data-lightbox="galeria-monexo">
+              <img src="assets/projects/aplikacja-mobilna-monexo/monexo_Iteracja3.3.png" alt="Miniatura 1" />
+            </a>
+            <a href="assets/projects/aplikacja-mobilna-monexo/monexo_Iteracja3.4.png" data-lightbox="galeria-monexo">
+              <img src="assets/projects/aplikacja-mobilna-monexo/monexo_Iteracja3.4.png" alt="Miniatura 1" />
+            </a>
+            <a href="assets/projects/aplikacja-mobilna-monexo/monexo_FinalLight1.png" data-lightbox="galeria-monexo">
+              <img src="assets/projects/aplikacja-mobilna-monexo/monexo_FinalLight1.png" alt="Miniatura 1" />
+            </a>
+            <a href="assets/projects/aplikacja-mobilna-monexo/monexo_FinalLight2.png" data-lightbox="galeria-monexo">
+              <img src="assets/projects/aplikacja-mobilna-monexo/monexo_FinalLight2.png" alt="Miniatura 1" />
+            </a>
+            <a href="assets/projects/aplikacja-mobilna-monexo/monexo_FinalDark1.png" data-lightbox="galeria-monexo">
+              <img src="assets/projects/aplikacja-mobilna-monexo/monexo_FinalDark1.png" alt="Miniatura 1" />
+            </a>
+            <a href="assets/projects/aplikacja-mobilna-monexo/monexo_FinalDark2.png" data-lightbox="galeria-monexo">
+              <img src="assets/projects/aplikacja-mobilna-monexo/monexo_FinalDark2.png" alt="Miniatura 1" />
+            </a>
+          </div>
+        
+        </section>
+        
+        <section id="po-projekcie">
+          <h2 style="padding-top: 8vh;">Po Projekcie</h2>
+          <h3 style="margin-bottom: 1vh;">Kluczowe Wnioski</h3>
+          <p>
+            🧠 Świadoma i dokładna <b>obsługa stanów sieciowych</b> jest kluczowa dla spójnego i przewidywalnego doświadczenia użytkownika w aplikacji mobilnej - internet mobilny nie jest tak niezawodny jak internet kablowy i zdecydowanie częściej jest podatny na różnego rodzaju przerwania.
+          </p>
+
+          <h3 style="padding-top: 3vh; margin-bottom: 1vh;">Następne Kroki</h3>
+          <p>
+            <b>🔜 Obsługa wielu portfeli walutowych</b> 
+            - architektura interfejsu została zaprojektowana z myślą o łatwej rozbudowie o wiele portfeli (np. osobny portfel oszczędnościowy).
+          </p>
+          <p>  
+            <b>🔜 Automatyczne zlecenia wymiany walut</b> 
+            - możliwość ustawiania zleceń zakupu przy określonym kursie, z zabezpieczeniami budżetowymi zapobiegającymi powstawaniu debetu.
+          </p>
+          <p>
+            <b>🔜 Rozszerzenie o kryptowaluty</b>
+            - potencjał integracji z rynkiem kryptowalut poprzez API giełd, umożliwiający przechowywanie i wymianę zarówno walut tradycyjnych, jak i cyfrowych.
+          </p>
+        </section>
+
+        <section class="navLoopWrapper">
+          <span class="navLoop">Zobacz kolejny projekt: <br><a class="loopLink" href="https://marekwietecki.com/strona-internetowa-PlanetRoad">Strona&nbsp;Internetowa&nbsp;-&nbsp;PlanetRoad</a></span>
+        </section>
+
+        
+      </main>
+      <nav class="sideNav">
+        <div class="sideNavWrapper">
+          <a href="#o-projekcie">O Projekcie</a>
+          <a href="#badania">Badania</a>
+          <a href="#ideacja">Ideacja</a>
+          <a href="#iteracje">Iteracje</a>
+          <a href="#efekt-koncowy">Efekt Końcowy</a>
+          <a href="#po-projekcie">Po Projekcie</a>
+        </div>
+      </nav>
+    </div>
+
+    <div id="cookie-banner" class="cookie-banner">
+      <div class="cookie-text">
+        🍪 Używam cookies do analizy ruchu i ciągłego ulepszania działania
+        strony.
+        <!--<a href="/privacy">Polityka prywatności</a>-->
+      </div>
+
+      <div class="cookie-buttons">
+        <button id="accept-cookies" class="cookie-btn primary">
+          Akceptuję
+        </button>
+        <button id="decline-cookies" class="cookie-btn secondary">
+          Odrzucam
+        </button>
+      </div>
+    </div>
+    
+    <footer>
+      <div class="logoWithLinks">
+        <a href="index.html" style="text-align:left;">
+          <svg
+            class="logoFooter"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1521 1703"
+            shape-rendering="geometricPrecision"
+            text-rendering="geometricPrecision"
+            fill="none"
+          >
+            <g filter="url(#filter0_i_5_378)">
+            <path d="M732.639 741.129V1208.27H879.702L879.702 741.129H732.639ZM1031.57 741.129V1014.11C1031.57 1037.82 1024.2 1056.08 1009.46 1068.9C995.365 1082.35 977.744 1089.08 956.597 1089.08C941.859 1089.08 928.723 1085.88 917.188 1079.47C905.654 1073.7 896.362 1065.37 889.314 1054.48C882.906 1043.58 879.702 1030.13 879.702 1014.11L822.991 1039.1C822.991 1076.27 831.001 1107.98 847.021 1134.26C863.041 1161.17 884.828 1181.68 912.382 1195.77C939.937 1210.51 971.015 1217.88 1005.62 1217.88C1038.3 1217.88 1067.46 1210.51 1093.09 1195.77C1119.36 1181.04 1140.19 1160.53 1155.56 1134.26C1170.94 1107.98 1178.63 1076.59 1178.63 1040.06V741.129L1031.57 741.129ZM1330.5 741.129V1014.11C1330.5 1037.82 1323.13 1056.08 1308.39 1068.9C1294.3 1082.35 1276.68 1089.08 1255.53 1089.08C1240.79 1089.08 1227.65 1085.88 1216.12 1079.47C1204.59 1073.7 1195.29 1065.37 1188.25 1054.48C1181.84 1043.58 1178.63 1030.13 1178.63 1014.11L1094.05 1025.64C1095.33 1065.37 1104.62 1099.33 1121.92 1127.53C1139.87 1156.37 1163.25 1178.47 1192.09 1193.85C1221.57 1209.87 1254.57 1217.88 1291.09 1217.88C1326.98 1217.88 1358.7 1210.19 1386.25 1194.81C1414.45 1180.07 1436.55 1158.61 1452.57 1130.41C1469.23 1102.86 1477.56 1069.54 1477.56 1030.45V741.129H1330.5Z" fill="white"/>
+            </g>
+            <g filter="url(#filter1_i_5_378)">
+            <path d="M51.9045 961V493.86H198.967V961H51.9045ZM350.836 961V688.021C350.836 664.311 343.467 646.049 328.729 633.233C314.631 619.776 297.009 613.048 275.863 613.048C261.125 613.048 247.988 616.252 236.454 622.66C224.92 628.427 215.628 636.757 208.579 647.651C202.171 658.544 198.967 672.001 198.967 688.021L142.257 663.03C142.257 625.864 150.267 594.144 166.287 567.872C182.307 540.958 204.094 520.453 231.648 506.355C259.202 491.617 290.281 484.248 324.884 484.248C357.564 484.248 386.721 491.617 412.353 506.355C438.625 521.093 459.451 541.599 474.83 567.872C490.209 594.144 497.899 625.543 497.899 662.069V961H350.836ZM649.768 961V688.021C649.768 664.311 642.398 646.049 627.66 633.233C613.563 619.776 595.941 613.048 574.794 613.048C560.056 613.048 546.92 616.252 535.385 622.66C523.851 628.427 514.56 636.757 507.511 647.651C501.103 658.544 497.899 672.001 497.899 688.021L413.314 676.487C414.595 636.757 423.887 602.795 441.188 574.6C459.131 545.764 482.52 523.657 511.356 508.278C540.832 492.258 573.833 484.248 610.359 484.248C646.243 484.248 677.963 491.937 705.517 507.316C733.712 522.055 755.819 543.521 771.839 571.716C788.5 599.271 796.83 632.592 796.83 671.681V961H649.768Z" fill="white"/>
+            </g>
+            <defs>
+            <filter id="filter0_i_5_378" x="732.639" y="741.129" width="744.926" height="476.752" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset/>
+            <feGaussianBlur stdDeviation="160.199"/>
+            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.08 0"/>
+            <feBlend mode="normal" in2="shape" result="effect1_innerShadow_5_378"/>
+            </filter>
+            <filter id="filter1_i_5_378" x="51.9043" y="484.248" width="744.926" height="476.752" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset/>
+            <feGaussianBlur stdDeviation="160.199"/>
+            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.08 0"/>
+            <feBlend mode="normal" in2="shape" result="effect1_innerShadow_5_378"/>
+            </filter>
+            </defs>
+          </svg>
+        </a>
+        <div class="social-links">
+          <a
+            href="https://www.linkedin.com/in/marekwietecki/"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a
+            href="https://www.behance.net/marekwietecki"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="fab fa-behance"></i>
+          </a>
+          <a
+            href="https://www.youtube.com/@marekwietecki"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footerLinks">
+        <a class="navLinks" href="index.html#top">
+          <svg class="icons size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M9.293 2.293a1 1 0 0 1 1.414 0l7 7A1 1 0 0 1 17 11h-1v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6H3a1 1 0 0 1-.707-1.707l7-7Z" clip-rule="evenodd"/>
+          </svg>
+          <span>&nbsp;O mnie</span>
+        </a>
+        
+        <a class="navLinks" href="index.html#projects">
+          <svg class="icons size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M1 5.25A2.25 2.25 0 0 1 3.25 3h13.5A2.25 2.25 0 0 1 19 5.25v9.5A2.25 2.25 0 0 1 16.75 17H3.25A2.25 2.25 0 0 1 1 14.75v-9.5Zm1.5 5.81v3.69c0 .414.336.75.75.75h13.5a.75.75 0 0 0 .75-.75v-2.69l-2.22-2.219a.75.75 0 0 0-1.06 0l-1.91 1.909.47.47a.75.75 0 1 1-1.06 1.06L6.53 8.091a.75.75 0 0 0-1.06 0l-2.97 2.97ZM12 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd"/>
+          </svg>
+          <span>&nbsp;Projekty</span>
+        </a>
+        
+        <a class="navLinks" href="kontakt.html">
+          <svg class="icons size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M3 4a2 2 0 0 0-2 2v1.161l8.441 4.221a1.25 1.25 0 0 0 1.118 0L19 7.162V6a2 2 0 0 0-2-2H3Z"/>
+            <path d="m19 8.839-7.77 3.885a2.75 2.75 0 0 1-2.46 0L1 8.839V14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.839Z"/>
+          </svg>
+          <span>&nbsp;Kontakt</span>
+        </a>
+        
+        <a class="navLinks" href="certyfikaty.html">
+          <svg class="icons size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M3 3.5A1.5 1.5 0 0 1 4.5 2h6.879a1.5 1.5 0 0 1 1.06.44l4.122 4.12A1.5 1.5 0 0 1 17 7.622V16.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 3 16.5v-13Zm10.857 5.691a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 0 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd"/>
+          </svg>
+          <span>Certyfikaty</span>
+        </a>
+
+        <!-- testimonials -->
+      </div>
+      <div class="footerTexts">
+        <p class="footerText">
+          © Marek Wietecki 2026. Treści chronione prawem autorskim.
+        </p>
+      </div>
+    </footer>
+  </body>
+    <script>
+      const header = document.querySelector("header");
+      const spacex = document.querySelector(".spaceX");
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (!entry.isIntersecting) {
+            header.classList.add("headerShadow");
+          } else {
+            header.classList.add("headerShadow");
+          }
+        },
+        { threshold: 0.1 } // reaguje, gdy choć 10% hero jest widoczne
+      );
+
+      observer.observe(spacex);
+
+      /**/
+
+      function toggleMenu() {
+        const links = document.querySelector(".headerLinks");
+        links.classList.toggle("show");
+      }
+
+      /**/
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const header = document.querySelector("header");
+        const spacex = document.querySelector(".spaceX");
+
+        function updatePadding() {
+          const headerHeight = header.offsetHeight;
+          spacex.style.paddingTop = headerHeight * 1.18 + "px";
+        }
+
+        window.addEventListener("resize", updatePadding);
+        updatePadding(); // Uruchomienie przy załadowaniu strony
+
+        // Przykładowa logika, która zmienia wysokość nagłówka np. po kliknięciu
+        document
+          .querySelector(".menuToggle")
+          .addEventListener("click", function () {
+            header.classList.toggle("header-hidden");
+            updatePadding();
+          });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".sideNavWrapper a");
+      
+        function updateActiveLink() {
+          const triggerHeight = window.innerHeight * 0.25; // górne 25%
+          let currentSection = null;
+      
+          sections.forEach(section => {
+            const top = section.getBoundingClientRect().top;
+            if (top <= triggerHeight && top + section.offsetHeight > triggerHeight) {
+              currentSection = section;
+            }
+          });
+      
+          navLinks.forEach(link => link.classList.remove("active"));
+          if (currentSection) {
+            const id = currentSection.getAttribute("id");
+            const activeLink = document.querySelector(`.sideNavWrapper a[href="#${id}"]`);
+            if (activeLink) activeLink.classList.add("active");
+          }
+        }
+      
+        window.addEventListener("scroll", updateActiveLink);
+        window.addEventListener("resize", updateActiveLink);
+        updateActiveLink();
+      
+        navLinks.forEach(link => {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute("href").substring(1);
+            const target = document.getElementById(targetId);
+            if (target) {
+              window.scrollTo({
+                top: target.offsetTop - 80,
+                behavior: "smooth"
+              });
+            }
+          });
+        });
+      });   
+    </script> 
+     <!-- Self changing title -->
+     <script>
+      const projectTitle = "Aplikacja Mobilna Monexo"; // Twój tytuł projektu
+      const fullTitle = `Marek Wietecki | ${projectTitle}`;
+      const portfolioTitle = "Marek Wietecki | Portfolio";
+      let i = 0;
+      
+      // Funkcja typewriter (animacja tylko raz)
+      function typeTitle() {
+      if (i <= fullTitle.length) {
+          document.title = fullTitle.slice(0, i);
+          i++;
+          setTimeout(typeTitle, 80); // prędkość liter
+      }
+      }
+      
+      // Start animacji po załadowaniu DOM
+      window.addEventListener("DOMContentLoaded", () => {
+          typeTitle();
+      });
+    </script>
+  </body>
+  <script src="js/cookie.js"></script>
+</html>

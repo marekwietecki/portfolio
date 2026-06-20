@@ -1,0 +1,2186 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strona Internetowa: PlanetRoad - Marek Wietecki</title>
+    <meta
+      name="description"
+      content="Projekt identyfikacji wizualnej PlanetRoad autorstwa Marka Wieteckiego. Profesjonalny branding i design system dla firmy zajmującej się projektowanie dróg."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="assets/brand/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/brand/favicon-32x32.png"
+    />
+    <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js"></script>
+    <!-- Google Tag Manager 
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KP2BLH2V');
+    </script>
+     End Google Tag Manager -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-5WEZ1GN7W6"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      // 🔴 DOMYŚLNA ZGODA (BRAK ZGODY)
+      gtag("consent", "default", {
+        ad_storage: "denied",
+        analytics_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+      });
+
+      gtag("js", new Date());
+
+      // GA4
+      gtag("config", "G-5WEZ1GN7W6", {
+        anonymize_ip: true,
+      });
+
+      // Google Ads
+      gtag("config", "AW-17997930573");
+    </script>
+    <style>
+      /* Config */
+      html {
+        scroll-behavior: smooth; /* działa też dla wewnętrznych odnośników */
+      }
+      body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        font-family: "Outfit", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif,
+          sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f6f6f7;
+        color: #555555;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+      }
+      section {
+        width: 100%;
+        /*background-color: aqua;*/
+      }
+      h1 {
+        font-size: 36px;
+        line-height: 36px;
+        margin-bottom: 0.5vh;
+      }
+      h2 {
+        font-size: 24px;
+      }
+      h3 {
+        font-size: 16px;
+        margin-bottom: 1vh;
+        padding-bottom: 0px;
+      }
+      p {
+        text-align: left;
+        font-size: clamp(0.7rem, calc(0.5vw + 0.5rem), 1.2rem);
+        font-weight: 400;
+        line-height: 1.4em;
+        margin: 4px 4px;
+        margin-left: 2px;
+        max-width: 90ch;
+        width: calc(100% - 8vw);
+        margin-right: 8vw;
+      }
+      a {
+        text-decoration: none;
+        transition: color 0.2s ease;
+        cursor: pointer;
+        color: #555555;
+      }
+      a:hover {
+        opacity: 72%;
+      }
+      a svg {
+        fill: currentColor;
+        transition: fill 0.2s ease;
+      }
+      img {
+        transition: transform 0.3s;
+      }
+      img:hover {
+        transform: scale(1.05);
+      }
+      /* Header */
+      header {
+        background: #f6f6f7;
+        font-size: 28px;
+        text-align: left;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 32px 6vw;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        z-index: 1000;
+        box-shadow: 0 0px 32px #f0f0f0;
+      }
+      .headerNav {
+        display: flex;
+        flex-direction: row;
+        align-items: center; /* wyrównanie do środka */
+        justify-content: space-between; /* albo inny układ */
+        width: 60%;
+      }
+      .menuToggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #000;
+      }
+      .menuToggle:hover {
+        color: #696969;
+      }
+      .menuToggle:active {
+        color: #696969;
+      }
+      .headerShadow {
+        box-shadow: 0 0px 32px #dddddd;
+        /*transition: border 0.3s ease-in-out;*/
+      }
+      .headerLink {
+        color: #444444;
+        font-weight: 700;
+        font-size: clamp(0.4rem, calc(0.5vw + 0.7rem), 1.1rem);
+      }
+      .headerLink:hover {
+        opacity: 64%;
+      }
+      .headerLinks {
+        display: flex;
+        flex-direction: row;
+        gap: clamp(16px, 3vw, 40px);
+      }
+      .logo {
+        width: clamp(140px, 34%, 200px);
+        height: auto;
+        align-self: left;
+        justify-content: center;
+        cursor: pointer;
+      }
+      /* Content */
+      .projectLayout {
+        display: grid;
+        grid-template-columns: 64% 9% 20% 2%; /* margines – treść – nav – margines */
+        gap: 3rem;
+        max-width: 1400px;
+        margin: 0 auto;
+        width: 88vw;
+        padding-inline: 4vw;
+      }
+      .projectContent {
+        flex: 1;
+        grid-column: 1; /* boczne menu w trzeciej kolumnie */
+        max-width: 1000px;
+      }
+      .gradientBackground {
+        background: linear-gradient(45deg, #070814, #151e4d, #0f1a5a);
+        background-size: 400% 400%;
+        animation: gradientMove 6s ease infinite;
+        width: 88%;
+        height: auto;
+        margin-top: 3vh;
+        border-radius: 16px;
+        aspect-ratio: 16/9;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+        color: #fafafa;
+        font-weight: 100;
+        font-size: 12px;
+      }
+      .gradientBackground:hover {
+        transform: scale(1.05);
+      }
+      @keyframes gradientMove {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      .imageFigure {
+        width: 92%;
+        margin: 0 0 2vh 0; /* left aligned */
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+      }
+
+      .imageFigure img {
+        width: 100%;
+        display: block;
+        border-radius: 24px;
+      }
+
+      .imageFigure figcaption {
+        /* 
+        text-align: left;
+        padding-left: 4vw;
+        */
+        text-align: center;
+        color: #b8b8b8;
+        margin-top: 1vh;
+        font-size: 9px;
+      }
+      .processWrapper {
+        display: flex;
+        flex-direction: column;
+        padding-top: 10px;
+        gap: 1.5vh;
+        width: 100%; /* dopasowuje się do kolumny grida */
+        box-sizing: border-box;
+        margin-bottom: 4vh;
+      }
+      .processPhoto {
+        width: 88%;
+        border-radius: 16px;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        transition: transform 0.3s ease; /* płynne przejście */
+        cursor: pointer;
+      }
+      .processPhoto:hover {
+        transform: scale(1.05);
+      }
+      .caveat {
+        font-family: "Caveat", cursive;
+      }
+      .siteLink {
+        color: #444;
+        font-weight: 600;
+        font-size: clamp(0.7rem, calc(0.5vw + 0.5rem), 1.2rem);
+        text-decoration: underline;
+      }
+      .siteLink:hover {
+        opacity: 64%;
+      }
+      .mini-gallery {
+        display: flex;
+        justify-content: center;
+        padding-right: 8vw;
+        gap: 2vw;
+        flex-wrap: wrap;
+        margin-top: 4vh;
+      }
+      .mini-gallery img {
+        width: auto;
+        height: 40px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+      .mini-gallery img:hover {
+        transform: scale(1.04);
+      }
+      .sideNav {
+        position: sticky;
+        grid-column: 3; /* boczne menu w trzeciej kolumnie */
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end; /* 🔑 pcha wrapper maksymalnie w prawo */
+        gap: 0.5rem;
+        height: fit-content;
+        padding-right: 4vw;
+      }
+      .sideNav.stop {
+        position: absolute;
+        top: auto;
+        bottom: 4vh; /* możesz dopasować */
+        transform: none;
+      }
+      .sideNav a {
+        text-decoration: none;
+        color: #555;
+        font-weight: 500;
+        transition: color 0.2s, font-weight 0.2s;
+        cursor: pointer;
+      }
+      .sideNav a:hover,
+      .sideNav a.active {
+        color: #1e6ed6;
+        font-weight: 600;
+      }
+      .sideNavWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* 🔑 linki wyrównane do lewej */
+        gap: 0.5rem;
+      }
+      .sideNavWrapper a {
+        color: #777;
+        text-decoration: none;
+        transition: color 0.3s ease, transform 0.2s ease;
+        cursor: pointer;
+      }
+      .sideNavWrapper a:hover {
+        color: #0070f3;
+        transform: translateX(-4px);
+      }
+      .sideNavWrapper a.active {
+        color: #0070f3;
+        font-weight: 600;
+      }
+      .navLoopWrapper {
+        padding-top: 20vh;
+        padding-bottom: 8vh;
+        padding-left: 4vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box; /* uwzględnia padding w szerokości */
+      }
+      .navLoop {
+        flex: 1;
+        text-align: center;
+        line-height: 130%;
+      }
+      .loopLink {
+        cursor: pointer;
+        text-align: center;
+        color: #444;
+        font-weight: 600;
+        text-decoration: underline;
+      }
+      .loopLink:hover {
+        opacity: 64%;
+      }
+      /* Footer */
+      footer {
+        background-color: #222;
+        color: white;
+        text-align: center;
+        padding-top: 80px;
+        padding-bottom: 20px;
+        margin-top: 40px;
+        font-size: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        gap: 4vh;
+      }
+      .logoWithLinks {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 16vw;
+        padding-right: 16vw;
+        padding-bottom: 4vh;
+      }
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+      .social-icon i {
+        font-size: 30px;
+        color: #fff;
+        transition: color 0.3s;
+      }
+      .social-icon i:hover {
+        color: #1e6ed6; /* Kolor po najechaniu (LinkedIn Blue) */
+      }
+      .logoFooter {
+        width: clamp(64px, 10vw, 112px);
+        height: auto;
+        align-self: center;
+      }
+      .logoFooter:hover {
+        opacity: 64%;
+      }
+      .footerLinks {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 4vw;
+        flex-wrap: wrap;
+        padding-bottom: 20px;
+      }
+      .ja {
+        text-align: left;
+      }
+      .link {
+        color: #444;
+        font-weight: 600;
+        font-size: clamp(0.66rem, calc(1vw + 0.5rem), 1.25rem);
+        text-align: left;
+      }
+      .icons {
+        width: auto;
+        height: 16px;
+        padding: 1px;
+        margin-top: 1.5px;
+      }
+      .navLinks {
+        color: #dddddd;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.2em;
+        font-size: clamp(0.4rem, calc(1vw + 0.5rem), 1.25rem);
+        transition: color 0.2s ease;
+      }
+      .navLinks:hover {
+        opacity: 64%;
+      }
+      .footerText {
+        font-weight: lighter;
+        font-size: 12px;
+        color: #c4c4c4;
+        text-align: center;
+      }
+      .footerTexts {
+        display: flex;
+        justify-content: center;
+        border-top: 1px solid #444444;
+        padding-top: 20px;
+        padding-left: 20px;
+      }
+      @media (max-width: 740px) {
+        /* Config */
+        h1 {
+          font-size: 32px;
+        }
+        /* Header */
+        header {
+          flex-direction: column;
+          padding: 20px 6vw;
+        }
+        .headerLinks {
+          padding-top: 4vh;
+          flex-direction: column;
+          display: none;
+          width: 100%;
+          align-items: center;
+        }
+        .headerLink {
+          text-align: center;
+        }
+        .menuToggle {
+          display: block;
+          align-self: flex-end;
+          margin-top: 8px;
+          right: 4vw;
+          transform: translateY(-22%); /* wyśrodkuj pionowo względem headera */
+        }
+        .headerNav {
+          width: 100%;
+        }
+        .headerLinks.show {
+          display: flex;
+        }
+        /* Content */
+        .sideNav {
+          display: none;
+        }
+        .projectLayout {
+          flex-direction: column;
+          gap: 2rem;
+          grid-template-columns: 98% 2%; /* margines – treść – nav – margines */
+        }
+        .projectIntro {
+          width: 82%;
+        }
+        .processWrapper {
+          flex-direction: column;
+          padding-top: 0px;
+        }
+        .processProgress {
+          width: 88vw;
+          margin-bottom: -20px;
+        }
+        .processPhoto {
+          width: 80vw;
+          border-radius: 16px;
+        }
+        /* Footer */
+        .logoWithLinks {
+          padding-left: 12vw;
+          padding-right: 12vw;
+        }
+        .social-icon i {
+          font-size: 20px;
+          color: #fff;
+          transition: color 0.3s;
+        }
+        .footerText {
+          font-size: 9px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="headerNav">
+        <a
+          class="headerLink"
+          style="font-size: clamp(0.6rem, calc(0.75vw + 1.05rem), 1.65rem)"
+          href="index.html"
+        >
+          marekwietecki
+          <!--
+          <img
+            src="assets/brand/marekwieteckiDark.svg"
+            alt="Logo tekstowe - marekwietecki.pl"
+            class="logo"
+          />
+          -->
+        </a>
+        <button class="menuToggle" id="menuToggle" onclick="toggleMenu()">
+          ☰
+        </button>
+      </div>
+      <div class="headerLinks">
+        <a class="headerLink" href="certyfikaty.html">Certyfikaty</a>
+        <a class="headerLink" href="kontakt.html">Kontakt</a>
+      </div>
+    </header>
+    <section class="spaceX" id="spaceX"></section>
+    <div class="projectLayout">
+      <main class="projectContent">
+        <section style="padding-top: 8vh" id="o-projekcie">
+          <h1 style="margin: 0">PlanetRoad - Firmowa Strona Internetowa</h1>
+          <p style="padding-top: 0vh">
+            Nowa strona internetowa firmy PlanetRoad, którą zaprojektowałem w
+            celu uproszczenia klientom poznania firmy, prezentacji
+            dotychczasowych realizacji w czytelny i atrakcyjny sposób oraz
+            ułatwienia kontaktu z firmą
+          </p>
+
+          <!-- 
+            Strona prowadzi użytkownika intuicyjnie przez ofertę firmy, 
+            eksponując doświadczenie i jakość projektów, a jednocześnie 
+            zapewnia przyjazną i profesjonalną obecność w sieci.
+          -->
+          <p style="padding-top: 3vh"><b>Rola:</b> UX Designer</p>
+
+          <p style="padding-top: 1vh">
+            <b>Zakres odpowiedzialności:</b> Research, Koncept produktu, Projekt
+            interfejsu, Implementacja strony, Testy użyteczności
+          </p>
+
+          <p style="padding-top: 1vh"><b>Czas trwania:</b> 34 tygodnie</p>
+          <!-- 30? -->
+
+          <p style="padding-top: 1vh"><b>Metodyka:</b> Lean UX</p>
+
+          <a
+            href="assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Cover.webp"
+            data-lightbox="galeria-identyfikacja-wizualna-PlanetRoad"
+            style="display: block"
+          >
+            <div class="gradientBackground">
+              <img
+                style="width: 44%"
+                src="/assets/projects/identyfikacja-wizualna-PlanetRoad/PlanetRoad_logo_portfolio_white.png"
+                alt="Logo PlanetRoad"
+              />
+              <span>Strona Internetowa</span>
+            </div>
+          </a>
+          <h3 style="padding-top: 3vh; margin-bottom: 1vh">Kontekst</h3>
+          <p>
+            Klient potrzebował przebudowania strony internetowej, tak aby
+            umożliwiała ona prezentacje ukończonych projektów i budowania
+            profesjonalnego wizerunku firmy. Moim głównym celem było stworzenie
+            strony intuicyjnej, spójnej z nową identyfikacją wizualną i łatwej w
+            obsłudze dla użytkowników o zróżnicowanym zaawansowaniu technicznym
+            (trudno jednoznacznie zcharakteryzować w tym aspekcie głównych
+            klientów firmy)
+          </p>
+
+          <h3 style="padding-top: 3vh; margin-bottom: 1vh">Problem</h3>
+          <p>
+            Użytkownicy nie mieli możliwości poznania oferty i doświadczenia
+            firmy oraz łatwego kontaktu z zespołem PlanetRoad, gdyż
+            dotychczasowa strona nie eksponowała doświadczenia i jakości
+            realizacji, a kontakt z firmą nie był bezpośrednio dostępny na
+            stronie.
+          </p>
+
+          <h3 style="padding-top: 3vh; margin-bottom: 1vh">Cele</h3>
+          <p>
+            🎯 <b>Ułatwienie klientowi poznania firmy</b> – szybki dostęp do
+            informacji o działalności i doświadczeniu PlanetRoad.
+          </p>
+          <p>
+            🎯 <b>Prezentacja dotychczasowych realizacji</b> w czytelny i
+            atrakcyjny sposób, podkreślający profesjonalizm firmy.
+          </p>
+          <p>
+            🎯 <b>Uproszczenie kontaktu z firmą</b> – intuicyjna nawigacja,
+            widoczne formularze i łatwy dostęp do danych kontaktowych.
+          </p>
+          <p>
+            🎯 <b>Profesjonalna i spójna obecność w sieci</b> – strona wspiera
+            wizerunek firmy zgodny z nową identyfikacją wizualną.
+          </p>
+
+          <h3 style="padding-top: 3vh; margin-bottom: 1vh">Ograniczenia</h3>
+          <p>
+            ⚠️ <b>Strona musi odpowiadać sektorowi B2B</b> – utrzymać
+            profesjonalny i wiarygodny wizerunek firmy.
+          </p>
+          <p>
+            ⚠️
+            <b
+              >Nowa strona musi być spójna z istniejącą identyfikacją
+              wizualną</b
+            >
+            – kolory, typografia i styl graficzny muszą pasować do nowego
+            brandingu.
+          </p>
+          <p>
+            ⚠️ <b>Brak wcześniejszego doświadczenia firmy w digitalu</b> –
+            strona musi być intuicyjna dla użytkownika, który wcześniej nie
+            korzystał z cyfrowych narzędzi.
+          </p>
+          <p>
+            ⚠️ <b>Konieczność zachowania dostępności informacji</b> podczas
+            wdrożenia – firma musi nadal być w pełni dostępna dla klientów.
+          </p>
+        </section>
+
+        <!-- BADANIA -->
+        <section id="badania">
+          <h2 style="padding-top: 8vh; margin-bottom: 2vh">Badania</h2>
+          <p>
+            Projekt nowej strony internetowej dla PlanetRoad rozpocząłem od
+            audytu starej strony i poznania szegółowych oczekiwań mojego
+            Klienta.
+          </p>
+          <p>
+            <b>Rozmowa z CEO</b> zarysowała mi obraz tego, jak miałaby wyglądać
+            strona firmy. PlanetRoad skupia się głównie na
+            <b>współpracy B2B</b> - (np. Developerami) oraz jednostkami
+            samorządowymi. Dlatego priorytetem jest profesjonalizm, oraz
+            budowanie zaufania do marki i zwiększania jej wiarygodności. Sam CEO
+            dał mi również kilka swoich pomysłów odnośnie informacji, które
+            chciałby posiadać na stronie oraz klika użytecznych linków do dolnej
+            nawigacji strony które mogłem później wkomponować w projekt.
+          </p>
+          <p>
+            Następnie przeprowadziłem <b>analizę konkurencji</b> w branży
+            drogowej, która ujawniła dużą powtarzalność wizualną - wiele firm
+            korzystało z podobnych układów stron i schematycznych kompozycji. W
+            tym przypadku problemem nie było więc wyróżnienie się spośród
+            konkurencji, a zachowanie balansu pomiędzy profesjonalizmem i
+            technicznym charakterem strony, a nieco bardziej nowowczesnych
+            podejściem do projektowania stron internetowych.
+          </p>
+          <p>
+            Kolejno <b>zbadałem oczekiwania użytkowników</b> i najczęściej
+            wyszukiwane informacje o firmach z branży, aby zapewnić użyteczność
+            nowej strony internetowej pod kątem UX i SEO. Analiza treści
+            pokazała, że kluczowe są: przejrzysta oferta, szybki kontakt oraz
+            portfolio poprzedncih projektów.
+          </p>
+          <p>
+            Potem przeszedłem do <b>analizy ścieżki użytkownika</b>, która
+            pozwoliła mi lepiej zrozumieć, jakie działania podejmuje potencjalny
+            klient od momentu wejścia na stronę do skontaktowania się z firmą.
+            Zmapowanie tych etapów umożliwiło mi zaplanowanie logicznej i
+            intuicyjnej struktury strony — tak, aby użytkownik mógł łatwo
+            odnaleźć informacje o usługach, przeglądać realizacje i
+            bezproblemowo przejść do sekcji kontaktu.
+          </p>
+          <p>
+            Równolegle przeprowadziłem <b>analizę SEO</b> w celu poznania
+            najczęściej wyszukiwanych fraz związanych z branżą drogową i
+            projektowaniem infrastruktury. Wyniki pozwoliły mi dobrać
+            odpowiednie słowa kluczowe do treści oraz zaplanować strukturę
+            nagłówków i sekcji. Dzięki temu strona jest nie tylko atrakcyjna
+            wizualnie, ale również lepiej widoczna w wyszukiwarkach
+            internetowych.
+          </p>
+          <p>
+            Przeprowadziłem także <b>audyt techniczny starej strony</b>, który
+            ujawnił problemy z prędkością ładowania, nieczytelnością na
+            urządzeniach mobilnych oraz brakiem wyraźnych ścieżek konwersji. Te
+            obserwacje stały się podstawą do zaprojektowania nowego układu i
+            optymalizacji strony pod kątem wydajności oraz zgodności z
+            aktualnymi standardami webowymi.
+          </p>
+        </section>
+
+        <figure class="imageFigure">
+          <a
+            href="assets/projects/strona-internetowa-PlanetRoad/planetroad-research_insights.png"
+            data-lightbox="planetroad-process"
+            data-title="Wnioski z badań"
+          >
+            <img
+              src="assets/projects/strona-internetowa-PlanetRoad/planetroad-research_insights.png"
+              alt="Wnioski z badań"
+            />
+          </a>
+          <figcaption>Wnioski z badań</figcaption>
+        </figure>
+
+        <!-- IDEACJA -->
+        <section id="ideacja">
+          <!-- jakieś flow, jakieś wireframe'y -->
+          <h2 style="padding-top: 8vh; margin-bottom: 2vh">Ideacja</h2>
+          <p>
+            Na etapie ideacji przełożyłem wnioski z badań na konkretne założenia
+            projektowe. Skupiłem się na zaprojektowaniu struktury strony, która
+            w pierwszych sekundach odpowiada na kluczowe pytania użytkownika:
+            czym firma się zajmuje, jakie realizacje ma za sobą i jak szybko
+            można nawiązać kontakt.
+          </p>
+          <p>
+            Projekt zacząłem od <b>priorytetyzacji</b> - jako główny cel
+            wyznaczyłem ułatwienie klientom zapoznania się z firmą i ukończonymi
+            przez nią projektami. Za nieco mniej ważną przyjąłem estetykę
+            wykonania strony, mimo wszsytko chciałem, aby przyciągała klienta
+            swoim wizualnie przyjemnym dla oka wyglądem. Najniższy priorytet
+            nadałem natomiast utrzymaniu spójności z innymi kanałami komunikacji
+            (działając według wcześniej stworzonej Identyfikacji Wizualnej ten
+            cel niejako sam się wypełnia).
+          </p>
+          <p>
+            Równolegle pracowałem na niskopoziomowych wireframe’ach, testując
+            różne układy treści i hierarchię informacji, zanim przeszedłem do
+            finalnego interfejsu.
+          </p>
+          <p>
+            Na etapie projektowania zadbałem o dostępność i czytelność elementów
+            interfejsu, tworząc layouty zgodne z regułami WCAG. Stworzyłem Style
+            Guide obejmujący kolory, typografię i komponenty, zapewniając
+            spójność wizualną strony.
+          </p>
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-information_architecture.png"
+              data-lightbox="galeria-identyfikacja-wizualna-PlanetRoad"
+              data-title="Architektura Informacji"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-information_architecture.png"
+                alt="Architektura Informacji"
+              />
+            </a>
+            <figcaption>Architektura Informacji</figcaption>
+          </figure>
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-user_flow.png"
+              data-lightbox="galeria-identyfikacja-wizualna-PlanetRoad"
+              data-title="Główne User Flow"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-user_flow.png"
+                alt="Główne User Flow"
+              />
+            </a>
+            <figcaption>Główne User Flow</figcaption>
+          </figure>
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-wireframes_Hero.png"
+              data-lightbox="galeria-identyfikacja-wizualna-PlanetRoad"
+              data-title="Wireframe'y - Sekcja Hero"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-wireframes_Hero.png"
+                alt="Wireframe'y - Sekcja Hero"
+              />
+            </a>
+            <figcaption>Wireframe'y - Sekcja Hero</figcaption>
+          </figure>
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-wireframes_Team.png"
+              data-lightbox="galeria-identyfikacja-wizualna-PlanetRoad"
+              data-title="Wireframe'y - Sekcja Team"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-wireframes_Team.png"
+                alt="Wireframe'y - Sekcja Team"
+              />
+            </a>
+            <figcaption>Wireframe'y - Sekcja Team</figcaption>
+          </figure>
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-wireframes_Numbers.png"
+              data-lightbox="galeria-identyfikacja-wizualna-PlanetRoad"
+              data-title="Wireframe'y - Sekcja W Liczbach"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-wireframes_Numbers.png"
+                alt="Wireframe'y - Sekcja W Liczbach"
+              />
+            </a>
+            <figcaption>Wireframe'y - Sekcja W Liczbach</figcaption>
+          </figure>
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-wireframes_Experience.png"
+              data-lightbox="galeria-identyfikacja-wizualna-PlanetRoad"
+              data-title="Wireframe'y - Podstrona Doświadczenie"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-wireframes_Experience.png"
+                alt="Wireframe'y - Podstrona Doświadczenie"
+              />
+            </a>
+            <figcaption>Wireframe'y - Podstrona Doświadczenie</figcaption>
+          </figure>
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-visual_identity.png"
+              data-lightbox="galeria-identyfikacja-wizualna-PlanetRoad"
+              data-title="Identyfikacja Wizualna PlanetRoad"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-visual_identity.png"
+                alt="Identyfikacja Wizualna PlanetRoad"
+              />
+            </a>
+            <figcaption>Identyfikacja Wizualna PlanetRoad</figcaption>
+          </figure>
+          <p>
+            Pełną Identyfikację Wizualną można zobaczyć pod
+            <a
+              href="https://www.marekwietecki.com/identyfikacja-wizualna-PlanetRoad"
+              style="text-decoration: underline"
+              target="_blank"
+              rel="noopener noreferrer"
+              >tym linkiem</a
+            >
+          </p>
+        </section>
+
+        <!-- ITERACJE -->
+        <section id="iteracje">
+          <h2 style="padding-top: 8vh">Iteracje</h2>
+
+          <h3 style="margin-bottom: 1vh">
+            Tak strona wyglądała przed remake'iem:
+          </h3>
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-old_www_1.png"
+              data-lightbox="planetroad-process"
+              data-title="Strona przed remake'iem - cz.1"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-old_www_1.png"
+                alt="Strona przed remake'iem - cz.1"
+              />
+            </a>
+            <figcaption>Strona przed remake'iem - cz.1</figcaption>
+          </figure>
+
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-old_www_2.png"
+              data-lightbox="planetroad-process"
+              data-title="Strona przed remake'iem - cz.2"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-old_www_2.png"
+                alt="Strona przed remake'iem - cz.2"
+              />
+            </a>
+            <figcaption>Strona przed remake'iem - cz.2</figcaption>
+          </figure>
+          <p>
+            Jak widać na wyżej załączonym obrazku strona przekazywała podstawowe
+            informacje o firmie, jednak nie dawała potencjalnemu przyszłemu
+            kontrahentowi zbyt wielu szczegółów i nie przekonywała do podjęcia
+            współpracy.
+          </p>
+          <p>
+            Aby to zmienić zacząłem zmieniać firmową stronę od podstaw, aby
+            stała się ona prawdziwą wizytówką firmy. Na początku zastanowiłem
+            się...
+          </p>
+          <!-- coś że zaczeliśmy od naszego najwyższego priorytetu (żeby narracja płyneła)-->
+
+          <h3 style="padding-top: 3vh; margin-bottom: 1vh">
+            Jak zbuduję zaufanie użytkownika od pierwszego kontaktu? —
+            Rozszerzenie struktury strony
+          </h3>
+          <p>
+            Na wczesnym etapie rozwoju strony stwierdziłem, że:
+            <b
+              >Hero nie informuje użytkownika bezpośrednio czym się zajmujemy</b
+            >
+            - dla użytkownika, który trafi na naszą stronę poprzez organiczne
+            wyszukiwanie może być to mylącę. Ponad to
+            <b
+              >strona główna nie daje wystarczająco dużo przestrzeni na
+              budowanie zaufania i opowiedzenie historii firmy</b
+            >. W rozmowach z CEO oraz podczas audytu konkurencji wyraźnie widać
+            było, że firmy z branży drogowej, które skutecznie pozyskują
+            klientów B2B,
+            <b
+              >eksponują ludzi stojących za marką oraz twarde liczby
+              potwierdzające skalę działalności</b
+            >.
+          </p>
+
+          <p>
+            Aby rozwiązać te problemy, w pierwszej iteracji stworzyłem sekcję
+            Hero od zera, a także rozszerzyłem stronę główną o dwie nowe sekcje:
+            <b>prezentację zespołu</b> (przygotowanie i obróbka zdjęć) oraz
+            <b>doświadczenie firmy w liczbach</b> (podliczenie statystyk
+            firmowych). Równolegle wydzieliłem także, dwie nowe podstrony
+            <b>„Kontakt”</b>, który wcześniej był jedynie linkiem i
+            <b>„Doświadczenie”</b>, przenosząc formularz kontaktowy ze strony
+            głównej oraz dodając pierwsze referencje z wcześniejszych projektów.
+          </p>
+
+          <p>
+            Ten etap był również momentem edukacyjnym dla klienta —
+            <b
+              >uświadomiłem, jak kluczowe jest systematyczne zbieranie
+              referencji po zakończonych realizacjach</b
+            >, które wcześniej schodziły na dalszy plan w natłoku bieżących
+            obowiązków. W pryszłości stają się one jednak wizytówką i
+            świadectwem aktywności firmy.
+          </p>
+
+          <p>
+            Efektem tych zmian było
+            <b
+              >lepsze rozłożenie treści, wyraźniejsza hierarchia informacji i
+              mocniejsze pierwsze wrażenie</b
+            >, co bezpośrednio wspierało cele wizerunkowe i sprzedażowe strony.
+          </p>
+
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-hero.png"
+              data-lightbox="planetroad-process"
+              data-title="Nowa sekcja Hero"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-hero.png"
+                alt="Nowa sekcja Hero"
+              />
+            </a>
+            <figcaption>Nowa sekcja Hero</figcaption>
+          </figure>
+
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-numbers.png"
+              data-lightbox="planetroad-process"
+              data-title="Nowa sekcja - w liczbach"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-numbers.png"
+                alt="Nowa sekcja - w liczbach"
+              />
+            </a>
+            <figcaption>
+              Nowa sekcja strony głównej - "PlanetRoad w liczbach"
+            </figcaption>
+          </figure>
+
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-team.png"
+              data-lightbox="planetroad-process"
+              data-title="Nowa sekcja - Team"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-team.png"
+                alt="Nowa sekcja - Team"
+              />
+            </a>
+            <figcaption>Nowa sekcja strony głównej - "Team"</figcaption>
+          </figure>
+
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-contact.png"
+              data-lightbox="planetroad-process"
+              data-title="Nowa podstrona - Kontakt"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-contact.png"
+                alt="Nowa podstrona - Kontakt"
+              />
+            </a>
+            <figcaption>Nowa podstrona - Kontakt</figcaption>
+          </figure>
+
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-experience.png"
+              data-lightbox="planetroad-process"
+              data-title="Nowa podstrona - Doświadczenie"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-experience.png"
+                alt="Nowa podstrona - Doświadczenie"
+              />
+            </a>
+            <figcaption>Nowa podstrona - Doświadczenie</figcaption>
+          </figure>
+
+          <h3 style="padding-top: 3vh; margin-bottom: 1vh">
+            Dlaczego szybkość strony ma znaczenie w B2B? — Optymalizacja
+            wydajności i SEO
+          </h3>
+
+          <p>
+            Według najnowszych badań ponad 50% użytkowników opuści stronę gdy
+            ładuje się ona dłużej niż 3 sekundy! Mając tą świadomość i wiedząc,
+            że mogłoby to zniwelować wszelkie korzyści wynikające z posiadania
+            strony dla firmy, po dodaniu dużej ilości nowej treści na stronę
+            zdecydowałem się przetestować i w razie potrzeby poprawić
+            performance strony.
+          </p>
+
+          <p>
+            Okazało się, że po rozbudowie struktury strony zauważalnym problemem
+            stała się <b>spadająca wydajność strony</b>, szczególnie na
+            urządzeniach mobilnych. Analiza w Google PageSpeed Insights oraz
+            Lighthouse wykazała, że
+            <b>ciężkie grafiki znacząco wydłużają czas ładowania</b>, co
+            negatywnie wpływa zarówno na doświadczenie użytkownika, jak i
+            pozycjonowanie.
+          </p>
+
+          <p>
+            W ramach tej iteracji przeprowadziłem
+            <b>gruntowną optymalizację techniczną</b>: konwersję zdjęć do
+            formatu WebP, poprawę struktury HTML, optymalizację ładowania
+            zasobów oraz korekty SEO na stronie aby zadbać o pozycjonowanie w
+            google.
+          </p>
+
+          <p>
+            Po wdrożeniu zmian
+            <b>czas ładowania strony uległ wyraźnej poprawie</b>, a strona
+            zaczęła spełniać zalecenia Core Web Vitals, co stworzyło solidne
+            fundamenty pod dalszy rozwój i wysoką widoczność w wyszukiwarce. Ze
+            względu na brak dostępu do archiwalnych raportów Lighthouse, efekty
+            zostały oszacowane na podstawie realnych danych m.in. redukcji wagi
+            zasobów oraz znajomości dobrych praktyk wydajnościowych.
+          </p>
+
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-optimalization.png"
+              data-lightbox="planetroad-process"
+              data-title="Optymalizacja strony"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-optimalization.png"
+                alt="Optymalizacja strony"
+              />
+            </a>
+            <figcaption>Optymalizacja strony</figcaption>
+          </figure>
+
+          <h3 style="padding-top: 3vh; margin-bottom: 1vh">
+            Jak połączyć potrzeby użytkownika z celami biznesowymi? —
+            Priorytetyzacja oferty
+          </h3>
+
+          <p>
+            W kolejnej iteracji wspólnie z CEO zidentyfikowaliśmy, że
+            <b
+              >obenca oferta firmy jest mało konkretna i niejednoznaczna z
+              perspektywy biznesowej</b
+            >. Podczas warsztatów i rozmów strategicznych okazało się także, że
+            <b
+              >nie wszystkie usługi mają taką samą rentowność i znaczenie dla
+              rozwoju firmy</b
+            >.
+          </p>
+
+          <p>
+            W odpowiedzi na ten problem
+            <b>sporządziliśmy kompletną listę wszystkich realizowanych usług</b
+            >, które następnie zostały opisane, wycenione, oszacowane czasowo
+            oraz <b>priorytetyzowane pod kątem opłacalności biznesowej</b>.
+            Kolejnym krokiem było stworzenie dedykowanej podstrony dla
+            realizacji, tak aby klienci mogli zorientować się we własnym
+            zakresie w naszej ofercie jeszcze przed pierwszym kontaktem z firmą.
+          </p>
+
+          <p>
+            Efektem była <b>klarowna, uporządkowana oferta</b>, która wspiera
+            zarówno proces sprzedaży, jak i dalsze decyzje strategiczne.
+          </p>
+
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-realizacje.png"
+              data-lightbox="planetroad-process"
+              data-title="Nowa podstrona - Realizacje"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-realizacje.png"
+                alt="Nowa podstrona - Realizacje"
+              />
+            </a>
+            <figcaption>Nowa podstrona - Realizacje</figcaption>
+          </figure>
+
+          <h3 style="padding-top: 3vh; margin-bottom: 1vh">
+            Jak pomagam użytkownikowi szybko znaleźć właściwą usługę? —
+            Uproszczenie prezentacji realizacji
+          </h3>
+
+          <p>
+            Analizując zachowania użytkowników i przeprowadzając szybkie testy
+            użyteczności, zauważyłem, że
+            <b
+              >tematyczne grupowanie realizacji na stronie głównej było mało
+              czytelne dla nowych użytkowników</b
+            >. Osoby odwiedzające stronę chciały przede wszystkim szybko
+            sprawdzić, <b>czy firma wykonuje konkretną usługę</b>.
+          </p>
+
+          <p>
+            Dlatego zdecydowałem się
+            <b>zmniejszyć szczegółowość informacji na stronie głównej</b>,
+            eksponując <b>konkretne nazwy usług</b>, a bardziej rozbudowane
+            opisy przenosząc na dedykowane podstrony realizacji.
+          </p>
+
+          <p>
+            Podczas wielokrotnego przeglądania strony oraz prostych testów
+            użyteczności doszedłem do wniosku, że
+            <b
+              >warstwa wizualna nie zawsze wspierała zrozumienie prezentowanych
+              usług</b
+            >. Część zdjęć była odbierana jako zbyt ogólna lub niejednoznaczna,
+            co utrudniało szybkie powiązanie obrazu z konkretną realizacją.
+          </p>
+
+          <p>
+            Przy ograniczonym budżecie zdecydowałem się na rozwiązanie
+            pragmatyczne —
+            <b>samodzielnie przygotowałem scenografię i wykonałem zdjęcia</b>,
+            które w czytelny sposób pokazywały charakter i zakres realizowanych
+            usług.
+          </p>
+
+          <p>
+            Dzięki temu <b>prezentacja oferty stała się spójniejsza</b>, a
+            użytkownicy mogli szybciej zrozumieć, czym firma faktycznie się
+            zajmuje — bez konieczności wczytywania się w szczegółowe opisy.
+          </p>
+
+          <p>
+            Po tej zmianie
+            <b>nawigacja stała się prostsza i bardziej intuicyjna</b>, a
+            użytkownicy szybciej mogą odnaleźć interesujące ich obszary oferty.
+          </p>
+
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-offer.png"
+              data-lightbox="planetroad-process"
+              data-title="Dostosowanie oferty na stronie głównej"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-offer.png"
+                alt="Dostosowanie oferty na stronie głównej"
+              />
+            </a>
+            <figcaption>Dostosowanie oferty na stronie głównej</figcaption>
+          </figure>
+
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-pictures_edits_1.png"
+              data-lightbox="planetroad-process"
+              data-title="Dostosowanie pierwszego obrazka pod firmę"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-pictures_edits_1.png"
+                alt="Dostosowanie pierwszego obrazka pod firmę"
+              />
+            </a>
+            <figcaption>Dostosowanie pierwszego obrazka pod firmę</figcaption>
+          </figure>
+
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-pictures_edits_2.png"
+              data-lightbox="planetroad-process"
+              data-title="Dostosowanie drugiego zdjęcia pod firmę"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-pictures_edits_2.png"
+                alt="Dostosowanie drugiego zdjęcia pod firmę"
+              />
+            </a>
+            <figcaption>Dostosowanie drugiego zdjęcia pod firmę</figcaption>
+          </figure>
+
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-pictures_1.png"
+              data-lightbox="planetroad-process"
+              data-title="Zrobienie pierwszego zdjęcia pod firmę"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-pictures_1.png"
+                alt="Zrobienie pierwszego zdjęcia pod firmę"
+              />
+            </a>
+            <figcaption>Zrobienie pierwszego zdjęcia pod firmę</figcaption>
+          </figure>
+
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-pictures_2.png"
+              data-lightbox="planetroad-process"
+              data-title="Zrobienie drugiego zdjęcia pod firmę"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-pictures_2.png"
+                alt="Zrobienie drugiego zdjęcia pod firmę"
+              />
+            </a>
+            <figcaption>Zrobienie drugiego zdjęcia pod firmę</figcaption>
+          </figure>
+
+          <h3 style="padding-top: 3vh; margin-bottom: 1vh">
+            Jak skracam czas decyzji w procesie przetargowym? — Sortowanie i
+            grupowanie referencji
+          </h3>
+
+          <p>
+            W trakcie rozwoju strony firma ukończyła kilka projektów, a liczba
+            referencji znacząco wzrosła. Wpłynęło to na
+            <b>wydłużenie czasu wyszukiwania konkretnej referencji</b>
+          </p>
+
+          <p>
+            Podczas rozmowy z CEO poprosiłem go o znalezienie najdłuższej
+            referencji z zakresu PFU. Zadanie zajęło mu <b>około 3 minuty</b>,
+            mimo znajomości struktury strony.
+          </p>
+
+          <p>
+            Ta informacja jasno pokazała, że
+            <b
+              >obecny sposób prezentacji referencji nie wspiera realnych potrzeb
+              biznesowych</b
+            >. W odpowiedzi na ten problem
+            <b>pogrupowałem referencje według rodzaju realizowanej usługi</b>,
+            gdyż potencjalny klient firmy szuka wykonawcy z doświadczeniem w
+            konkretnym typie projektu np. Program Funkcjonalno-Użytkowy o
+            określonych w wymaganiach parametrach.
+          </p>
+
+          <p>
+            Efektem było
+            <b
+              >znaczące skrócenie czasu wyszukiwania konkretnych referencji i
+              wsparcie realnego procesu przetargowego</b
+            >.
+          </p>
+
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-references_categorized.png"
+              data-lightbox="planetroad-process"
+              data-title="Kategoryzacja Referencji"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-references_categorized.png"
+                alt="Kategoryzacja Referencji"
+              />
+            </a>
+            <figcaption>Kategoryzacja Referencji</figcaption>
+          </figure>
+
+          <h3 style="padding-top: 3vh; margin-bottom: 1vh">
+            Jak wzmacniam poczucie bezpieczeństwa użytkownika? — Transparentność
+            i RODO
+          </h3>
+
+          <p>
+            Wraz z rozwojem strony pojawiła się potrzeba
+            <b
+              >lepszego zadbania o transparentność przetwarzania danych
+              osobowych</b
+            >, zarówno z perspektywy formalnej, jak i wizerunkowej.
+          </p>
+
+          <p>
+            Stworzyłem <b>dedykowaną stronę polityki prywatności</b>, jasno
+            komunikującą sposób przetwarzania danych klientów. Teraz każdy
+            zainteresowany może z poziomu dolnej nawigacji dostać się na tę
+            podstronę i rozwiać swoje ewentualne wątpliwości.
+          </p>
+
+          <p>
+            Efektem była
+            <b
+              >większa wiarygodność firmy i poczucie bezpieczeństwa po stronie
+              użytkowników</b
+            >.
+          </p>
+
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-privacy_policy.png"
+              data-lightbox="planetroad-process"
+              data-title="Podstrona z Polityką Prywatności"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-privacy_policy.png"
+                alt="Podstrona z Polityką Prywatności"
+              />
+            </a>
+            <figcaption>Podstrona z Polityką Prywatności</figcaption>
+          </figure>
+
+          <h3 style="padding-top: 3vh; margin-bottom: 1vh">
+            Jak pokazuję realną wartość pracy zespołu? — Wizualna prezentacja
+            efektów realizacji
+          </h3>
+          <p>
+            Rewolucja Social Mediów ostatnich lat jasno pokazała, że
+            <b>wizualne przedstawienie efektów pracy</b> mają ogromny wpływ na
+            postrzeganą wartość usług, a krótkie filmiki to klucz do zdobycia
+            uwagi odbiorcy.
+          </p>
+          <p>
+            W odpowiedzi na powyższy wynik analizy wzbogaciłem podstrony
+            "Doświadczenia" oraz "Realizacje"
+            <b
+              >o materiał wideo, pokazując proces - zdjęcia projektu oraz
+              zdjęcia „przed i po”</b
+            >.
+          </p>
+          <p>
+            Dzięki temu potencjalni klienci mogą
+            <b
+              >lepiej zrozumieć zakres pracy firmy i zobaczyć finalny efekt
+              inwestycji</b
+            >.
+          </p>
+
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-video.png"
+              data-lightbox="planetroad-process"
+              data-title="Sekcja przedstawiająca konkretną realizację"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-video.png"
+                alt="Sekcja przedstawiająca konkretną realizację"
+              />
+            </a>
+            <figcaption>Sekcja przedstawiająca konkretną realizację</figcaption>
+          </figure>
+
+          <!--
+          <h3 style="padding-top: 2vh; margin-bottom: 1vh">
+            Jak pogłębiam zrozumienie procesu u klienta B2B? — Dedykowane
+            podstrony realizacji
+          </h3>
+
+          <p>
+            Wraz z dalszym rozrostem sekcji realizacji podjęliśmy decyzję o
+            <b>stworzeniu osobnych podstron dla każdej inwestycji</b>.
+          </p>
+
+          <p>
+            Pozwoliło to szczegółowo zaprezentować
+            <b>proces, zakres, koszt i czas realizacji</b>.
+          </p>
+
+          <p>
+            Efektem było
+            <b
+              >pogłębienie narracji projektowej i zwiększenie
+              transparentności</b
+            >, szczególnie istotne dla klientów B2B.
+          </p>
+          -->
+          <!-- FOTA PRZED I PO -->
+        </section>
+
+        <section id="efekt-koncowy" style="padding-bottom: 8vh">
+          <h2 style="padding-top: 8vh; margin-bottom: 1.5vw">Efekt Końcowy</h2>
+          <p>
+            ✅ Zwiększyłem widoczność firmy w internecie i wygenerowałem
+            zapytania od potencjalnych klientów dzięki przejrzystej prezentacji
+            oferty i portfolio.
+          </p>
+          <p>
+            ✅ Wyróżniłem firmę na tle konkurencji poprzez klarowne
+            przedstawienie usług i dotychczasowych realizacji wymaganych w
+            przetargach.
+          </p>
+          <p>
+            ✅ Zapewniłem spójność strony z nową identyfikacją wizualną,
+            wzmacniając profesjonalny wizerunek marki B2B.
+          </p>
+          <p>
+            ✅ Poprawiłem doświadczenie użytkownika i szanse na konwersję dzięki
+            intuicyjnej nawigacji i łatwemu kontaktowi.
+          </p>
+
+          <figure class="imageFigure">
+            <a
+              href="assets/projects/identyfikacja-wizualna-PlanetRoad/www-PlanetRoad.png"
+              data-lightbox="galeria-identyfikacja-wizualna-PlanetRoad"
+              data-title="Widok strony PlanetRoad"
+            >
+              <img
+                src="assets/projects/identyfikacja-wizualna-PlanetRoad/www-PlanetRoad.png"
+                alt="Widok strony PlanetRoad"
+              />
+            </a>
+            <figcaption>Widok strony PlanetRoad</figcaption>
+          </figure>
+
+          <p>
+            Stronę w pełnym wymiarze można zobaczyć pod linkiem
+            <a
+              href="https://www.planetroad.pl"
+              style="text-decoration: underline"
+              >www.planetroad.pl</a
+            >.
+          </p>
+          <!--
+          <a
+              href="assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Picture.png"
+              data-lightbox="galeria-identyfikacja-wizualna-PlanetRoad"
+          >
+            <img
+              class="processPhoto"
+              src="assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Picture.png"
+              alt="Grafika wykorzystujące nową odsłonę logo PlanetRoad"
+            />
+          </a>
+          -->
+
+          <div class="mini-gallery">
+            <a
+              href="assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Cover.webp"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Cover.webp"
+                alt="Miniatura 1"
+              />
+            </a>
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-research_insights.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-research_insights.png"
+                alt="Miniatura 2"
+              />
+            </a>
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-information_architecture.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-information_architecture.png"
+                alt="Miniatura 3"
+              />
+            </a>
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-user_flow.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-user_flow.png"
+                alt="Miniatura 4"
+              />
+            </a>
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-wireframes_Hero.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-wireframes_Hero.png"
+                alt="Miniatura 5"
+              />
+            </a>
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-wireframes_Team.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-wireframes_Team.png"
+                alt="Miniatura 6"
+              />
+            </a>
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-wireframes_Numbers.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-wireframes_Numbers.png"
+                alt="Miniatura 7"
+              />
+            </a>
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-wireframes_Experience.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-wireframes_Experience.png"
+                alt="Miniatura 8"
+              />
+            </a>
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-visual_identity.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-visual_identity.png"
+                alt="Miniatura 9"
+              />
+            </a>
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-old_www_1.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-old_www_1.png"
+                alt="Miniatura 10"
+              />
+            </a>
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-old_www_2.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-old_www_2.png"
+                alt="Miniatura 11"
+              />
+            </a>
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-hero.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-hero.png"
+                alt="Miniatura 12"
+              />
+            </a>
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-numbers.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-numbers.png"
+                alt="Miniatura 13"
+              />
+            </a>
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-team.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-team.png"
+                alt="Miniatura 14"
+              />
+            </a>
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-contact.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-contact.png"
+                alt="Miniatura 15"
+              />
+            </a>
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-experience.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-experience.png"
+                alt="Miniatura 16"
+              />
+            </a>
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-optimalization.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-optimalization.png"
+                alt="Miniatura 17"
+              />
+            </a>
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-realizacje.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-realizacje.png"
+                alt="Miniatura 18"
+              />
+            </a>
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-offer.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-offer.png"
+                alt="Miniatura 19"
+              />
+            </a>
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-pictures_edits_1.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-pictures_edits_1.png"
+                alt="Miniatura 20"
+              />
+            </a>
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-pictures_edits_2.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-pictures_edits_2.png"
+                alt="Miniatura 21"
+              />
+            </a>
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-pictures_1.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-pictures_1.png"
+                alt="Miniatura 22"
+              />
+            </a>
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-pictures_2.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-pictures_2.png"
+                alt="Miniatura 23"
+              />
+            </a>
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-references_categorized.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-references_categorized.png"
+                alt="Miniatura 24"
+              />
+            </a>
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-privacy_policy.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-privacy_policy.png"
+                alt="Miniatura 25"
+              />
+            </a>
+            <a
+              href="assets/projects/strona-internetowa-PlanetRoad/planetroad-video.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="assets/projects/strona-internetowa-PlanetRoad/planetroad-video.png"
+                alt="Miniatura 26"
+              />
+            </a>
+            <a
+              href="assets/projects/identyfikacja-wizualna-PlanetRoad/www-PlanetRoad.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="assets/projects/identyfikacja-wizualna-PlanetRoad/www-PlanetRoad.png"
+                alt="Miniatura 27"
+              />
+            </a>
+          </div>
+        </section>
+
+        <section id="po-projekcie">
+          <h2 style="padding-top: 8vh; margin-bottom: 1vh">Po Projekcie</h2>
+
+          <h3 style="padding-top: 1vh; margin-bottom: 1vh">Kluczowe Wnioski</h3>
+          <p>
+            🧠 W projektach B2B kluczowe znaczenie ma
+            <b>jasna struktura informacji i szybkie budowanie zaufania</b> —
+            użytkownicy nie eksplorują strony, lecz skanują ją w poszukiwaniu
+            potwierdzenia kompetencji i wiarygodności firmy.
+          </p>
+          <p>
+            🧠 Wydajność techniczna strony oraz dostępność (WCAG) nie są jedynie
+            dodatkiem — w przypadku klientów z sektora publicznego i dużych
+            inwestorów stają się realnym kryterium oceny profesjonalizmu firmy.
+            Natomiast jeżeli chodzi o rankingi przetargowe, to wydajność i
+            dostępność może się nawet przełożyć na podpisanie dużego kontraktu
+            lub jego niepodpisanie, gdy zleceniodawcy strona nie będzie się
+            ładować wzrasta ryzyko, że ją opuści.
+          </p>
+
+          <h3 style="padding-top: 2vh; margin-bottom: 1vh">Następne Kroki</h3>
+
+          <p>
+            <b>🔜 Rozbudowa sekcji realizacji o case studies</b><br />
+            – każda realizacja mogłaby zostać rozwinięta o opis problemu, zakres
+            prac, zastosowane rozwiązania oraz efekty, co jeszcze silniej
+            wzmacniałoby ekspercki wizerunek marki i ułatwiało decyzje zakupowe.
+          </p>
+
+          <p>
+            <b
+              >🔜 Wprowadzenie dedykowanych landing pages pod konkretne
+              usługi</b
+            ><br />
+            – osobne strony dla projektów drogowych, organizacji ruchu czy
+            konsultingu technicznego umożliwiłyby lepsze pozycjonowanie SEO i
+            precyzyjne dopasowanie komunikacji do różnych grup klientów.
+          </p>
+
+          <p>
+            <b>🔜 Rozszerzenie strony o treści eksperckie</b><br />
+            – sekcja artykułów lub aktualności branżowych (np. zmiany w
+            przepisach, dobre praktyki projektowe) mogłaby budować długofalową
+            widoczność w Google oraz pozycjonować PlanetRoad jako lidera wiedzy
+            w branży.
+          </p>
+
+          <p>
+            <b>🔜 Zaawansowana analityka i optymalizacja konwersji</b><br />
+            – dalsza analiza zachowań użytkowników (scroll depth, click maps,
+            A/B testy) pozwoliłaby jeszcze lepiej dopasować układ strony i
+            zwiększyć liczbę zapytań ofertowych bez konieczności zwiększania
+            ruchu.
+          </p>
+        </section>
+
+        <section class="navLoopWrapper">
+          <span class="navLoop"
+            >Zobacz kolejny projekt: <br /><a
+              class="loopLink"
+              href="https://marekwietecki.com/identyfikacja-wizualna-PlanetRoad"
+              >Identyfikacja&nbsp;Wizualna&nbsp;-&nbsp;PlanetRoad</a
+            ></span
+          >
+        </section>
+      </main>
+
+      <nav class="sideNav">
+        <div class="sideNavWrapper">
+          <a href="#o-projekcie">O Projekcie</a>
+          <a href="#badania">Badania</a>
+          <a href="#ideacja">Ideacja</a>
+          <a href="#iteracje">Iteracje</a>
+          <a href="#efekt-koncowy">Efekt Końcowy</a>
+          <a href="#po-projekcie">Po Projekcie</a>
+        </div>
+      </nav>
+    </div>
+
+    <div id="cookie-banner" class="cookie-banner">
+      <div class="cookie-text">
+        🍪 Używam cookies do analizy ruchu i ciągłego ulepszania działania
+        strony.
+        <!--<a href="/privacy">Polityka prywatności</a>-->
+      </div>
+
+      <div class="cookie-buttons">
+        <button id="accept-cookies" class="cookie-btn primary">
+          Akceptuję
+        </button>
+        <button id="decline-cookies" class="cookie-btn secondary">
+          Odrzucam
+        </button>
+      </div>
+    </div>
+
+    <footer>
+      <div class="logoWithLinks">
+        <a href="index.html" style="text-align: left">
+          <svg
+            class="logoFooter"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1521 1703"
+            shape-rendering="geometricPrecision"
+            text-rendering="geometricPrecision"
+            fill="none"
+          >
+            <g filter="url(#filter0_i_5_378)">
+              <path
+                d="M732.639 741.129V1208.27H879.702L879.702 741.129H732.639ZM1031.57 741.129V1014.11C1031.57 1037.82 1024.2 1056.08 1009.46 1068.9C995.365 1082.35 977.744 1089.08 956.597 1089.08C941.859 1089.08 928.723 1085.88 917.188 1079.47C905.654 1073.7 896.362 1065.37 889.314 1054.48C882.906 1043.58 879.702 1030.13 879.702 1014.11L822.991 1039.1C822.991 1076.27 831.001 1107.98 847.021 1134.26C863.041 1161.17 884.828 1181.68 912.382 1195.77C939.937 1210.51 971.015 1217.88 1005.62 1217.88C1038.3 1217.88 1067.46 1210.51 1093.09 1195.77C1119.36 1181.04 1140.19 1160.53 1155.56 1134.26C1170.94 1107.98 1178.63 1076.59 1178.63 1040.06V741.129L1031.57 741.129ZM1330.5 741.129V1014.11C1330.5 1037.82 1323.13 1056.08 1308.39 1068.9C1294.3 1082.35 1276.68 1089.08 1255.53 1089.08C1240.79 1089.08 1227.65 1085.88 1216.12 1079.47C1204.59 1073.7 1195.29 1065.37 1188.25 1054.48C1181.84 1043.58 1178.63 1030.13 1178.63 1014.11L1094.05 1025.64C1095.33 1065.37 1104.62 1099.33 1121.92 1127.53C1139.87 1156.37 1163.25 1178.47 1192.09 1193.85C1221.57 1209.87 1254.57 1217.88 1291.09 1217.88C1326.98 1217.88 1358.7 1210.19 1386.25 1194.81C1414.45 1180.07 1436.55 1158.61 1452.57 1130.41C1469.23 1102.86 1477.56 1069.54 1477.56 1030.45V741.129H1330.5Z"
+                fill="white"
+              />
+            </g>
+            <g filter="url(#filter1_i_5_378)">
+              <path
+                d="M51.9045 961V493.86H198.967V961H51.9045ZM350.836 961V688.021C350.836 664.311 343.467 646.049 328.729 633.233C314.631 619.776 297.009 613.048 275.863 613.048C261.125 613.048 247.988 616.252 236.454 622.66C224.92 628.427 215.628 636.757 208.579 647.651C202.171 658.544 198.967 672.001 198.967 688.021L142.257 663.03C142.257 625.864 150.267 594.144 166.287 567.872C182.307 540.958 204.094 520.453 231.648 506.355C259.202 491.617 290.281 484.248 324.884 484.248C357.564 484.248 386.721 491.617 412.353 506.355C438.625 521.093 459.451 541.599 474.83 567.872C490.209 594.144 497.899 625.543 497.899 662.069V961H350.836ZM649.768 961V688.021C649.768 664.311 642.398 646.049 627.66 633.233C613.563 619.776 595.941 613.048 574.794 613.048C560.056 613.048 546.92 616.252 535.385 622.66C523.851 628.427 514.56 636.757 507.511 647.651C501.103 658.544 497.899 672.001 497.899 688.021L413.314 676.487C414.595 636.757 423.887 602.795 441.188 574.6C459.131 545.764 482.52 523.657 511.356 508.278C540.832 492.258 573.833 484.248 610.359 484.248C646.243 484.248 677.963 491.937 705.517 507.316C733.712 522.055 755.819 543.521 771.839 571.716C788.5 599.271 796.83 632.592 796.83 671.681V961H649.768Z"
+                fill="white"
+              />
+            </g>
+            <defs>
+              <filter
+                id="filter0_i_5_378"
+                x="732.639"
+                y="741.129"
+                width="744.926"
+                height="476.752"
+                filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB"
+              >
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feBlend
+                  mode="normal"
+                  in="SourceGraphic"
+                  in2="BackgroundImageFix"
+                  result="shape"
+                />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feOffset />
+                <feGaussianBlur stdDeviation="160.199" />
+                <feComposite
+                  in2="hardAlpha"
+                  operator="arithmetic"
+                  k2="-1"
+                  k3="1"
+                />
+                <feColorMatrix
+                  type="matrix"
+                  values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.08 0"
+                />
+                <feBlend
+                  mode="normal"
+                  in2="shape"
+                  result="effect1_innerShadow_5_378"
+                />
+              </filter>
+              <filter
+                id="filter1_i_5_378"
+                x="51.9043"
+                y="484.248"
+                width="744.926"
+                height="476.752"
+                filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB"
+              >
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feBlend
+                  mode="normal"
+                  in="SourceGraphic"
+                  in2="BackgroundImageFix"
+                  result="shape"
+                />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feOffset />
+                <feGaussianBlur stdDeviation="160.199" />
+                <feComposite
+                  in2="hardAlpha"
+                  operator="arithmetic"
+                  k2="-1"
+                  k3="1"
+                />
+                <feColorMatrix
+                  type="matrix"
+                  values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.08 0"
+                />
+                <feBlend
+                  mode="normal"
+                  in2="shape"
+                  result="effect1_innerShadow_5_378"
+                />
+              </filter>
+            </defs>
+          </svg>
+        </a>
+        <div class="social-links">
+          <a
+            href="https://www.linkedin.com/in/marekwietecki/"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a
+            href="https://www.behance.net/marekwietecki"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="fab fa-behance"></i>
+          </a>
+          <a
+            href="https://www.youtube.com/@marekwietecki"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footerLinks">
+        <a class="navLinks" href="index.html#top">
+          <svg
+            class="icons size-5"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M9.293 2.293a1 1 0 0 1 1.414 0l7 7A1 1 0 0 1 17 11h-1v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6H3a1 1 0 0 1-.707-1.707l7-7Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <span>&nbsp;O mnie</span>
+        </a>
+
+        <a class="navLinks" href="index.html#projects">
+          <svg
+            class="icons size-5"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M1 5.25A2.25 2.25 0 0 1 3.25 3h13.5A2.25 2.25 0 0 1 19 5.25v9.5A2.25 2.25 0 0 1 16.75 17H3.25A2.25 2.25 0 0 1 1 14.75v-9.5Zm1.5 5.81v3.69c0 .414.336.75.75.75h13.5a.75.75 0 0 0 .75-.75v-2.69l-2.22-2.219a.75.75 0 0 0-1.06 0l-1.91 1.909.47.47a.75.75 0 1 1-1.06 1.06L6.53 8.091a.75.75 0 0 0-1.06 0l-2.97 2.97ZM12 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <span>&nbsp;Projekty</span>
+        </a>
+
+        <a class="navLinks" href="kontakt.html">
+          <svg
+            class="icons size-5"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              d="M3 4a2 2 0 0 0-2 2v1.161l8.441 4.221a1.25 1.25 0 0 0 1.118 0L19 7.162V6a2 2 0 0 0-2-2H3Z"
+            />
+            <path
+              d="m19 8.839-7.77 3.885a2.75 2.75 0 0 1-2.46 0L1 8.839V14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.839Z"
+            />
+          </svg>
+          <span>&nbsp;Kontakt</span>
+        </a>
+
+        <a class="navLinks" href="certyfikaty.html">
+          <svg
+            class="icons size-5"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 3.5A1.5 1.5 0 0 1 4.5 2h6.879a1.5 1.5 0 0 1 1.06.44l4.122 4.12A1.5 1.5 0 0 1 17 7.622V16.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 3 16.5v-13Zm10.857 5.691a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 0 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <span>Certyfikaty</span>
+        </a>
+
+        <!-- testimonials -->
+      </div>
+      <div class="footerTexts">
+        <p class="footerText">
+          © Marek Wietecki 2026. Treści chronione prawem autorskim.
+        </p>
+      </div>
+    </footer>
+    <script>
+      const header = document.querySelector("header");
+      const spacex = document.querySelector(".spaceX");
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (!entry.isIntersecting) {
+            header.classList.add("headerShadow");
+          } else {
+            header.classList.add("headerShadow");
+          }
+        },
+        { threshold: 0.1 } // reaguje, gdy choć 10% hero jest widoczne
+      );
+
+      observer.observe(spacex);
+
+      /**/
+
+      function toggleMenu() {
+        const links = document.querySelector(".headerLinks");
+        links.classList.toggle("show");
+      }
+
+      /**/
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const header = document.querySelector("header");
+        const spacex = document.querySelector(".spaceX");
+
+        function updatePadding() {
+          const headerHeight = header.offsetHeight;
+          spacex.style.paddingTop = headerHeight * 1.18 + "px";
+        }
+
+        window.addEventListener("resize", updatePadding);
+        updatePadding(); // Uruchomienie przy załadowaniu strony
+
+        // Przykładowa logika, która zmienia wysokość nagłówka np. po kliknięciu
+        document
+          .querySelector(".menuToggle")
+          .addEventListener("click", function () {
+            header.classList.toggle("header-hidden");
+            updatePadding();
+          });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".sideNavWrapper a");
+
+        function updateActiveLink() {
+          const triggerHeight = window.innerHeight * 0.25; // górne 25%
+          let currentSection = null;
+
+          sections.forEach((section) => {
+            const top = section.getBoundingClientRect().top;
+            if (
+              top <= triggerHeight &&
+              top + section.offsetHeight > triggerHeight
+            ) {
+              currentSection = section;
+            }
+          });
+
+          navLinks.forEach((link) => link.classList.remove("active"));
+          if (currentSection) {
+            const id = currentSection.getAttribute("id");
+            const activeLink = document.querySelector(
+              `.sideNavWrapper a[href="#${id}"]`
+            );
+            if (activeLink) activeLink.classList.add("active");
+          }
+        }
+
+        window.addEventListener("scroll", updateActiveLink);
+        window.addEventListener("resize", updateActiveLink);
+        updateActiveLink();
+
+        navLinks.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute("href").substring(1);
+            const target = document.getElementById(targetId);
+            if (target) {
+              window.scrollTo({
+                top: target.offsetTop - 80,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+    </script>
+    <!-- Self changing title -->
+    <script>
+      const projectTitle = "Strona Internetowa PlanetRoad"; // Twój tytuł projektu
+      const fullTitle = `Marek Wietecki | ${projectTitle}`;
+      const portfolioTitle = "Marek Wietecki | Portfolio";
+      let i = 0;
+
+      // Funkcja typewriter (animacja tylko raz)
+      function typeTitle() {
+        if (i <= fullTitle.length) {
+          document.title = fullTitle.slice(0, i);
+          i++;
+          setTimeout(typeTitle, 80); // prędkość liter
+        }
+      }
+
+      // Start animacji po załadowaniu DOM
+      window.addEventListener("DOMContentLoaded", () => {
+        typeTitle();
+      });
+    </script>
+  </body>
+  <script src="js/cookie.js"></script>
+</html>
