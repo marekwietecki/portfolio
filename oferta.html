@@ -204,7 +204,7 @@
       /* Content */
       .titleWrapper {
         display: flex;
-        padding-left: 4vw;
+        padding-left: 6vw;
         margin-top: 4vw;
       }
       .galleryWrapper {
@@ -239,6 +239,229 @@
         font-size: 1rem;
         color: #444;
         text-shadow: 0 1px 16px rgba(0, 0, 0, 0, 16);
+      }
+
+      /* ========================================================
+   STYLE DLA STRONY OFERTA (MINIMAL & PRODUCT DESIGN LOOK)
+   ======================================================== */
+      .offerPage {
+        margin-top: 2vh;
+        padding-bottom: 60px;
+      }
+
+      .offerHero {
+        padding: 8vh 6vw 4vh 6vw;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .badge {
+        display: inline-block;
+        background-color: rgba(30, 110, 214, 0.08);
+        color: #1e6ed6;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 6px 16px;
+        border-radius: 30px;
+        margin-bottom: 16px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .offerHeading {
+        font-size: clamp(1.75rem, 4vw, 2.75rem);
+        font-weight: 700;
+        line-height: 1.2;
+        color: #1a1a1a;
+        margin: 0 0 16px 0;
+        text-align: left;
+      }
+
+      .heroSubtext {
+        font-size: clamp(1rem, 1.2vw, 1.25rem);
+        font-weight: 400;
+        color: #696969;
+        line-height: 1.5;
+        max-width: 800px;
+        margin: 0;
+      }
+
+      /* GRID Z KARTAMI OFERTY */
+      .servicesGrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 24px;
+        padding: 4vh 6vw;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .serviceCard {
+        background: #ffffff;
+        border-radius: 28px;
+        padding: 32px;
+        box-shadow: 0 1px 16px rgba(0, 0, 0, 0.02);
+        border: 1px solid rgba(0, 0, 0, 0.02);
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .serviceCard:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+      }
+
+      .serviceHeader {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+
+      .serviceIcon {
+        font-size: 24px;
+        background: #f6f6f7;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 14px;
+      }
+
+      .serviceCard h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #222222;
+        margin: 0;
+      }
+
+      .serviceDesc {
+        font-size: 14px;
+        font-weight: 400;
+        color: #696969;
+        line-height: 1.4;
+        margin-bottom: 20px;
+      }
+
+      .serviceList {
+        list-style: none;
+        padding: 0;
+        margin: auto 0 0 0; /* Pcha listę na dół karty, wyrównując dno */
+        border-top: 1px solid #f0f0f1;
+        padding-top: 20px;
+      }
+
+      .serviceList li {
+        font-size: 13.5px;
+        font-weight: 500;
+        color: #555555;
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 20px;
+      }
+
+      .serviceList li::before {
+        content: "•";
+        color: #1e6ed6;
+        font-weight: bold;
+        position: absolute;
+        left: 5px;
+        top: -1px;
+      }
+
+      /* SEKCJA CTA EXTRALINK */
+      .offerCta {
+        background: #ffffff;
+        margin: 6vh 6vw;
+        border-radius: 32px;
+        padding: 48px;
+        box-shadow: 0 1px 16px rgba(0, 0, 0, 0.02);
+        text-align: center;
+        max-width: 1100px;
+        margin-inline: auto;
+      }
+
+      .ctaContainer {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .offerCta h2 {
+        font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+        font-weight: 600;
+        color: #1a1a1a;
+        margin-bottom: 12px;
+      }
+
+      .offerCta p {
+        font-size: 14px;
+        font-weight: 400;
+        color: #696969;
+        text-align: center;
+        margin-bottom: 28px;
+      }
+
+      .ctaButtons {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .btnPrimary {
+        background-color: #1e6ed6;
+        color: white !important;
+        padding: 14px 28px;
+        border-radius: 48px;
+        font-weight: 600;
+        font-size: 15px;
+        transition: transform 0.2s ease, background-color 0.3s;
+        box-shadow: 0 4px 12px rgba(30, 110, 214, 0.2);
+      }
+
+      .btnPrimary:hover {
+        background-color: #145cb3;
+        transform: scale(1.03);
+        color: white;
+      }
+
+      .btnSecondary {
+        background-color: #f6f6f7;
+        color: #444444 !important;
+        padding: 14px 28px;
+        border-radius: 48px;
+        font-weight: 600;
+        font-size: 15px;
+        border: 1px solid #e1e1e3;
+        transition: background-color 0.3s, transform 0.2s;
+      }
+
+      .btnSecondary:hover {
+        background-color: #e8e8ea;
+        transform: scale(1.03);
+      }
+
+      /* RESPONSYWNOŚĆ */
+      @media (max-width: 740px) {
+        .offerPage {
+          margin-top: 160px;
+        }
+        .offerCta {
+          padding: 32px 20px;
+          margin: 4vh 4vw;
+        }
+        .ctaButtons {
+          flex-direction: column;
+          width: 100%;
+        }
+        .btnPrimary,
+        .btnSecondary {
+          width: 100%;
+          box-sizing: border-box;
+          text-align: center;
+        }
       }
       /* Footer */
       footer {
@@ -401,7 +624,8 @@
         </button>
       </div>
       <div class="headerLinks">
-        <a class="activeHeaderLink" href="certyfikaty.html">Certyfikaty</a>
+        <a class="activeHeaderLink" href="oferta.html">Oferta</a>
+        <a class="headerLink" href="certyfikaty.html">Certyfikaty</a>
         <a class="headerLink" href="kontakt.html">Kontakt</a>
       </div>
     </header>
@@ -415,12 +639,100 @@
         >Strona Główna</a
       >
       <span class="arrow">&nbsp;>&nbsp;</span>
-      <span class="currentCard">Certyfikaty</span>
+      <span class="currentCard">Oferta</span>
     </div>
-    <div class="titleWrapper">
-      <h1>Usługi</h1>
-    </div>
-    
+    <!-- <div class="titleWrapper">
+      <h1>Oferta</h1>
+    </div> -->
+
+    <main class="offerPage">
+      <section class="offerHero">
+        <div class="heroContent">
+          <span class="badge">W czym mogę Ci pomóc?</span>
+          <h1 class="offerHeading">
+            Przekształcam pomysły w dochodowe produkty cyfrowe.
+          </h1>
+          <p class="heroSubtext">
+            Nie tylko rysuję ładne ekrany. Projektuję doświadczenia poparte
+            analityką, buduję interaktywne prototypy i wdrażam gotowe strony na
+            serwer. Kompleksowo.
+          </p>
+        </div>
+      </section>
+
+      <section class="servicesGrid container">
+        <div class="serviceCard">
+          <div class="serviceHeader">
+            <div class="serviceIcon">🎨</div>
+            <h3>Projektowanie Interfejsów (UX/UI)</h3>
+          </div>
+          <p class="serviceDesc">
+            Tworzę intuicyjne systemy dedykowane dla web i mobile. Dbam o każdy
+            krok użytkownika, eliminując błędy poznawcze.
+          </p>
+          <ul class="serviceList">
+            <li>Aplikacje mobilne i webowe</li>
+            <li>Landing pages o wysokiej konwersji</li>
+            <li>Praca z zaawansowanymi Design Systems</li>
+            <li>Interaktywne, klikalne prototypy high-fidelity</li>
+          </ul>
+        </div>
+
+        <div class="serviceCard">
+          <div class="serviceHeader">
+            <div class="serviceIcon">🔍</div>
+            <h3>Audyty, Strategia & CJM</h3>
+          </div>
+          <p class="serviceDesc">
+            Twoja strona nie zarabia, a użytkownicy uciekają? Mapuję ich ścieżki
+            i znajduje krytyczne wąskie gardła w procesie.
+          </p>
+          <ul class="serviceList">
+            <li>Profesjonalne audyty UX / UI</li>
+            <li>Mapowanie Customer Journey (CJM)</li>
+            <li>Projektowanie procesów biznesowych</li>
+            <li>Identyfikacja wizualna i spójny branding</li>
+          </ul>
+        </div>
+
+        <div class="serviceCard">
+          <div class="serviceHeader">
+            <div class="serviceIcon">⚙️</div>
+            <h3>Wdrożenie & Analityka Tech</h3>
+          </div>
+          <p class="serviceDesc">
+            Zamykam proces tam, gdzie inni designerzy kończą pracę. Dostarczam
+            działający produkt z podpiętą analityką.
+          </p>
+          <ul class="serviceList">
+            <li>Wdrożenie stron na serwer i konfiguracja domen</li>
+            <li>Podpięcie analityki (Google Ads, tagi, konwersje)</li>
+            <li>Przygotowanie assetów i prostej grafiki</li>
+            <li>Czysty kod przyjazny technicznemu SEO</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="offerCta">
+        <div class="ctaContainer">
+          <h2>Masz projekt w głowie? Zobaczmy, czy gramy do jednej bramki.</h2>
+          <p>
+            Rozliczam się w pełni bezpiecznie przez platformę
+            <strong>Useme</strong> (wystawiam fakturę VAT, brak ryzyka dla
+            obydwu stron).
+          </p>
+
+          <div class="ctaButtons">
+            <a href="./index.html#projekty" class="btnSecondary"
+              >Zobacz moje projekty</a
+            >
+            <a href="./kontakt.html" class="btnPrimary"
+              >Porozmawiajmy o projekcie</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
 
     <div id="cookie-banner" class="cookie-banner">
       <div class="cookie-text">

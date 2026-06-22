@@ -79,14 +79,14 @@
 
     <style>
       /*
-      >>>
-        ciut duży wydaje się ten padding po prawej na tablecie w hero 
-        -> jeszcze tam przydało by się coś lekko dostosować
-      >>>
-        dodatkowo podpisy projektów się chyba nie skalują
-      >>>  
-        projekty na głównej mają mieć poziomy Content, a nie tylko podpis do zdjęcia - mini pitch +   
-      */
+            >>>
+              ciut duży wydaje się ten padding po prawej na tablecie w hero
+              -> jeszcze tam przydało by się coś lekko dostosować
+            >>>
+              dodatkowo podpisy projektów się chyba nie skalują
+            >>>
+              projekty na głównej mają mieć poziomy Content, a nie tylko podpis do zdjęcia - mini pitch +
+            */
 
       /* Config */
       html {
@@ -104,7 +104,53 @@
         display: flex;
         flex-direction: column;
         overflow-x: hidden;
+        /* BAZOWE TŁO */
+        background-color: #f6f6f7;
+
+        /* FANCY GENERATYWNA FALA WZOROWANA NA FIGMIE / CURSOR AI */
+        background-image: 
+    /* Fala 1 - Główna, mocniejsza linia strukturalna */ url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 900'%3E%3Cpath d='M-100,250 C300,450 500,100 900,350 C1300,600 1400,200 1700,300' fill='none' stroke='%231e6ed6' stroke-width='1.5' stroke-opacity='0.05'/%3E%3C/svg%3E"),
+          /* Fala 2 - Cieńsza linia pomocnicza, tworząca efekt fali wektorowej */
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 900'%3E%3Cpath d='M-100,280 C320,430 480,130 880,330 C1280,530 1420,230 1700,270' fill='none' stroke='%231e6ed6' stroke-width='0.75' stroke-opacity='0.03'/%3E%3C/svg%3E"),
+          /* Fala 3 - Głęboka, bardzo delikatna fala zamykająca kompozycję */
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 900'%3E%3Cpath d='M-100,220 C280,470 520,70 920,370 C1320,670 1380,170 1700,330' fill='none' stroke='%231e6ed6' stroke-width='0.5' stroke-opacity='0.02'/%3E%3C/svg%3E"),
+          /* PUNKTY WĘZŁOWE (Figma Vector Nodes) na zgięciach fal */
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 900'%3E%3Ccircle cx='300' cy='450' r='3' fill='%231e6ed6' fill-opacity='0.15'/%3E%3Crect x='296' y='446' width='8' height='8' fill='none' stroke='%231e6ed6' stroke-width='1' stroke-opacity='0.1'/%3E%3Ccircle cx='900' cy='350' r='3' fill='%231e6ed6' fill-opacity='0.15'/%3E%3Crect x='896' y='346' width='8' height='8' fill='none' stroke='%231e6ed6' stroke-width='1' stroke-opacity='0.1'/%3E%3Ccircle cx='1400' cy='200' r='3' fill='%231e6ed6' fill-opacity='0.15'/%3E%3Crect x='1396' y='196' width='8' height='8' fill='none' stroke='%231e6ed6' stroke-width='1' stroke-opacity='0.1'/%3E%3C/svg%3E");
+
+        background-attachment: fixed; /* Paralaksa przy scrollowaniu - warstwy będą się delikatnie mijać */
+        background-size: cover;
+        background-position: center center;
+        color: #555555;
       }
+      /* BAZOWE TŁO + STRUKTURA SIATKI
+        background-color: #f6f6f7;
+        background-image: linear-gradient(
+            rgba(30, 110, 214, 0.02) 1px,
+            transparent 1px
+          ),
+          linear-gradient(90deg, rgba(30, 110, 214, 0.02) 1px, transparent 1px);
+        background-size: 40px 40px; 
+        background-position: center top;
+        color: #555555;
+      } */
+      /* BAZOWE TŁO + STRUKTURA KROPEK
+        background-color: #f6f6f7;
+        background-image: radial-gradient(
+            rgba(30, 110, 214, 0.04) 1.5px,
+            transparent 1.5px
+          ),
+          radial-gradient(rgba(0, 0, 0, 0.01) 1px, transparent 1px);
+        background-size: 32px 32px;
+        background-position: 0 0, 16px 16px;
+        color: #555555;
+      } */
+      /* background-color: #f6f6f7;
+              background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cpath d='M0,150 C300,300 600,0 900,150 C1200,300 1400,50 1600,100 L1600,800 L0,800 Z' fill='%231e6ed6' fill-opacity='0.015'/%3E%3Cpath d='M0,200 C400,50 700,350 1100,150 C1400,20 1500,180 1600,120' fill='none' stroke='%231e6ed6' stroke-width='1.5' stroke-opacity='0.04'/%3E%3C/svg%3E");
+              background-attachment: fixed;
+              background-size: cover;
+              color: #555555;
+            } */
+
       *,
       *::before,
       *::after {
@@ -421,8 +467,8 @@
         }
       }
       /* .projectContainer:hover {
-        transform: scale(1.05);
-      } */
+              transform: scale(1.05);
+            } */
 
       .projectContainerInactive {
         overflow: hidden;
@@ -454,10 +500,10 @@
         overflow: hidden;
       }
       /* @media (max-width: 480px) {
-        .descriptionWrapper {
-          max-height: 160px;
-        }
-      } */
+              .descriptionWrapper {
+                max-height: 160px;
+              }
+            } */
 
       .title {
         font-weight: 600;
@@ -577,8 +623,8 @@
         opacity: 84%;
       }
       /* ========================================================
-   EFEKT TALII KART (STARTOWY STAN PRZED WEJŚCIEM W WIDOK)
-   ======================================================== */
+         EFEKT TALII KART (STARTOWY STAN PRZED WEJŚCIEM W WIDOK)
+         ======================================================== */
       .reveal-section .projectContainer {
         opacity: 0;
         /* Startujemy w jednym punkcie (lekko przesunięte do środka, w dół i obrócone) */
@@ -606,8 +652,8 @@
       }
 
       /* ========================================================
-      (ROZSUWANIE TALII)
-    ======================================================== */
+            (ROZSUWANIE TALII)
+          ======================================================== */
       .reveal-section.active .projectContainer {
         opacity: 1;
         transform: translateY(0) scale(1) rotate(0deg); /* Wskakują idealnie na swoje miejsca w gridzie */
@@ -971,6 +1017,7 @@
         </button>
       </div>
       <div class="headerLinks">
+        <a class="headerLink" href="oferta.html">Oferta</a>
         <a class="headerLink" href="certyfikaty.html">Certyfikaty</a>
         <a class="headerLink" href="kontakt.html">Kontakt</a>
       </div>
@@ -982,7 +1029,8 @@
         <h2 class="ja">Marek Wietecki</h2>
         -->
         <p>Cześć!</p>
-        <h2 class="ja typewriter">Jestem UX Designerem.</h2>
+        <p>Od ponad 3 lat działam jako</p>
+        <h2 class="ja typewriter">UX Designer.</h2>
         <div class="gapp"></div>
         <p>
           Projektuję produkty cyfrowe, rozwiązujące realne problemy użytkowników
@@ -993,12 +1041,12 @@
           Prosto dla użytkownika, skutecznie dla biznesu i estetycznie dla oka.
         </p>
         <div class="buttonWrapper">
-          <a class="buttonPrimary" href="#projects">Zobacz moje prace</a>
+          <a class="buttonPrimary" href="#projects">Zobacz Projekty</a>
           <a
             class="buttonSecondary"
             href="/assets/index/Marek_Wietecki_CV_2.8.pdf"
             download
-            >Pobierz moje CV</a
+            >Pobierz CV</a
           >
         </div>
       </div>
