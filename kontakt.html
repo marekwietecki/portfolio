@@ -268,6 +268,77 @@
         background-color: #145cb3;
         transform: scale(1.05);
       }
+      /* Cookies */
+      .cookie-banner {
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 520px;
+        width: calc(100% - 40px);
+
+        background: white;
+        color: #333;
+
+        padding: 16px 20px;
+        border-radius: 12px;
+
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+
+        font-size: 14px;
+        z-index: 9999;
+
+        animation: cookieSlide 0.8s ease;
+      }
+      @keyframes cookieSlide {
+        from {
+          transform: translate(-50%, 20px);
+          opacity: 0;
+        }
+        to {
+          transform: translate(-50%, 0);
+          opacity: 1;
+        }
+      }
+
+      .cookie-text a {
+        color: #0066ff;
+        text-decoration: none;
+      }
+
+      .cookie-buttons {
+        display: flex;
+        gap: 10px;
+      }
+
+      .cookie-btn {
+        border: none;
+        padding: 8px 14px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.2s ease, background-color 0.3s;
+      }
+      .cookie-btn:hover {
+        opacity: 0.72;
+        transform: scale(1.05);
+      }
+
+      .cookie-btn.primary {
+        background: #1e6ed6;
+        color: white;
+      }
+
+      .cookie-btn.secondary {
+        background: #f2f2f2;
+        color: rgba(0, 0, 0, 0.64);
+      }
       /*Footer*/
       footer {
         background-color: #222;

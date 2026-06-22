@@ -245,13 +245,17 @@
    STYLE DLA STRONY OFERTA (MINIMAL & PRODUCT DESIGN LOOK)
    ======================================================== */
       .offerPage {
+        width: 100%;
         margin-top: 2vh;
         padding-bottom: 60px;
+        box-sizing: border-box; /* Zabezpieczenie całej podstrony */
       }
 
       .offerHero {
+        box-sizing: border-box; /* KLUCZOWA POPRAWKA: padding chowa się do środka i nie rozpycha strony */
         padding: 8vh 6vw 4vh 6vw;
         max-width: 1100px;
+        width: 100%; /* Wypełnia przestrzeń do maksymalnie 1100px */
         margin: 0 auto;
       }
 
@@ -273,7 +277,7 @@
         font-weight: 700;
         line-height: 1.2;
         color: #1a1a1a;
-        margin: 0 0 16px 0;
+        margin: 16px 0;
         text-align: left;
       }
 
@@ -283,17 +287,22 @@
         color: #696969;
         line-height: 1.5;
         max-width: 800px;
-        margin: 0;
+        margin: 16px 0;
       }
-
-      /* GRID Z KARTAMI OFERTY */
+      /* ========================================================
+   GRID Z KARTAMI OFERTY (POPRAWIONY)
+   ======================================================== */
       .servicesGrid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        /* Zmiana na auto-fill i zmniejszenie minmax, żeby na małych ekranach kafelki nie były ucinane */
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 24px;
+        /* Box-sizing to podstawa: padding nie powiększa już szerokości elementu ponad 100% */
+        box-sizing: border-box;
         padding: 4vh 6vw;
         max-width: 1100px;
         margin: 0 auto;
+        width: 100%; /* Sztywno trzymamy 100% szerokości, bez rozpychania */
       }
 
       .serviceCard {
@@ -305,6 +314,8 @@
         display: flex;
         flex-direction: column;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-sizing: border-box; /* Zabezpieczenie przed rozpychaniem przez padding */
+        width: 100%; /* Karta wypełnia dokładnie tyle, ile daje jej kolumna grida */
       }
 
       .serviceCard:hover {
@@ -328,6 +339,7 @@
         align-items: center;
         justify-content: center;
         border-radius: 14px;
+        flex-shrink: 0; /* Ikona nie skurczy się, jeśli tekst obok będzie długi */
       }
 
       .serviceCard h3 {
@@ -371,16 +383,20 @@
         top: -1px;
       }
 
-      /* SEKCJA CTA EXTRALINK */
+      /* ========================================================
+   SEKCJA CTA EXTRALINK (POPRAWIONA)
+   ======================================================== */
       .offerCta {
-        background: #ffffff;
-        margin: 6vh 6vw;
+        /* background: #ffffff; */
+        margin: 6vh auto; /* Wyśrodkowanie za pomocą auto, zamiast rozpychania przez 6vw po bokach */
         border-radius: 32px;
         padding: 48px;
-        box-shadow: 0 1px 16px rgba(0, 0, 0, 0.02);
+        /* box-shadow: 0 1px 16px rgba(0, 0, 0, 0.02); */
         text-align: center;
         max-width: 1100px;
-        margin-inline: auto;
+        box-sizing: border-box;
+        /* Zamiast width: 88%, używamy kalkulacji z marginesem bezpieczeństwa na mobile */
+        width: calc(100% - 12vw);
       }
 
       .ctaContainer {
@@ -446,11 +462,14 @@
       /* RESPONSYWNOŚĆ */
       @media (max-width: 740px) {
         .offerPage {
-          margin-top: 160px;
+          margin-top: 4vh;
         }
         .offerCta {
           padding: 32px 20px;
-          margin: 4vh 4vw;
+          margin: 4vh auto;
+          width: calc(
+            100% - 8vw
+          ); /* Nieco szerszy boks na mobile, żeby wykorzystać ekran */
         }
         .ctaButtons {
           flex-direction: column;
@@ -462,6 +481,77 @@
           box-sizing: border-box;
           text-align: center;
         }
+      }
+      /* Cookies */
+      .cookie-banner {
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 520px;
+        width: calc(100% - 40px);
+
+        background: white;
+        color: #333;
+
+        padding: 16px 20px;
+        border-radius: 12px;
+
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+
+        font-size: 14px;
+        z-index: 9999;
+
+        animation: cookieSlide 0.8s ease;
+      }
+      @keyframes cookieSlide {
+        from {
+          transform: translate(-50%, 20px);
+          opacity: 0;
+        }
+        to {
+          transform: translate(-50%, 0);
+          opacity: 1;
+        }
+      }
+
+      .cookie-text a {
+        color: #0066ff;
+        text-decoration: none;
+      }
+
+      .cookie-buttons {
+        display: flex;
+        gap: 10px;
+      }
+
+      .cookie-btn {
+        border: none;
+        padding: 8px 14px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.2s ease, background-color 0.3s;
+      }
+      .cookie-btn:hover {
+        opacity: 0.72;
+        transform: scale(1.05);
+      }
+
+      .cookie-btn.primary {
+        background: #1e6ed6;
+        color: white;
+      }
+
+      .cookie-btn.secondary {
+        background: #f2f2f2;
+        color: rgba(0, 0, 0, 0.64);
       }
       /* Footer */
       footer {
@@ -723,7 +813,7 @@
           </p>
 
           <div class="ctaButtons">
-            <a href="./index.html#projekty" class="btnSecondary"
+            <a href="./index.html#projects" class="btnSecondary"
               >Zobacz moje projekty</a
             >
             <a href="./kontakt.html" class="btnPrimary"
