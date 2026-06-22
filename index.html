@@ -225,6 +225,44 @@
       }
       .ja {
         color: #1e6ed6;
+        line-height: 110%;
+        padding-bottom: 4px;
+      }
+      .typewriter {
+        /* font-family: monospace; */
+        display: inline-block;
+        overflow: hidden;
+        border-right: 3px solid #696969;
+        white-space: nowrap;
+        margin-right: auto;
+        margin-left: 0;
+        /* Szerokość startowa to 0, końcowa to 20 znaków (20ch) */
+        width: 0;
+
+        /* dwie animacje: wpisywanie (trwa 2s) i miganie kursora */
+        animation: typing 2s steps(20) forwards,
+          blink-caret 0.5s step-end 5 forwards;
+      }
+
+      /* Rozszerzanie kontenera od 0 do 20 liter */
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 17ch;
+        }
+      }
+
+      /* Miganie pionowej kreski (kursora) */
+      @keyframes blink-caret {
+        from,
+        to {
+          border-right: 3px solid transparent;
+        }
+        50% {
+          border-right: 3px solid #696969;
+        }
       }
       .lineBreak {
         display: block;
@@ -260,7 +298,7 @@
         background-position: center center; /* wcześniej miałeś 'right center', co zaburzało balans */
       }
       .gapp {
-        padding-top: 16px;
+        padding-top: 8px;
       }
       .gap2 {
         padding-top: 2px;
@@ -348,75 +386,43 @@
         margin-top: 18vh; /* 148px */
         padding-bottom: 24px;
       }
+
       .projectContainer {
-        overflow: hidden;
+        overflow: visible;
         padding: 16px;
-        margin: 16px;
-        transition: transform 0.3s;
+        margin: 16px auto;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
         box-shadow: 0 1px 16px rgba(0, 0, 0, 0.04);
         border-radius: 32px;
         background-color: #fafafa;
-        height: 360px;
-        max-width: 1200px;
-        min-width: 240px;
         cursor: pointer;
+        display: flex;
+        flex-direction: column;
+
+        min-height: 384px;
+        height: auto;
+        max-width: 1100px;
+        width: 88%;
+      }
+
+      .projectContainer:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      }
+      @media (max-width: 1024px) {
+        .projectContainer {
+          min-height: 348px;
+        }
       }
       @media (max-width: 480px) {
         .projectContainer {
-          height: 294px !important;
+          min-height: 294px;
+          width: 96%;
         }
       }
-      .projectContainer:hover {
+      /* .projectContainer:hover {
         transform: scale(1.05);
-      }
-
-      .disabled-project {
-        position: relative;
-        cursor: not-allowed;
-        opacity: 0.56;
-        overflow: visible !important;
-      }
-
-      .disabled-project::before {
-        content: attr(data-tooltip);
-        position: absolute;
-        bottom: 108%;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: #1a1a1a;
-        color: #ffffff;
-        padding: 8px 14px;
-        font-size: 13px;
-        font-family: sans-serif;
-        border-radius: 8px;
-        white-space: nowrap;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.15s ease-in-out;
-        z-index: 99;
-      }
-
-      .disabled-project::after {
-        content: "";
-        position: absolute;
-        bottom: 104%;
-        left: 50%;
-        transform: translateX(-50%);
-        border-width: 6px;
-        border-style: solid;
-        border-color: #1a1a1a transparent transparent transparent;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.15s ease-in-out;
-        z-index: 99;
-      }
-
-      .disabled-project:hover::before,
-      .disabled-project:hover::after {
-        opacity: 1;
-      }
+      } */
 
       .projectContainerInactive {
         overflow: hidden;
@@ -442,38 +448,75 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 100%;
-        max-height: 150px;
+        flex: 1;
+        /* height: auto; */
+        /* max-height: 180px; */
         overflow: hidden;
       }
-      @media (max-width: 480px) {
+      /* @media (max-width: 480px) {
         .descriptionWrapper {
-          max-height: 120px;
+          max-height: 160px;
         }
-      }
+      } */
+
       .title {
-        font-weight: 500;
-        font-size: clamp(0.75rem, calc(1vw + 0.5rem), 1.25rem);
+        font-weight: 600;
+        font-size: 14px;
         color: #696969;
         margin-top: 4px;
         margin-bottom: 4px;
       }
+
       .subtitle {
-        font-weight: 600;
-        font-size: clamp(0.5rem, calc(0.67vw + 0.33rem), 1.5rem);
+        font-weight: 500;
+        font-size: 14px;
         color: #c4c4c4;
+        /* align-self: center; */
       }
+
       .tagWrapper {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         padding-top: 3%;
         margin-top: auto;
+        gap: 4px; /* Dodaję lekki odstęp między tagami, żeby się nie kleiły */
       }
+
       .tag {
-        font-weight: 500;
-        font-size: clamp(0.4rem, calc(0.6vw + 0.33rem), 1.33rem);
+        font-weight: 300;
+        font-size: 12px;
         color: #c4c4c4;
+      }
+
+      @media (max-width: 1024px) {
+        .title {
+          font-size: 13px;
+        }
+
+        .subtitle {
+          font-size: 13px;
+        }
+
+        .tag {
+          font-size: 11px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .title {
+          font-size: 12px;
+          margin-top: 2px;
+          margin-bottom: 2px;
+        }
+
+        .subtitle {
+          font-size: 12px;
+        }
+
+        .tag {
+          font-size: 10px;
+        }
       }
       .gradientBackground {
         background: linear-gradient(45deg, #070814, #151e4d, #0f1a5a);
@@ -532,6 +575,118 @@
       }
       .gridGallery a:hover {
         opacity: 84%;
+      }
+      /* ========================================================
+   EFEKT TALII KART (STARTOWY STAN PRZED WEJŚCIEM W WIDOK)
+   ======================================================== */
+      .reveal-section .projectContainer {
+        opacity: 0;
+        /* Startujemy w jednym punkcie (lekko przesunięte do środka, w dół i obrócone) */
+        transform: translateY(60px) scale(0.92)
+          rotate(var(--start-rotation, -2deg));
+        transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+          opacity 0.6s ease;
+      }
+
+      /* Nadajemy każdej karcie unikalną rotację startową, żeby imitowały zebraną talię */
+      .reveal-section .gridGallery > *:nth-child(1) .projectContainer {
+        --start-rotation: -3deg;
+      }
+      .reveal-section .gridGallery > *:nth-child(2) .projectContainer {
+        --start-rotation: 1deg;
+      }
+      .reveal-section .gridGallery > *:nth-child(3) .projectContainer {
+        --start-rotation: -1deg;
+      }
+      .reveal-section .gridGallery > *:nth-child(4) .projectContainer {
+        --start-rotation: 2deg;
+      }
+      .reveal-section .gridGallery > *:nth-child(5) .projectContainer {
+        --start-rotation: -2deg;
+      }
+
+      /* ========================================================
+      (ROZSUWANIE TALII)
+    ======================================================== */
+      .reveal-section.active .projectContainer {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(0deg); /* Wskakują idealnie na swoje miejsca w gridzie */
+      }
+
+      /* Efekt płynnego rozdawania (staggered delay) - każda kolejna karta wysuwa się ułamek sekundy później */
+      .reveal-section.active .gridGallery > *:nth-child(1) .projectContainer {
+        transition-delay: 0.1s;
+      }
+      .reveal-section.active .gridGallery > *:nth-child(2) .projectContainer {
+        transition-delay: 0.25s;
+      }
+      .reveal-section.active .gridGallery > *:nth-child(3) .projectContainer {
+        transition-delay: 0.4s;
+      }
+      .reveal-section.active .gridGallery > *:nth-child(4) .projectContainer {
+        transition-delay: 0.55s;
+      }
+      .reveal-section.active .gridGallery > *:nth-child(5) .projectContainer {
+        transition-delay: 0.7s;
+      }
+
+      /* WAŻNE: Musimy upewnić się, że linki w galerii nie ucinają animacji */
+      .gridGallery > * {
+        display: block;
+        text-decoration: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .gridGallery a:hover {
+        opacity: 1; /* hover bezpośrednio w kafelku, a nie na linku */
+        transform: translateY(-4px);
+      }
+
+      .disabled-project {
+        position: relative;
+        cursor: not-allowed;
+        opacity: 0.56;
+        overflow: visible !important;
+      }
+
+      .disabled-project::before {
+        content: attr(data-tooltip);
+        position: absolute;
+        bottom: 108%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #1a1a1a;
+        color: #ffffff;
+        padding: 8px 14px;
+        font-size: 13px;
+        font-family: sans-serif;
+        border-radius: 8px;
+        white-space: nowrap;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.15s ease-in-out;
+        z-index: 99;
+      }
+
+      .disabled-project::after {
+        content: "";
+        position: absolute;
+        bottom: 104%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 6px;
+        border-style: solid;
+        border-color: #1a1a1a transparent transparent transparent;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.15s ease-in-out;
+        z-index: 99;
+      }
+
+      .disabled-project:hover::before,
+      .disabled-project:hover::after {
+        opacity: 1;
       }
       /* Cookies */
       .cookie-banner {
@@ -826,8 +981,8 @@
         <!--
         <h2 class="ja">Marek Wietecki</h2>
         -->
-        <p>Cześć!, jestem</p>
-        <h2 class="ja">UX/UI Designerem.</h2>
+        <p>Cześć!</p>
+        <h2 class="ja typewriter">Jestem UX Designerem.</h2>
         <div class="gapp"></div>
         <p>
           Projektuję produkty cyfrowe, rozwiązujące realne problemy użytkowników
@@ -862,27 +1017,11 @@
       </a>
     </div>
     <!-- PROJECTS -->
-    <section id="projects" class="container">
+    <section id="projects" class="container reveal-section">
       <h2 class="mojeProjekty" style="padding-top: 0; margin-top: 16vh">
         Moje Projekty
       </h2>
       <div class="gridGallery">
-        <!--
-        <a href="strona-internetowa-PlanetRoad.html">
-          <div class="projectContainer">
-            <img
-              src="assets/index/HabitHeroes.jpg"
-              alt="Zdjęcie ilustruje Projekt Aplikacji Mobilnej HabitHero"
-            />
-            <p class="title">Jak stworzyłem aplikację, która pomaga, ludziom pokochać produktywność? </p>
-            <div class="tagWrapper">
-              <p class="tag">#App Design</p>
-              <p class="tag">#Prototype</p>
-              <p class="tag">#User Research</p>
-            </div>
-          </div>
-        </a>
-      -->
         <a href="aplikacja-mobilna-monexo.html">
           <div class="projectContainer">
             <img
@@ -919,7 +1058,6 @@
               <div class="tagWrapper">
                 <p class="tag">#UX Design</p>
                 <p class="tag">#Web Design</p>
-                <p class="tag">#Responsive Design</p>
                 <p class="tag">#B2B</p>
               </div>
             </div>
@@ -968,7 +1106,7 @@
             <div class="tagWrapper">
               <p class="tag">#Mobile Design</p>
               <p class="tag">#Progressive web app</p>
-              <p class="tag">#Mobile App</p>
+              <p class="tag">#Gamification</p>
             </div>
           </div>
         </div>
@@ -1348,6 +1486,33 @@
 
         window.addEventListener("load", updateJustify);
         window.addEventListener("resize", updateJustify);
+      });
+    </script>
+
+    <script>
+      // animacja kart produktowych
+      document.addEventListener("DOMContentLoaded", () => {
+        const registrySection = document.querySelector(".reveal-section");
+
+        if (registrySection) {
+          const observerOptions = {
+            root: null, // obserwuje okno przeglądarki
+            threshold: 0.15, // odpala, gdy 15% sekcji wejdzie na ekran
+          };
+
+          const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                // Dodajemy klasę odpalaną w CSS
+                entry.target.classList.add("active");
+                // Wyłączamy obserwowanie, żeby animacja wykonała się tylko raz przy wejściu
+                observer.unobserve(entry.target);
+              }
+            });
+          }, observerOptions);
+
+          observer.observe(registrySection);
+        }
       });
     </script>
   </body>
