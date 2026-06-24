@@ -274,6 +274,10 @@
         line-height: 110%;
         padding-bottom: 4px;
       }
+      .czesc {
+        color: #676767;
+        font-weight: 500;
+      }
       .typewriter {
         /* font-family: monospace; */
         display: inline-block;
@@ -286,8 +290,16 @@
         width: 0;
 
         /* dwie animacje: wpisywanie (trwa 2s) i miganie kursora */
-        animation: typing 2s steps(20) forwards,
+        animation: typing 2s steps(11) forwards,
           blink-caret 0.5s step-end 5 forwards;
+      }
+      @media (max-width: 794px) {
+        .typewriter {
+          display: block; /* Zmiana z inline-block na block, żeby zająć pełną dostępną przestrzeń od lewej */
+          margin-left: 0; /* Gwarancja braku marginesu z lewej */
+          margin-right: auto; /* Zepchnięcie ewentualnego wolnego miejsca na prawą stronę */
+          text-align: left; /* Wymuszenie wyrównania tekstu wewnątrz bloku do lewej */
+        }
       }
 
       /* Rozszerzanie kontenera od 0 do 20 liter */
@@ -296,7 +308,7 @@
           width: 0;
         }
         to {
-          width: 17ch;
+          width: 14ch;
         }
       }
 
@@ -427,7 +439,12 @@
         color: #949494;
         transform: scale(1.1);
       }
-      /* Gallery */
+      /* Logos */
+      .logosWrapper {
+        display: flex;
+        flex-direction: row;
+      }
+      /* Projects */
       .mojeProjekty {
         margin-top: 18vh; /* 148px */
         padding-bottom: 24px;
@@ -455,6 +472,12 @@
         transform: translateY(-4px);
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
       }
+      .is-inactive {
+        color: #a0a0a0 !important;
+        cursor: not-allowed;
+        /* pointer-events: none;  */
+        text-decoration: none;
+      }
       @media (max-width: 1024px) {
         .projectContainer {
           min-height: 348px;
@@ -470,25 +493,6 @@
               transform: scale(1.05);
             } */
 
-      .projectContainerInactive {
-        overflow: hidden;
-        padding: 16px;
-        margin: 16px;
-        transition: transform 0.3s;
-        box-shadow: 0 1px 16px rgba(0, 0, 0, 0.04);
-        border-radius: 32px;
-        background-color: #fafafa;
-        height: 360px;
-        max-width: 1200px;
-        min-width: 240px;
-        opacity: 0.64;
-        cursor: disabled;
-      }
-      @media (max-width: 480px) {
-        .projectContainerInactive {
-          height: 294px !important;
-        }
-      }
       .descriptionWrapper {
         padding-left: 2%;
         display: flex;
@@ -734,6 +738,96 @@
       .disabled-project:hover::after {
         opacity: 1;
       }
+      /* form */
+      .spaceX {
+        width: 100%;
+        padding-top: 0px;
+      }
+      form {
+        max-width: 480px;
+        margin: auto;
+        background: white;
+        padding: 56px;
+        border-radius: 32px;
+        box-shadow: 0 0.1px 16px rgba(0, 0, 0, 0.02);
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .formHeading {
+        margin-top: 0;
+        margin-bottom: 36px;
+        font-size: 28px;
+        align-self: flex-start;
+      }
+
+      .form-contrast {
+        color: #b4b4b4;
+      }
+      .form-ball {
+        font-size: 12px;
+        opacity: 1;
+      }
+      @media (max-width: 480px) {
+        .formHeading {
+          font-size: 20px;
+        }
+        .form-ball {
+          font-size: 9px;
+        }
+      }
+      .headingWrapper {
+        display: flex;
+        width: 100%;
+        align-self: center;
+        justify-content: center;
+      }
+      .formWrapper {
+        padding: 12vw 6vw; /* Góra i dół ; prawa i lewa*/
+        justify-content: center;
+        align-items: center;
+      }
+      label {
+        font-weight: 500;
+        color: #b4b4b4;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 12px 16px;
+        border: 1px solid #ccc;
+        border-radius: 16px;
+        box-sizing: border-box;
+        font-size: 1rem;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        transition: border 0.3s, box-shadow 0.3s;
+        margin-bottom: 16px;
+      }
+      input:focus,
+      textarea:focus {
+        border-color: #1e6ed6;
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(30, 110, 214, 0.15);
+      }
+      .submitForm {
+        background-color: #1e6ed6;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 48px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 16px;
+        max-width: 80%;
+        align-self: center;
+        transition: transform 0.2s ease, background-color 0.3s;
+        box-shadow: 0 4px 12px rgba(30, 110, 214, 0.2);
+        margin-top: 16px;
+      }
+      .submitForm:hover {
+        background-color: #145cb3;
+        transform: scale(1.05);
+      }
       /* Cookies */
       .cookie-banner {
         position: fixed;
@@ -845,7 +939,7 @@
         width: clamp(64px, 10vw, 112px);
         height: auto;
         align-self: center;
-        transition: transform 0.2s ease;
+        transition: opacity 0.3s ease;
       }
       .logoFooter:hover {
         opacity: 64%;
@@ -956,7 +1050,7 @@
         }
         /* Gallery */
         .mojeProjekty {
-          padding-top: 10vh;
+          padding-top: 12vh;
         }
 
         /* Footer */
@@ -1018,36 +1112,52 @@
       </div>
       <div class="headerLinks">
         <a class="headerLink" href="oferta.html">Oferta</a>
-        <a class="headerLink" href="certyfikaty.html">Certyfikaty</a>
-        <a class="headerLink" href="kontakt.html">Kontakt</a>
+        <a class="headerLink" href="o-mnie.html">O Mnie</a>
       </div>
     </header>
     <section class="spaceX" id="spaceX"></section>
+    <!-- HERO -->
     <section class="hero" id="hero">
       <div class="profile">
         <!--
         <h2 class="ja">Marek Wietecki</h2>
         -->
-        <p>Cześć!</p>
-        <p>Od ponad 3 lat działam jako</p>
+        <p class="czesc">Cześć!</p>
+        <p class="czesc">Od ponad 3 lat działam jako</p>
         <h2 class="ja typewriter">UX Designer.</h2>
         <div class="gapp"></div>
-        <p>
+        <!-- <p>
           Projektuję produkty cyfrowe, rozwiązujące realne problemy użytkowników
           i skutecznie wspierające cele biznesowe.
-        </p>
+        </p> -->
+        <p>Projektuję prosto dla ludzi. Skutecznie dla biznesu.</p>
         <div class="gap2"></div>
+        <!-- <p class="miniText">
+          Projektuję prosto dla użytkownika, skutecznie dla biznesu i
+          estetycznie dla oka. Wierzę, że małe detale mogą zrobić wielką
+          różnicę.
+        </p> -->
         <p class="miniText">
-          Prosto dla użytkownika, skutecznie dla biznesu i estetycznie dla oka.
+          Tworzę produkty cyfrowe, które łączą intuicyjne doświadczenia
+          użytkowników z realnymi zyskami firm. Wierzę, że w świecie interfejsów
+          to małe detale robią największą różnicę.
         </p>
+
         <div class="buttonWrapper">
           <a class="buttonPrimary" href="#projects">Zobacz Projekty</a>
-          <a
+          <!-- <a
             class="buttonSecondary"
             href="/assets/index/Marek_Wietecki_CV_2.8.pdf"
             download
             >Pobierz CV</a
-          >
+          > -->
+          <!-- <a
+            href="/assets/index/Marek_Wietecki_CV_2.8.pdf"
+            target="_blank"
+            class="buttonSecondary"
+            >CV</a
+          > -->
+          <a href="/oferta.html" class="buttonSecondary">Poznaj moją ofertę</a>
         </div>
       </div>
       <div class="profilePicture">
@@ -1059,11 +1169,26 @@
         />
       </div>
     </section>
+
+    <!-- 
     <div class="chevronDownWrapper">
       <a href="#projects">
         <i class="fa-solid fa-chevron-down"></i>
       </a>
-    </div>
+    </div> 
+    -->
+
+    <!-- LOGOS -->
+    <!-- <section class="logos" id="logos">
+      <div class="logosWrapper" style="width: 80%; display: flex; align-items: center;">
+        <img src="./assets/index/logos-PlanetRoad.png" style="width: 50%" />
+        <img
+          src="./assets/index/logos-ZPsiegoNaNasze.png"
+          style="width: 50%"
+        />
+      </div>
+    </section> -->
+
     <!-- PROJECTS -->
     <section id="projects" class="container reveal-section">
       <h2 class="mojeProjekty" style="padding-top: 0; margin-top: 16vh">
@@ -1112,53 +1237,55 @@
           </div>
         </a>
 
-        <!-- <a href="strona-internetowa-PlanetRoad.html"> -->
-        <div
-          class="projectContainer disabled-project"
-          data-tooltip="Dostępne wkrótce!"
-        >
-          <img
-            src="assets/index/Kasia4.png"
-            alt="Zdjęcie przedstawia Stronę Internetową PlanetRoad"
-          />
-          <div class="descriptionWrapper">
-            <p class="subtitle">Landing Page zpsiegonanasze</p>
-            <p class="title">
-              Jak zbudowałem strategię rozwoju biznesu dzięki jakościowej
-              stronie docelowej?
-            </p>
-            <div class="tagWrapper">
-              <p class="tag">#UX Design</p>
-              <p class="tag">#Landing page</p>
-              <p class="tag">#Business Strategy</p>
+        <a href="" class="is-inactive">
+          <div
+            class="projectContainer disabled-project"
+            data-tooltip="Dostępne wkrótce!"
+            style="opacity: 0.56"
+          >
+            <img
+              src="assets/index/Kasia4.png"
+              alt="Zdjęcie przedstawia Stronę Internetową PlanetRoad"
+            />
+            <div class="descriptionWrapper">
+              <p class="subtitle">Landing Page zpsiegonanasze</p>
+              <p class="title">
+                Jak zbudowałem strategię rozwoju biznesu dzięki jakościowej
+                stronie docelowej?
+              </p>
+              <div class="tagWrapper">
+                <p class="tag">#UX Design</p>
+                <p class="tag">#Landing page</p>
+                <p class="tag">#Business Strategy</p>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- </a> -->
+        </a>
 
-        <!-- <a href="strona-internetowa-PlanetRoad.html" > -->
-        <div
-          class="projectContainer disabled-project"
-          data-tooltip="Dostępne wkrótce!"
-        >
-          <img
-            src="assets/index/habitbubbl.png"
-            alt="Zdjęcie przedstawia Progresywną Aplikację HabitBubbl"
-          />
-          <div class="descriptionWrapper">
-            <p class="subtitle">Progresywna Aplikacja Habitbubbl</p>
-            <p class="title">
-              Jak stworzyłem aplikację, która pomaga, ludziom pokochać
-              produktywność?
-            </p>
-            <div class="tagWrapper">
-              <p class="tag">#Mobile Design</p>
-              <p class="tag">#Progressive web app</p>
-              <p class="tag">#Gamification</p>
+        <a href="" class="is-inactive">
+          <div
+            class="projectContainer disabled-project"
+            data-tooltip="Dostępne wkrótce!"
+            style="opacity: 0.56"
+          >
+            <img
+              src="assets/index/habitbubbl.png"
+              alt="Zdjęcie przedstawia Progresywną Aplikację HabitBubbl"
+            />
+            <div class="descriptionWrapper">
+              <p class="subtitle">Progresywna Aplikacja Habitbubbl</p>
+              <p class="title">
+                Jak stworzyłem aplikację, która pomaga, ludziom pokochać
+                produktywność?
+              </p>
+              <div class="tagWrapper">
+                <p class="tag">#Mobile Design</p>
+                <p class="tag">#Progressive web app</p>
+                <p class="tag">#Gamification</p>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- </a> -->
+        </a>
 
         <a href="identyfikacja-wizualna-PlanetRoad.html">
           <div class="projectContainer">
@@ -1220,6 +1347,45 @@
       </div>
     </section>
 
+    <!-- SOCIAL_PROOF -->
+    <section id="socialProof"></section>
+
+    <!-- FORM -->
+    <section id="contact" style="margin-bottom: 8svh">
+      <div class="formWrapper">
+        <form action="https://formspree.io/f/mzzeyjbd" method="POST">
+          <div class="headingWrapper">
+            <h2 class="formHeading">
+              Masz pomysł na projekt? <br /><span class="form-contrast"
+                >Zobaczmy, czy gramy do jednej bramki<span class="form-ball"
+                  >⚽️</span
+                >
+                🥅</span
+              >
+            </h2>
+          </div>
+
+          <label for="name">Imię i Nazwisko / Nazwa Firmy:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Adres e-mail:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Wiadomość:</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+
+          <button
+            class="submitForm"
+            type="submit"
+            onclick="trackAdsConversion()"
+          >
+            Wyślij wiadomość
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- COOKIES -->
     <div id="cookie-banner" class="cookie-banner">
       <div class="cookie-text">
         🍪 Używam cookies do analizy ruchu i ciągłego ulepszania działania
@@ -1237,6 +1403,7 @@
       </div>
     </div>
 
+    <!-- FOOTER -->
     <footer>
       <div class="logoWithLinks">
         <a href="index.html" style="text-align: left">
@@ -1383,7 +1550,7 @@
               clip-rule="evenodd"
             />
           </svg>
-          <span>&nbsp;O mnie</span>
+          <span>&nbsp;Strona Główna</span>
         </a>
 
         <a class="navLinks" href="index.html#projects">
@@ -1402,7 +1569,7 @@
           <span>&nbsp;Projekty</span>
         </a>
 
-        <a class="navLinks" href="kontakt.html">
+        <a class="navLinks" href="index.html#contact">
           <svg
             class="icons size-5"
             xmlns="http://www.w3.org/2000/svg"
@@ -1419,7 +1586,11 @@
           <span>&nbsp;Kontakt</span>
         </a>
 
-        <a class="navLinks" href="certyfikaty.html">
+        <a
+          href="/assets/index/Marek_Wietecki_CV_2.8.pdf"
+          target="_blank"
+          class="navLinks"
+        >
           <svg
             class="icons size-5"
             xmlns="http://www.w3.org/2000/svg"
@@ -1432,7 +1603,7 @@
               clip-rule="evenodd"
             />
           </svg>
-          <span>Certyfikaty</span>
+          <span>CV</span>
         </a>
 
         <!-- testimonials -->
@@ -1545,7 +1716,7 @@
         if (registrySection) {
           const observerOptions = {
             root: null, // obserwuje okno przeglądarki
-            threshold: 0.15, // odpala, gdy 15% sekcji wejdzie na ekran
+            threshold: 0.25, // odpala, gdy 15% sekcji wejdzie na ekran
           };
 
           const observer = new IntersectionObserver((entries, observer) => {
