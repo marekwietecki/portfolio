@@ -501,6 +501,8 @@
         height: auto;
         max-width: 1100px;
         width: 88%;
+
+        will-change: transform, opacity;
       }
 
       .projectContainer:hover {
@@ -658,68 +660,10 @@
         transition: transform 0.3s;
         cursor: pointer;
       }
-      .gridGallery a:hover {
-        opacity: 84%;
-      }
-      /* ========================================================
-         EFEKT TALII KART (STARTOWY STAN PRZED WEJŚCIEM W WIDOK)
-         ======================================================== */
-      .reveal-section .projectContainer {
-        opacity: 0;
-        /* Startujemy w jednym punkcie (lekko przesunięte do środka, w dół i obrócone) */
-        transform: translateY(60px) scale(0.92)
-          rotate(var(--start-rotation, -2deg));
-        transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
-          opacity 0.6s ease;
-      }
 
-      /* Nadajemy każdej karcie unikalną rotację startową, żeby imitowały zebraną talię */
-      .reveal-section .gridGallery > *:nth-child(1) .projectContainer {
-        --start-rotation: -3deg;
-      }
-      .reveal-section .gridGallery > *:nth-child(2) .projectContainer {
-        --start-rotation: 1deg;
-      }
-      .reveal-section .gridGallery > *:nth-child(3) .projectContainer {
-        --start-rotation: -1deg;
-      }
-      .reveal-section .gridGallery > *:nth-child(4) .projectContainer {
-        --start-rotation: 2deg;
-      }
-      .reveal-section .gridGallery > *:nth-child(5) .projectContainer {
-        --start-rotation: -2deg;
-      }
-
-      /* ========================================================
-            (ROZSUWANIE TALII)
-          ======================================================== */
-      .reveal-section.active .projectContainer {
-        opacity: 1;
-        transform: translateY(0) scale(1) rotate(0deg); /* Wskakują idealnie na swoje miejsca w gridzie */
-      }
-
-      /* Efekt płynnego rozdawania (staggered delay) - każda kolejna karta wysuwa się ułamek sekundy później */
-      .reveal-section.active .gridGallery > *:nth-child(1) .projectContainer {
-        transition-delay: 0.1s;
-      }
-      .reveal-section.active .gridGallery > *:nth-child(2) .projectContainer {
-        transition-delay: 0.25s;
-      }
-      .reveal-section.active .gridGallery > *:nth-child(3) .projectContainer {
-        transition-delay: 0.4s;
-      }
-      .reveal-section.active .gridGallery > *:nth-child(4) .projectContainer {
-        transition-delay: 0.55s;
-      }
-      .reveal-section.active .gridGallery > *:nth-child(5) .projectContainer {
-        transition-delay: 0.7s;
-      }
-
-      /* WAŻNE: Musimy upewnić się, że linki w galerii nie ucinają animacji */
       .gridGallery > * {
         display: block;
         text-decoration: none;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
       .gridGallery a:hover {
         opacity: 1; /* hover bezpośrednio w kafelku, a nie na linku */
@@ -1183,6 +1127,7 @@
     <script src="/js/translations.js"></script>
   </head>
   <body>
+    <!-- HEADER (NAV) -->
     <header>
       <div class="headerNav">
         <a
@@ -1297,6 +1242,7 @@
       </div>
     </section>
 
+    <!-- CHEVRON -->
     <!-- 
     <div class="chevronDownWrapper">
       <a href="#projects">
@@ -1308,9 +1254,9 @@
     <!-- LOGOS -->
     <!-- <section class="logos" id="logos">
       <div class="logosWrapper" style="width: 80%; display: flex; align-items: center;">
-        <img src="./assets/index/logos-PlanetRoad.png" style="width: 50%" />
+        <img src="assets/index/logos-PlanetRoad.png" style="width: 50%" />
         <img
-          src="./assets/index/logos-ZPsiegoNaNasze.png"
+          src="assets/index/logos-ZPsiegoNaNasze.png"
           style="width: 50%"
         />
       </div>
@@ -1326,14 +1272,16 @@
         Moje Projekty
       </h2>
       <div class="gridGallery">
-        <a href="aplikacja-mobilna-monexo.html">
+        <a href="projects/aplikacja-mobilna-monexo.html">
           <div class="projectContainer">
             <img
               src="assets/index/monexo.png"
               alt="Zdjęcie przedstawia Stronę Internetową PlanetRoad"
             />
             <div class="descriptionWrapper">
-              <p class="title" data-i18n="projects_monexo_title">Aplikacja Mobilna Monexo</p>
+              <p class="title" data-i18n="projects_monexo_title">
+                Aplikacja Mobilna Monexo
+              </p>
               <p class="subtitle" data-i18n="projects_monexo_subtitle">
                 Jak wypełniłem lukę na rynku internetowej wymiany walut tworząc
                 prostą aplikację z transaparentnym podejściem?
@@ -1347,15 +1295,20 @@
           </div>
         </a>
 
-        <a href="strona-internetowa-PlanetRoad.html">
+        <a href="projects/strona-internetowa-PlanetRoad.html">
           <div class="projectContainer">
             <img
-              src="assets/index/PlanetRoad.jpg"
+              src="assets/index/PlanetRoad.png"
               alt="Zdjęcie przedstawia Stronę Internetową PlanetRoad"
             />
             <div class="descriptionWrapper">
-              <p class="title" data-i18n="projects_planetroad_website_title">Strona Internetowa PlanetRoad</p>
-              <p class="subtitle" data-i18n="projects_planetroad_website_subtitle">
+              <p class="title" data-i18n="projects_planetroad_website_title">
+                Strona Internetowa PlanetRoad
+              </p>
+              <p
+                class="subtitle"
+                data-i18n="projects_planetroad_website_subtitle"
+              >
                 Jak przebudowałem stronę firmową, aby umożliwiła klientom
                 poznanie pełnej oferty i doświadczenia PlanetRoad?
               </p>
@@ -1375,11 +1328,13 @@
             style="opacity: 0.56"
           >
             <img
-              src="assets/index/Kasia4.png"
+              src="assets/index/zpsiegonanasze.png"
               alt="Zdjęcie przedstawia Stronę Internetową PlanetRoad"
             />
             <div class="descriptionWrapper">
-              <p class="title" data-i18n="projects_zpsiegonanasze_title">Landing Page zpsiegonanasze</p>
+              <p class="title" data-i18n="projects_zpsiegonanasze_title">
+                Landing Page zpsiegonanasze
+              </p>
               <p class="subtitle" data-i18n="projects_zpsiegonanasze_subtitle">
                 Jak zbudowałem strategię rozwoju biznesu dzięki jakościowej
                 stronie docelowej?
@@ -1404,7 +1359,9 @@
               alt="Zdjęcie przedstawia Progresywną Aplikację HabitBubbl"
             />
             <div class="descriptionWrapper">
-              <p class="title" data-i18n="projects_habitbubbl_title">Progresywna Aplikacja HabitBubbl</p>
+              <p class="title" data-i18n="projects_habitbubbl_title">
+                Progresywna Aplikacja HabitBubbl
+              </p>
               <p class="subtitle" data-i18n="projects_habitbubbl_subtitle">
                 Jak stworzyłem aplikację, która pomaga, ludziom pokochać
                 produktywność?
@@ -1418,20 +1375,28 @@
           </div>
         </a>
 
-        <a href="identyfikacja-wizualna-PlanetRoad.html">
+        <a href="projects/identyfikacja-wizualna-PlanetRoad.html">
           <div class="projectContainer">
             <div class="gradientBackground">
               <img
                 style="width: 44%"
-                src="/assets/projects/identyfikacja-wizualna-PlanetRoad/PlanetRoad_logo_portfolio_white.png"
+                src="assets/projects/identyfikacja-wizualna-PlanetRoad/PlanetRoad_logo_portfolio_white.png"
                 alt="Zdjęcie przedstawia Okładkę Galerii moich grafik, interfejsów oraz ich rekonstrukcji"
               />
               <span>Identyfikacja Wizualna</span>
             </div>
             <div class="descriptionWrapper">
               <div>
-                <p class="title" data-i18n="projects_planetroad_visualidentity_title">Identyfikacja Wizualna PlanetRoad</p>
-                <p class="subtitle" data-i18n="projects_planetroad_visualidentity_subtitle">
+                <p
+                  class="title"
+                  data-i18n="projects_planetroad_visualidentity_title"
+                >
+                  Identyfikacja Wizualna PlanetRoad
+                </p>
+                <p
+                  class="subtitle"
+                  data-i18n="projects_planetroad_visualidentity_subtitle"
+                >
                   Jak wdrożyłem PlanetRoad w świat cyfrowy, tworząc spójną
                   komunikację wizualną?
                 </p>
@@ -1728,7 +1693,7 @@
         </a>
 
         <a
-          href="/assets/index/Marek_Wietecki_CV_2.8.pdf"
+          href="assets/index/Marek_Wietecki_CV_2.8.pdf"
           target="_blank"
           class="navLinks"
         >
@@ -1871,29 +1836,118 @@
     </script>
 
     <script>
-      // animacja kart produktowych
       document.addEventListener("DOMContentLoaded", () => {
-        const registrySection = document.querySelector(".reveal-section");
+        const section = document.querySelector(".reveal-section");
+        if (!section) return;
 
-        if (registrySection) {
-          const observerOptions = {
-            root: null, // obserwuje okno przeglądarki
-            threshold: 0.25, // odpala, gdy 15% sekcji wejdzie na ekran
-          };
+        const gallery = section.querySelector(".gridGallery");
+        const items = Array.from(gallery.children);
 
-          const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                // Dodajemy klasę odpalaną w CSS
-                entry.target.classList.add("active");
-                // Wyłączamy obserwowanie, żeby animacja wykonała się tylko raz przy wejściu
-                observer.unobserve(entry.target);
-              }
-            });
-          }, observerOptions);
+        const STACK = [
+          { idx: 0, z: 1, rot: -5, delay: 0.7 },
+          { idx: 1, z: 3, rot: -1, delay: 0.4 },
+          { idx: 2, z: 5, rot: -3, delay: 0.05 },
+          { idx: 3, z: 2, rot: 4, delay: 0.55 },
+          { idx: 4, z: 4, rot: 2, delay: 0.2 },
+        ];
 
-          observer.observe(registrySection);
+        let observer = null;
+        let dealTimers = [];
+
+        function getCardOpacity(idx) {
+          const card = items[idx].querySelector(".projectContainer");
+          /* Jeśli karta jest disabled, zachowaj jej oryginalne opacity */
+          return card.classList.contains("disabled-project") ? "0.56" : "1";
         }
+
+        function setupStack() {
+          /* Anuluj ewentualne trwające timery rozdawania */
+          dealTimers.forEach((t) => clearTimeout(t));
+          dealTimers = [];
+
+          const galleryRect = gallery.getBoundingClientRect();
+          const stackCX = galleryRect.left + galleryRect.width / 2;
+          const stackCY = galleryRect.top + galleryRect.height * 0.18;
+
+          STACK.forEach(({ idx, z, rot }) => {
+            const card = items[idx].querySelector(".projectContainer");
+            const rect = items[idx].getBoundingClientRect();
+
+            const dx = stackCX - (rect.left + rect.width / 2);
+            const dy = stackCY - (rect.top + rect.height / 2);
+
+            card.style.transition = "none";
+            card.style.transform = `translate(${dx}px, ${dy}px) rotate(${rot}deg) scale(0.88)`;
+            card.style.opacity =
+              getCardOpacity(idx); /* ← zachowuje 0.56 dla disabled */
+            card.style.zIndex = z;
+          });
+        }
+
+        function dealCards() {
+          STACK.forEach(({ idx, delay }) => {
+            const card = items[idx].querySelector(".projectContainer");
+            const t = setTimeout(() => {
+              card.style.transition = `transform 0.9s cubic-bezier(0.19,1,0.22,1),
+             opacity   0.5s ease`;
+              card.style.transform = "translate(0,0) rotate(0deg) scale(1)";
+              card.style.zIndex = "";
+              /* opacity wraca do właściwej wartości (1 lub 0.56) */
+              card.style.opacity = getCardOpacity(idx);
+            }, delay * 1000);
+            dealTimers.push(t);
+          });
+        }
+
+        function isSectionVisible() {
+          const rect = section.getBoundingClientRect();
+          const windowHeight =
+            window.innerHeight || document.documentElement.clientHeight;
+          /* Sekcja widoczna w co najmniej 25% */
+          const visiblePx =
+            Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
+          return visiblePx / rect.height >= 0.25;
+        }
+
+        function attachObserver() {
+          if (observer) observer.disconnect();
+
+          observer = new IntersectionObserver(
+            (entries, obs) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  dealCards();
+                  obs.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.25 }
+          );
+
+          observer.observe(section);
+        }
+
+        function init() {
+          setupStack();
+
+          /* Jeśli sekcja jest już widoczna w momencie init() (np. po resize),
+         rozdaj od razu bez czekania na observer */
+          if (isSectionVisible()) {
+            dealCards();
+          } else {
+            attachObserver();
+          }
+        }
+
+        requestAnimationFrame(init);
+
+        let resizeTimer;
+        window.addEventListener("resize", () => {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(() => {
+            init();
+          }, 150);
+        });
       });
     </script>
   </body>
