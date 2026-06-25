@@ -253,6 +253,7 @@
       .headerLinks {
         display: flex;
         flex-direction: row;
+        align-items: center;
         gap: clamp(16px, 3vw, 40px);
       }
       .logo {
@@ -263,6 +264,39 @@
         justify-content: center;
         cursor: pointer;
         shape-rendering: geometricPrecision;
+      }
+      .lang-switcher {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-family: "Outfit", sans-serif;
+      }
+
+      .lang-btn {
+        background: none;
+        border: none;
+        padding: 4px 8px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #1a1a1a;
+        cursor: pointer;
+        opacity: 0.48;
+        transition: opacity 0.2s ease;
+      }
+
+      .lang-btn:hover {
+        opacity: 0.8;
+      }
+
+      .lang-btn.active {
+        opacity: 1;
+        pointer-events: none; /* wyłączone klikanie w aktywny język */
+      }
+
+      .lang-divider {
+        color: #b4b4b4;
+        font-size: 12px;
+        user-select: none;
       }
       /* Hero */
       .spaceX {
@@ -343,6 +377,11 @@
         text-align: center;
         flex: auto;
 
+        /* background-image: url("assets/index/HeroBackground.png"); */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: right center;
+
         width: 100%;
         max-width: 1200px; /* kontroluje szerokość całego kontenera */
         margin-left: auto;
@@ -350,10 +389,6 @@
 
         padding: 12vh 2vw 6vh 6vw; /* TOP RIGHT BOTTOM LEFT */
         gap: 4vw;
-
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center center; /* wcześniej miałeś 'right center', co zaburzało balans */
       }
       .gapp {
         padding-top: 8px;
@@ -510,18 +545,18 @@
             } */
 
       .title {
+        font-weight: 500;
+        font-size: 14px;
+        color: #c4c4c4;
+        /* align-self: center; */
+      }
+
+      .subtitle {
         font-weight: 600;
         font-size: 14px;
         color: #696969;
         margin-top: 4px;
         margin-bottom: 4px;
-      }
-
-      .subtitle {
-        font-weight: 500;
-        font-size: 14px;
-        color: #c4c4c4;
-        /* align-self: center; */
       }
 
       .tagWrapper {
@@ -556,12 +591,12 @@
       @media (max-width: 480px) {
         .title {
           font-size: 12px;
-          margin-top: 2px;
-          margin-bottom: 2px;
         }
 
         .subtitle {
           font-size: 12px;
+          margin-top: 2px;
+          margin-bottom: 2px;
         }
 
         .tag {
@@ -764,17 +799,74 @@
       .form-contrast {
         color: #b4b4b4;
       }
+      /* ========================================================
+   PIŁKARSKA MIKRO-INTERAKCJA W FORMULARZU (POPRAWIONY WLOT)
+   ======================================================== */
+
+      /* Kontener ma teraz stałą szerokość, określającą długość całego "boiska" */
+      .football-pitch {
+        display: inline-block;
+        width: 50px;
+        height: 32px;
+        position: relative;
+        vertical-align: middle;
+      }
+
+      /* Piłka startuje z lewej krawędzi boiska */
       .form-ball {
         font-size: 12px;
-        opacity: 1;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%) rotate(0deg);
+        z-index: 2; /* Piłka wlatuje DO ŚRODKA (przykrywa tylną siatkę, ale jest pod nią jeśli zmienisz z-index) */
+        transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+          left 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       }
+
+      /* Bramka stoi sztywno na prawej krawędzi boiska */
+      .form-goal {
+        font-size: 28px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.2s ease;
+        z-index: 1;
+        padding-bottom: 8px;
+      }
+
+      /* RESPONSYWNOŚĆ DLA EMBEDÓW */
       @media (max-width: 480px) {
         .formHeading {
           font-size: 20px;
         }
+        .football-pitch {
+          width: 40px;
+          height: 20px;
+        }
         .form-ball {
           font-size: 9px;
         }
+        .form-goal {
+          font-size: 20px; /* Dopasowanie skali bramki na mobile */
+        }
+      }
+
+      /* ========================================================
+   MAGIA: TRIGGER PO KLIKNIĘCIU W FORMULARZ
+   ======================================================== */
+
+      /* 1. Strzał: Piłka przesuwa się w lewo o 72% szerokości boiska, co centruje ją idealnie w świetle bramki */
+      form:focus-within .form-ball {
+        left: 72%;
+        transform: translateY(-50%) rotate(360deg);
+      }
+
+      /* 2. Słupek/Siatka: Bramka reaguje na strzał lekkim tąpnięciem */
+      form:focus-within .form-goal {
+        transform: translateY(-50%) scale(1.1) translateX(2px);
+        filter: drop-shadow(0 0 6px rgba(30, 110, 214, 0.4));
       }
       .headingWrapper {
         display: flex;
@@ -1088,6 +1180,7 @@
         }
       }
     </style>
+    <script src="/js/translations.js"></script>
   </head>
   <body>
     <header>
@@ -1096,6 +1189,7 @@
           class="headerLink"
           style="font-size: clamp(0.6rem, calc(0.75vw + 1.05rem), 1.65rem)"
           href="index.html"
+          data-i18n="nav_home"
         >
           marekwietecki
           <!--
@@ -1111,8 +1205,28 @@
         </button>
       </div>
       <div class="headerLinks">
-        <a class="headerLink" href="oferta.html">Oferta</a>
-        <a class="headerLink" href="o-mnie.html">O Mnie</a>
+        <a class="headerLink" href="oferta.html" data-i18n="nav_offer"
+          >Oferta</a
+        >
+        <a class="headerLink" href="o-mnie.html" data-i18n="nav_about"
+          >O Mnie</a
+        >
+        <div class="lang-switcher">
+          <button
+            class="lang-btn"
+            data-lang="pl"
+            onclick="switchLanguage('pl')"
+          >
+            🇵🇱
+          </button>
+          <button
+            class="lang-btn"
+            data-lang="en"
+            onclick="switchLanguage('en')"
+          >
+            🇬🇧
+          </button>
+        </div>
       </div>
     </header>
     <section class="spaceX" id="spaceX"></section>
@@ -1122,29 +1236,36 @@
         <!--
         <h2 class="ja">Marek Wietecki</h2>
         -->
-        <p class="czesc">Cześć!</p>
-        <p class="czesc">Od ponad 3 lat działam jako</p>
+        <p class="czesc" data-i18n="hero_hi">Cześć!</p>
+        <p class="czesc" data-i18n="hero_hi2">Od ponad 3 lat działam jako</p>
         <h2 class="ja typewriter">UX Designer.</h2>
         <div class="gapp"></div>
         <!-- <p>
           Projektuję produkty cyfrowe, rozwiązujące realne problemy użytkowników
           i skutecznie wspierające cele biznesowe.
         </p> -->
-        <p>Projektuję prosto dla ludzi. Skutecznie dla biznesu.</p>
+        <p data-i18n="hero_title">
+          Projektuję prosto dla ludzi. Skutecznie dla biznesu.
+        </p>
         <div class="gap2"></div>
         <!-- <p class="miniText">
           Projektuję prosto dla użytkownika, skutecznie dla biznesu i
           estetycznie dla oka. Wierzę, że małe detale mogą zrobić wielką
           różnicę.
         </p> -->
-        <p class="miniText">
+        <p class="miniText" data-i18n="hero_subtitle">
           Tworzę produkty cyfrowe, które łączą intuicyjne doświadczenia
           użytkowników z realnymi zyskami firm. Wierzę, że w świecie interfejsów
           to małe detale robią największą różnicę.
         </p>
 
         <div class="buttonWrapper">
-          <a class="buttonPrimary" href="#projects">Zobacz Projekty</a>
+          <a
+            class="buttonPrimary"
+            href="#projects"
+            data-i18n="hero_button_primary"
+            >Zobacz Projekty</a
+          >
           <!-- <a
             class="buttonSecondary"
             href="/assets/index/Marek_Wietecki_CV_2.8.pdf"
@@ -1157,7 +1278,12 @@
             class="buttonSecondary"
             >CV</a
           > -->
-          <a href="/oferta.html" class="buttonSecondary">Poznaj moją ofertę</a>
+          <a
+            href="/oferta.html"
+            class="buttonSecondary"
+            data-i18n="hero_button_secondary"
+            >Poznaj moją ofertę</a
+          >
         </div>
       </div>
       <div class="profilePicture">
@@ -1166,6 +1292,7 @@
           src="assets/index/mwSmile.png"
           alt="Moje zdjęcie"
           class="profileImg"
+          data-i18n="hero_mw"
         />
       </div>
     </section>
@@ -1191,7 +1318,11 @@
 
     <!-- PROJECTS -->
     <section id="projects" class="container reveal-section">
-      <h2 class="mojeProjekty" style="padding-top: 0; margin-top: 16vh">
+      <h2
+        class="mojeProjekty"
+        style="padding-top: 0; margin-top: 16vh"
+        data-i18n="projects_title"
+      >
         Moje Projekty
       </h2>
       <div class="gridGallery">
@@ -1202,8 +1333,8 @@
               alt="Zdjęcie przedstawia Stronę Internetową PlanetRoad"
             />
             <div class="descriptionWrapper">
-              <p class="subtitle">Aplikacja Mobilna Monexo</p>
-              <p class="title">
+              <p class="title" data-i18n="projects_monexo_title">Aplikacja Mobilna Monexo</p>
+              <p class="subtitle" data-i18n="projects_monexo_subtitle">
                 Jak wypełniłem lukę na rynku internetowej wymiany walut tworząc
                 prostą aplikację z transaparentnym podejściem?
               </p>
@@ -1223,8 +1354,8 @@
               alt="Zdjęcie przedstawia Stronę Internetową PlanetRoad"
             />
             <div class="descriptionWrapper">
-              <p class="subtitle">Strona Internetowa PlanetRoad</p>
-              <p class="title">
+              <p class="title" data-i18n="projects_planetroad_website_title">Strona Internetowa PlanetRoad</p>
+              <p class="subtitle" data-i18n="projects_planetroad_website_subtitle">
                 Jak przebudowałem stronę firmową, aby umożliwiła klientom
                 poznanie pełnej oferty i doświadczenia PlanetRoad?
               </p>
@@ -1248,8 +1379,8 @@
               alt="Zdjęcie przedstawia Stronę Internetową PlanetRoad"
             />
             <div class="descriptionWrapper">
-              <p class="subtitle">Landing Page zpsiegonanasze</p>
-              <p class="title">
+              <p class="title" data-i18n="projects_zpsiegonanasze_title">Landing Page zpsiegonanasze</p>
+              <p class="subtitle" data-i18n="projects_zpsiegonanasze_subtitle">
                 Jak zbudowałem strategię rozwoju biznesu dzięki jakościowej
                 stronie docelowej?
               </p>
@@ -1273,8 +1404,8 @@
               alt="Zdjęcie przedstawia Progresywną Aplikację HabitBubbl"
             />
             <div class="descriptionWrapper">
-              <p class="subtitle">Progresywna Aplikacja Habitbubbl</p>
-              <p class="title">
+              <p class="title" data-i18n="projects_habitbubbl_title">Progresywna Aplikacja HabitBubbl</p>
+              <p class="subtitle" data-i18n="projects_habitbubbl_subtitle">
                 Jak stworzyłem aplikację, która pomaga, ludziom pokochać
                 produktywność?
               </p>
@@ -1299,8 +1430,8 @@
             </div>
             <div class="descriptionWrapper">
               <div>
-                <p class="subtitle">Identyfikacja Wizualna PlanetRoad</p>
-                <p class="title">
+                <p class="title" data-i18n="projects_planetroad_visualidentity_title">Identyfikacja Wizualna PlanetRoad</p>
+                <p class="subtitle" data-i18n="projects_planetroad_visualidentity_subtitle">
                   Jak wdrożyłem PlanetRoad w świat cyfrowy, tworząc spójną
                   komunikację wizualną?
                 </p>
@@ -1351,33 +1482,35 @@
     <section id="socialProof"></section>
 
     <!-- FORM -->
-    <section id="contact" style="margin-bottom: 8svh">
+    <section id="contact" style="margin-bottom: 6shv; padding-top: 4svh">
       <div class="formWrapper">
         <form action="https://formspree.io/f/mzzeyjbd" method="POST">
           <div class="headingWrapper">
             <h2 class="formHeading">
-              Masz pomysł na projekt? <br /><span class="form-contrast"
-                >Zobaczmy, czy gramy do jednej bramki<span class="form-ball"
-                  >⚽️</span
-                >
-                🥅</span
+              <span data-i18n="form_title">Masz pomysł na projekt?</span> <br />
+              <span class="form-contrast" data-i18n="form_subtitle"
+                >Zobaczmy, czy gramy do jednej bramki</span
+              ><span class="football-pitch"
+                ><span class="form-ball">⚽️</span
+                ><span class="form-goal">🥅</span></span
               >
             </h2>
           </div>
 
-          <label for="name">Imię i Nazwisko / Nazwa Firmy:</label>
+          <label for="name" data-i18n="form_name">Imię / Nazwa:</label>
           <input type="text" id="name" name="name" required />
 
-          <label for="email">Adres e-mail:</label>
+          <label for="email" data-i18n="form_email">Adres e-mail:</label>
           <input type="email" id="email" name="email" required />
 
-          <label for="message">Wiadomość:</label>
+          <label for="message" data-i18n="form_message">Wiadomość:</label>
           <textarea id="message" name="message" rows="6" required></textarea>
 
           <button
             class="submitForm"
             type="submit"
             onclick="trackAdsConversion()"
+            data-i18n="form_button"
           >
             Wyślij wiadomość
           </button>
@@ -1387,17 +1520,25 @@
 
     <!-- COOKIES -->
     <div id="cookie-banner" class="cookie-banner">
-      <div class="cookie-text">
+      <div class="cookie-text" data-i18n="cookies_text">
         🍪 Używam cookies do analizy ruchu i ciągłego ulepszania działania
         strony.
         <!--<a href="/privacy">Polityka prywatności</a>-->
       </div>
 
       <div class="cookie-buttons">
-        <button id="accept-cookies" class="cookie-btn primary">
+        <button
+          id="accept-cookies"
+          class="cookie-btn primary"
+          data-i18n="cookies_primary_button"
+        >
           Akceptuję
         </button>
-        <button id="decline-cookies" class="cookie-btn secondary">
+        <button
+          id="decline-cookies"
+          class="cookie-btn secondary"
+          data-i18n="cookies_secondary_button"
+        >
           Odrzucam
         </button>
       </div>
@@ -1550,7 +1691,7 @@
               clip-rule="evenodd"
             />
           </svg>
-          <span>&nbsp;Strona Główna</span>
+          <span data-i18n="footer_link_main">&nbsp;Strona Główna</span>
         </a>
 
         <a class="navLinks" href="index.html#projects">
@@ -1566,7 +1707,7 @@
               clip-rule="evenodd"
             />
           </svg>
-          <span>&nbsp;Projekty</span>
+          <span data-i18n="footer_link_projects">&nbsp;Projekty</span>
         </a>
 
         <a class="navLinks" href="index.html#contact">
@@ -1583,7 +1724,7 @@
               d="m19 8.839-7.77 3.885a2.75 2.75 0 0 1-2.46 0L1 8.839V14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.839Z"
             />
           </svg>
-          <span>&nbsp;Kontakt</span>
+          <span data-i18n="footer_link_contact">&nbsp;Kontakt</span>
         </a>
 
         <a
@@ -1603,13 +1744,12 @@
               clip-rule="evenodd"
             />
           </svg>
-          <span>CV</span>
+          <span data-i18n="footer_link_cv">CV</span>
         </a>
-
         <!-- testimonials -->
       </div>
       <div class="footerTexts">
-        <p class="footerText">
+        <p class="footerText" data-i18n="footer_copyright">
           © Marek Wietecki 2026. Treści chronione prawem autorskim.
         </p>
       </div>
@@ -1667,13 +1807,35 @@
         const profileImg = document.getElementById("profileImg");
         let revertTimeout;
 
-        profileImg.addEventListener("click", () => {
-          profileImg.src = "assets/index/mwHappy.png"; // obrazek po kliknięciu
-          clearTimeout(revertTimeout);
-          revertTimeout = setTimeout(() => {
-            profileImg.src = "assets/index/mwSmile.png"; // powrót po 1s
-          }, 2000);
-        });
+        const currentLang = localStorage.getItem("selectedLanguage");
+        console.log(currentLang);
+
+        if (currentLang === "pl") {
+          profileImg.addEventListener("click", () => {
+            profileImg.src = "assets/index/mwHappy.png"; // obrazek po kliknięciu
+            clearTimeout(revertTimeout);
+            revertTimeout = setTimeout(() => {
+              profileImg.src = "assets/index/mwSmile.png"; // powrót po 1s
+            }, 2000);
+          });
+        } else if (currentLang === "en") {
+          profileImg.addEventListener("click", () => {
+            profileImg.src = "assets/index/mwHappyEng.png"; // obrazek po kliknięciu
+            clearTimeout(revertTimeout);
+            revertTimeout = setTimeout(() => {
+              profileImg.src = "assets/index/mwSmileEng.png"; // powrót po 1s
+            }, 2000);
+          });
+        } else {
+          //znowu pl jakby coś nie działało
+          profileImg.addEventListener("click", () => {
+            profileImg.src = "assets/index/mwHappy.png"; // obrazek po kliknięciu
+            clearTimeout(revertTimeout);
+            revertTimeout = setTimeout(() => {
+              profileImg.src = "assets/index/mwSmile.png"; // powrót po 1s
+            }, 2000);
+          });
+        }
       });
     </script>
     <script>
