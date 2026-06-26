@@ -312,6 +312,9 @@
         box-shadow: 0 1px 16px rgba(0, 0, 0, 0.02);
         border: 1px solid rgba(0, 0, 0, 0.02);
         display: flex;
+        position: relative;
+        will-change: transform;
+
         flex-direction: column;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         box-sizing: border-box; /* Zabezpieczenie przed rozpychaniem przez padding */
@@ -321,6 +324,296 @@
       .serviceCard:hover {
         transform: translateY(-4px);
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+      }
+
+      /* ========================================================
+   KARTA 1: Paleta 🎨 — baza
+   ======================================================== */
+      .serviceCard:nth-child(1) .serviceIcon {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        z-index: 10;
+        overflow: visible;
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      /* Subtelna poświata w tle */
+      .serviceCard:nth-child(1) .serviceIcon::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(121, 40, 202, 0.1) 0%,
+          rgba(255, 0, 123, 0.1) 50%,
+          transparent 70%
+        );
+        transform: translate(-50%, -50%) scale(0);
+        z-index: -1;
+        pointer-events: none;
+        transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+
+      /* Krople farby — wspólna baza */
+      .serviceCard:nth-child(1) .serviceIcon .drop {
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 20;
+        opacity: 0;
+      }
+
+      /* ========================================================
+   DESKTOP — hover
+   ======================================================== */
+      @media (hover: hover) {
+        .serviceCard:hover:nth-child(1) .serviceIcon::before {
+          transform: translate(-50%, -50%) scale(1.5);
+        }
+
+        .serviceCard:hover:nth-child(1) .serviceIcon {
+          animation: floatPalette 2.2s ease-in-out infinite alternate;
+        }
+
+        .serviceCard:hover:nth-child(1) .serviceIcon .drop {
+          animation: dropFly var(--dur) var(--delay) ease-out infinite;
+        }
+      }
+
+      /* ========================================================
+   MOBILE — klasa .is-visible dodawana przez JS
+   ======================================================== */
+      .serviceCard:nth-child(1).is-visible .serviceIcon::before {
+        transform: translate(-50%, -50%) scale(1.5);
+      }
+
+      .serviceCard:nth-child(1).is-visible .serviceIcon {
+        animation: floatPalette 2.2s ease-in-out infinite alternate;
+      }
+
+      .serviceCard:nth-child(1).is-visible .serviceIcon .drop {
+        animation: dropFly var(--dur) var(--delay) ease-out infinite;
+      }
+
+      /* ========================================================
+   KEYFRAMES
+   ======================================================== */
+
+      /* Mocniejszy float — większy zasięg niż oryginalny */
+      @keyframes floatPalette {
+        0% {
+          transform: translateY(0px) rotate(-5deg) scale(1);
+        }
+        50% {
+          transform: translateY(-10px) rotate(4deg) scale(1.12);
+        }
+        100% {
+          transform: translateY(-14px) rotate(7deg) scale(1.15);
+        }
+      }
+
+      /* Krople wylatują i zanikają */
+      @keyframes dropFly {
+        0% {
+          opacity: 0.85;
+          transform: translate(0, 0) scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: translate(var(--tx), var(--ty)) scale(0.25);
+        }
+      }
+
+      /* KARTA 2: Lupa — baza */
+      .serviceCard:nth-child(2) .serviceIcon {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        z-index: 10; /* wyższy z-index żeby wylatywała nad inne elementy */
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      /* WAŻNE: overflow: visible na całej karcie i headerze żeby ikona mogła wyjeżdżać */
+      .serviceCard:nth-child(2),
+      .serviceCard:nth-child(2) .serviceHeader {
+        overflow: visible;
+      }
+
+      .serviceCard:nth-child(2) .serviceIcon::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 215, 0, 0.06) 0%,
+          rgba(255, 140, 0, 0.06) 40%,
+          transparent 70%
+        );
+        transform: translate(-50%, -50%) scale(0);
+        z-index: -1;
+        pointer-events: none;
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      /* DESKTOP — hover */
+      @media (hover: hover) {
+        .serviceCard:hover:nth-child(2) .serviceIcon::before {
+          transform: translate(-50%, -50%) scale(1.4);
+        }
+
+        .serviceCard:hover:nth-child(2) .serviceIcon {
+          animation: bigScan 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+      }
+
+      /* MOBILE — klasa dodawana przez JS przy wjeździe na ekran */
+      .serviceCard:nth-child(2).is-visible .serviceIcon::before {
+        transform: translate(-50%, -50%) scale(1.4);
+      }
+
+      .serviceCard:nth-child(2).is-visible .serviceIcon {
+        animation: bigScan 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      }
+
+      @keyframes bigScan {
+        0% {
+          transform: translate(0, 0) scale(1) rotate(0deg);
+        }
+        15% {
+          transform: translate(-30px, -25px) scale(1.25) rotate(-12deg);
+        }
+        30% {
+          transform: translate(45px, -35px) scale(1.3) rotate(15deg);
+        }
+        45% {
+          transform: translate(55px, 20px) scale(1.2) rotate(-8deg);
+        }
+        60% {
+          transform: translate(-25px, 40px) scale(1.15) rotate(20deg);
+        }
+        75% {
+          transform: translate(-45px, 10px) scale(1.25) rotate(-5deg);
+        }
+        90% {
+          transform: translate(10px, -15px) scale(1.1) rotate(8deg);
+        }
+        100% {
+          transform: translate(0, 0) scale(1) rotate(0deg);
+        }
+      }
+
+      /* Reszta kart (1 i 3) — te same co miałeś, tylko hover przez media query */
+      @media (hover: hover) {
+        .serviceCard:hover:nth-child(1) .serviceIcon::before {
+          opacity: 0.3;
+          animation: gradientBreath 4s linear infinite;
+        }
+        .serviceCard:hover:nth-child(1) .serviceIcon {
+          animation: floatPalette 2s ease-in-out infinite alternate;
+        }
+        .serviceCard:hover:nth-child(3) .serviceIcon::before {
+          transform: translate(-50%, -50%) scale(1.6);
+        }
+        .serviceCard:hover:nth-child(3) .serviceIcon {
+          animation: spinGear 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+      }
+
+      /* Mobile — klasy dla karty 1 i 3 */
+      .serviceCard:nth-child(1).is-visible .serviceIcon::before {
+        opacity: 0.3;
+        animation: gradientBreath 4s linear infinite;
+      }
+      .serviceCard:nth-child(1).is-visible .serviceIcon {
+        animation: floatPalette 2s ease-in-out infinite alternate;
+      }
+      .serviceCard:nth-child(3).is-visible .serviceIcon::before {
+        transform: translate(-50%, -50%) scale(1.4);
+      }
+      .serviceCard:nth-child(3).is-visible .serviceIcon {
+        animation: spinGear 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      }
+      /* ========================================================
+   KARTA 3: Ikonka zębatki (⚙️) - Baza i pozycjonowanie
+   ======================================================== */
+      .serviceCard:nth-child(3) .serviceIcon {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        z-index: 1;
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      .serviceCard:nth-child(3) .serviceIcon::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(0, 223, 216, 0.06) 0%,
+          rgba(0, 122, 255, 0.04) 45%,
+          transparent 70%
+        );
+        transform: translate(-50%, -50%) scale(0);
+        z-index: -1;
+        pointer-events: none;
+        transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+
+      /* ========================================================
+   EFEKT HOVER DLA KARTY 3 (AKTYWACJA MIKROANIMACJI)
+   ======================================================== */
+
+      /* Rozbłysk tła */
+      .serviceCard:hover:nth-child(3) .serviceIcon::before {
+        transform: translate(-50%, -50%) scale(1.4);
+      }
+
+      /* obrót zębatki */
+      .serviceCard:hover:nth-child(3) .serviceIcon {
+        animation: spinGear 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      }
+
+      /* ========================================================
+   DEFINICJA ANIMACJI OBROTU ZĘBATKI (KEYFRAMES)
+   ======================================================== */
+
+      /* Płynny, kontrolowany obrót o 360 stopni z miękkim startem i zatrzymaniem */
+      @keyframes spinGear {
+        0% {
+          transform: rotate(0deg) scale(1);
+        }
+        50% {
+          transform: rotate(180deg) scale(1.1); /* Delikatne mikro-powiększenie w połowie ruchu */
+        }
+        100% {
+          transform: rotate(360deg) scale(1);
+        }
       }
 
       .serviceHeader {
@@ -690,6 +983,7 @@
         }
       }
     </style>
+    <script src="/js/translations.js"></script>
   </head>
   <body>
     <!-- Header -->
@@ -714,21 +1008,30 @@
         </button>
       </div>
       <div class="headerLinks">
-        <a class="headerLink" href="oferta.html">Oferta</a>
-        <a class="headerLink" href="o-mnie.html">O Mnie</a>
+        <a class="headerLink" href="oferta.html" data-i18n="nav_offer"
+          >Oferta</a
+        >
+        <a class="headerLink" href="o-mnie.html" data-i18n="nav_about"
+          >O Mnie</a
+        >
       </div>
     </header>
+
     <section class="spaceX" id="spaceX"></section>
+
     <!-- Breadcrumbsy -->
     <div class="breadcrumbsWrapper">
       <a
         href="index.html"
         class="breadcrumbs"
         style="text-decoration: underline"
+        data-i18n="offer_breadcrumbs_main"
         >Strona Główna</a
       >
       <span class="arrow">&nbsp;>&nbsp;</span>
-      <span class="currentCard">Oferta</span>
+      <span class="currentCard" data-i18n="offer_breadcrumbs_current"
+        >Oferta</span
+      >
     </div>
     <!-- <div class="titleWrapper">
       <h1>Oferta</h1>
@@ -737,12 +1040,14 @@
     <main class="offerPage">
       <section class="offerHero">
         <div class="heroContent">
-          <span class="badge">W czym mogę Ci pomóc?</span>
-          <h1 class="offerHeading">
+          <span class="badge" data-i18n="offer_badge"
+            >W czym mogę Ci pomóc?</span
+          >
+          <h1 class="offerHeading" data-i18n="offer_heading">
             Przekształcam pomysły w dochodowe produkty cyfrowe.
           </h1>
-          <p class="heroSubtext">
-            Nie tylko rysuję ładne ekrany. Projektuję doświadczenia poparte
+          <p class="heroSubtext" data-i18n="offer_subtext">
+            Nie tylko tworzę ładne ekrany. Projektuję doświadczenia poparte
             analityką, buduję interaktywne prototypy i wdrażam gotowe strony na
             serwer. Kompleksowo.
           </p>
@@ -752,70 +1057,180 @@
       <section class="servicesGrid container">
         <div class="serviceCard">
           <div class="serviceHeader">
-            <div class="serviceIcon">🎨</div>
-            <h3>Projektowanie Interfejsów (UX/UI)</h3>
+            <div class="serviceIcon">
+              🎨
+              <span
+                class="drop"
+                style="
+                  width: 6px;
+                  height: 6px;
+                  background: #ff007b;
+                  top: 8px;
+                  left: 32px;
+                  --tx: -16px;
+                  --ty: -24px;
+                  --dur: 2s;
+                  --delay: 0s;
+                "
+              ></span>
+              <span
+                class="drop"
+                style="
+                  width: 4px;
+                  height: 4px;
+                  background: #7928ca;
+                  top: 6px;
+                  left: 12px;
+                  --tx: 10px;
+                  --ty: -26px;
+                  --dur: 2.3s;
+                  --delay: 0.4s;
+                "
+              ></span>
+              <span
+                class="drop"
+                style="
+                  width: 5px;
+                  height: 5px;
+                  background: #00dfd8;
+                  top: 32px;
+                  left: 38px;
+                  --tx: 20px;
+                  --ty: -12px;
+                  --dur: 2.1s;
+                  --delay: 0.7s;
+                "
+              ></span>
+              <span
+                class="drop"
+                style="
+                  width: 3px;
+                  height: 3px;
+                  background: #ff6b35;
+                  top: 36px;
+                  left: 8px;
+                  --tx: -12px;
+                  --ty: -18px;
+                  --dur: 2.4s;
+                  --delay: 0.2s;
+                "
+              ></span>
+              <span
+                class="drop"
+                style="
+                  width: 5px;
+                  height: 5px;
+                  background: #7928ca;
+                  top: 14px;
+                  left: 42px;
+                  --tx: 18px;
+                  --ty: 14px;
+                  --dur: 2.2s;
+                  --delay: 0.9s;
+                "
+              ></span>
+            </div>
+            <h3 data-i18n="offer_interfaces_header">
+              Projektowanie Interfejsów - UX/UI
+            </h3>
           </div>
-          <p class="serviceDesc">
+          <p class="serviceDesc" data-i18n="offer_interfaces_description">
             Tworzę intuicyjne systemy dedykowane dla web i mobile. Dbam o każdy
             krok użytkownika, eliminując błędy poznawcze.
           </p>
           <ul class="serviceList">
-            <li>Aplikacje mobilne i webowe</li>
-            <li>Landing pages o wysokiej konwersji</li>
-            <li>Praca z zaawansowanymi Design Systems</li>
-            <li>Interaktywne, klikalne prototypy high-fidelity</li>
+            <li data-i18n="offer_interfaces_list_1">
+              Aplikacje mobilne i webowe
+            </li>
+            <li data-i18n="offer_interfaces_list_2">
+              Landing pages zoptymalizowane pod konwersję
+            </li>
+            <li data-i18n="offer_interfaces_list_4">
+              Interaktywne, klikalne prototypy high-fidelity
+            </li>
+            <li data-i18n="offer_interfaces_list_3">
+              Praca na Design Systemamach
+            </li>
           </ul>
         </div>
 
         <div class="serviceCard">
           <div class="serviceHeader">
             <div class="serviceIcon">🔍</div>
-            <h3>Audyty, Strategia & CJM</h3>
+            <h3 data-i18n="offer_strategy_header">Audyty, Strategia & CJM</h3>
           </div>
-          <p class="serviceDesc">
+          <p class="serviceDesc" data-i18n="offer_strategy_description">
             Twoja strona nie zarabia, a użytkownicy uciekają? Mapuję ich ścieżki
             i znajduje krytyczne wąskie gardła w procesie.
           </p>
           <ul class="serviceList">
-            <li>Profesjonalne audyty UX / UI</li>
-            <li>Mapowanie Customer Journey (CJM)</li>
-            <li>Projektowanie procesów biznesowych</li>
-            <li>Identyfikacja wizualna i spójny branding</li>
+            <li data-i18n="offer_strategy_list_1">
+              Profesjonalne audyty UX / UI
+            </li>
+            <li data-i18n="offer_strategy_list_2">
+              Mapowanie Customer Journey (CJM)
+            </li>
+            <li data-i18n="offer_strategy_list_3">
+              Projektowanie procesów biznesowych
+            </li>
+            <li data-i18n="offer_strategy_list_4">
+              Identyfikacja wizualna i spójny branding
+            </li>
           </ul>
         </div>
 
         <div class="serviceCard">
           <div class="serviceHeader">
             <div class="serviceIcon">⚙️</div>
-            <h3>Wdrożenie & Analityka Tech</h3>
+            <h3 data-i18n="offer_analitycs_header">Wdrożenie & Analityka</h3>
           </div>
-          <p class="serviceDesc">
+          <p class="serviceDesc" data-i18n="offer_analitycs_description">
             Zamykam proces tam, gdzie inni designerzy kończą pracę. Dostarczam
             działający produkt z podpiętą analityką.
           </p>
           <ul class="serviceList">
-            <li>Wdrożenie stron na serwer i konfiguracja domen</li>
-            <li>Podpięcie analityki (Google Ads, tagi, konwersje)</li>
-            <li>Przygotowanie assetów i prostej grafiki</li>
-            <li>Czysty kod przyjazny technicznemu SEO</li>
+            <li data-i18n="offer_analitycs_list_1">
+              Wdrożenie stron na serwer i konfiguracja domen
+            </li>
+            <li data-i18n="offer_analitycs_list_2">
+              Podpięcie analityki (Google Ads, tagi, konwersje)
+            </li>
+            <li data-i18n="offer_analitycs_list_3">
+              Przygotowanie assetów i prostej grafiki
+            </li>
+            <li data-i18n="offer_analitycs_list_4">
+              Optymalizacja stron pod SEO i wydajność
+            </li>
           </ul>
         </div>
       </section>
 
       <section class="offerCta">
         <div class="ctaContainer">
-          <h2>Masz projekt w głowie? Zobaczmy, czy gramy do jednej bramki.</h2>
+          <h2 data-i18n="offer_cta_heading">
+            Masz projekt w głowie? Zobaczmy, czy gramy do jednej bramki.
+          </h2>
           <p>
-            Rozliczam się w pełni bezpiecznie przez platformę
-            <strong>Useme</strong> (wystawiam fakturę VAT, brak ryzyka dla
-            obydwu stron).
+            <span data-i18n="offer_cta_p1"
+              >Rozliczam się w pełni bezpiecznie przez platformę</span
+            >
+            <strong>Useme</strong>
+            <span data-i18n="offer_cta_p2"
+              >(wystawiam fakturę VAT, brak ryzyka dla obydwu stron).</span
+            >
           </p>
 
           <div class="ctaButtons">
-            <a href="index.html#projects" class="btnSecondary"
+            <a
+              href="index.html#projects"
+              class="btnSecondary"
+              data-i18n="offer_cta_button_secondary"
               >Zobacz moje projekty</a
             >
-            <a href="kontakt.html" class="btnPrimary"
+            <a
+              href="index.html#contact"
+              class="btnPrimary"
+              data-i18n="offer_cta_button_primary"
               >Porozmawiajmy o projekcie</a
             >
           </div>
@@ -824,23 +1239,31 @@
     </main>
 
     <div id="cookie-banner" class="cookie-banner">
-      <div class="cookie-text">
+      <div class="cookie-text" data-i18n="cookies_text">
         🍪 Używam cookies do analizy ruchu i ciągłego ulepszania działania
         strony.
         <!--<a href="/privacy">Polityka prywatności</a>-->
       </div>
 
       <div class="cookie-buttons">
-        <button id="accept-cookies" class="cookie-btn primary">
+        <button
+          id="accept-cookies"
+          class="cookie-btn primary"
+          data-i18n="cookies_primary_button"
+        >
           Akceptuję
         </button>
-        <button id="decline-cookies" class="cookie-btn secondary">
+        <button
+          id="decline-cookies"
+          class="cookie-btn secondary"
+          data-i18n="cookies_secondary_button"
+        >
           Odrzucam
         </button>
       </div>
     </div>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer>
       <div class="logoWithLinks">
         <a href="index.html" style="text-align: left">
@@ -972,6 +1395,7 @@
           </a>
         </div>
       </div>
+
       <div class="footerLinks">
         <a class="navLinks" href="index.html#top">
           <svg
@@ -986,7 +1410,7 @@
               clip-rule="evenodd"
             />
           </svg>
-          <span>&nbsp;Strona Główna</span>
+          <span data-i18n="footer_link_main">&nbsp;Strona Główna</span>
         </a>
 
         <a class="navLinks" href="index.html#projects">
@@ -1002,7 +1426,7 @@
               clip-rule="evenodd"
             />
           </svg>
-          <span>&nbsp;Projekty</span>
+          <span data-i18n="footer_link_projects">&nbsp;Projekty</span>
         </a>
 
         <a class="navLinks" href="index.html#contact">
@@ -1019,11 +1443,11 @@
               d="m19 8.839-7.77 3.885a2.75 2.75 0 0 1-2.46 0L1 8.839V14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.839Z"
             />
           </svg>
-          <span>&nbsp;Kontakt</span>
+          <span data-i18n="footer_link_contact">&nbsp;Kontakt</span>
         </a>
 
         <a
-          href="/assets/index/Marek_Wietecki_CV_2.8.pdf"
+          href="assets/index/Marek_Wietecki_CV_2.9.pdf"
           target="_blank"
           class="navLinks"
         >
@@ -1039,18 +1463,17 @@
               clip-rule="evenodd"
             />
           </svg>
-          <span>CV</span>
+          <span data-i18n="footer_link_cv">CV</span>
         </a>
-
-
         <!-- testimonials -->
       </div>
       <div class="footerTexts">
-        <p class="footerText">
+        <p class="footerText" data-i18n="footer_copyright">
           © Marek Wietecki 2026. Treści chronione prawem autorskim.
         </p>
       </div>
     </footer>
+
     <script>
       const header = document.querySelector("header");
       const spacex = document.querySelector(".spaceX");
@@ -1097,6 +1520,31 @@
             updatePadding();
           });
       });
+    </script>
+    <!-- hover na desktop, a pojawienie się w view na mobile-->
+    <script>
+      (function () {
+        // Tylko na mobile/touch — na desktopie hover robi robotę
+        const isTouchDevice = () => window.matchMedia("(hover: none)").matches;
+
+        const cards = document.querySelectorAll(".servicesGrid .serviceCard");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            if (!isTouchDevice()) return; // na desktopie nic nie rób
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+              } else {
+                entry.target.classList.remove("is-visible"); // reset gdy wyjedzie
+              }
+            });
+          },
+          { threshold: 0.4 } // karta musi być w 40% widoczna
+        );
+
+        cards.forEach((card) => observer.observe(card));
+      })();
     </script>
   </body>
   <script src="js/cookie.js"></script>
