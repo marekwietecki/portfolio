@@ -130,7 +130,7 @@ const translations = {
     offer_breadcrumbs_current: "Offer",
     offer_badge: "How can i help You?",
     offer_heading: "I turn ideas into profitable digital products.",
-    offer_subtext: "I don't only make beautigul screens. I'm designing experiences based on analitycs, building interactive prototypes and implementing complete websites on the server. Comprehensively.",
+    offer_subtext: "I don't only make beautiful screens. I'm designing experiences based on analitycs, building interactive prototypes and implementing complete websites on the server. Comprehensively.",
     offer_interfaces_header: "Interfaces Design - UX/UI",
     offer_interfaces_description: "I design intuitive web and mobile systems. I focus on every step of the user journey, eliminating cognitive friction.",
     offer_interfaces_list_1: "Mobile and web applications",
