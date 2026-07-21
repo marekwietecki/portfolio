@@ -109,14 +109,14 @@
         margin-left: 2px;
       }
       a {
-        color: #dddddd;
+        color: rgb(148, 148, 148);
         text-decoration: none;
         font-size: 16px;
         transition: color 0.2s ease;
         cursor: pointer;
       }
       a:hover {
-        color: rgb(148, 148, 148);
+        color: #dddddd;
       }
       a svg {
         fill: currentColor;
@@ -186,7 +186,6 @@
       .headerLinks {
         display: flex;
         flex-direction: row;
-        align-items: center;
         gap: clamp(16px, 3vw, 40px);
       }
       .logo {
@@ -196,39 +195,6 @@
         left: 6vw;
         justify-content: center;
         cursor: pointer;
-      }
-      .lang-switcher {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        font-family: "Outfit", sans-serif;
-      }
-
-      .lang-btn {
-        background: none;
-        border: none;
-        padding: 4px 8px;
-        font-size: 20px;
-        font-weight: 600;
-        color: #1a1a1a;
-        cursor: pointer;
-        opacity: 0.48;
-        transition: opacity 0.2s ease;
-      }
-
-      .lang-btn:hover {
-        opacity: 0.8;
-      }
-
-      .lang-btn.active {
-        opacity: 1;
-        pointer-events: none; /* wyłączone klikanie w aktywny język */
-      }
-
-      .lang-divider {
-        color: #b4b4b4;
-        font-size: 12px;
-        user-select: none;
       }
       /* Breadcrumbs */
       .arrow {
@@ -501,51 +467,30 @@
     <script src="/js/translations.js"></script>
   </head>
   <body>
-    <!-- HEADER (NAV) -->
+    <!-- Header -->
     <header>
       <div class="headerNav">
         <a
           class="headerLink"
           style="font-size: clamp(0.6rem, calc(0.75vw + 1.05rem), 1.65rem)"
           href="index.html"
-          data-i18n="nav_home"
         >
           marekwietecki
           <!--
-        <img
-          src="assets/brand/marekwieteckiDark.svg"
-          alt="Logo tekstowe - marekwietecki.pl"
-          class="logo"
-        />
-        -->
+          <img
+            src="assets/brand/marekwieteckiDark.svg"
+            alt="Logo tekstowe - marekwietecki.pl"
+            class="logo"
+          />
+          -->
         </a>
         <button class="menuToggle" id="menuToggle" onclick="toggleMenu()">
           ☰
         </button>
       </div>
       <div class="headerLinks">
-        <a class="headerLink" href="oferta.html" data-i18n="nav_offer"
-          >Oferta</a
-        >
-        <a class="headerLink" href="o-mnie.html" data-i18n="nav_about"
-          >O Mnie</a
-        >
-        <div class="lang-switcher">
-          <button
-            class="lang-btn"
-            data-lang="pl"
-            onclick="switchLanguage('pl')"
-          >
-            🇵🇱
-          </button>
-          <button
-            class="lang-btn"
-            data-lang="en"
-            onclick="switchLanguage('en')"
-          >
-            🇬🇧
-          </button>
-        </div>
+        <a class="headerLink" href="oferta.html">Oferta</a>
+        <a class="headerLink" href="o-mnie.html">O Mnie</a>
       </div>
     </header>
     <section class="spaceX" id="spaceX"></section>
@@ -555,62 +500,166 @@
         href="index.html"
         class="breadcrumbs"
         style="text-decoration: underline"
-        data-i18n="p404_breadcrumbs_main"
         >Strona Główna</a
       >
       <span class="arrow">&nbsp;>&nbsp;</span>
-      <span class="currentCard" data-i18n="p404_breadcrumbs_current">Strona nie istnieje</span>
+      <span class="currentCard">Polityka Prywatności</span>
     </div>
 
     <div
       style="
         padding-left: 6vw;
-        height: 48svh;
+        padding-right: 6vw;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin-top: 6svh;
       "
     >
-      <h1 style="font-size: 64px; margin-bottom: 12px">404</h1>
-      <p style="font-weight: 500" data-i18n="p404_text">
-        Wygląda na to, że strona na którą próbujesz się dostać nie istnieje lub została przeniesiona.
-      </p>
+      <h1>Polityka Prywatności</h1>
+      <p><em>Ostatnia aktualizacja: 21.07.2026</em></p>
 
+      <hr />
+
+      <div>
+        <h2 style="margin-bottom: 8px;">1. Administrator Danych</h2>
+        <p>
+          Administratorem Twoich danych osobowych jest
+          <strong> Marek Wietecki </strong>, kontakt e-mail:
+          <a href="mailto:kontakt@marekwietecki.pl">kontakt@marekwietecki.pl</a
+          >.
+        </p>
+
+        <h2 style="margin-top: 32px; margin-bottom: 8px;">2. Jakie dane zbieram i w jakim celu?</h2>
+        <ul>
+          <li>
+            <strong>Formularz kontaktowy i korespondencja e-mail:</strong> Gdy
+            kontaktujesz się ze mną przez formularz na stronie lub piszesz
+            bezpośrednio na podany adres e-mail, przekazujesz swoje dane osobowe
+            (np. imię, adres e-mail oraz treść wiadomości). Dane te są
+            przetwarzane wyłącznie w celu udzielenia odpowiedzi na Twoje
+            zapytanie oraz prowadzenia uzgodnień związanych ze świadczeniem
+            usług.
+          </li>
+          <li>
+            <strong>Pliki cookies oraz narzędzia analityczno-reklamowe:</strong>
+            Strona wykorzystuje pliki cookies (ciasteczka) oraz narzędzia
+            dostarczane przez podmioty trzecie w celach analitycznych,
+            statystycznych i optymalizacji działań marketingowych:
+            <ul>
+              <li>
+                <strong>Google Analytics:</strong> służy do zbierania
+                anonimowych statystyk dotyczących ruchu na stronie oraz sposobu
+                jej wykorzystania przez użytkowników,
+              </li>
+              <li>
+                <strong>Google Ads:</strong> służy do mierzenia skuteczności
+                kampanii reklamowych oraz dopasowywania przekazu reklamowego do
+                odbiorców,
+              </li>
+              <li>
+                <strong>Microsoft Clarity:</strong> służy do analizy zachowania
+                użytkowników na stronie (m.in. poprzez anonimowe nagrania sesji
+                i mapy cieplne) w celu poprawy wygody i funkcjonalności serwisu.
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <h2 style="margin-top: 32px; margin-bottom: 8px;">3. Zarządzanie plikami cookies</h2>
+        <p>
+          Analityczne i reklamowe pliki cookies są zapisywane w Twojej
+          przeglądarce wyłącznie za Twoją zgodą, wyrażoną za pośrednictwem
+          banera zgód (Cookie Banner) wyświetlanego podczas pierwszej wizyty na
+          stronie. W każdej chwili możesz zmienić swoje preferencje lub wycofać
+          zgodę, czyszcząc pliki cookies w ustawieniach swojej przeglądarki
+          internetowej.
+        </p>
+
+        <h2 style="margin-top: 32px; margin-bottom: 8px;">4. Okres przechowywania danych</h2>
+        <p>
+          Dane przekazane w ramach formularza kontaktowego lub korespondencji
+          e-mail przetwarzane są przez czas niezbędny do obsługi zapytania, a
+          następnie przez okres niezbędny do zabezpieczenia ewentualnych
+          roszczeń lub realizacji obowiązków prawnych. Dane zbierane przez
+          narzędzia analityczne przechowywane są zgodnie z domyślnymi okresami
+          retencji ustalonymi przez dostawców tych usług.
+        </p>
+
+        <h2 style="margin-top: 32px; margin-bottom: 8px;">5. Odbiorcy danych</h2>
+        <p>
+          W związku z funkcjonowaniem strony i realizacją moich usług, Twoje
+          dane mogą być powierzane lub udostępniane zaufanym podmiotom trzecim
+          dostarczającym rozwiązania techniczne i analityczne:
+        </p>
+        <ul>
+          <li>
+            <strong>Netlify, Inc.</strong> – dostawca hostingu i infrastruktury
+            serwerowej strony,
+          </li>
+          <li>
+            <strong>Google Ireland Limited</strong> – dostawca usług
+            analitycznych i reklamowych (Google Analytics, Google Ads),
+          </li>
+          <li>
+            <strong>Microsoft Ireland Operations Limited</strong> – dostawca
+            usługi analitycznej Microsoft Clarity.
+          </li>
+        </ul>
+
+        <h2 style="margin-top: 32px; margin-bottom: 8px;">6. Twoje prawa</h2>
+        <p>
+          Zgodnie z przepisami RODO przysługują Ci następujące prawa związane z
+          przetwarzaniem Twoich danych osobowych:
+        </p>
+        <ul>
+          <li>
+            Prawo dostępu do treści swoich danych oraz otrzymania ich kopii,
+          </li>
+          <li>Prawo do sprostowania (poprawiania) swoich danych,</li>
+          <li>Prawo do usunięcia danych ("prawo do bycia zapomnianym"),</li>
+          <li>Prawo do ograniczenia przetwarzania danych,</li>
+          <li>Prawo do wniesienia sprzeciwu wobec przetwarzania danych,</li>
+          <li>
+            Prawo do wycofania zgody na przetwarzanie danych w dowolnym momencie
+            (bez wpływu na zgodność z prawem przetwarzania dokonanego przed jej
+            wycofaniem).
+          </li>
+        </ul>
+        <p>
+          W celu realizacji powyższych praw skontaktuj się ze mną pod adresem
+          e-mail:
+          <a href="mailto:kontakt@twojadomena.pl">kontakt@twojadomena.pl</a>.
+        </p>
+      </div>
       <a
         class="cookie-btn primary"
         style="
           width: auto;
           justify-content: center;
           align-self: center;
-          margin-top: 12px;
+          margin-top: 24px;
+          padding: 12px 16px;
+          border-radius: 20px;
+          margin-bottom: 32px;
         "
         href="index.html"
-        data-i18n="p404_nav"
-        >Wróć na Stronę Główną</a
+        >Powrót do strony głównej</a
       >
     </div>
 
-    <!-- COOKIES -->
     <div id="cookie-banner" class="cookie-banner">
-      <div class="cookie-text" data-i18n="cookies_text">
+      <div class="cookie-text">
         🍪 Używam cookies do analizy ruchu i ciągłego ulepszania działania
         strony.
         <!--<a href="/privacy">Polityka prywatności</a>-->
       </div>
 
       <div class="cookie-buttons">
-        <button
-          id="accept-cookies"
-          class="cookie-btn primary"
-          data-i18n="cookies_primary_button"
-        >
+        <button id="accept-cookies" class="cookie-btn primary">
           Akceptuję
         </button>
-        <button
-          id="decline-cookies"
-          class="cookie-btn secondary"
-          data-i18n="cookies_secondary_button"
-        >
+        <button id="decline-cookies" class="cookie-btn secondary">
           Odrzucam
         </button>
       </div>
@@ -762,7 +811,7 @@
               clip-rule="evenodd"
             />
           </svg>
-          <span data-i18n="footer_link_main">&nbsp;Strona Główna</span>
+          <span>&nbsp;Strona Główna</span>
         </a>
 
         <a class="navLinks" href="index.html#projects">
@@ -778,7 +827,7 @@
               clip-rule="evenodd"
             />
           </svg>
-          <span data-i18n="footer_link_projects">&nbsp;Projekty</span>
+          <span>&nbsp;Projekty</span>
         </a>
 
         <a class="navLinks" href="index.html#contact">
@@ -795,11 +844,11 @@
               d="m19 8.839-7.77 3.885a2.75 2.75 0 0 1-2.46 0L1 8.839V14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.839Z"
             />
           </svg>
-          <span data-i18n="footer_link_contact">&nbsp;Kontakt</span>
+          <span>&nbsp;Kontakt</span>
         </a>
 
         <a
-          href="assets/index/Marek_Wietecki_CV_2.9.pdf"
+          href="/assets/index/Marek_Wietecki_CV_2.9.pdf"
           target="_blank"
           class="navLinks"
         >
@@ -815,12 +864,13 @@
               clip-rule="evenodd"
             />
           </svg>
-          <span data-i18n="footer_link_cv">CV</span>
+          <span>CV</span>
         </a>
+
         <!-- testimonials -->
       </div>
       <div class="footerTexts">
-        <p class="footerText" data-i18n="footer_copyright">
+        <p class="footerText">
           © Marek Wietecki 2026. Treści chronione prawem autorskim.
         </p>
       </div>

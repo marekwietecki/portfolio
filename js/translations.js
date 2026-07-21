@@ -76,6 +76,13 @@ const translations = {
     offer_cta_p2: "(wystawiam fakturę VAT, brak ryzyka dla obydwu stron).",
     offer_cta_button_secondary: "Zobacz moje projekty",
     offer_cta_button_primary: "Porozmawiajmy o projekcie",
+
+    // 404
+    p404_breadcrumbs_main: "Strona Główna",
+    p404_breadcrumbs_current: "Strona nie istnieje",
+    p404_text: "Wygląda na to, że strona na którą próbujesz się dostać nie istnieje lub została przeniesiona.",
+    p404_nav: "Wróć na Stronę Główną",
+    
   },
   en: {
     //   nav_home: "Home",
@@ -154,6 +161,13 @@ const translations = {
     offer_cta_p2: "(VAT invoice provided, ensuring zero risk for both parties).",
     offer_cta_button_secondary: "View my projects",
     offer_cta_button_primary: "Let's discuss your project",
+
+    // 404
+    p404_breadcrumbs_main: "Main Page",
+    p404_breadcrumbs_current: "Page doesn't exist",
+    p404_text: "It looks like the page you're trying to reach doesn't exist or has been moved.",
+    p404_nav: "Go to the Main Page",
+
   },
 };
 
