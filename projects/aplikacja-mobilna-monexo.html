@@ -73,6 +73,56 @@
       gtag("config", "AW-17997930573");
     </script>
     <style>
+      /* cursor */
+      @media (hover: hover) and (pointer: fine) {
+        body {
+          cursor: none;
+        }
+
+        a,
+        button,
+        input,
+        textarea,
+        .cookie-btn {
+          cursor: none;
+        }
+      }
+      .cursor-dot {
+        width: 8px;
+        height: 8px;
+        background-color: #1e6ed6; /* Dopasuj do swojego koloru akcentu */
+        border-radius: 50%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none; /* Kluczowe: kursor nie blokuje kliknięć! */
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        transition: transform 0.1s ease-out, background-color 0.2s ease;
+      }
+      .cursor-outline {
+        width: 24px;
+        height: 24px;
+        border: 1.5px solid rgba(26, 26, 26, 0.5); /* Dopasuj kolor i przezroczystość */
+        border-radius: 50%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 9998;
+        transform: translate(-50%, -50%);
+        transition: transform 0.15s cubic-bezier(0.215, 0.61, 0.355, 1),
+          border-color 0.2s ease;
+      }
+      body.hovered .cursor-dot {
+        transform: translate(-50%, -50%) scale(1.5);
+        background-color: #000000;
+      }
+      body.hovered .cursor-outline {
+        transform: translate(-50%, -50%) scale(1.6);
+        border-color: rgba(0, 0, 0, 0.8);
+        background-color: rgba(0, 0, 0, 0.05); /* Delikatne wypełnienie */
+      }
       /* Config */
       html {
         scroll-behavior: smooth; /* działa też dla wewnętrznych odnośników */
@@ -1769,6 +1819,46 @@
         </p>
       </div>
     </footer>
+    <!-- Custom Cursor Elements -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <script>
+      const cursorDot = document.querySelector(".cursor-dot");
+      const cursorOutline = document.querySelector(".cursor-outline");
+
+      // Poruszanie kursorem
+      window.addEventListener("mousemove", (e) => {
+        const posX = e.clientX;
+        const posY = e.clientY;
+
+        // Kropka podąża natychmiast
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
+
+        // Okrąg płynnie dociąga do pozycji
+        cursorOutline.animate(
+          {
+            left: `${posX}px`,
+            top: `${posY}px`,
+          },
+          { duration: 400, fill: "forwards" }
+        );
+      });
+
+      // Efekt powiększenia przy najechaniu na klikalne elementy (UX Interakcje)
+      const interactiveElements = document.querySelectorAll(
+        "a, button, input, textarea, .cookie-btn"
+      );
+
+      interactiveElements.forEach((el) => {
+        el.addEventListener("mouseenter", () => {
+          document.body.classList.add("hovered");
+        });
+        el.addEventListener("mouseleave", () => {
+          document.body.classList.remove("hovered");
+        });
+      });
+    </script>
   </body>
   <script>
     const header = document.querySelector("header");
