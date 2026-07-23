@@ -18,7 +18,7 @@
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Marek Wietecki | Certyfikaty</title>
+    <title>Marek Wietecki | Polityka Prywatności</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" href="assets/brand/favicon.ico" />
@@ -186,6 +186,7 @@
       .headerLinks {
         display: flex;
         flex-direction: row;
+        align-items: center;
         gap: clamp(16px, 3vw, 40px);
       }
       .logo {
@@ -195,6 +196,39 @@
         left: 6vw;
         justify-content: center;
         cursor: pointer;
+      }
+      .lang-switcher {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-family: "Outfit", sans-serif;
+      }
+
+      .lang-btn {
+        background: none;
+        border: none;
+        padding: 4px 8px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #1a1a1a;
+        cursor: pointer;
+        opacity: 0.48;
+        transition: opacity 0.2s ease;
+      }
+
+      .lang-btn:hover {
+        opacity: 0.8;
+      }
+
+      .lang-btn.active {
+        opacity: 1;
+        pointer-events: none; /* wyłączone klikanie w aktywny język */
+      }
+
+      .lang-divider {
+        color: #b4b4b4;
+        font-size: 12px;
+        user-select: none;
       }
       /* Breadcrumbs */
       .arrow {
@@ -255,6 +289,11 @@
         font-size: 1rem;
         color: #444;
         text-shadow: 0 1px 16px rgba(0, 0, 0, 0, 16);
+      }
+      .privacy-text {
+        font-size: 14px; /* lub 0.875rem */
+        line-height: 1.5;
+        color: #444444; /* opcjonalnie: stonowany kolor dla lepszej czytelności */
       }
       /* Cookies */
       .cookie-banner {
@@ -491,6 +530,22 @@
       <div class="headerLinks">
         <a class="headerLink" href="oferta.html">Oferta</a>
         <a class="headerLink" href="o-mnie.html">O Mnie</a>
+        <div class="lang-switcher">
+          <button
+            class="lang-btn"
+            data-lang="pl"
+            onclick="switchLanguage('pl')"
+          >
+            🇵🇱
+          </button>
+          <button
+            class="lang-btn"
+            data-lang="en"
+            onclick="switchLanguage('en')"
+          >
+            🇬🇧
+          </button>
+        </div>
       </div>
     </header>
     <section class="spaceX" id="spaceX"></section>
@@ -500,10 +555,13 @@
         href="index.html"
         class="breadcrumbs"
         style="text-decoration: underline"
+        data-i18n="privacy_breadcrumbs_main"
         >Strona Główna</a
       >
       <span class="arrow">&nbsp;>&nbsp;</span>
-      <span class="currentCard">Polityka Prywatności</span>
+      <span class="currentCard" data-i18n="privacy_breadcrumbs_current"
+        >Polityka Prywatności</span
+      >
     </div>
 
     <div
@@ -516,58 +574,92 @@
         margin-top: 6svh;
       "
     >
-      <h1>Polityka Prywatności</h1>
-      <p><em>Ostatnia aktualizacja: 21.07.2026</em></p>
+      <h1 data-i18n="privacy_h1">Polityka Prywatności</h1>
 
       <hr />
 
       <div>
-        <h2 style="margin-bottom: 8px;">1. Administrator Danych</h2>
-        <p>
-          Administratorem Twoich danych osobowych jest
-          <strong> Marek Wietecki </strong>, kontakt e-mail:
+        <h2 style="margin-bottom: 8px" data-i18n="privacy_1_heading">
+          1. Administrator Danych
+        </h2>
+        <p class="privacy-text">
+          <span data-i18n="privacy_1_part1"
+            >Administratorem Twoich danych osobowych jest</span
+          >
+          <strong>Marek Wietecki</strong>,
+          <span data-i18n="privacy_1_part2">kontakt e-mail:</span>
           <a href="mailto:kontakt@marekwietecki.pl">kontakt@marekwietecki.pl</a
           >.
         </p>
 
-        <h2 style="margin-top: 32px; margin-bottom: 8px;">2. Jakie dane zbieram i w jakim celu?</h2>
+        <h2
+          style="margin-top: 32px; margin-bottom: 8px"
+          data-i18n="privacy_2_heading"
+        >
+          2. Jakie dane zbieram i w jakim celu?
+        </h2>
         <ul>
-          <li>
-            <strong>Formularz kontaktowy i korespondencja e-mail:</strong> Gdy
-            kontaktujesz się ze mną przez formularz na stronie lub piszesz
-            bezpośrednio na podany adres e-mail, przekazujesz swoje dane osobowe
-            (np. imię, adres e-mail oraz treść wiadomości). Dane te są
-            przetwarzane wyłącznie w celu udzielenia odpowiedzi na Twoje
-            zapytanie oraz prowadzenia uzgodnień związanych ze świadczeniem
-            usług.
+          <li class="privacy-text">
+            <strong data-i18n="privacy_2_item1_title"
+              >Formularz kontaktowy i korespondencja e-mail:</strong
+            >
+            <span data-i18n="privacy_2_item1_txt"
+              >Gdy kontaktujesz się ze mną przez formularz na stronie lub
+              piszesz bezpośrednio na podany adres e-mail, przekazujesz swoje
+              dane osobowe (np. imię, adres e-mail oraz treść wiadomości). Dane
+              te są przetwarzane wyłącznie w celu udzielenia odpowiedzi na Twoje
+              zapytanie oraz prowadzenia uzgodnień związanych ze świadczeniem
+              usług.</span
+            >
           </li>
-          <li>
-            <strong>Pliki cookies oraz narzędzia analityczno-reklamowe:</strong>
-            Strona wykorzystuje pliki cookies (ciasteczka) oraz narzędzia
-            dostarczane przez podmioty trzecie w celach analitycznych,
-            statystycznych i optymalizacji działań marketingowych:
+          <li class="privacy-text">
+            <strong data-i18n="privacy_2_item2_title"
+              >Pliki cookies oraz narzędzia analityczno-reklamowe:</strong
+            >
+            <span data-i18n="privacy_2_item2_txt"
+              >Strona wykorzystuje pliki cookies (ciasteczka) oraz narzędzia
+              dostarczane przez podmioty trzecie w celach analitycznych,
+              statystycznych i optymalizacji działań marketingowych:</span
+            >
             <ul>
-              <li>
-                <strong>Google Analytics:</strong> służy do zbierania
-                anonimowych statystyk dotyczących ruchu na stronie oraz sposobu
-                jej wykorzystania przez użytkowników,
+              <li class="privacy-text">
+                <strong data-i18n="privacy_2_ga_title"
+                  >Google Analytics:</strong
+                >
+                <span data-i18n="privacy_2_ga_txt"
+                  >służy do zbierania anonimowych statystyk dotyczących ruchu na
+                  stronie oraz sposobu jej wykorzystania przez
+                  użytkowników,</span
+                >
               </li>
-              <li>
-                <strong>Google Ads:</strong> służy do mierzenia skuteczności
-                kampanii reklamowych oraz dopasowywania przekazu reklamowego do
-                odbiorców,
+              <li class="privacy-text">
+                <strong data-i18n="privacy_2_ads_title">Google Ads:</strong>
+                <span data-i18n="privacy_2_ads_txt"
+                  >służy do mierzenia skuteczności kampanii reklamowych oraz
+                  dopasowywania przekazu reklamowego do odbiorców,</span
+                >
               </li>
-              <li>
-                <strong>Microsoft Clarity:</strong> służy do analizy zachowania
-                użytkowników na stronie (m.in. poprzez anonimowe nagrania sesji
-                i mapy cieplne) w celu poprawy wygody i funkcjonalności serwisu.
+              <li class="privacy-text">
+                <strong data-i18n="privacy_2_clarity_title"
+                  >Microsoft Clarity:</strong
+                >
+                <span data-i18n="privacy_2_clarity_txt"
+                  >służy do analizy zachowania użytkowników na stronie (m.in.
+                  poprzez anonimowe nagrania sesji i mapy cieplne) w celu
+                  poprawy wygody i funkcjonalności serwisu.</span
+                >
               </li>
             </ul>
           </li>
         </ul>
 
-        <h2 style="margin-top: 32px; margin-bottom: 8px;">3. Zarządzanie plikami cookies</h2>
-        <p>
+        <h2
+          style="margin-top: 32px; margin-bottom: 8px"
+          data-i18n="privacy_3_heading"
+        >
+          3. Zarządzanie plikami cookies
+        </h2>
+        <p class="privacy-text" data-i18n="privacy_3_txt">
           Analityczne i reklamowe pliki cookies są zapisywane w Twojej
           przeglądarce wyłącznie za Twoją zgodą, wyrażoną za pośrednictwem
           banera zgód (Cookie Banner) wyświetlanego podczas pierwszej wizyty na
@@ -576,8 +668,13 @@
           internetowej.
         </p>
 
-        <h2 style="margin-top: 32px; margin-bottom: 8px;">4. Okres przechowywania danych</h2>
-        <p>
+        <h2
+          style="margin-top: 32px; margin-bottom: 8px"
+          data-i18n="privacy_4_heading"
+        >
+          4. Okres przechowywania danych
+        </h2>
+        <p class="privacy-text" data-i18n="privacy_4_txt">
           Dane przekazane w ramach formularza kontaktowego lub korespondencji
           e-mail przetwarzane są przez czas niezbędny do obsługi zapytania, a
           następnie przez okres niezbędny do zabezpieczenia ewentualnych
@@ -586,52 +683,85 @@
           retencji ustalonymi przez dostawców tych usług.
         </p>
 
-        <h2 style="margin-top: 32px; margin-bottom: 8px;">5. Odbiorcy danych</h2>
-        <p>
+        <h2
+          style="margin-top: 32px; margin-bottom: 8px"
+          data-i18n="privacy_5_heading"
+        >
+          5. Odbiorcy danych
+        </h2>
+        <p class="privacy-text" data-i18n="privacy_5_intro">
           W związku z funkcjonowaniem strony i realizacją moich usług, Twoje
           dane mogą być powierzane lub udostępniane zaufanym podmiotom trzecim
           dostarczającym rozwiązania techniczne i analityczne:
         </p>
         <ul>
-          <li>
-            <strong>Netlify, Inc.</strong> – dostawca hostingu i infrastruktury
-            serwerowej strony,
+          <li class="privacy-text">
+            <strong data-i18n="privacy_5_netlify_title">Netlify, Inc.</strong>
+            <span data-i18n="privacy_5_netlify_txt"
+              >– dostawca hostingu i infrastruktury serwerowej strony,</span
+            >
           </li>
-          <li>
-            <strong>Google Ireland Limited</strong> – dostawca usług
-            analitycznych i reklamowych (Google Analytics, Google Ads),
+          <li class="privacy-text">
+            <strong data-i18n="privacy_5_google_title"
+              >Google Ireland Limited</strong
+            >
+            <span data-i18n="privacy_5_google_txt"
+              >– dostawca usług analitycznych i reklamowych (Google Analytics,
+              Google Ads),</span
+            >
           </li>
-          <li>
-            <strong>Microsoft Ireland Operations Limited</strong> – dostawca
-            usługi analitycznej Microsoft Clarity.
+          <li class="privacy-text">
+            <strong data-i18n="privacy_5_ms_title"
+              >Microsoft Ireland Operations Limited</strong
+            >
+            <span data-i18n="privacy_5_ms_txt"
+              >– dostawca usługi analitycznej Microsoft Clarity.</span
+            >
           </li>
         </ul>
 
-        <h2 style="margin-top: 32px; margin-bottom: 8px;">6. Twoje prawa</h2>
-        <p>
+        <h2
+          style="margin-top: 32px; margin-bottom: 8px"
+          data-i18n="privacy_6_heading"
+        >
+          6. Twoje prawa
+        </h2>
+        <p class="privacy-text" data-i18n="privacy_6_intro">
           Zgodnie z przepisami RODO przysługują Ci następujące prawa związane z
           przetwarzaniem Twoich danych osobowych:
         </p>
         <ul>
-          <li>
+          <li class="privacy-text" data-i18n="privacy_6_right1">
             Prawo dostępu do treści swoich danych oraz otrzymania ich kopii,
           </li>
-          <li>Prawo do sprostowania (poprawiania) swoich danych,</li>
-          <li>Prawo do usunięcia danych ("prawo do bycia zapomnianym"),</li>
-          <li>Prawo do ograniczenia przetwarzania danych,</li>
-          <li>Prawo do wniesienia sprzeciwu wobec przetwarzania danych,</li>
-          <li>
+          <li class="privacy-text" data-i18n="privacy_6_right2">
+            Prawo do sprostowania (poprawiania) swoich danych,
+          </li>
+          <li class="privacy-text" data-i18n="privacy_6_right3">
+            Prawo do usunięcia danych ("prawo do bycia zapomnianym"),
+          </li>
+          <li class="privacy-text" data-i18n="privacy_6_right4">
+            Prawo do ograniczenia przetwarzania danych,
+          </li>
+          <li class="privacy-text" data-i18n="privacy_6_right5">
+            Prawo do wniesienia sprzeciwu wobec przetwarzania danych,
+          </li>
+          <li class="privacy-text" data-i18n="privacy_6_right6">
             Prawo do wycofania zgody na przetwarzanie danych w dowolnym momencie
             (bez wpływu na zgodność z prawem przetwarzania dokonanego przed jej
             wycofaniem).
           </li>
         </ul>
-        <p>
-          W celu realizacji powyższych praw skontaktuj się ze mną pod adresem
-          e-mail:
-          <a href="mailto:kontakt@twojadomena.pl">kontakt@twojadomena.pl</a>.
+        <p class="privacy-text">
+          <span data-i18n="privacy_6_contact_part1"
+            >W celu realizacji powyższych praw skontaktuj się ze mną pod adresem
+            e-mail:</span
+          >
+          <a href="mailto:kontakt@marekwietecki.pl">kontakt@marekwietecki.pl</a
+          >.
         </p>
       </div>
+
       <a
         class="cookie-btn primary"
         style="
@@ -644,6 +774,7 @@
           margin-bottom: 32px;
         "
         href="index.html"
+        data-i18n="privacy_back_btn"
         >Powrót do strony głównej</a
       >
     </div>
@@ -665,7 +796,7 @@
       </div>
     </div>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer>
       <div class="logoWithLinks">
         <a href="index.html" style="text-align: left">
@@ -797,6 +928,7 @@
           </a>
         </div>
       </div>
+
       <div class="footerLinks">
         <a class="navLinks" href="index.html#top">
           <svg
@@ -811,7 +943,7 @@
               clip-rule="evenodd"
             />
           </svg>
-          <span>&nbsp;Strona Główna</span>
+          <span data-i18n="footer_link_main">&nbsp;Strona Główna</span>
         </a>
 
         <a class="navLinks" href="index.html#projects">
@@ -827,7 +959,7 @@
               clip-rule="evenodd"
             />
           </svg>
-          <span>&nbsp;Projekty</span>
+          <span data-i18n="footer_link_projects">&nbsp;Projekty</span>
         </a>
 
         <a class="navLinks" href="index.html#contact">
@@ -844,11 +976,11 @@
               d="m19 8.839-7.77 3.885a2.75 2.75 0 0 1-2.46 0L1 8.839V14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.839Z"
             />
           </svg>
-          <span>&nbsp;Kontakt</span>
+          <span data-i18n="footer_link_contact">&nbsp;Kontakt</span>
         </a>
 
         <a
-          href="/assets/index/Marek_Wietecki_CV_2.9.pdf"
+          href="assets/index/Marek_Wietecki_CV_3.1.pdf"
           target="_blank"
           class="navLinks"
         >
@@ -864,13 +996,31 @@
               clip-rule="evenodd"
             />
           </svg>
-          <span>CV</span>
+          <span data-i18n="footer_link_cv">CV</span>
         </a>
-
+        <a class="navLinks" href="polityka-prywatnosci.html">
+          <svg
+            class="icons size-5"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-shield-check-icon lucide-shield-check"
+          >
+            <path
+              d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+            />
+            <path d="m9 12 2 2 4-4" />
+          </svg>
+          <span data-i18n="footer_link_privacy">Polityka Prywatności</span>
+        </a>
         <!-- testimonials -->
       </div>
       <div class="footerTexts">
-        <p class="footerText">
+        <p class="footerText" data-i18n="footer_copyright">
           © Marek Wietecki 2026. Treści chronione prawem autorskim.
         </p>
       </div>
