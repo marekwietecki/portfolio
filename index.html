@@ -103,54 +103,123 @@
               projekty na głównej mają mieć poziomy Content, a nie tylko podpis do zdjęcia - mini pitch +
             */
       /* cursor */
+      /* --- CUSTOM CURSOR SYSTEM --- */
       @media (hover: hover) and (pointer: fine) {
-        body {
-          cursor: none;
-        }
-
+        body,
         a,
         button,
         input,
         textarea,
         .cookie-btn {
-          cursor: none;
+          cursor: none !important;
         }
       }
-      .cursor-dot {
-        width: 8px;
-        height: 8px;
-        background-color: #1e6ed6; /* Dopasuj do swojego koloru akcentu */
-        border-radius: 50%;
+
+      /* Tło typu Spotlight / Latarka */
+      .cursor-spotlight {
         position: fixed;
         top: 0;
         left: 0;
-        pointer-events: none; /* Kluczowe: kursor nie blokuje kliknięć! */
-        z-index: 9999;
-        transform: translate(-50%, -50%);
-        transition: transform 0.1s ease-out, background-color 0.2s ease;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+        z-index: 0;
+        background: radial-gradient(
+          600px circle at var(--x, 50%) var(--y, 50%),
+          rgba(30, 110, 214, 0.08),
+          transparent 80%
+        );
+        transition: opacity 0.3s ease;
       }
-      .cursor-outline {
-        width: 24px;
-        height: 24px;
-        border: 1.5px solid rgba(26, 26, 26, 0.5); /* Dopasuj kolor i przezroczystość */
+
+      /* Główna mała kropka */
+      .cursor-dot {
+        width: 8px;
+        height: 8px;
+        background-color: #1e6ed6;
         border-radius: 50%;
         position: fixed;
         top: 0;
         left: 0;
         pointer-events: none;
-        z-index: 9998;
+        z-index: 10000;
         transform: translate(-50%, -50%);
-        transition: transform 0.15s cubic-bezier(0.215, 0.61, 0.355, 1),
-          border-color 0.2s ease;
+        transition: opacity 0.2s ease, background-color 0.2s ease;
       }
-      body.hovered .cursor-dot {
-        transform: translate(-50%, -50%) scale(1.5);
-        background-color: #000000;
+
+      /* Płynny okrąg zewnętrzny / Plakietka */
+      .cursor-outline {
+        width: 32px;
+        height: 32px;
+        border: 1.5px solid rgba(255, 255, 255, 0.4);
+        background-color: rgba(255, 255, 255, 0);
+        border-radius: 50%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        color: #000;
+        text-transform: uppercase;
+        overflow: hidden;
+        white-space: nowrap;
+        transition: width 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+          height 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+          background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
       }
-      body.hovered .cursor-outline {
-        transform: translate(-50%, -50%) scale(1.6);
-        border-color: rgba(0, 0, 0, 0.8);
-        background-color: rgba(0, 0, 0, 0.05); /* Delikatne wypełnienie */
+
+      .cursor-text {
+        opacity: 0;
+        transform: scale(0.6);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+      }
+
+      /* A. Hover na zwykłe linki/przyski - Inwersja kolorów */
+      body.hovered-link .cursor-outline {
+        width: 48px;
+        height: 48px;
+        background-color: #ffffff;
+        border-color: transparent;
+        mix-blend-mode: normal; /* Wyłączamy inwersję */
+        filter: grayscale(100%); /* Wymuszamy odcienie szarości */
+        opacity: 0.9;
+      }
+
+      body.hovered-link .cursor-dot {
+        background-color: #000000; /* Zamiast niebieskiego -> czarny */
+        filter: grayscale(100%);
+      }
+
+      /* B. Hover na karty projektów - Kontekstowa plakietka (np. "ZOBACZ") */
+      body.hovered-badge .cursor-outline {
+        width: 76px;
+        height: 76px;
+        background-color: #ffffff;
+        border-color: transparent;
+        mix-blend-mode: normal;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      body.hovered-badge .cursor-text {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      body.hovered-badge .cursor-dot {
+        opacity: 0;
+      }
+
+      /* Klasa dla przycisków magnettycznych */
+      .magnetic {
+        display: inline-block;
+        transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
 
       /* Config */
@@ -2035,42 +2104,95 @@
       });
     </script>
     <!-- Custom Cursor Elements -->
+    <div class="cursor-spotlight"></div>
     <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
+    <div class="cursor-outline">
+      <span class="cursor-text"></span>
+    </div>
+
     <script>
       const cursorDot = document.querySelector(".cursor-dot");
       const cursorOutline = document.querySelector(".cursor-outline");
+      const cursorText = document.querySelector(".cursor-text");
+      const spotlight = document.querySelector(".cursor-spotlight");
 
-      // Poruszanie kursorem
+      // Współrzędne myszy oraz pozycje płynne (Lerp)
+      let mouse = { x: -100, y: -100 };
+      let pos = { x: -100, y: -100 };
+      const speed = 0.15; // Prędkość dociągania (0.1 = wolniej/płynniej, 0.2 = szybciej)
+
       window.addEventListener("mousemove", (e) => {
-        const posX = e.clientX;
-        const posY = e.clientY;
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
 
-        // Kropka podąża natychmiast
-        cursorDot.style.left = `${posX}px`;
-        cursorDot.style.top = `${posY}px`;
+        // Natychmiastowy ruch kropki i efektu Spotlight
+        cursorDot.style.transform = `translate3d(${mouse.x}px, ${mouse.y}px, 0) translate(-50%, -50%)`;
+        spotlight.style.setProperty("--x", `${mouse.x}px`);
+        spotlight.style.setProperty("--y", `${mouse.y}px`);
+      });
 
-        // Okrąg płynnie dociąga do pozycji
-        cursorOutline.animate(
-          {
-            left: `${posX}px`,
-            top: `${posY}px`,
-          },
-          { duration: 400, fill: "forwards" }
+      // Pętla animacji 60fps (Lerp) dla idealnie gładkiego okręgu
+      function render() {
+        pos.x += (mouse.x - pos.x) * speed;
+        pos.y += (mouse.y - pos.y) * speed;
+
+        cursorOutline.style.transform = `translate3d(${pos.x}px, ${pos.y}px, 0) translate(-50%, -50%)`;
+        requestAnimationFrame(render);
+      }
+      requestAnimationFrame(render);
+
+      // 1. ZWYKŁE LINKI & PRZYCISKI (Efekt Inwersji)
+      const links = document.querySelectorAll(
+        "a, button, input, textarea, .cookie-btn"
+      );
+      links.forEach((el) => {
+        // Pomijamy karty projektów, jeśli są linkami, bo one mają osobny efekt
+        if (
+          el.closest(".projectContainer") ||
+          el.classList.contains("projectContainer")
+        )
+          return;
+
+        el.addEventListener("mouseenter", () =>
+          document.body.classList.add("hovered-link")
+        );
+        el.addEventListener("mouseleave", () =>
+          document.body.classList.remove("hovered-link")
         );
       });
 
-      // Efekt powiększenia przy najechaniu na klikalne elementy (UX Interakcje)
-      const interactiveElements = document.querySelectorAll(
-        "a, button, input, textarea, .cookie-btn"
+      // 2. KARTY PROJEKTÓW (Kontekstowa Plakietka "ZOBACZ" / "EXPLORE")
+      // Wystarczy dodać klasę .project-card do swoich kart projektów w HTML!
+      const projectCards = document.querySelectorAll(
+        ".projectContainer, .card, [data-cursor]"
       );
-
-      interactiveElements.forEach((el) => {
-        el.addEventListener("mouseenter", () => {
-          document.body.classList.add("hovered");
+      projectCards.forEach((card) => {
+        card.addEventListener("mouseenter", () => {
+          const customText = card.getAttribute("data-cursor") || "👀";
+          cursorText.textContent = customText;
+          document.body.classList.add("hovered-badge");
         });
-        el.addEventListener("mouseleave", () => {
-          document.body.classList.remove("hovered");
+        card.addEventListener("mouseleave", () => {
+          document.body.classList.remove("hovered-badge");
+        });
+      });
+
+      // 3. EFEKT MAGNETYCZNY (Dla elementów z klasą .magnetic lub ikon społecznościowych)
+      const magnetics = document.querySelectorAll(
+        ".magnetic, .social-icon, .cookie-btn"
+      );
+      magnetics.forEach((btn) => {
+        btn.addEventListener("mousemove", (e) => {
+          const rect = btn.getBoundingClientRect();
+          const customDist = 0.7; // Siła przyciągania
+          const x = (e.clientX - rect.left - rect.width / 2) * customDist;
+          const y = (e.clientY - rect.top - rect.height / 2) * customDist;
+
+          btn.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+        });
+
+        btn.addEventListener("mouseleave", () => {
+          btn.style.transform = `translate3d(0px, 0px, 0)`;
         });
       });
     </script>
