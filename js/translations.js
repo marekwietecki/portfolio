@@ -58,7 +58,71 @@ const translations = {
     form_button: "Wyślij wiadomość",
 
     // ABOUT
-    about_hero_title: "",
+    about_breadcrumbs_main: "Strona Główna",
+    about_breadcrumbs_current: "O Mnie",
+    about_main_badge: "Cześć, tu Marek 👋",
+    about_main_heading:
+      "Napędzają mnie ambitne cele, rozwój i przekraczanie własnych granic.",
+    about_main_lead:
+      "Cenię dyscyplinę, ale równie mocno wierzę, że dobra atmosfera i pozytywna energia pomagają osiągać najlepsze efekty. Sport nauczył mnie konsekwencji, a podróże pokazały, jak wiele można zrozumieć, patrząc na świat z różnych perspektyw.",
+    about_main_role: "UX / Product Designer",
+    about_main_cv_button: "Zobacz CV",
+    about_clock_location: "Warszawa, Polska",
+    about_gallery_photo1_caption: "Ursus Wwa 22'",
+    about_gallery_photo2_caption: "Marsa Alam 26'",
+    about_gallery_photo3_caption: "Como Lake 24'",
+    about_gallery_modal_alt: "Zdjęcie z galerii",
+    about_gallery_cursor_label: "Galeria",
+    about_stats_experience_label: "lata doświadczenia",
+    about_stats_certifications_label: "ukończonych certyfikacji",
+    about_stats_projects_label: "zrealizowanych projektów",
+    about_timeline_title: "Moja Droga",
+    about_timeline_step1_year: "2011 – 2022",
+    about_timeline_step1_title: "Szkoła charakteru",
+    about_timeline_step1_text:
+      "Ponad 10 lat intensywnej gry w piłkę nożną. Nauka komunikacji, dyscypliny, pracy zespołowej, działania pod presją i dbania o relacje.",
+    about_timeline_step2_year: "2022 – 2024",
+    about_timeline_step2_title: "Fundamenty & Edukacja",
+    about_timeline_step2_text:
+      "Rozpoczęcie studiów informatycznych. Intensywna nauka UX/Product Design. Zdobywanie certyfikatów umiejętności projektowych.",
+    about_timeline_step3_year: "2024+",
+    about_timeline_step3_title: "Partner Strategiczny",
+    about_timeline_step3_text:
+      "Pierwsza praca. Pierwsze projekty. Ukończenie studiów Inżynierskich. Łączenie potrzeb i strategii biznesowych z designem. Rozpoczęcie działalności freelancerskiej.",
+
+    about_certificates_title: "Moje Certyfikaty",
+    about_certificates_item1_alt: "Certyfikat Nueve - Masterclass UX",
+    about_certificates_item1_caption: "UX Masterclass",
+    about_certificates_item2_alt:
+      "Certyfikat Nueve - Dawania i odbierania feedbacku zdobyty podczas Masterclass UX",
+    about_certificates_item2_caption: "Certyfikat Teamworku",
+    about_certificates_item3_alt: "Certyfikat Nueve - App Design Intro",
+    about_certificates_item3_caption: "App Design Intro",
+    about_certificates_item4_alt: "Cambridge Advanced English Certificate",
+    about_certificates_item4_caption: "Cambridge Advanced English Certificate",
+    about_certificates_item5_alt:
+      "Certyfikat Google & SGH - Marketing Internetowy - Umiejętności Jutra",
+    about_certificates_item5_caption:
+      "Umiejętności Jutra - Marketing Internetowy",
+    about_certificates_item6_alt:
+      "Załącznik do Certyfikatu Google & SGH - Marketing Internetowy - Umiejętności Jutra",
+    about_certificates_item6_caption: "Załącznik do Umiejętności Jutra",
+    about_certificates_item7_alt: "Certyfikat Nueve Design - Design with AI",
+    about_certificates_item7_caption: "Design with AI",
+    about_certificates_item8_alt:
+      "Certyfikat Nueve Design - Perfect Design Process",
+    about_certificates_item8_caption: "Perfect Design Process",
+    about_certificates_item9_alt: "Certyfikat Nueve Design - Prototype Pro",
+    about_certificates_item9_caption: "Prototype Pro",
+    about_certificates_item10_alt:
+      "Certyfikat uczestnictwa - Warsztaty Design Thinking",
+    about_certificates_item10_caption: "Warsztaty Design Thinking",
+    about_certificates_item11_alt:
+      "Certyfikat Nueve Design - Design System Intro",
+    about_certificates_item11_caption: "Design System Intro",
+    about_certificates_item12_alt:
+      "Certyfikat Projektowania Witryn Internetowych",
+    about_certificates_item12_caption: "Projektowanie witryn Internetowych",
 
     // OFFER
     offer_breadcrumbs_main: "Strona Główna",
@@ -217,7 +281,70 @@ const translations = {
     form_button: "Send a message",
 
     // ABOUT
-    about_hero_title: "",
+    about_breadcrumbs_main: "Home",
+    about_breadcrumbs_current: "About Me",
+    about_main_badge: "Hey, it's Marek 👋",
+    about_main_heading:
+      "I'm driven by ambitious goals, growth, and pushing past my own limits.",
+    about_main_lead:
+      "I value discipline, but I believe just as strongly that a good atmosphere and positive energy help bring out the best results. Sport taught me consistency, and travel has shown me how much you can understand by looking at the world from different perspectives.",
+    about_main_role: "UX / Product Designer",
+    about_main_cv_button: "View CV",
+    about_clock_location: "Warsaw, Poland",
+    about_gallery_photo1_caption: "Ursus, Warsaw '22",
+    about_gallery_photo2_caption: "Marsa Alam '26",
+    about_gallery_photo3_caption: "Lake Como '24",
+    about_gallery_modal_alt: "Gallery photo",
+    about_gallery_cursor_label: "Gallery",
+    about_stats_experience_label: "years of experience",
+    about_stats_certifications_label: "completed certifications",
+    about_stats_projects_label: "completed projects",
+    about_timeline_title: "My Journey",
+    about_timeline_step1_year: "2011 – 2022",
+    about_timeline_step1_title: "A School of Character",
+    about_timeline_step1_text:
+      "Over 10 years of competitive football. Learning communication, discipline, teamwork, performing under pressure, and building relationships.",
+    about_timeline_step2_year: "2022 – 2024",
+    about_timeline_step2_title: "Foundations & Education",
+    about_timeline_step2_text:
+      "Started a Computer Science degree. Intensive learning of UX/Product Design. Earned design skill certifications.",
+    about_timeline_step3_year: "2024+",
+    about_timeline_step3_title: "Strategic Partner",
+    about_timeline_step3_text:
+      "First job. First projects. Completed my engineering degree. Combining business needs and strategy with design. Started freelancing.",
+
+    about_certificates_title: "My Certifications",
+    about_certificates_item1_alt: "Nueve Certificate - UX Masterclass",
+    about_certificates_item1_caption: "UX Masterclass",
+    about_certificates_item2_alt:
+      "Nueve Certificate - Giving and Receiving Feedback, earned during the UX Masterclass",
+    about_certificates_item2_caption: "Teamwork Certificate",
+    about_certificates_item3_alt: "Nueve Certificate - App Design Intro",
+    about_certificates_item3_caption: "App Design Intro",
+    about_certificates_item4_alt: "Cambridge Advanced English Certificate",
+    about_certificates_item4_caption: "Cambridge Advanced English Certificate",
+    about_certificates_item5_alt:
+      "Google & SGH Certificate - Digital Marketing - Skills of Tomorrow",
+    about_certificates_item5_caption:
+      "Skills of Tomorrow - Digital Marketing",
+    about_certificates_item6_alt:
+      "Appendix to the Google & SGH Certificate - Digital Marketing - Skills of Tomorrow",
+    about_certificates_item6_caption: "Appendix to Skills of Tomorrow",
+    about_certificates_item7_alt: "Nueve Design Certificate - Design with AI",
+    about_certificates_item7_caption: "Design with AI",
+    about_certificates_item8_alt:
+      "Nueve Design Certificate - Perfect Design Process",
+    about_certificates_item8_caption: "Perfect Design Process",
+    about_certificates_item9_alt: "Nueve Design Certificate - Prototype Pro",
+    about_certificates_item9_caption: "Prototype Pro",
+    about_certificates_item10_alt:
+      "Certificate of Participation - Design Thinking Workshop",
+    about_certificates_item10_caption: "Design Thinking Workshop",
+    about_certificates_item11_alt:
+      "Nueve Design Certificate - Design System Intro",
+    about_certificates_item11_caption: "Design System Intro",
+    about_certificates_item12_alt: "Website Design Certificate",
+    about_certificates_item12_caption: "Web Design",    
 
     // OFFER
     offer_breadcrumbs_main: "Main Page",

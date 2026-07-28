@@ -620,7 +620,8 @@
       }
 
       .projectContainer {
-        overflow: visible;
+        position: relative;
+        overflow: hidden;
         padding: 16px;
         margin: 16px auto;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -637,6 +638,46 @@
         width: 88%;
 
         will-change: transform, opacity;
+      }
+
+      /* Wspólne style dla obrazka i wideo, aby idealnie na siebie nachodziły */
+      .project-media {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Kontener na media musi być punktem odniesienia */
+      .mediaWrapper {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 20px; /* Jeśli Twoje kafelki mają zaokrąglone rogi */
+      }
+
+      /* Obrazek domyślny */
+      .project-img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Wideo nakładane idealnie na obrazek */
+      .project-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Dba o to, żeby wideo idealnie wypełniło obszar obrazka */
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+
+      /* Pojawianie się po najechaniu */
+      .projectContainer:hover .project-video {
+        opacity: 1;
       }
 
       .projectContainer:hover {
@@ -1408,10 +1449,26 @@
       <div class="gridGallery">
         <a href="projects/aplikacja-mobilna-monexo.html">
           <div class="projectContainer">
-            <img
-              src="assets/index/monexo.png"
-              alt="Zdjęcie przedstawia Stronę Internetową PlanetRoad"
-            />
+            <div class="mediaWrapper">
+              <img
+                class="project-img"
+                src="assets/index/monexo.png"
+                alt="Aplikacja Mobilna Monexo"
+              />
+              <video
+                class="project-video"
+                autoplay
+                loop
+                muted
+                playsinline
+                preload="auto"
+              >
+                <source
+                  src="assets/index/monexo_motion.webm"
+                  type="video/webm"
+                />
+              </video>
+            </div>
             <div class="descriptionWrapper">
               <p class="title" data-i18n="projects_monexo_title">
                 Aplikacja Mobilna Monexo
@@ -1872,6 +1929,39 @@
         </p>
       </div>
     </footer>
+
+    <!-- video -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const containers = document.querySelectorAll(".projectContainer");
+
+        containers.forEach((container) => {
+          const video = container.querySelector(".project-video");
+
+          if (video) {
+            // Upewniamy się, że Chrome wie, że wideo jest wyciszone
+            video.muted = true;
+
+            container.addEventListener("mouseenter", () => {
+              video.classList.add("is-active");
+
+              const playPromise = video.play();
+              if (playPromise !== undefined) {
+                playPromise.catch((error) => {
+                  console.error("Błąd odtwarzania wideo w Chrome:", error);
+                });
+              }
+            });
+
+            container.addEventListener("mouseleave", () => {
+              video.classList.remove("is-active");
+              video.pause();
+              video.currentTime = 0;
+            });
+          }
+        });
+      });
+    </script>
 
     <script>
       const header = document.querySelector("header");

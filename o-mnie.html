@@ -94,6 +94,10 @@
           cursor: none;
         }
       }
+      #gallery-modal,
+      #gallery-modal * {
+        cursor: none !important;
+      }
       .cursor-dot {
         width: 8px;
         height: 8px;
@@ -103,7 +107,7 @@
         top: 0;
         left: 0;
         pointer-events: none; /* Kluczowe: kursor nie blokuje kliknięć! */
-        z-index: 9999;
+        z-index: 99999;
         transform: translate(-50%, -50%);
         transition: transform 0.1s ease-out, background-color 0.2s ease;
       }
@@ -116,7 +120,7 @@
         top: 0;
         left: 0;
         pointer-events: none;
-        z-index: 9998;
+        z-index: 99998;
         transform: translate(-50%, -50%);
         transition: transform 0.15s cubic-bezier(0.215, 0.61, 0.355, 1),
           border-color 0.2s ease;
@@ -655,32 +659,245 @@
       }
 
       /* KAFEL 2: ZEGAR (Przywrócony gradient) */
+      /* Moduł kafelka - upewnij się, że ma relative i overflow: hidden */
       .bento-clock {
+        --clock-grad-a: rgba(30, 110, 214, 0.12);
+        --clock-grad-b: rgba(168, 85, 247, 0.08);
+        --clock-border: rgba(30, 110, 214, 0.2);
+        --clock-text: #35353b;
+
+        position: relative; /* Wymagane dla pseudoelementu */
+        overflow: hidden; /* Ukrywa falę świetlną wychodzącą poza kafel */
         display: flex;
         align-items: center;
         gap: 16px;
         background: linear-gradient(
           135deg,
-          rgba(30, 110, 214, 0.12),
-          rgba(168, 85, 247, 0.08)
+          var(--clock-grad-a),
+          var(--clock-grad-b)
         );
-        border-color: rgba(30, 110, 214, 0.2);
+        border: 1px solid var(--clock-border);
+        transition: background 1.2s ease, border-color 1.2s ease,
+          transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .bento-clock[data-period="evening"] {
+        background: linear-gradient(
+          135deg,
+          var(--clock-grad-a) 0%,
+          var(--clock-grad-b) 60%,
+          rgba(168, 85, 247, 0.12) 100%
+        );
+        border-color: var(--clock-border);
+      }
+      /* 1. Pseudoelement światła – domyślny stan powrotny (bez animacji powrotu) */
+      .bento-clock::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          45deg,
+          transparent 0%,
+          rgba(30, 110, 214, 0.35) 50%,
+          transparent 100%
+        );
+        /* Pozycja startowa: ukryty w lewym dolnym rogu */
+        transform: translate(-100%, 100%);
+        /* Zniknięcie powrotne bez animacji (0s), by ruch nie był widoczny przy zjechaniu myszką */
+        transition: transform 0s linear;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      /* 2. Stan po najechaniu myszką (wolny ruch od lewej-dół do prawej-góra) */
+      .bento-clock:hover::before {
+        transform: translate(100%, -100%);
+        /* Czas animacji 1.2s (zamiast 0.65s) daje powolny, elegancki przejazd */
+        transition: transform 3.5s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      /* Upewnij się, że treść kafelka jest nad fali świetlnej */
+      .clock-icon,
+      .clock-info {
+        position: relative;
+        z-index: 2;
+      }
+
+      .bento-clock:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 24px rgba(30, 110, 214, 0.2);
+      }
+
+      /* Palety pór dnia połączone z niebieskim (#1e6ed6) */
+
+      /* MORNING: Niebieski + niemal biały / rozświetlający błękit */
+      .bento-clock[data-period="morning"] {
+        --clock-grad-a: rgba(30, 110, 214, 0.16); /* Twój niebieski */
+        --clock-grad-b: rgba(
+          255,
+          255,
+          255,
+          0.85
+        ); /* Czysta, jasna biel poranka */
+        --clock-border: rgba(30, 110, 214, 0.25);
+        --clock-text: #27272a;
+      }
+
+      /* DAY: Niebieski + delikatny żółty jak słońce */
+      .bento-clock[data-period="day"] {
+        --clock-grad-a: rgba(30, 110, 214, 0.14); /* Twój niebieski */
+        --clock-grad-b: rgba(
+          253,
+          224,
+          71,
+          0.22
+        ); /* Słoneczna żółć (amber/yellow) */
+        --clock-border: rgba(30, 110, 214, 0.25);
+        --clock-text: #27272a;
+      }
+
+      /* EVENING: Niebieski + delikatny pomarańcz zachodu słońca + subtelny fiolet */
+      .bento-clock[data-period="evening"] {
+        --clock-grad-a: rgba(30, 110, 214, 0.16); /* Twój niebieski */
+        --clock-grad-b: rgba(
+          251,
+          146,
+          60,
+          0.22
+        ); /* Warm sunset orange (delikatny pomarańcz) */
+        --clock-border: rgba(168, 85, 247, 0.28); /* Fioletowy akcent ramki */
+        --clock-text: #27272a;
+      }
+
+      /* NIGHT: Niebieski + głęboka czerń / nocny granat */
+      .bento-clock[data-period="night"] {
+        --clock-grad-a: rgba(
+          30,
+          110,
+          214,
+          0.25
+        ); /* Twój niebieski (bardziej nasycony w nocy) */
+        --clock-grad-b: rgba(
+          9,
+          9,
+          11,
+          0.88
+        ); /* Głęboka czerń / ciemny węgiel */
+        --clock-border: rgba(30, 110, 214, 0.35);
+        --clock-text: #f4f4f5; /* Jasny tekst dla kontrastu */
       }
 
       .clock-icon {
         font-size: 2rem;
+        display: inline-block;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+
+      .clock-icon.is-swapping {
+        opacity: 0;
+        transform: translateY(6px) rotate(-15deg);
       }
 
       .location {
         font-size: 0.9rem;
-        color: #52525b; /* lub #71717a */
+        color: #52525b;
         display: block;
+        transition: color 1.2s ease;
+      }
+
+      .bento-clock[data-period="night"] .location {
+        color: #a1a1aa;
       }
 
       .time {
-        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        font-size: 1.15rem;
         font-weight: 700;
-        color: #35353b;
+        color: var(--clock-text);
+        transition: color 1.2s ease;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .time-sep {
+        width: 0.3em;
+        height: 1.25em; /* ta sama wysokość co .flip-unit, żeby się realnie wyrównały */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.22em;
+      }
+
+      /* Zamiast glifu ":" -> dwie kropki rysowane w CSS,
+   identycznie wycentrowane jak cyfry we flip-kartach */
+      .time-sep::before,
+      .time-sep::after {
+        content: "";
+        width: 0.11em;
+        height: 0.11em;
+        border-radius: 50%;
+        background: var(--clock-text);
+        opacity: 0.6;
+        transition: background 1.2s ease;
+      }
+
+      .time-tz {
+        margin-left: 6px;
+        font-size: 0.72rem;
+        font-weight: 600;
+        opacity: 0.6;
+      }
+
+      /* FLIP DIGIT */
+      .flip-unit {
+        display: inline-flex; /* <- BRAKUJĄCE. Bez tego height/width są ignorowane */
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 0.6em;
+        height: 1.25em;
+        perspective: 200px;
+        vertical-align: middle; /* dodatkowe zabezpieczenie na wypadek baseline-alignmentu w .time */
+      }
+
+      .flip-card {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .flip-card.is-flipping {
+        transform: rotateX(-180deg);
+      }
+
+      .flip-face {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backface-visibility: hidden;
+      }
+
+      .flip-face-front {
+        transform: rotateX(0deg);
+      }
+
+      .flip-face-back {
+        transform: rotateX(180deg);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .bento-clock,
+        .clock-icon,
+        .location,
+        .time,
+        .flip-card {
+          transition: none !important;
+        }
       }
 
       /* KAFEL 3: INSTAX STACK (3 ZDJĘCIA) */
@@ -916,7 +1133,6 @@
       }
 
       /* KAFEL 5: TIMELINE (Pełna szerokość na dole) */
-      /* KAFEL 5: TIMELINE (Pełna szerokość na dole) */
       .bento-timeline {
         grid-column: span 3;
       }
@@ -991,6 +1207,9 @@
         font-size: 0.9rem;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
+      .step-axis {
+        display: contents;
+      }
 
       .step-content h4 {
         font-size: 1rem;
@@ -1053,34 +1272,67 @@
         }
 
         .horizontal-timeline {
-          grid-template-columns: 1fr;
-          gap: 28px;
+          display: block;
+          margin-top: 20px;
         }
 
-        /* Oś zmienia orientację z poziomej na pionową */
-        .horizontal-timeline::before {
-          top: 36px;
-          bottom: 36px;
-          left: 50%;
-          right: auto;
-          width: 2px;
-          height: auto;
-          transform: translateX(-50%);
-        }
-
+        .horizontal-timeline::before,
         .horizontal-timeline::after {
-          top: 36px;
-          bottom: 36px;
-          left: 50%;
-          right: auto;
-          width: 2px;
-          height: auto;
-          transform: translateX(-50%) scaleY(0);
-          transform-origin: top;
+          display: none;
         }
 
-        .bento-timeline:hover .horizontal-timeline::after {
-          transform: translateX(-50%) scaleY(1);
+        /* Sztywna oś: 56px na kropkę, reszta na tekst -- kolumna osi się NIE kurczy/rozpycha */
+        .timeline-step {
+          display: grid;
+          grid-template-columns: 56px 1fr;
+          column-gap: 12px;
+          align-items: start;
+          text-align: left;
+          position: relative;
+          padding: 16px 0;
+        }
+
+        /* Pionowa linia, wycentrowana na sztywnej osi (56px kolumna -> środek = 28px) */
+        .timeline-step:not(:last-child)::before {
+          content: "";
+          position: absolute;
+          left: 28px;
+          top: 50%;
+          bottom: -16px;
+          width: 2px;
+          background: #e4e4e7;
+          z-index: 0;
+        }
+
+        /* Wrapper wraca do "contents" -> dot i data stają się osobnymi,
+     bezpośrednio pozycjonowanymi elementami grida .timeline-step */
+        .step-axis {
+          display: contents;
+        }
+
+        .step-dot {
+          grid-column: 1;
+          grid-row: 1;
+          align-self: center;
+          margin: 0;
+          flex-shrink: 0;
+          position: relative;
+          z-index: 1;
+          background: #ffffff;
+        }
+
+        /* Data: teraz w kolumnie tekstu, nad tytułem -- wolno jej się zawijać */
+        .step-year {
+          grid-column: 2;
+          grid-row: 1;
+          display: block;
+          white-space: normal;
+          margin-bottom: 2px;
+        }
+
+        .step-content {
+          grid-column: 2;
+          grid-row: 2;
         }
       }
       /* Cookies */
@@ -1303,13 +1555,6 @@
           href="index.html"
         >
           marekwietecki
-          <!--
-          <img
-            src="assets/brand/marekwieteckiDark.svg"
-            alt="Logo tekstowe - marekwietecki.pl"
-            class="logo"
-          />
-          -->
         </a>
         <button class="menuToggle" id="menuToggle" onclick="toggleMenu()">
           ☰
@@ -1337,30 +1582,35 @@
       </div>
     </header>
     <section class="spaceX" id="spaceX"></section>
-    <!-- Breadcrumbsy -->
+
     <div class="breadcrumbsWrapper">
       <a
         href="index.html"
         class="breadcrumbs"
         style="text-decoration: underline"
+        data-i18n="about_breadcrumbs_main"
         >Strona Główna</a
       >
       <span class="arrow">&nbsp;>&nbsp;</span>
-      <span class="currentCard">O Mnie</span>
+      <span class="currentCard" data-i18n="about_breadcrumbs_current"
+        >O Mnie</span
+      >
     </div>
 
     <section class="about-bento-section">
       <div class="bento-container">
         <!-- KAFEL 1: MAIN INTRO -->
         <div class="bento-card bento-main">
-          <span class="badge">Cześć, tu Marek 👋</span>
-          <h2>
+          <span class="badge" data-i18n="about_main_badge"
+            >Cześć, tu Marek 👋</span
+          >
+          <h2 data-i18n="about_main_heading">
             Napędzają mnie ambitne cele, rozwój i przekraczanie własnych granic.
           </h2>
-          <!--Jestem osobą, która lubi stawiać sobie wysoko poprzeczkę.
-            Satysfakcję daje mi ciągły rozwój, szukanie nowych wyzwań i
-            przekraczanie własnych granic.-->
-          <p style="font-weight: 500; font-size: 0.9em">
+          <p
+            style="font-weight: 500; font-size: 0.9em"
+            data-i18n="about_main_lead"
+          >
             Cenię dyscyplinę, ale równie mocno wierzę, że dobra atmosfera i
             pozytywna energia pomagają osiągać najlepsze efekty. Sport nauczył
             mnie konsekwencji, a podróże pokazały, jak wiele można zrozumieć,
@@ -1431,7 +1681,9 @@
                   />
                 </g>
               </svg>
-              <span class="signature-sub">UX / Product Designer</span>
+              <span class="signature-sub" data-i18n="about_main_role"
+                >UX / Product Designer</span
+              >
             </div>
             <a
               href="/assets/index/Marek_Wietecki_CV_3.1.pdf"
@@ -1449,17 +1701,53 @@
                   clip-rule="evenodd"
                 />
               </svg>
-              Zobacz CV
+              <span data-i18n="about_main_cv_button">Zobacz CV</span>
             </a>
           </div>
         </div>
 
-        <!-- KAFEL 2: LOKALIZACJA & ZEGAR -->
-        <div class="bento-card bento-clock">
-          <div class="clock-icon">🌐</div>
+        <!-- KAFEL 2: CLOCK -->
+        <div class="bento-card bento-clock" id="clockCard">
+          <div class="clock-icon" id="clockIcon">☀️</div>
           <div class="clock-info">
-            <span class="location">Warszawa, PL</span>
-            <span class="time" id="live-clock">11:38 CEST</span>
+            <span class="location" data-i18n="about_clock_location"
+              >Warszawa, Polska</span
+            >
+            <div class="time" id="live-clock">
+              <span class="flip-unit" data-digit="h1"
+                ><span class="flip-card"
+                  ><span class="flip-face flip-face-front"></span
+                  ><span class="flip-face flip-face-back"></span></span
+              ></span>
+              <span class="flip-unit" data-digit="h2"
+                ><span class="flip-card"
+                  ><span class="flip-face flip-face-front"></span
+                  ><span class="flip-face flip-face-back"></span></span
+              ></span>
+              <span class="time-sep"></span>
+              <span class="flip-unit" data-digit="m1"
+                ><span class="flip-card"
+                  ><span class="flip-face flip-face-front"></span
+                  ><span class="flip-face flip-face-back"></span></span
+              ></span>
+              <span class="flip-unit" data-digit="m2"
+                ><span class="flip-card"
+                  ><span class="flip-face flip-face-front"></span
+                  ><span class="flip-face flip-face-back"></span></span
+              ></span>
+              <span class="time-sep"></span>
+              <span class="flip-unit" data-digit="s1"
+                ><span class="flip-card"
+                  ><span class="flip-face flip-face-front"></span
+                  ><span class="flip-face flip-face-back"></span></span
+              ></span>
+              <span class="flip-unit" data-digit="s2"
+                ><span class="flip-card"
+                  ><span class="flip-face flip-face-front"></span
+                  ><span class="flip-face flip-face-back"></span></span
+              ></span>
+              <span class="time-tz" id="clockTz">CEST</span>
+            </div>
           </div>
         </div>
 
@@ -1468,19 +1756,26 @@
           class="bento-card bento-instax"
           id="open-gallery"
           data-cursor="Galeria"
+          data-i18n-cursor="about_gallery_cursor_label"
         >
           <div class="instax-wrapper">
             <div class="instax photo-1">
               <img src="assets/about/about_me_2.webp" alt="Ursus Wwa 22'" />
-              <span>Ursus Wwa 22'</span>
+              <span data-i18n="about_gallery_photo1_caption"
+                >Ursus Wwa 22'</span
+              >
             </div>
             <div class="instax photo-2">
               <img src="assets/about/about_me_1.webp" alt="Marsa Alam 26'" />
-              <span>Marsa Alam 26'</span>
+              <span data-i18n="about_gallery_photo2_caption"
+                >Marsa Alam 26'</span
+              >
             </div>
             <div class="instax photo-3">
               <img src="assets/about/about_me_3.webp" alt="Como Lake 24'" />
-              <span>Como Lake 24'</span>
+              <span data-i18n="about_gallery_photo3_caption"
+                >Como Lake 24'</span
+              >
             </div>
           </div>
         </div>
@@ -1492,7 +1787,12 @@
             <button class="modal-close" id="modal-close">&times;</button>
 
             <div class="modal-image-container">
-              <img src="" id="modal-img" alt="Zdjęcie z galerii" />
+              <img
+                src=""
+                id="modal-img"
+                alt="Zdjęcie z galerii"
+                data-i18n-alt="about_gallery_modal_alt"
+              />
               <span class="modal-caption" id="modal-caption"></span>
             </div>
 
@@ -1507,30 +1807,40 @@
         <div class="bento-card bento-stats" id="statsCard">
           <div class="stat-item">
             <h3><span class="stat-number" data-target="3">3</span>+</h3>
-            <p>lata doświadczenia</p>
+            <p data-i18n="about_stats_experience_label">lata doświadczenia</p>
           </div>
           <div class="stat-item">
             <h3><span class="stat-number" data-target="10">10</span>+</h3>
-            <p>ukończonych certyfikacji</p>
+            <p data-i18n="about_stats_certifications_label">
+              ukończonych certyfikacji
+            </p>
           </div>
           <div class="stat-item">
             <h3><span class="stat-number" data-target="8">8</span>+</h3>
-            <p>zrealizowanych projektów</p>
+            <p data-i18n="about_stats_projects_label">
+              zrealizowanych projektów
+            </p>
           </div>
         </div>
 
         <!-- KAFEL 5: KOMPAKTOWA OŚ CZASU (MOJA DROGA) -->
         <div class="bento-card bento-timeline">
           <div class="timeline-header">
-            <h3>Moja Droga</h3>
+            <h3 data-i18n="about_timeline_title">Moja Droga</h3>
           </div>
           <div class="horizontal-timeline">
             <div class="timeline-step">
-              <span class="step-year">2011 – 2022</span>
-              <div class="step-dot">⚽</div>
+              <div class="step-axis">
+                <span class="step-year" data-i18n="about_timeline_step1_year"
+                  >2011 – 2022</span
+                >
+                <div class="step-dot">⚽</div>
+              </div>
               <div class="step-content">
-                <h4>Szkoła charakteru</h4>
-                <p>
+                <h4 data-i18n="about_timeline_step1_title">
+                  Szkoła charakteru
+                </h4>
+                <p data-i18n="about_timeline_step1_text">
                   Ponad 10 lat intensywnej gry w piłkę nożną. Nauka komunikacji,
                   dyscypliny, pracy zespołowej, działania pod presją i dbania o
                   relacje.
@@ -1539,11 +1849,17 @@
             </div>
 
             <div class="timeline-step">
-              <span class="step-year">2022 – 2024</span>
-              <div class="step-dot">🎓</div>
+              <div class="step-axis">
+                <span class="step-year" data-i18n="about_timeline_step2_year"
+                  >2022 – 2024</span
+                >
+                <div class="step-dot">🎓</div>
+              </div>
               <div class="step-content">
-                <h4>Fundamenty & Edukacja</h4>
-                <p>
+                <h4 data-i18n="about_timeline_step2_title">
+                  Fundamenty & Edukacja
+                </h4>
+                <p data-i18n="about_timeline_step2_text">
                   Rozpoczęcie studiów informatycznych. Intensywna nauka
                   UX/Product Design. Zdobywanie certyfikatów umiejętności
                   projektowych.
@@ -1552,11 +1868,17 @@
             </div>
 
             <div class="timeline-step active">
-              <span class="step-year">2024+</span>
-              <div class="step-dot">🚀</div>
+              <div class="step-axis">
+                <span class="step-year" data-i18n="about_timeline_step3_year"
+                  >2024+</span
+                >
+                <div class="step-dot">🚀</div>
+              </div>
               <div class="step-content">
-                <h4>Partner Strategiczny</h4>
-                <p>
+                <h4 data-i18n="about_timeline_step3_title">
+                  Partner Strategiczny
+                </h4>
+                <p data-i18n="about_timeline_step3_text">
                   Pierwsza praca. Pierwsze projekty. Ukończenie studiów
                   Inżynierskich. Łączenie potrzeb i strategii biznesowych z
                   designem. Rozpoczęcie działalności freelancerskiej.
@@ -1571,7 +1893,7 @@
     <!-- Certificates -->
     <section class="gridGallery" id="gridGallery">
       <div class="titleWrapper">
-        <h2>Moje Certyfikaty</h2>
+        <h2 data-i18n="about_certificates_title">Moje Certyfikaty</h2>
       </div>
       <div class="galleryWrapper">
         <div class="galleryItem">
@@ -1583,9 +1905,10 @@
               <img
                 src="assets/certificates/Masterclass_UX.webp"
                 alt="Certyfikat Nueve - Masterclass UX"
+                data-i18n-alt="about_certificates_item1_alt"
               />
             </a>
-            <p>UX Masterclass</p>
+            <p data-i18n="about_certificates_item1_caption">UX Masterclass</p>
           </div>
         </div>
         <div class="galleryItem">
@@ -1597,9 +1920,12 @@
               <img
                 src="assets/certificates/Masterclass_UX_Teamwork.webp"
                 alt="Certyfikat Nueve - Dawania i odbierania feedbacku zdobyty podczas Masterclass UX"
+                data-i18n-alt="about_certificates_item2_alt"
               />
             </a>
-            <p>Certyfikat Teamworku</p>
+            <p data-i18n="about_certificates_item2_caption">
+              Certyfikat Teamworku
+            </p>
           </div>
         </div>
         <div class="galleryItem">
@@ -1611,9 +1937,10 @@
               <img
                 src="assets/certificates/Nueve_App_Design_Intro.webp"
                 alt="Certyfikat Nueve - App Design Into"
+                data-i18n-alt="about_certificates_item3_alt"
               />
             </a>
-            <p>App Design Into</p>
+            <p data-i18n="about_certificates_item3_caption">App Design Into</p>
           </div>
         </div>
         <div class="galleryItem">
@@ -1625,9 +1952,12 @@
               <img
                 src="assets/certificates/cae_mini.png"
                 alt="Cambridge Advanced English Certificate"
+                data-i18n-alt="about_certificates_item4_alt"
               />
             </a>
-            <p>Cambridge Advanced English Certificate</p>
+            <p data-i18n="about_certificates_item4_caption">
+              Cambridge Advanced English Certificate
+            </p>
           </div>
         </div>
         <div class="galleryItem">
@@ -1639,9 +1969,12 @@
               <img
                 src="assets/certificates/Certyfikat_Marketing_internetowy-Umiejetnosci_jutra.webp"
                 alt="Certyfikat Google & SGH - Marketing Internetowy - Umiejętności Jutra"
+                data-i18n-alt="about_certificates_item5_alt"
               />
             </a>
-            <p>Umiejętności Jutra - Marketing Internetowy</p>
+            <p data-i18n="about_certificates_item5_caption">
+              Umiejętności Jutra - Marketing Internetowy
+            </p>
           </div>
         </div>
         <div class="galleryItem">
@@ -1653,9 +1986,12 @@
               <img
                 src="assets/certificates/ZalacznikDoCertyfikatu-PL-Small.webp"
                 alt="Załącznik do Certyfikatu Google & SGH - Marketing Internetowy - Umiejętności Jutra"
+                data-i18n-alt="about_certificates_item6_alt"
               />
             </a>
-            <p>Załącznik do Umiejętności Jutra</p>
+            <p data-i18n="about_certificates_item6_caption">
+              Załącznik do Umiejętności Jutra
+            </p>
           </div>
         </div>
         <div class="galleryItem">
@@ -1667,9 +2003,10 @@
               <img
                 src="assets/certificates/Nueve_AIv1_Certificate.webp"
                 alt="Certyfikat Nueve Design - Design with AI"
+                data-i18n-alt="about_certificates_item7_alt"
               />
             </a>
-            <p>Design with AI</p>
+            <p data-i18n="about_certificates_item7_caption">Design with AI</p>
           </div>
         </div>
         <div class="galleryItem">
@@ -1681,9 +2018,12 @@
               <img
                 src="assets/certificates/Perfect_Design_Process.webp"
                 alt="Certyfikat Nueve Design - Perfect Design Process"
+                data-i18n-alt="about_certificates_item8_alt"
               />
             </a>
-            <p>Perfect Design Process</p>
+            <p data-i18n="about_certificates_item8_caption">
+              Perfect Design Process
+            </p>
           </div>
         </div>
         <div class="galleryItem">
@@ -1695,9 +2035,10 @@
               <img
                 src="assets/certificates/PrototypeProCertificate.webp"
                 alt="Certyfikat Nueve Design - Prototype Pro"
+                data-i18n-alt="about_certificates_item9_alt"
               />
             </a>
-            <p>Prototype Pro</p>
+            <p data-i18n="about_certificates_item9_caption">Prototype Pro</p>
           </div>
         </div>
         <div class="galleryItem">
@@ -1709,9 +2050,12 @@
               <img
                 src="assets/certificates/Certyfikat_udziału_w_szkoleniu_Design_Thinking.webp"
                 alt="Certyfikat uczestnictwa - Warsztaty Design Thinking"
+                data-i18n-alt="about_certificates_item10_alt"
               />
             </a>
-            <p>Warsztaty Design Thinking</p>
+            <p data-i18n="about_certificates_item10_caption">
+              Warsztaty Design Thinking
+            </p>
           </div>
         </div>
         <div class="galleryItem">
@@ -1723,9 +2067,12 @@
               <img
                 src="assets/certificates/Design-System-Intro-certificate.webp"
                 alt="Certyfikat Nueve Design - Design System Intro"
+                data-i18n-alt="about_certificates_item11_alt"
               />
             </a>
-            <p>Design System Into</p>
+            <p data-i18n="about_certificates_item11_caption">
+              Design System Into
+            </p>
           </div>
         </div>
         <div class="galleryItem">
@@ -1737,9 +2084,12 @@
               <img
                 src="assets/certificates/ProjektowanieWitrynInternetowych.webp"
                 alt="Certyfikat Projektowania Witryn Intrenetowych"
+                data-i18n-alt="about_certificates_item12_alt"
               />
             </a>
-            <p>Projektowanie witryn Internetowych</p>
+            <p data-i18n="about_certificates_item12_caption">
+              Projektowanie witryn Internetowych
+            </p>
           </div>
         </div>
         <!-- Dodaj więcej galleryItem w razie potrzeby -->
@@ -2066,25 +2416,132 @@
     </script>
     <!-- zegar -->
     <script>
-      function updateWarsawClock() {
-        const clockElement = document.getElementById("live-clock");
-        if (!clockElement) return;
+      const clockCard = document.getElementById("clockCard");
+      const clockIcon = document.getElementById("clockIcon");
+      const clockTz = document.getElementById("clockTz");
 
-        const options = {
+      const digitOrder = ["h1", "h2", "m1", "m2", "s1", "s2"];
+      const digitCards = {};
+      digitOrder.forEach((key) => {
+        digitCards[key] = document.querySelector(
+          `.flip-unit[data-digit="${key}"] .flip-card`
+        );
+      });
+
+      const periodIcons = {
+        morning: "🌅",
+        day: "☀️",
+        evening: "🌇",
+        night: "🌙",
+      };
+
+      function getPeriod(hour) {
+        if (hour >= 5 && hour < 11) return "morning";
+        if (hour >= 11 && hour < 17) return "day";
+        if (hour >= 17 && hour < 21) return "evening";
+        return "night";
+      }
+
+      function getWarsawParts() {
+        const parts = new Intl.DateTimeFormat("en-GB", {
           timeZone: "Europe/Warsaw",
           hour: "2-digit",
           minute: "2-digit",
           second: "2-digit",
           hour12: false,
-        };
+          timeZoneName: "short",
+        }).formatToParts(new Date());
 
-        const formatter = new Intl.DateTimeFormat([], options);
-        clockElement.textContent = `${formatter.format(new Date())} CEST`;
+        const map = {};
+        parts.forEach((p) => (map[p.type] = p.value));
+        return {
+          hour: map.hour,
+          minute: map.minute,
+          second: map.second,
+          tz: map.timeZoneName,
+        };
       }
 
-      // Odświeżanie co 1 sekundę
-      setInterval(updateWarsawClock, 1000);
-      updateWarsawClock();
+      function setDigit(cardEl, newValue) {
+        const front = cardEl.querySelector(".flip-face-front");
+        const back = cardEl.querySelector(".flip-face-back");
+        back.textContent = newValue;
+
+        cardEl.classList.add("is-flipping");
+
+        cardEl.addEventListener(
+          "transitionend",
+          function handler(e) {
+            if (e.propertyName !== "transform") return; // ignorujemy inne ewentualne transitiony
+            cardEl.removeEventListener("transitionend", handler);
+
+            // 1. Wyłączamy transition na chwilę
+            cardEl.style.transition = "none";
+            // 2. Zdejmujemy klasę (wraca do rotateX(0)) i podmieniamy front -- ale BEZ animacji
+            cardEl.classList.remove("is-flipping");
+            front.textContent = newValue;
+
+            // 3. Wymuszamy reflow, żeby przeglądarka "zatwierdziła" transition:none
+            //    zanim je z powrotem włączymy (inaczej re-enable zdąży się załapać na ten sam frame)
+            void cardEl.offsetHeight;
+
+            // 4. Przywracamy transition na kolejny flip
+            cardEl.style.transition = "";
+          },
+          { once: true }
+        );
+      }
+
+      const lastValues = {
+        h1: null,
+        h2: null,
+        m1: null,
+        m2: null,
+        s1: null,
+        s2: null,
+      };
+      let lastPeriod = null;
+
+      function updateClock() {
+        const { hour, minute, second, tz } = getWarsawParts();
+        const values = {
+          h1: hour[0],
+          h2: hour[1],
+          m1: minute[0],
+          m2: minute[1],
+          s1: second[0],
+          s2: second[1],
+        };
+
+        digitOrder.forEach((key) => {
+          const val = values[key];
+          if (val === lastValues[key]) return;
+
+          if (lastValues[key] === null) {
+            digitCards[key].querySelector(".flip-face-front").textContent = val;
+            digitCards[key].querySelector(".flip-face-back").textContent = val;
+          } else {
+            setDigit(digitCards[key], val);
+          }
+          lastValues[key] = val;
+        });
+
+        clockTz.textContent = tz;
+
+        const period = getPeriod(parseInt(hour, 10));
+        if (period !== lastPeriod) {
+          clockCard.setAttribute("data-period", period);
+          clockIcon.classList.add("is-swapping");
+          setTimeout(() => {
+            clockIcon.textContent = periodIcons[period];
+            clockIcon.classList.remove("is-swapping");
+          }, 250);
+          lastPeriod = period;
+        }
+      }
+
+      updateClock();
+      setInterval(updateClock, 1000);
     </script>
     <!-- liczniki -->
     <script>
