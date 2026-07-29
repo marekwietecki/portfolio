@@ -4,18 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Identyfikacja Wizualna: PlanetRoad - Marek Wietecki</title>
-    <meta name="description" content="Projekt identyfikacji wizualnej PlanetRoad autorstwa Marka Wieteckiego. Profesjonalny branding i design system dla firmy zajmującej się projektowanie dróg.">
+    <meta
+      name="description"
+      content="Projekt identyfikacji wizualnej PlanetRoad autorstwa Marka Wieteckiego. Profesjonalny branding i design system dla firmy zajmującej się projektowanie dróg."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" href="assets/brand/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32x32.png">
-    <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/brand/favicon-32x32.png"
+    />
+    <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -33,32 +44,37 @@
       })(window,document,'script','dataLayer','GTM-KP2BLH2V');
     </script>
      End Google Tag Manager -->
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5WEZ1GN7W6"></script>
-     <script>
-       window.dataLayer = window.dataLayer || [];
-       function gtag(){dataLayer.push(arguments);}
- 
-       // 🔴 DOMYŚLNA ZGODA (BRAK ZGODY)
-       gtag('consent', 'default', {
-         ad_storage: 'denied',
-         analytics_storage: 'denied',
-         ad_user_data: 'denied',
-         ad_personalization: 'denied'
-       });
- 
-       gtag('js', new Date());
- 
-       // GA4
-       gtag('config', 'G-5WEZ1GN7W6', {
-         anonymize_ip: true
-       });
- 
-       // Google Ads
-       gtag('config', 'AW-17997930573');
-     </script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-5WEZ1GN7W6"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      // 🔴 DOMYŚLNA ZGODA (BRAK ZGODY)
+      gtag("consent", "default", {
+        ad_storage: "denied",
+        analytics_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+      });
+
+      gtag("js", new Date());
+
+      // GA4
+      gtag("config", "G-5WEZ1GN7W6", {
+        anonymize_ip: true,
+      });
+
+      // Google Ads
+      gtag("config", "AW-17997930573");
+    </script>
     <style>
-         /* cursor */
-         @media (hover: hover) and (pointer: fine) {
+      /* cursor */
+      @media (hover: hover) and (pointer: fine) {
         body {
           cursor: none;
         }
@@ -137,8 +153,8 @@
       }
       h3 {
         font-size: 16px;
-        padding-top: 6vh; 
-        margin-bottom: 1vh; 
+        padding-top: 6vh;
+        margin-bottom: 1vh;
         padding-bottom: 0px;
       }
       p {
@@ -160,6 +176,33 @@
       a svg {
         fill: currentColor;
         transition: fill 0.2s ease;
+      }
+      /* ========================================================
+   SCROLL REVEAL — subtelny fade-in + lekkie uniesienie
+   ======================================================== */
+      .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+      }
+
+      .reveal-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .mini-gallery a.reveal-on-scroll {
+        transition-duration: 0.6s;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .reveal-on-scroll {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
       }
       /* Header */
       header {
@@ -216,6 +259,7 @@
       .headerLinks {
         display: flex;
         flex-direction: row;
+        align-items: center;
         gap: clamp(16px, 3vw, 40px);
       }
       .logo {
@@ -225,10 +269,43 @@
         justify-content: center;
         cursor: pointer;
       }
+      .lang-switcher {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-family: "Outfit", sans-serif;
+      }
+
+      .lang-btn {
+        background: none;
+        border: none;
+        padding: 4px 8px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #1a1a1a;
+        cursor: pointer;
+        opacity: 0.48;
+        transition: opacity 0.2s ease;
+      }
+
+      .lang-btn:hover {
+        opacity: 0.8;
+      }
+
+      .lang-btn.active {
+        opacity: 1;
+        pointer-events: none; /* wyłączone klikanie w aktywny język */
+      }
+
+      .lang-divider {
+        color: #b4b4b4;
+        font-size: 12px;
+        user-select: none;
+      }
       /* Content */
       .projectLayout {
         display: grid;
-        grid-template-columns:64% 9% 20% 2%; /* margines – treść – nav – margines */
+        grid-template-columns: 64% 9% 20% 2%; /* margines – treść – nav – margines */
         gap: 3rem;
         max-width: 1400px;
         margin: 0 auto;
@@ -250,7 +327,7 @@
         border-radius: 16px;
         aspect-ratio: 16/9;
         display: flex;
-        justify-content: center; 
+        justify-content: center;
         align-items: center;
         transition: transform 0.3s ease;
         cursor: pointer;
@@ -259,9 +336,15 @@
         transform: scale(1.05);
       }
       @keyframes gradientMove {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
       .processWrapper {
         display: flex;
@@ -273,7 +356,7 @@
         margin-bottom: 4vh;
       }
       .processPhoto {
-        width: 88%; 
+        width: 88%;
         border-radius: 16px;
         margin-top: 2vh;
         margin-bottom: 2vh;
@@ -284,7 +367,7 @@
         transform: scale(1.05);
       }
       .caveat {
-        font-family: 'Caveat', cursive;
+        font-family: "Caveat", cursive;
       }
       .siteLink {
         color: #444;
@@ -347,7 +430,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start; /* 🔑 linki wyrównane do lewej */
-        gap: 0.5rem;      
+        gap: 0.5rem;
       }
       .sideNavWrapper a {
         color: #777;
@@ -368,7 +451,7 @@
         padding-bottom: 8vh;
         padding-left: 4vw;
         display: flex;
-        justify-content: center; 
+        justify-content: center;
         align-items: center;
         width: 100%;
         box-sizing: border-box; /* uwzględnia padding w szerokości */
@@ -381,8 +464,8 @@
       .loopLink {
         cursor: pointer;
         text-align: center;
-        color:#444;
-        font-weight: 600; 
+        color: #444;
+        font-weight: 600;
         text-decoration: underline;
       }
       .loopLink:hover {
@@ -524,7 +607,6 @@
         height: 16px;
         padding: 1px;
         margin-top: 1.5px;
-
       }
       .navLinks {
         color: #dddddd;
@@ -591,22 +673,22 @@
         .projectLayout {
           flex-direction: column;
           gap: 2rem;
-          grid-template-columns:98% 2%; /* margines – treść – nav – margines */
+          grid-template-columns: 98% 2%; /* margines – treść – nav – margines */
         }
         .projectIntro {
           width: 82%;
         }
         .processWrapper {
-            flex-direction: column;
-            padding-top: 0px;
+          flex-direction: column;
+          padding-top: 0px;
         }
         .processProgress {
-            width: 88vw;
-            margin-bottom: -20px;
+          width: 88vw;
+          margin-bottom: -20px;
         }
         .processPhoto {
-            width: 80vw;
-            border-radius: 16px;
+          width: 80vw;
+          border-radius: 16px;
         }
         /* Footer */
         .logoWithLinks {
@@ -623,11 +705,16 @@
         }
       }
     </style>
+    <script src="/js/translations.js"></script>
   </head>
   <body>
     <header>
       <div class="headerNav">
-        <a class="headerLink" style="font-size: clamp(0.6rem, calc(0.75vw + 1.05rem), 1.65rem);" href="../index.html">
+        <a
+          class="headerLink"
+          style="font-size: clamp(0.6rem, calc(0.75vw + 1.05rem), 1.65rem)"
+          href="../index.html"
+        >
           marekwietecki
           <!--
           <img
@@ -642,116 +729,290 @@
         </button>
       </div>
       <div class="headerLinks">
-        <a class="headerLink" href="../oferta.html">Oferta</a>
-        <a class="headerLink" href="../o-mnie.html">O Mnie</a>
+        <a class="headerLink" data-i18n="nav_offer" href="../oferta.html"
+          >Oferta</a
+        >
+        <a class="headerLink" data-i18n="nav_about" href="../o-mnie.html"
+          >O Mnie</a
+        >
+        <div class="lang-switcher">
+          <button
+            class="lang-btn"
+            data-lang="pl"
+            onclick="switchLanguage('pl')"
+          >
+            🇵🇱
+          </button>
+          <button
+            class="lang-btn"
+            data-lang="en"
+            onclick="switchLanguage('en')"
+          >
+            🇬🇧
+          </button>
+        </div>
       </div>
     </header>
     <section class="spaceX" id="spaceX"></section>
     <div class="projectLayout">
       <main class="projectContent">
-        <section style="padding-top: 8vh;" id="o-projekcie">
-          <h1 style="margin: 0">Identyfikacja Wizualna</h1>
-          <span style="font-size: 18px;">PlanetRoad</span>
-          <p style="margin-top: 2vw;">
-            PlanetRoad jest firmą projektującą drogi w Polsce od niespełna 30 lat.
-            W internecie firma posiadała jedynie prostą stronę internetową i nie dawała klientowi
-            większej szansy się poznać ani zapaść w pamięć z pozytywnej strony. Współpracę z firmą 
-            zacząłem od stworzenia identyfikacji wizualnej, która pomoże firmie wejść w świat cyfrowy
-              i zaistnieć w internecie. 
+        <section style="padding-top: 8vh" id="o-projekcie">
+          <h1 style="margin: 0" data-i18n="project_vi_planetroad_title">
+            Identyfikacja Wizualna
+          </h1>
+          <span
+            style="font-size: 18px"
+            data-i18n="project_vi_planetroad_subtitle"
+            >PlanetRoad</span
+          >
+          <p style="margin-top: 2vw" data-i18n="project_vi_planetroad_intro">
+            PlanetRoad jest firmą projektującą drogi w Polsce od niespełna 30
+            lat. W internecie firma posiadała jedynie prostą stronę internetową
+            i nie dawała klientowi większej szansy się poznać ani zapaść w
+            pamięć z pozytywnej strony. Współpracę z firmą zacząłem od
+            stworzenia identyfikacji wizualnej, która pomoże firmie wejść w
+            świat cyfrowy i zaistnieć w internecie.
           </p>
           <a
             href="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Cover.webp"
             data-lightbox="galeria-identyfikacja-wizualna-PlanetRoad"
-            style="display: block;"
+            style="display: block"
           >
             <div class="gradientBackground">
               <img
-                style="width: 44%;"
+                style="width: 44%"
                 src="../assets/projects/identyfikacja-wizualna-PlanetRoad/PlanetRoad_logo_portfolio_white.png"
                 alt="Logo PlanetRoad"
+                data-i18n="[alt]project_vi_planetroad_img_alt_logo"
               />
             </div>
           </a>
-          </section>
+        </section>
         <section id="cel">
-          <h2 style="padding-top: 12vh; margin-bottom: 1.5vw;">Cel</h2>
+          <h2
+            style="padding-top: 12vh; margin-bottom: 1.5vw"
+            data-i18n="project_vi_planetroad_goal_title"
+          >
+            Cel
+          </h2>
           <p>
-            🎯  <b>Stworzenie spójnej identyfikacji wizualnej</b> wspierającej profesjonalny i wiarygodny wizerunek firmy w środowisku cyfrowym.
+            🎯
+            <b data-i18n="project_vi_planetroad_goal_1_b"
+              >Stworzenie spójnej identyfikacji wizualnej</b
+            >
+            <span data-i18n="project_vi_planetroad_goal_1_text">
+              wspierającej profesjonalny i wiarygodny wizerunek firmy w
+              środowisku cyfrowym.</span
+            >
           </p>
           <p>
-            🎯  <b>Ujednolicenie sposobu komunikacji wizualnej</b> w różnych kanałach (druk, web, social media).
+            🎯
+            <b data-i18n="project_vi_planetroad_goal_2_b"
+              >Ujednolicenie sposobu komunikacji wizualnej</b
+            >
+            <span data-i18n="project_vi_planetroad_goal_2_text">
+              w różnych kanałach (druk, web, social media).</span
+            >
           </p>
           <p>
-            🎯  <b>Przygotowanie marki do dalszej ekspansji cyfrowej</b> (np. przyszłe kampanie, portfolio online, przetargi publiczne).
-          </p>          
+            🎯
+            <b data-i18n="project_vi_planetroad_goal_3_b"
+              >Przygotowanie marki do dalszej ekspansji cyfrowej</b
+            >
+            <span data-i18n="project_vi_planetroad_goal_3_text">
+              (np. przyszłe kampanie, portfolio online, przetargi
+              publiczne).</span
+            >
+          </p>
         </section>
 
         <section id="ograniczenia">
-          <h2 style="padding-top: 12vh; margin-bottom: 1.5vw;">Ograniczenia</h2>
+          <h2
+            style="padding-top: 12vh; margin-bottom: 1.5vw"
+            data-i18n="project_vi_planetroad_constraints_title"
+          >
+            Ograniczenia
+          </h2>
           <p>
-            ⚠️  <b>Firma działa w sektorze B2B</b>, co wymaga utrzymania wizerunku profesjonalnego, stonowanego i wiarygodnego.
+            ⚠️
+            <b data-i18n="project_vi_planetroad_constraint_1_b"
+              >Firma działa w sektorze B2B</b
+            >
+            <span data-i18n="project_vi_planetroad_constraint_1_text"
+              >, co wymaga utrzymania wizerunku profesjonalnego, stonowanego i
+              wiarygodnego.</span
+            >
           </p>
           <p>
-            ⚠️  Nowa <b>identyfikacja wizualna musi pozostać spójna z istniejącym logo</b>, które firma zdecydowała się zachować podczas tworzenia nowej strony internetowej i wdrażania komunikacji w mediach społecznościowych.
+            ⚠️
+            <span data-i18n="project_vi_planetroad_constraint_2_part1">
+              Nowa
+            </span>
+            <b data-i18n="project_vi_planetroad_constraint_2_b"
+              >identyfikacja wizualna musi pozostać spójna z istniejącym logo</b
+            >
+            <span data-i18n="project_vi_planetroad_constraint_2_part2"
+              >, które firma zdecydowała się zachować podczas tworzenia nowej
+              strony internetowej i wdrażania komunikacji w mediach
+              społecznościowych.</span
+            >
           </p>
-          
+
           <p>
-            ⚠️  <b>Brak wcześniejszego doświadczenia firmy</b> w komunikacji wizualnej i marketingu cyfrowym
+            ⚠️
+            <b data-i18n="project_vi_planetroad_constraint_3_b"
+              >Brak wcześniejszego doświadczenia firmy</b
+            >
+            <span data-i18n="project_vi_planetroad_constraint_3_text">
+              w komunikacji wizualnej i marketingu cyfrowym</span
+            >
           </p>
           <p>
-            ⚠️  <b>Konieczność utrzymania ciągłości</b>w działaniach firmy w trakcie wdrożenia
+            ⚠️
+            <b data-i18n="project_vi_planetroad_constraint_4_b"
+              >Konieczność utrzymania ciągłości</b
+            >
+            <span data-i18n="project_vi_planetroad_constraint_4_text">
+              w działaniach firmy w trakcie wdrożenia</span
+            >
           </p>
         </section>
 
         <section id="proces">
-          <h2 style="padding-top: 12vh;">Proces Projektowy</h2>
-          <h3 style="padding-top: 0.5vh;">01 Badania i Analiza</h3>
-          <div class="processWrapper" style="flex-direction: column;">    
-            <p>
-              Projekt identyfikacji wizualnej dla PlanetRoad rozpocząłem od serii analiz i rozmów z przedstawicielami firmy, w tym wywiadu z CEO. Celem było zrozumienie, jak marka funkcjonuje na rynku i znalezienie możliwości w jaki sposób może wyróżnić się spośród konkurencji w swojej branży.
+          <h2
+            style="padding-top: 12vh"
+            data-i18n="project_vi_planetroad_process_title"
+          >
+            Proces Projektowy
+          </h2>
+          <h3
+            style="padding-top: 0.5vh"
+            data-i18n="project_vi_planetroad_step1_title"
+          >
+            01 Badania i Analiza
+          </h3>
+          <div class="processWrapper" style="flex-direction: column">
+            <p data-i18n="project_vi_planetroad_step1_p1">
+              Projekt identyfikacji wizualnej dla PlanetRoad rozpocząłem od
+              serii analiz i rozmów z przedstawicielami firmy, w tym wywiadu z
+              CEO. Celem było zrozumienie, jak marka funkcjonuje na rynku i
+              znalezienie możliwości w jaki sposób może wyróżnić się spośród
+              konkurencji w swojej branży.
             </p>
             <p>
-              <b>Wywiad z CEO</b> powiedział mi między innymi, że PlanetRoad skupia się głównie na <b>współpracy B2B</b> - z większymi firmami (np. Developerami) oraz jednostkami samorządowymi. Dlatego priorytetem projektowym stało się stworzenie wizerunku opartego na profesjonalizmie, zaufaniu i wiarygodności, przy jednoczesnym zachowaniu nowoczesnego charakteru.
+              <b data-i18n="project_vi_planetroad_step1_p2_b1">Wywiad z CEO</b>
+              <span data-i18n="project_vi_planetroad_step1_p2_part1">
+                powiedział mi między innymi, że PlanetRoad skupia się głównie na
+              </span>
+              <b data-i18n="project_vi_planetroad_step1_p2_b2"
+                >współpracy B2B</b
+              >
+              <span data-i18n="project_vi_planetroad_step1_p2_part2">
+                - z większymi firmami (np. Developerami) oraz jednostkami
+                samorządowymi. Dlatego priorytetem projektowym stało się
+                stworzenie wizerunku opartego na profesjonalizmie, zaufaniu i
+                wiarygodności, przy jednoczesnym zachowaniu nowoczesnego
+                charakteru.</span
+              >
             </p>
             <p>
-              Następnie przeprowadziłem <b>analizę konkurencji</b> w branży drogowej, która ujawniła dużą powtarzalność wizualną - wiele firm korzystało z podobnych układów stron i schematycznych kompozycji. Postanowiłem więc zaprojektować system identyfikacji, który wyróżni PlanetRoad, zachowując jednocześnie czytelność, funkcjonalność i wysoką jakość wizualną oddającą również tożsamość marki.
+              <span data-i18n="project_vi_planetroad_step1_p3_part1"
+                >Następnie przeprowadziłem
+              </span>
+              <b data-i18n="project_vi_planetroad_step1_p3_b"
+                >analizę konkurencji</b
+              >
+              <span data-i18n="project_vi_planetroad_step1_p3_part2">
+                w branży drogowej, która ujawniła dużą powtarzalność wizualną -
+                wiele firm korzystało z podobnych układów stron i schematycznych
+                kompozycji. Postanowiłem więc zaprojektować system
+                identyfikacji, który wyróżni PlanetRoad, zachowując jednocześnie
+                czytelność, funkcjonalność i wysoką jakość wizualną oddającą
+                również tożsamość marki.</span
+              >
             </p>
-            <p style="margin-bottom: 0px;">
-              <b>Analiza psychologicznego znaczenia kolorów</b> wykorzystywanych w logo potwierdziła trafność ich wyboru: <br>
-            
-            <span >• Błękit - budzi zaufanie i spokój, kojarzy się z nowoczesnością i innowacyjnością.</span><br>
-            <span >• Granat - symbolizuje profesjonalizm i odpowiedzialność.</span><br>
-              W połączeniu tworzą one wiarygodny i spójny zestaw barw, wspierający komunikację marki.
+            <p style="margin-bottom: 0px">
+              <b data-i18n="project_vi_planetroad_step1_p4_b"
+                >Analiza psychologicznego znaczenia kolorów</b
+              >
+              <span data-i18n="project_vi_planetroad_step1_p4_text">
+                wykorzystywanych w logo potwierdziła trafność ich wyboru:</span
+              ><br />
+
+              <span data-i18n="project_vi_planetroad_step1_color_blue"
+                >• Błękit - budzi zaufanie i spokój, kojarzy się z
+                nowoczesnością i innowacyjnością.</span
+              ><br />
+              <span data-i18n="project_vi_planetroad_step1_color_navy"
+                >• Granat - symbolizuje profesjonalizm i odpowiedzialność.</span
+              ><br />
+              <span data-i18n="project_vi_planetroad_step1_color_summary"
+                >W połączeniu tworzą one wiarygodny i spójny zestaw barw,
+                wspierający komunikację marki.</span
+              >
             </p>
             <p>
-              Przygotowując się do stworzenia <b>alternatywnych wersji Logo</b> zagłębiłem się w praktyki globalnych marek (m.in. Coca-Cola, Disney, Chanel) i przeanalizowałem ich podejście do tworzenia systemów identyfikacji o wysokiej elastyczności. Wnioski z tej analizy stały się podstawą do zaprojektowania zestawu wariantów logo o różnym stopniu szczegółowości, zachowujących spójność i rozpoznawalność w różnych kontekstach.
+              <span data-i18n="project_vi_planetroad_step1_p5_part1"
+                >Przygotowując się do stworzenia
+              </span>
+              <b data-i18n="project_vi_planetroad_step1_p5_b"
+                >alternatywnych wersji Logo</b
+              >
+              <span data-i18n="project_vi_planetroad_step1_p5_part2">
+                zagłębiłem się w praktyki globalnych marek (m.in. Coca-Cola,
+                Disney, Chanel) i przeanalizowałem ich podejście do tworzenia
+                systemów identyfikacji o wysokiej elastyczności. Wnioski z tej
+                analizy stały się podstawą do zaprojektowania zestawu wariantów
+                logo o różnym stopniu szczegółowości, zachowujących spójność i
+                rozpoznawalność w różnych kontekstach.</span
+              >
             </p>
-            <p>
-              Kolejno zbadałem oczekiwania użytkowników i najczęściej wyszukiwane informacje o firmach z branży, aby zapewnić użyteczność nowej strony internetowej pod kątem UX i SEO. Analiza treści pokazała, że kluczowe są: przejrzysta oferta, szybki kontakt oraz portfolio projektów.
+            <p data-i18n="project_vi_planetroad_step1_p6">
+              Kolejno zbadałem oczekiwania użytkowników i najczęściej
+              wyszukiwane informacje o firmach z branży, aby zapewnić
+              użyteczność nowej strony internetowej pod kątem UX i SEO. Analiza
+              treści pokazała, że kluczowe są: przejrzysta oferta, szybki
+              kontakt oraz portfolio projektów.
             </p>
-            <p>
-              Na koniec przeanalizowałem także komunikację branży w mediach społecznościowych, by opracować wizualny styl dopasowany do specyfiki kanałów, zachowując spójność z identyfikacją wizualną i stroną internetową.
-            </p>
-          </div>
-        
-          <h3>02 Strategia</h3>
-          <div class="processWrapper">  
-            <p>
-              Na podstawie wyników badań opracowałem strategię wizualną, której celem było połączenie profesjonalnego wizerunku z nowoczesnym charakterem i prostotą form.
-            </p>
-            <p>
-              Postawiłem na minimalizm i klarowną komunikację wizualną — każda decyzja projektowa (od doboru kolorów po typografię) wynikała z założenia, że marka ma wzbudzać zaufanie, stabilność i nowoczesność.
-            </p>
-            <p>
-              System identyfikacji wizualnej został zaprojektowany jako spójny, skalowalny i elastyczny — tak, aby można go było łatwo wdrażać w materiałach cyfrowych i drukowanych, na stronie internetowej oraz w kanałach social media.
+            <p data-i18n="project_vi_planetroad_step1_p7">
+              Na koniec przeanalizowałem także komunikację branży w mediach
+              społecznościowych, by opracować wizualny styl dopasowany do
+              specyfiki kanałów, zachowując spójność z identyfikacją wizualną i
+              stroną internetową.
             </p>
           </div>
 
-          <h3>03 Design - Paleta Barw</h3>
-          <div class="processWrapper" style="flex-direction: column;">    
-            <p>
-                Na bazie dwóch barw, które zostały użyte jako motyw przewodni dla logo stworzyłem całą gamę odcieni, aby móc swobodnie i elastycznie zarządząć treściami tworzonymi dla firmy. 
-                Opracowałem paletę odcieni opartą na neutralnych szarościach i niebieskim, kojarzącym się z technologią, ale przede wszystkim z zaufaniem.
+          <h3 data-i18n="project_vi_planetroad_step2_title">02 Strategia</h3>
+          <div class="processWrapper">
+            <p data-i18n="project_vi_planetroad_step2_p1">
+              Na podstawie wyników badań opracowałem strategię wizualną, której
+              celem było połączenie profesjonalnego wizerunku z nowoczesnym
+              charakterem i prostotą form.
+            </p>
+            <p data-i18n="project_vi_planetroad_step2_p2">
+              Postawiłem na minimalizm i klarowną komunikację wizualną — każda
+              decyzja projektowa (od doboru kolorów po typografię) wynikała z
+              założenia, że marka ma wzbudzać zaufanie, stabilność i
+              nowoczesność.
+            </p>
+            <p data-i18n="project_vi_planetroad_step2_p3">
+              System identyfikacji wizualnej został zaprojektowany jako spójny,
+              skalowalny i elastyczny — tak, aby można go było łatwo wdrażać w
+              materiałach cyfrowych i drukowanych, na stronie internetowej oraz
+              w kanałach social media.
+            </p>
+          </div>
+
+          <h3 data-i18n="project_vi_planetroad_step3_colors_title">
+            03 Design - Paleta Barw
+          </h3>
+          <div class="processWrapper" style="flex-direction: column">
+            <p data-i18n="project_vi_planetroad_step3_colors_p1">
+              Na bazie dwóch barw, które zostały użyte jako motyw przewodni dla
+              logo stworzyłem całą gamę odcieni, aby móc swobodnie i elastycznie
+              zarządząć treściami tworzonymi dla firmy. Opracowałem paletę
+              odcieni opartą na neutralnych szarościach i niebieskim, kojarzącym
+              się z technologią, ale przede wszystkim z zaufaniem.
             </p>
             <a
               href="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Colors1.png"
@@ -761,6 +1022,7 @@
                 class="processPhoto"
                 src="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Colors1.png"
                 alt="Odcienie Barw Brandowych w Identyfikacji Wizualnej PlanetRoad"
+                data-i18n="[alt]project_vi_planetroad_img_alt_colors1"
               />
             </a>
             <a
@@ -771,37 +1033,57 @@
                 class="processPhoto"
                 src="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Colors2.png"
                 alt="Odcienie Barw neutralnych i semantycznych w Identyfikacji Wizualnej PlanetRoad"
+                data-i18n="[alt]project_vi_planetroad_img_alt_colors2"
               />
             </a>
           </div>
 
-          <h3>03 Design - Logo</h3>
-          <div class="processWrapper"> 
-              <p>
-                  Alternatywne wersje logo stworzyłem w celu uzyskania elastyczności w wykorzystywaniu logo w różnego typu materiałach firmowych.
-              </p>
-              <p>
-                  Stworzyłem zarówno wariant dla ciemnego tła, jak i różne rozmiary Logo, które są zamiennie wykorzystywane zależnie od zapotrzebowania i miejsca przeznaczonego na logo.
-              </p>
-              <a
-                href="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Logo.png"
-                data-lightbox="galeria-identyfikacja-wizualna-PlanetRoad"
-              >
-                <img
-                  class="processPhoto"
-                  src="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Logo.png"
-                  alt="Nowe werjse kolorystyczne i wielkościowe logo PlanetRoad opracowane w ramach identyfikacji wizualnej."
-                />
-              </a>
-            </div>
-
-          <h3>03 Design - Fonty</h3>
+          <h3 data-i18n="project_vi_planetroad_step3_logo_title">
+            03 Design - Logo
+          </h3>
           <div class="processWrapper">
-            <p>
-                Aby font wspierał profesjonalny charakter firmy zdecydowałem się wybrać nieskopmplikowany, czytelny i elegancki font Inter. Łączy on dwie najważniejsze dla danego projektu cechy czyli czytelność i elegancję.
+            <p data-i18n="project_vi_planetroad_step3_logo_p1">
+              Alternatywne wersje logo stworzyłem w celu uzyskania elastyczności
+              w wykorzystywaniu logo w różnego typu materiałach firmowych.
+            </p>
+            <p data-i18n="project_vi_planetroad_step3_logo_p2">
+              Stworzyłem zarówno wariant dla ciemnego tła, jak i różne rozmiary
+              Logo, które są zamiennie wykorzystywane zależnie od
+              zapotrzebowania i miejsca przeznaczonego na logo.
+            </p>
+            <a
+              href="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Logo.png"
+              data-lightbox="galeria-identyfikacja-wizualna-PlanetRoad"
+            >
+              <img
+                class="processPhoto"
+                src="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Logo.png"
+                alt="Nowe werjse kolorystyczne i wielkościowe logo PlanetRoad opracowane w ramach identyfikacji wizualnej."
+                data-i18n="[alt]project_vi_planetroad_img_alt_logo_variants"
+              />
+            </a>
+          </div>
+
+          <h3 data-i18n="project_vi_planetroad_step3_fonts_title">
+            03 Design - Fonty
+          </h3>
+          <div class="processWrapper">
+            <p data-i18n="project_vi_planetroad_step3_fonts_p1">
+              Aby font wspierał profesjonalny charakter firmy zdecydowałem się
+              wybrać nieskopmplikowany, czytelny i elegancki font Inter. Łączy
+              on dwie najważniejsze dla danego projektu cechy czyli czytelność i
+              elegancję.
             </p>
             <p>
-                Na pomocniczy font wybrałem <span class="caveat">Caveat</span>. Jego zadaniem jest znaczące przełamanie profesjonalnej i stonowanej estetyki, a zarazem zwrócenie uwagi użytkownika na dany fragment tekstu.
+              <span data-i18n="project_vi_planetroad_step3_fonts_p2_part1"
+                >Na pomocniczy font wybrałem
+              </span>
+              <span class="caveat">Caveat</span
+              ><span data-i18n="project_vi_planetroad_step3_fonts_p2_part2"
+                >. Jego zadaniem jest znaczące przełamanie profesjonalnej i
+                stonowanej estetyki, a zarazem zwrócenie uwagi użytkownika na
+                dany fragment tekstu.</span
+              >
             </p>
             <a
               href="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Fonts.png"
@@ -811,15 +1093,25 @@
                 class="processPhoto"
                 src="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Fonts.png"
                 alt="Czcionki użytkowane przez PlanetRoad wyselekcjonowane w ramach Identyfikacji Wizualnej"
+                data-i18n="[alt]project_vi_planetroad_img_alt_fonts"
               />
             </a>
           </div>
 
-          <h3>04 Wdrożenie - Nowa strona Internetowa</h3>
+          <h3 data-i18n="project_vi_planetroad_step4_website_title">
+            04 Wdrożenie - Nowa strona Internetowa
+          </h3>
           <div class="processWrapper">
             <p>
-                Nowa strona została zaprojektowana w oparciu o identyfikację wizualną firmy. Posiada przejrzysty układ, spójną komunikację i intuicyjną nawigację.
-                Serdecznie zachęcam do odwiedzenia strony i zagłębienia się w projekt pod adresem: <a class="siteLink" href="https://www.planetroad.pl/">www.planetroad.pl</a>
+              <span data-i18n="project_vi_planetroad_step4_website_p1_part1"
+                >Nowa strona została zaprojektowana w oparciu o identyfikację
+                wizualną firmy. Posiada przejrzysty układ, spójną komunikację i
+                intuicyjną nawigację. Serdecznie zachęcam do odwiedzenia strony
+                i zagłębienia się w projekt pod adresem:
+              </span>
+              <a class="siteLink" href="https://www.planetroad.pl/"
+                >www.planetroad.pl</a
+              >
             </p>
             <a
               href="../assets/projects/identyfikacja-wizualna-PlanetRoad/www-PlanetRoad.png"
@@ -829,14 +1121,22 @@
                 class="processPhoto"
                 src="../assets/projects/identyfikacja-wizualna-PlanetRoad/www-PlanetRoad.png"
                 alt="Widoki sekcji Hero poszczególnych podstron, a także strony głównej strony internetowej PlanetRoad"
+                data-i18n="[alt]project_vi_planetroad_img_alt_website"
               />
             </a>
           </div>
 
-          <h3 style="margin-top: 6vh;">04 Wdrożenie - Social media branding </h3>
+          <h3
+            style="margin-top: 6vh"
+            data-i18n="project_vi_planetroad_step4_sm_title"
+          >
+            04 Wdrożenie - Social media branding
+          </h3>
           <div class="processWrapper">
-            <p>            
-                Social media branding: stworzyłem grafiki i wdrożyłem spójny styl wizualny, dzięki czemu firma mogła zaistnieć w kanałach komunikacji, których wcześniej nie miała.
+            <p data-i18n="project_vi_planetroad_step4_sm_p1">
+              Social media branding: stworzyłem grafiki i wdrożyłem spójny styl
+              wizualny, dzięki czemu firma mogła zaistnieć w kanałach
+              komunikacji, których wcześniej nie miała.
             </p>
             <a
               href="../assets/projects/identyfikacja-wizualna-PlanetRoad/SM_PlanetRoad.png"
@@ -846,94 +1146,183 @@
                 class="processPhoto"
                 src="../assets/projects/identyfikacja-wizualna-PlanetRoad/SM_PlanetRoad.png"
                 alt="Widoki sekcji Hero poszczególnych podstron, a także strony głównej strony internetowej PlanetRoad"
+                data-i18n="[alt]project_vi_planetroad_img_alt_sm"
               />
             </a>
-            <p>Odwiedź mój projekt na <a class="siteLink" href="https://www.behance.net/gallery/232059303/Identyfikacja-Wizualna-PlanetRoad">Behance</a>, aby zobaczyć interaktywny prototyp.</text>
+            <p>
+              <span data-i18n="project_vi_planetroad_behance_text1"
+                >Odwiedź mój projekt na
+              </span>
+              <a
+                class="siteLink"
+                href="https://www.behance.net/gallery/232059303/Identyfikacja-Wizualna-PlanetRoad"
+                >Behance</a
+              >
+              <span data-i18n="project_vi_planetroad_behance_text2"
+                >, aby zobaczyć interaktywny prototyp.</span
+              >
+            </p>
           </div>
         </section>
 
-        <section id="efekt-koncowy" style="padding-bottom: 8vh;">
-          <h2 style="padding-top: 12vh; margin-bottom: 1.5vw;">Efekt Końcowy</h2>
-          <p>
-              ✅ Firma PlanetRoad otrzymała spójną i profesjonalną identyfikację wizualną.
-          </p>
-          <p>
-              ✅ Nowa strona i pojawienie się w social mediach pomagają firmie zaistnieć w internecie, czego wcześniej brakowało.
-          </p>
-          <p>
-              ✅ Wdrożona identyfikacja wizualna pozwala firmie budować zaufanie i ekspercki wizerunek w branży projektów drogowych.
-          </p>
-          <!--
-          <a
-              href="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Picture.png"
-              data-lightbox="galeria-identyfikacja-wizualna-PlanetRoad"
+        <section id="efekt-koncowy" style="padding-bottom: 8vh">
+          <h2
+            style="padding-top: 12vh; margin-bottom: 1.5vw"
+            data-i18n="project_vi_planetroad_result_title"
           >
-            <img
-              class="processPhoto"
-              src="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Picture.png"
-              alt="Grafika wykorzystujące nową odsłonę logo PlanetRoad"
-            />
-          </a>
-          -->
+            Efekt Końcowy
+          </h2>
+          <p data-i18n="project_vi_planetroad_result_1">
+            ✅ Firma PlanetRoad otrzymała spójną i profesjonalną identyfikację
+            wizualną.
+          </p>
+          <p data-i18n="project_vi_planetroad_result_2">
+            ✅ Nowa strona i pojawienie się w social mediach pomagają firmie
+            zaistnieć w internecie, czego wcześniej brakowało.
+          </p>
+          <p data-i18n="project_vi_planetroad_result_3">
+            ✅ Wdrożona identyfikacja wizualna pozwala firmie budować zaufanie i
+            ekspercki wizerunek w branży projektów drogowych.
+          </p>
           <div class="mini-gallery">
-            <a href="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Cover.webp" data-lightbox="galeria-planetroad">
-              <img src="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Cover.webp" alt="Miniatura 1" />
+            <a
+              href="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Cover.webp"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Cover.webp"
+                alt="Miniatura 1"
+                data-i18n="[alt]project_vi_planetroad_thumb_1"
+              />
             </a>
-            <a href="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Colors1.png" data-lightbox="galeria-planetroad">
-              <img src="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Colors1.png" alt="Miniatura 2" />
+            <a
+              href="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Colors1.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Colors1.png"
+                alt="Miniatura 2"
+                data-i18n="[alt]project_vi_planetroad_thumb_2"
+              />
             </a>
-            <a href="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Colors2.png" data-lightbox="galeria-planetroad">
-              <img src="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Colors2.png" alt="Miniatura 3" />
+            <a
+              href="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Colors2.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Colors2.png"
+                alt="Miniatura 3"
+                data-i18n="[alt]project_vi_planetroad_thumb_3"
+              />
             </a>
-            <a href="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Logo.png" data-lightbox="galeria-planetroad">
-              <img src="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Logo.png" alt="Miniatura 4" />
+            <a
+              href="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Logo.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Logo.png"
+                alt="Miniatura 4"
+                data-i18n="[alt]project_vi_planetroad_thumb_4"
+              />
             </a>
-            <a href="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Fonts.png" data-lightbox="galeria-planetroad">
-              <img src="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Fonts.png" alt="Miniatura 5" />
+            <a
+              href="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Fonts.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Fonts.png"
+                alt="Miniatura 5"
+                data-i18n="[alt]project_vi_planetroad_thumb_5"
+              />
             </a>
-            <a href="../assets/projects/identyfikacja-wizualna-PlanetRoad/www-PlanetRoad.png" data-lightbox="galeria-planetroad">
-              <img src="../assets/projects/identyfikacja-wizualna-PlanetRoad/www-PlanetRoad.png" alt="Miniatura 6" />
+            <a
+              href="../assets/projects/identyfikacja-wizualna-PlanetRoad/www-PlanetRoad.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="../assets/projects/identyfikacja-wizualna-PlanetRoad/www-PlanetRoad.png"
+                alt="Miniatura 6"
+                data-i18n="[alt]project_vi_planetroad_thumb_6"
+              />
             </a>
-            <a href="../assets/projects/identyfikacja-wizualna-PlanetRoad/SM_PlanetRoad.png" data-lightbox="galeria-planetroad">
-              <img src="../assets/projects/identyfikacja-wizualna-PlanetRoad/SM_PlanetRoad.png" alt="Miniatura 7" />
+            <a
+              href="../assets/projects/identyfikacja-wizualna-PlanetRoad/SM_PlanetRoad.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="../assets/projects/identyfikacja-wizualna-PlanetRoad/SM_PlanetRoad.png"
+                alt="Miniatura 7"
+                data-i18n="[alt]project_vi_planetroad_thumb_7"
+              />
             </a>
-            <a href="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Picture.png" data-lightbox="galeria-planetroad">
-              <img src="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Picture.png" alt="Miniatura 8" />
+            <a
+              href="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Picture.png"
+              data-lightbox="galeria-planetroad"
+            >
+              <img
+                src="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Picture.png"
+                alt="Miniatura 8"
+                data-i18n="[alt]project_vi_planetroad_thumb_8"
+              />
             </a>
           </div>
         </section>
         <section class="navLoopWrapper">
-          <span class="navLoop">Zobacz kolejny projekt: <br><a class="loopLink" href="aplikacja-mobilna-monexo.html">Aplikacja&nbsp;Mobilna&nbsp;-&nbsp;monexo</a></span>
+          <span class="navLoop">
+            <span data-i18n="project_vi_planetroad_next_project_label"
+              >Zobacz kolejny projekt:</span
+            >
+            <br />
+            <a
+              class="loopLink"
+              href="aplikacja-mobilna-monexo.html"
+              data-i18n="project_vi_planetroad_next_project_link"
+              >Aplikacja&nbsp;Mobilna&nbsp;-&nbsp;monexo</a
+            >
+          </span>
         </section>
       </main>
       <nav class="sideNav">
         <div class="sideNavWrapper">
-          <a href="#o-projekcie">O Projekcie</a>
-          <a href="#cel">Cel</a>
-          <a href="#ograniczenia">Ograniczenia</a>
-          <a href="#proces">Proces Projektowy</a>
-          <a href="#efekt-koncowy">Efekt Końcowy</a>
+          <a href="#o-projekcie" data-i18n="side_nav_about">O Projekcie</a>
+          <a href="#badania" data-i18n="side_nav_research">Badania</a>
+          <a href="#ideacja" data-i18n="side_nav_ideation">Ideacja</a>
+          <a href="#iteracje" data-i18n="side_nav_iterations">Iteracje</a>
+          <a href="#efekt-koncowy" data-i18n="side_nav_final_effect"
+            >Efekt Końcowy</a
+          >
+          <a href="#po-projekcie" data-i18n="side_nav_post_project"
+            >Po Projekcie</a
+          >
         </div>
       </nav>
     </div>
 
+    <!-- COOKIES -->
     <div id="cookie-banner" class="cookie-banner">
-      <div class="cookie-text">
+      <div class="cookie-text" data-i18n="cookies_text">
         🍪 Używam cookies do analizy ruchu i ciągłego ulepszania działania
         strony.
         <!--<a href="/privacy">Polityka prywatności</a>-->
       </div>
 
       <div class="cookie-buttons">
-        <button id="accept-cookies" class="cookie-btn primary">
+        <button
+          id="accept-cookies"
+          class="cookie-btn primary"
+          data-i18n="cookies_primary_button"
+        >
           Akceptuję
         </button>
-        <button id="decline-cookies" class="cookie-btn secondary">
+        <button
+          id="decline-cookies"
+          class="cookie-btn secondary"
+          data-i18n="cookies_secondary_button"
+        >
           Odrzucam
         </button>
       </div>
     </div>
-    
 
     <!-- FOOTER -->
     <footer>
@@ -1215,31 +1604,36 @@
       document.addEventListener("DOMContentLoaded", () => {
         const sections = document.querySelectorAll("section[id]");
         const navLinks = document.querySelectorAll(".sideNavWrapper a");
-      
+
         function updateActiveLink() {
           const triggerHeight = window.innerHeight * 0.25; // górne 25%
           let currentSection = null;
-      
-          sections.forEach(section => {
+
+          sections.forEach((section) => {
             const top = section.getBoundingClientRect().top;
-            if (top <= triggerHeight && top + section.offsetHeight > triggerHeight) {
+            if (
+              top <= triggerHeight &&
+              top + section.offsetHeight > triggerHeight
+            ) {
               currentSection = section;
             }
           });
-      
-          navLinks.forEach(link => link.classList.remove("active"));
+
+          navLinks.forEach((link) => link.classList.remove("active"));
           if (currentSection) {
             const id = currentSection.getAttribute("id");
-            const activeLink = document.querySelector(`.sideNavWrapper a[href="#${id}"]`);
+            const activeLink = document.querySelector(
+              `.sideNavWrapper a[href="#${id}"]`
+            );
             if (activeLink) activeLink.classList.add("active");
           }
         }
-      
+
         window.addEventListener("scroll", updateActiveLink);
         window.addEventListener("resize", updateActiveLink);
         updateActiveLink();
-      
-        navLinks.forEach(link => {
+
+        navLinks.forEach((link) => {
           link.addEventListener("click", (e) => {
             e.preventDefault();
             const targetId = link.getAttribute("href").substring(1);
@@ -1247,13 +1641,13 @@
             if (target) {
               window.scrollTo({
                 top: target.offsetTop - 40,
-                behavior: "smooth"
+                behavior: "smooth",
               });
             }
           });
         });
-      });   
-    </script> 
+      });
+    </script>
     <!-- Custom Cursor Elements -->
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
@@ -1291,6 +1685,68 @@
         });
         el.addEventListener("mouseleave", () => {
           document.body.classList.remove("hovered");
+        });
+      });
+    </script>
+    <!-- Scroll Reveal (fade-in przy wjeżdżaniu na ekran) -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const prefersReducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        // Ta strona (Identyfikacja Wizualna) nie używa figure.imageFigure,
+        // tylko .processWrapper > p / .processWrapper > a (zdjęcia procesu)
+        const targets = Array.from(
+          document.querySelectorAll(
+            [
+              "main.projectContent > section > h1",
+              "main.projectContent > section > h2",
+              "main.projectContent > section > h3",
+              "main.projectContent > section > p",
+              "main.projectContent > section > .gradientBackground",
+              "main.projectContent > section > .processWrapper > p",
+              "main.projectContent > section > .processWrapper > a",
+              "main.projectContent .mini-gallery > a",
+            ].join(", ")
+          )
+        );
+
+        if (targets.length === 0) return;
+
+        targets.forEach((el) => el.classList.add("reveal-on-scroll"));
+
+        if (prefersReducedMotion) {
+          targets.forEach((el) => el.classList.add("is-visible"));
+          return;
+        }
+
+        document.querySelectorAll(".mini-gallery > a").forEach((el, i) => {
+          el.style.transitionDelay = `${i * 0.08}s`;
+        });
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15, rootMargin: "0px 0px -8% 0px" }
+        );
+
+        targets.forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          const alreadyVisible =
+            rect.top < window.innerHeight && rect.bottom > 0;
+
+          if (alreadyVisible) {
+            el.classList.add("is-visible");
+          } else {
+            observer.observe(el);
+          }
         });
       });
     </script>

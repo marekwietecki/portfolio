@@ -188,6 +188,33 @@
       img:hover {
         transform: scale(1.05);
       }
+      /* ========================================================
+   SCROLL REVEAL — subtelny fade-in + lekkie uniesienie
+   ======================================================== */
+      .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+      }
+
+      .reveal-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .mini-gallery a.reveal-on-scroll {
+        transition-duration: 0.6s;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .reveal-on-scroll {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+      }
       /* Header */
       header {
         background: #f6f6f7;
@@ -243,6 +270,7 @@
       .headerLinks {
         display: flex;
         flex-direction: row;
+        align-items: center;
         gap: clamp(16px, 3vw, 40px);
       }
       .logo {
@@ -251,6 +279,39 @@
         align-self: left;
         justify-content: center;
         cursor: pointer;
+      }
+      .lang-switcher {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-family: "Outfit", sans-serif;
+      }
+
+      .lang-btn {
+        background: none;
+        border: none;
+        padding: 4px 8px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #1a1a1a;
+        cursor: pointer;
+        opacity: 0.48;
+        transition: opacity 0.2s ease;
+      }
+
+      .lang-btn:hover {
+        opacity: 0.8;
+      }
+
+      .lang-btn.active {
+        opacity: 1;
+        pointer-events: none; /* wyłączone klikanie w aktywny język */
+      }
+
+      .lang-divider {
+        color: #b4b4b4;
+        font-size: 12px;
+        user-select: none;
       }
       /* Content */
       .projectLayout {
@@ -677,6 +738,7 @@
         }
       }
     </style>
+    <script src="/js/translations.js"></script>
   </head>
   <body>
     <header>
@@ -693,8 +755,28 @@
         </button>
       </div>
       <div class="headerLinks">
-        <a class="headerLink" href="../oferta.html">Oferta</a>
-        <a class="headerLink" href="../o-mnie.html">O Mnie</a>
+        <a class="headerLink" data-i18n="nav_offer" href="../oferta.html"
+          >Oferta</a
+        >
+        <a class="headerLink" data-i18n="nav_about" href="../o-mnie.html"
+          >O Mnie</a
+        >
+        <div class="lang-switcher">
+          <button
+            class="lang-btn"
+            data-lang="pl"
+            onclick="switchLanguage('pl')"
+          >
+            🇵🇱
+          </button>
+          <button
+            class="lang-btn"
+            data-lang="en"
+            onclick="switchLanguage('en')"
+          >
+            🇬🇧
+          </button>
+        </div>
       </div>
     </header>
 
@@ -704,28 +786,44 @@
       <main class="projectContent">
         <!-- O PROJEKCIE -->
         <section style="padding-top: 8vh" id="o-projekcie">
-          <h1>Monexo - aplikacja mobilna do wymiany walut</h1>
-          <p style="padding-top: 0vh">
+          <h1 data-i18n="project_app_monexo_title">
+            Monexo - aplikacja mobilna do wymiany walut
+          </h1>
+          <p style="padding-top: 0vh" data-i18n="project_app_monexo_desc">
             Monexo to mobilna aplikacji do wymiany walut, którą zaprojektowałem
             jako odpowiedź na realne problemy użytkowników korzystających z
             istniejących rozwiązań FinTech.
           </p>
 
           <p style="padding-top: 3vh">
-            <b>Rola:</b> UX Designer; Front-end Developer
+            <b data-i18n="project_app_monexo_role_label">Rola:</b>
+            <span data-i18n="project_app_monexo_role_val"
+              >UX Designer; Front-end Developer</span
+            >
           </p>
 
           <p style="padding-top: 1vh">
-            <b>Zakres odpowiedzialności:</b> Research, Koncept produktu,
-            Architektura informacji, Projekt interfejsu, Testy użyteczności
+            <b data-i18n="project_app_monexo_scope_label"
+              >Zakres odpowiedzialności:</b
+            >
+            <span data-i18n="project_app_monexo_scope_val"
+              >Research, Koncept produktu, Architektura informacji, Projekt
+              interfejsu, Testy użyteczności</span
+            >
           </p>
 
-          <p style="padding-top: 1vh"><b>Czas trwania:</b> 13 tygodni</p>
+          <p style="padding-top: 1vh">
+            <b data-i18n="project_app_monexo_duration_label">Czas trwania:</b>
+            <span data-i18n="project_app_monexo_duration_val">13 tygodni</span>
+          </p>
 
           <p style="padding-top: 1vh">
-            <b>Metodyka:</b> Lean UX / Design Thinking – iteracyjne
-            projektowanie oparte na badaniach użytkowników, testach użyteczności
-            i analizie konkurencji, z priorytetyzacją funkcji w ramach MVP.
+            <b data-i18n="project_app_monexo_methodology_label">Metodyka:</b>
+            <span data-i18n="project_app_monexo_methodology_val"
+              >Lean UX / Design Thinking – iteracyjne projektowanie oparte na
+              badaniach użytkowników, testach użyteczności i analizie
+              konkurencji, z priorytetyzacją funkcji w ramach MVP.</span
+            >
           </p>
 
           <a
@@ -740,123 +838,260 @@
             />
           </a>
 
-          <h3 style="padding-top: 3vh; margin-bottom: 1vh">Kontekst</h3>
-          <p>
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_app_monexo_context_title"
+          >
+            Kontekst
+          </h3>
+          <p data-i18n="project_app_monexo_context_text">
             Analiza rynku wykazała, że wiele istniejących aplikacji do wymiany
             walut jest nieczytelnych, przeładowanych informacjami i opartych na
             niejasnym modelu prowizji, co stworzyło niepotrzebną barierę dla
             użytkowników chcących wykonać prostą wymianę walut.
           </p>
 
-          <h3 style="padding-top: 3vh; margin-bottom: 1vh">Problem</h3>
-          <p>
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_app_monexo_problem_title"
+          >
+            Problem
+          </h3>
+          <p data-i18n="project_app_monexo_problem_text">
             Użytkownicy często nie mieli pewności co do rzeczywistego kosztu
             transakcji, gubili się w interfejsie i musieli przechodzić przez
             zbyt wiele kroków, aby wykonać podstawową operację.
           </p>
 
-          <h3 style="padding-top: 3vh; margin-bottom: 1vh">Cele</h3>
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_app_monexo_goals_title"
+          >
+            Cele
+          </h3>
           <p>
-            🎯 <b>Uproszczenie procesu wymiany walut</b> do maksymalnie kilku
-            intuicyjnych kroków.
+            🎯
+            <b data-i18n="project_app_monexo_goal_1_b"
+              >Uproszczenie procesu wymiany walut</b
+            >
+            <span data-i18n="project_app_monexo_goal_1_text">
+              do maksymalnie kilku intuicyjnych kroków.</span
+            >
           </p>
           <p>
-            🎯 <b>Pełna transparentność kursów i opłat</b> — brak ukrytych
-            prowizji i niejasnych przeliczeń.
+            🎯
+            <b data-i18n="project_app_monexo_goal_2_b"
+              >Pełna transparentność kursów i opłat</b
+            >
+            <span data-i18n="project_app_monexo_goal_2_text">
+              — brak ukrytych prowizji i niejasnych przeliczeń.</span
+            >
           </p>
           <p>
-            🎯 <b>Budowa zaufania do produktu FinTech</b> poprzez czytelną
-            komunikację i przewidywalność procesu.
+            🎯
+            <b data-i18n="project_app_monexo_goal_3_b"
+              >Budowa zaufania do produktu FinTech</b
+            >
+            <span data-i18n="project_app_monexo_goal_3_text">
+              poprzez czytelną komunikację i przewidywalność procesu.</span
+            >
           </p>
 
-          <h3 style="padding-top: 3vh; margin-bottom: 1vh">Ograniczenia</h3>
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_app_monexo_constraints_title"
+          >
+            Ograniczenia
+          </h3>
           <p>
-            ⚠️ <b>Wysokie wymagania dotyczące zaufania</b> — aplikacja finansowa
-            musi być postrzegana jako bezpieczna i wiarygodna.
+            ⚠️
+            <b data-i18n="project_app_monexo_constraint_1_b"
+              >Wysokie wymagania dotyczące zaufania</b
+            >
+            <span data-i18n="project_app_monexo_constraint_1_text">
+              — aplikacja finansowa musi być postrzegana jako bezpieczna i
+              wiarygodna.</span
+            >
           </p>
           <p>
-            ⚠️ <b>Konieczność jasnego komunikowania kosztów</b> bez przeciążania
-            użytkownika danymi.
+            ⚠️
+            <b data-i18n="project_app_monexo_constraint_2_b"
+              >Konieczność jasnego komunikowania kosztów</b
+            >
+            <span data-i18n="project_app_monexo_constraint_2_text">
+              bez przeciążania użytkownika danymi.</span
+            >
           </p>
           <p>
-            ⚠️ <b>Minimalizacja złożoności interfejsu</b> przy zachowaniu pełnej
-            kontroli użytkownika.
+            ⚠️
+            <b data-i18n="project_app_monexo_constraint_3_b"
+              >Minimalizacja złożoności interfejsu</b
+            >
+            <span data-i18n="project_app_monexo_constraint_3_text">
+              przy zachowaniu pełnej kontroli użytkownika.</span
+            >
           </p>
           <p>
-            ⚠️ <b>Projekt mobile-first</b>, dostosowany do szybkiego i częstego
-            użycia.
+            ⚠️
+            <b data-i18n="project_app_monexo_constraint_4_b"
+              >Projekt mobile-first</b
+            >
+            <span data-i18n="project_app_monexo_constraint_4_text"
+              >, dostosowany do szybkiego i częstego użycia.</span
+            >
           </p>
         </section>
 
         <section id="badania">
-          <h2 style="padding-top: 8vh">Badania i Wnioski</h2>
+          <h2
+            style="padding-top: 8vh"
+            data-i18n="project_app_monexo_research_title"
+          >
+            Badania i Wnioski
+          </h2>
 
-          <h3 style="margin-bottom: 1vw">
+          <h3
+            style="margin-bottom: 1vw"
+            data-i18n="project_app_monexo_market_title"
+          >
             Czy ludzie potrzbują naszego produktu? - Analiza rynku i trendów
             branżowych
           </h3>
           <p>
-            Przeanalizowałem rynek i trendy w branży, przeglądając raporty oraz
-            topowe aplikacje, aby zrozumieć, czego naprawdę potrzebują
-            użytkownicy. Zauważyłem, że przy rosnących wymaganiach użytkowników
-            <b
+            <span data-i18n="project_app_monexo_market_p1_part1"
+              >Przeanalizowałem rynek i trendy w branży, przeglądając raporty
+              oraz topowe aplikacje, aby zrozumieć, czego naprawdę potrzebują
+              użytkownicy. Zauważyłem, że przy rosnących wymaganiach
+              użytkowników
+            </span>
+            <b data-i18n="project_app_monexo_market_p1_b"
               >podstawowe funkcje są często ukrywane, by uwydatnić nowe
               możliwości</b
-            >. W mojej aplikacji postawiłem na spełnianie podstawowych potrzeb w
-            pierwszej kolejności, a funkcje dodatkowe zostały bardziej
-            zagnieżdżone, tak by nie przeszkadzały w codziennym szybkim
-            zarządzaniu finansami.
+            >
+            <span data-i18n="project_app_monexo_market_p1_part2"
+              >. W mojej aplikacji postawiłem na spełnianie podstawowych potrzeb
+              w pierwszej kolejności, a funkcje dodatkowe zostały bardziej
+              zagnieżdżone, tak by nie przeszkadzały w codziennym szybkim
+              zarządzaniu finansami.</span
+            >
           </p>
           <p>
-            Jednocześnie zidentyfikowałem popularne funkcjonalności, takie jak
-            <b>portfele wielowalutowe, automatyczne zlecenia zakupu walut</b>
-            czy <b>obsługa kryptowalut</b>, które odpowiadają na realne potrzeby
-            użytkowników w planowaniu transakcji i zarządzaniu pieniędzmi,
-            umożliwiając im pełniejszą kontrolę nad finansami.
+            <span data-i18n="project_app_monexo_market_p2_part1"
+              >Jednocześnie zidentyfikowałem popularne funkcjonalności, takie
+              jak
+            </span>
+            <b data-i18n="project_app_monexo_market_p2_b1"
+              >portfele wielowalutowe, automatyczne zlecenia zakupu walut</b
+            >
+            <span data-i18n="project_app_monexo_market_p2_part2"> czy </span>
+            <b data-i18n="project_app_monexo_market_p2_b2"
+              >obsługa kryptowalut</b
+            >
+            <span data-i18n="project_app_monexo_market_p2_part3"
+              >, które odpowiadają na realne potrzeby użytkowników w planowaniu
+              transakcji i zarządzaniu pieniędzmi, umożliwiając im pełniejszą
+              kontrolę nad finansami.</span
+            >
           </p>
 
-          <h3 style="padding-top: 3vh; margin-bottom: 1vw">
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vw"
+            data-i18n="project_app_monexo_competition_title"
+          >
             Analiza problemów konkurencji
           </h3>
           <p>
-            Podczas analizy konkurencyjnych aplikacji i opinii użytkowników
-            zidentyfikowałem kluczowe problemy, które znacząco wpływają na
-            odczucia użytkownika:
+            <span data-i18n="project_app_monexo_comp_p1_intro"
+              >Podczas analizy konkurencyjnych aplikacji i opinii użytkowników
+              zidentyfikowałem kluczowe problemy, które znacząco wpływają na
+              odczucia użytkownika:</span
+            >
             <br />
-            • <b>Zbyt skomplikowane menu</b> – użytkownicy wyrażając opinie na
-            temat konkurencji często skarżą się na chaos w opcjach i trudności w
-            szybkim wykonaniu podstawowych operacji.
+            •
+            <b data-i18n="project_app_monexo_comp_p1_b1"
+              >Zbyt skomplikowane menu</b
+            >
+            <span data-i18n="project_app_monexo_comp_p1_text1">
+              – użytkownicy wyrażając opinie na temat konkurencji często skarżą
+              się na chaos w opcjach i trudności w szybkim wykonaniu
+              podstawowych operacji.</span
+            >
             <br />
-            • <b>Nieintuicyjna nawigacja</b> – Użytkownicy często miewają
-            również problemy z dotarciem do pożądanej funkcji w apolikacji.
+            •
+            <b data-i18n="project_app_monexo_comp_p1_b2"
+              >Nieintuicyjna nawigacja</b
+            >
+            <span data-i18n="project_app_monexo_comp_p1_text2">
+              – Użytkownicy często miewają również problemy z dotarciem do
+              pożądanej funkcji w apolikacji.</span
+            >
             <br />
-            • <b>Brak transparentności w opłatach</b> – użytkownicy odczuwają
-            brak przejrzystości i spójności w opłatach i niepewność co do
-            zwrotów oraz oprocentowania.
+            •
+            <b data-i18n="project_app_monexo_comp_p1_b3"
+              >Brak transparentności w opłatach</b
+            >
+            <span data-i18n="project_app_monexo_comp_p1_text3">
+              – użytkownicy odczuwają brak przejrzystości i spójności w opłatach
+              i niepewność co do zwrotów oraz oprocentowania.</span
+            >
           </p>
           <p style="padding-top: 2vh">
-            Analiza pozwoliła mi zidentyfikować kluczowe problemy użytkowników,
-            które miałem zamiar rozwiązać w następujący sposób:
+            <span data-i18n="project_app_monexo_comp_p2_intro"
+              >Analiza pozwoliła mi zidentyfikować kluczowe problemy
+              użytkowników, które miałem zamiar rozwiązać w następujący
+              sposób:</span
+            >
             <br />
-            • <b>Uproszczeniu menu i hierarchii funkcji</b>, aby kluczowe
-            działania były dostępne w 2–3 krokach;
+            •
+            <b data-i18n="project_app_monexo_comp_p2_b1"
+              >Uproszczeniu menu i hierarchii funkcji</b
+            >
+            <span data-i18n="project_app_monexo_comp_p2_text1"
+              >, aby kluczowe działania były dostępne w 2–3 krokach;</span
+            >
             <br />
-            • <b>Wprowadzenie podglądu transakcji</b>, a także informowania
-            użytkownika na bieżąco o opłatach i statusach wymian;
+            •
+            <b data-i18n="project_app_monexo_comp_p2_b2"
+              >Wprowadzenie podglądu transakcji</b
+            >
+            <span data-i18n="project_app_monexo_comp_p2_text2"
+              >, a także informowania użytkownika na bieżąco o opłatach i
+              statusach wymian;</span
+            >
             <br />
-            • <b>Zapewnienie transparentności kosztów i komunikacji</b>, aby
-            użytkownik zawsze wiedział, jakie opłaty i oprocentowanie obowiązują
-            jego środki.
+            •
+            <b data-i18n="project_app_monexo_comp_p2_b3"
+              >Zapewnienie transparentności kosztów i komunikacji</b
+            >
+            <span data-i18n="project_app_monexo_comp_p2_text3"
+              >, aby użytkownik zawsze wiedział, jakie opłaty i oprocentowanie
+              obowiązują jego środki.</span
+            >
           </p>
         </section>
 
         <!-- IDEACJA -->
         <section id="ideacja">
-          <h2 style="padding-top: 8vh">Ideacja</h2>
-          <h3 style="margin-bottom: 1vw">Dla kogo będzie nasza aplikacja?</h3>
+          <h2
+            style="padding-top: 8vh"
+            data-i18n="project_app_monexo_ideation_title"
+          >
+            Ideacja
+          </h2>
+          <h3
+            style="margin-bottom: 1vw"
+            data-i18n="project_app_monexo_target_title"
+          >
+            Dla kogo będzie nasza aplikacja?
+          </h3>
           <p>
-            Kształtowanie produktu rozpocząłem od stworzenia trzech
-            <b>person</b> dla naszego produktu. To pokazało mi, że
+            <span data-i18n="project_app_monexo_target_p_part1"
+              >Kształtowanie produktu rozpocząłem od stworzenia trzech
+            </span>
+            <b data-i18n="project_app_monexo_target_p_b">person</b>
+            <span data-i18n="project_app_monexo_target_p_part2">
+              dla naszego produktu. To pokazało mi, że</span
+            >
           </p>
 
           <figure class="imageFigure">
@@ -870,28 +1105,47 @@
                 alt="User Persony"
               />
             </a>
-            <figcaption>User Persony</figcaption>
+            <figcaption data-i18n="project_app_monexo_fig_personae">
+              User Persony
+            </figcaption>
           </figure>
 
           <p style="margin-bottom: 2vh">
-            <b>Głównymi potrzebami</b> naszych użytkowników okazały się być:
+            <b data-i18n="project_app_monexo_needs_b">Głównymi potrzebami</b>
+            <span data-i18n="project_app_monexo_needs_intro">
+              naszych użytkowników okazały się być:</span
+            >
             <br />
-            • Szybkość dostępu do najważniejszych funkcji
+            <span data-i18n="project_app_monexo_needs_1"
+              >• Szybkość dostępu do najważniejszych funkcji</span
+            >
             <br />
-            • Prostota w obsłudze aplikacji
+            <span data-i18n="project_app_monexo_needs_2"
+              >• Prostota w obsłudze aplikacji</span
+            >
             <br />
-            • Transparentność w opłatach za tranzakcje oraz
+            <span data-i18n="project_app_monexo_needs_3"
+              >• Transparentność w opłatach za tranzakcje oraz</span
+            >
             <br />
-            • Poczucie kontroli nad tranzakcjami w aplikacji
+            <span data-i18n="project_app_monexo_needs_4"
+              >• Poczucie kontroli nad tranzakcjami w aplikacji</span
+            >
           </p>
 
-          <h3 style="padding-top: 3vh; margin-bottom: 1vw">
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vw"
+            data-i18n="project_app_monexo_prio_title"
+          >
             Co będzie najważniejsze? - Prioretyzacja
           </h3>
           <p>
-            Używając <b>MoSCow</b> ustaliłem, które funkcje będą kluczowe, które
-            najlepiej żeby się znalazły, a które są jedynie opcjonalnymi
-            usprawnieniami.
+            <span data-i18n="project_app_monexo_prio_p_part1">Używając </span>
+            <b data-i18n="project_app_monexo_prio_p_b">MoSCow</b>
+            <span data-i18n="project_app_monexo_prio_p_part2">
+              ustaliłem, które funkcje będą kluczowe, które najlepiej żeby się
+              znalazły, a które są jedynie opcjonalnymi usprawnieniami.</span
+            >
           </p>
 
           <figure class="imageFigure">
@@ -905,21 +1159,57 @@
                 alt="Priorytetyzacja techniką MoSCoW"
               />
             </a>
-            <figcaption>Priorytetyzacja techniką MoSCoW</figcaption>
+            <figcaption data-i18n="project_app_monexo_fig_moscow">
+              Priorytetyzacja techniką MoSCoW
+            </figcaption>
           </figure>
 
           <p>
-            W ramy <b>MVP</b> weszły funkcjonalności: <br />• Wirtualnego
-            portfela z možliwościa podglądu posiadanych walut <br />• Przeglądu
-            kursów NBP <br />• Wymiany walut <br />• Historii tranzakcji <br />•
-            Doładowania konta <br />• Rejestracji, Logowania, Zmiany hasła i
-            Usunięcia konta
+            <span data-i18n="project_app_monexo_mvp_intro_part1">W ramy </span>
+            <b data-i18n="project_app_monexo_mvp_intro_b">MVP</b>
+            <span data-i18n="project_app_monexo_mvp_intro_part2">
+              weszły funkcjonalności:</span
+            >
+            <br />
+            <span data-i18n="project_app_monexo_mvp_1"
+              >• Wirtualnego portfela z možliwościa podglądu posiadanych
+              walut</span
+            >
+            <br />
+            <span data-i18n="project_app_monexo_mvp_2"
+              >• Przeglądu kursów NBP</span
+            >
+            <br />
+            <span data-i18n="project_app_monexo_mvp_3">• Wymiany walut</span>
+            <br />
+            <span data-i18n="project_app_monexo_mvp_4"
+              >• Historii tranzakcji</span
+            >
+            <br />
+            <span data-i18n="project_app_monexo_mvp_5"
+              >• Doładowania konta</span
+            >
+            <br />
+            <span data-i18n="project_app_monexo_mvp_6"
+              >• Rejestracji, Logowania, Zmiany hasła i Usunięcia konta</span
+            >
           </p>
 
-          <h3 style="padding-top: 3vh; margin-bottom: 1vw">W jakim stylu?</h3>
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vw"
+            data-i18n="project_app_monexo_style_title"
+          >
+            W jakim stylu?
+          </h3>
           <p>
-            Stworzyłem skromny <b> Style Guide</b> z podstawowymi elementami
-            interfejsu, tak aby aplikacja była spójna i estetyczna.
+            <span data-i18n="project_app_monexo_style_p_part1"
+              >Stworzyłem skromny
+            </span>
+            <b data-i18n="project_app_monexo_style_p_b">Style Guide</b>
+            <span data-i18n="project_app_monexo_style_p_part2">
+              z podstawowymi elementami interfejsu, tak aby aplikacja była
+              spójna i estetyczna.</span
+            >
           </p>
           <figure class="imageFigure">
             <a
@@ -932,7 +1222,9 @@
                 alt="Style Guide - Typography"
               />
             </a>
-            <figcaption>Style Guide - Typography</figcaption>
+            <figcaption data-i18n="project_app_monexo_fig_typography">
+              Style Guide - Typography
+            </figcaption>
           </figure>
 
           <figure class="imageFigure">
@@ -946,7 +1238,9 @@
                 alt="Style Guide - Components & Rules"
               />
             </a>
-            <figcaption>Style Guide - Components & Rules</figcaption>
+            <figcaption data-i18n="project_app_monexo_fig_components">
+              Style Guide - Components & Rules
+            </figcaption>
           </figure>
 
           <figure class="imageFigure">
@@ -960,23 +1254,34 @@
                 alt="Style Guide - Colors & Themes"
               />
             </a>
-            <figcaption>Style Guide - Colors & Themes</figcaption>
+            <figcaption data-i18n="project_app_monexo_fig_colors">
+              Style Guide - Colors & Themes
+            </figcaption>
           </figure>
 
-          <p>
+          <p data-i18n="project_app_monexo_style_desc">
             Interfejs aplikacji został zaprojektowany w estetyce
             minimalistycznej, z jedną główną akcją użytkownika — „Wymień
             walutę”. A kolorystyka i typografia wspierają czytelność, spokój
             oraz poczucie bezpieczeństwa, co jest kluczowe w produktach FinTech.
           </p>
 
-          <h3 style="padding-top: 3vh; margin-bottom: 1vh">
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_app_monexo_wireframes_title"
+          >
             Teraz pytanie gdzie co umieścić?
           </h3>
           <p>
-            Wykorzystując <b>wireframe'y</b> rozmieściłem elementy na ekranach
-            aplikacji tak, aby wyczerpać główne zapotrzebowania naszej grupy
-            docelowej oraz priorytetowe funkcje aplikacji.
+            <span data-i18n="project_app_monexo_wireframes_p_part1"
+              >Wykorzystując
+            </span>
+            <b data-i18n="project_app_monexo_wireframes_p_b">wireframe'y</b>
+            <span data-i18n="project_app_monexo_wireframes_p_part2">
+              rozmieściłem elementy na ekranach aplikacji tak, aby wyczerpać
+              główne zapotrzebowania naszej grupy docelowej oraz priorytetowe
+              funkcje aplikacji.</span
+            >
           </p>
 
           <figure class="imageFigure">
@@ -990,7 +1295,9 @@
                 alt="Wireframe'y cz.1"
               />
             </a>
-            <figcaption>Wireframe'y cz.1</figcaption>
+            <figcaption data-i18n="project_app_monexo_fig_wireframes1">
+              Wireframe'y cz.1
+            </figcaption>
           </figure>
 
           <figure class="imageFigure">
@@ -1004,20 +1311,30 @@
                 alt="Wireframe'y cz.2"
               />
             </a>
-            <figcaption>Wireframe'y cz.2</figcaption>
+            <figcaption data-i18n="project_app_monexo_fig_wireframes2">
+              Wireframe'y cz.2
+            </figcaption>
           </figure>
 
-          <h3 style="padding-top: 3vh; margin-bottom: 1vh">
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_app_monexo_breadboards_title"
+          >
             I dokąd z tych ekranów będzie można przejść..
           </h3>
           <p>
-            Zająłem się więc zaprojektowaniem<b> Breadboardów</b> - wszystkich
-            możliwych ścieżek z poszczególnych ekranów, tak aby użytkownik mógł
-            w łatwy sposób dostać się tam gdzie tego potrzebuje. W aplikacji
-            wykorzystuje tab navigation, co już znacznie ułatwia przemieszczanie
-            się pomiędzy ekranami, a linki w dobrych miejscach jedynie
-            podpowiadają co i gdzie zrobić jako następny krok. Na tym etapie
-            dodałem np. ...
+            <span data-i18n="project_app_monexo_breadboards_p_part1"
+              >Zająłem się więc zaprojektowaniem</span
+            >
+            <b data-i18n="project_app_monexo_breadboards_p_b"> Breadboardów</b>
+            <span data-i18n="project_app_monexo_breadboards_p_part2">
+              - wszystkich możliwych ścieżek z poszczególnych ekranów, tak aby
+              użytkownik mógł w łatwy sposób dostać się tam gdzie tego
+              potrzebuje. W aplikacji wykorzystuje tab navigation, co już
+              znacznie ułatwia przemieszczanie się pomiędzy ekranami, a linki w
+              dobrych miejscach jedynie podpowiadają co i gdzie zrobić jako
+              następny krok. Na tym etapie dodałem np. ...</span
+            >
           </p>
           <figure class="imageFigure">
             <a
@@ -1030,7 +1347,9 @@
                 alt="Breadboardy cz.1"
               />
             </a>
-            <figcaption>Breadboardy cz.1</figcaption>
+            <figcaption data-i18n="project_app_monexo_fig_breadboards1">
+              Breadboardy cz.1
+            </figcaption>
           </figure>
           <figure class="imageFigure">
             <a
@@ -1043,45 +1362,69 @@
                 alt="Breadboardy cz.2"
               />
             </a>
-            <figcaption>Breadboardy cz.2</figcaption>
+            <figcaption data-i18n="project_app_monexo_fig_breadboards2">
+              Breadboardy cz.2
+            </figcaption>
           </figure>
         </section>
 
         <section id="iteracje">
-          <h2 style="padding-top: 8vh; margin-bottom: 1vh">Iteracje</h2>
-          <p>
+          <h2
+            style="padding-top: 8vh; margin-bottom: 1vh"
+            data-i18n="project_app_monexo_iterations_title"
+          >
+            Iteracje
+          </h2>
+          <p
+            style="margin-bottom: 1.5vh"
+            data-i18n="project_app_monexo_iterations_intro"
+          >
             Projekt właściwego produktu przeprowadzałem iteracyjnie,
             implementując poszczególne funkcjonalności, testując je i
             dostosowując je do potrzeb użytkowników produktu.
           </p>
 
-          <h3 style="padding-top: 3vh; margin-bottom: 1vh">
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_app_monexo_iter1_title"
+          >
             Na początku to co kluczowe do funkcjonowania aplikacji - MVP &
             walidacja podstawowych flow
           </h3>
-          <p style="margin-bottom: 1.5vh">
+          <p
+            style="margin-bottom: 1.5vh"
+            data-i18n="project_app_monexo_iter1_p"
+          >
             Zaprojektowałem MVP obejmujące kluczowe funkcje: sprawdzanie kursów
             oraz wymianę walut. Celem tej iteracji było szybkie zweryfikowanie
             głównych założeń produktu, struktury informacji oraz podstawowego
             flow wymiany.
           </p>
 
-          <!-- może tu fota ekranów przed?-->
-          <h3 style="padding-top: 3vh; margin-bottom: 1vh">
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_app_monexo_iter_sort_title"
+          >
             Czemu lista kursów sortowana alfabetycznie nie będzie dobrym
             wyjściem?
           </h3>
-          <p style="margin-bottom: 1.5vh">
+          <p
+            style="margin-bottom: 1.5vh"
+            data-i18n="project_app_monexo_iter_sort_p1"
+          >
             Podczas projektowania ekranu kursów zdałem sobie sprawę, że lista
             walut z Api Narodowego Banku Polskiego wydaje listę walut w porządku
             alfabetycznym. Wiedziałem, że taki porządek schowa głęboko np.
             Amerykańskiego Dolara czy też Euro. Zdecydowałem się tutaj na
-            zagłebienie się w to, które waluty są w polsce wymieniane
+            zagłębienie się w to, które waluty są w polsce wymieniane
             najczęściej. Okazało się, że poza Dolarem, Euro czy Funtem dalej
             popularny jest Frank Szwajcarski oraz Korona Czeska, które to waluty
             wywindowałem priorytetowo na początek listy.
           </p>
-          <p style="margin-bottom: 1.5vh">
+          <p
+            style="margin-bottom: 1.5vh"
+            data-i18n="project_app_monexo_iter_sort_p2"
+          >
             Następnie poddałem prototyp testom użyteczności, na klikalnym
             prototypie, aby sprawdzić czy wybrane rozwiązania spełniają potrzeby
             użytkowników. Owe testy wykazały, że język użyty w niektórych
@@ -1102,34 +1445,54 @@
                 alt="Walidacja podstawowych flow"
               />
             </a>
-            <figcaption>Walidacja podstawowych flow</figcaption>
+            <figcaption data-i18n="project_app_monexo_fig_iter1">
+              Walidacja podstawowych flow
+            </figcaption>
           </figure>
 
           <a
             href="https://www.figma.com/make/nXrTiyjF4gV6UOPohcmK5s/monexo-Interactive-Prototype---MVP?t=Qlo3DL8PfSoHjQs7-20&fullscreen=1"
             target="_blank"
             class="siteLink"
+            data-i18n="project_app_monexo_prototype_link"
           >
             Otwórz interaktywny prototyp
           </a>
-          <p style="color: #888888; margin-bottom: 3vh">
+          <p
+            style="color: #888888; margin-bottom: 3vh"
+            data-i18n="project_app_monexo_prototype_note"
+          >
             (dostępny tylko na PC i Laptopy, ze względu na ograniczenia Figma
             Make)
           </p>
 
-          <h3 style="padding-top: 3vh; margin-bottom: 1vh">
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_app_monexo_iter2_title"
+          >
             Do których funkcji dostęp powinien być najwygodniejszy? -
             Priorytetyzacja kluczowych akcji w nawigacji
           </h3>
 
           <p style="margin-bottom: 1.5vh">
-            Wnioski z testów użyteczności jasno pokazały, że użytkownicy mieli
-            <b>trudność z odnalezieniem funkcji doładowania konta</b>. Kluczowa
-            akcja była ukryta zbyt głęboko w strukturze profilu, co powodowało
-            frustrację i wydłużało czas realizacji zadania.
+            <span data-i18n="project_app_monexo_iter2_p1_part1"
+              >Wnioski z testów użyteczności jasno pokazały, że użytkownicy
+              mieli
+            </span>
+            <b data-i18n="project_app_monexo_iter2_p1_b"
+              >trudność z odnalezieniem funkcji doładowania konta</b
+            >
+            <span data-i18n="project_app_monexo_iter2_p1_part2"
+              >. Kluczowa akcja była ukryta zbyt głęboko w strukturze profilu,
+              co powodowało frustrację i wydłużało czas realizacji
+              zadania.</span
+            >
           </p>
 
-          <p style="margin-bottom: 1.5vh">
+          <p
+            style="margin-bottom: 1.5vh"
+            data-i18n="project_app_monexo_iter2_p2"
+          >
             Na podstawie tych obserwacji zdecydowałem się na przebudowę dolnej
             nawigacji. Ekran profilu został usunięty z głównego paska tabów, a
             jego miejsce zajęła funkcja doładowania konta — jedna z
@@ -1138,7 +1501,10 @@
             ekranach, tak aby dalej był bardzo dostępny.
           </p>
 
-          <p style="margin-bottom: 1.5vh">
+          <p
+            style="margin-bottom: 1.5vh"
+            data-i18n="project_app_monexo_iter2_p3"
+          >
             Zmiana ta znacząco skróciła ścieżkę do wykonania transakcji oraz
             uczyniła interfejs bardziej intuicyjnym. Po iteracji użytkownicy bez
             dodatkowych wskazówek potrafili szybko zasilić konto i przejść do
@@ -1156,40 +1522,60 @@
                 alt="Priorytetyzacja kluczowych funkcji"
               />
             </a>
-            <figcaption>Priorytetyzacja kluczowych funkcji</figcaption>
+            <figcaption data-i18n="project_app_monexo_fig_iter2">
+              Priorytetyzacja kluczowych funkcji
+            </figcaption>
           </figure>
 
-          <p style="margin-bottom: 1.5vh">
+          <p
+            style="margin-bottom: 1.5vh"
+            data-i18n="project_app_monexo_iter2_p4"
+          >
             W kolejnych testach tym razem niemoderowanych testach użyteczności i
             First-Click użytkownicy znacznie szybciej wykonywali zadanie - cały
             proces zakupu waluty.
           </p>
 
-          <p style="margin-bottom: 1.5vh">
+          <p
+            style="margin-bottom: 1.5vh"
+            data-i18n="project_app_monexo_iter2_effect"
+          >
             Efekt: użytkownik może szybciej i bezbłędnie ocenić stan finansów i
             zrealizować transakcję w krótszym czasie, co zwiększa wygodę i
             satysfakcję z korzystania z aplikacji.
           </p>
 
-          <h3 style="padding-top: 3vh; margin-bottom: 1vh">
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_app_monexo_iter3_title"
+          >
             W jaki sposób ułatwiam proces użytkownikowi? - Doprecyzowanie
             komunikatów systemowych
           </h3>
 
-          <p style="margin-bottom: 1.5vh">
+          <p
+            style="margin-bottom: 1.5vh"
+            data-i18n="project_app_monexo_iter3_p1"
+          >
             Testy użyteczności wykazały, że przekaz na niektórych ekranach był
             zbyt domyślny i niejednoznaczne, co powodowało dezorientację
             użytkowników oraz obawy przed błędnym wykonaniem operacji.
           </p>
 
-          <p style="margin-bottom: 1.5vh">
+          <p
+            style="margin-bottom: 1.5vh"
+            data-i18n="project_app_monexo_iter3_p2"
+          >
             W odpowiedzi na ten problem wzbogaciłem ekrany o krótkie, zrozumiałe
             informacje uzupełniające, aby użytkownicy wiedzieli o wszystkich
             kosztach i zasadach działania systemu, aby upewnić ich i uspokoić
             podczas ich działań w aplikacji.
           </p>
 
-          <p style="margin-bottom: 1.5vh">
+          <p
+            style="margin-bottom: 1.5vh"
+            data-i18n="project_app_monexo_iter3_p3"
+          >
             Przeprowadziłem walidację komunikatów systemowych, aby sprawdzić,
             czy są zrozumiałe dla użytkowników. Testy wykazały, że techniczne i
             niejednoznaczne komunikaty wprowadzały dezorientację i obawy przed
@@ -1207,7 +1593,9 @@
                 alt="Ulepszenie Komunikacji Kursu Walut"
               />
             </a>
-            <figcaption>Ulepszenie Komunikacji Kursu Walut</figcaption>
+            <figcaption data-i18n="project_app_monexo_fig_iter3_1">
+              Ulepszenie Komunikacji Kursu Walut
+            </figcaption>
           </figure>
 
           <figure class="imageFigure">
@@ -1221,7 +1609,9 @@
                 alt="Ulepszenie Komunikacji Kosztów Transackji"
               />
             </a>
-            <figcaption>Ulepszenie Komunikacji Kosztów Transackji</figcaption>
+            <figcaption data-i18n="project_app_monexo_fig_iter3_2">
+              Ulepszenie Komunikacji Kosztów Transackji
+            </figcaption>
           </figure>
 
           <figure class="imageFigure">
@@ -1235,14 +1625,15 @@
                 alt="Poprawa Widoczności Linków na Ekranie Głównym"
               />
             </a>
-            <figcaption>
+            <figcaption data-i18n="project_app_monexo_fig_iter3_3">
               Poprawa Widoczności Linków na Ekranie Głównym
             </figcaption>
           </figure>
 
-          <!-- dodać zmianę ikonek!! na bardziej intuicyjne -->
-
-          <p style="margin-bottom: 1vh">
+          <p
+            style="margin-bottom: 1vh"
+            data-i18n="project_app_monexo_iter3_nav_opt"
+          >
             Dodatkowo zoptymalizowałem nawigację pod najczęstszy scenariusz
             użycia (sprawdzenie kursu → doładowanie → wymiana), skracając czas
             realizacji celu poprzez ustawienie kart w kolejności najczęściej
@@ -1262,10 +1653,15 @@
                 alt="Poprawa Intuciyjności Menu"
               />
             </a>
-            <figcaption>Poprawa Intuciyjności Menu</figcaption>
+            <figcaption data-i18n="project_app_monexo_fig_iter3_4">
+              Poprawa Intuciyjności Menu
+            </figcaption>
           </figure>
 
-          <p style="margin-bottom: 1.5vh">
+          <p
+            style="margin-bottom: 1.5vh"
+            data-i18n="project_app_monexo_iter3_effect"
+          >
             Efekt: użytkownicy czują większą kontrolę nad procesem i zaufanie do
             aplikacji, co przekłada się na płynniejsze i pewniejsze korzystanie
             z funkcji wymiany walut.
@@ -1274,9 +1670,19 @@
 
         <!-- EFEKT -->
         <section id="efekt-koncowy">
-          <h2 style="padding-top: 8vh">Efekt Końcowy</h2>
+          <h2
+            style="padding-top: 8vh"
+            data-i18n="project_app_monexo_final_title"
+          >
+            Efekt Końcowy
+          </h2>
 
-          <h3 style="margin-bottom: 1vh">Co ostatecznie powstało?</h3>
+          <h3
+            style="margin-bottom: 1vh"
+            data-i18n="project_app_monexo_final_subtitle"
+          >
+            Co ostatecznie powstało?
+          </h3>
           <figure class="imageFigure">
             <a
               href="../assets/projects/aplikacja-mobilna-monexo/monexo_FinalLight1.png"
@@ -1288,7 +1694,9 @@
                 alt="Finalne Jasne Ekrany cz.1"
               />
             </a>
-            <figcaption>Finalne Jasne Ekrany cz.1</figcaption>
+            <figcaption data-i18n="project_app_monexo_fig_light1">
+              Finalne Jasne Ekrany cz.1
+            </figcaption>
           </figure>
           <figure class="imageFigure">
             <a
@@ -1301,7 +1709,9 @@
                 alt="Finalne Jasne Ekrany cz.2"
               />
             </a>
-            <figcaption>Finalne Jasne Ekrany cz.2</figcaption>
+            <figcaption data-i18n="project_app_monexo_fig_light2">
+              Finalne Jasne Ekrany cz.2
+            </figcaption>
           </figure>
           <figure class="imageFigure">
             <a
@@ -1314,7 +1724,9 @@
                 alt="Finalne Ciemne Ekrany cz.1"
               />
             </a>
-            <figcaption>Finalne Ciemne Ekrany cz.1</figcaption>
+            <figcaption data-i18n="project_app_monexo_fig_dark1">
+              Finalne Ciemne Ekrany cz.1
+            </figcaption>
           </figure>
           <figure class="imageFigure">
             <a
@@ -1327,28 +1739,30 @@
                 alt="Finalne Ciemne Ekrany cz.2"
               />
             </a>
-            <figcaption>Finalne Ciemne Ekrany cz.2</figcaption>
+            <figcaption data-i18n="project_app_monexo_fig_dark2">
+              Finalne Ciemne Ekrany cz.2
+            </figcaption>
           </figure>
-          <p>
+          <p data-i18n="project_app_monexo_final_p1">
             Projekt Monexo pozwolił mi przejść przez pełny proces projektowy —
             od analizy problemu i rynku, przez ideację i testy użyteczności, aż
             po iteracyjne doskonalenie interfejsu i komunikacji.
           </p>
-          <p>
+          <p data-i18n="project_app_monexo_final_p2">
             Skupiłem się na projektowaniu rozwiązań, które są proste dla
             użytkownika, przewidywalne w działaniu i wspierają cele biznesowe
             poprzez budowanie zaufania do produktu finansowego.
           </p>
-          <p>
+          <p data-i18n="project_app_monexo_final_check1">
             ✅ Zaprojektowana aplikacja upraszcza proces wymiany walut
             spełniając przede wszsytkim główne potrzeby przeciętnego
             użytkownika.
           </p>
-          <p>
+          <p data-i18n="project_app_monexo_final_check2">
             ✅ Transparentna komunikacja kursów i opłat buduje zaufanie
             użytkowników i chęć długofalowej relacji z produktem.
           </p>
-          <p>
+          <p data-i18n="project_app_monexo_final_github">
             👨‍💻 Projekt jest w pełni zaimplementowany i dostępny w repozytorium
             GitHub. Znajdziesz tam kompletną aplikację mobilną, integrację z API
             NBP, logikę biznesową Web Service oraz bazę danych. Repozytorium
@@ -1357,14 +1771,8 @@
           </p>
 
           <div class="mini-gallery">
-            <a
-              href="../assets/index/monexo.png"
-              data-lightbox="galeria-monexo"
-            >
-              <img
-                src="../assets/index/monexo.png"
-                alt="Miniatura 1"
-              />
+            <a href="../assets/index/monexo.png" data-lightbox="galeria-monexo">
+              <img src="../assets/index/monexo.png" alt="Miniatura 1" />
             </a>
             <a
               href="../assets/projects/aplikacja-mobilna-monexo/monexo_Typography.png"
@@ -1411,7 +1819,7 @@
                 alt="Miniatura 6"
               />
             </a>
-          <!--
+            <!--
             <a href="../assets/projects/aplikacja-mobilna-monexo/monexo_Breadboards1.png" data-lightbox="galeria-monexo">
               <img src="../assets/projects/aplikacja-mobilna-monexo/monexo_Breadboards1.png" alt="Miniatura 1" />
             </a>
@@ -1513,69 +1921,133 @@
         </section>
 
         <section id="po-projekcie">
-          <h2 style="padding-top: 8vh">Po Projekcie</h2>
-          <h3 style="margin-bottom: 1vh">Kluczowe Wnioski</h3>
+          <h2
+            style="padding-top: 8vh"
+            data-i18n="project_app_monexo_after_title"
+          >
+            Po Projekcie
+          </h2>
+          <h3
+            style="margin-bottom: 1vh"
+            data-i18n="project_app_monexo_takeaways_title"
+          >
+            Kluczowe Wnioski
+          </h3>
           <p>
-            🧠 Świadoma i dokładna <b>obsługa stanów sieciowych</b> jest
-            kluczowa dla spójnego i przewidywalnego doświadczenia użytkownika w
-            aplikacji mobilnej - internet mobilny nie jest tak niezawodny jak
-            internet kablowy i zdecydowanie częściej jest podatny na różnego
-            rodzaju przerwania.
+            🧠
+            <span data-i18n="project_app_monexo_takeaway_part1"
+              >Świadoma i dokładna
+            </span>
+            <b data-i18n="project_app_monexo_takeaway_b"
+              >obsługa stanów sieciowych</b
+            >
+            <span data-i18n="project_app_monexo_takeaway_part2">
+              jest kluczowa dla spójnego i przewidywalnego doświadczenia
+              użytkownika w aplikacji mobilnej - internet mobilny nie jest tak
+              niezawodny jak internet kablowy i zdecydowanie częściej jest
+              podatny na różnego rodzaju przerwania.</span
+            >
           </p>
 
-          <h3 style="padding-top: 3vh; margin-bottom: 1vh">Następne Kroki</h3>
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_app_monexo_next_steps_title"
+          >
+            Następne Kroki
+          </h3>
           <p>
-            <b>🔜 Obsługa wielu portfeli walutowych</b>
-            - architektura interfejsu została zaprojektowana z myślą o łatwej
-            rozbudowie o wiele portfeli (np. osobny portfel oszczędnościowy).
+            <b
+              >🔜
+              <span data-i18n="project_app_monexo_next_1_b"
+                >Obsługa wielu portfeli walutowych</span
+              ></b
+            >
+            <span data-i18n="project_app_monexo_next_1_text">
+              - architektura interfejsu została zaprojektowana z myślą o łatwej
+              rozbudowie o wiele portfeli (np. osobny portfel
+              oszczędnościowy).</span
+            >
           </p>
           <p>
-            <b>🔜 Automatyczne zlecenia wymiany walut</b>
-            - możliwość ustawiania zleceń zakupu przy określonym kursie, z
-            zabezpieczeniami budżetowymi zapobiegającymi powstawaniu debetu.
+            <b
+              >🔜
+              <span data-i18n="project_app_monexo_next_2_b"
+                >Automatyczne zlecenia wymiany walut</span
+              ></b
+            >
+            <span data-i18n="project_app_monexo_next_2_text">
+              - możliwość ustawiania zleceń zakupu przy określonym kursie, z
+              zabezpieczeniami budżetowymi zapobiegającymi powstawaniu
+              debetu.</span
+            >
           </p>
           <p>
-            <b>🔜 Rozszerzenie o kryptowaluty</b>
-            - potencjał integracji z rynkiem kryptowalut poprzez API giełd,
-            umożliwiający przechowywanie i wymianę zarówno walut tradycyjnych,
-            jak i cyfrowych.
+            <b
+              >🔜
+              <span data-i18n="project_app_monexo_next_3_b"
+                >Rozszerzenie o kryptowaluty</span
+              ></b
+            >
+            <span data-i18n="project_app_monexo_next_3_text">
+              - potencjał integracji z rynkiem kryptowalut poprzez API giełd,
+              umożliwiający przechowywanie i wymianę zarówno walut tradycyjnych,
+              jak i cyfrowych.</span
+            >
           </p>
         </section>
 
         <section class="navLoopWrapper">
-          <span class="navLoop"
-            >Zobacz kolejny projekt: <br /><a
+          <span class="navLoop">
+            <span data-i18n="project_app_monexo_next_project_label"
+              >Zobacz kolejny projekt:</span
+            >
+            <br />
+            <a
               class="loopLink"
               href="strona-internetowa-PlanetRoad.html"
+              data-i18n="project_app_monexo_next_project_link"
               >Strona&nbsp;Internetowa&nbsp;-&nbsp;PlanetRoad</a
-            ></span
-          >
+            >
+          </span>
         </section>
       </main>
       <nav class="sideNav">
         <div class="sideNavWrapper">
-          <a href="#o-projekcie">O Projekcie</a>
-          <a href="#badania">Badania</a>
-          <a href="#ideacja">Ideacja</a>
-          <a href="#iteracje">Iteracje</a>
-          <a href="#efekt-koncowy">Efekt Końcowy</a>
-          <a href="#po-projekcie">Po Projekcie</a>
+          <a href="#o-projekcie" data-i18n="side_nav_about">O Projekcie</a>
+          <a href="#badania" data-i18n="side_nav_research">Badania</a>
+          <a href="#ideacja" data-i18n="side_nav_ideation">Ideacja</a>
+          <a href="#iteracje" data-i18n="side_nav_iterations">Iteracje</a>
+          <a href="#efekt-koncowy" data-i18n="side_nav_final_effect"
+            >Efekt Końcowy</a
+          >
+          <a href="#po-projekcie" data-i18n="side_nav_post_project"
+            >Po Projekcie</a
+          >
         </div>
       </nav>
     </div>
 
+    <!-- COOKIES -->
     <div id="cookie-banner" class="cookie-banner">
-      <div class="cookie-text">
+      <div class="cookie-text" data-i18n="cookies_text">
         🍪 Używam cookies do analizy ruchu i ciągłego ulepszania działania
         strony.
-        <!--<a href="../privacy">Polityka prywatności</a>-->
+        <!--<a href="/privacy">Polityka prywatności</a>-->
       </div>
 
       <div class="cookie-buttons">
-        <button id="accept-cookies" class="cookie-btn primary">
+        <button
+          id="accept-cookies"
+          class="cookie-btn primary"
+          data-i18n="cookies_primary_button"
+        >
           Akceptuję
         </button>
-        <button id="decline-cookies" class="cookie-btn secondary">
+        <button
+          id="decline-cookies"
+          class="cookie-btn secondary"
+          data-i18n="cookies_secondary_button"
+        >
           Odrzucam
         </button>
       </div>
@@ -1847,6 +2319,66 @@
         });
         el.addEventListener("mouseleave", () => {
           document.body.classList.remove("hovered");
+        });
+      });
+    </script>
+    <!-- Scroll Reveal (fade-in przy wjeżdżaniu na ekran) -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const prefersReducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        const targets = Array.from(
+          document.querySelectorAll(
+            [
+              "main.projectContent > section > h1",
+              "main.projectContent > section > h2",
+              "main.projectContent > section > h3",
+              "main.projectContent > section > p",
+              "main.projectContent > section > .gradientBackground",
+              "main.projectContent > figure.imageFigure",
+              "main.projectContent > section > figure.imageFigure",
+              "main.projectContent .mini-gallery > a",
+            ].join(", ")
+          )
+        );
+
+        if (targets.length === 0) return;
+
+        targets.forEach((el) => el.classList.add("reveal-on-scroll"));
+
+        if (prefersReducedMotion) {
+          targets.forEach((el) => el.classList.add("is-visible"));
+          return;
+        }
+
+        document.querySelectorAll(".mini-gallery > a").forEach((el, i) => {
+          el.style.transitionDelay = `${i * 0.08}s`;
+        });
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15, rootMargin: "0px 0px -8% 0px" }
+        );
+
+        targets.forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          const alreadyVisible =
+            rect.top < window.innerHeight && rect.bottom > 0;
+
+          if (alreadyVisible) {
+            el.classList.add("is-visible");
+          } else {
+            observer.observe(el);
+          }
         });
       });
     </script>

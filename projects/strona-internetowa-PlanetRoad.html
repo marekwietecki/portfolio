@@ -188,6 +188,35 @@
       img:hover {
         transform: scale(1.05);
       }
+      /* ========================================================
+   SCROLL REVEAL — subtelny fade-in + lekkie uniesienie
+   ======================================================== */
+      .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+      }
+
+      .reveal-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Miniatury w .mini-gallery dostają osobny, lekko krótszy wariant,
+         bo wjeżdżają w grupie (stagger), a nie pojedynczo */
+      .mini-gallery a.reveal-on-scroll {
+        transition-duration: 0.6s;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .reveal-on-scroll {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+      }
       /* Header */
       header {
         background: #f6f6f7;
@@ -2902,6 +2931,71 @@
         });
         el.addEventListener("mouseleave", () => {
           document.body.classList.remove("hovered");
+        });
+      });
+    </script>
+    <!-- Scroll Reveal (fade-in przy wjeżdżaniu na ekran) -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const prefersReducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        // Elementy do animacji: nagłówki/akapity treści case-study,
+        // bloki ze zdjęciami (figure.imageFigure) i baner z logo klienta.
+        const targets = Array.from(
+          document.querySelectorAll(
+            [
+              "main.projectContent > section > h1",
+              "main.projectContent > section > h2",
+              "main.projectContent > section > h3",
+              "main.projectContent > section > p",
+              "main.projectContent > section > .gradientBackground",
+              "main.projectContent > figure.imageFigure",
+              "main.projectContent > section > figure.imageFigure",
+              "main.projectContent .mini-gallery > a",
+            ].join(", ")
+          )
+        );
+
+        if (targets.length === 0) return;
+
+        targets.forEach((el) => el.classList.add("reveal-on-scroll"));
+
+        if (prefersReducedMotion) {
+          targets.forEach((el) => el.classList.add("is-visible"));
+          return;
+        }
+
+        // Stagger dla miniatur w .mini-gallery -- wjeżdżają jedna po drugiej
+        document.querySelectorAll(".mini-gallery > a").forEach((el, i) => {
+          el.style.transitionDelay = `${i * 0.08}s`;
+        });
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15, rootMargin: "0px 0px -8% 0px" }
+        );
+
+        // Elementy już widoczne na ekranie w momencie wejścia na stronę
+        // pokazujemy od razu, bez animowania "znikąd" -- inaczej strona
+        // ładowałaby się z połową treści niewidoczną.
+        targets.forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          const alreadyVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+          if (alreadyVisible) {
+            el.classList.add("is-visible");
+          } else {
+            observer.observe(el);
+          }
         });
       });
     </script>

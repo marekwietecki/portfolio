@@ -234,7 +234,236 @@ const translations = {
     side_nav_final_effect: "Efekt Końcowy",
     side_nav_post_project: "Po Projekcie",
 
-    // WEB PLANET
+    // PROJECT APP MONEXO
+    project_app_monexo_title: "Monexo - aplikacja mobilna do wymiany walut",
+    project_app_monexo_desc:
+      "Monexo to mobilna aplikacji do wymiany walut, którą zaprojektowałem jako odpowiedź na realne problemy użytkowników korzystających z istniejących rozwiązań FinTech.",
+    project_app_monexo_role_label: "Rola:",
+    project_app_monexo_role_val: "UX Designer; Front-end Developer",
+    project_app_monexo_scope_label: "Zakres odpowiedzialności:",
+    project_app_monexo_scope_val:
+      "Research, Koncept produktu, Architektura informacji, Projekt interfejsu, Testy użyteczności",
+    project_app_monexo_duration_label: "Czas trwania:",
+    project_app_monexo_duration_val: "13 tygodni",
+    project_app_monexo_methodology_label: "Metodyka:",
+    project_app_monexo_methodology_val:
+      "Lean UX / Design Thinking – iteracyjne projektowanie oparte na badaniach użytkowników, testach użyteczności i analizie konkurencji, z priorytetyzacją funkcji w ramach MVP.",
+    project_app_monexo_context_title: "Kontekst",
+    project_app_monexo_context_text:
+      "Analiza rynku wykazała, że wiele istniejących aplikacji do wymiany walut jest nieczytelnych, przeładowanych informacjami i opartych na niejasnym modelu prowizji, co stworzyło niepotrzebną barierę dla użytkowników chcących wykonać prostą wymianę walut.",
+    project_app_monexo_problem_title: "Problem",
+    project_app_monexo_problem_text:
+      "Użytkownicy często nie mieli pewności co do rzeczywistego kosztu transakcji, gubili się w interfejsie i musieli przechodzić przez zbyt wiele kroków, aby wykonać podstawową operację.",
+    project_app_monexo_goals_title: "Cele",
+    project_app_monexo_goal_1_b: "Uproszczenie procesu wymiany walut",
+    project_app_monexo_goal_1_text:
+      " do maksymalnie kilku intuicyjnych kroków.",
+    project_app_monexo_goal_2_b: "Pełna transparentność kursów i opłat",
+    project_app_monexo_goal_2_text:
+      " — brak ukrytych prowizji i niejasnych przeliczeń.",
+    project_app_monexo_goal_3_b: "Budowa zaufania do produktu FinTech",
+    project_app_monexo_goal_3_text:
+      " poprzez czytelną komunikację i przewidywalność procesu.",
+    project_app_monexo_constraints_title: "Ograniczenia",
+    project_app_monexo_constraint_1_b: "Wysokie wymagania dotyczące zaufania",
+    project_app_monexo_constraint_1_text:
+      " — aplikacja finansowa musi być postrzegana jako bezpieczna i wiarygodna.",
+    project_app_monexo_constraint_2_b:
+      "Konieczność jasnego komunikowania kosztów",
+    project_app_monexo_constraint_2_text:
+      " bez przeciążania użytkownika danymi.",
+    project_app_monexo_constraint_3_b: "Minimalizacja złożoności interfejsu",
+    project_app_monexo_constraint_3_text:
+      " przy zachowaniu pełnej kontroli użytkownika.",
+    project_app_monexo_constraint_4_b: "Projekt mobile-first",
+    project_app_monexo_constraint_4_text:
+      ", dostosowany do szybkiego i częstego użycia.",
+    project_app_monexo_research_title: "Badania i Wnioski",
+    project_app_monexo_market_title:
+      "Czy ludzie potrzbują naszego produktu? - Analiza rynku i trendów branżowych",
+    project_app_monexo_market_p1_part1:
+      "Przeanalizowałem rynek i trendy w branży, przeglądając raporty oraz topowe aplikacje, aby zrozumieć, czego naprawdę potrzebują użytkownicy. Zauważyłem, że przy rosnących wymaganiach użytkowników ",
+    project_app_monexo_market_p1_b:
+      "podstawowe funkcje są często ukrywane, by uwydatnić nowe możliwości",
+    project_app_monexo_market_p1_part2:
+      ". W mojej aplikacji postawiłem na spełnianie podstawowych potrzeb w pierwszej kolejności, a funkcje dodatkowe zostały bardziej zagnieżdżone, tak by nie przeszkadzały w codziennym szybkim zarządzaniu finansami.",
+    project_app_monexo_market_p2_part1:
+      "Jednocześnie zidentyfikowałem popularne funkcjonalności, takie jak ",
+    project_app_monexo_market_p2_b1:
+      "portfele wielowalutowe, automatyczne zlecenia zakupu walut",
+    project_app_monexo_market_p2_part2: " czy ",
+    project_app_monexo_market_p2_b2: "obsługa kryptowalut",
+    project_app_monexo_market_p2_part3:
+      ", które odpowiadają na realne potrzeby użytkowników w planowaniu transakcji i zarządzaniu pieniędzmi, umożliwiając im pełniejszą kontrolę nad finansami.",
+    project_app_monexo_competition_title: "Analiza problemów konkurencji",
+    project_app_monexo_comp_p1_intro:
+      "Podczas analizy konkurencyjnych aplikacji i opinii użytkowników zidentyfikowałem kluczowe problemy, które znacząco wpływają na odczucia użytkownika:",
+    project_app_monexo_comp_p1_b1: "Zbyt skomplikowane menu",
+    project_app_monexo_comp_p1_text1:
+      " – użytkownicy wyrażając opinie na temat konkurencji często skarżą się na chaos w opcjach i trudności w szybkim wykonaniu podstawowych operacji.",
+    project_app_monexo_comp_p1_b2: "Nieintuicyjna nawigacja",
+    project_app_monexo_comp_p1_text2:
+      " – Użytkownicy często miewają również problemy z dotarciem do pożądanej funkcji w apolikacji.",
+    project_app_monexo_comp_p1_b3: "Brak transparentności w opłatach",
+    project_app_monexo_comp_p1_text3:
+      " – użytkownicy odczuwają brak przejrzystości i spójności w opłatach i niepewność co do zwrotów oraz oprocentowania.",
+    project_app_monexo_comp_p2_intro:
+      "Analiza pozwoliła mi zidentyfikować kluczowe problemy użytkowników, które miałem zamiar rozwiązać w następujący sposób:",
+    project_app_monexo_comp_p2_b1: "Uproszczeniu menu i hierarchii funkcji",
+    project_app_monexo_comp_p2_text1:
+      ", aby kluczowe działania były dostępne w 2–3 krokach;",
+    project_app_monexo_comp_p2_b2: "Wprowadzenie podglądu transakcji",
+    project_app_monexo_comp_p2_text2:
+      ", a także informowania użytkownika na bieżąco o opłatach i statusach wymian;",
+    project_app_monexo_comp_p2_b3:
+      "Zapewnienie transparentności kosztów i komunikacji",
+    project_app_monexo_comp_p2_text3:
+      ", aby użytkownik zawsze wiedział, jakie opłaty i oprocentowanie obowiązują jego środki.",
+    project_app_monexo_ideation_title: "Ideacja",
+    project_app_monexo_target_title: "Dla kogo będzie nasza aplikacja?",
+    project_app_monexo_target_p_part1:
+      "Kształtowanie produktu rozpocząłem od stworzenia trzech ",
+    project_app_monexo_target_p_b: "person",
+    project_app_monexo_target_p_part2:
+      " dla naszego produktu. To pokazało mi, że",
+    project_app_monexo_fig_personae: "User Persony",
+    project_app_monexo_needs_b: "Głównymi potrzebami",
+    project_app_monexo_needs_intro: " naszych użytkowników okazały się być:",
+    project_app_monexo_needs_1: "• Szybkość dostępu do najważniejszych funkcji",
+    project_app_monexo_needs_2: "• Prostota w obsłudze aplikacji",
+    project_app_monexo_needs_3:
+      "• Transparentność w opłatach za tranzakcje oraz",
+    project_app_monexo_needs_4:
+      "• Poczucie kontroli nad tranzakcjami w aplikacji",
+    project_app_monexo_prio_title: "Co będzie najważniejsze? - Prioretyzacja",
+    project_app_monexo_prio_p_part1: "Używając ",
+    project_app_monexo_prio_p_b: "MoSCow",
+    project_app_monexo_prio_p_part2:
+      " ustaliłem, które funkcje będą kluczowe, które najlepiej żeby się znalazły, a które są jedynie opcjonalnymi usprawnieniami.",
+    project_app_monexo_fig_moscow: "Priorytetyzacja techniką MoSCoW",
+    project_app_monexo_mvp_intro_part1: "W ramy ",
+    project_app_monexo_mvp_intro_b: "MVP",
+    project_app_monexo_mvp_intro_part2: " weszły funkcjonalności:",
+    project_app_monexo_mvp_1:
+      "• Wirtualnego portfela z možliwościa podglądu posiadanych walut",
+    project_app_monexo_mvp_2: "• Przeglądu kursów NBP",
+    project_app_monexo_mvp_3: "• Wymiany walut",
+    project_app_monexo_mvp_4: "• Historii tranzakcji",
+    project_app_monexo_mvp_5: "• Doładowania konta",
+    project_app_monexo_mvp_6:
+      "• Rejestracji, Logowania, Zmiany hasła i Usunięcia konta",
+    project_app_monexo_style_title: "W jakim stylu?",
+    project_app_monexo_style_p_part1: "Stworzyłem skromny ",
+    project_app_monexo_style_p_b: "Style Guide",
+    project_app_monexo_style_p_part2:
+      " z podstawowymi elementami interfejsu, tak aby aplikacja była spójna i estetyczna.",
+    project_app_monexo_fig_typography: "Style Guide - Typography",
+    project_app_monexo_fig_components: "Style Guide - Components & Rules",
+    project_app_monexo_fig_colors: "Style Guide - Colors & Themes",
+    project_app_monexo_style_desc:
+      "Interfejs aplikacji został zaprojektowany w estetyce minimalistycznej, z jedną główną akcją użytkownika — „Wymień walutę”. A kolorystyka i typografia wspierają czytelność, spokój oraz poczucie bezpieczeństwa, co jest kluczowe w produktach FinTech.",
+    project_app_monexo_wireframes_title: "Teraz pytanie gdzie co umieścić?",
+    project_app_monexo_wireframes_p_part1: "Wykorzystując ",
+    project_app_monexo_wireframes_p_b: "wireframe'y",
+    project_app_monexo_wireframes_p_part2:
+      " rozmieściłem elementy na ekranach aplikacji tak, aby wyczerpać główne zapotrzebowania naszej grupy docelowej oraz priorytetowe funkcje aplikacji.",
+    project_app_monexo_fig_wireframes1: "Wireframe'y cz.1",
+    project_app_monexo_fig_wireframes2: "Wireframe'y cz.2",
+    project_app_monexo_breadboards_title:
+      "I dokąd z tych ekranów będzie można przejść..",
+    project_app_monexo_breadboards_p_part1: "Zająłem się więc zaprojektowaniem",
+    project_app_monexo_breadboards_p_b: " Breadboardów",
+    project_app_monexo_breadboards_p_part2:
+      " - wszystkich możliwych ścieżek z poszczególnych ekranów, tak aby użytkownik mógł w łatwy sposób dostać się tam gdzie tego potrzebuje. W aplikacji wykorzystuje tab navigation, co już znacznie ułatwia przemieszczanie się pomiędzy ekranami, a linki w dobrych miejscach jedynie podpowiadają co i gdzie zrobić jako następny krok. Na tym etapie dodałem np. ...",
+    project_app_monexo_fig_breadboards1: "Breadboardy cz.1",
+    project_app_monexo_fig_breadboards2: "Breadboardy cz.2",
+    project_app_monexo_iterations_title: "Iteracje",
+    project_app_monexo_iterations_intro:
+      "Projekt właściwego produktu przeprowadzałem iteracyjnie, implementując poszczególne funkcjonalności, testując je i dostosowując je do potrzeb użytkowników produktu.",
+    project_app_monexo_iter1_title:
+      "Na początku to co kluczowe do funkcjonowania aplikacji - MVP & walidacja podstawowych flow",
+    project_app_monexo_iter1_p:
+      "Zaprojektowałem MVP obejmujące kluczowe funkcje: sprawdzanie kursów oraz wymianę walut. Celem tej iteracji było szybkie zweryfikowanie głównych założeń produktu, struktury informacji oraz podstawowego flow wymiany.",
+    project_app_monexo_iter_sort_title:
+      "Czemu lista kursów sortowana alfabetycznie nie będzie dobrym wyjściem?",
+    project_app_monexo_iter_sort_p1:
+      "Podczas projektowania ekranu kursów zdałem sobie sprawę, że lista walut z Api Narodowego Banku Polskiego wydaje listę walut w porządku alfabetycznym. Wiedziałem, że taki porządek schowa głęboko np. Amerykańskiego Dolara czy też Euro. Zdecydowałem się tutaj na zagłębienie się w to, które waluty są w polsce wymieniane najczęściej. Okazało się, że poza Dolarem, Euro czy Funtem dalej popularny jest Frank Szwajcarski oraz Korona Czeska, które to waluty wywindowałem priorytetowo na początek listy.",
+    project_app_monexo_iter_sort_p2:
+      "Następnie poddałem prototyp testom użyteczności, na klikalnym prototypie, aby sprawdzić czy wybrane rozwiązania spełniają potrzeby użytkowników. Owe testy wykazały, że język użyty w niektórych miejscach sprawiał problem użytkownikom i wprowadzał ich w zakłopotanie, oraz że doładowywanie konta jest niepotrzebnie schowane i zbyt zagnieżdżone, a dostanie się do niego sprawia użytkownikom niemały problem.",
+    project_app_monexo_fig_iter1: "Walidacja podstawowych flow",
+    project_app_monexo_prototype_link: "Otwórz interaktywny prototyp",
+    project_app_monexo_prototype_note:
+      "(dostępny tylko na PC i Laptopy, ze względu na ograniczenia Figma Make)",
+    project_app_monexo_iter2_title:
+      "Do których funkcji dostęp powinien być najwygodniejszy? - Priorytetyzacja kluczowych akcji w nawigacji",
+    project_app_monexo_iter2_p1_part1:
+      "Wnioski z testów użyteczności jasno pokazały, że użytkownicy mieli ",
+    project_app_monexo_iter2_p1_b:
+      "trudność z odnalezieniem funkcji doładowania konta",
+    project_app_monexo_iter2_p1_part2:
+      ". Kluczowa akcja była ukryta zbyt głęboko w strukturze profilu, co powodowało frustrację i wydłużało czas realizacji zadania.",
+    project_app_monexo_iter2_p2:
+      "Na podstawie tych obserwacji zdecydowałem się na przebudowę dolnej nawigacji. Ekran profilu został usunięty z głównego paska tabów, a jego miejsce zajęła funkcja doładowania konta — jedna z najważniejszych akcji w całym systemie. Przeniosłem profil użytkownika do kompaktowej ikony dostępnej na wszystkich głównych ekranach, tak aby dalej był bardzo dostępny.",
+    project_app_monexo_iter2_p3:
+      "Zmiana ta znacząco skróciła ścieżkę do wykonania transakcji oraz uczyniła interfejs bardziej intuicyjnym. Po iteracji użytkownicy bez dodatkowych wskazówek potrafili szybko zasilić konto i przejść do wymiany walut.",
+    project_app_monexo_fig_iter2: "Priorytetyzacja kluczowych funkcji",
+    project_app_monexo_iter2_p4:
+      "W kolejnych testach tym razem niemoderowanych testach użyteczności i First-Click użytkownicy znacznie szybciej wykonywali zadanie - cały proces zakupu waluty.",
+    project_app_monexo_iter2_effect:
+      "Efekt: użytkownik może szybciej i bezbłędnie ocenić stan finansów i zrealizować transakcję w krótszym czasie, co zwiększa wygodę i satysfakcję z korzystania z aplikacji.",
+    project_app_monexo_iter3_title:
+      "W jaki sposób ułatwiam proces użytkownikowi? - Doprecyzowanie komunikatów systemowych",
+    project_app_monexo_iter3_p1:
+      "Testy użyteczności wykazały, że przekaz na niektórych ekranach był zbyt domyślny i niejednoznaczne, co powodowało dezorientację użytkowników oraz obawy przed błędnym wykonaniem operacji.",
+    project_app_monexo_iter3_p2:
+      "W odpowiedzi na ten problem wzbogaciłem ekrany o krótkie, zrozumiałe informacje uzupełniające, aby użytkownicy wiedzieli o wszystkich kosztach i zasadach działania systemu, aby upewnić ich i uspokoić podczas ich działań w aplikacji.",
+    project_app_monexo_iter3_p3:
+      "Przeprowadziłem walidację komunikatów systemowych, aby sprawdzić, czy są zrozumiałe dla użytkowników. Testy wykazały, że techniczne i niejednoznaczne komunikaty wprowadzały dezorientację i obawy przed błędnym wykonaniem operacji.",
+    project_app_monexo_fig_iter3_1: "Ulepszenie Komunikacji Kursu Walut",
+    project_app_monexo_fig_iter3_2: "Ulepszenie Komunikacji Kosztów Transackji",
+    project_app_monexo_fig_iter3_3:
+      "Poprawa Widoczności Linków na Ekranie Głównym",
+    project_app_monexo_iter3_nav_opt:
+      "Dodatkowo zoptymalizowałem nawigację pod najczęstszy scenariusz użycia (sprawdzenie kursu → doładowanie → wymiana), skracając czas realizacji celu poprzez ustawienie kart w kolejności najczęściej powtarzanego flow. Oraz podmieniłem niektóre ikony na bardziej intuicyjne odpowiedniki tak, aby użytkownik jeszcze szybciej i łatwiej dostawał się w porządane miejsce.",
+    project_app_monexo_fig_iter3_4: "Poprawa Intuciyjności Menu",
+    project_app_monexo_iter3_effect:
+      "Efekt: użytkownicy czują większą kontrolę nad procesem i zaufanie do aplikacji, co przekłada się na płynniejsze i pewniejsze korzystanie z funkcji wymiany walut.",
+    project_app_monexo_final_title: "Efekt Końcowy",
+    project_app_monexo_final_subtitle: "Co ostatecznie powstało?",
+    project_app_monexo_fig_light1: "Finalne Jasne Ekrany cz.1",
+    project_app_monexo_fig_light2: "Finalne Jasne Ekrany cz.2",
+    project_app_monexo_fig_dark1: "Finalne Ciemne Ekrany cz.1",
+    project_app_monexo_fig_dark2: "Finalne Ciemne Ekrany cz.2",
+    project_app_monexo_final_p1:
+      "Projekt Monexo pozwolił mi przejść przez pełny proces projektowy — od analizy problemu i rynku, przez ideację i testy użyteczności, aż po iteracyjne doskonalenie interfejsu i komunikacji.",
+    project_app_monexo_final_p2:
+      "Skupiłem się na projektowaniu rozwiązań, które są proste dla użytkownika, przewidywalne w działaniu i wspierają cele biznesowe poprzez budowanie zaufania do produktu finansowego.",
+    project_app_monexo_final_check1:
+      "✅ Zaprojektowana aplikacja upraszcza proces wymiany walut spełniając przede wszsytkim główne potrzeby przeciętnego użytkownika.",
+    project_app_monexo_final_check2:
+      "✅ Transparentna komunikacja kursów i opłat buduje zaufanie użytkowników i chęć długofalowej relacji z produktem.",
+    project_app_monexo_final_github:
+      "👨‍💻 Projekt jest w pełni zaimplementowany i dostępny w repozytorium GitHub. Znajdziesz tam kompletną aplikację mobilną, integrację z API NBP, logikę biznesową Web Service oraz bazę danych. Repozytorium zawiera też instrukcję uruchomienia, co pozwala przetestować działanie aplikacji np. na własnym urządzeniu.",
+    project_app_monexo_after_title: "Po Projekcie",
+    project_app_monexo_takeaways_title: "Kluczowe Wnioski",
+    project_app_monexo_takeaway_part1: "Świadoma i dokładna ",
+    project_app_monexo_takeaway_b: "obsługa stanów sieciowych",
+    project_app_monexo_takeaway_part2:
+      " jest kluczowa dla spójnego i przewidywalnego doświadczenia użytkownika w aplikacji mobilnej - internet mobilny nie jest tak niezawodny jak internet kablowy i zdecydowanie częściej jest podatny na różnego rodzaju przerwania.",
+    project_app_monexo_next_steps_title: "Następne Kroki",
+    project_app_monexo_next_1_b: "Obsługa wielu portfeli walutowych",
+    project_app_monexo_next_1_text:
+      " - architektura interfejsu została zaprojektowana z myślą o łatwej rozbudowie o wiele portfeli (np. osobny portfel oszczędnościowy).",
+    project_app_monexo_next_2_b: "Automatyczne zlecenia wymiany walut",
+    project_app_monexo_next_2_text:
+      " - możliwość ustawiania zleceń zakupu przy określonym kursie, z zabezpieczeniami budżetowymi zapobiegającymi powstawaniu debetu.",
+    project_app_monexo_next_3_b: "Rozszerzenie o kryptowaluty",
+    project_app_monexo_next_3_text:
+      " - potencjał integracji z rynkiem kryptowalut poprzez API giełd, umożliwiający przechowywanie i wymianę zarówno walut tradycyjnych, jak i cyfrowych.",
+    project_app_monexo_next_project_label: "Zobacz kolejny projekt:",
+    project_app_monexo_next_project_link: "Strona Internetowa - PlanetRoad",
+
+    // PROJECT WEB PLANET
     project_web_planetroad_nav_offer: "Oferta",
     project_web_planetroad_nav_about: "O Mnie",
     project_web_planetroad_project_title:
@@ -605,6 +834,136 @@ const translations = {
       "🔜 Zaawansowana analityka i optymalizacja konwersji",
     project_web_planetroad_navloop_text: "Zobacz kolejny projekt: ",
     project_web_planetroad_navloop_link: "Identyfikacja Wizualna - PlanetRoad",
+
+    // PROJECT VI PLANETROAD
+    // Identyfikacja Wizualna - PlanetRoad
+    project_vi_planetroad_title: "Identyfikacja Wizualna",
+    project_vi_planetroad_subtitle: "PlanetRoad",
+    project_vi_planetroad_intro:
+      "PlanetRoad jest firmą projektującą drogi w Polsce od niespełna 30 lat. W internecie firma posiadała jedynie prostą stronę internetową i nie dawała klientowi większej szansy się poznać ani zapaść w pamięć z pozytywnej strony. Współpracę z firmą zacząłem od stworzenia identyfikacji wizualnej, która pomoże firmie wejść w świat cyfrowy i zaistnieć w internecie.",
+    project_vi_planetroad_img_alt_logo: "Logo PlanetRoad",
+    project_vi_planetroad_goal_title: "Cel",
+    project_vi_planetroad_goal_1_b:
+      "Stworzenie spójnej identyfikacji wizualnej",
+    project_vi_planetroad_goal_1_text:
+      " wspierającej profesjonalny i wiarygodny wizerunek firmy w środowisku cyfrowym.",
+    project_vi_planetroad_goal_2_b:
+      "Ujednolicenie sposobu komunikacji wizualnej",
+    project_vi_planetroad_goal_2_text:
+      " w różnych kanałach (druk, web, social media).",
+    project_vi_planetroad_goal_3_b:
+      "Przygotowanie marki do dalszej ekspansji cyfrowej",
+    project_vi_planetroad_goal_3_text:
+      " (np. przyszłe kampanie, portfolio online, przetargi publiczne).",
+    project_vi_planetroad_constraints_title: "Ograniczenia",
+    project_vi_planetroad_constraint_1_b: "Firma działa w sektorze B2B",
+    project_vi_planetroad_constraint_1_text:
+      ", co wymaga utrzymania wizerunku profesjonalnego, stonowanego i wiarygodnego.",
+    project_vi_planetroad_constraint_2_part1: " Nowa ",
+    project_vi_planetroad_constraint_2_b:
+      "identyfikacja wizualna musi pozostać spójna z istniejącym logo",
+    project_vi_planetroad_constraint_2_part2:
+      ", które firma zdecydowała się zachować podczas tworzenia nowej strony internetowej i wdrażania komunikacji w mediach społecznościowych.",
+    project_vi_planetroad_constraint_3_b:
+      "Brak wcześniejszego doświadczenia firmy",
+    project_vi_planetroad_constraint_3_text:
+      " w komunikacji wizualnej i marketingu cyfrowym",
+    project_vi_planetroad_constraint_4_b: "Konieczność utrzymania ciągłości",
+    project_vi_planetroad_constraint_4_text:
+      " w działaniach firmy w trakcie wdrożenia",
+    project_vi_planetroad_process_title: "Proces Projektowy",
+    project_vi_planetroad_step1_title: "01 Badania i Analiza",
+    project_vi_planetroad_step1_p1:
+      "Projekt identyfikacji wizualnej dla PlanetRoad rozpocząłem od serii analiz i rozmów z przedstawicielami firmy, w tym wywiadu z CEO. Celem było zrozumienie, jak marka funkcjonuje na rynku i znalezienie możliwości w jaki sposób może wyróżnić się spośród konkurencji w swojej branży.",
+    project_vi_planetroad_step1_p2_b1: "Wywiad z CEO",
+    project_vi_planetroad_step1_p2_part1:
+      " powiedział mi między innymi, że PlanetRoad skupia się głównie na ",
+    project_vi_planetroad_step1_p2_b2: "współpracy B2B",
+    project_vi_planetroad_step1_p2_part2:
+      " - z większymi firmami (np. Developerami) oraz jednostkami samorządowymi. Dlatego priorytetem projektowym stało się stworzenie wizerunku opartego na profesjonalizmie, zaufaniu i wiarygodności, przy jednoczesnym zachowaniu nowoczesnego charakteru.",
+    project_vi_planetroad_step1_p3_part1: "Następnie przeprowadziłem ",
+    project_vi_planetroad_step1_p3_b: "analizę konkurencji",
+    project_vi_planetroad_step1_p3_part2:
+      " w branży drogowej, która ujawniła dużą powtarzalność wizualną - wiele firm korzystało z podobnych układów stron i schematycznych kompozycji. Postanowiłem więc zaprojektować system identyfikacji, który wyróżni PlanetRoad, zachowując jednocześnie czytelność, funkcjonalność i wysoką jakość wizualną oddającą również tożsamość marki.",
+    project_vi_planetroad_step1_p4_b:
+      "Analiza psychologicznego znaczenia kolorów",
+    project_vi_planetroad_step1_p4_text:
+      " wykorzystywanych w logo potwierdziła trafność ich wyboru:",
+    project_vi_planetroad_step1_color_blue:
+      "• Błękit - budzi zaufanie i spokój, kojarzy się z nowoczesnością i innowacyjnością.",
+    project_vi_planetroad_step1_color_navy:
+      "• Granat - symbolizuje profesjonalizm i odpowiedzialność.",
+    project_vi_planetroad_step1_color_summary:
+      "W połączeniu tworzą one wiarygodny i spójny zestaw barw, wspierający komunikację marki.",
+    project_vi_planetroad_step1_p5_part1: "Przygotowując się do stworzenia ",
+    project_vi_planetroad_step1_p5_b: "alternatywnych wersji Logo",
+    project_vi_planetroad_step1_p5_part2:
+      " zagłębiłem się w praktyki globalnych marek (m.in. Coca-Cola, Disney, Chanel) i przeanalizowałem ich podejście do tworzenia systemów identyfikacji o wysokiej elastyczności. Wnioski z tej analizy stały się podstawą do zaprojektowania zestawu wariantów logo o różnym stopniu szczegółowości, zachowujących spójność i rozpoznawalność w różnych kontekstach.",
+    project_vi_planetroad_step1_p6:
+      "Kolejno zbadałem oczekiwania użytkowników i najczęściej wyszukiwane informacje o firmach z branży, aby zapewnić użyteczność nowej strony internetowej pod kątem UX i SEO. Analiza treści pokazała, że kluczowe są: przejrzysta oferta, szybki kontakt oraz portfolio projektów.",
+    project_vi_planetroad_step1_p7:
+      "Na koniec przeanalizowałem także komunikację branży w mediach społecznościowych, by opracować wizualny styl dopasowany do specyfiki kanałów, zachowując spójność z identyfikacją wizualną i stroną internetową.",
+    project_vi_planetroad_step2_title: "02 Strategia",
+    project_vi_planetroad_step2_p1:
+      "Na podstawie wyników badań opracowałem strategię wizualną, której celem było połączenie profesjonalnego wizerunku z nowoczesnym charakterem i prostotą form.",
+    project_vi_planetroad_step2_p2:
+      "Postawiłem na minimalizm i klarowną komunikację wizualną — każda decyzja projektowa (od doboru kolorów po typografię) wynikała z założenia, że marka ma wzbudzać zaufanie, stabilność i nowoczesność.",
+    project_vi_planetroad_step2_p3:
+      "System identyfikacji wizualnej został zaprojektowany jako spójny, skalowalny i elastyczny — tak, aby można go było łatwo wdrażać w materiałach cyfrowych i drukowanych, na stronie internetowej oraz w kanałach social media.",
+    project_vi_planetroad_step3_colors_title: "03 Design - Paleta Barw",
+    project_vi_planetroad_step3_colors_p1:
+      "Na bazie dwóch barw, które zostały użyte jako motyw przewodni dla logo stworzyłem całą gamę odcieni, aby móc swobodnie i elastycznie zarządząć treściami tworzonymi dla firmy. Opracowałem paletę odcieni opartą na neutralnych szarościach i niebieskim, kojarzącym się z technologią, ale przede wszystkim z zaufaniem.",
+    project_vi_planetroad_img_alt_colors1:
+      "Odcienie Barw Brandowych w Identyfikacji Wizualnej PlanetRoad",
+    project_vi_planetroad_img_alt_colors2:
+      "Odcienie Barw neutralnych i semantycznych w Identyfikacji Wizualnej PlanetRoad",
+    project_vi_planetroad_step3_logo_title: "03 Design - Logo",
+    project_vi_planetroad_step3_logo_p1:
+      "Alternatywne wersje logo stworzyłem w celu uzyskania elastyczności w wykorzystywaniu logo w różnego typu materiałach firmowych.",
+    project_vi_planetroad_step3_logo_p2:
+      "Stworzyłem zarówno wariant dla ciemnego tła, jak i różne rozmiary Logo, które są zamiennie wykorzystywane zależnie od zapotrzebowania i miejsca przeznaczonego na logo.",
+    project_vi_planetroad_img_alt_logo_variants:
+      "Nowe wersje kolorystyczne i wielkościowe logo PlanetRoad opracowane w ramach identyfikacji wizualnej.",
+    project_vi_planetroad_step3_fonts_title: "03 Design - Fonty",
+    project_vi_planetroad_step3_fonts_p1:
+      "Aby font wspierał profesjonalny charakter firmy zdecydowałem się wybrać nieskomplikowany, czytelny i elegancki font Inter. Łączy on dwie najważniejsze dla danego projektu cechy czyli czytelność i elegancję.",
+    project_vi_planetroad_step3_fonts_p2_part1: "Na pomocniczy font wybrałem ",
+    project_vi_planetroad_step3_fonts_p2_part2:
+      ". Jego zadaniem jest znaczące przełamanie profesjonalnej i stonowanej estetyki, a zarazem zwrócenie uwagi użytkownika na dany fragment tekstu.",
+    project_vi_planetroad_img_alt_fonts:
+      "Czcionki użytkowane przez PlanetRoad wyselekcjonowane w ramach Identyfikacji Wizualnej",
+    project_vi_planetroad_step4_website_title:
+      "04 Wdrożenie - Nowa strona Internetowa",
+    project_vi_planetroad_step4_website_p1_part1:
+      "Nowa strona została zaprojektowana w oparciu o identyfikację wizualną firmy. Posiada przejrzysty układ, spójną komunikację i intuicyjną nawigację. Serdecznie zachęcam do odwiedzenia strony i zagłębienia się w projekt pod adresem: ",
+    project_vi_planetroad_img_alt_website:
+      "Widoki sekcji Hero poszczególnych podstron, a także strony głównej strony internetowej PlanetRoad",
+    project_vi_planetroad_step4_sm_title:
+      "04 Wdrożenie - Social media branding",
+    project_vi_planetroad_step4_sm_p1:
+      "Social media branding: stworzyłem grafiki i wdrożyłem spójny styl wizualny, dzięki czemu firma mogła zaistnieć w kanałach komunikacji, których wcześniej nie miała.",
+    project_vi_planetroad_img_alt_sm:
+      "Widoki sekcji Hero poszczególnych podstron, a także strony głównej strony internetowej PlanetRoad",
+    project_vi_planetroad_behance_text1: "Odwiedź mój projekt na ",
+    project_vi_planetroad_behance_text2:
+      ", aby zobaczyć interaktywny prototyp.",
+    project_vi_planetroad_result_title: "Efekt Końcowy",
+    project_vi_planetroad_result_1:
+      "✅ Firma PlanetRoad otrzymała spójną i profesjonalną identyfikację wizualną.",
+    project_vi_planetroad_result_2:
+      "✅ Nowa strona i pojawienie się w social mediach pomagają firmie zaistnieć w internecie, czego wcześniej brakowało.",
+    project_vi_planetroad_result_3:
+      "✅ Wdrożona identyfikacja wizualna pozwala firmie budować zaufanie i ekspercki wizerunek w branży projektów drogowych.",
+    project_vi_planetroad_thumb_1: "Miniatura 1",
+    project_vi_planetroad_thumb_2: "Miniatura 2",
+    project_vi_planetroad_thumb_3: "Miniatura 3",
+    project_vi_planetroad_thumb_4: "Miniatura 4",
+    project_vi_planetroad_thumb_5: "Miniatura 5",
+    project_vi_planetroad_thumb_6: "Miniatura 6",
+    project_vi_planetroad_thumb_7: "Miniatura 7",
+    project_vi_planetroad_thumb_8: "Miniatura 8",
+    project_vi_planetroad_next_project_label: "Zobacz kolejny projekt:",
+    project_vi_planetroad_next_project_link: "Aplikacja Mobilna - monexo",
   },
   en: {
     // meta titles
@@ -835,7 +1194,228 @@ const translations = {
     side_nav_final_effect: "Final Result",
     side_nav_post_project: "Post-Project",
 
-    // WEB PLANET
+    // PROJECT APP MONEXO
+    project_app_monexo_title: "Monexo - currency exchange mobile app",
+    project_app_monexo_desc:
+      "Monexo is a mobile currency exchange application that I designed as a response to real problems faced by users of existing FinTech solutions.",
+    project_app_monexo_role_label: "Role:",
+    project_app_monexo_role_val: "UX Designer; Front-end Developer",
+    project_app_monexo_scope_label: "Scope of responsibility:",
+    project_app_monexo_scope_val:
+      "Research, Product Concept, Information Architecture, Interface Design, Usability Testing",
+    project_app_monexo_duration_label: "Duration:",
+    project_app_monexo_duration_val: "13 weeks",
+    project_app_monexo_methodology_label: "Methodology:",
+    project_app_monexo_methodology_val:
+      "Lean UX / Design Thinking – iterative design based on user research, usability testing, and competitor analysis, prioritizing MVP features.",
+    project_app_monexo_context_title: "Context",
+    project_app_monexo_context_text:
+      "Market analysis showed that many existing currency exchange applications are unclear, overloaded with information, and rely on vague commission models, creating unnecessary friction for users seeking simple currency transactions.",
+    project_app_monexo_problem_title: "Problem",
+    project_app_monexo_problem_text:
+      "Users often lacked certainty about the true transaction costs, got lost in the interface, and had to navigate too many steps for basic operations.",
+    project_app_monexo_goals_title: "Goals",
+    project_app_monexo_goal_1_b: "Simplify the currency exchange process",
+    project_app_monexo_goal_1_text: " down to a few intuitive steps.",
+    project_app_monexo_goal_2_b: "Full transparency of rates and fees",
+    project_app_monexo_goal_2_text:
+      " — no hidden commissions or obscure calculations.",
+    project_app_monexo_goal_3_b: "Build trust in a FinTech product",
+    project_app_monexo_goal_3_text:
+      " through clear communication and process predictability.",
+    project_app_monexo_constraints_title: "Constraints",
+    project_app_monexo_constraint_1_b: "High trust requirements",
+    project_app_monexo_constraint_1_text:
+      " — a financial application must be perceived as secure and reliable.",
+    project_app_monexo_constraint_2_b: "Need to clearly communicate costs",
+    project_app_monexo_constraint_2_text:
+      " without overwhelming the user with data.",
+    project_app_monexo_constraint_3_b: "Minimizing interface complexity",
+    project_app_monexo_constraint_3_text:
+      " while maintaining full user control.",
+    project_app_monexo_constraint_4_b: "Mobile-first design",
+    project_app_monexo_constraint_4_text:
+      ", tailored for fast and frequent use.",
+    project_app_monexo_research_title: "Research & Insights",
+    project_app_monexo_market_title:
+      "Do people need our product? - Market Analysis & Industry Trends",
+    project_app_monexo_market_p1_part1:
+      "I analyzed market trends, reviewing reports and top applications to understand what users truly need. I noticed that as user expectations grow, ",
+    project_app_monexo_market_p1_b:
+      "core features are often hidden to highlight new capabilities",
+    project_app_monexo_market_p1_part2:
+      ". In my app, I prioritized fulfilling primary needs first, keeping extra features nested so they don't interfere with daily financial management.",
+    project_app_monexo_market_p2_part1:
+      "At the same time, I identified popular features such as ",
+    project_app_monexo_market_p2_b1:
+      "multi-currency wallets, automatic exchange orders",
+    project_app_monexo_market_p2_part2: " or ",
+    project_app_monexo_market_p2_b2: "cryptocurrency support",
+    project_app_monexo_market_p2_part3:
+      ", which respond to real user needs in transaction planning and money management, granting them fuller financial control.",
+    project_app_monexo_competition_title: "Competitor Problem Analysis",
+    project_app_monexo_comp_p1_intro:
+      "During my analysis of competitor applications and user reviews, I identified key issues significantly impacting user experience:",
+    project_app_monexo_comp_p1_b1: "Overly complex menus",
+    project_app_monexo_comp_p1_text1:
+      " – users often complain about chaotic options and difficulty executing basic operations quickly.",
+    project_app_monexo_comp_p1_b2: "Unintuitive navigation",
+    project_app_monexo_comp_p1_text2:
+      " – users frequently struggle to reach desired functions within the app.",
+    project_app_monexo_comp_p1_b3: "Lack of fee transparency",
+    project_app_monexo_comp_p1_text3:
+      " – users feel a lack of transparency and consistency regarding fees, returns, and interest rates.",
+    project_app_monexo_comp_p2_intro:
+      "The analysis helped me target key user friction points, which I planned to address by:",
+    project_app_monexo_comp_p2_b1: "Simplifying menus and feature hierarchy",
+    project_app_monexo_comp_p2_text1:
+      " so key actions are accessible in 2–3 steps;",
+    project_app_monexo_comp_p2_b2: "Introducing transaction previews",
+    project_app_monexo_comp_p2_text2:
+      " and keeping users continuously informed about fees and exchange statuses;",
+    project_app_monexo_comp_p2_b3:
+      "Ensuring cost and communication transparency",
+    project_app_monexo_comp_p2_text3:
+      " so users always know applicable fees and rates.",
+    project_app_monexo_ideation_title: "Ideation",
+    project_app_monexo_target_title: "Who is our app for?",
+    project_app_monexo_target_p_part1:
+      "I began shaping the product by defining three ",
+    project_app_monexo_target_p_b: "user personae",
+    project_app_monexo_target_p_part2: " for our product. This revealed that",
+    project_app_monexo_fig_personae: "User Personae",
+    project_app_monexo_needs_b: "Primary needs",
+    project_app_monexo_needs_intro: " of our users were:",
+    project_app_monexo_needs_1: "• Fast access to key features",
+    project_app_monexo_needs_2: "• Simplicity of app usage",
+    project_app_monexo_needs_3: "• Transparent transaction fees",
+    project_app_monexo_needs_4: "• A sense of control over transactions",
+    project_app_monexo_prio_title:
+      "What will be most important? - Prioritization",
+    project_app_monexo_prio_p_part1: "Using ",
+    project_app_monexo_prio_p_b: "MoSCoW",
+    project_app_monexo_prio_p_part2:
+      " prioritization, I established which features were essential, which were desirable, and which were optional enhancements.",
+    project_app_monexo_fig_moscow: "MoSCoW Prioritization",
+    project_app_monexo_mvp_intro_part1: "The ",
+    project_app_monexo_mvp_intro_b: "MVP",
+    project_app_monexo_mvp_intro_part2: " scope included:",
+    project_app_monexo_mvp_1: "• Virtual wallet displaying held currencies",
+    project_app_monexo_mvp_2: "• NBP exchange rate review",
+    project_app_monexo_mvp_3: "• Currency exchange process",
+    project_app_monexo_mvp_4: "• Transaction history",
+    project_app_monexo_mvp_5: "• Account top-up",
+    project_app_monexo_mvp_6:
+      "• Registration, Login, Password Change, Account Deletion",
+    project_app_monexo_style_title: "In what visual style?",
+    project_app_monexo_style_p_part1: "I created a concise ",
+    project_app_monexo_style_p_b: "Style Guide",
+    project_app_monexo_style_p_part2:
+      " with essential UI components to keep the app consistent and aesthetic.",
+    project_app_monexo_fig_typography: "Style Guide - Typography",
+    project_app_monexo_fig_components: "Style Guide - Components & Rules",
+    project_app_monexo_fig_colors: "Style Guide - Colors & Themes",
+    project_app_monexo_style_desc:
+      "The app interface was designed with a minimalist aesthetic around a single primary action — 'Exchange Currency'. Color palette and typography foster clarity, calm, and security essential for FinTech products.",
+    project_app_monexo_wireframes_title: "Now, where to place everything?",
+    project_app_monexo_wireframes_p_part1: "Using ",
+    project_app_monexo_wireframes_p_b: "wireframes",
+    project_app_monexo_wireframes_p_part2:
+      ", I organized elements across screens to cover core target group requirements and priority app features.",
+    project_app_monexo_fig_wireframes1: "Wireframes Part 1",
+    project_app_monexo_fig_wireframes2: "Wireframes Part 2",
+    project_app_monexo_breadboards_title: "And where can users navigate next?",
+    project_app_monexo_breadboards_p_part1: "I mapped out ",
+    project_app_monexo_breadboards_p_b: "Breadboards",
+    project_app_monexo_breadboards_p_part2:
+      " — all possible user flows from each screen. Tab navigation simplifies screen movement, while contextual links suggest natural next steps.",
+    project_app_monexo_fig_breadboards1: "Breadboards Part 1",
+    project_app_monexo_fig_breadboards2: "Breadboards Part 2",
+    project_app_monexo_iterations_title: "Iterations",
+    project_app_monexo_iterations_intro:
+      "Product design was conducted iteratively: implementing individual features, testing, and refining according to user needs.",
+    project_app_monexo_iter1_title:
+      "First, the essential core - MVP & basic flow validation",
+    project_app_monexo_iter1_p:
+      "I designed an MVP covering essential functions: rate checking and currency exchange, aiming to quickly validate core product assumptions, information architecture, and exchange flows.",
+    project_app_monexo_iter_sort_title:
+      "Why alphabetical rate sorting wasn't optimal",
+    project_app_monexo_iter_sort_p1:
+      "When designing the rate screen, I realized NBP API lists currencies alphabetically, hiding high-demand currencies like USD or EUR deep down. Researching Polish currency exchange trends showed Swiss Franc and Czech Koruna are also popular, so I prioritized these currencies at the top of the list.",
+    project_app_monexo_iter_sort_p2:
+      "I then ran usability tests on an interactive prototype. Feedback revealed some phrasing was confusing, and account top-up was hidden too deeply in profile settings, causing user difficulty.",
+    project_app_monexo_fig_iter1: "Validation of basic flows",
+    project_app_monexo_prototype_link: "Open interactive prototype",
+    project_app_monexo_prototype_note:
+      "(available on PC & Laptops only, due to Figma Make limits)",
+    project_app_monexo_iter2_title:
+      "Which features need the most convenient access? - Navigation prioritization",
+    project_app_monexo_iter2_p1_part1:
+      "Usability test insights clearly showed that users ",
+    project_app_monexo_iter2_p1_b: "struggled to find the top-up feature",
+    project_app_monexo_iter2_p1_part2:
+      ". The action was buried deep within profile settings, causing frustration and task delay.",
+    project_app_monexo_iter2_p2:
+      "I restructured the bottom navigation accordingly, replacing the Profile tab with Top-Up — one of the most vital user actions. Profile was moved to a compact icon header accessible across screens.",
+    project_app_monexo_iter2_p3:
+      "This change significantly shortened transaction paths and made navigation intuitive. Post-iteration tests confirmed users topped up accounts quickly without hints.",
+    project_app_monexo_fig_iter2: "Prioritizing key functions",
+    project_app_monexo_iter2_p4:
+      "Subsequent unmoderated usability and First-Click tests demonstrated substantially faster task completion for currency purchases.",
+    project_app_monexo_iter2_effect:
+      "Effect: Users assess finances faster and complete transactions seamlessly, increasing app convenience and satisfaction.",
+    project_app_monexo_iter3_title:
+      "How I simplified the process for users - Refining system microcopy",
+    project_app_monexo_iter3_p1:
+      "Usability testing highlighted that copy on certain screens was too implicit, leading to confusion and fear of error during operation.",
+    project_app_monexo_iter3_p2:
+      "I added short, clear contextual info clarifying costs and system rules, reassuring users as they navigate through steps.",
+    project_app_monexo_iter3_p3:
+      "System copy validation confirmed that technical phrasing had created uncertainty, which was resolved by clearer microcopy.",
+    project_app_monexo_fig_iter3_1: "Improving Currency Rate Communication",
+    project_app_monexo_fig_iter3_2: "Improving Transaction Cost Communication",
+    project_app_monexo_fig_iter3_3: "Improving Main Screen Link Visibility",
+    project_app_monexo_iter3_nav_opt:
+      "Additionally, navigation was optimized for the primary usage path (check rate → top up → exchange), reducing completion time. Icons were updated to more intuitive symbols for faster recognition.",
+    project_app_monexo_fig_iter3_4: "Improving Menu Intuitiveness",
+    project_app_monexo_iter3_effect:
+      "Effect: Users experience greater process control and confidence, resulting in smoother currency exchanges.",
+    project_app_monexo_final_title: "Final Result",
+    project_app_monexo_final_subtitle: "What was ultimately built?",
+    project_app_monexo_fig_light1: "Final Light Mode Screens Part 1",
+    project_app_monexo_fig_light2: "Final Light Mode Screens Part 2",
+    project_app_monexo_fig_dark1: "Final Dark Mode Screens Part 1",
+    project_app_monexo_fig_dark2: "Final Dark Mode Screens Part 2",
+    project_app_monexo_final_p1:
+      "The Monexo project allowed me to execute a full end-to-end design process — from market analysis and ideation to usability testing and iterative interface refinement.",
+    project_app_monexo_final_p2:
+      "I focused on crafting simple, predictable user solutions supporting business objectives by fostering product trust.",
+    project_app_monexo_final_check1:
+      "✅ The application simplifies currency exchange while addressing core user needs.",
+    project_app_monexo_final_check2:
+      "✅ Transparent exchange rates and fee communications build user trust and long-term engagement.",
+    project_app_monexo_final_github:
+      "👨‍💻 The project is fully implemented and available on GitHub, featuring a complete mobile application, NBP API integration, Web Service business logic, and database backend along with setup instructions.",
+    project_app_monexo_after_title: "After the Project",
+    project_app_monexo_takeaways_title: "Key Takeaways",
+    project_app_monexo_takeaway_part1: "Conscious and meticulous ",
+    project_app_monexo_takeaway_b: "handling of network states",
+    project_app_monexo_takeaway_part2:
+      " is crucial for a consistent and predictable user experience in a mobile app — mobile internet is not as reliable as broadband and is significantly more prone to connectivity interruptions.",
+    project_app_monexo_next_steps_title: "Next Steps",
+    project_app_monexo_next_1_b: "Multi-currency wallet support",
+    project_app_monexo_next_1_text:
+      " - the interface architecture was designed for easy expansion to multiple wallets (e.g., a separate savings wallet).",
+    project_app_monexo_next_2_b: "Automated exchange orders",
+    project_app_monexo_next_2_text:
+      " - ability to set buy orders at a specific exchange rate, with budget safeguards to prevent overdrafts.",
+    project_app_monexo_next_3_b: "Cryptocurrency integration",
+    project_app_monexo_next_3_text:
+      " - potential integration with the crypto market via exchange APIs, enabling storage and exchange of both fiat and digital currencies.",
+    project_app_monexo_next_project_label: "See next project:",
+    project_app_monexo_next_project_link: "Website - PlanetRoad",
+
+    // PROJECT WEB PLANET
     project_web_planetroad_project_title: "PlanetRoad - Corporate Website",
     project_web_planetroad_project_description:
       "A new website for PlanetRoad, which I designed to make it easier for clients to get to know the company, showcase past projects in a clear and appealing way, and simplify contacting the team.",
@@ -1176,7 +1756,6 @@ const translations = {
       "clear information structure and fast trust-building",
     project_web_planetroad_after_p_1_part2:
       " is essential — users don't explore the site deeply; they scan it to quickly confirm the company's expertise and credibility.",
-
     project_web_planetroad_after_p_2:
       "🧠 Technical performance and accessibility (WCAG) aren't just extra additions — for public sector clients and major investors, they become real criteria for judging professionalism. Furthermore, in competitive bidding rankings, performance and accessibility can determine whether a contract is awarded or lost if slow loading leads users to abandon the site.",
     project_web_planetroad_after_h3_2: "Next Steps",
@@ -1198,6 +1777,132 @@ const translations = {
       "🔜 Advanced analytics and conversion rate optimization",
     project_web_planetroad_navloop_text: "See next project: ",
     project_web_planetroad_navloop_link: "Visual Identity - PlanetRoad",
+
+    // PROJECT VI PLANETROAD
+    project_vi_planetroad_title: "Visual Identity",
+    project_vi_planetroad_subtitle: "PlanetRoad",
+    project_vi_planetroad_intro:
+      "PlanetRoad is a road design company in Poland with nearly 30 years of experience. Online, the company only had a basic website, which didn't allow clients to get to know them or make a memorable, positive impression. I began my collaboration with the company by creating a visual identity to help them transition into the digital space and establish an online presence.",
+    project_vi_planetroad_img_alt_logo: "PlanetRoad Logo",
+    project_vi_planetroad_goal_title: "Goal",
+    project_vi_planetroad_goal_1_b: "Create a consistent visual identity",
+    project_vi_planetroad_goal_1_text:
+      " supporting a professional and trustworthy company image in the digital environment.",
+    project_vi_planetroad_goal_2_b: "Unify visual communication methods",
+    project_vi_planetroad_goal_2_text:
+      " across various channels (print, web, social media).",
+    project_vi_planetroad_goal_3_b:
+      "Prepare the brand for further digital expansion",
+    project_vi_planetroad_goal_3_text:
+      " (e.g. future campaigns, online portfolio, public tenders).",
+    project_vi_planetroad_constraints_title: "Constraints",
+    project_vi_planetroad_constraint_1_b:
+      "The company operates in the B2B sector",
+    project_vi_planetroad_constraint_1_text:
+      ", which requires maintaining a professional, subdued, and reliable image.",
+    project_vi_planetroad_constraint_2_part1: " The new ",
+    project_vi_planetroad_constraint_2_b:
+      "visual identity must remain consistent with the existing logo",
+    project_vi_planetroad_constraint_2_part2:
+      ", which the company decided to keep while creating a new website and launching social media communication.",
+    project_vi_planetroad_constraint_3_b: "Lack of prior company experience",
+    project_vi_planetroad_constraint_3_text:
+      " in visual communication and digital marketing.",
+    project_vi_planetroad_constraint_4_b: "Necessity of maintaining continuity",
+    project_vi_planetroad_constraint_4_text:
+      " in business operations during implementation.",
+    project_vi_planetroad_process_title: "Design Process",
+    project_vi_planetroad_step1_title: "01 Research & Analysis",
+    project_vi_planetroad_step1_p1:
+      "I started the visual identity project for PlanetRoad with a series of analyses and conversations with company representatives, including an interview with the CEO. The goal was to understand how the brand operates in the market and find opportunities to stand out from the competition.",
+    project_vi_planetroad_step1_p2_b1: "The CEO interview",
+    project_vi_planetroad_step1_p2_part1:
+      " revealed, among other things, that PlanetRoad mainly focuses on ",
+    project_vi_planetroad_step1_p2_b2: "B2B collaboration",
+    project_vi_planetroad_step1_p2_part2:
+      " - with larger companies (e.g. real estate developers) and local government units. Therefore, the main design priority was to build an image based on professionalism, trust, and credibility, while maintaining a modern feel.",
+    project_vi_planetroad_step1_p3_part1: "Next, I conducted a ",
+    project_vi_planetroad_step1_p3_b: "competitor analysis",
+    project_vi_planetroad_step1_p3_part2:
+      " in the road construction industry, which revealed significant visual repetition — many companies used similar page layouts and formulaic compositions. Thus, I decided to design an identity system that would set PlanetRoad apart while preserving clarity, functionality, and high visual quality reflecting brand identity.",
+    project_vi_planetroad_step1_p4_b: "Color psychology analysis",
+    project_vi_planetroad_step1_p4_text:
+      " of the colors used in the logo confirmed the appropriateness of their choice:",
+    project_vi_planetroad_step1_color_blue:
+      "• Light Blue - evokes trust and calm, associated with modernity and innovation.",
+    project_vi_planetroad_step1_color_navy:
+      "• Dark Blue - symbolizes professionalism and responsibility.",
+    project_vi_planetroad_step1_color_summary:
+      "Together, they form a reliable and cohesive palette supporting brand communication.",
+    project_vi_planetroad_step1_p5_part1: "In preparation for creating ",
+    project_vi_planetroad_step1_p5_b: "alternative logo variants",
+    project_vi_planetroad_step1_p5_part2:
+      ", I researched the practices of global brands (including Coca-Cola, Disney, Chanel) and analyzed their approaches to designing highly flexible identity systems. Insights from this analysis formed the basis for designing a set of logo variants with different levels of detail that maintain consistency and recognition across various contexts.",
+    project_vi_planetroad_step1_p6:
+      "Next, I examined user expectations and the most frequently searched information about companies in the industry to ensure the new website's usability regarding UX and SEO. Content analysis showed that clear offerings, quick contact, and a project portfolio were key.",
+    project_vi_planetroad_step1_p7:
+      "Finally, I analyzed industry communication on social media to develop a visual style tailored to the channel specifics while maintaining consistency with the visual identity and website.",
+    project_vi_planetroad_step2_title: "02 Strategy",
+    project_vi_planetroad_step2_p1:
+      "Based on the research results, I developed a visual strategy aimed at combining a professional image with a modern character and simplicity of form.",
+    project_vi_planetroad_step2_p2:
+      "I focused on minimalism and clear visual communication — every design decision (from color selection to typography) stemmed from the assumption that the brand should inspire trust, stability, and modernity.",
+    project_vi_planetroad_step2_p3:
+      "The visual identity system was designed to be cohesive, scalable, and flexible — easily implementable across digital and print media, website, and social media channels.",
+    project_vi_planetroad_step3_colors_title: "03 Design - Color Palette",
+    project_vi_planetroad_step3_colors_p1:
+      "Based on the two core colors used in the logo, I created a full range of shades to manage content creation flexibly. I developed a palette based on neutral grays and blue, associated with technology and, above all, trust.",
+    project_vi_planetroad_img_alt_colors1:
+      "Brand color shades in PlanetRoad Visual Identity",
+    project_vi_planetroad_img_alt_colors2:
+      "Neutral and semantic color shades in PlanetRoad Visual Identity",
+    project_vi_planetroad_step3_logo_title: "03 Design - Logo",
+    project_vi_planetroad_step3_logo_p1:
+      "I created alternative logo versions to gain flexibility when using the logo across various company materials.",
+    project_vi_planetroad_step3_logo_p2:
+      "I designed both dark-background variants and different logo sizes, which are used interchangeably depending on requirements and placement constraints.",
+    project_vi_planetroad_img_alt_logo_variants:
+      "New color and size variants of the PlanetRoad logo created as part of the visual identity.",
+    project_vi_planetroad_step3_fonts_title: "03 Design - Fonts",
+    project_vi_planetroad_step3_fonts_p1:
+      "To support the company's professional image, I selected the straightforward, legible, and elegant Inter font. It combines the two most important qualities for this project: readability and elegance.",
+    project_vi_planetroad_step3_fonts_p2_part1:
+      "As an auxiliary font, I chose ",
+    project_vi_planetroad_step3_fonts_p2_part2:
+      ". Its purpose is to break up the professional, subdued aesthetic and draw user attention to specific text fragments.",
+    project_vi_planetroad_img_alt_fonts:
+      "Fonts used by PlanetRoad selected as part of the Visual Identity",
+    project_vi_planetroad_step4_website_title:
+      "04 Implementation - New Website",
+    project_vi_planetroad_step4_website_p1_part1:
+      "The new website was designed based on the company's visual identity. It features a clean layout, cohesive communication, and intuitive navigation. I invite you to visit the website and explore the project at: ",
+    project_vi_planetroad_img_alt_website:
+      "Views of Hero sections of individual subpages, as well as the main page of the PlanetRoad website",
+    project_vi_planetroad_step4_sm_title:
+      "04 Implementation - Social Media Branding",
+    project_vi_planetroad_step4_sm_p1:
+      "Social media branding: I created graphics and implemented a consistent visual style, allowing the company to establish a presence in channels it hadn't used before.",
+    project_vi_planetroad_img_alt_sm:
+      "Views of Hero sections of individual subpages, as well as the main page of the PlanetRoad website",
+    project_vi_planetroad_behance_text1: "Visit my project on ",
+    project_vi_planetroad_behance_text2: " to see the interactive prototype.",
+    project_vi_planetroad_result_title: "Final Result",
+    project_vi_planetroad_result_1:
+      "✅ PlanetRoad received a consistent and professional visual identity.",
+    project_vi_planetroad_result_2:
+      "✅ The new website and social media presence help the company establish an online footprint, which was previously missing.",
+    project_vi_planetroad_result_3:
+      "✅ The implemented visual identity allows the company to build trust and an expert image in the road design industry.",
+    project_vi_planetroad_thumb_1: "Thumbnail 1",
+    project_vi_planetroad_thumb_2: "Thumbnail 2",
+    project_vi_planetroad_thumb_3: "Thumbnail 3",
+    project_vi_planetroad_thumb_4: "Thumbnail 4",
+    project_vi_planetroad_thumb_5: "Thumbnail 5",
+    project_vi_planetroad_thumb_6: "Thumbnail 6",
+    project_vi_planetroad_thumb_7: "Thumbnail 7",
+    project_vi_planetroad_thumb_8: "Thumbnail 8",
+    project_vi_planetroad_next_project_label: "See next project:",
+    project_vi_planetroad_next_project_link: "Mobile Application - monexo",
   },
 };
 
