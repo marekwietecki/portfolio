@@ -545,24 +545,94 @@
       .profileImg:hover {
         transform: scale(1.07);
       }
+
       .buttonPrimary {
-        font-weight: 600;
-        color: white;
+        position: relative;
+        overflow: hidden;
+
+        /* Styl bazowy przycisku */
         padding: 13px 26px;
         border-radius: 32px;
         background-color: #1e6ed6;
         border: none;
+        color: white;
+        font-weight: 600;
         font-size: clamp(0.5rem, calc(1vw + 0.5rem), 2rem);
-        transition: transform 0.2s ease, background-color 0.3s;
-        box-shadow: 0 4px 12px rgba(30, 110, 214, 0.2);
         cursor: pointer;
+
+        /* Płynność dla zwykłego hovera */
+        transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+        box-shadow: 0 4px 12px rgba(30, 110, 214, 0.2);
+
+        /* Animacja wydłużona do 5 sekund dla pełnego spokoju */
+        animation: shineAndPulse 5s ease-in-out 4s infinite;
       }
+
+      /* Hover użytkownika nadal działa i mocniej powiększa guzik */
       .buttonPrimary:hover {
         background-color: #1e5aaa;
         color: white;
-        transform: scale(1.05);
-        box-shadow: 0 4px 12px rgba(30, 110, 214, 0.2);
+        transform: scale(1.06) !important;
+        box-shadow: 0 6px 16px rgba(30, 110, 214, 0.35);
       }
+
+      /* Pseudoelement promienia */
+      .buttonPrimary::after {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -150%;
+        width: 60%;
+        height: 200%;
+
+        /* Subtelny, przezroczysty gradient */
+        background: linear-gradient(
+          60deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.08) 30%,
+          rgba(255, 255, 255, 0.22) 50%,
+          rgba(255, 255, 255, 0.08) 70%,
+          rgba(255, 255, 255, 0) 100%
+        );
+
+        /* Rozmycie dla miekkiego efektu */
+        filter: blur(5px);
+        transform: rotate(25deg);
+        pointer-events: none;
+
+        /* Animacja przesunięcia promienia */
+        animation: moveShine 5s ease-in-out 4s infinite;
+      }
+
+      /* Keyframes: Ruch promienia – teraz rozciągnięty na 35% cyklu (~1.75 sekundy) */
+      @keyframes moveShine {
+        0% {
+          left: -150%;
+        }
+        35%,
+        100% {
+          left: 150%;
+        }
+      }
+
+      /* Keyframes: Lekkie powiększenie (pulse) zsynchronizowane z wolniejszym ruchem promienia */
+      @keyframes shineAndPulse {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 4px 12px rgba(30, 110, 214, 0.2);
+        }
+        17.5% {
+          /* Szczyt powiększenia dokladnie w połowie przejazdu błysku */
+          transform: scale(1.035);
+          box-shadow: 0 6px 18px rgba(30, 110, 214, 0.35);
+        }
+        35%,
+        100% {
+          transform: scale(1);
+          box-shadow: 0 4px 12px rgba(30, 110, 214, 0.2);
+        }
+      }
+
       .buttonSecondary {
         padding: 0px 13px;
         font-weight: 600;
@@ -1539,7 +1609,7 @@
           </div>
         </a>
 
-        <a href="" class="is-inactive">
+        <a href="projects/pwa-HabitBubbl.html" class="is-inactive">
           <div
             class="projectContainer disabled-project"
             data-tooltip="Dostępne wkrótce!"
@@ -1962,7 +2032,7 @@
         });
       });
     </script>
-
+    <!-- dynamic header shadow -->
     <script>
       const header = document.querySelector("header");
       const spacex = document.querySelector(".spaceX");
@@ -2010,6 +2080,8 @@
           });
       });
     </script>
+
+    <!-- me languages photos-->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const profileImg = document.getElementById("profileImg");
@@ -2046,6 +2118,7 @@
         }
       });
     </script>
+
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const wrapper = document.querySelector(".buttonWrapper");
@@ -2078,6 +2151,7 @@
       });
     </script>
 
+    <!-- card dealing-->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const section = document.querySelector(".reveal-section");
@@ -2096,6 +2170,7 @@
 
         let observer = null;
         let dealTimers = [];
+        let hasDealt = false; // Flag informująca, czy karty zostały już rozdane
 
         function getCardOpacity(idx) {
           const card = items[idx].querySelector(".projectContainer");
@@ -2121,21 +2196,25 @@
 
             card.style.transition = "none";
             card.style.transform = `translate(${dx}px, ${dy}px) rotate(${rot}deg) scale(0.88)`;
-            card.style.opacity =
-              getCardOpacity(idx); /* ← zachowuje 0.56 dla disabled */
+            card.style.opacity = getCardOpacity(idx);
             card.style.zIndex = z;
           });
         }
 
         function dealCards() {
+          if (hasDealt) return; // Jeśli już raz rozdano karty, przerwij
+          hasDealt = true;
+
+          if (observer) {
+            observer.disconnect(); // Odłączamy obserwator, żeby nie reagował w przyszłości
+          }
+
           STACK.forEach(({ idx, delay }) => {
             const card = items[idx].querySelector(".projectContainer");
             const t = setTimeout(() => {
-              card.style.transition = `transform 0.9s cubic-bezier(0.19,1,0.22,1),
-             opacity   0.5s ease`;
+              card.style.transition = `transform 0.9s cubic-bezier(0.19,1,0.22,1), opacity 0.5s ease`;
               card.style.transform = "translate(0,0) rotate(0deg) scale(1)";
               card.style.zIndex = "";
-              /* opacity wraca do właściwej wartości (1 lub 0.56) */
               card.style.opacity = getCardOpacity(idx);
             }, delay * 1000);
             dealTimers.push(t);
@@ -2146,7 +2225,6 @@
           const rect = section.getBoundingClientRect();
           const windowHeight =
             window.innerHeight || document.documentElement.clientHeight;
-          /* Sekcja widoczna w co najmniej 25% */
           const visiblePx =
             Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
           return visiblePx / rect.height >= 0.25;
@@ -2156,11 +2234,10 @@
           if (observer) observer.disconnect();
 
           observer = new IntersectionObserver(
-            (entries, obs) => {
+            (entries) => {
               entries.forEach((entry) => {
-                if (entry.isIntersecting) {
+                if (entry.isIntersecting && !hasDealt) {
                   dealCards();
-                  obs.unobserve(entry.target);
                 }
               });
             },
@@ -2171,10 +2248,10 @@
         }
 
         function init() {
+          if (hasDealt) return; // Zabezpieczenie przed przeładowaniem pozycji po rozdaniu
+
           setupStack();
 
-          /* Jeśli sekcja jest już widoczna w momencie init() (np. po resize),
-         rozdaj od razu bez czekania na observer */
           if (isSectionVisible()) {
             dealCards();
           } else {
@@ -2186,6 +2263,9 @@
 
         let resizeTimer;
         window.addEventListener("resize", () => {
+          // Przy zmianie wielkości okna przeliczaj pozycję początkową TYLKO dopóki karty nie zostały jeszcze rozdane
+          if (hasDealt) return;
+
           clearTimeout(resizeTimer);
           resizeTimer = setTimeout(() => {
             init();
@@ -2193,13 +2273,13 @@
         });
       });
     </script>
+
     <!-- Custom Cursor Elements -->
     <div class="cursor-spotlight"></div>
     <div class="cursor-dot"></div>
     <div class="cursor-outline">
       <span class="cursor-text"></span>
     </div>
-
     <script>
       const cursorDot = document.querySelector(".cursor-dot");
       const cursorOutline = document.querySelector(".cursor-outline");
@@ -2286,6 +2366,7 @@
         });
       });
     </script>
+
   </body>
   <script src="js/cookie.js"></script>
 </html>

@@ -73,8 +73,8 @@
       gtag("config", "AW-17997930573");
     </script>
     <style>
-         /* cursor */
-         @media (hover: hover) and (pointer: fine) {
+      /* cursor */
+      @media (hover: hover) and (pointer: fine) {
         body {
           cursor: none;
         }
@@ -243,6 +243,7 @@
       .headerLinks {
         display: flex;
         flex-direction: row;
+        align-items: center;
         gap: clamp(16px, 3vw, 40px);
       }
       .logo {
@@ -251,6 +252,39 @@
         align-self: left;
         justify-content: center;
         cursor: pointer;
+      }
+      .lang-switcher {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-family: "Outfit", sans-serif;
+      }
+
+      .lang-btn {
+        background: none;
+        border: none;
+        padding: 4px 8px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #1a1a1a;
+        cursor: pointer;
+        opacity: 0.48;
+        transition: opacity 0.2s ease;
+      }
+
+      .lang-btn:hover {
+        opacity: 0.8;
+      }
+
+      .lang-btn.active {
+        opacity: 1;
+        pointer-events: none; /* wyłączone klikanie w aktywny język */
+      }
+
+      .lang-divider {
+        color: #b4b4b4;
+        font-size: 12px;
+        user-select: none;
       }
       /* Content */
       .projectLayout {
@@ -359,14 +393,14 @@
         display: flex;
         justify-content: center;
         padding-right: 8vw;
-        gap: 2vw;
+        gap: 1vw;
         flex-wrap: wrap;
         margin-top: 4vh;
       }
       .mini-gallery img {
         width: auto;
         height: 40px;
-        border-radius: 8px;
+        border-radius: 4px;
         cursor: pointer;
         transition: transform 0.2s ease;
       }
@@ -682,6 +716,7 @@
         }
       }
     </style>
+    <script src="/js/translations.js"></script>
   </head>
   <body>
     <header>
@@ -705,38 +740,84 @@
         </button>
       </div>
       <div class="headerLinks">
-        <a class="headerLink" href="../oferta.html">Oferta</a>
-        <a class="headerLink" href="../o-mnie.html">O Mnie</a>
+        <a class="headerLink" data-i18n="nav_offer" href="../oferta.html"
+          >Oferta</a
+        >
+        <a class="headerLink" data-i18n="nav_about" href="../o-mnie.html"
+          >O Mnie</a
+        >
+        <div class="lang-switcher">
+          <button
+            class="lang-btn"
+            data-lang="pl"
+            onclick="switchLanguage('pl')"
+          >
+            🇵🇱
+          </button>
+          <button
+            class="lang-btn"
+            data-lang="en"
+            onclick="switchLanguage('en')"
+          >
+            🇬🇧
+          </button>
+        </div>
       </div>
     </header>
     <section class="spaceX" id="spaceX"></section>
     <div class="projectLayout">
       <main class="projectContent">
         <section style="padding-top: 8vh" id="o-projekcie">
-          <h1 style="margin: 0">PlanetRoad - Firmowa Strona Internetowa</h1>
-          <p style="padding-top: 0vh">
+          <h1
+            style="margin: 0"
+            data-i18n="project_web_planetroad_project_title"
+          >
+            PlanetRoad - Firmowa Strona Internetowa
+          </h1>
+          <p
+            style="padding-top: 0vh"
+            data-i18n="project_web_planetroad_project_description"
+          >
             Nowa strona internetowa firmy PlanetRoad, którą zaprojektowałem w
             celu uproszczenia klientom poznania firmy, prezentacji
             dotychczasowych realizacji w czytelny i atrakcyjny sposób oraz
             ułatwienia kontaktu z firmą
           </p>
 
-          <!-- 
-            Strona prowadzi użytkownika intuicyjnie przez ofertę firmy, 
-            eksponując doświadczenie i jakość projektów, a jednocześnie 
-            zapewnia przyjazną i profesjonalną obecność w sieci.
-          -->
-          <p style="padding-top: 3vh"><b>Rola:</b> UX Designer</p>
-
-          <p style="padding-top: 1vh">
-            <b>Zakres odpowiedzialności:</b> Research, Koncept produktu, Projekt
-            interfejsu, Implementacja strony, Testy użyteczności
+          <p style="padding-top: 3vh">
+            <b data-i18n="project_web_planetroad_role_label">Rola:</b>
+            <span data-i18n="project_web_planetroad_role_value"
+              >UX Designer</span
+            >
           </p>
 
-          <p style="padding-top: 1vh"><b>Czas trwania:</b> 34 tygodnie</p>
-          <!-- 30? -->
+          <p style="padding-top: 1vh">
+            <b data-i18n="project_web_planetroad_responsibilities_label"
+              >Zakres odpowiedzialności:</b
+            >
+            <span data-i18n="project_web_planetroad_responsibilities_value"
+              >Research, Koncept produktu, Projekt interfejsu, Implementacja
+              strony, Testy użyteczności</span
+            >
+          </p>
 
-          <p style="padding-top: 1vh"><b>Metodyka:</b> Lean UX</p>
+          <p style="padding-top: 1vh">
+            <b data-i18n="project_web_planetroad_duration_label"
+              >Czas trwania:</b
+            >
+            <span data-i18n="project_web_planetroad_duration_value"
+              >34 tygodnie</span
+            >
+          </p>
+
+          <p style="padding-top: 1vh">
+            <b data-i18n="project_web_planetroad_methodology_label"
+              >Metodyka:</b
+            >
+            <span data-i18n="project_web_planetroad_methodology_value"
+              >Lean UX</span
+            >
+          </p>
 
           <a
             href="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Cover.webp"
@@ -749,11 +830,18 @@
                 src="../assets/projects/identyfikacja-wizualna-PlanetRoad/PlanetRoad_logo_portfolio_white.png"
                 alt="Logo PlanetRoad"
               />
-              <span>Strona Internetowa</span>
+              <span data-i18n="project_web_planetroad_banner_badge"
+                >Strona Internetowa</span
+              >
             </div>
           </a>
-          <h3 style="padding-top: 3vh; margin-bottom: 1vh">Kontekst</h3>
-          <p>
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_web_planetroad_context_heading"
+          >
+            Kontekst
+          </h3>
+          <p data-i18n="project_web_planetroad_context_text">
             Klient potrzebował przebudowania strony internetowej, tak aby
             umożliwiała ona prezentacje ukończonych projektów i budowania
             profesjonalnego wizerunku firmy. Moim głównym celem było stworzenie
@@ -763,8 +851,13 @@
             klientów firmy)
           </p>
 
-          <h3 style="padding-top: 3vh; margin-bottom: 1vh">Problem</h3>
-          <p>
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_web_planetroad_problem_heading"
+          >
+            Problem
+          </h3>
+          <p data-i18n="project_web_planetroad_problem_text">
             Użytkownicy nie mieli możliwości poznania oferty i doświadczenia
             firmy oraz łatwego kontaktu z zespołem PlanetRoad, gdyż
             dotychczasowa strona nie eksponowała doświadczenia i jakości
@@ -772,108 +865,211 @@
             stronie.
           </p>
 
-          <h3 style="padding-top: 3vh; margin-bottom: 1vh">Cele</h3>
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_web_planetroad_goals_heading"
+          >
+            Cele
+          </h3>
           <p>
-            🎯 <b>Ułatwienie klientowi poznania firmy</b> – szybki dostęp do
-            informacji o działalności i doświadczeniu PlanetRoad.
+            🎯
+            <b data-i18n="project_web_planetroad_goal_1_label"
+              >Ułatwienie klientowi poznania firmy</b
+            >
+            <span data-i18n="project_web_planetroad_goal_1_text"
+              >– szybki dostęp do informacji o działalności i doświadczeniu
+              PlanetRoad.</span
+            >
           </p>
           <p>
-            🎯 <b>Prezentacja dotychczasowych realizacji</b> w czytelny i
-            atrakcyjny sposób, podkreślający profesjonalizm firmy.
+            🎯
+            <b data-i18n="project_web_planetroad_goal_2_label"
+              >Prezentacja dotychczasowych realizacji</b
+            >
+            <span data-i18n="project_web_planetroad_goal_2_text"
+              >w czytelny i atrakcyjny sposób, podkreślający profesjonalizm
+              firmy.</span
+            >
           </p>
           <p>
-            🎯 <b>Uproszczenie kontaktu z firmą</b> – intuicyjna nawigacja,
-            widoczne formularze i łatwy dostęp do danych kontaktowych.
+            🎯
+            <b data-i18n="project_web_planetroad_goal_3_label"
+              >Uproszczenie kontaktu z firmą</b
+            >
+            <span data-i18n="project_web_planetroad_goal_3_text"
+              >– intuicyjna nawigacja, widoczne formularze i łatwy dostęp do
+              danych kontaktowych.</span
+            >
           </p>
           <p>
-            🎯 <b>Profesjonalna i spójna obecność w sieci</b> – strona wspiera
-            wizerunek firmy zgodny z nową identyfikacją wizualną.
+            🎯
+            <b data-i18n="project_web_planetroad_goal_4_label"
+              >Profesjonalna i spójna obecność w sieci</b
+            >
+            <span data-i18n="project_web_planetroad_goal_4_text"
+              >– strona wspiera wizerunek firmy zgodny z nową identyfikacją
+              wizualną.</span
+            >
           </p>
 
-          <h3 style="padding-top: 3vh; margin-bottom: 1vh">Ograniczenia</h3>
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_web_planetroad_constraints_heading"
+          >
+            Ograniczenia
+          </h3>
           <p>
-            ⚠️ <b>Strona musi odpowiadać sektorowi B2B</b> – utrzymać
-            profesjonalny i wiarygodny wizerunek firmy.
+            ⚠️
+            <b data-i18n="project_web_planetroad_constraint_1_label"
+              >Strona musi odpowiadać sektorowi B2B</b
+            >
+            <span data-i18n="project_web_planetroad_constraint_1_text"
+              >– utrzymać profesjonalny i wiarygodny wizerunek firmy.</span
+            >
           </p>
           <p>
             ⚠️
-            <b
+            <b data-i18n="project_web_planetroad_constraint_2_label"
               >Nowa strona musi być spójna z istniejącą identyfikacją
               wizualną</b
             >
-            – kolory, typografia i styl graficzny muszą pasować do nowego
-            brandingu.
+            <span data-i18n="project_web_planetroad_constraint_2_text"
+              >– kolory, typografia i styl graficzny muszą pasować do nowego
+              brandingu.</span
+            >
           </p>
           <p>
-            ⚠️ <b>Brak wcześniejszego doświadczenia firmy w digitalu</b> –
-            strona musi być intuicyjna dla użytkownika, który wcześniej nie
-            korzystał z cyfrowych narzędzi.
+            ⚠️
+            <b data-i18n="project_web_planetroad_constraint_3_label"
+              >Brak wcześniejszego doświadczenia firmy w digitalu</b
+            >
+            <span data-i18n="project_web_planetroad_constraint_3_text"
+              >– strona musi być intuicyjna dla użytkownika, który wcześniej nie
+              korzystał z cyfrowych narzędzi.</span
+            >
           </p>
           <p>
-            ⚠️ <b>Konieczność zachowania dostępności informacji</b> podczas
-            wdrożenia – firma musi nadal być w pełni dostępna dla klientów.
+            ⚠️
+            <b data-i18n="project_web_planetroad_constraint_4_label"
+              >Konieczność zachowania dostępności informacji</b
+            >
+            <span data-i18n="project_web_planetroad_constraint_4_text"
+              >podczas wdrożenia – firma musi nadal być w pełni dostępna dla
+              klientów.</span
+            >
           </p>
         </section>
 
         <!-- BADANIA -->
         <section id="badania">
-          <h2 style="padding-top: 8vh; margin-bottom: 2vh">Badania</h2>
-          <p>
+          <h2
+            style="padding-top: 8vh; margin-bottom: 2vh"
+            data-i18n="project_web_planetroad_research_heading"
+          >
+            Badania
+          </h2>
+          <p data-i18n="project_web_planetroad_research_p1">
             Projekt nowej strony internetowej dla PlanetRoad rozpocząłem od
             audytu starej strony i poznania szegółowych oczekiwań mojego
             Klienta.
           </p>
           <p>
-            <b>Rozmowa z CEO</b> zarysowała mi obraz tego, jak miałaby wyglądać
-            strona firmy. PlanetRoad skupia się głównie na
-            <b>współpracy B2B</b> - (np. Developerami) oraz jednostkami
-            samorządowymi. Dlatego priorytetem jest profesjonalizm, oraz
-            budowanie zaufania do marki i zwiększania jej wiarygodności. Sam CEO
-            dał mi również kilka swoich pomysłów odnośnie informacji, które
-            chciałby posiadać na stronie oraz klika użytecznych linków do dolnej
-            nawigacji strony które mogłem później wkomponować w projekt.
+            <b data-i18n="project_web_planetroad_research_p2_bold1"
+              >Rozmowa z CEO</b
+            >
+            <span data-i18n="project_web_planetroad_research_p2_text1"
+              >zarysowała mi obraz tego, jak miałaby wyglądać strona firmy.
+              PlanetRoad skupia się głównie na
+            </span>
+            <b data-i18n="project_web_planetroad_research_p2_bold2"
+              >współpracy B2B</b
+            >
+            <span data-i18n="project_web_planetroad_research_p2_text2"
+              >- (np. Developerami) oraz jednostkami samorządowymi. Dlatego
+              priorytetem jest profesjonalizm, oraz budowanie zaufania do marki
+              i zwiększania jej wiarygodności. Sam CEO dał mi również kilka
+              swoich pomysłów odnośnie informacji, które chciałby posiadać na
+              stronie oraz klika użytecznych linków do dolnej nawigacji strony
+              które mogłem później wkomponować w projekt.</span
+            >
           </p>
           <p>
-            Następnie przeprowadziłem <b>analizę konkurencji</b> w branży
-            drogowej, która ujawniła dużą powtarzalność wizualną - wiele firm
-            korzystało z podobnych układów stron i schematycznych kompozycji. W
-            tym przypadku problemem nie było więc wyróżnienie się spośród
-            konkurencji, a zachowanie balansu pomiędzy profesjonalizmem i
-            technicznym charakterem strony, a nieco bardziej nowowczesnych
-            podejściem do projektowania stron internetowych.
+            <span data-i18n="project_web_planetroad_research_p2_text1"
+              >Następnie przeprowadziłem
+            </span>
+            <b data-i18n="project_web_planetroad_research_p3_bold"
+              >analizę konkurencji</b
+            >
+            <span data-i18n="project_web_planetroad_research_p3_text"
+              >w branży drogowej, która ujawniła dużą powtarzalność wizualną -
+              wiele firm korzystało z podobnych układów stron i schematycznych
+              kompozycji. W tym przypadku problemem nie było więc wyróżnienie
+              się spośród konkurencji, a zachowanie balansu pomiędzy
+              profesjonalizmem i technicznym charakterem strony, a nieco
+              bardziej nowowczesnych podejściem do projektowania stron
+              internetowych.</span
+            >
           </p>
           <p>
-            Kolejno <b>zbadałem oczekiwania użytkowników</b> i najczęściej
-            wyszukiwane informacje o firmach z branży, aby zapewnić użyteczność
-            nowej strony internetowej pod kątem UX i SEO. Analiza treści
-            pokazała, że kluczowe są: przejrzysta oferta, szybki kontakt oraz
-            portfolio poprzedncih projektów.
+            <span data-i18n="project_web_planetroad_research_p2_text1"
+              >Kolejno
+            </span>
+            <b data-i18n="project_web_planetroad_research_p4_bold"
+              >zbadałem oczekiwania użytkowników</b
+            >
+            <span data-i18n="project_web_planetroad_research_p4_text"
+              >i najczęściej wyszukiwane informacje o firmach z branży, aby
+              zapewnić użyteczność nowej strony internetowej pod kątem UX i SEO.
+              Analiza treści pokazała, że kluczowe są: przejrzysta oferta,
+              szybki kontakt oraz portfolio poprzedncih projektów.</span
+            >
           </p>
           <p>
-            Potem przeszedłem do <b>analizy ścieżki użytkownika</b>, która
-            pozwoliła mi lepiej zrozumieć, jakie działania podejmuje potencjalny
-            klient od momentu wejścia na stronę do skontaktowania się z firmą.
-            Zmapowanie tych etapów umożliwiło mi zaplanowanie logicznej i
-            intuicyjnej struktury strony — tak, aby użytkownik mógł łatwo
-            odnaleźć informacje o usługach, przeglądać realizacje i
-            bezproblemowo przejść do sekcji kontaktu.
+            <span data-i18n="project_web_planetroad_research_p2_text1"
+              >Potem przeszedłem do
+            </span>
+            <b data-i18n="project_web_planetroad_research_p5_bold"
+              >analizy ścieżki użytkownika</b
+            >
+            <span data-i18n="project_web_planetroad_research_p5_text"
+              >, która pozwoliła mi lepiej zrozumieć, jakie działania podejmuje
+              potencjalny klient od momentu wejścia na stronę do skontaktowania
+              się z firmą. Zmapowanie tych etapów umożliwiło mi zaplanowanie
+              logicznej i intuicyjnej struktury strony — tak, aby użytkownik
+              mógł łatwo odnaleźć informacje o usługach, przeglądać realizacje i
+              bezproblemowo przejść do sekcji kontaktu.</span
+            >
           </p>
           <p>
-            Równolegle przeprowadziłem <b>analizę SEO</b> w celu poznania
-            najczęściej wyszukiwanych fraz związanych z branżą drogową i
-            projektowaniem infrastruktury. Wyniki pozwoliły mi dobrać
-            odpowiednie słowa kluczowe do treści oraz zaplanować strukturę
-            nagłówków i sekcji. Dzięki temu strona jest nie tylko atrakcyjna
-            wizualnie, ale również lepiej widoczna w wyszukiwarkach
-            internetowych.
+            <span data-i18n="project_web_planetroad_research_p2_text1"
+              >Równolegle przeprowadziłem
+            </span>
+            <b data-i18n="project_web_planetroad_research_p6_bold"
+              >analizę SEO</b
+            >
+            <span data-i18n="project_web_planetroad_research_p6_text"
+              >w celu poznania najczęściej wyszukiwanych fraz związanych z
+              branżą drogową i projektowaniem infrastruktury. Wyniki pozwoliły
+              mi dobrać odpowiednie słowa kluczowe do treści oraz zaplanować
+              strukturę nagłówków i sekcji. Dzięki temu strona jest nie tylko
+              atrakcyjna wizualnie, ale również lepiej widoczna w wyszukiwarkach
+              internetowych.</span
+            >
           </p>
           <p>
-            Przeprowadziłem także <b>audyt techniczny starej strony</b>, który
-            ujawnił problemy z prędkością ładowania, nieczytelnością na
-            urządzeniach mobilnych oraz brakiem wyraźnych ścieżek konwersji. Te
-            obserwacje stały się podstawą do zaprojektowania nowego układu i
-            optymalizacji strony pod kątem wydajności oraz zgodności z
-            aktualnymi standardami webowymi.
+            <span data-i18n="project_web_planetroad_research_p2_text1"
+              >Przeprowadziłem także
+            </span>
+            <b data-i18n="project_web_planetroad_research_p7_bold"
+              >audyt techniczny starej strony</b
+            >
+            <span data-i18n="project_web_planetroad_research_p7_text"
+              >, który ujawnił problemy z prędkością ładowania, nieczytelnością
+              na urządzeniach mobilnych oraz brakiem wyraźnych ścieżek
+              konwersji. Te obserwacje stały się podstawą do zaprojektowania
+              nowego układu i optymalizacji strony pod kątem wydajności oraz
+              zgodności z aktualnymi standardami webowymi.</span
+            >
           </p>
         </section>
 
@@ -882,20 +1078,29 @@
             href="../assets/projects/strona-internetowa-PlanetRoad/planetroad-research_insights.png"
             data-lightbox="planetroad-process"
             data-title="Wnioski z badań"
+            data-lightbox-title="project_web_planetroad_caption_research_insights"
           >
             <img
               src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-research_insights.png"
               alt="Wnioski z badań"
             />
           </a>
-          <figcaption>Wnioski z badań</figcaption>
+          <figcaption
+            data-i18n="project_web_planetroad_caption_research_insights"
+          >
+            Wnioski z badań
+          </figcaption>
         </figure>
 
         <!-- IDEACJA -->
         <section id="ideacja">
-          <!-- jakieś flow, jakieś wireframe'y -->
-          <h2 style="padding-top: 8vh; margin-bottom: 2vh">Ideacja</h2>
-          <p>
+          <h2
+            style="padding-top: 8vh; margin-bottom: 2vh"
+            data-i18n="project_web_planetroad_ideation_heading"
+          >
+            Ideacja
+          </h2>
+          <p data-i18n="project_web_planetroad_ideation_p1">
             Na etapie ideacji przełożyłem wnioski z badań na konkretne założenia
             projektowe. Skupiłem się na zaprojektowaniu struktury strony, która
             w pierwszych sekundach odpowiada na kluczowe pytania użytkownika:
@@ -903,124 +1108,169 @@
             można nawiązać kontakt.
           </p>
           <p>
-            Projekt zacząłem od <b>priorytetyzacji</b> - jako główny cel
-            wyznaczyłem ułatwienie klientom zapoznania się z firmą i ukończonymi
-            przez nią projektami. Za nieco mniej ważną przyjąłem estetykę
-            wykonania strony, mimo wszsytko chciałem, aby przyciągała klienta
-            swoim wizualnie przyjemnym dla oka wyglądem. Najniższy priorytet
-            nadałem natomiast utrzymaniu spójności z innymi kanałami komunikacji
-            (działając według wcześniej stworzonej Identyfikacji Wizualnej ten
-            cel niejako sam się wypełnia).
+            <span data-i18n="project_web_planetroad_research_p2_text1"
+              >Projekt zacząłem od
+            </span>
+            <b data-i18n="project_web_planetroad_ideation_p2_bold"
+              >priorytetyzacji</b
+            >
+            <span data-i18n="project_web_planetroad_ideation_p2_text"
+              >- jako główny cel wyznaczyłem ułatwienie klientom zapoznania się
+              z firmą i ukończonymi przez nią projektami. Za nieco mniej ważną
+              przyjąłem estetykę wykonania strony, mimo wszsytko chciałem, aby
+              przyciągała klienta swoim wizualnie przyjemnym dla oka wyglądem.
+              Najniższy priorytet nadałem natomiast utrzymaniu spójności z
+              innymi kanałami komunikacji (działając według wcześniej stworzonej
+              Identyfikacji Wizualnej ten cel niejako sam się wypełnia).</span
+            >
           </p>
-          <p>
+          <p data-i18n="project_web_planetroad_ideation_p3">
             Równolegle pracowałem na niskopoziomowych wireframe’ach, testując
             różne układy treści i hierarchię informacji, zanim przeszedłem do
             finalnego interfejsu.
           </p>
-          <p>
+          <p data-i18n="project_web_planetroad_ideation_p4">
             Na etapie projektowania zadbałem o dostępność i czytelność elementów
             interfejsu, tworząc layouty zgodne z regułami WCAG. Stworzyłem Style
             Guide obejmujący kolory, typografię i komponenty, zapewniając
             spójność wizualną strony.
           </p>
+
           <figure class="imageFigure">
             <a
               href="../assets/projects/strona-internetowa-PlanetRoad/planetroad-information_architecture.png"
               data-lightbox="galeria-identyfikacja-wizualna-PlanetRoad"
               data-title="Architektura Informacji"
+              data-lightbox-title="project_web_planetroad_caption_info_architecture"
             >
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-information_architecture.png"
                 alt="Architektura Informacji"
               />
             </a>
-            <figcaption>Architektura Informacji</figcaption>
+            <figcaption
+              data-i18n="project_web_planetroad_caption_info_architecture"
+            >
+              Architektura Informacji
+            </figcaption>
           </figure>
+
           <figure class="imageFigure">
             <a
               href="../assets/projects/strona-internetowa-PlanetRoad/planetroad-user_flow.png"
               data-lightbox="galeria-identyfikacja-wizualna-PlanetRoad"
               data-title="Główne User Flow"
+              data-lightbox-title="project_web_planetroad_caption_user_flow"
             >
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-user_flow.png"
                 alt="Główne User Flow"
               />
             </a>
-            <figcaption>Główne User Flow</figcaption>
+            <figcaption data-i18n="project_web_planetroad_caption_user_flow">
+              Główne User Flow
+            </figcaption>
           </figure>
+
           <figure class="imageFigure">
             <a
               href="../assets/projects/strona-internetowa-PlanetRoad/planetroad-wireframes_Hero.png"
               data-lightbox="galeria-identyfikacja-wizualna-PlanetRoad"
               data-title="Wireframe'y - Sekcja Hero"
+              data-lightbox-title="project_web_planetroad_caption_wf_hero"
             >
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-wireframes_Hero.png"
                 alt="Wireframe'y - Sekcja Hero"
               />
             </a>
-            <figcaption>Wireframe'y - Sekcja Hero</figcaption>
+            <figcaption data-i18n="project_web_planetroad_caption_wf_hero">
+              Wireframe'y - Sekcja Hero
+            </figcaption>
           </figure>
+
           <figure class="imageFigure">
             <a
               href="../assets/projects/strona-internetowa-PlanetRoad/planetroad-wireframes_Team.png"
               data-lightbox="galeria-identyfikacja-wizualna-PlanetRoad"
               data-title="Wireframe'y - Sekcja Team"
+              data-lightbox-title="project_web_planetroad_caption_wf_team"
             >
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-wireframes_Team.png"
                 alt="Wireframe'y - Sekcja Team"
               />
             </a>
-            <figcaption>Wireframe'y - Sekcja Team</figcaption>
+            <figcaption data-i18n="project_web_planetroad_caption_wf_team">
+              Wireframe'y - Sekcja Team
+            </figcaption>
           </figure>
+
           <figure class="imageFigure">
             <a
               href="../assets/projects/strona-internetowa-PlanetRoad/planetroad-wireframes_Numbers.png"
               data-lightbox="galeria-identyfikacja-wizualna-PlanetRoad"
               data-title="Wireframe'y - Sekcja W Liczbach"
+              data-lightbox-title="project_web_planetroad_caption_wf_numbers"
             >
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-wireframes_Numbers.png"
                 alt="Wireframe'y - Sekcja W Liczbach"
               />
             </a>
-            <figcaption>Wireframe'y - Sekcja W Liczbach</figcaption>
+            <figcaption data-i18n="project_web_planetroad_caption_wf_numbers">
+              Wireframe'y - Sekcja W Liczbach
+            </figcaption>
           </figure>
+
           <figure class="imageFigure">
             <a
               href="../assets/projects/strona-internetowa-PlanetRoad/planetroad-wireframes_Experience.png"
               data-lightbox="galeria-identyfikacja-wizualna-PlanetRoad"
               data-title="Wireframe'y - Podstrona Doświadczenie"
+              data-lightbox-title="project_web_planetroad_caption_wf_experience"
             >
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-wireframes_Experience.png"
                 alt="Wireframe'y - Podstrona Doświadczenie"
               />
             </a>
-            <figcaption>Wireframe'y - Podstrona Doświadczenie</figcaption>
+            <figcaption
+              data-i18n="project_web_planetroad_caption_wf_experience"
+            >
+              Wireframe'y - Podstrona Doświadczenie
+            </figcaption>
           </figure>
+
           <figure class="imageFigure">
             <a
               href="../assets/projects/strona-internetowa-PlanetRoad/planetroad-visual_identity.png"
               data-lightbox="galeria-identyfikacja-wizualna-PlanetRoad"
               data-title="Identyfikacja Wizualna PlanetRoad"
+              data-lightbox-title="project_web_planetroad_caption_visual_identity"
             >
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-visual_identity.png"
                 alt="Identyfikacja Wizualna PlanetRoad"
               />
             </a>
-            <figcaption>Identyfikacja Wizualna PlanetRoad</figcaption>
+            <figcaption
+              data-i18n="project_web_planetroad_caption_visual_identity"
+            >
+              Identyfikacja Wizualna PlanetRoad
+            </figcaption>
           </figure>
+
           <p>
-            Pełną Identyfikację Wizualną można zobaczyć pod
+            <span data-i18n="project_web_planetroad_brand_identity_link_text"
+              >Pełną Identyfikację Wizualną można zobaczyć pod
+            </span>
             <a
               href="identyfikacja-wizualna-PlanetRoad.html"
               style="text-decoration: underline"
               target="_blank"
               rel="noopener noreferrer"
+              data-i18n="project_web_planetroad_brand_identity_link_anchor"
               >tym linkiem</a
             >
           </p>
@@ -1028,9 +1278,17 @@
 
         <!-- ITERACJE -->
         <section id="iteracje">
-          <h2 style="padding-top: 8vh">Iteracje</h2>
+          <h2
+            style="padding-top: 8vh"
+            data-i18n="project_web_planetroad_iterations_heading"
+          >
+            Iteracje
+          </h2>
 
-          <h3 style="margin-bottom: 1vh">
+          <h3
+            style="margin-bottom: 1vh"
+            data-i18n="project_web_planetroad_iterations_sub_old"
+          >
             Tak strona wyglądała przed remake'iem:
           </h3>
           <figure class="imageFigure">
@@ -1038,13 +1296,16 @@
               href="../assets/projects/strona-internetowa-PlanetRoad/planetroad-old_www_1.png"
               data-lightbox="planetroad-process"
               data-title="Strona przed remake'iem - cz.1"
+              data-lightbox-title="project_web_planetroad_caption_old_www_1"
             >
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-old_www_1.png"
                 alt="Strona przed remake'iem - cz.1"
               />
             </a>
-            <figcaption>Strona przed remake'iem - cz.1</figcaption>
+            <figcaption data-i18n="project_web_planetroad_caption_old_www_1">
+              Strona przed remake'iem - cz.1
+            </figcaption>
           </figure>
 
           <figure class="imageFigure">
@@ -1052,77 +1313,122 @@
               href="../assets/projects/strona-internetowa-PlanetRoad/planetroad-old_www_2.png"
               data-lightbox="planetroad-process"
               data-title="Strona przed remake'iem - cz.2"
+              data-lightbox-title="project_web_planetroad_caption_old_www_2"
             >
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-old_www_2.png"
                 alt="Strona przed remake'iem - cz.2"
               />
             </a>
-            <figcaption>Strona przed remake'iem - cz.2</figcaption>
+            <figcaption data-i18n="project_web_planetroad_caption_old_www_2">
+              Strona przed remake'iem - cz.2
+            </figcaption>
           </figure>
-          <p>
+
+          <p data-i18n="project_web_planetroad_iterations_p1">
             Jak widać na wyżej załączonym obrazku strona przekazywała podstawowe
             informacje o firmie, jednak nie dawała potencjalnemu przyszłemu
             kontrahentowi zbyt wielu szczegółów i nie przekonywała do podjęcia
             współpracy.
           </p>
-          <p>
+          <p data-i18n="project_web_planetroad_iterations_p2">
             Aby to zmienić zacząłem zmieniać firmową stronę od podstaw, aby
             stała się ona prawdziwą wizytówką firmy. Na początku zastanowiłem
             się...
           </p>
-          <!-- coś że zaczeliśmy od naszego najwyższego priorytetu (żeby narracja płyneła)-->
 
-          <h3 style="padding-top: 3vh; margin-bottom: 1vh">
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_web_planetroad_iter1_subheading"
+          >
             Jak zbuduję zaufanie użytkownika od pierwszego kontaktu? —
             Rozszerzenie struktury strony
           </h3>
           <p>
-            Na wczesnym etapie rozwoju strony stwierdziłem, że:
-            <b
+            <span data-i18n="project_web_planetroad_research_p2_text1"
+              >Na wczesnym etapie rozwoju strony stwierdziłem, że:
+            </span>
+            <b data-i18n="project_web_planetroad_iter1_p1_bold1"
               >Hero nie informuje użytkownika bezpośrednio czym się zajmujemy</b
             >
-            - dla użytkownika, który trafi na naszą stronę poprzez organiczne
-            wyszukiwanie może być to mylącę. Ponad to
-            <b
+            <span data-i18n="project_web_planetroad_iter1_p1_text1"
+              >- dla użytkownika, który trafi na naszą stronę poprzez organiczne
+              wyszukiwanie może być to mylącę. Ponad to
+            </span>
+            <b data-i18n="project_web_planetroad_iter1_p1_bold2"
               >strona główna nie daje wystarczająco dużo przestrzeni na
               budowanie zaufania i opowiedzenie historii firmy</b
-            >. W rozmowach z CEO oraz podczas audytu konkurencji wyraźnie widać
-            było, że firmy z branży drogowej, które skutecznie pozyskują
-            klientów B2B,
-            <b
+            >
+            <span data-i18n="project_web_planetroad_iter1_p1_text2"
+              >. W rozmowach z CEO oraz podczas audytu konkurencji wyraźnie
+              widać było, że firmy z branży drogowej, które skutecznie pozyskują
+              klientów B2B,
+            </span>
+            <b data-i18n="project_web_planetroad_iter1_p1_bold3"
               >eksponują ludzi stojących za marką oraz twarde liczby
               potwierdzające skalę działalności</b
             >.
           </p>
 
           <p>
-            Aby rozwiązać te problemy, w pierwszej iteracji stworzyłem sekcję
-            Hero od zera, a także rozszerzyłem stronę główną o dwie nowe sekcje:
-            <b>prezentację zespołu</b> (przygotowanie i obróbka zdjęć) oraz
-            <b>doświadczenie firmy w liczbach</b> (podliczenie statystyk
-            firmowych). Równolegle wydzieliłem także, dwie nowe podstrony
-            <b>„Kontakt”</b>, który wcześniej był jedynie linkiem i
-            <b>„Doświadczenie”</b>, przenosząc formularz kontaktowy ze strony
-            głównej oraz dodając pierwsze referencje z wcześniejszych projektów.
+            <span data-i18n="project_web_planetroad_iter1_p2_text1"
+              >Aby rozwiązać te problemy, w pierwszej iteracji stworzyłem sekcję
+              Hero od zera, a także rozszerzyłem stronę główną o dwie nowe
+              sekcje:
+            </span>
+            <b data-i18n="project_web_planetroad_iter1_p2_bold1"
+              >prezentację zespołu</b
+            >
+            <span data-i18n="project_web_planetroad_iter1_p2_text2"
+              >(przygotowanie i obróbka zdjęć) oraz
+            </span>
+            <b data-i18n="project_web_planetroad_iter1_p2_bold2"
+              >doświadczenie firmy w liczbach</b
+            >
+            <span data-i18n="project_web_planetroad_iter1_p2_text3"
+              >(podliczenie statystyk firmowych). Równolegle wydzieliłem także,
+              dwie nowe podstrony
+            </span>
+            <b data-i18n="project_web_planetroad_iter1_p2_bold3">„Kontakt”</b>
+            <span data-i18n="project_web_planetroad_iter1_p2_text4"
+              >, który wcześniej był jedynie linkiem i
+            </span>
+            <b data-i18n="project_web_planetroad_iter1_p2_bold4"
+              >„Doświadczenie”</b
+            >
+            <span data-i18n="project_web_planetroad_iter1_p2_text5"
+              >, przenosząc formularz kontaktowy ze strony głównej oraz dodając
+              pierwsze referencje z wcześniejszych projektów.</span
+            >
           </p>
 
           <p>
-            Ten etap był również momentem edukacyjnym dla klienta —
-            <b
+            <span data-i18n="project_web_planetroad_iter1_p3_text1"
+              >Ten etap był również momentem edukacyjnym dla klienta —
+            </span>
+            <b data-i18n="project_web_planetroad_iter1_p3_bold"
               >uświadomiłem, jak kluczowe jest systematyczne zbieranie
               referencji po zakończonych realizacjach</b
-            >, które wcześniej schodziły na dalszy plan w natłoku bieżących
-            obowiązków. W pryszłości stają się one jednak wizytówką i
-            świadectwem aktywności firmy.
+            >
+            <span data-i18n="project_web_planetroad_iter1_p3_text2"
+              >, które wcześniej schodziły na dalszy plan w natłoku bieżących
+              obowiązków. W pryszłości stają się one jednak wizytówką i
+              świadectwem aktywności firmy.</span
+            >
           </p>
 
           <p>
-            Efektem tych zmian było
-            <b
+            <span data-i18n="project_web_planetroad_iter1_p4_text1"
+              >Efektem tych zmian było
+            </span>
+            <b data-i18n="project_web_planetroad_iter1_p4_bold"
               >lepsze rozłożenie treści, wyraźniejsza hierarchia informacji i
               mocniejsze pierwsze wrażenie</b
-            >, co bezpośrednio wspierało cele wizerunkowe i sprzedażowe strony.
+            >
+            <span data-i18n="project_web_planetroad_iter1_p4_text2"
+              >, co bezpośrednio wspierało cele wizerunkowe i sprzedażowe
+              strony.</span
+            >
           </p>
 
           <figure class="imageFigure">
@@ -1130,13 +1436,16 @@
               href="../assets/projects/strona-internetowa-PlanetRoad/planetroad-hero.png"
               data-lightbox="planetroad-process"
               data-title="Nowa sekcja Hero"
+              data-lightbox-title="project_web_planetroad_caption_hero_new"
             >
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-hero.png"
                 alt="Nowa sekcja Hero"
               />
             </a>
-            <figcaption>Nowa sekcja Hero</figcaption>
+            <figcaption data-i18n="project_web_planetroad_caption_hero_new">
+              Nowa sekcja Hero
+            </figcaption>
           </figure>
 
           <figure class="imageFigure">
@@ -1144,13 +1453,14 @@
               href="../assets/projects/strona-internetowa-PlanetRoad/planetroad-numbers.png"
               data-lightbox="planetroad-process"
               data-title="Nowa sekcja - w liczbach"
+              data-lightbox-title="project_web_planetroad_caption_numbers_new"
             >
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-numbers.png"
                 alt="Nowa sekcja - w liczbach"
               />
             </a>
-            <figcaption>
+            <figcaption data-i18n="project_web_planetroad_caption_numbers_new">
               Nowa sekcja strony głównej - "PlanetRoad w liczbach"
             </figcaption>
           </figure>
@@ -1160,13 +1470,16 @@
               href="../assets/projects/strona-internetowa-PlanetRoad/planetroad-team.png"
               data-lightbox="planetroad-process"
               data-title="Nowa sekcja - Team"
+              data-lightbox-title="project_web_planetroad_caption_team_new"
             >
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-team.png"
                 alt="Nowa sekcja - Team"
               />
             </a>
-            <figcaption>Nowa sekcja strony głównej - "Team"</figcaption>
+            <figcaption data-i18n="project_web_planetroad_caption_team_new">
+              Nowa sekcja strony głównej - "Team"
+            </figcaption>
           </figure>
 
           <figure class="imageFigure">
@@ -1174,13 +1487,16 @@
               href="../assets/projects/strona-internetowa-PlanetRoad/planetroad-contact.png"
               data-lightbox="planetroad-process"
               data-title="Nowa podstrona - Kontakt"
+              data-lightbox-title="project_web_planetroad_caption_contact_new"
             >
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-contact.png"
                 alt="Nowa podstrona - Kontakt"
               />
             </a>
-            <figcaption>Nowa podstrona - Kontakt</figcaption>
+            <figcaption data-i18n="project_web_planetroad_caption_contact_new">
+              Nowa podstrona - Kontakt
+            </figcaption>
           </figure>
 
           <figure class="imageFigure">
@@ -1188,21 +1504,29 @@
               href="../assets/projects/strona-internetowa-PlanetRoad/planetroad-experience.png"
               data-lightbox="planetroad-process"
               data-title="Nowa podstrona - Doświadczenie"
+              data-lightbox-title="project_web_planetroad_caption_experience_new"
             >
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-experience.png"
                 alt="Nowa podstrona - Doświadczenie"
               />
             </a>
-            <figcaption>Nowa podstrona - Doświadczenie</figcaption>
+            <figcaption
+              data-i18n="project_web_planetroad_caption_experience_new"
+            >
+              Nowa podstrona - Doświadczenie
+            </figcaption>
           </figure>
 
-          <h3 style="padding-top: 3vh; margin-bottom: 1vh">
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_web_planetroad_iter2_subheading"
+          >
             Dlaczego szybkość strony ma znaczenie w B2B? — Optymalizacja
             wydajności i SEO
           </h3>
 
-          <p>
+          <p data-i18n="project_web_planetroad_iter2_p1">
             Według najnowszych badań ponad 50% użytkowników opuści stronę gdy
             ładuje się ona dłużej niż 3 sekundy! Mając tą świadomość i wiedząc,
             że mogłoby to zniwelować wszelkie korzyści wynikające z posiadania
@@ -1212,31 +1536,55 @@
           </p>
 
           <p>
-            Okazało się, że po rozbudowie struktury strony zauważalnym problemem
-            stała się <b>spadająca wydajność strony</b>, szczególnie na
-            urządzeniach mobilnych. Analiza w Google PageSpeed Insights oraz
-            Lighthouse wykazała, że
-            <b>ciężkie grafiki znacząco wydłużają czas ładowania</b>, co
-            negatywnie wpływa zarówno na doświadczenie użytkownika, jak i
-            pozycjonowanie.
+            <span data-i18n="project_web_planetroad_iter2_p2_text1"
+              >Okazało się, że po rozbudowie struktury strony zauważalnym
+              problemem stała się
+            </span>
+            <b data-i18n="project_web_planetroad_iter2_p2_bold1"
+              >spadająca wydajność strony</b
+            >
+            <span data-i18n="project_web_planetroad_iter2_p2_text2"
+              >, szczególnie na urządzeniach mobilnych. Analiza w Google
+              PageSpeed Insights oraz Lighthouse wykazała, że
+            </span>
+            <b data-i18n="project_web_planetroad_iter2_p2_bold2"
+              >ciężkie grafiki znacząco wydłużają czas ładowania</b
+            >
+            <span data-i18n="project_web_planetroad_iter2_p2_text3"
+              >, co negatywnie wpływa zarówno na doświadczenie użytkownika, jak
+              i pozycjonowanie.</span
+            >
           </p>
 
           <p>
-            W ramach tej iteracji przeprowadziłem
-            <b>gruntowną optymalizację techniczną</b>: konwersję zdjęć do
-            formatu WebP, poprawę struktury HTML, optymalizację ładowania
-            zasobów oraz korekty SEO na stronie aby zadbać o pozycjonowanie w
-            google.
+            <span data-i18n="project_web_planetroad_iter2_p3_text1"
+              >W ramach tej iteracji przeprowadziłem
+            </span>
+            <b data-i18n="project_web_planetroad_iter2_p3_bold"
+              >gruntowną optymalizację techniczną</b
+            >
+            <span data-i18n="project_web_planetroad_iter2_p3_text2"
+              >: konwersję zdjęć do formatu WebP, poprawę struktury HTML,
+              optymalizację ładowania zasobów oraz korekty SEO na stronie aby
+              zadbać o pozycjonowanie w google.</span
+            >
           </p>
 
           <p>
-            Po wdrożeniu zmian
-            <b>czas ładowania strony uległ wyraźnej poprawie</b>, a strona
-            zaczęła spełniać zalecenia Core Web Vitals, co stworzyło solidne
-            fundamenty pod dalszy rozwój i wysoką widoczność w wyszukiwarce. Ze
-            względu na brak dostępu do archiwalnych raportów Lighthouse, efekty
-            zostały oszacowane na podstawie realnych danych m.in. redukcji wagi
-            zasobów oraz znajomości dobrych praktyk wydajnościowych.
+            <span data-i18n="project_web_planetroad_iter2_p4_text1"
+              >Po wdrożeniu zmian
+            </span>
+            <b data-i18n="project_web_planetroad_iter2_p4_bold"
+              >czas ładowania strony uległ wyraźnej poprawie</b
+            >
+            <span data-i18n="project_web_planetroad_iter2_p4_text2"
+              >, a strona zaczęła spełniać zalecenia Core Web Vitals, co
+              stworzyło solidne fundamenty pod dalszy rozwój i wysoką widoczność
+              w wyszukiwarce. Ze względu na brak dostępu do archiwalnych
+              raportów Lighthouse, efekty zostały oszacowane na podstawie
+              realnych danych m.in. redukcji wagi zasobów oraz znajomości
+              dobrych praktyk wydajnościowych.</span
+            >
           </p>
 
           <figure class="imageFigure">
@@ -1244,45 +1592,79 @@
               href="../assets/projects/strona-internetowa-PlanetRoad/planetroad-optimalization.png"
               data-lightbox="planetroad-process"
               data-title="Optymalizacja strony"
+              data-lightbox-title="project_web_planetroad_caption_optimalization"
             >
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-optimalization.png"
                 alt="Optymalizacja strony"
               />
             </a>
-            <figcaption>Optymalizacja strony</figcaption>
+            <figcaption
+              data-i18n="project_web_planetroad_caption_optimalization"
+            >
+              Optymalizacja strony
+            </figcaption>
           </figure>
 
-          <h3 style="padding-top: 3vh; margin-bottom: 1vh">
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_web_planetroad_iter3_subheading"
+          >
             Jak połączyć potrzeby użytkownika z celami biznesowymi? —
             Priorytetyzacja oferty
           </h3>
 
           <p>
-            W kolejnej iteracji wspólnie z CEO zidentyfikowaliśmy, że
-            <b
+            <span data-i18n="project_web_planetroad_iter3_p1_text1"
+              >W kolejnej iteracji wspólnie z CEO zidentyfikowaliśmy, że
+            </span>
+            <b data-i18n="project_web_planetroad_iter3_p1_bold1"
               >obenca oferta firmy jest mało konkretna i niejednoznaczna z
               perspektywy biznesowej</b
-            >. Podczas warsztatów i rozmów strategicznych okazało się także, że
-            <b
+            >
+            <span data-i18n="project_web_planetroad_iter3_p1_text2"
+              >. Podczas warsztatów i rozmów strategicznych okazało się także,
+              że
+            </span>
+            <b data-i18n="project_web_planetroad_iter3_p1_bold2"
               >nie wszystkie usługi mają taką samą rentowność i znaczenie dla
               rozwoju firmy</b
             >.
           </p>
 
           <p>
-            W odpowiedzi na ten problem
-            <b>sporządziliśmy kompletną listę wszystkich realizowanych usług</b
-            >, które następnie zostały opisane, wycenione, oszacowane czasowo
-            oraz <b>priorytetyzowane pod kątem opłacalności biznesowej</b>.
-            Kolejnym krokiem było stworzenie dedykowanej podstrony dla
-            realizacji, tak aby klienci mogli zorientować się we własnym
-            zakresie w naszej ofercie jeszcze przed pierwszym kontaktem z firmą.
+            <span data-i18n="project_web_planetroad_iter3_p2_text1"
+              >W odpowiedzi na ten problem
+            </span>
+            <b data-i18n="project_web_planetroad_iter3_p2_bold1"
+              >sporządziliśmy kompletną listę wszystkich realizowanych usług</b
+            >
+            <span data-i18n="project_web_planetroad_iter3_p2_text2"
+              >, które następnie zostały opisane, wycenione, oszacowane czasowo
+              oraz
+            </span>
+            <b data-i18n="project_web_planetroad_iter3_p2_bold2"
+              >priorytetyzowane pod kątem opłacalności biznesowej</b
+            >
+            <span data-i18n="project_web_planetroad_iter3_p2_text3"
+              >. Kolejnym krokiem było stworzenie dedykowanej podstrony dla
+              realizacji, tak aby klienci mogli zorientować się we własnym
+              zakresie w naszej ofercie jeszcze przed pierwszym kontaktem z
+              firmą.</span
+            >
           </p>
 
           <p>
-            Efektem była <b>klarowna, uporządkowana oferta</b>, która wspiera
-            zarówno proces sprzedaży, jak i dalsze decyzje strategiczne.
+            <span data-i18n="project_web_planetroad_iter3_p3_text1"
+              >Efektem była
+            </span>
+            <b data-i18n="project_web_planetroad_iter3_p3_bold"
+              >klarowna, uporządkowana oferta</b
+            >
+            <span data-i18n="project_web_planetroad_iter3_p3_text2"
+              >, która wspiera zarówno proces sprzedaży, jak i dalsze decyzje
+              strategiczne.</span
+            >
           </p>
 
           <figure class="imageFigure">
@@ -1290,65 +1672,118 @@
               href="../assets/projects/strona-internetowa-PlanetRoad/planetroad-realizacje.png"
               data-lightbox="planetroad-process"
               data-title="Nowa podstrona - Realizacje"
+              data-lightbox-title="project_web_planetroad_caption_realizacje"
             >
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-realizacje.png"
                 alt="Nowa podstrona - Realizacje"
               />
             </a>
-            <figcaption>Nowa podstrona - Realizacje</figcaption>
+            <figcaption data-i18n="project_web_planetroad_caption_realizacje">
+              Nowa podstrona - Realizacje
+            </figcaption>
           </figure>
 
-          <h3 style="padding-top: 3vh; margin-bottom: 1vh">
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_web_planetroad_iter4_subheading"
+          >
             Jak pomagam użytkownikowi szybko znaleźć właściwą usługę? —
             Uproszczenie prezentacji realizacji
           </h3>
 
           <p>
-            Analizując zachowania użytkowników i przeprowadzając szybkie testy
-            użyteczności, zauważyłem, że
-            <b
+            <span data-i18n="project_web_planetroad_iter4_p1_text1"
+              >Analizując zachowania użytkowników i przeprowadzając szybkie
+              testy użyteczności, zauważyłem, że
+            </span>
+            <b data-i18n="project_web_planetroad_iter4_p1_bold1"
               >tematyczne grupowanie realizacji na stronie głównej było mało
               czytelne dla nowych użytkowników</b
-            >. Osoby odwiedzające stronę chciały przede wszystkim szybko
-            sprawdzić, <b>czy firma wykonuje konkretną usługę</b>.
+            >
+            <span data-i18n="project_web_planetroad_iter4_p1_text2"
+              >. Osoby odwiedzające stronę chciały przede wszystkim szybko
+              sprawdzić,
+            </span>
+            <b data-i18n="project_web_planetroad_iter4_p1_bold2"
+              >czy firma wykonuje konkretną usługę</b
+            >.
           </p>
 
           <p>
-            Dlatego zdecydowałem się
-            <b>zmniejszyć szczegółowość informacji na stronie głównej</b>,
-            eksponując <b>konkretne nazwy usług</b>, a bardziej rozbudowane
-            opisy przenosząc na dedykowane podstrony realizacji.
+            <span data-i18n="project_web_planetroad_iter4_p2_text1"
+              >Dlatego zdecydowałem się
+            </span>
+            <b data-i18n="project_web_planetroad_iter4_p2_bold1"
+              >zmniejszyć szczegółowość informacji na stronie głównej</b
+            >
+            <span data-i18n="project_web_planetroad_iter4_p2_text2"
+              >, eksponując
+            </span>
+            <b data-i18n="project_web_planetroad_iter4_p2_bold2"
+              >konkretne nazwy usług</b
+            >
+            <span data-i18n="project_web_planetroad_iter4_p2_text3"
+              >, a bardziej rozbudowane opisy przenosząc na dedykowane podstrony
+              realizacji.</span
+            >
           </p>
 
           <p>
-            Podczas wielokrotnego przeglądania strony oraz prostych testów
-            użyteczności doszedłem do wniosku, że
-            <b
+            <span data-i18n="project_web_planetroad_iter4_p3_text1"
+              >Podczas wielokrotnego przeglądania strony oraz prostych testów
+              użyteczności doszedłem do wniosku, że
+            </span>
+            <b data-i18n="project_web_planetroad_iter4_p3_bold"
               >warstwa wizualna nie zawsze wspierała zrozumienie prezentowanych
               usług</b
-            >. Część zdjęć była odbierana jako zbyt ogólna lub niejednoznaczna,
-            co utrudniało szybkie powiązanie obrazu z konkretną realizacją.
+            >
+            <span data-i18n="project_web_planetroad_iter4_p3_text2"
+              >. Część zdjęć była odbierana jako zbyt ogólna lub
+              niejednoznaczna, co utrudniało szybkie powiązanie obrazu z
+              konkretną realizacją.</span
+            >
           </p>
 
           <p>
-            Przy ograniczonym budżecie zdecydowałem się na rozwiązanie
-            pragmatyczne —
-            <b>samodzielnie przygotowałem scenografię i wykonałem zdjęcia</b>,
-            które w czytelny sposób pokazywały charakter i zakres realizowanych
-            usług.
+            <span data-i18n="project_web_planetroad_iter4_p4_text1"
+              >Przy ograniczonym budżecie zdecydowałem się na rozwiązanie
+              pragmatyczne —
+            </span>
+            <b data-i18n="project_web_planetroad_iter4_p4_bold"
+              >samodzielnie przygotowałem scenografię i wykonałem zdjęcia</b
+            >
+            <span data-i18n="project_web_planetroad_iter4_p4_text2"
+              >, które w czytelny sposób pokazywały charakter i zakres
+              realizowanych usług.</span
+            >
           </p>
 
           <p>
-            Dzięki temu <b>prezentacja oferty stała się spójniejsza</b>, a
-            użytkownicy mogli szybciej zrozumieć, czym firma faktycznie się
-            zajmuje — bez konieczności wczytywania się w szczegółowe opisy.
+            <span data-i18n="project_web_planetroad_iter4_p5_text1"
+              >Dzięki temu
+            </span>
+            <b data-i18n="project_web_planetroad_iter4_p5_bold"
+              >prezentacja oferty stała się spójniejsza</b
+            >
+            <span data-i18n="project_web_planetroad_iter4_p5_text2"
+              >, a użytkownicy mogli szybciej zrozumieć, czym firma faktycznie
+              się zajmuje — bez konieczności wczytywania się w szczegółowe
+              opisy.</span
+            >
           </p>
 
           <p>
-            Po tej zmianie
-            <b>nawigacja stała się prostsza i bardziej intuicyjna</b>, a
-            użytkownicy szybciej mogą odnaleźć interesujące ich obszary oferty.
+            <span data-i18n="project_web_planetroad_iter4_p6_text1"
+              >Po tej zmianie
+            </span>
+            <b data-i18n="project_web_planetroad_iter4_p6_bold"
+              >nawigacja stała się prostsza i bardziej intuicyjna</b
+            >
+            <span data-i18n="project_web_planetroad_iter4_p6_text2"
+              >, a użytkownicy szybciej mogą odnaleźć interesujące ich obszary
+              oferty.</span
+            >
           </p>
 
           <figure class="imageFigure">
@@ -1356,13 +1791,16 @@
               href="../assets/projects/strona-internetowa-PlanetRoad/planetroad-offer.png"
               data-lightbox="planetroad-process"
               data-title="Dostosowanie oferty na stronie głównej"
+              data-lightbox-title="project_web_planetroad_caption_offer_main"
             >
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-offer.png"
                 alt="Dostosowanie oferty na stronie głównej"
               />
             </a>
-            <figcaption>Dostosowanie oferty na stronie głównej</figcaption>
+            <figcaption data-i18n="project_web_planetroad_caption_offer_main">
+              Dostosowanie oferty na stronie głównej
+            </figcaption>
           </figure>
 
           <figure class="imageFigure">
@@ -1370,13 +1808,16 @@
               href="../assets/projects/strona-internetowa-PlanetRoad/planetroad-pictures_edits_1.png"
               data-lightbox="planetroad-process"
               data-title="Dostosowanie pierwszego obrazka pod firmę"
+              data-lightbox-title="project_web_planetroad_caption_photo_edit1"
             >
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-pictures_edits_1.png"
                 alt="Dostosowanie pierwszego obrazka pod firmę"
               />
             </a>
-            <figcaption>Dostosowanie pierwszego obrazka pod firmę</figcaption>
+            <figcaption data-i18n="project_web_planetroad_caption_photo_edit1">
+              Dostosowanie pierwszego obrazka pod firmę
+            </figcaption>
           </figure>
 
           <figure class="imageFigure">
@@ -1384,13 +1825,16 @@
               href="../assets/projects/strona-internetowa-PlanetRoad/planetroad-pictures_edits_2.png"
               data-lightbox="planetroad-process"
               data-title="Dostosowanie drugiego zdjęcia pod firmę"
+              data-lightbox-title="project_web_planetroad_caption_photo_edit2"
             >
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-pictures_edits_2.png"
                 alt="Dostosowanie drugiego zdjęcia pod firmę"
               />
             </a>
-            <figcaption>Dostosowanie drugiego zdjęcia pod firmę</figcaption>
+            <figcaption data-i18n="project_web_planetroad_caption_photo_edit2">
+              Dostosowanie drugiego zdjęcia pod firmę
+            </figcaption>
           </figure>
 
           <figure class="imageFigure">
@@ -1398,13 +1842,16 @@
               href="../assets/projects/strona-internetowa-PlanetRoad/planetroad-pictures_1.png"
               data-lightbox="planetroad-process"
               data-title="Zrobienie pierwszego zdjęcia pod firmę"
+              data-lightbox-title="project_web_planetroad_caption_photo_take1"
             >
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-pictures_1.png"
                 alt="Zrobienie pierwszego zdjęcia pod firmę"
               />
             </a>
-            <figcaption>Zrobienie pierwszego zdjęcia pod firmę</figcaption>
+            <figcaption data-i18n="project_web_planetroad_caption_photo_take1">
+              Zrobienie pierwszego zdjęcia pod firmę
+            </figcaption>
           </figure>
 
           <figure class="imageFigure">
@@ -1412,47 +1859,58 @@
               href="../assets/projects/strona-internetowa-PlanetRoad/planetroad-pictures_2.png"
               data-lightbox="planetroad-process"
               data-title="Zrobienie drugiego zdjęcia pod firmę"
+              data-lightbox-title="project_web_planetroad_caption_photo_take2"
             >
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-pictures_2.png"
                 alt="Zrobienie drugiego zdjęcia pod firmę"
               />
             </a>
-            <figcaption>Zrobienie drugiego zdjęcia pod firmę</figcaption>
+            <figcaption data-i18n="project_web_planetroad_caption_photo_take2">
+              Zrobienie drugiego zdjęcia pod firmę
+            </figcaption>
           </figure>
 
-          <h3 style="padding-top: 3vh; margin-bottom: 1vh">
+          <!-- tuuuuuutaj -->
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_web_planetroad_iter_h3_3"
+          >
             Jak skracam czas decyzji w procesie przetargowym? — Sortowanie i
             grupowanie referencji
           </h3>
 
-          <p>
+          <p data-i18n="project_web_planetroad_iter_p_12">
             W trakcie rozwoju strony firma ukończyła kilka projektów, a liczba
             referencji znacząco wzrosła. Wpłynęło to na
-            <b>wydłużenie czasu wyszukiwania konkretnej referencji</b>
+            <b data-i18n="project_web_planetroad_iter_p_12_b"
+              >wydłużenie czasu wyszukiwania konkretnej referencji</b
+            >
           </p>
 
-          <p>
+          <p data-i18n="project_web_planetroad_iter_p_13">
             Podczas rozmowy z CEO poprosiłem go o znalezienie najdłuższej
-            referencji z zakresu PFU. Zadanie zajęło mu <b>około 3 minuty</b>,
-            mimo znajomości struktury strony.
+            referencji z zakresu PFU. Zadanie zajęło mu
+            <b data-i18n="project_web_planetroad_iter_p_13_b">około 3 minuty</b
+            >, mimo znajomości struktury strony.
           </p>
 
-          <p>
+          <p data-i18n="project_web_planetroad_iter_p_14">
             Ta informacja jasno pokazała, że
-            <b
+            <b data-i18n="project_web_planetroad_iter_p_14_b1"
               >obecny sposób prezentacji referencji nie wspiera realnych potrzeb
               biznesowych</b
             >. W odpowiedzi na ten problem
-            <b>pogrupowałem referencje według rodzaju realizowanej usługi</b>,
-            gdyż potencjalny klient firmy szuka wykonawcy z doświadczeniem w
+            <b data-i18n="project_web_planetroad_iter_p_14_b2"
+              >pogrupowałem referencje według rodzaju realizowanej usługi</b
+            >, gdyż potencjalny klient firmy szuka wykonawcy z doświadczeniem w
             konkretnym typie projektu np. Program Funkcjonalno-Użytkowy o
             określonych w wymaganiach parametrach.
           </p>
 
-          <p>
+          <p data-i18n="project_web_planetroad_iter_p_15">
             Efektem było
-            <b
+            <b data-i18n="project_web_planetroad_iter_p_15_b"
               >znaczące skrócenie czasu wyszukiwania konkretnych referencji i
               wsparcie realnego procesu przetargowego</b
             >.
@@ -1463,38 +1921,47 @@
               href="../assets/projects/strona-internetowa-PlanetRoad/planetroad-references_categorized.png"
               data-lightbox="planetroad-process"
               data-title="Kategoryzacja Referencji"
+              data-lightbox-title="project_web_planetroad_fig_title_24"
             >
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-references_categorized.png"
                 alt="Kategoryzacja Referencji"
+                data-i18n="[alt]project_web_planetroad_fig_title_24"
               />
             </a>
-            <figcaption>Kategoryzacja Referencji</figcaption>
+            <figcaption data-i18n="project_web_planetroad_fig_title_24">
+              Kategoryzacja Referencji
+            </figcaption>
           </figure>
 
-          <h3 style="padding-top: 3vh; margin-bottom: 1vh">
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_web_planetroad_iter_h3_4"
+          >
             Jak wzmacniam poczucie bezpieczeństwa użytkownika? — Transparentność
             i RODO
           </h3>
 
-          <p>
+          <p data-i18n="project_web_planetroad_iter_p_16">
             Wraz z rozwojem strony pojawiła się potrzeba
-            <b
+            <b data-i18n="project_web_planetroad_iter_p_16_b"
               >lepszego zadbania o transparentność przetwarzania danych
               osobowych</b
             >, zarówno z perspektywy formalnej, jak i wizerunkowej.
           </p>
 
-          <p>
-            Stworzyłem <b>dedykowaną stronę polityki prywatności</b>, jasno
-            komunikującą sposób przetwarzania danych klientów. Teraz każdy
-            zainteresowany może z poziomu dolnej nawigacji dostać się na tę
-            podstronę i rozwiać swoje ewentualne wątpliwości.
+          <p data-i18n="project_web_planetroad_iter_p_17">
+            Stworzyłem
+            <b data-i18n="project_web_planetroad_iter_p_17_b"
+              >dedykowaną stronę polityki prywatności</b
+            >, jasno komunikującą sposób przetwarzania danych klientów. Teraz
+            każdy zainteresowany może z poziomu dolnej nawigacji dostać się na
+            tę podstronę i rozwiać swoje ewentualne wątpliwości.
           </p>
 
-          <p>
+          <p data-i18n="project_web_planetroad_iter_p_18">
             Efektem była
-            <b
+            <b data-i18n="project_web_planetroad_iter_p_18_b"
               >większa wiarygodność firmy i poczucie bezpieczeństwa po stronie
               użytkowników</b
             >.
@@ -1505,36 +1972,48 @@
               href="../assets/projects/strona-internetowa-PlanetRoad/planetroad-privacy_policy.png"
               data-lightbox="planetroad-process"
               data-title="Podstrona z Polityką Prywatności"
+              data-lightbox-title="project_web_planetroad_fig_title_25"
             >
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-privacy_policy.png"
                 alt="Podstrona z Polityką Prywatności"
+                data-i18n="[alt]project_web_planetroad_fig_title_25"
               />
             </a>
-            <figcaption>Podstrona z Polityką Prywatności</figcaption>
+            <figcaption data-i18n="project_web_planetroad_fig_title_25">
+              Podstrona z Polityką Prywatności
+            </figcaption>
           </figure>
 
-          <h3 style="padding-top: 3vh; margin-bottom: 1vh">
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_web_planetroad_iter_h3_5"
+          >
             Jak pokazuję realną wartość pracy zespołu? — Wizualna prezentacja
             efektów realizacji
           </h3>
-          <p>
+
+          <p data-i18n="project_web_planetroad_iter_p_19">
             Rewolucja Social Mediów ostatnich lat jasno pokazała, że
-            <b>wizualne przedstawienie efektów pracy</b> mają ogromny wpływ na
-            postrzeganą wartość usług, a krótkie filmiki to klucz do zdobycia
-            uwagi odbiorcy.
+            <b data-i18n="project_web_planetroad_iter_p_19_b"
+              >wizualne przedstawienie efektów pracy</b
+            >
+            mają ogromny wpływ na postrzeganą wartość usług, a krótkie filmiki
+            to klucz do zdobycia uwagi odbiorcy.
           </p>
-          <p>
+
+          <p data-i18n="project_web_planetroad_iter_p_20">
             W odpowiedzi na powyższy wynik analizy wzbogaciłem podstrony
             "Doświadczenia" oraz "Realizacje"
-            <b
+            <b data-i18n="project_web_planetroad_iter_p_20_b"
               >o materiał wideo, pokazując proces - zdjęcia projektu oraz
               zdjęcia „przed i po”</b
             >.
           </p>
-          <p>
+
+          <p data-i18n="project_web_planetroad_iter_p_21">
             Dzięki temu potencjalni klienci mogą
-            <b
+            <b data-i18n="project_web_planetroad_iter_p_21_b"
               >lepiej zrozumieć zakres pracy firmy i zobaczyć finalny efekt
               inwestycji</b
             >.
@@ -1545,59 +2024,42 @@
               href="../assets/projects/strona-internetowa-PlanetRoad/planetroad-video.png"
               data-lightbox="planetroad-process"
               data-title="Sekcja przedstawiająca konkretną realizację"
+              data-lightbox-title="project_web_planetroad_fig_title_26"
             >
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-video.png"
                 alt="Sekcja przedstawiająca konkretną realizację"
+                data-i18n="[alt]project_web_planetroad_fig_title_26"
               />
             </a>
-            <figcaption>Sekcja przedstawiająca konkretną realizację</figcaption>
+            <figcaption data-i18n="project_web_planetroad_fig_title_26">
+              Sekcja przedstawiająca konkretną realizację
+            </figcaption>
           </figure>
-
-          <!--
-          <h3 style="padding-top: 2vh; margin-bottom: 1vh">
-            Jak pogłębiam zrozumienie procesu u klienta B2B? — Dedykowane
-            podstrony realizacji
-          </h3>
-
-          <p>
-            Wraz z dalszym rozrostem sekcji realizacji podjęliśmy decyzję o
-            <b>stworzeniu osobnych podstron dla każdej inwestycji</b>.
-          </p>
-
-          <p>
-            Pozwoliło to szczegółowo zaprezentować
-            <b>proces, zakres, koszt i czas realizacji</b>.
-          </p>
-
-          <p>
-            Efektem było
-            <b
-              >pogłębienie narracji projektowej i zwiększenie
-              transparentności</b
-            >, szczególnie istotne dla klientów B2B.
-          </p>
-          -->
-          <!-- FOTA PRZED I PO -->
         </section>
 
         <section id="efekt-koncowy" style="padding-bottom: 8vh">
-          <h2 style="padding-top: 8vh; margin-bottom: 1.5vw">Efekt Końcowy</h2>
-          <p>
+          <h2
+            style="padding-top: 8vh; margin-bottom: 1.5vw"
+            data-i18n="project_web_planetroad_final_h2"
+          >
+            Efekt Końcowy
+          </h2>
+          <p data-i18n="project_web_planetroad_final_p_1">
             ✅ Zwiększyłem widoczność firmy w internecie i wygenerowałem
             zapytania od potencjalnych klientów dzięki przejrzystej prezentacji
             oferty i portfolio.
           </p>
-          <p>
+          <p data-i18n="project_web_planetroad_final_p_2">
             ✅ Wyróżniłem firmę na tle konkurencji poprzez klarowne
             przedstawienie usług i dotychczasowych realizacji wymaganych w
             przetargach.
           </p>
-          <p>
+          <p data-i18n="project_web_planetroad_final_p_3">
             ✅ Zapewniłem spójność strony z nową identyfikacją wizualną,
             wzmacniając profesjonalny wizerunek marki B2B.
           </p>
-          <p>
+          <p data-i18n="project_web_planetroad_final_p_4">
             ✅ Poprawiłem doświadczenie użytkownika i szanse na konwersję dzięki
             intuicyjnej nawigacji i łatwemu kontaktowi.
           </p>
@@ -1607,16 +2069,20 @@
               href="../assets/projects/identyfikacja-wizualna-PlanetRoad/www-PlanetRoad.png"
               data-lightbox="galeria-identyfikacja-wizualna-PlanetRoad"
               data-title="Widok strony PlanetRoad"
+              data-lightbox-title="project_web_planetroad_fig_title_27"
             >
               <img
                 src="../assets/projects/identyfikacja-wizualna-PlanetRoad/www-PlanetRoad.png"
                 alt="Widok strony PlanetRoad"
+                data-i18n="[alt]project_web_planetroad_fig_title_27"
               />
             </a>
-            <figcaption>Widok strony PlanetRoad</figcaption>
+            <figcaption data-i18n="project_web_planetroad_fig_title_27">
+              Widok strony PlanetRoad
+            </figcaption>
           </figure>
 
-          <p>
+          <p data-i18n="project_web_planetroad_final_link_text">
             Stronę w pełnym wymiarze można zobaczyć pod linkiem
             <a
               href="https://www.planetroad.pl"
@@ -1624,18 +2090,6 @@
               >www.planetroad.pl</a
             >.
           </p>
-          <!--
-          <a
-              href="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Picture.png"
-              data-lightbox="galeria-identyfikacja-wizualna-PlanetRoad"
-          >
-            <img
-              class="processPhoto"
-              src="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Picture.png"
-              alt="Grafika wykorzystujące nową odsłonę logo PlanetRoad"
-            />
-          </a>
-          -->
 
           <div class="mini-gallery">
             <a
@@ -1645,6 +2099,7 @@
               <img
                 src="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Cover.webp"
                 alt="Miniatura 1"
+                data-i18n="[alt]project_web_planetroad_thumb_1"
               />
             </a>
             <a
@@ -1654,6 +2109,7 @@
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-research_insights.png"
                 alt="Miniatura 2"
+                data-i18n="[alt]project_web_planetroad_thumb_2"
               />
             </a>
             <a
@@ -1663,6 +2119,7 @@
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-information_architecture.png"
                 alt="Miniatura 3"
+                data-i18n="[alt]project_web_planetroad_thumb_3"
               />
             </a>
             <a
@@ -1672,6 +2129,7 @@
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-user_flow.png"
                 alt="Miniatura 4"
+                data-i18n="[alt]project_web_planetroad_thumb_4"
               />
             </a>
             <a
@@ -1681,6 +2139,7 @@
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-wireframes_Hero.png"
                 alt="Miniatura 5"
+                data-i18n="[alt]project_web_planetroad_thumb_5"
               />
             </a>
             <a
@@ -1690,6 +2149,7 @@
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-wireframes_Team.png"
                 alt="Miniatura 6"
+                data-i18n="[alt]project_web_planetroad_thumb_6"
               />
             </a>
             <a
@@ -1699,6 +2159,7 @@
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-wireframes_Numbers.png"
                 alt="Miniatura 7"
+                data-i18n="[alt]project_web_planetroad_thumb_7"
               />
             </a>
             <a
@@ -1708,6 +2169,7 @@
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-wireframes_Experience.png"
                 alt="Miniatura 8"
+                data-i18n="[alt]project_web_planetroad_thumb_8"
               />
             </a>
             <a
@@ -1717,6 +2179,7 @@
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-visual_identity.png"
                 alt="Miniatura 9"
+                data-i18n="[alt]project_web_planetroad_thumb_9"
               />
             </a>
             <a
@@ -1726,6 +2189,7 @@
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-old_www_1.png"
                 alt="Miniatura 10"
+                data-i18n="[alt]project_web_planetroad_thumb_10"
               />
             </a>
             <a
@@ -1735,6 +2199,7 @@
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-old_www_2.png"
                 alt="Miniatura 11"
+                data-i18n="[alt]project_web_planetroad_thumb_11"
               />
             </a>
             <a
@@ -1744,6 +2209,7 @@
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-hero.png"
                 alt="Miniatura 12"
+                data-i18n="[alt]project_web_planetroad_thumb_12"
               />
             </a>
             <a
@@ -1753,6 +2219,7 @@
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-numbers.png"
                 alt="Miniatura 13"
+                data-i18n="[alt]project_web_planetroad_thumb_13"
               />
             </a>
             <a
@@ -1762,6 +2229,7 @@
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-team.png"
                 alt="Miniatura 14"
+                data-i18n="[alt]project_web_planetroad_thumb_14"
               />
             </a>
             <a
@@ -1771,6 +2239,7 @@
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-contact.png"
                 alt="Miniatura 15"
+                data-i18n="[alt]project_web_planetroad_thumb_15"
               />
             </a>
             <a
@@ -1780,6 +2249,7 @@
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-experience.png"
                 alt="Miniatura 16"
+                data-i18n="[alt]project_web_planetroad_thumb_16"
               />
             </a>
             <a
@@ -1789,6 +2259,7 @@
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-optimalization.png"
                 alt="Miniatura 17"
+                data-i18n="[alt]project_web_planetroad_thumb_17"
               />
             </a>
             <a
@@ -1798,6 +2269,7 @@
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-realizacje.png"
                 alt="Miniatura 18"
+                data-i18n="[alt]project_web_planetroad_thumb_18"
               />
             </a>
             <a
@@ -1807,6 +2279,7 @@
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-offer.png"
                 alt="Miniatura 19"
+                data-i18n="[alt]project_web_planetroad_thumb_19"
               />
             </a>
             <a
@@ -1816,6 +2289,7 @@
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-pictures_edits_1.png"
                 alt="Miniatura 20"
+                data-i18n="[alt]project_web_planetroad_thumb_20"
               />
             </a>
             <a
@@ -1825,6 +2299,7 @@
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-pictures_edits_2.png"
                 alt="Miniatura 21"
+                data-i18n="[alt]project_web_planetroad_thumb_21"
               />
             </a>
             <a
@@ -1834,6 +2309,7 @@
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-pictures_1.png"
                 alt="Miniatura 22"
+                data-i18n="[alt]project_web_planetroad_thumb_22"
               />
             </a>
             <a
@@ -1843,6 +2319,7 @@
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-pictures_2.png"
                 alt="Miniatura 23"
+                data-i18n="[alt]project_web_planetroad_thumb_23"
               />
             </a>
             <a
@@ -1852,6 +2329,7 @@
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-references_categorized.png"
                 alt="Miniatura 24"
+                data-i18n="[alt]project_web_planetroad_thumb_24"
               />
             </a>
             <a
@@ -1861,6 +2339,7 @@
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-privacy_policy.png"
                 alt="Miniatura 25"
+                data-i18n="[alt]project_web_planetroad_thumb_25"
               />
             </a>
             <a
@@ -1870,6 +2349,7 @@
               <img
                 src="../assets/projects/strona-internetowa-PlanetRoad/planetroad-video.png"
                 alt="Miniatura 26"
+                data-i18n="[alt]project_web_planetroad_thumb_26"
               />
             </a>
             <a
@@ -1879,102 +2359,162 @@
               <img
                 src="../assets/projects/identyfikacja-wizualna-PlanetRoad/www-PlanetRoad.png"
                 alt="Miniatura 27"
+                data-i18n="[alt]project_web_planetroad_thumb_27"
               />
             </a>
           </div>
         </section>
 
         <section id="po-projekcie">
-          <h2 style="padding-top: 8vh; margin-bottom: 1vh">Po Projekcie</h2>
+          <h2
+            style="padding-top: 8vh; margin-bottom: 1vh"
+            data-i18n="project_web_planetroad_after_h2"
+          >
+            Po Projekcie
+          </h2>
 
-          <h3 style="padding-top: 1vh; margin-bottom: 1vh">Kluczowe Wnioski</h3>
+          <h3
+            style="padding-top: 1vh; margin-bottom: 1vh"
+            data-i18n="project_web_planetroad_after_h3_1"
+          >
+            Kluczowe Wnioski
+          </h3>
           <p>
-            🧠 W projektach B2B kluczowe znaczenie ma
-            <b>jasna struktura informacji i szybkie budowanie zaufania</b> —
-            użytkownicy nie eksplorują strony, lecz skanują ją w poszukiwaniu
-            potwierdzenia kompetencji i wiarygodności firmy.
+            <span data-i18n="project_web_planetroad_after_p_1_part1"
+              >🧠 W projektach B2B kluczowe znaczenie ma</span
+            >
+            <b data-i18n="project_web_planetroad_after_p_1_b"
+              >jasna struktura informacji i szybkie budowanie zaufania</b
+            >
+            <span data-i18n="project_web_planetroad_after_p_1_part2"
+              >— użytkownicy nie eksplorują strony, lecz skanują ją w
+              poszukiwaniu potwierdzenia kompetencji i wiarygodności
+              firmy.</span
+            >
           </p>
+
           <p>
-            🧠 Wydajność techniczna strony oraz dostępność (WCAG) nie są jedynie
-            dodatkiem — w przypadku klientów z sektora publicznego i dużych
-            inwestorów stają się realnym kryterium oceny profesjonalizmu firmy.
-            Natomiast jeżeli chodzi o rankingi przetargowe, to wydajność i
-            dostępność może się nawet przełożyć na podpisanie dużego kontraktu
-            lub jego niepodpisanie, gdy zleceniodawcy strona nie będzie się
-            ładować wzrasta ryzyko, że ją opuści.
+            <span data-i18n="project_web_planetroad_after_p_2">
+              🧠 Wydajność techniczna strony oraz dostępność (WCAG) nie są
+              jedynie dodatkiem — w przypadku klientów z sektora publicznego i
+              dużych inwestorów stają się realnym kryterium oceny
+              profesjonalizmu firmy. Natomiast jeżeli chodzi o rankingi
+              przetargowe, to wydajność i dostępność może się nawet przełożyć na
+              podpisanie dużego kontraktu lub jego niepodpisanie, gdy
+              zleceniodawcy strona nie będzie się ładować wzrasta ryzyko, że ją
+              opuści.
+            </span>
           </p>
 
-          <h3 style="padding-top: 2vh; margin-bottom: 1vh">Następne Kroki</h3>
+          <h3
+            style="padding-top: 2vh; margin-bottom: 1vh"
+            data-i18n="project_web_planetroad_after_h3_2"
+          >
+            Następne Kroki
+          </h3>
 
           <p>
-            <b>🔜 Rozbudowa sekcji realizacji o case studies</b><br />
-            – każda realizacja mogłaby zostać rozwinięta o opis problemu, zakres
-            prac, zastosowane rozwiązania oraz efekty, co jeszcze silniej
-            wzmacniałoby ekspercki wizerunek marki i ułatwiało decyzje zakupowe.
+            <b data-i18n="project_web_planetroad_after_p_3_b"
+              >3️⃣ Rozbudowa sekcji realizacji o case studies</b
+            >
+            <span data-i18n="project_web_planetroad_after_p_3">
+              – każda realizacja mogłaby zostać rozwinięta o opis problemu,
+              zakres prac, zastosowane rozwiązania oraz efekty, co jeszcze
+              silniej wzmacniałoby ekspercki wizerunek marki i ułatwiało decyzje
+              zakupowe.
+            </span>
           </p>
-
+          <br />
           <p>
-            <b
-              >🔜 Wprowadzenie dedykowanych landing pages pod konkretne
+            <b data-i18n="project_web_planetroad_after_p_4_b"
+              >3️⃣ Wprowadzenie dedykowanych landing pages pod konkretne
               usługi</b
-            ><br />
-            – osobne strony dla projektów drogowych, organizacji ruchu czy
-            konsultingu technicznego umożliwiłyby lepsze pozycjonowanie SEO i
-            precyzyjne dopasowanie komunikacji do różnych grup klientów.
+            >
+            <span data-i18n="project_web_planetroad_after_p_4">
+              – osobne strony dla projektów drogowych, organizacji ruchu czy
+              konsultingu technicznego umożliwiłyby lepsze pozycjonowanie SEO i
+              precyzyjne dopasowanie komunikacji do różnych grup klientów.
+            </span>
           </p>
-
+          <br />
           <p>
-            <b>🔜 Rozszerzenie strony o treści eksperckie</b><br />
-            – sekcja artykułów lub aktualności branżowych (np. zmiany w
-            przepisach, dobre praktyki projektowe) mogłaby budować długofalową
-            widoczność w Google oraz pozycjonować PlanetRoad jako lidera wiedzy
-            w branży.
+            <b data-i18n="project_web_planetroad_after_p_5_b"
+              >3️⃣ Rozszerzenie strony o treści eksperckie</b
+            >
+            <span data-i18n="project_web_planetroad_after_p_5">
+              – sekcja artykułów lub aktualności branżowych (np. zmiany w
+              przepisach, dobre praktyki projektowe) mogłaby budować długofalową
+              widoczność w Google oraz pozycjonować PlanetRoad jako lidera
+              wiedzy w branży.
+            </span>
           </p>
-
+          <br />
           <p>
-            <b>🔜 Zaawansowana analityka i optymalizacja konwersji</b><br />
-            – dalsza analiza zachowań użytkowników (scroll depth, click maps,
-            A/B testy) pozwoliłaby jeszcze lepiej dopasować układ strony i
-            zwiększyć liczbę zapytań ofertowych bez konieczności zwiększania
-            ruchu.
+            <b data-i18n="project_web_planetroad_after_p_6_b"
+              >3️⃣ Zaawansowana analityka i optymalizacja konwersji</b
+            >
+            <span data-i18n="project_web_planetroad_after_p_6">
+              – dalsza analiza zachowań użytkowników (scroll depth, click maps,
+              A/B testy) pozwoliłaby jeszcze lepiej dopasować układ strony i
+              zwiększyć liczbę zapytań ofertowych bez konieczności zwiększania
+              ruchu.
+            </span>
           </p>
         </section>
 
         <section class="navLoopWrapper">
-          <span class="navLoop"
-            >Zobacz kolejny projekt: <br /><a
+          <span class="navLoop">
+            <span data-i18n="project_web_planetroad_navloop_text"
+              >Zobacz kolejny projekt:</span
+            ><br />
+            <a
               class="loopLink"
               href="identyfikacja-wizualna-PlanetRoad.html"
-              >Identyfikacja&nbsp;Wizualna&nbsp;-&nbsp;PlanetRoad</a
-            ></span
-          >
+              data-i18n="project_web_planetroad_navloop_link"
+            >
+              Identyfikacja&nbsp;Wizualna&nbsp;-&nbsp;PlanetRoad
+            </a>
+          </span>
         </section>
       </main>
 
       <nav class="sideNav">
         <div class="sideNavWrapper">
-          <a href="#o-projekcie">O Projekcie</a>
-          <a href="#badania">Badania</a>
-          <a href="#ideacja">Ideacja</a>
-          <a href="#iteracje">Iteracje</a>
-          <a href="#efekt-koncowy">Efekt Końcowy</a>
-          <a href="#po-projekcie">Po Projekcie</a>
+          <a href="#o-projekcie" data-i18n="side_nav_about">O Projekcie</a>
+          <a href="#badania" data-i18n="side_nav_research">Badania</a>
+          <a href="#ideacja" data-i18n="side_nav_ideation">Ideacja</a>
+          <a href="#iteracje" data-i18n="side_nav_iterations">Iteracje</a>
+          <a href="#efekt-koncowy" data-i18n="side_nav_final_effect"
+            >Efekt Końcowy</a
+          >
+          <a href="#po-projekcie" data-i18n="side_nav_post_project"
+            >Po Projekcie</a
+          >
         </div>
       </nav>
     </div>
 
+    <!-- COOKIES -->
     <div id="cookie-banner" class="cookie-banner">
-      <div class="cookie-text">
+      <div class="cookie-text" data-i18n="cookies_text">
         🍪 Używam cookies do analizy ruchu i ciągłego ulepszania działania
         strony.
         <!--<a href="/privacy">Polityka prywatności</a>-->
       </div>
 
       <div class="cookie-buttons">
-        <button id="accept-cookies" class="cookie-btn primary">
+        <button
+          id="accept-cookies"
+          class="cookie-btn primary"
+          data-i18n="cookies_primary_button"
+        >
           Akceptuję
         </button>
-        <button id="decline-cookies" class="cookie-btn secondary">
+        <button
+          id="decline-cookies"
+          class="cookie-btn secondary"
+          data-i18n="cookies_secondary_button"
+        >
           Odrzucam
         </button>
       </div>
