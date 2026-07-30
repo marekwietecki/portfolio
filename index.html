@@ -90,19 +90,9 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <link rel="preload" as="image" href="assets/index/mwSmile.png" />
+    <link rel="preload" as="image" href="assets/index/mw_smile.png" />
 
     <style>
-      /*
-            >>>
-              ciut duży wydaje się ten padding po prawej na tablecie w hero
-              -> jeszcze tam przydało by się coś lekko dostosować
-            >>>
-              dodatkowo podpisy projektów się chyba nie skalują
-            >>>
-              projekty na głównej mają mieć poziomy Content, a nie tylko podpis do zdjęcia - mini pitch +
-            */
-      /* cursor */
       /* --- CUSTOM CURSOR SYSTEM --- */
       @media (hover: hover) and (pointer: fine) {
         body,
@@ -114,7 +104,17 @@
           cursor: none !important;
         }
       }
-
+      /* Canvas pod ślad heatmapy */
+      #cursor-heatmap {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none; /* Żeby nie blokował kliknięć! */
+        z-index: 0; /* Za kursorami, przed/za tłem */
+        opacity: 0.7; /* Subtelność - dostosuj intensywność */
+      }
       /* Tło typu Spotlight / Latarka */
       .cursor-spotlight {
         position: fixed;
@@ -126,7 +126,7 @@
         z-index: 0;
         background: radial-gradient(
           600px circle at var(--x, 50%) var(--y, 50%),
-          rgba(30, 110, 214, 0.08),
+          rgba(30, 110, 214, 0.04),
           transparent 80%
         );
         transition: opacity 0.3s ease;
@@ -521,8 +521,8 @@
         margin-left: auto;
         margin-right: auto; /* centrowanie całego .hero */
 
-        padding: 12vh 2vw 6vh 6vw; /* TOP RIGHT BOTTOM LEFT */
-        gap: 4vw;
+        padding: 12vh 1vw 6vh 8vw; /* TOP RIGHT BOTTOM LEFT */
+        gap: 2vw;
       }
       .gapp {
         padding-top: 8px;
@@ -532,10 +532,10 @@
       }
       .profile {
         width: 80%;
-        max-width: 800px;
+        max-width: 880px;
       }
       .profileImg {
-        width: 56%;
+        width: 48%;
         height: auto;
         border-radius: 48px;
         margin-bottom: 4vh;
@@ -962,152 +962,108 @@
       .disabled-project:hover::after {
         opacity: 1;
       }
-      /* form */
-      .spaceX {
-        width: 100%;
-        padding-top: 0px;
+
+      /* quick contact */
+      .quick-contact-section {
+        padding: 120px 20px;
       }
-      form {
-        max-width: 480px;
-        margin: auto;
-        background: white;
-        padding: 56px;
+
+      .contact-card {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 40px 30px;
+        background-color: #ffffff; /* Lub dopasowany odcień pod Twój motyw */
         border-radius: 32px;
-        box-shadow: 0 0.1px 16px rgba(0, 0, 0, 0.02);
+        text-align: center;
+        border: 1px solid #e9ecef;
+      }
+
+      .contact-header {
         display: flex;
         flex-direction: column;
-        gap: 8px;
-      }
-      .formHeading {
-        margin-top: 0;
-        margin-bottom: 36px;
-        font-size: 28px;
-        align-self: flex-start;
-      }
-
-      .form-contrast {
-        color: #b4b4b4;
-      }
-      /* ========================================================
-   PIŁKARSKA MIKRO-INTERAKCJA W FORMULARZU (POPRAWIONY WLOT)
-   ======================================================== */
-
-      /* Kontener ma teraz stałą szerokość, określającą długość całego "boiska" */
-      .football-pitch {
-        display: inline-block;
-        width: 50px;
-        height: 32px;
-        position: relative;
-        vertical-align: middle;
-      }
-
-      /* Piłka startuje z lewej krawędzi boiska */
-      .form-ball {
-        font-size: 12px;
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%) rotate(0deg);
-        z-index: 2; /* Piłka wlatuje DO ŚRODKA (przykrywa tylną siatkę, ale jest pod nią jeśli zmienisz z-index) */
-        transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-          left 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      }
-
-      /* Bramka stoi sztywno na prawej krawędzi boiska */
-      .form-goal {
-        font-size: 28px;
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        transition: transform 0.2s ease;
-        z-index: 1;
-        padding-bottom: 8px;
-      }
-
-      /* RESPONSYWNOŚĆ DLA EMBEDÓW */
-      @media (max-width: 480px) {
-        .formHeading {
-          font-size: 20px;
-        }
-        .football-pitch {
-          width: 40px;
-          height: 20px;
-        }
-        .form-ball {
-          font-size: 9px;
-        }
-        .form-goal {
-          font-size: 20px; /* Dopasowanie skali bramki na mobile */
-        }
-      }
-
-      /* ========================================================
-   MAGIA: TRIGGER PO KLIKNIĘCIU W FORMULARZ
-   ======================================================== */
-
-      /* 1. Strzał: Piłka przesuwa się w lewo o 72% szerokości boiska, co centruje ją idealnie w świetle bramki */
-      form:focus-within .form-ball {
-        left: 72%;
-        transform: translateY(-50%) rotate(360deg);
-      }
-
-      /* 2. Słupek/Siatka: Bramka reaguje na strzał lekkim tąpnięciem */
-      form:focus-within .form-goal {
-        transform: translateY(-50%) scale(1.1) translateX(2px);
-        filter: drop-shadow(0 0 6px rgba(30, 110, 214, 0.4));
-      }
-      .headingWrapper {
-        display: flex;
-        width: 100%;
-        align-self: center;
         justify-content: center;
       }
-      .formWrapper {
-        padding: 12vw 6vw; /* Góra i dół ; prawa i lewa*/
-        justify-content: center;
-        align-items: center;
+      .contact-header h2 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+        color: #1a1a1a;
       }
-      label {
-        font-weight: 500;
-        color: #b4b4b4;
-      }
-      input,
-      textarea {
-        width: 100%;
-        padding: 12px 16px;
-        border: 1px solid #ccc;
-        border-radius: 16px;
-        box-sizing: border-box;
+
+      .contact-header p {
         font-size: 1rem;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-        transition: border 0.3s, box-shadow 0.3s;
-        margin-bottom: 16px;
+        font-weight: 500;
+        color: #6c757d;
+        margin-bottom: 28px;
+        text-align: center;
       }
-      input:focus,
-      textarea:focus {
-        border-color: #1e6ed6;
-        outline: none;
-        box-shadow: 0 0 0 2px rgba(30, 110, 214, 0.15);
+
+      .contact-actions {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap; /* Zapewnia RWD na urządzeniach mobilnych */
+        margin-bottom: 24px;
       }
-      .submitForm {
-        background-color: #1e6ed6;
-        color: white;
+
+      /* Przycisk Główny (LinkedIn) */
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
         padding: 12px 24px;
-        border: none;
-        border-radius: 48px;
-        cursor: pointer;
+        background-color: #0a66c2; /* Kolor marki LinkedIn */
+        color: #ffffff;
+        border-radius: 8px;
         font-weight: 600;
-        font-size: 16px;
-        max-width: 80%;
-        align-self: center;
-        transition: transform 0.2s ease, background-color 0.3s;
-        box-shadow: 0 4px 12px rgba(30, 110, 214, 0.2);
-        margin-top: 16px;
+        text-decoration: none;
+        transition: transform 0.2s, background-color 0.2s;
       }
-      .submitForm:hover {
-        background-color: #145cb3;
-        transform: scale(1.05);
+
+      .btn-primary:hover {
+        background-color: #084e96;
+        transform: translateY(-2px);
+      }
+
+      /* Przycisk Drugorzędny (CV) */
+      .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 24px;
+        background-color: #ffffff;
+        color: #212529;
+        border: 1px solid #ced4da;
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: transform 0.2s, background-color 0.2s;
+      }
+
+      .btn-secondary:hover {
+        background-color: #f1f3f5;
+        transform: translateY(-2px);
+      }
+
+      /* Szybki mail poniżej */
+      .contact-direct {
+        font-size: 0.95rem;
+        color: #6c757d;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .email-link {
+        color: #212529;
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+
+      .email-link:hover {
+        color: #0a66c2;
       }
       /* Cookies */
       .cookie-banner {
@@ -1479,7 +1435,7 @@
       <div class="profilePicture">
         <img
           id="profileImg"
-          src="assets/index/mwSmile.png"
+          src="assets/index/mw_smile.png"
           alt="Moje zdjęcie"
           class="profileImg"
           data-i18n="hero_mw"
@@ -1707,40 +1663,76 @@
     <!-- SOCIAL_PROOF -->
     <section id="socialProof"></section>
 
-    <!-- FORM -->
-    <section id="contact" style="margin-bottom: 6shv; padding-top: 4svh">
-      <div class="formWrapper">
-        <form action="https://formspree.io/f/mzzeyjbd" method="POST">
-          <div class="headingWrapper">
-            <h2 class="formHeading">
-              <span data-i18n="form_title">Masz pomysł na projekt?</span> <br />
-              <span class="form-contrast" data-i18n="form_subtitle"
-                >Zobaczmy, czy gramy do jednej bramki</span
-              ><span class="football-pitch"
-                ><span class="form-ball">⚽️</span
-                ><span class="form-goal">🥅</span></span
-              >
-            </h2>
+    <!-- quick contact -->
+    <section id="contact" class="quick-contact-section">
+      <div class="container">
+        <div class="contact-card">
+          <!-- Nagłówek i kontekst -->
+          <div class="contact-header">
+            <h2 data-i18n="contact_title">Podoba Ci się to, co widzisz?</h2>
+            <p data-i18n="contact_subtitle">
+              Szukasz UX Designera do zespołu, czy masz projekt do omówienia?
+            </p>
           </div>
 
-          <label for="name" data-i18n="form_name">Imię / Nazwa:</label>
-          <input type="text" id="name" name="name" required />
+          <!-- Akcje dla Rekruterów i Klientów (Główne interakcje) -->
+          <div class="contact-actions">
+            <!-- Główna Akcja: Fast Track (Napisz wiadomość) -->
+            <a
+              href="https://www.linkedin.com/in/TWOJ-PROFIL"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary"
+              data-i18n="btn_linkedin"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <!-- Ikona LinkedIn -->
+                <path
+                  d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.7a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26Z"
+                />
+              </svg>
+              Napisz na LinkedIn
+            </a>
 
-          <label for="email" data-i18n="form_email">Adres e-mail:</label>
-          <input type="email" id="email" name="email" required />
+            <!-- Druga Akcja: Pobranie CV (MUST-HAVE dla Rekrutera!) -->
+            <a
+              href="/path/to/twoje-cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-secondary"
+              data-i18n="btn_cv"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <!-- Ikona oka (View/Preview) -->
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+              Zobacz CV (PDF)
+            </a>
+          </div>
 
-          <label for="message" data-i18n="form_message">Wiadomość:</label>
-          <textarea id="message" name="message" rows="6" required></textarea>
-
-          <button
-            class="submitForm"
-            type="submit"
-            onclick="trackAdsConversion()"
-            data-i18n="form_button"
-          >
-            Wyślij wiadomość
-          </button>
-        </form>
+          <!-- Szybki kontakt bezpośredni (Fallback) -->
+          <div class="contact-direct">
+            <span data-i18n="contact_or">lub po prostu napisz maila:</span>
+            <a href="mailto:kontakt@marekwietecki.pl" class="email-link">
+              kontakt@marekwietecki.pl
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -2085,37 +2077,100 @@
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const profileImg = document.getElementById("profileImg");
+        if (!profileImg) return;
+    
         let revertTimeout;
-
-        const currentLang = localStorage.getItem("selectedLanguage");
-        console.log(currentLang);
-
-        if (currentLang === "pl") {
-          profileImg.addEventListener("click", () => {
-            profileImg.src = "assets/index/mwHappy.png"; // obrazek po kliknięciu
-            clearTimeout(revertTimeout);
-            revertTimeout = setTimeout(() => {
-              profileImg.src = "assets/index/mwSmile.png"; // powrót po 1s
-            }, 2000);
-          });
-        } else if (currentLang === "en") {
-          profileImg.addEventListener("click", () => {
-            profileImg.src = "assets/index/mwHappyEng.png"; // obrazek po kliknięciu
-            clearTimeout(revertTimeout);
-            revertTimeout = setTimeout(() => {
-              profileImg.src = "assets/index/mwSmileEng.png"; // powrót po 1s
-            }, 2000);
-          });
-        } else {
-          //znowu pl jakby coś nie działało
-          profileImg.addEventListener("click", () => {
-            profileImg.src = "assets/index/mwHappy.png"; // obrazek po kliknięciu
-            clearTimeout(revertTimeout);
-            revertTimeout = setTimeout(() => {
-              profileImg.src = "assets/index/mwSmile.png"; // powrót po 1s
-            }, 2000);
-          });
+        let particles = [];
+        let animFrame;
+    
+        // Utworzenie nakładki canvas na zdjęcie pod efekt iskier
+        const canvas = document.createElement("canvas");
+        canvas.style.position = "absolute";
+        canvas.style.top = "0";
+        canvas.style.left = "0";
+        canvas.style.width = "100%";
+        canvas.style.height = "100%";
+        canvas.style.pointerEvents = "none"; // Kliknięcia przechodzą do obrazka
+    
+        // Upewniamy się, że rodzic obrazka ma pozycjonowanie do nakładki
+        if (profileImg.parentElement) {
+          profileImg.parentElement.style.position = "relative";
+          profileImg.parentElement.appendChild(canvas);
         }
+    
+        const ctx = canvas.getContext("2d");
+    
+        // Funkcja generująca delikatne iskry / fajerwerki
+        function triggerSparkles() {
+          canvas.width = profileImg.clientWidth || profileImg.offsetWidth;
+          canvas.height = profileImg.clientHeight || profileImg.offsetHeight;
+          
+          particles = [];
+          const count = 18; // Kameralna, elegacka ilość cząsteczek
+    
+          for (let i = 0; i < count; i++) {
+            const angle = Math.random() * Math.PI * 2;
+            const speed = Math.random() * 2.5 + 1;
+            particles.push({
+              x: canvas.width / 2,
+              y: canvas.height / 2,
+              vx: Math.cos(angle) * speed,
+              vy: Math.sin(angle) * speed - 0.5, // Lekki ruch w górę
+              size: Math.random() * 3 + 1.5,
+              // Ciepłe złote / jasne barwy:
+              color: `hsl(${Math.floor(Math.random() * 40 + 35)}, 100%, 70%)`,
+              alpha: 1,
+              decay: Math.random() * 0.02 + 0.015
+            });
+          }
+    
+          if (!animFrame) {
+            animate();
+          }
+        }
+    
+        function animate() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+          particles.forEach((p, index) => {
+            p.x += p.vx;
+            p.y += p.vy;
+            p.alpha -= p.decay;
+    
+            if (p.alpha > 0) {
+              ctx.save();
+              ctx.globalAlpha = p.alpha;
+              ctx.fillStyle = p.color;
+              ctx.beginPath();
+              ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+              ctx.fill();
+              ctx.restore();
+            } else {
+              particles.splice(index, 1);
+            }
+          });
+    
+          if (particles.length > 0) {
+            animFrame = requestAnimationFrame(animate);
+          } else {
+            animFrame = null;
+          }
+        }
+    
+        // Obsługa kliknięcia
+        profileImg.addEventListener("click", () => {
+          // 1. Zmiana zdjęcia
+          profileImg.src = "assets/index/mw_happy.png";
+    
+          // 2. Efekt iskier
+          triggerSparkles();
+    
+          // 3. Powrót po 2 sekundach
+          clearTimeout(revertTimeout);
+          revertTimeout = setTimeout(() => {
+            profileImg.src = "assets/index/mw_smile.png";
+          }, 2000);
+        });
       });
     </script>
 
@@ -2275,6 +2330,7 @@
     </script>
 
     <!-- Custom Cursor Elements -->
+    <canvas id="cursor-heatmap"></canvas>
     <div class="cursor-spotlight"></div>
     <div class="cursor-dot"></div>
     <div class="cursor-outline">
@@ -2367,6 +2423,81 @@
       });
     </script>
 
+    <!-- heatmap -->
+    <script>
+      (function initCursorHeatmap() {
+        // Sprawdzamy czy użytkownik ma myszkę (nie dotyk)
+        if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches)
+          return;
+
+        const canvas = document.getElementById("cursor-heatmap");
+        if (!canvas) return;
+
+        const ctx = canvas.getContext("2d");
+        let points = [];
+
+        // Ustawienie rozdzielczości Canvasu do wielkości ekranu (uwzględniając DPI)
+        function resizeCanvas() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener("resize", resizeCanvas);
+
+        // Rejestrowanie pozycji myszy
+        window.addEventListener("mousemove", (e) => {
+          points.push({
+            x: e.clientX,
+            y: e.clientY,
+            radius: 25, // Wielkość punktu heatmapy
+            alpha: 0.35, // Początkowa przezroczystość (nie za mocna)
+            // Odcień niebieskiego pasujący do Twojej kropki #1e6ed6
+            color: "30, 110, 214",
+          });
+        });
+
+        // Pętla animacji (wyciąga max płynności i nie obciąża procesora)
+        function animate() {
+          // Czyszczenie poprzedniej klatki
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+          for (let i = 0; i < points.length; i++) {
+            const p = points[i];
+
+            // Rysowanie rozmytego koła (efekt cieplny)
+            const gradient = ctx.createRadialGradient(
+              p.x,
+              p.y,
+              0,
+              p.x,
+              p.y,
+              p.radius
+            );
+            gradient.addColorStop(0, `rgba(${p.color}, ${p.alpha})`);
+            gradient.addColorStop(1, `rgba(${p.color}, 0)`);
+
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Wygaszanie punktu (zmniejszanie opacity z czasem)
+            p.alpha -= 0.008; // Im mniejsza wartość, tym dłużej ślad znika
+            p.radius += 0.2; // Ślad delikatnie rozpływa się na boki
+
+            // Usuwanie punktów, które już całkowicie wygasły
+            if (p.alpha <= 0) {
+              points.splice(i, 1);
+              i--;
+            }
+          }
+
+          requestAnimationFrame(animate);
+        }
+
+        animate();
+      })();
+    </script>
   </body>
   <script src="js/cookie.js"></script>
 </html>

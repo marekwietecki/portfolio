@@ -25,6 +25,7 @@ const translations = {
     footer_copyright:
       "© Marek Wietecki 2026. Treści chronione prawem autorskim.",
 
+    // hero
     hero_mw: "assets/index/mwSmile.png",
     hero_hi: "Cześć!",
     hero_hi2: "Od ponad 3 lat działam jako",
@@ -52,11 +53,24 @@ const translations = {
     projects_planetroad_visualidentity_subtitle:
       "Jak wdrożyłem PlanetRoad w świat cyfrowy, tworząc spójną komunikację wizualną?",
 
+    // quick contact
+    contact_title: "Porozmawiajmy o współpracy",
+    contact_subtitle:
+      "Szukasz UX Designera do zespołu, czy masz projekt do omówienia?",
+    btn_linkedin: "Napisz na LinkedIn",
+    btn_cv: "Zobacz CV (PDF)",
+    contact_or: "lub po prostu napisz e-mail:",
+
+    // form
     form_title: "Masz pomysł na projekt?",
     form_subtitle: "Zobaczmy, czy gramy do jednej bramki",
     form_name: "Imię / Nazwa:",
-    form_email: "E-mail:",
+    form_name_placeholder: "np. Jan Kowalski / Nazwa firmy",
+    form_email: "Adres e-mail:",
+    form_email_placeholder: "jan.kowalski@example.com",
     form_message: "Wiadomość:",
+    form_message_placeholder:
+      "Chciał(a)bym zlecić projekt strony internetowej dla mojej firmy...",
     form_button: "Wyślij wiadomość",
 
     // ABOUT
@@ -1014,11 +1028,24 @@ const translations = {
     projects_planetroad_visualidentity_subtitle:
       "How i introduced PlanetRoad to the digital world, creating a coherent visual identity?",
 
+    // quick contact
+    contact_title: "Let's work together",
+    contact_subtitle:
+      "Looking for a UX Designer for your team or have a project in mind?",
+    btn_linkedin: "Message on LinkedIn",
+    btn_cv: "View CV (PDF)",
+    contact_or: "or simply send an email:",
+
+    // form
     form_title: "You have a project idea?",
     form_subtitle: "Let's see if we're playing to the same goal",
-    form_name: "Name:",
-    form_email: "E-mail:",
+    form_name: "Name / Company:",
+    form_name_placeholder: "e.g. John Doe / Company Name",
+    form_email: "Email address:",
+    form_email_placeholder: "john.doe@example.com",
     form_message: "Message:",
+    form_message_placeholder:
+      "I would like a design project of my company's website...",
     form_button: "Send a message",
 
     // ABOUT
