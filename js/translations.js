@@ -26,7 +26,6 @@ const translations = {
       "© Marek Wietecki 2026. Treści chronione prawem autorskim.",
 
     // hero
-    hero_mw: "assets/index/mwSmile.png",
     hero_hi: "Cześć!",
     hero_hi2: "Od ponad 3 lat działam jako",
     hero_title: "Projektuję prosto dla ludzi i skutecznie dla biznesu.",
@@ -1002,7 +1001,6 @@ const translations = {
     footer_link_privacy: "Privacy Policy",
     footer_copyright: "© Marek Wietecki 2026. Copyrighted content.",
 
-    hero_mw: "assets/index/mwSmileEng.png",
     hero_hi: "Hello!",
     hero_hi2: "From over 3 years i'm working as",
     hero_title: "I design simply for users and effectively for business.",

@@ -80,59 +80,110 @@
       gtag("config", "AW-17997930573");
     </script>
     <style>
-      /* cursor */
-      @media (hover: hover) and (pointer: fine) {
-        body {
-          cursor: none;
-        }
+      /* --- CUSTOM CURSOR SYSTEM --- */
+      /* 1. Ukrywamy domyślny kursor dla CAŁEJ strony i wszystkich jej dzieci */
+      html,
+      body,
+      *,
+      *::before,
+      *::after {
+        cursor: none !important;
+      }
 
+      /* 2. Wyłączamy domyślne przeciąganie obrazków (żeby nie pojawiał się kursor zakazu/przeciągania) */
+      img {
+        pointer-events: none;
+        -webkit-user-drag: none;
+        user-select: none;
+      }
+
+      /* 3. Włączamy zdarzenia myszy dla obrazka profilowego, aby kliknięcie nadal działało */
+      #profileImg {
+        pointer-events: auto;
+      }
+      @media (hover: hover) and (pointer: fine) {
+        body,
         a,
         button,
         input,
         textarea,
         .cookie-btn {
-          cursor: none;
+          cursor: none !important;
         }
       }
-      #gallery-modal,
-      #gallery-modal * {
-        cursor: none !important;
-      }
-      .cursor-dot {
-        width: 8px;
-        height: 8px;
-        background-color: #1e6ed6; /* Dopasuj do swojego koloru akcentu */
-        border-radius: 50%;
+
+      /* Canvas na płynny efekt Liquid */
+      #cursor-liquid-canvas {
         position: fixed;
         top: 0;
         left: 0;
-        pointer-events: none; /* Kluczowe: kursor nie blokuje kliknięć! */
-        z-index: 99999;
-        transform: translate(-50%, -50%);
-        transition: transform 0.1s ease-out, background-color 0.2s ease;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.8;
       }
-      .cursor-outline {
+
+      /* Wektorowy Kursor z Figmy (SVG) */
+      .cursor-dot {
         width: 24px;
         height: 24px;
-        border: 1.5px solid rgba(26, 26, 26, 0.5); /* Dopasuj kolor i przezroczystość */
-        border-radius: 50%;
         position: fixed;
         top: 0;
         left: 0;
         pointer-events: none;
-        z-index: 99998;
-        transform: translate(-50%, -50%);
-        transition: transform 0.15s cubic-bezier(0.215, 0.61, 0.355, 1),
-          border-color 0.2s ease;
+        z-index: 10000;
+        transform: translate3d(0, 0, 0);
+        display: flex;
+        align-items: center;
+        transition: opacity 0.2s ease;
       }
-      body.hovered .cursor-dot {
-        transform: translate(-50%, -50%) scale(1.5);
-        background-color: #000000;
+
+      .cursor-dot svg {
+        width: 100%;
+        height: 100%;
+        fill: #2e323f; /* Domyślny kolor wskaźnika */
+        stroke: #ffffff;
+        stroke-width: 1.5px;
+        filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2));
+        transition: fill 0.2s ease, transform 0.2s ease;
       }
-      body.hovered .cursor-outline {
-        transform: translate(-50%, -50%) scale(1.6);
-        border-color: rgba(0, 0, 0, 0.8);
-        background-color: rgba(0, 0, 0, 0.05); /* Delikatne wypełnienie */
+
+      /* Plakietka przy kursorze dla kart projektów */
+      .cursor-badge {
+        position: absolute;
+        left: 20px;
+        top: 10px;
+        background-color: #ffffff;
+        color: #2e323f;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        opacity: 0;
+        transform: scale(0.6) translateY(5px);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        pointer-events: none;
+      }
+
+      /* A. Hover na zwykłe linki/przyciski -> zmiana koloru na niebieski */
+      body.hovered-link .cursor-dot svg {
+        fill: #1e6ed6; /* Niebieski po najechaniu */
+        transform: scale(1.15) rotate(-5deg);
+      }
+
+      /* B. Hover na karty projektów -> wyłania się plakietka */
+      body.hovered-badge .cursor-dot svg {
+        fill: #1e6ed6;
+      }
+
+      body.hovered-badge .cursor-badge {
+        opacity: 1;
+        transform: scale(1) translateY(0);
       }
       /* Config */
       body {
@@ -2629,46 +2680,7 @@
           });
       });
     </script>
-    <!-- Custom Cursor Elements -->
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
-    <script>
-      const cursorDot = document.querySelector(".cursor-dot");
-      const cursorOutline = document.querySelector(".cursor-outline");
-
-      // Poruszanie kursorem
-      window.addEventListener("mousemove", (e) => {
-        const posX = e.clientX;
-        const posY = e.clientY;
-
-        // Kropka podąża natychmiast
-        cursorDot.style.left = `${posX}px`;
-        cursorDot.style.top = `${posY}px`;
-
-        // Okrąg płynnie dociąga do pozycji
-        cursorOutline.animate(
-          {
-            left: `${posX}px`,
-            top: `${posY}px`,
-          },
-          { duration: 400, fill: "forwards" }
-        );
-      });
-
-      // Efekt powiększenia przy najechaniu na klikalne elementy (UX Interakcje)
-      const interactiveElements = document.querySelectorAll(
-        "a, button, input, textarea, .cookie-btn"
-      );
-
-      interactiveElements.forEach((el) => {
-        el.addEventListener("mouseenter", () => {
-          document.body.classList.add("hovered");
-        });
-        el.addEventListener("mouseleave", () => {
-          document.body.classList.remove("hovered");
-        });
-      });
-    </script>
+    <script src="js/cursor.js"></script>
   </body>
   <script src="js/cookie.js"></script>
 </html>
