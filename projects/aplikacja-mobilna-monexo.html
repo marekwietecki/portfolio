@@ -444,11 +444,14 @@
     <script src="../js/theme.js"></script>
   </head>
   <body>
+    <!-- HEADER (NAV) -->
     <header>
       <div class="headerNav">
-        <a class="headerLink" href="../index.html">
+        <a class="headerLink" href="index.html">
+          <!-- marekwietecki           style="font-size: clamp(0.6rem, calc(0.75vw + 1.05rem), 1.65rem)"
+-->
           <img
-            src="../assets/brand/mw_logo_web.png"
+            src="assets/brand/mw_logo_web.png"
             alt="Logo MW Desgin - Marek Wietecki"
             class="logo"
           />
@@ -458,50 +461,86 @@
         </button>
       </div>
       <div class="headerLinks">
-        <a class="headerLink" data-i18n="nav_offer" href="../oferta.html"
+        <a class="headerLink" href="oferta.html" data-i18n="nav_offer"
           >Oferta</a
         >
-        <a class="headerLink" data-i18n="nav_about" href="../o-mnie.html"
+        <a class="headerLink" href="o-mnie.html" data-i18n="nav_about"
           >O Mnie</a
         >
-        <div class="lang-switcher">
+        <div class="settings-dropdown-wrapper">
+          <!-- Przycisk z wybraną przez Ciebie ikonką -->
           <button
-            class="lang-btn"
-            data-lang="pl"
-            onclick="switchLanguage('pl')"
+            class="settings-toggle-btn"
+            id="settingsToggle"
+            aria-label="Ustawienia"
+            aria-expanded="false"
           >
-            🇵🇱
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-settings2-icon lucide-settings-2"
+            >
+              <path d="M14 17H5" />
+              <path d="M19 7h-9" />
+              <circle cx="17" cy="17" r="3" />
+              <circle cx="7" cy="7" r="3" />
+            </svg>
           </button>
-          <button
-            class="lang-btn"
-            data-lang="en"
-            onclick="switchLanguage('en')"
-          >
-            🇬🇧
-          </button>
+
+          <!-- Rozwijana chmurka ze starymi komponentami -->
+          <div class="settings-dropdown" id="settingsDropdown">
+            <!-- 1. Twoje flagi -->
+            <div class="lang-switcher">
+              <button
+                class="lang-btn"
+                data-lang="pl"
+                onclick="switchLanguage('pl')"
+              >
+                🇵🇱
+              </button>
+              <button
+                class="lang-btn"
+                data-lang="en"
+                onclick="switchLanguage('en')"
+              >
+                🇬🇧
+              </button>
+            </div>
+
+            <div class="settings-divider"></div>
+
+            <!-- 2. Twój przełącznik motywu -->
+            <label class="theme-switch" aria-label="Przełącz motyw">
+              <input type="checkbox" id="themeToggle" />
+              <span class="theme-switch-track">
+                <span class="theme-switch-thumb">
+                  <svg class="icon-sun" viewBox="0 0 24 24">
+                    <path
+                      d="M12 4V2M12 22v-2M4 12H2m20 0h-2M6.34 6.34 4.93 4.93m14.14 14.14-1.41-1.41M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      fill="none"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                  <svg class="icon-moon" viewBox="0 0 24 24">
+                    <path
+                      d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </label>
+          </div>
         </div>
-        <label class="theme-switch" aria-label="Przełącz motyw">
-          <input type="checkbox" id="themeToggle" />
-          <span class="theme-switch-track">
-            <span class="theme-switch-thumb">
-              <svg class="icon-sun" viewBox="0 0 24 24">
-                <path
-                  d="M12 4V2M12 22v-2M4 12H2m20 0h-2M6.34 6.34 4.93 4.93m14.14 14.14-1.41-1.41M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  fill="none"
-                  stroke-linecap="round"
-                />
-              </svg>
-              <svg class="icon-moon" viewBox="0 0 24 24">
-                <path
-                  d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
-                  fill="currentColor"
-                />
-              </svg>
-            </span>
-          </span>
-        </label>
       </div>
     </header>
 
@@ -1945,6 +1984,7 @@
     </script>
 
     <script src="../js/project-nav.js"></script>
+    <script src="js/settings.js"></script>
     <script src="../js/cursor.js"></script>
   </body>
   <script src="../js/cookie.js"></script>
