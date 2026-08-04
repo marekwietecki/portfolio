@@ -91,322 +91,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <link rel="preload" as="image" href="assets/index/mw_happy.png" />
+    <link rel="stylesheet" href="/css/style.css" />
     <style>
-      /* --- CUSTOM CURSOR SYSTEM --- */
-      /* 1. Ukrywamy domyślny kursor dla CAŁEJ strony i wszystkich jej dzieci */
-      html,
-      body,
-      *,
-      *::before,
-      *::after {
-        cursor: none !important;
-      }
-
-      /* 2. Wyłączamy domyślne przeciąganie obrazków (żeby nie pojawiał się kursor zakazu/przeciągania) */
-      img {
-        pointer-events: none;
-        -webkit-user-drag: none;
-        user-select: none;
-      }
-
-      /* 3. Włączamy zdarzenia myszy dla obrazka profilowego, aby kliknięcie nadal działało */
-      #profileImg {
-        pointer-events: auto;
-      }
-      @media (hover: hover) and (pointer: fine) {
-        body,
-        a,
-        button,
-        input,
-        textarea,
-        .cookie-btn {
-          cursor: none !important;
-        }
-      }
-
-      /* Canvas na płynny efekt Liquid */
-      #cursor-liquid-canvas {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        pointer-events: none;
-        z-index: 0;
-        opacity: 0.8;
-      }
-
-      /* Wektorowy Kursor z Figmy (SVG) */
-      .cursor-dot {
-        width: 24px;
-        height: 24px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        pointer-events: none;
-        z-index: 10000;
-        transform: translate3d(0, 0, 0);
-        display: flex;
-        align-items: center;
-        transition: opacity 0.2s ease;
-      }
-
-      .cursor-dot svg {
-        width: 100%;
-        height: 100%;
-        fill: #2e323f; /* Domyślny kolor wskaźnika */
-        stroke: #ffffff;
-        stroke-width: 1.5px;
-        filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2));
-        transition: fill 0.2s ease, transform 0.2s ease;
-      }
-
-      /* Plakietka przy kursorze dla kart projektów */
-      .cursor-badge {
-        position: absolute;
-        left: 20px;
-        top: 10px;
-        background-color: #ffffff;
-        color: #2e323f;
-        padding: 6px 14px;
-        border-radius: 20px;
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
-        white-space: nowrap;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        opacity: 0;
-        transform: scale(0.6) translateY(5px);
-        transition: opacity 0.2s ease, transform 0.2s ease;
-        pointer-events: none;
-      }
-
-      /* A. Hover na zwykłe linki/przyciski -> zmiana koloru na niebieski */
-      body.hovered-link .cursor-dot svg {
-        fill: #1e6ed6; /* Niebieski po najechaniu */
-        transform: scale(1.15) rotate(-5deg);
-      }
-
-      /* B. Hover na karty projektów -> wyłania się plakietka */
-      body.hovered-badge .cursor-dot svg {
-        fill: #1e6ed6;
-      }
-
-      body.hovered-badge .cursor-badge {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-      }
-      /* Config */
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        width: 100%;
-        font-family: "Outfit", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif,
-          sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f6f6f7;
-        color: #555555;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        overflow-x: hidden;
-        /* BAZOWE TŁO */
-        background-color: #f6f6f7;
-
-        /* FANCY GENERATYWNA FALA WZOROWANA NA FIGMIE / CURSOR AI */
-        background-image: 
-    /* Fala 1 - Główna, mocniejsza linia strukturalna */ url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 900'%3E%3Cpath d='M-100,250 C300,450 500,100 900,350 C1300,600 1400,200 1700,300' fill='none' stroke='%231e6ed6' stroke-width='1.5' stroke-opacity='0.05'/%3E%3C/svg%3E"),
-          /* Fala 2 - Cieńsza linia pomocnicza, tworząca efekt fali wektorowej */
-            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 900'%3E%3Cpath d='M-100,280 C320,430 480,130 880,330 C1280,530 1420,230 1700,270' fill='none' stroke='%231e6ed6' stroke-width='0.75' stroke-opacity='0.03'/%3E%3C/svg%3E"),
-          /* Fala 3 - Głęboka, bardzo delikatna fala zamykająca kompozycję */
-            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 900'%3E%3Cpath d='M-100,220 C280,470 520,70 920,370 C1320,670 1380,170 1700,330' fill='none' stroke='%231e6ed6' stroke-width='0.5' stroke-opacity='0.02'/%3E%3C/svg%3E"),
-          /* PUNKTY WĘZŁOWE (Figma Vector Nodes) na zgięciach fal */
-            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 900'%3E%3Ccircle cx='300' cy='450' r='3' fill='%231e6ed6' fill-opacity='0.15'/%3E%3Crect x='296' y='446' width='8' height='8' fill='none' stroke='%231e6ed6' stroke-width='1' stroke-opacity='0.1'/%3E%3Ccircle cx='900' cy='350' r='3' fill='%231e6ed6' fill-opacity='0.15'/%3E%3Crect x='896' y='346' width='8' height='8' fill='none' stroke='%231e6ed6' stroke-width='1' stroke-opacity='0.1'/%3E%3Ccircle cx='1400' cy='200' r='3' fill='%231e6ed6' fill-opacity='0.15'/%3E%3Crect x='1396' y='196' width='8' height='8' fill='none' stroke='%231e6ed6' stroke-width='1' stroke-opacity='0.1'/%3E%3C/svg%3E");
-
-        background-attachment: fixed; /* Paralaksa przy scrollowaniu - warstwy będą się delikatnie mijać */
-        background-size: cover;
-        background-position: center center;
-        color: #555555;
-      }
-      /* BAZOWE TŁO + STRUKTURA SIATKI
-        background-color: #f6f6f7;
-        background-image: linear-gradient(
-            rgba(30, 110, 214, 0.02) 1px,
-            transparent 1px
-          ),
-          linear-gradient(90deg, rgba(30, 110, 214, 0.02) 1px, transparent 1px);
-        background-size: 40px 40px; 
-        background-position: center top;
-        color: #555555;
-      } */
-      /* BAZOWE TŁO + STRUKTURA KROPEK
-        background-color: #f6f6f7;
-        background-image: radial-gradient(
-            rgba(30, 110, 214, 0.04) 1.5px,
-            transparent 1.5px
-          ),
-          radial-gradient(rgba(0, 0, 0, 0.01) 1px, transparent 1px);
-        background-size: 32px 32px;
-        background-position: 0 0, 16px 16px;
-        color: #555555;
-      } */
-      /* background-color: #f6f6f7;
-              background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cpath d='M0,150 C300,300 600,0 900,150 C1200,300 1400,50 1600,100 L1600,800 L0,800 Z' fill='%231e6ed6' fill-opacity='0.015'/%3E%3Cpath d='M0,200 C400,50 700,350 1100,150 C1400,20 1500,180 1600,120' fill='none' stroke='%231e6ed6' stroke-width='1.5' stroke-opacity='0.04'/%3E%3C/svg%3E");
-              background-attachment: fixed;
-              background-size: cover;
-              color: #555555;
-            } */
-
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-      }
-      section {
-        width: 100%;
-        /*background-color: aqua;*/
-      }
-      h2 {
-        align-items: center;
-        font-size: clamp(1.5rem, calc(3vw + 1rem), 3rem);
-        line-height: 1;
-        color: #444;
-        margin: 0px 0px;
-        font-family: "Outfit", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
-      p {
-        text-align: left;
-        font-size: clamp(0.75rem, calc(1vw + 0.5rem), 2rem);
-        font-weight: 600;
-        line-height: 1.2em;
-        margin: 4px 4px;
-        margin-left: 2px;
-      }
-      a {
-        color: #dddddd;
-        text-decoration: none;
-        font-size: 16px;
-        transition: color 0.3s ease;
-      }
-      a:hover {
-        color: #949494;
-      }
-      a svg {
-        fill: currentColor;
-        transition: fill 0.3s ease;
-      }
-      text {
-        text-align: left;
-        color: #1e6ed6;
-      }
-      .miniText {
-        font-size: clamp(0.5rem, calc(1vw + 0.33rem), 1.25rem);
-        font-weight: 300;
-        margin-left: 2px;
-      }
-      /* Header */
-      header {
-        background: #f6f6f7;
-        font-size: 28px;
-        text-align: left;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        position: fixed;
-        top: 0;
-        left: 0;
-        padding: 32px 6vw;
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-        z-index: 1000;
-        box-shadow: 0 0px 32px #f0f0f0;
-      }
-      .headerNav {
-        display: flex;
-        flex-direction: row;
-        align-items: center; /* wyrównanie do środka */
-        justify-content: space-between; /* albo inny układ */
-        width: 60%;
-      }
-      .menuToggle {
-        display: none;
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-        color: #000;
-      }
-      .menuToggle:hover {
-        color: #696969;
-      }
-      .menuToggle:active {
-        color: #696969;
-      }
-      .headerShadow {
-        box-shadow: 0 0px 32px #dddddd;
-        /*transition: border 0.3s ease-in-out;*/
-      }
-      .headerLink {
-        color: #444444;
-        font-weight: 700;
-        font-size: clamp(0.4rem, calc(0.5vw + 0.7rem), 1.1rem);
-      }
-      .headerLink:hover {
-        opacity: 64%;
-      }
-      .headerLinks {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: clamp(16px, 3vw, 40px);
-      }
-      .logo {
-        width: clamp(140px, 34%, 200px);
-        height: auto;
-        align-self: left;
-        left: 6vw;
-        justify-content: center;
-        cursor: pointer;
-        shape-rendering: geometricPrecision;
-      }
-      .lang-switcher {
-        display: flex;
-        align-items: center;
-        gap: 4px;
-        font-family: "Outfit", sans-serif;
-      }
-
-      .lang-btn {
-        background: none;
-        border: none;
-        padding: 4px 8px;
-        font-size: 20px;
-        font-weight: 600;
-        color: #1a1a1a;
-        cursor: pointer;
-        opacity: 0.48;
-        transition: opacity 0.2s ease;
-      }
-
-      .lang-btn:hover {
-        opacity: 0.8;
-      }
-
-      .lang-btn.active {
-        opacity: 1;
-        pointer-events: none; /* wyłączone klikanie w aktywny język */
-      }
-
-      .lang-divider {
-        color: #b4b4b4;
-        font-size: 12px;
-        user-select: none;
-      }
       /* Hero */
       .spaceX {
         width: 100%;
@@ -1040,193 +726,8 @@
       .email-link:hover {
         color: #0a66c2;
       }
-      /* Cookies */
-      .cookie-banner {
-        position: fixed;
-        bottom: 24px;
-        left: 50%;
-        transform: translateX(-50%);
-        max-width: 520px;
-        width: calc(100% - 40px);
 
-        background: white;
-        color: #333;
-
-        padding: 16px 20px;
-        border-radius: 12px;
-
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 16px;
-
-        font-size: 14px;
-        z-index: 9999;
-
-        animation: cookieSlide 0.8s ease;
-      }
-      @keyframes cookieSlide {
-        from {
-          transform: translate(-50%, 20px);
-          opacity: 0;
-        }
-        to {
-          transform: translate(-50%, 0);
-          opacity: 1;
-        }
-      }
-
-      .cookie-text a {
-        color: #0066ff;
-        text-decoration: none;
-      }
-
-      .cookie-buttons {
-        display: flex;
-        gap: 10px;
-      }
-
-      .cookie-btn {
-        border: none;
-        padding: 8px 14px;
-        border-radius: 8px;
-        font-size: 13px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: transform 0.2s ease, background-color 0.3s;
-      }
-      .cookie-btn:hover {
-        opacity: 0.72;
-        transform: scale(1.05);
-      }
-
-      .cookie-btn.primary {
-        background: #1e6ed6;
-        color: white;
-      }
-
-      .cookie-btn.secondary {
-        background: #f2f2f2;
-        color: rgba(0, 0, 0, 0.64);
-      }
-      /* Footer */
-      footer {
-        background-color: #222;
-        color: white;
-        text-align: center;
-        padding-top: 80px;
-        padding-bottom: 20px;
-        margin-top: 40px;
-        font-size: 0.75rem;
-        display: flex;
-        flex-direction: column;
-        gap: 4vh;
-      }
-      .logoWithLinks {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding-left: 16vw;
-        padding-right: 16vw;
-        padding-bottom: 4vh;
-      }
-      .social-links {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-      }
-      .social-icon i {
-        font-size: 30px;
-        color: #fff;
-        transition: color 0.3s;
-        cursor: pointer;
-      }
-      .social-icon i:hover {
-        color: #1e6ed6; /* Kolor po najechaniu (LinkedIn Blue) */
-      }
-      .logoFooter {
-        width: clamp(64px, 10vw, 112px);
-        height: auto;
-        align-self: center;
-        transition: opacity 0.3s ease;
-      }
-      .logoFooter:hover {
-        opacity: 64%;
-      }
-      .footerLinks {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 4vw;
-        flex-wrap: wrap;
-        padding-bottom: 20px;
-      }
-      .ja {
-        text-align: left;
-      }
-      .link {
-        color: #444;
-        font-weight: 600;
-        font-size: clamp(0.66rem, calc(1vw + 0.5rem), 1.25rem);
-        text-align: left;
-      }
-      .icons {
-        width: 1em;
-        height: 1em;
-        padding: 1px;
-        margin-top: 1.5px;
-      }
-      .navLinks {
-        display: flex;
-        align-items: center;
-        gap: 0.2em;
-        font-size: clamp(0.4rem, calc(1vw + 0.5rem), 1.25rem);
-      }
-      .footerText {
-        font-weight: lighter;
-        font-size: 12px;
-        color: #c4c4c4;
-        text-align: center;
-      }
-      .footerTexts {
-        display: flex;
-        justify-content: center;
-        border-top: 1px solid #444444;
-        padding-top: 20px;
-        padding-left: 20px;
-      }
       @media (max-width: 794px) {
-        /* Header */
-        header {
-          flex-direction: column;
-          padding: 20px 6vw;
-        }
-        .headerLinks {
-          padding-top: 4vh;
-          flex-direction: column;
-          display: none;
-          width: 100%;
-          align-items: center;
-        }
-        .headerLink {
-          text-align: center;
-        }
-        .menuToggle {
-          display: block;
-          align-self: flex-end;
-          margin-top: 8px;
-          right: 4vw;
-          transform: translateY(-22%); /* wyśrodkuj pionowo względem headera */
-        }
-        .headerNav {
-          width: 100%;
-        }
-        .headerLinks.show {
-          display: flex;
-        }
         /* Hero */
         .profile {
           padding-top: 4%;
@@ -1264,20 +765,6 @@
         .mojeProjekty {
           padding-top: 12vh;
         }
-
-        /* Footer */
-        .logoWithLinks {
-          padding-left: 12vw;
-          padding-right: 12vw;
-        }
-        .social-icon i {
-          font-size: 20px;
-          color: #fff;
-          transition: color 0.3s;
-        }
-        .footerText {
-          font-size: 9px;
-        }
       }
       @media (max-width: 650px) {
         .hero {
@@ -1287,10 +774,6 @@
       @media (max-width: 432px) {
         .lineBreak {
           display: inline;
-        }
-        /* Cookies */
-        .cookie-buttons {
-          flex-direction: column;
         }
         .hero {
           padding: 4vh 8vw 0vh 8vw; /* TOP RIGHT BOTTOM LEFT */
@@ -1306,20 +789,14 @@
     <!-- HEADER (NAV) -->
     <header>
       <div class="headerNav">
-        <a
-          class="headerLink"
-          style="font-size: clamp(0.6rem, calc(0.75vw + 1.05rem), 1.65rem)"
-          href="index.html"
-          data-i18n="nav_home"
-        >
-          marekwietecki
-          <!--
+        <a class="headerLink" href="index.html">
+          <!-- marekwietecki           style="font-size: clamp(0.6rem, calc(0.75vw + 1.05rem), 1.65rem)"
+-->
           <img
-            src="assets/brand/marekwieteckiDark.svg"
-            alt="Logo tekstowe - marekwietecki.pl"
+            src="assets/brand/mw_logo_web.png"
+            alt="Logo MW Desgin - Marek Wietecki"
             class="logo"
           />
-          -->
         </a>
         <button class="menuToggle" id="menuToggle" onclick="toggleMenu()">
           ☰
@@ -1653,7 +1130,7 @@
           <div class="contact-actions">
             <!-- Główna Akcja: Fast Track (Napisz wiadomość) -->
             <a
-              href="https://www.linkedin.com/in/TWOJ-PROFIL"
+              href="https://www.linkedin.com/in/marekwietecki"
               target="_blank"
               rel="noopener noreferrer"
               class="btn btn-primary"
@@ -1675,7 +1152,7 @@
 
             <!-- Druga Akcja: Pobranie CV (MUST-HAVE dla Rekrutera!) -->
             <a
-              href="/path/to/twoje-cv.pdf"
+              href="./assets/index/Marek_Wietecki_CV_3.1.pdf"
               target="_blank"
               rel="noopener noreferrer"
               class="btn btn-secondary"
@@ -1739,8 +1216,13 @@
     <!-- FOOTER -->
     <footer>
       <div class="logoWithLinks">
-        <a href="index.html" style="text-align: left">
-          <svg
+        <a href="index.html" class="logo-link">
+          <img
+            src="./assets/brand/mw_logo_web_white.png"
+            class="logo-monogram"
+            alt="Marek Wietecki Design Logo"
+          />
+          <!-- <svg
             class="logoFooter"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1521 1703"
@@ -1842,7 +1324,7 @@
                 />
               </filter>
             </defs>
-          </svg>
+          </svg> -->
         </a>
         <div class="social-links">
           <a
@@ -1871,7 +1353,7 @@
 
       <div class="footerLinks">
         <a class="navLinks" href="index.html#top">
-          <svg
+          <!-- <svg
             class="icons size-5"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
@@ -1882,12 +1364,12 @@
               d="M9.293 2.293a1 1 0 0 1 1.414 0l7 7A1 1 0 0 1 17 11h-1v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6H3a1 1 0 0 1-.707-1.707l7-7Z"
               clip-rule="evenodd"
             />
-          </svg>
+          </svg> -->
           <span data-i18n="footer_link_main">&nbsp;Strona Główna</span>
         </a>
 
         <a class="navLinks" href="index.html#projects">
-          <svg
+          <!-- <svg
             class="icons size-5"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
@@ -1898,12 +1380,12 @@
               d="M1 5.25A2.25 2.25 0 0 1 3.25 3h13.5A2.25 2.25 0 0 1 19 5.25v9.5A2.25 2.25 0 0 1 16.75 17H3.25A2.25 2.25 0 0 1 1 14.75v-9.5Zm1.5 5.81v3.69c0 .414.336.75.75.75h13.5a.75.75 0 0 0 .75-.75v-2.69l-2.22-2.219a.75.75 0 0 0-1.06 0l-1.91 1.909.47.47a.75.75 0 1 1-1.06 1.06L6.53 8.091a.75.75 0 0 0-1.06 0l-2.97 2.97ZM12 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"
               clip-rule="evenodd"
             />
-          </svg>
+          </svg> -->
           <span data-i18n="footer_link_projects">&nbsp;Projekty</span>
         </a>
 
         <a class="navLinks" href="index.html#contact">
-          <svg
+          <!-- <svg
             class="icons size-5"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
@@ -1915,7 +1397,7 @@
             <path
               d="m19 8.839-7.77 3.885a2.75 2.75 0 0 1-2.46 0L1 8.839V14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.839Z"
             />
-          </svg>
+          </svg> -->
           <span data-i18n="footer_link_contact">&nbsp;Kontakt</span>
         </a>
 
@@ -1924,7 +1406,7 @@
           target="_blank"
           class="navLinks"
         >
-          <svg
+          <!-- <svg
             class="icons size-5"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
@@ -1935,11 +1417,11 @@
               d="M3 3.5A1.5 1.5 0 0 1 4.5 2h6.879a1.5 1.5 0 0 1 1.06.44l4.122 4.12A1.5 1.5 0 0 1 17 7.622V16.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 3 16.5v-13Zm10.857 5.691a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 0 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
               clip-rule="evenodd"
             />
-          </svg>
+          </svg> -->
           <span data-i18n="footer_link_cv">CV</span>
         </a>
         <a class="navLinks" href="polityka-prywatnosci.html">
-          <svg
+          <!-- <svg
             class="icons size-5"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -1954,7 +1436,7 @@
               d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
             />
             <path d="m9 12 2 2 4-4" />
-          </svg>
+          </svg> -->
           <span data-i18n="footer_link_privacy">Polityka Prywatności</span>
         </a>
         <!-- testimonials -->
@@ -2224,6 +1706,19 @@
           }, 150);
         });
       });
+    </script>
+
+    <!-- Scroll Reveal (fade-in przy wjeżdżaniu na ekran) -->
+    <!-- UWAGA: celowo bez .projectContainer / .gridGallery z #projects --
+         ta siatka ma już własny efekt "rozdawania kart z talii" (dealCards()
+         wyżej), który ręcznie steruje transform/opacity. -->
+    <script src="js/reveal-elements.js"></script>
+    <script>
+      initRevealElements([
+        ".hero .profile > h2",
+        ".hero .profile > p",
+        ".contact-card",
+      ]);
     </script>
 
     <script src="js/cursor.js"></script>

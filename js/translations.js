@@ -6,7 +6,7 @@ const translations = {
     meta_offer: "Marek Wietecki | Oferta",
     meta_privacy: "Marek Wietecki | Polityka Prywatności",
 
-    //   nav_home: "Główna",
+    // nav
     nav_offer: "Oferta",
     nav_about: "O mnie",
 
@@ -35,7 +35,7 @@ const translations = {
     hero_button_secondary: "Poznaj moją ofertę",
 
     projects_title: "Moje Projekty",
-    projects_monexo_title: "Aplika Mobilna Monexo",
+    projects_monexo_title: "Monexo aplikacja mobilna",
     projects_monexo_subtitle:
       "Jak wypełniłem lukę na rynku internetowej wymiany walut tworząc prostą aplikację z transaparentnym podejściem?",
     projects_planetroad_website_title: "Strona Internetowa PlanetRoad",
@@ -248,7 +248,7 @@ const translations = {
     side_nav_post_project: "Po Projekcie",
 
     // PROJECT APP MONEXO
-    project_app_monexo_title: "Monexo - aplikacja mobilna do wymiany walut",
+    project_app_monexo_title: "Aplikacja Mobilna",
     project_app_monexo_desc:
       "Monexo to mobilna aplikacji do wymiany walut, którą zaprojektowałem jako odpowiedź na realne problemy użytkowników korzystających z istniejących rozwiązań FinTech.",
     project_app_monexo_role_label: "Rola:",
@@ -480,7 +480,7 @@ const translations = {
     project_web_planetroad_nav_offer: "Oferta",
     project_web_planetroad_nav_about: "O Mnie",
     project_web_planetroad_project_title:
-      "PlanetRoad - Firmowa Strona Internetowa",
+      "Strona Internetowa",
     project_web_planetroad_project_description:
       "Nowa strona internetowa firmy PlanetRoad, którą zaprojektowałem w celu uproszczenia klientom poznania firmy, prezentacji dotychczasowych realizacji w czytelny i atrakcyjny sposób oraz ułatwienia kontaktu z firmą",
     project_web_planetroad_role_label: "Rola:",
@@ -1220,7 +1220,7 @@ const translations = {
     side_nav_post_project: "Post-Project",
 
     // PROJECT APP MONEXO
-    project_app_monexo_title: "Monexo - currency exchange mobile app",
+    project_app_monexo_title: "Mobile App",
     project_app_monexo_desc:
       "Monexo is a mobile currency exchange application that I designed as a response to real problems faced by users of existing FinTech solutions.",
     project_app_monexo_role_label: "Role:",
@@ -1441,7 +1441,7 @@ const translations = {
     project_app_monexo_next_project_link: "Website - PlanetRoad",
 
     // PROJECT WEB PLANET
-    project_web_planetroad_project_title: "PlanetRoad - Corporate Website",
+    project_web_planetroad_project_title: "Website",
     project_web_planetroad_project_description:
       "A new website for PlanetRoad, which I designed to make it easier for clients to get to know the company, showcase past projects in a clear and appealing way, and simplify contacting the team.",
     project_web_planetroad_role_label: "Role:",
