@@ -77,15 +77,21 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" href="assets/brand/favicon.ico" />
-    <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg" />
     <link
       rel="icon"
       type="image/png"
-      sizes="32x32"
-      href="assets/brand/favicon-32x32.png"
+      href="/assets/brand/favicon-96x96.png"
+      sizes="96x96"
     />
-    <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/assets/brand/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/brand/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/brand/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="MW Design" />
+    <link rel="manifest" href="/assets/brand/site.webmanifest" />
     <link
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
@@ -105,7 +111,11 @@
     <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js"></script>
     <link rel="stylesheet" href="/css/style.css" />
     <style>
-      /* Main Layout Grid */
+      /* ==========================================================================
+   PAGE SPECIFIC STYLES — PROJECT / CASE STUDY PAGE
+   ========================================================================== */
+
+      /* --- MAIN LAYOUT GRID --- */
       .projectLayout {
         display: grid;
         grid-template-columns: 64% 9% 20% 2%;
@@ -115,13 +125,14 @@
         width: 88vw;
         padding-inline: 4vw;
       }
+
       .projectContent {
         flex: 1;
         grid-column: 1;
         max-width: 1000px;
       }
 
-      /* Banner Hero Gradient */
+      /* --- BANNER HERO GRADIENT --- */
       .gradientBackground {
         background: linear-gradient(45deg, #101828, #1d2939, #0f172a);
         background-size: 400% 400%;
@@ -135,12 +146,16 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: transform 0.3s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
         cursor: pointer;
+        box-shadow: var(--shadow-header);
       }
+
       .gradientBackground:hover {
         transform: scale(1.02);
+        box-shadow: var(--shadow-header-scrolled);
       }
+
       @keyframes gradientMove {
         0% {
           background-position: 0% 50%;
@@ -153,24 +168,30 @@
         }
       }
 
+      /* --- MEDIA & FIGURES --- */
       .imageFigure {
         width: 100%;
         margin: 2vh 0;
       }
+
       .imageFigure img {
         width: 100%;
         display: block;
         border-radius: 16px;
+        border: 1px solid var(--border-subtle);
+        box-shadow: var(--shadow-header);
       }
+
       .imageFigure figcaption {
         text-align: center;
-        color: #888888;
+        color: var(--text-muted);
         margin-top: 1vh;
         font-size: 12px;
       }
 
-      /* Sticky Side Navigation */
-      /* --- TWOJE DOTYCHCZASOWE STYLE DESKTOP --- */
+      /* ========================================================
+   STICKY SIDE NAVIGATION (DESKTOP)
+   ======================================================== */
       .sideNav {
         position: sticky;
         grid-column: 3;
@@ -200,7 +221,7 @@
       }
 
       .sideNavWrapper a {
-        color: #777;
+        color: var(--text-secondary);
         text-decoration: none;
         transition: color 0.3s ease, transform 0.2s ease;
         cursor: pointer;
@@ -209,15 +230,17 @@
 
       .sideNavWrapper a:hover,
       .sideNavWrapper a.active {
-        color: #0070f3;
+        color: var(--accent);
         font-weight: 600;
       }
 
       .mobileNavToggle {
-        display: none; /* Domyślnie ukryte na komputerach */
+        display: none;
       }
 
-      /* --- STYLING MOBILE (FLOATING BOTTOM NAV) --- */
+      /* ========================================================
+   MOBILE FLOATING BOTTOM NAV
+   ======================================================== */
       @media (max-width: 768px) {
         .sideNav {
           position: fixed;
@@ -238,22 +261,22 @@
           bottom: 20px;
         }
 
-        /* Przycisk rozwijania floating nav */
         .mobileNavToggle {
           display: flex;
           align-items: center;
           justify-content: space-between;
           gap: 10px;
-          background: #ffffff;
-          border: 1px solid rgba(0, 0, 0, 0.1);
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+          background: var(--bg-card);
+          border: 1px solid var(--border-subtle);
+          box-shadow: var(--shadow-header-scrolled);
           padding: 10px 18px;
           border-radius: 30px;
           font-size: 14px;
           font-weight: 600;
-          color: #111;
+          color: var(--text-heading);
           cursor: pointer;
-          backdrop-filter: blur(8px);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
         }
 
         .mobileNavArrow {
@@ -261,20 +284,20 @@
           transition: transform 0.3s ease;
         }
 
-        /* Ukryty po zwinięciu na mobile */
         .sideNavWrapper {
           display: none;
           position: absolute;
           bottom: calc(100% + 10px);
           left: 50%;
           transform: translateX(-50%);
-          background: #ffffff;
-          border: 1px solid rgba(0, 0, 0, 0.08);
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+          background: var(--bg-card);
+          border: 1px solid var(--border-subtle);
+          box-shadow: var(--shadow-header-scrolled);
           border-radius: 16px;
           padding: 12px 16px;
           width: 220px;
-          backdrop-filter: blur(10px);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
         }
 
         .sideNavWrapper a {
@@ -285,10 +308,10 @@
         }
 
         .sideNavWrapper a.active {
-          background: rgba(0, 112, 243, 0.08);
+          background: rgba(30, 110, 214, 0.12);
+          color: var(--accent);
         }
 
-        /* Stan otwartego menu */
         .sideNav.open .sideNavWrapper {
           display: flex;
         }
@@ -298,7 +321,7 @@
         }
       }
 
-      /* Bottom Nav Loop */
+      /* --- BOTTOM NAV LOOP --- */
       .navLoopWrapper {
         padding-top: 12vh;
         padding-bottom: 8vh;
@@ -307,15 +330,24 @@
         align-items: center;
         width: 100%;
       }
+
       .loopLink {
         cursor: pointer;
         text-align: center;
-        color: #444;
+        color: var(--text-heading);
         font-weight: 600;
         text-decoration: underline;
+        transition: opacity 0.2s ease, color 0.2s ease;
       }
 
-      /* Responsive Media Queries */
+      .loopLink:hover {
+        color: var(--accent);
+        opacity: 0.8;
+      }
+
+      /* ========================================================
+   RESPONSIVE MEDIA QUERIES
+   ======================================================== */
       @media (max-width: 900px) {
         .projectLayout {
           grid-template-columns: 100%;
@@ -323,34 +355,40 @@
           padding-inline: 2vw;
         }
       }
+
       @media (max-width: 740px) {
-        /* Config */
         h1 {
           font-size: 32px;
         }
-        /* Content */
+
         .projectLayout {
           flex-direction: column;
           gap: 2rem;
-          grid-template-columns: 98% 2%; /* margines – treść – nav – margines */
+          grid-template-columns: 98% 2%;
         }
+
         .projectIntro {
           width: 82%;
         }
+
         .processWrapper {
           flex-direction: column;
           padding-top: 0px;
         }
+
         .processProgress {
           width: 88vw;
           margin-bottom: -20px;
         }
+
         .processPhoto {
           width: 80vw;
           border-radius: 16px;
         }
       }
     </style>
+    <script src="../js/translations.js"></script>
+    <script src="../js/theme.js"></script>
   </head>
   <body>
     <div class="cursor-dot"></div>
@@ -359,7 +397,7 @@
     <header id="mainHeader">
       <a class="headerLink" href="../index.html">
         <img
-          src="assets/brand/mw_logo_web.png"
+          src="../assets/brand/mw_logo_web.png"
           alt="Logo MW Desgin - Marek Wietecki"
           class="logo"
         />
@@ -370,6 +408,36 @@
           <a class="headerLink" href="../o-mnie.html">O Mnie</a>
         </div>
       </div>
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="pl" onclick="switchLanguage('pl')">
+          🇵🇱
+        </button>
+        <button class="lang-btn" data-lang="en" onclick="switchLanguage('en')">
+          🇬🇧
+        </button>
+      </div>
+      <label class="theme-switch" aria-label="Przełącz motyw">
+        <input type="checkbox" id="themeToggle" />
+        <span class="theme-switch-track">
+          <span class="theme-switch-thumb">
+            <svg class="icon-sun" viewBox="0 0 24 24">
+              <path
+                d="M12 4V2M12 22v-2M4 12H2m20 0h-2M6.34 6.34 4.93 4.93m14.14 14.14-1.41-1.41M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"
+                stroke="currentColor"
+                stroke-width="1.8"
+                fill="none"
+                stroke-linecap="round"
+              />
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24">
+              <path
+                d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+        </span>
+      </label>
     </header>
 
     <main class="projectLayout">

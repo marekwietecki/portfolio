@@ -71,15 +71,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title data-i18n="meta_main">Marek Wietecki | Strona Główna</title>
-    <link rel="icon" href="assets/brand/favicon.ico" />
-    <link rel="icon" type="image/svg+xml" href="assest/brand/favicon.svg" />
     <link
       rel="icon"
       type="image/png"
-      sizes="32x32"
-      href="assets/brand/favicon-32x32.png"
+      href="/assets/brand/favicon-96x96.png"
+      sizes="96x96"
     />
-    <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/assets/brand/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/brand/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/brand/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="MW Design" />
+    <link rel="manifest" href="/assets/brand/site.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -93,45 +99,49 @@
     <link rel="preload" as="image" href="assets/index/mw_happy.png" />
     <link rel="stylesheet" href="/css/style.css" />
     <style>
-      /* Hero */
+      /* ==========================================================================
+   PAGE SPECIFIC STYLES — HERO, PROJECTS & QUICK CONTACT
+   ========================================================================== */
+
+      /* --- HERO SECTION --- */
       .spaceX {
         width: 100%;
         padding-top: 0px;
       }
+
       .ja {
-        color: #1e6ed6;
+        color: var(--accent);
         line-height: 110%;
         padding-bottom: 4px;
       }
+
       .czesc {
-        color: #676767;
+        color: var(--text-secondary);
         font-weight: 500;
       }
+
       .typewriter {
-        /* font-family: monospace; */
         display: inline-block;
         overflow: hidden;
-        border-right: 3px solid #696969;
+        border-right: 3px solid var(--text-secondary);
         white-space: nowrap;
         margin-right: auto;
         margin-left: 0;
-        /* Szerokość startowa to 0, końcowa to 20 znaków (20ch) */
         width: 0;
 
-        /* dwie animacje: wpisywanie (trwa 2s) i miganie kursora */
         animation: typing 2s steps(11) forwards,
           blink-caret 0.5s step-end 5 forwards;
       }
+
       @media (max-width: 794px) {
         .typewriter {
-          display: block; /* Zmiana z inline-block na block, żeby zająć pełną dostępną przestrzeń od lewej */
-          margin-left: 0; /* Gwarancja braku marginesu z lewej */
-          margin-right: auto; /* Zepchnięcie ewentualnego wolnego miejsca na prawą stronę */
-          text-align: left; /* Wymuszenie wyrównania tekstu wewnątrz bloku do lewej */
+          display: block;
+          margin-left: 0;
+          margin-right: auto;
+          text-align: left;
         }
       }
 
-      /* Rozszerzanie kontenera od 0 do 20 liter */
       @keyframes typing {
         from {
           width: 0;
@@ -141,19 +151,20 @@
         }
       }
 
-      /* Miganie pionowej kreski (kursora) */
       @keyframes blink-caret {
         from,
         to {
           border-right: 3px solid transparent;
         }
         50% {
-          border-right: 3px solid #696969;
+          border-right: 3px solid var(--text-secondary);
         }
       }
+
       .lineBreak {
         display: block;
       }
+
       .container {
         width: 100%;
         height: auto;
@@ -162,8 +173,8 @@
         margin-bottom: 6vh;
         padding-left: 4vw;
         padding-right: 4vw;
-        /*background-color: aqua;*/
       }
+
       .hero {
         display: flex;
         flex-direction: row;
@@ -172,29 +183,32 @@
         text-align: center;
         flex: auto;
 
-        /* background-image: url("assets/index/HeroBackground.png"); */
         background-size: cover;
         background-repeat: no-repeat;
         background-position: right center;
 
         width: 100%;
-        max-width: 1200px; /* kontroluje szerokość całego kontenera */
+        max-width: 1200px;
         margin-left: auto;
-        margin-right: auto; /* centrowanie całego .hero */
+        margin-right: auto;
 
-        padding: 12vh 1vw 6vh 8vw; /* TOP RIGHT BOTTOM LEFT */
+        padding: 12vh 1vw 6vh 8vw;
         gap: 2vw;
       }
+
       .gapp {
         padding-top: 8px;
       }
+
       .gap2 {
         padding-top: 2px;
       }
+
       .profile {
         width: 80%;
         max-width: 880px;
       }
+
       .profileImg {
         width: 48%;
         height: auto;
@@ -203,41 +217,39 @@
         transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         cursor: pointer;
       }
+
       .profileImg:hover {
         transform: scale(1.07);
       }
 
+      /* --- BUTTONS --- */
       .buttonPrimary {
         position: relative;
         overflow: hidden;
 
-        /* Styl bazowy przycisku */
         padding: 13px 26px;
         border-radius: 32px;
-        background-color: #1e6ed6;
+        background-color: var(--accent);
         border: none;
-        color: white;
+        color: #ffffff;
         font-weight: 600;
         font-size: clamp(0.5rem, calc(1vw + 0.5rem), 2rem);
         cursor: pointer;
 
-        /* Płynność dla zwykłego hovera */
         transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
         box-shadow: 0 4px 12px rgba(30, 110, 214, 0.2);
 
-        /* Animacja wydłużona do 5 sekund dla pełnego spokoju */
         animation: shineAndPulse 5s ease-in-out 4s infinite;
       }
 
-      /* Hover użytkownika nadal działa i mocniej powiększa guzik */
       .buttonPrimary:hover {
-        background-color: #1e5aaa;
-        color: white;
+        background-color: var(--accent);
+        opacity: 0.9;
+        color: #ffffff;
         transform: scale(1.06) !important;
         box-shadow: 0 6px 16px rgba(30, 110, 214, 0.35);
       }
 
-      /* Pseudoelement promienia */
       .buttonPrimary::after {
         content: "";
         position: absolute;
@@ -246,7 +258,6 @@
         width: 60%;
         height: 200%;
 
-        /* Subtelny, przezroczysty gradient */
         background: linear-gradient(
           60deg,
           rgba(255, 255, 255, 0) 0%,
@@ -256,16 +267,13 @@
           rgba(255, 255, 255, 0) 100%
         );
 
-        /* Rozmycie dla miekkiego efektu */
         filter: blur(5px);
         transform: rotate(25deg);
         pointer-events: none;
 
-        /* Animacja przesunięcia promienia */
         animation: moveShine 5s ease-in-out 4s infinite;
       }
 
-      /* Keyframes: Ruch promienia – teraz rozciągnięty na 35% cyklu (~1.75 sekundy) */
       @keyframes moveShine {
         0% {
           left: -150%;
@@ -276,14 +284,12 @@
         }
       }
 
-      /* Keyframes: Lekkie powiększenie (pulse) zsynchronizowane z wolniejszym ruchem promienia */
       @keyframes shineAndPulse {
         0% {
           transform: scale(1);
           box-shadow: 0 4px 12px rgba(30, 110, 214, 0.2);
         }
         17.5% {
-          /* Szczyt powiększenia dokladnie w połowie przejazdu błysku */
           transform: scale(1.035);
           box-shadow: 0 6px 18px rgba(30, 110, 214, 0.35);
         }
@@ -297,30 +303,34 @@
       .buttonSecondary {
         padding: 0px 13px;
         font-weight: 600;
-        color: #444444;
-        background-color: #1e6ed600;
+        color: var(--text-heading);
+        background-color: transparent;
         border: none;
         font-size: clamp(0.5rem, calc(1vw + 0.5rem), 2rem);
-        transition: transform 0.2s ease, background-color 0.3s;
+        transition: transform 0.2s ease, opacity 0.3s;
         cursor: pointer;
       }
+
       .buttonSecondary:hover {
         transform: scale(1.05);
+        color: var(--accent);
       }
+
       .buttonWrapper {
         margin-top: 40px;
         display: flex;
         flex-wrap: wrap;
-        /* flex-direction: row; */
         align-items: center;
-        row-gap: 28px; /* pionowy odstęp */
-        column-gap: 48px; /* poziomy odstęp */
+        row-gap: 28px;
+        column-gap: 48px;
         width: 100%;
         text-align: initial;
       }
+
       .buttonWrapper a {
         display: inline-block;
       }
+
       .chevronDownWrapper {
         width: 100%;
         display: flex;
@@ -330,23 +340,27 @@
         padding-top: 8vh;
         padding-bottom: 8vh;
       }
+
       .fa-chevron-down {
-        color: #444444;
+        color: var(--text-heading);
         font-size: 24px;
         cursor: pointer;
+        transition: color 0.2s ease, transform 0.2s ease;
       }
+
       .fa-chevron-down:hover {
-        color: #949494;
+        color: var(--accent);
         transform: scale(1.1);
       }
-      /* Logos */
+
+      /* --- LOGOS & PROJECTS --- */
       .logosWrapper {
         display: flex;
         flex-direction: row;
       }
-      /* Projects */
+
       .mojeProjekty {
-        margin-top: 18vh; /* 148px */
+        margin-top: 18vh;
         padding-bottom: 24px;
       }
 
@@ -355,10 +369,12 @@
         overflow: hidden;
         padding: 16px;
         margin: 16px auto;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        box-shadow: 0 1px 16px rgba(0, 0, 0, 0.04);
+        transition: transform 0.3s ease, box-shadow 0.3s ease,
+          background-color 0.25s ease;
+        box-shadow: var(--shadow-header);
         border-radius: 32px;
-        background-color: #fafafa;
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-subtle);
         cursor: pointer;
         display: flex;
         flex-direction: column;
@@ -371,70 +387,64 @@
         will-change: transform, opacity;
       }
 
-      /* Wspólne style dla obrazka i wideo, aby idealnie na siebie nachodziły */
       .project-media {
         width: 100%;
         height: auto;
         display: block;
       }
 
-      /* Kontener na media musi być punktem odniesienia */
       .mediaWrapper {
         position: relative;
         width: 100%;
         overflow: hidden;
-        border-radius: 20px; /* Jeśli Twoje kafelki mają zaokrąglone rogi */
+        border-radius: 20px;
       }
 
-      /* Obrazek domyślny */
       .project-img {
         width: 100%;
         height: auto;
         display: block;
       }
 
-      /* Wideo nakładane idealnie na obrazek */
       .project-video {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover; /* Dba o to, żeby wideo idealnie wypełniło obszar obrazka */
+        object-fit: cover;
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.3s ease;
       }
 
-      /* Pojawianie się po najechaniu */
       .projectContainer:hover .project-video {
         opacity: 1;
       }
 
       .projectContainer:hover {
         transform: translateY(-4px);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        box-shadow: var(--shadow-header-scrolled);
       }
+
       .is-inactive {
-        color: #a0a0a0 !important;
+        color: var(--text-muted) !important;
         cursor: not-allowed;
-        /* pointer-events: none;  */
         text-decoration: none;
       }
+
       @media (max-width: 1024px) {
         .projectContainer {
           min-height: 348px;
         }
       }
+
       @media (max-width: 480px) {
         .projectContainer {
           min-height: 294px;
           width: 96%;
         }
       }
-      /* .projectContainer:hover {
-              transform: scale(1.05);
-            } */
 
       .descriptionWrapper {
         padding-left: 2%;
@@ -442,27 +452,19 @@
         flex-direction: column;
         justify-content: space-between;
         flex: 1;
-        /* height: auto; */
-        /* max-height: 180px; */
         overflow: hidden;
       }
-      /* @media (max-width: 480px) {
-              .descriptionWrapper {
-                max-height: 160px;
-              }
-            } */
 
       .title {
         font-weight: 500;
         font-size: 14px;
-        color: #c4c4c4;
-        /* align-self: center; */
+        color: var(--text-subtle);
       }
 
       .subtitle {
         font-weight: 600;
         font-size: 14px;
-        color: #696969;
+        color: var(--text-secondary);
         margin-top: 4px;
         margin-bottom: 4px;
       }
@@ -473,24 +475,22 @@
         flex-wrap: wrap;
         padding-top: 3%;
         margin-top: auto;
-        gap: 4px; /* Dodaję lekki odstęp między tagami, żeby się nie kleiły */
+        gap: 6px;
       }
 
       .tag {
         font-weight: 300;
         font-size: 12px;
-        color: #c4c4c4;
+        color: var(--text-muted);
       }
 
       @media (max-width: 1024px) {
         .title {
           font-size: 13px;
         }
-
         .subtitle {
           font-size: 13px;
         }
-
         .tag {
           font-size: 11px;
         }
@@ -500,17 +500,16 @@
         .title {
           font-size: 12px;
         }
-
         .subtitle {
           font-size: 12px;
           margin-top: 2px;
           margin-bottom: 2px;
         }
-
         .tag {
           font-size: 10px;
         }
       }
+
       .gradientBackground {
         background: linear-gradient(45deg, #070814, #151e4d, #0f1a5a);
         background-size: 400% 400%;
@@ -546,17 +545,17 @@
       .gridGallery {
         display: grid;
         gap: 2vw;
-        /* automatyczny układ kolumn zależnie od szerokości ekranu */
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         justify-content: center;
         align-items: top;
         margin-left: 4vw;
         margin-right: 4vw;
-        max-width: calc(4 * 280px + 3 * 1.5rem); /* 4 kafelki + 3 przerwy */
-        margin-inline: auto; /* wyśrodkowanie */
+        max-width: calc(4 * 280px + 3 * 1.5rem);
+        margin-inline: auto;
         margin-bottom: 4vh;
         margin-top: 2vh;
       }
+
       .gridGallery img {
         max-width: 100%;
         width: 100%;
@@ -571,8 +570,9 @@
         display: block;
         text-decoration: none;
       }
+
       .gridGallery a:hover {
-        opacity: 1; /* hover bezpośrednio w kafelku, a nie na linku */
+        opacity: 1;
         transform: translateY(-4px);
       }
 
@@ -589,14 +589,15 @@
         bottom: 108%;
         left: 50%;
         transform: translateX(-50%);
-        background-color: #1a1a1a;
-        color: #ffffff;
+        background-color: var(--bg-card);
+        color: var(--text-heading);
         padding: 8px 14px;
         font-size: 13px;
         font-family: sans-serif;
         border-radius: 8px;
         white-space: nowrap;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        box-shadow: var(--shadow-cookie);
+        border: 1px solid var(--border-subtle);
 
         opacity: 0;
         pointer-events: none;
@@ -612,7 +613,7 @@
         transform: translateX(-50%);
         border-width: 6px;
         border-style: solid;
-        border-color: #1a1a1a transparent transparent transparent;
+        border-color: var(--border-subtle) transparent transparent transparent;
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.15s ease-in-out;
@@ -624,7 +625,7 @@
         opacity: 1;
       }
 
-      /* quick contact */
+      /* --- QUICK CONTACT --- */
       .quick-contact-section {
         padding: 120px 20px;
       }
@@ -633,10 +634,12 @@
         max-width: 720px;
         margin: 0 auto;
         padding: 40px 30px;
-        background-color: #ffffff; /* Lub dopasowany odcień pod Twój motyw */
+        background-color: var(--bg-card);
         border-radius: 32px;
         text-align: center;
-        border: 1px solid #e9ecef;
+        border: 1px solid var(--border-subtle);
+        box-shadow: var(--shadow-header);
+        transition: background-color 0.25s ease, border-color 0.25s ease;
       }
 
       .contact-header {
@@ -644,16 +647,17 @@
         flex-direction: column;
         justify-content: center;
       }
+
       .contact-header h2 {
         font-size: 1.8rem;
         margin-bottom: 10px;
-        color: #1a1a1a;
+        color: var(--text-heading);
       }
 
       .contact-header p {
         font-size: 1rem;
         font-weight: 500;
-        color: #6c757d;
+        color: var(--text-secondary);
         margin-bottom: 28px;
         text-align: center;
       }
@@ -662,17 +666,16 @@
         display: flex;
         gap: 16px;
         justify-content: center;
-        flex-wrap: wrap; /* Zapewnia RWD na urządzeniach mobilnych */
+        flex-wrap: wrap;
         margin-bottom: 24px;
       }
 
-      /* Przycisk Główny (LinkedIn) */
       .btn-primary {
         display: inline-flex;
         align-items: center;
         gap: 8px;
         padding: 12px 24px;
-        background-color: #0a66c2; /* Kolor marki LinkedIn */
+        background-color: #0a66c2; /* Brand identity dla LinkedIn */
         color: #ffffff;
         border-radius: 8px;
         font-weight: 600;
@@ -685,15 +688,14 @@
         transform: translateY(-2px);
       }
 
-      /* Przycisk Drugorzędny (CV) */
       .btn-secondary {
         display: inline-flex;
         align-items: center;
         gap: 8px;
         padding: 12px 24px;
-        background-color: #ffffff;
-        color: #212529;
-        border: 1px solid #ced4da;
+        background-color: var(--bg-card);
+        color: var(--text-heading);
+        border: 1px solid var(--border-subtle);
         border-radius: 8px;
         font-weight: 600;
         text-decoration: none;
@@ -701,14 +703,13 @@
       }
 
       .btn-secondary:hover {
-        background-color: #f1f3f5;
+        background-color: var(--accent-hover-bg);
         transform: translateY(-2px);
       }
 
-      /* Szybki mail poniżej */
       .contact-direct {
         font-size: 0.95rem;
-        color: #6c757d;
+        color: var(--text-secondary);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -717,18 +718,19 @@
       }
 
       .email-link {
-        color: #212529;
+        color: var(--text-heading);
         font-weight: 600;
         text-decoration: underline;
         text-underline-offset: 4px;
+        transition: color 0.2s ease;
       }
 
       .email-link:hover {
-        color: #0a66c2;
+        color: var(--accent);
       }
 
+      /* --- RESPONSIVE --- */
       @media (max-width: 794px) {
-        /* Hero */
         .profile {
           padding-top: 4%;
           width: 80%;
@@ -744,13 +746,13 @@
         .hero {
           padding-top: 12px;
           flex-direction: column;
-          max-width: 100%; /* pozwól sekcji rosnąć na full width w mobile */
-          padding: 4vh 16vw 0vh 16vw; /* TOP RIGHT BOTTOM LEFT */
+          max-width: 100%;
+          padding: 4vh 16vw 0vh 16vw;
         }
         .buttonWrapper {
           margin-top: 8%;
-          row-gap: 20px; /* pionowy odstęp */
-          column-gap: 24px; /* poziomy odstęp */
+          row-gap: 20px;
+          column-gap: 24px;
         }
         .gapp {
           padding-top: 8px;
@@ -761,22 +763,23 @@
         .buttonPrimary {
           padding: 10px 20px;
         }
-        /* Gallery */
         .mojeProjekty {
           padding-top: 12vh;
         }
       }
+
       @media (max-width: 650px) {
         .hero {
-          padding: 4vh 8vw 0vh 8vw; /* TOP RIGHT BOTTOM LEFT */
+          padding: 4vh 8vw 0vh 8vw;
         }
       }
+
       @media (max-width: 432px) {
         .lineBreak {
           display: inline;
         }
         .hero {
-          padding: 4vh 8vw 0vh 8vw; /* TOP RIGHT BOTTOM LEFT */
+          padding: 4vh 8vw 0vh 8vw;
         }
         .buttonWrapper {
           margin-top: 12%;
@@ -784,6 +787,7 @@
       }
     </style>
     <script src="/js/translations.js"></script>
+    <script src="/js/theme.js"></script>
   </head>
   <body>
     <!-- HEADER (NAV) -->
@@ -825,6 +829,28 @@
             🇬🇧
           </button>
         </div>
+        <label class="theme-switch" aria-label="Przełącz motyw">
+          <input type="checkbox" id="themeToggle" />
+          <span class="theme-switch-track">
+            <span class="theme-switch-thumb">
+              <svg class="icon-sun" viewBox="0 0 24 24">
+                <path
+                  d="M12 4V2M12 22v-2M4 12H2m20 0h-2M6.34 6.34 4.93 4.93m14.14 14.14-1.41-1.41M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  fill="none"
+                  stroke-linecap="round"
+                />
+              </svg>
+              <svg class="icon-moon" viewBox="0 0 24 24">
+                <path
+                  d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+          </span>
+        </label>
       </div>
     </header>
     <section class="spaceX" id="spaceX"></section>

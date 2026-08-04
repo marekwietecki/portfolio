@@ -57,19 +57,21 @@
     <title>Marek Wietecki | Polityka Prywatności</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" href="assets/brand/favicon.ico" />
-    <link rel="icon" type="image/svg+xml" href="assest/brand/favicon.svg" />
     <link
       rel="icon"
       type="image/png"
-      sizes="32x32"
-      href="assets/brand/favicon-32x32.png"
+      href="/assets/brand/favicon-96x96.png"
+      sizes="96x96"
     />
-    <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/assets/brand/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/brand/favicon.ico" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
-      rel="stylesheet"
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/brand/apple-touch-icon.png"
     />
+    <meta name="apple-mobile-web-app-title" content="MW Design" />
+    <link rel="manifest" href="/assets/brand/site.webmanifest" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -81,82 +83,105 @@
     <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js"></script>
     <link rel="stylesheet" href="/css/style.css" />
     <style>
-      /* Breadcrumbs */
+      /* ==========================================================================
+   PAGE SPECIFIC STYLES — GALLERY & LEGAL / PRIVACY
+   ========================================================================== */
+
+      /* --- BREADCRUMBS --- */
       .arrow {
         font-size: smaller;
-        color: #555555;
+        color: var(--text-muted);
       }
+
       .breadcrumbs {
-        color: #555555;
+        color: var(--text-secondary);
         margin-left: 6vw;
         cursor: pointer;
+        transition: color 0.2s ease;
       }
+
       .breadcrumbs:hover {
+        color: var(--text-heading);
         text-decoration: underline;
-        text-decoration-color: rgb(148, 148, 148);
+        text-decoration-color: var(--accent);
       }
+
       .currentCard {
-        opacity: 64%;
+        opacity: 0.64;
       }
+
       .breadcrumbsWrapper {
         padding-top: 1%;
       }
 
-      /* Content */
+      /* --- CONTENT & GALLERY --- */
       .titleWrapper {
         display: flex;
         padding-left: 4vw;
         margin-top: 4vw;
       }
+
       .galleryWrapper {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 8vw 6vw; /* row-gap (pion) i column-gap (poziom) */
-        padding: 1rem;
+        gap: 8vw 6vw;
         padding: 0vw 4vw 2vw 4vw;
       }
+
       .galleryItem {
         display: flex;
         justify-content: center;
       }
+
       .itemContainer {
         text-align: center;
         max-width: 100%;
       }
+
       .itemContainer img {
         width: 100%;
         height: auto;
         display: block;
         border-radius: 16px;
-        box-shadow: 0 1px 16px rgba(0, 0, 0, 0.04);
-        transition: transform 0.3s;
+        border: 1px solid var(--border-subtle);
+        box-shadow: var(--shadow-header);
+        transition: transform 0.3s ease, box-shadow 0.3s ease,
+          border-color 0.3s ease;
         cursor: pointer;
       }
+
       .itemContainer img:hover {
         transform: scale(1.05);
+        border-color: var(--accent);
+        box-shadow: var(--shadow-header-scrolled);
       }
+
       .itemContainer p {
         margin-top: 1rem;
         font-size: 1rem;
-        color: #444;
-        text-shadow: 0 1px 16px rgba(0, 0, 0, 0, 16);
+        color: var(--text-secondary);
+        text-shadow: none;
       }
+
+      /* --- LEGAL & PRIVACY TEXT --- */
       .privacy-text {
-        font-size: 14px; /* lub 0.875rem */
+        font-size: 14px;
         line-height: 1.5;
-        color: #444444; /* opcjonalnie: stonowany kolor dla lepszej czytelności */
+        color: var(--text-secondary);
       }
+
+      /* --- RESPONSYWNOŚĆ --- */
       @media (max-width: 740px) {
         h1 {
           font-size: 32px;
         }
-        /* Content */
         .titleWrapper {
           margin-top: 8vw;
         }
       }
     </style>
     <script src="/js/translations.js"></script>
+    <script src="/js/theme.js"></script>
   </head>
   <body>
     <!-- Header -->
@@ -192,6 +217,28 @@
             🇬🇧
           </button>
         </div>
+        <label class="theme-switch" aria-label="Przełącz motyw">
+          <input type="checkbox" id="themeToggle" />
+          <span class="theme-switch-track">
+            <span class="theme-switch-thumb">
+              <svg class="icon-sun" viewBox="0 0 24 24">
+                <path
+                  d="M12 4V2M12 22v-2M4 12H2m20 0h-2M6.34 6.34 4.93 4.93m14.14 14.14-1.41-1.41M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  fill="none"
+                  stroke-linecap="round"
+                />
+              </svg>
+              <svg class="icon-moon" viewBox="0 0 24 24">
+                <path
+                  d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+          </span>
+        </label>
       </div>
     </header>
     <section class="spaceX" id="spaceX"></section>

@@ -61,15 +61,21 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" href="assets/brand/favicon.ico" />
-    <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg" />
     <link
       rel="icon"
       type="image/png"
-      sizes="32x32"
-      href="assets/brand/favicon-32x32.png"
+      href="/assets/brand/favicon-96x96.png"
+      sizes="96x96"
     />
-    <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/assets/brand/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/brand/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/brand/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="MW Design" />
+    <link rel="manifest" href="/assets/brand/site.webmanifest" />
     <link
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
@@ -89,21 +95,28 @@
     <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js"></script>
     <link rel="stylesheet" href="/css/style.css" />
     <style>
-      /* Content */
+      /* ==========================================================================
+   PAGE SPECIFIC STYLES — PROJECT / CASE STUDY VARIANT
+   ========================================================================== */
+
+      /* --- MAIN LAYOUT GRID --- */
       .projectLayout {
         display: grid;
-        grid-template-columns: 64% 9% 20% 2%; /* margines – treść – nav – margines */
+        grid-template-columns: 64% 9% 20% 2%;
         gap: 3rem;
         max-width: 1400px;
         margin: 0 auto;
         width: 88vw;
         padding-inline: 4vw;
       }
+
       .projectContent {
         flex: 1;
-        grid-column: 1; /* boczne menu w trzeciej kolumnie */
+        grid-column: 1;
         max-width: 1000px;
       }
+
+      /* --- HERO GRADIENT BANNER --- */
       .gradientBackground {
         background: linear-gradient(45deg, #070814, #151e4d, #0f1a5a);
         background-size: 400% 400%;
@@ -116,12 +129,16 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: transform 0.3s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
         cursor: pointer;
+        box-shadow: var(--shadow-header);
       }
+
       .gradientBackground:hover {
         transform: scale(1.05);
+        box-shadow: var(--shadow-header-scrolled);
       }
+
       @keyframes gradientMove {
         0% {
           background-position: 0% 50%;
@@ -133,38 +150,53 @@
           background-position: 0% 50%;
         }
       }
+
+      /* --- PROCESS SECTION & MEDIA --- */
       .processWrapper {
         display: flex;
         flex-direction: column;
         padding-top: 10px;
         gap: 1.5vh;
-        width: 100%; /* dopasowuje się do kolumny grida */
+        width: 100%;
         box-sizing: border-box;
         margin-bottom: 4vh;
       }
+
       .processPhoto {
         width: 88%;
         border-radius: 16px;
         margin-top: 2vh;
         margin-bottom: 2vh;
-        transition: transform 0.3s ease; /* płynne przejście */
+        border: 1px solid var(--border-subtle);
+        transition: transform 0.3s ease, border-color 0.3s ease,
+          box-shadow 0.3s ease;
         cursor: pointer;
       }
+
       .processPhoto:hover {
         transform: scale(1.05);
+        border-color: var(--accent);
+        box-shadow: var(--shadow-header-scrolled);
       }
+
+      /* --- TYPOGRAPHY & LINKS --- */
       .caveat {
         font-family: "Caveat", cursive;
       }
+
       .siteLink {
-        color: #444;
+        color: var(--accent);
         font-weight: 600;
         font-size: clamp(0.7rem, calc(0.5vw + 0.5rem), 1.2rem);
         text-decoration: underline;
+        transition: opacity 0.2s ease;
       }
+
       .siteLink:hover {
-        opacity: 64%;
+        opacity: 0.75;
       }
+
+      /* --- MINI GALLERY --- */
       .mini-gallery {
         display: flex;
         justify-content: center;
@@ -173,17 +205,24 @@
         flex-wrap: wrap;
         margin-top: 4vh;
       }
+
       .mini-gallery img {
         width: 120px;
         height: auto;
-        border-radius: 4px;
+        border-radius: 6px;
+        border: 1px solid var(--border-subtle);
         cursor: pointer;
-        transition: transform 0.2s ease;
+        transition: transform 0.2s ease, border-color 0.2s ease;
       }
+
       .mini-gallery img:hover {
         transform: scale(1.02);
+        border-color: var(--accent);
       }
-      /* --- TWOJE DOTYCHCZASOWE STYLE DESKTOP --- */
+
+      /* ========================================================
+   STICKY SIDE NAVIGATION (DESKTOP)
+   ======================================================== */
       .sideNav {
         position: sticky;
         grid-column: 3;
@@ -213,7 +252,7 @@
       }
 
       .sideNavWrapper a {
-        color: #777;
+        color: var(--text-secondary);
         text-decoration: none;
         transition: color 0.3s ease, transform 0.2s ease;
         cursor: pointer;
@@ -222,15 +261,17 @@
 
       .sideNavWrapper a:hover,
       .sideNavWrapper a.active {
-        color: #0070f3;
+        color: var(--accent);
         font-weight: 600;
       }
 
       .mobileNavToggle {
-        display: none; /* Domyślnie ukryte na komputerach */
+        display: none;
       }
 
-      /* --- STYLING MOBILE (FLOATING BOTTOM NAV) --- */
+      /* ========================================================
+   MOBILE FLOATING BOTTOM NAV
+   ======================================================== */
       @media (max-width: 768px) {
         .sideNav {
           position: fixed;
@@ -251,22 +292,22 @@
           bottom: 20px;
         }
 
-        /* Przycisk rozwijania floating nav */
         .mobileNavToggle {
           display: flex;
           align-items: center;
           justify-content: space-between;
           gap: 10px;
-          background: #ffffff;
-          border: 1px solid rgba(0, 0, 0, 0.1);
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+          background: var(--bg-card);
+          border: 1px solid var(--border-subtle);
+          box-shadow: var(--shadow-header-scrolled);
           padding: 10px 18px;
           border-radius: 30px;
           font-size: 14px;
           font-weight: 600;
-          color: #111;
+          color: var(--text-heading);
           cursor: pointer;
-          backdrop-filter: blur(8px);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
         }
 
         .mobileNavArrow {
@@ -274,20 +315,20 @@
           transition: transform 0.3s ease;
         }
 
-        /* Ukryty po zwinięciu na mobile */
         .sideNavWrapper {
           display: none;
           position: absolute;
           bottom: calc(100% + 10px);
           left: 50%;
           transform: translateX(-50%);
-          background: #ffffff;
-          border: 1px solid rgba(0, 0, 0, 0.08);
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+          background: var(--bg-card);
+          border: 1px solid var(--border-subtle);
+          box-shadow: var(--shadow-header-scrolled);
           border-radius: 16px;
           padding: 12px 16px;
           width: 220px;
-          backdrop-filter: blur(10px);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
         }
 
         .sideNavWrapper a {
@@ -298,10 +339,10 @@
         }
 
         .sideNavWrapper a.active {
-          background: rgba(0, 112, 243, 0.08);
+          background: rgba(30, 110, 214, 0.12);
+          color: var(--accent);
         }
 
-        /* Stan otwartego menu */
         .sideNav.open .sideNavWrapper {
           display: flex;
         }
@@ -310,6 +351,8 @@
           transform: rotate(180deg);
         }
       }
+
+      /* --- BOTTOM NAV LOOP --- */
       .navLoopWrapper {
         padding-top: 20vh;
         padding-bottom: 8vh;
@@ -318,59 +361,72 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        box-sizing: border-box; /* uwzględnia padding w szerokości */
+        box-sizing: border-box;
       }
+
       .navLoop {
         flex: 1;
         text-align: center;
         line-height: 130%;
       }
+
       .loopLink {
         cursor: pointer;
         text-align: center;
-        color: #444;
+        color: var(--text-heading);
         font-weight: 600;
         text-decoration: underline;
+        transition: opacity 0.2s ease, color 0.2s ease;
       }
+
       .loopLink:hover {
-        opacity: 64%;
+        color: var(--accent);
+        opacity: 0.8;
       }
+
+      /* ========================================================
+   RESPONSIVE MEDIA QUERIES
+   ======================================================== */
       @media (max-width: 740px) {
-        /* Config */
         h1 {
           font-size: 32px;
         }
-        /* Content */
+
         .projectLayout {
           flex-direction: column;
           gap: 2rem;
-          grid-template-columns: 98% 2%; /* margines – treść – nav – margines */
+          grid-template-columns: 98% 2%;
         }
+
         .projectIntro {
           width: 82%;
         }
+
         .processWrapper {
           flex-direction: column;
           padding-top: 0px;
         }
+
         .processProgress {
           width: 88vw;
           margin-bottom: -20px;
         }
+
         .processPhoto {
           width: 80vw;
           border-radius: 16px;
         }
       }
     </style>
-    <script src="/js/translations.js"></script>
+    <script src="../js/translations.js"></script>
+    <script src="../js/theme.js"></script>
   </head>
   <body>
     <header>
       <div class="headerNav">
         <a class="headerLink" href="../index.html">
           <img
-            src="assets/brand/mw_logo_web.png"
+            src="../assets/brand/mw_logo_web.png"
             alt="Logo MW Desgin - Marek Wietecki"
             class="logo"
           />
@@ -402,6 +458,28 @@
             🇬🇧
           </button>
         </div>
+        <label class="theme-switch" aria-label="Przełącz motyw">
+          <input type="checkbox" id="themeToggle" />
+          <span class="theme-switch-track">
+            <span class="theme-switch-thumb">
+              <svg class="icon-sun" viewBox="0 0 24 24">
+                <path
+                  d="M12 4V2M12 22v-2M4 12H2m20 0h-2M6.34 6.34 4.93 4.93m14.14 14.14-1.41-1.41M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  fill="none"
+                  stroke-linecap="round"
+                />
+              </svg>
+              <svg class="icon-moon" viewBox="0 0 24 24">
+                <path
+                  d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+          </span>
+        </label>
       </div>
     </header>
     <section class="spaceX" id="spaceX"></section>

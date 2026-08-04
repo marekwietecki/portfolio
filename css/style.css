@@ -11,6 +11,93 @@
    nadal mogą nadpisywać te ogólne, jeśli zajdzie taka potrzeba.
    ========================================================================== */
 
+/* ==========================================================================
+   DESIGN TOKENY KOLORÓW — jasny / ciemny motyw
+   Zmienne czytane w całym pliku przez var(--nazwa).
+   Przełączanie: <html data-theme="dark"> (patrz theme-toggle.js na dole pliku).
+   ========================================================================== */
+:root {
+  /* Tła */
+  --bg-page: #f6f6f7;
+  --bg-card: #ffffff;
+  --bg-header: #f6f6f7;
+  --bg-footer: #222222;
+  --bg-cookie: #ffffff;
+
+  /* Tekst */
+  --text-heading: #444444;
+  --text-primary: #555555;
+  --text-secondary: #696969;
+  --text-muted: #949494;
+  --text-subtle: #c4c4c4;
+  --text-on-dark: #ffffff;
+
+  /* Marka / akcent (NIE zmienia się między motywami) */
+  --accent: #1e6ed6;
+  --accent-hover-bg: #f2f2f2;
+
+  /* Obramowania / cienie */
+  --border-subtle: #dddddd;
+  --shadow-header: 0 0px 32px #f0f0f0;
+  --shadow-header-scrolled: 0 0px 32px #dddddd;
+  --shadow-cookie: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+  /* Fala w tle body — kolor linii/kropek */
+  --wave-stroke: #1e6ed6;
+
+  /* Stopka jest ZAWSZE ciemna (w obu motywach) — własny, stały token na jej wewnętrzne obramowanie */
+  --footer-border: #444444;
+
+  /* Custom cursor */
+  --cursor-fill: #2e323f;
+  --cursor-stroke: #ffffff;
+  --cursor-badge-bg: #ffffff;
+  --cursor-badge-text: #2e323f;
+
+  /* Theme switch (Apple-style) */
+  --switch-track-off: #d1d1d6;
+  --switch-track-on: var(--accent);
+  --switch-thumb-bg: #ffffff;
+  --switch-thumb-icon: #444444;
+}
+
+[data-theme="dark"] {
+  --bg-page: #121316;
+  --bg-card: #1c1d21;
+  --bg-header: #121316;
+  --bg-footer: #0a0a0b;
+  --bg-cookie: #1c1d21;
+
+  --text-heading: #f4f4f5;
+  --text-primary: #d4d4d8;
+  --text-secondary: #a1a1aa;
+  --text-muted: #94949c; /* było #71717a (~3.85:1) → teraz ~6.2:1 */
+  --text-subtle: #58585f; /* było #52525b (~2.4:1) → teraz ~4.75:1 */
+  --text-on-dark: #f4f4f5;
+
+  --accent: #4a8fe0;
+  --accent-hover-bg: #2a2b30;
+
+  --border-subtle: #2e2f33;
+  --shadow-header: 0 0px 32px rgba(0, 0, 0, 0.4);
+  --shadow-header-scrolled: 0 0px 32px rgba(0, 0, 0, 0.6);
+  --shadow-cookie: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+  --wave-stroke: #4a8fe0;
+  --footer-border: #444444; /* celowo bez zmian względem jasnego motywu */
+
+  --cursor-fill: #e4e4e7;
+  --cursor-stroke: #121316;
+  --cursor-badge-bg: #1c1d21;
+  --cursor-badge-text: #f4f4f5;
+
+  /* Theme switch (Apple-style) — w trybie ciemnym tor "off" ciemniejszy szary */
+  --switch-track-off: #3a3a3c;
+  --switch-track-on: var(--accent);
+  --switch-thumb-bg: #ffffff;
+  --switch-thumb-icon: #1c1d21;
+}
+
 /* --- CUSTOM CURSOR SYSTEM --- */
 html,
 body,
@@ -69,19 +156,19 @@ img {
 .cursor-dot svg {
   width: 100%;
   height: 100%;
-  fill: #2e323f;
-  stroke: #ffffff;
+  fill: var(--cursor-fill);
+  stroke: var(--cursor-stroke);
   stroke-width: 1.5px;
   filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2));
-  transition: fill 0.2s ease, transform 0.2s ease;
+  transition: fill 0.2s ease, transform 0.2s ease, stroke 0.2s ease;
 }
 
 .cursor-badge {
   position: absolute;
   left: 20px;
   top: 10px;
-  background-color: #ffffff;
-  color: #2e323f;
+  background-color: var(--cursor-badge-bg);
+  color: var(--cursor-badge-text);
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 11px;
@@ -127,14 +214,18 @@ body {
     sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f6f6f7;
-  color: #555555;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
   height: auto;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
 
-  /* FANCY GENERATYWNA FALA WZOROWANA NA FIGMIE / CURSOR AI */
+  /* FANCY GENERATYWNA FALA WZOROWANA NA FIGMIE / CURSOR AI
+       UWAGA: kolor linii (--wave-stroke) trzeba osadzić w SVG jako inline
+       zmienną nie da się wstrzyknąć do data-URI, więc te SVG-e są
+       zdefiniowane osobno dla jasnego i ciemnego motywu poniżej. */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 900'%3E%3Cpath d='M-100,250 C300,450 500,100 900,350 C1300,600 1400,200 1700,300' fill='none' stroke='%231e6ed6' stroke-width='1.5' stroke-opacity='0.05'/%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 900'%3E%3Cpath d='M-100,280 C320,430 480,130 880,330 C1280,530 1420,230 1700,270' fill='none' stroke='%231e6ed6' stroke-width='0.75' stroke-opacity='0.03'/%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 900'%3E%3Cpath d='M-100,220 C280,470 520,70 920,370 C1320,670 1380,170 1700,330' fill='none' stroke='%231e6ed6' stroke-width='0.5' stroke-opacity='0.02'/%3E%3C/svg%3E"),
@@ -144,15 +235,23 @@ body {
   background-position: center center;
 }
 
+/* Ciemna wersja fali w tle — te same krzywe, jaśniejszy niebieski (--wave-stroke dark) i wyższa opacity, żeby było widać na ciemnym tle */
+[data-theme="dark"] body {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 900'%3E%3Cpath d='M-100,250 C300,450 500,100 900,350 C1300,600 1400,200 1700,300' fill='none' stroke='%234a8fe0' stroke-width='1.5' stroke-opacity='0.08'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 900'%3E%3Cpath d='M-100,280 C320,430 480,130 880,330 C1280,530 1420,230 1700,270' fill='none' stroke='%234a8fe0' stroke-width='0.75' stroke-opacity='0.05'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 900'%3E%3Cpath d='M-100,220 C280,470 520,70 920,370 C1320,670 1380,170 1700,330' fill='none' stroke='%234a8fe0' stroke-width='0.5' stroke-opacity='0.04'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 900'%3E%3Ccircle cx='300' cy='450' r='3' fill='%234a8fe0' fill-opacity='0.25'/%3E%3Crect x='296' y='446' width='8' height='8' fill='none' stroke='%234a8fe0' stroke-width='1' stroke-opacity='0.2'/%3E%3Ccircle cx='900' cy='350' r='3' fill='%234a8fe0' fill-opacity='0.25'/%3E%3Crect x='896' y='346' width='8' height='8' fill='none' stroke='%234a8fe0' stroke-width='1' stroke-opacity='0.2'/%3E%3Ccircle cx='1400' cy='200' r='3' fill='%234a8fe0' fill-opacity='0.25'/%3E%3Crect x='1396' y='196' width='8' height='8' fill='none' stroke='%234a8fe0' stroke-width='1' stroke-opacity='0.2'/%3E%3C/svg%3E");
+}
+
 section {
   width: 100%;
 }
 
 h2 {
   align-items: center;
-  font-size: clamp(1.5rem, calc(3vw + 1rem), 3rem);
+  font-size: clamp(1.2rem, calc(1.2vw + 0.8rem), 1.65rem);
   line-height: 1;
-  color: #444;
+  color: var(--text-heading);
   margin: 0px 0px;
   font-family: "Outfit", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -160,21 +259,21 @@ h2 {
 p {
   text-align: left;
   font-size: clamp(0.75rem, calc(1vw + 0.5rem), 2rem);
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.2em;
   margin: 4px 4px;
   margin-left: 2px;
 }
 
 a {
-  color: #dddddd;
+  color: var(--text-muted);
   text-decoration: none;
   font-size: 16px;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #949494;
+  color: var(--border-subtle);
 }
 
 a svg {
@@ -184,7 +283,7 @@ a svg {
 
 text {
   text-align: left;
-  color: #1e6ed6;
+  color: var(--accent);
 }
 
 .miniText {
@@ -216,10 +315,10 @@ text {
 }
 
 /* ==========================================================================
-   HEADER
-   ========================================================================== */
+     HEADER
+     ========================================================================== */
 header {
-  background: #f6f6f7;
+  background: var(--bg-header);
   font-size: 28px;
   text-align: left;
   display: flex;
@@ -234,7 +333,8 @@ header {
   max-width: 100%;
   box-sizing: border-box;
   z-index: 1000;
-  box-shadow: 0 0px 32px #f0f0f0;
+  box-shadow: var(--shadow-header);
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .headerNav {
@@ -251,23 +351,23 @@ header {
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: #000;
+  color: var(--text-heading);
 }
 
 .menuToggle:hover {
-  color: #696969;
+  color: var(--text-secondary);
 }
 
 .menuToggle:active {
-  color: #696969;
+  color: var(--text-secondary);
 }
 
 .headerShadow {
-  box-shadow: 0 0px 32px #dddddd;
+  box-shadow: var(--shadow-header-scrolled);
 }
 
 .headerLink {
-  color: #444444;
+  color: var(--text-heading);
   font-weight: 700;
   font-size: clamp(0.4rem, calc(0.5vw + 0.7rem), 1.1rem);
   transition: opacity 0.2s ease-in-out;
@@ -278,14 +378,14 @@ header {
 }
 
 .activeHeaderLink {
-  color: #1e6ed6;
+  color: var(--accent);
   font-weight: 700;
   font-size: clamp(0.4rem, calc(0.5vw + 0.7rem), 1.1rem);
   cursor: pointer;
 }
 
 .activeHeaderLink:hover {
-  color: #1e6ed6;
+  color: var(--accent);
 }
 
 .headerLinks {
@@ -312,6 +412,9 @@ header {
   shape-rendering: geometricPrecision;
   transition: opacity 0.2s ease-in-out;
 }
+.logo.is-changing {
+  opacity: 0;
+}
 
 .logo:hover {
   opacity: 64%;
@@ -330,7 +433,7 @@ header {
   padding: 4px 8px;
   font-size: 20px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--text-heading);
   cursor: pointer;
   opacity: 0.48;
   transition: opacity 0.2s ease;
@@ -346,17 +449,17 @@ header {
 }
 
 .lang-divider {
-  color: #b4b4b4;
+  color: var(--text-subtle);
   font-size: 12px;
   user-select: none;
 }
 
 /* ==========================================================================
-   FOOTER
-   ========================================================================== */
+     FOOTER
+     ========================================================================== */
 footer {
-  background-color: #222;
-  color: white;
+  background-color: var(--bg-footer);
+  color: var(--text-on-dark);
   text-align: center;
   padding-top: 104px;
   padding-bottom: 20px;
@@ -365,6 +468,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 4vh;
+  transition: background-color 0.25s ease;
 }
 
 .logoWithLinks {
@@ -409,13 +513,13 @@ footer {
 
 .social-icon i {
   font-size: 26px;
-  color: #fff;
+  color: var(--text-on-dark);
   transition: color 0.3s;
   cursor: pointer;
 }
 
 .social-icon i:hover {
-  color: #1e6ed6;
+  color: var(--accent);
 }
 
 .logoFooter {
@@ -443,7 +547,7 @@ footer {
 }
 
 .link {
-  color: #444;
+  color: var(--text-on-dark);
   font-weight: 600;
   font-size: clamp(0.66rem, calc(1vw + 0.5rem), 1.25rem);
   text-align: left;
@@ -466,21 +570,21 @@ footer {
 .footerText {
   font-weight: lighter;
   font-size: 12px;
-  color: #c4c4c4;
+  color: var(--text-subtle);
   text-align: center;
 }
 
 .footerTexts {
   display: flex;
   justify-content: center;
-  border-top: 1px solid #444444;
+  border-top: 1px solid var(--footer-border);
   padding-top: 20px;
   padding-left: 20px;
 }
 
 /* ==========================================================================
-   COOKIE BANNER
-   ========================================================================== */
+     COOKIE BANNER
+     ========================================================================== */
 .cookie-banner {
   position: fixed;
   bottom: 24px;
@@ -489,13 +593,14 @@ footer {
   max-width: 520px;
   width: calc(100% - 40px);
 
-  background: white;
-  color: #333;
+  background: var(--bg-cookie);
+  color: var(--text-heading);
 
   padding: 16px 20px;
   border-radius: 12px;
 
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-cookie);
+  transition: background-color 0.25s ease, color 0.25s ease;
 
   display: flex;
   justify-content: space-between;
@@ -545,18 +650,137 @@ footer {
 }
 
 .cookie-btn.primary {
-  background: #1e6ed6;
-  color: white;
+  background: var(--accent);
+  color: #ffffff;
 }
 
 .cookie-btn.secondary {
-  background: #f2f2f2;
-  color: rgba(0, 0, 0, 0.64);
+  background: var(--accent-hover-bg);
+  color: var(--text-primary);
 }
 
 /* ==========================================================================
-   RESPONSIVE — breakpoint ujednolicony na 794px (index.html był bazą)
-   ========================================================================== */
+     THEME SWITCH — przełącznik motywu w stylu Apple/iOS
+     Markup (wstaw w headerze, np. obok .lang-switcher):
+  
+     <label class="theme-switch" aria-label="Przełącz motyw">
+       <input type="checkbox" id="themeToggle" />
+       <span class="theme-switch-track">
+         <span class="theme-switch-thumb">
+           <svg class="icon-sun" viewBox="0 0 24 24"><path d="M12 4V2M12 22v-2M4 12H2m20 0h-2M6.34 6.34 4.93 4.93m14.14 14.14-1.41-1.41M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>
+           <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/></svg>
+         </span>
+       </span>
+     </label>
+  
+     Logika (checked = dark mode): js/theme.js
+     ========================================================================== */
+.theme-switch {
+  --track-w: 52px;
+  --track-h: 28px;
+  --thumb-size: 22px;
+  --thumb-gap: 3px;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: var(--track-w);
+  height: var(--track-h);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* input jest w DOM (dla dostępności/klawiatury), ale wizualnie niewidoczny */
+.theme-switch input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.theme-switch-track {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background-color: var(--switch-track-off);
+  transition: background-color 0.3s ease;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+}
+
+.theme-switch input:checked ~ .theme-switch-track {
+  background-color: var(--switch-track-on);
+}
+
+.theme-switch input:focus-visible ~ .theme-switch-track {
+  box-shadow: 0 0 0 3px var(--accent);
+}
+
+.theme-switch-thumb {
+  position: absolute;
+  top: var(--thumb-gap);
+  left: var(--thumb-gap);
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  border-radius: 50%;
+  background-color: var(--switch-thumb-bg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 0 0 0.5px rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--switch-thumb-icon);
+
+  /* charakterystyczny "sprężysty" ruch znany z iOS */
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-switch input:checked ~ .theme-switch-track .theme-switch-thumb {
+  transform: translateX(
+    calc(var(--track-w) - var(--thumb-size) - var(--thumb-gap) * 2)
+  );
+}
+
+/* lekkie "przyciśnięcie" kciuka przy trzymaniu — jak w iOS */
+.theme-switch input:active ~ .theme-switch-track .theme-switch-thumb {
+  width: calc(var(--thumb-size) + 4px);
+}
+.theme-switch input:checked:active ~ .theme-switch-track .theme-switch-thumb {
+  transform: translateX(
+    calc(var(--track-w) - var(--thumb-size) - var(--thumb-gap) * 2 - 4px)
+  );
+}
+
+.theme-switch-thumb svg {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  transition: opacity 0.2s ease, transform 0.3s ease;
+}
+
+.theme-switch-thumb .icon-sun {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+.theme-switch-thumb .icon-moon {
+  opacity: 0;
+  transform: scale(0.5) rotate(-40deg);
+}
+
+.theme-switch input:checked ~ .theme-switch-track .icon-sun {
+  opacity: 0;
+  transform: scale(0.5) rotate(40deg);
+}
+.theme-switch input:checked ~ .theme-switch-track .icon-moon {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+/* ==========================================================================
+     RESPONSIVE — breakpoint ujednolicony na 794px (index.html był bazą)
+     ========================================================================== */
 @media (max-width: 794px) {
   /* Header */
   header {
