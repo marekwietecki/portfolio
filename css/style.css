@@ -37,7 +37,7 @@
   --accent-hover-bg: #f2f2f2;
 
   /* Obramowania / cienie */
-  --border-subtle: #dddddd;
+  --border-subtle: #e1e1e1;
   --shadow-header: 0 0px 32px #f0f0f0;
   --shadow-header-scrolled: 0 0px 32px #dddddd;
   --shadow-cookie: 0 10px 30px rgba(0, 0, 0, 0.15);
@@ -108,7 +108,7 @@ body,
 }
 
 img {
-  pointer-events: none;
+  pointer-events: auto;
   -webkit-user-drag: none;
   user-select: none;
 }
@@ -146,7 +146,7 @@ img {
   top: 0;
   left: 0;
   pointer-events: none;
-  z-index: 10000;
+  z-index: 100000;
   transform: translate3d(0, 0, 0);
   display: flex;
   align-items: center;

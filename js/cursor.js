@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Sprawdzamy, czy użytkownik używa myszki (nie dotyk)
   if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
 
-  // --- 1. AUTOMATYCZNE WSTRZYKIWANIE HTML KURSYRA I CANVASU ---
+  // --- 1. AUTOMATYCZNE WSTRZYKIWANIE HTML KURSORA I CANVASU ---
   const cursorHTML = `
       <canvas id="cursor-liquid-canvas"></canvas>
       <div class="cursor-dot">
@@ -172,7 +172,32 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   requestAnimationFrame(renderGlassWater);
 
-  // Hover efekty
+  // --- 3. LOGIKA HOVERÓW I PLAKIETEK ---
+
+  // Odczyt języka z localStorage w momencie najechania myszką
+  function getCurrentLang() {
+    const lang = localStorage.getItem("selectedLanguage");
+    return lang === "en" ? "en" : "pl";
+  }
+
+  // Bazy haseł akronimu MW
+  const mwQuotesPL = [
+    "Mądrze Wyważony Design",
+    "Mistrzowsko Wykonany Design",
+    "Minimalistyczny Wydajny Design",
+    "Maksymalnie Wypieszczony Design",
+    "Maksymalnie Wartościowy Design",
+  ];
+
+  const mwQuotesEN = [
+    "Mindfully Wired Design",
+    "Meaningful Web Design",
+    "Maximized Worth Design",
+    "Modern & Well-Balanced Design",
+    "Masterfully Worked Design",
+  ];
+
+  // Standardowe linki i przyciski (powiększanie/efekt kursora)
   const links = document.querySelectorAll(
     "a, button, input, textarea, .cookie-btn, #profileImg"
   );
@@ -189,14 +214,48 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.classList.remove("hovered-link")
     );
   });
-  
 
+  // 3a. Header Link: .headerLink -> "Wróć na stronę główną" / "Back to Homepage"
+  const headerLinks = document.querySelectorAll(".logo");
+  headerLinks.forEach((link) => {
+    link.addEventListener("mouseenter", () => {
+      const isEnglish = getCurrentLang() === "en";
+      cursorBadge.textContent = isEnglish
+        ? "Back to Homepage"
+        : "Wróć na stronę główną";
+      document.body.classList.add("hovered-badge");
+    });
+    link.addEventListener("mouseleave", () => {
+      document.body.classList.remove("hovered-badge");
+    });
+  });
+
+  // 3b. Monogram: .logo-link -> Losowe słowa MW
+  const logoMonograms = document.querySelectorAll(".logo-link");
+  logoMonograms.forEach((logo) => {
+    logo.addEventListener("mouseenter", () => {
+      const isEnglish = getCurrentLang() === "en";
+      const quotes = isEnglish ? mwQuotesEN : mwQuotesPL;
+      const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
+      cursorBadge.textContent = randomQuote;
+      document.body.classList.add("hovered-badge");
+    });
+    logo.addEventListener("mouseleave", () => {
+      document.body.classList.remove("hovered-badge");
+    });
+  });
+
+  // 3c. Karty projektów oraz elementy z data-cursor
   const projectCards = document.querySelectorAll(
     ".projectContainer, .card, [data-cursor]"
   );
   projectCards.forEach((card) => {
     card.addEventListener("mouseenter", () => {
-      const customText = card.getAttribute("data-cursor") || "Zobacz Projekt";
+      const isEnglish = getCurrentLang() === "en";
+      const defaultText = isEnglish ? "View Project" : "Zobacz Projekt";
+      const customText = card.getAttribute("data-cursor") || defaultText;
+
       cursorBadge.textContent = customText;
       document.body.classList.add("hovered-badge");
     });

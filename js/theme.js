@@ -1,7 +1,7 @@
 // theme.js — przełącznik motywu z efektami przejścia dla logo
 (function () {
-  const LOGO_LIGHT = "assets/brand/mw_logo_web.png";
-  const LOGO_DARK = "assets/brand/mw_logo_web_white.png";
+  const LOGO_LIGHT = "/assets/brand/mw_logo_web.png";
+  const LOGO_DARK = "/assets/brand/mw_logo_web_white.png";
 
   const saved = localStorage.getItem("theme");
   const prefersDark =
