@@ -1,18 +1,43 @@
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll(".sideNavWrapper a");
-  const sideNav = document.querySelector(".sideNav");
-  const mobileToggle = document.querySelector(".mobileNavToggle");
-  const mobileLabel = document.querySelector(".mobileNavLabel");
+  const navLinks = document.querySelectorAll(".floatingNavWrapper a");
+  const floatingNav = document.querySelector(".floatingNav");
+  const mobileToggle = document.querySelector(".floatingNavToggle");
+  const mobileLabel = document.querySelector(".floatingNavLabel");
+  const footer = document.querySelector("footer, #footer");
 
   if (!sections.length || !navLinks.length) return;
 
-  // 1. Śledzenie aktywnej sekcji przy scrollowaniu
+  // 1. Ukrywanie nawigacji po wjechaniu w sekcję footer (IntersectionObserver)
+  if (footer && floatingNav) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            floatingNav.classList.add("hidden");
+            // Dodatkowo zamykamy rozwijane menu, jeśli było otwarte
+            floatingNav.classList.remove("open");
+            if (mobileToggle) mobileToggle.setAttribute("aria-expanded", "false");
+          } else {
+            floatingNav.classList.remove("hidden");
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0, // Reaguje od razu, gdy pierwsza krawędź stopki pojawi się w oknie
+      }
+    );
+
+    observer.observe(footer);
+  }
+
+  // 2. Śledzenie aktywnej sekcji przy scrollowaniu (offset 130px od góry)
   function updateActiveLink() {
     let currentSection = "";
 
     sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 150;
+      const sectionTop = section.offsetTop - 130;
       if (window.scrollY >= sectionTop) {
         currentSection = section.getAttribute("id");
       }
@@ -23,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (link.getAttribute("href") === `#${currentSection}`) {
         link.classList.add("active");
 
-        // Zamiast innerHTML — używamy textContent do aktualizacji nagłówka na mobile
         if (mobileLabel) {
           mobileLabel.textContent = link.textContent;
         }
@@ -35,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", updateActiveLink);
   updateActiveLink();
 
-  // 2. Smooth scroll po kliknięciu w link + zamykanie mobilnego menu
+  // 3. Smooth scroll po kliknięciu w link z offsetem + zamykanie menu
   navLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
@@ -44,31 +68,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (target) {
         window.scrollTo({
-          top: target.offsetTop - 80,
+          top: target.offsetTop - 104,
           behavior: "smooth",
         });
       }
 
-      // Zamknij menu na mobile po kliknięciu
-      if (sideNav && sideNav.classList.contains("open")) {
-        sideNav.classList.remove("open");
+      if (floatingNav && floatingNav.classList.contains("open")) {
+        floatingNav.classList.remove("open");
         if (mobileToggle) mobileToggle.setAttribute("aria-expanded", "false");
       }
     });
   });
 
-  // 3. Obsługa otwierania/zamykania rozwijanego menu na mobile
-  if (mobileToggle && sideNav) {
+  // 4. Obsługa otwierania/zamykania rozwijanego menu
+  if (mobileToggle && floatingNav) {
     mobileToggle.addEventListener("click", (e) => {
       e.stopPropagation();
-      const isOpen = sideNav.classList.toggle("open");
+      const isOpen = floatingNav.classList.toggle("open");
       mobileToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
 
-    // Zamykanie menu po kliknięciu poza nawigację
     document.addEventListener("click", (e) => {
-      if (!sideNav.contains(e.target) && sideNav.classList.contains("open")) {
-        sideNav.classList.remove("open");
+      if (!floatingNav.contains(e.target) && floatingNav.classList.contains("open")) {
+        floatingNav.classList.remove("open");
         mobileToggle.setAttribute("aria-expanded", "false");
       }
     });

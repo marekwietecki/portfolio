@@ -101,19 +101,26 @@
 
       /* --- MAIN LAYOUT GRID --- */
       .projectLayout {
-        display: grid;
-        grid-template-columns: 64% 9% 20% 2%;
-        gap: 3rem;
-        max-width: 1400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Wyśrodkowuje zawartość w poziomie */
+        width: 100%;
+        max-width: 800px;
         margin: 0 auto;
-        width: 88vw;
         padding-inline: 4vw;
+        box-sizing: border-box;
       }
 
       .projectContent {
         flex: 1;
-        grid-column: 1;
         max-width: 1000px;
+
+        /* 1. Marginesy auto wyśrodkują blok w poziomie */
+        margin-left: auto;
+        margin-right: auto;
+
+        /* 2. Zabezpieczenie szerokości dla mniejszych ekranów */
+        width: 100%;
       }
 
       /* --- HERO GRADIENT BANNER --- */
@@ -221,142 +228,176 @@
       }
 
       /* ========================================================
-   STICKY SIDE NAVIGATION (DESKTOP)
+   FLOATING BOTTOM NAVIGATION (RESPONSIVE & UNIVERSAL)
    ======================================================== */
-      .sideNav {
-        position: sticky;
-        grid-column: 3;
-        top: 50%;
-        transform: translateY(-50%);
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 0.5rem;
-        height: fit-content;
-        padding-right: 4vw;
+      .floatingNav {
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
         z-index: 1000;
-      }
-
-      .sideNav.stop {
-        position: absolute;
-        top: auto;
-        bottom: 4vh;
-        transform: none;
-      }
-
-      .sideNavWrapper {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
+        align-items: center;
+        width: max-content;
+        max-width: 90vw;
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+      }
+      .floatingNav.hidden {
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(-50%, 20px); /* Przesunięcie w dół przy znukaniu */
+        pointer-events: none; /* Zapobiega przypadkowym kliknięciom w niewidoczny element */
       }
 
-      .sideNavWrapper a {
+      /* --------------------------------------------------------
+         DYSKRETNY, PROGRESYWNY BLUR (MAX 8px -> 0px)
+         -------------------------------------------------------- */
+
+      /* Warstwa zewnętrzna: ultra-subtelne wygaszenie w nicość (1.5px) */
+      .floatingNav::after {
+        content: "";
+        position: absolute;
+        top: -60px;
+        bottom: -60px;
+        left: -90px;
+        right: -90px;
+        z-index: -2;
+        border-radius: 90px;
+        pointer-events: none;
+
+        backdrop-filter: blur(1.5px);
+        -webkit-backdrop-filter: blur(1.5px);
+
+        mask-image: radial-gradient(
+          ellipse at center,
+          rgba(0, 0, 0, 1) 15%,
+          rgba(0, 0, 0, 0.3) 55%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        -webkit-mask-image: radial-gradient(
+          ellipse at center,
+          rgba(0, 0, 0, 1) 15%,
+          rgba(0, 0, 0, 0.3) 55%,
+          rgba(0, 0, 0, 0) 100%
+        );
+      }
+
+      /* Warstwa wewnętrzna: łagodniejszy blur główny (max 8px) */
+      .floatingNav::before {
+        content: "";
+        position: absolute;
+        top: -30px;
+        bottom: -30px;
+        left: -45px;
+        right: -45px;
+        z-index: -1;
+        border-radius: 60px;
+        pointer-events: none;
+
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+
+        mask-image: radial-gradient(
+          ellipse at center,
+          rgba(0, 0, 0, 1) 25%,
+          rgba(0, 0, 0, 0.35) 65%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        -webkit-mask-image: radial-gradient(
+          ellipse at center,
+          rgba(0, 0, 0, 1) 25%,
+          rgba(0, 0, 0, 0.35) 65%,
+          rgba(0, 0, 0, 0) 100%
+        );
+      }
+
+      /* Przycisk aktywujący menu (Pigułka - ORYGINALNA, BEZ ZMIAN) */
+      .floatingNavToggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        background: var(--bg-card);
+        border: 1px solid var(--border-subtle);
+        box-shadow: var(--shadow-header-scrolled);
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text-heading);
+        cursor: pointer;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        transition: transform 0.2s ease, border-color 0.3s ease;
+      }
+
+      .floatingNavToggle:hover {
+        border-color: var(--accent);
+        transform: scale(1.02);
+      }
+
+      .floatingNavArrow {
+        font-size: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      /* Menu ze spisem treści (Dropdown otwierany w górę - ORYGINALNE, BEZ ZMIAN) */
+      .floatingNavWrapper {
+        display: none;
+        position: absolute;
+        bottom: calc(100% + 12px);
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--bg-card);
+        border: 1px solid var(--border-subtle);
+        box-shadow: var(--shadow-header-scrolled);
+        border-radius: 16px;
+        padding: 8px;
+        width: 220px;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .floatingNavWrapper a {
         color: var(--text-secondary);
         text-decoration: none;
-        transition: color 0.3s ease, transform 0.2s ease;
-        cursor: pointer;
+        padding: 10px 14px;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 8px;
+        font-size: 14px;
         font-weight: 500;
+        transition: background 0.2s ease, color 0.2s ease;
+        cursor: pointer;
       }
 
-      .sideNavWrapper a:hover,
-      .sideNavWrapper a.active {
+      .floatingNavWrapper a:hover {
+        background: rgba(30, 110, 214, 0.08);
+        color: var(--text-heading);
+      }
+
+      .floatingNavWrapper a.active {
+        background: rgba(30, 110, 214, 0.12);
         color: var(--accent);
         font-weight: 600;
       }
 
-      .mobileNavToggle {
-        display: none;
+      /* Stan otwarty (dodawany przez JS) */
+      .floatingNav.open .floatingNavWrapper {
+        display: flex;
       }
 
-      /* ========================================================
-   MOBILE FLOATING BOTTOM NAV
-   ======================================================== */
-      @media (max-width: 768px) {
-        .sideNav {
-          position: fixed;
-          top: auto;
-          bottom: 20px;
-          left: 50%;
-          transform: translateX(-50%);
-          right: auto;
-          grid-column: auto;
-          padding-right: 0;
-          align-items: center;
-          width: max-content;
-          max-width: 90vw;
-        }
-
-        .sideNav.stop {
-          position: fixed;
-          bottom: 20px;
-        }
-
-        .mobileNavToggle {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 10px;
-          background: var(--bg-card);
-          border: 1px solid var(--border-subtle);
-          box-shadow: var(--shadow-header-scrolled);
-          padding: 10px 18px;
-          border-radius: 30px;
-          font-size: 14px;
-          font-weight: 600;
-          color: var(--text-heading);
-          cursor: pointer;
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
-        }
-
-        .mobileNavArrow {
-          font-size: 10px;
-          transition: transform 0.3s ease;
-        }
-
-        .sideNavWrapper {
-          display: none;
-          position: absolute;
-          bottom: calc(100% + 10px);
-          left: 50%;
-          transform: translateX(-50%);
-          background: var(--bg-card);
-          border: 1px solid var(--border-subtle);
-          box-shadow: var(--shadow-header-scrolled);
-          border-radius: 16px;
-          padding: 12px 16px;
-          width: 220px;
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
-        }
-
-        .sideNavWrapper a {
-          padding: 8px 12px;
-          width: 100%;
-          box-sizing: border-box;
-          border-radius: 8px;
-        }
-
-        .sideNavWrapper a.active {
-          background: rgba(30, 110, 214, 0.12);
-          color: var(--accent);
-        }
-
-        .sideNav.open .sideNavWrapper {
-          display: flex;
-        }
-
-        .sideNav.open .mobileNavArrow {
-          transform: rotate(180deg);
-        }
+      .floatingNav.open .floatingNavArrow {
+        transform: rotate(180deg);
       }
 
       /* --- BOTTOM NAV LOOP --- */
       .navLoopWrapper {
         padding-top: 20vh;
         padding-bottom: 8vh;
-        padding-left: 4vw;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -525,14 +566,14 @@
     <div class="projectLayout">
       <main class="projectContent">
         <section style="padding-top: 8vh" id="o-projekcie">
-          <h1 style="margin: 0" data-i18n="project_vi_planetroad_title">
-            Identyfikacja Wizualna
-          </h1>
           <span
             style="font-size: 18px"
             data-i18n="project_vi_planetroad_subtitle"
             >PlanetRoad</span
           >
+          <h1 style="margin-top: 8px" data-i18n="project_vi_planetroad_title">
+            Identyfikacja Wizualna
+          </h1>
           <p style="margin-top: 2vw" data-i18n="project_vi_planetroad_intro">
             PlanetRoad jest firmą projektującą drogi w Polsce od niespełna 30
             lat. W internecie firma posiadała jedynie prostą stronę internetową
@@ -1061,12 +1102,32 @@
           </span>
         </section>
       </main>
-      <nav class="sideNav">
-        <button class="mobileNavToggle" aria-expanded="false">
-          <span class="mobileNavLabel">Nawigacja</span>
-          <span class="mobileNavArrow">▲</span>
+      <nav class="floatingNav">
+        <button
+          class="floatingNavToggle"
+          aria-expanded="false"
+          aria-label="Otwórz spis treści"
+        >
+          <span class="floatingNavLabel">Nawigacja</span>
+          <span class="floatingNavArrow"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-chevron-up-icon lucide-chevron-up"
+            >
+              <path d="m18 15-6-6-6 6" />
+            </svg>
+          </span>
         </button>
-        <div class="sideNavWrapper">
+
+        <div class="floatingNavWrapper">
           <a href="#o-projekcie" data-i18n="side_nav_about">O Projekcie</a>
           <a href="#badania" data-i18n="side_nav_research">Badania</a>
           <a href="#ideacja" data-i18n="side_nav_ideation">Ideacja</a>
