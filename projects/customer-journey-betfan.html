@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-5WEZ1GN7W6"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("consent", "default", {
+        ad_storage: "denied",
+        analytics_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+      });
+      gtag("js", new Date());
+      gtag("config", "G-5WEZ1GN7W6", { anonymize_ip: true });
+      gtag("config", "AW-17997930573");
+    </script>
+    <script type="text/javascript">
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "xpif7gh2qb");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BETFAN - Customer Journey & Gamification | Marek Wietecki</title>
+    <meta
+      name="description"
+      content="Case study mapowania Customer Journey oraz wdrożenia mechanizmów retencji i gamifikacji w aplikacji bukmacherskiej BETFAN."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/brand/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/brand/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/brand/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/brand/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="MW Design" />
+    <link rel="manifest" href="/assets/brand/site.webmanifest" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/projects.css" />
+    <style>
+      /* --- WŁASNE STYLE DLA INTERAKTYWNEGO CJM --- */
+      .cjmContainer {
+        width: 100%;
+        margin: 40px 0;
+        background: var(--bg-card);
+        border: 1px solid var(--border-subtle);
+        border-radius: 20px;
+        padding: 24px;
+        box-sizing: border-box;
+      }
+
+      .cjmSlider {
+        display: flex;
+        gap: 16px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 16px;
+      }
+
+      .cjmStepCard {
+        flex: 0 0 280px;
+        scroll-snap-align: start;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--border-subtle);
+        border-radius: 12px;
+        padding: 16px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .cjmStepCard:hover,
+      .cjmStepCard.active {
+        border-color: var(--accent);
+        background: rgba(30, 110, 214, 0.08);
+      }
+
+      .cjmStepNumber {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--accent);
+        text-transform: uppercase;
+      }
+
+      .cjmStepTitle {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 4px 0 12px 0;
+        color: var(--text-heading);
+      }
+
+      .cjmDetails {
+        margin-top: 24px;
+        padding-top: 20px;
+        border-top: 1px solid var(--border-subtle);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+      }
+
+      .cjmBox {
+        background: rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        border-radius: 10px;
+      }
+
+      .cjmBox.risk {
+        border-left: 4px solid #e74c3c;
+      }
+      .cjmBox.opportunity {
+        border-left: 4px solid #2ecc71;
+      }
+
+      .cjmBox h5 {
+        margin: 0 0 8px 0;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      /* --- FOOTER / LOOP NAVIGATION --- */
+      .navLoopWrapper {
+        padding-top: 20vh;
+        padding-bottom: 8vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .navLoop {
+        flex: 1;
+        text-align: center;
+        line-height: 130%;
+      }
+
+      .loopLink {
+        cursor: pointer;
+        text-align: center;
+        color: var(--text-heading);
+        font-weight: 600;
+        text-decoration: underline;
+        transition: opacity 0.2s ease, color 0.2s ease;
+      }
+
+      .loopLink:hover {
+        color: var(--accent);
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HEADER (NAV) -->
+    <header>
+      <div class="headerNav">
+        <a class="headerLink" href="../index.html">
+          <!-- marekwietecki           style="font-size: clamp(0.6rem, calc(0.75vw + 1.05rem), 1.65rem)"
+-->
+          <img
+            src="../assets/brand/mw_logo_web.png"
+            alt="Logo MW Desgin - Marek Wietecki"
+            class="logo"
+          />
+        </a>
+        <button class="menuToggle" id="menuToggle" onclick="toggleMenu()">
+          ☰
+        </button>
+      </div>
+      <div class="headerLinks">
+        <a class="headerLink" href="oferta.html" data-i18n="nav_offer"
+          >Oferta</a
+        >
+        <a class="headerLink" href="o-mnie.html" data-i18n="nav_about"
+          >O Mnie</a
+        >
+        <div class="settings-dropdown-wrapper">
+          <!-- Przycisk z wybraną przez Ciebie ikonką -->
+          <button
+            class="settings-toggle-btn"
+            id="settingsToggle"
+            aria-label="Ustawienia"
+            aria-expanded="false"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-settings2-icon lucide-settings-2"
+            >
+              <path d="M14 17H5" />
+              <path d="M19 7h-9" />
+              <circle cx="17" cy="17" r="3" />
+              <circle cx="7" cy="7" r="3" />
+            </svg>
+          </button>
+
+          <!-- Rozwijana chmurka ze starymi komponentami -->
+          <div class="settings-dropdown" id="settingsDropdown">
+            <!-- 1. Twoje flagi -->
+            <div class="lang-switcher">
+              <button
+                class="lang-btn"
+                data-lang="pl"
+                onclick="switchLanguage('pl')"
+              >
+                🇵🇱
+              </button>
+              <button
+                class="lang-btn"
+                data-lang="en"
+                onclick="switchLanguage('en')"
+              >
+                🇬🇧
+              </button>
+            </div>
+
+            <div class="settings-divider"></div>
+
+            <!-- 2. Twój przełącznik motywu -->
+            <label class="theme-switch" aria-label="Przełącz motyw">
+              <input type="checkbox" id="themeToggle" />
+              <span class="theme-switch-track">
+                <span class="theme-switch-thumb">
+                  <svg class="icon-sun" viewBox="0 0 24 24">
+                    <path
+                      d="M12 4V2M12 22v-2M4 12H2m20 0h-2M6.34 6.34 4.93 4.93m14.14 14.14-1.41-1.41M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      fill="none"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                  <svg class="icon-moon" viewBox="0 0 24 24">
+                    <path
+                      d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="spaceX"></div>
+
+    <main class="projectLayout">
+      <article class="projectContent">
+        <section style="padding-top: 20vh" id="o-projekcie">
+          <span style="font-size: 18px">Betfan</span>
+          <h1 data-i18n="project_app_monexo_title" style="margin-top: 8px">
+            Customer Journey Map & Gamifikacja Retencji
+          </h1>
+          <!-- <p style="padding-top: 2vh" data-i18n="project_app_monexo_desc">
+            BETFAN to platforma bukmacherska stawiająca na emocje, progres i
+            szybkie zawieranie zakładów w celu budowania wysokiej retencji
+            graczy. Projekt polegał na zmapowaniu customer journey od reklamy do
+            kuponu oraz zaprojektowaniu mechanizmów motywacyjnych budujących
+            nawyk powrotu do aplikacji.
+          </p> -->
+
+          <p style="padding-top: 3vh">
+            <b data-i18n="project_app_monexo_role_label">Rola:</b>
+            <span data-i18n="project_app_monexo_role_val"
+              >Product Designer</span
+            >
+          </p>
+
+          <p style="padding-top: 1vh">
+            <b data-i18n="project_app_monexo_scope_label"
+              >Zakres odpowiedzialności:</b
+            >
+            <span data-i18n="project_app_monexo_scope_val"
+              >Customer Journey Map, System Lojalizacji, Wyznaczenie Mierników
+              Sukcesu (KPI)</span
+            >
+          </p>
+
+          <p style="padding-top: 1vh">
+            <b data-i18n="project_app_monexo_duration_label">Czas trwania:</b>
+            <span data-i18n="project_app_monexo_duration_val">2 tygodnie</span>
+          </p>
+
+          <p style="padding-top: 1vh">
+            <b data-i18n="project_app_monexo_methodology_label">Metodyka:</b>
+            <span data-i18n="project_app_monexo_methodology_val"
+              >Design Thinking — mapowanie Customer Journey, identyfikacja
+              punktów drop-offu oraz projektowanie mechanizmów retencji przy
+              użyciu framework'a Octalisys i motywacji w oparciu o pętle nawyków
+              (Habit Loop) i wskaźniki biznesowe (KPI).</span
+            >
+          </p>
+
+          <a
+            href="../assets/projects/customer-journey-betfan/betfan.png"
+            data-lightbox="betfan-process"
+            data-title="Okładka projektu Customer Journey & Gamifies Loyalty dla Betfan"
+          >
+            <div class="gradientBackground">
+              <img
+                style="width: 88%; border-radius: 32px; margin-top: 40px"
+                src="../assets/projects/customer-journey-betfan/betfan.png"
+                alt="Okładka projektu Customer Journey & Gamifies Loyalty dla Betfan"
+              />
+            </div>
+          </a>
+
+          <h3 style="padding-top: 3vh; margin-bottom: 1vh">Kontekst</h3>
+          <p>
+            BETFAN to dynamiczna platforma bukmacherska, w której kluczowym
+            wyzwaniem biznesowym jest niska retencja po rejestracji oraz
+            zjawisko „jednorazowego gracza”, wchodzącego do aplikacji wyłącznie
+            przy okazji dużych wydarzeń sportowych.
+          </p>
+
+          <h3 style="padding-top: 3vh; margin-bottom: 1vh">Problem</h3>
+          <p>
+            Nowi gracze często porzucają proces onboardingowy ze względu na
+            tarcie na ścieżce od reklamy do zawarcia pierwszego zakładu, a brak
+            stałych bodźców motywacyjnych i wyrazistego poczucia progresu
+            sprawia, że nie wracają regularnie do produktu.
+          </p>
+
+          <h3 style="padding-top: 3vh; margin-bottom: 1vh">Cele</h3>
+          <p>
+            🎯 <b>Optymalizacja Customer Journey</b> — zmapowanie ścieżki
+            użytkownika, wyeliminowanie barier i skrócenie czasu do zawarcia
+            pierwszego zakładu.
+          </p>
+          <p>
+            🎯 <b>Budowa nawyku i retencji</b> — zaprojektowanie pętli
+            zaangażowania (Daily Quests, Streaks) budujących poczucie progresu i
+            zachęcających do stałego powrotu.
+          </p>
+
+          <h3 style="padding-top: 3vh; margin-bottom: 1vh">Ograniczenia</h3>
+          <p>
+            ⚠️ <b>Wysoki spadek motywacji przy porażce</b> — konieczność
+            łagodzenia negatywnych emocji po przegranym kuponie[cite: 4].
+          </p>
+          <p>
+            ⚠️ <b>Rentowność biznesowa nagród</b> — zachowanie umiaru w
+            bonusach, aby uniknąć ujemnego ROI i sztucznego podtrzymywania
+            aktywności.
+          </p>
+          <p>
+            ⚠️ <b>Logika doświadczenia ponad UI</b> — skupienie na psychologii
+            użytkownika, flow i wyzwalaczach behawioralnych zamiast na samej
+            warstwie wizualnej ekranów.
+          </p>
+        </section>
+
+        <section id="o-projekcie" style="margin-top: 60px">
+          <h2>1. O projekcie i wyzwaniu</h2>
+          <p>
+            Celem koncepcji było rozwiązanie problemu
+            <strong>niski retencji graczy po rejestracji</strong> oraz zjawiska
+            tzw. „jednorazowego gracza”, który otwiera aplikację wyłącznie
+            podczas kluczowych wydarzeń sportowych (np. Liga Mistrzów).
+          </p>
+
+          <div
+            style="
+              background: var(--bg-card);
+              border: 1px solid var(--border-subtle);
+              padding: 24px;
+              border-radius: 16px;
+              margin: 24px 0;
+            "
+          >
+            <h3 style="margin-top: 0; color: var(--accent)">
+              Persona: Michał (28 lat) — „Weekendowy Wojownik”
+            </h3>
+            <p>
+              <strong>Kim jest:</strong> Pracuje w biurze, piłka nożna to jego
+              pasja i odskocznia. Ogląda mecze od Ekstraklasy po Ligę Mistrzów.
+            </p>
+            <ul>
+              <li>
+                <strong>Zachowanie:</strong> Multi-screening (TV + telefon na
+                żywo), szukanie Social Proof na grupach FB.
+              </li>
+              <li>
+                <strong>Motywacje:</strong> Rywalizacja z kolegami z biura,
+                uznanie znajomości sportu, szukanie emocji i zabawy.
+              </li>
+              <li>
+                <strong>Potrzeby:</strong> Szybkość i prostota stawiania kuponu
+                (np. w trakcie przerwy reklamowej).
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="cjm" style="margin-top: 60px">
+          <h2>2. Customer Journey Map (Interaktywna Ścieżka)</h2>
+          <p>
+            Przeanalizuj poszczególne kroki Michała — kliknij w wybrany etap,
+            aby zobaczyć zidentyfikowane ryzyka i szanse UX.
+          </p>
+
+          <div class="cjmContainer">
+            <div class="cjmSlider" id="cjmSlider">
+              <div class="cjmStepCard active" onclick="showStep(0)">
+                <span class="cjmStepNumber">Krok 01</span>
+                <div class="cjmStepTitle">Pierwszy kontakt</div>
+              </div>
+              <div class="cjmStepCard" onclick="showStep(1)">
+                <span class="cjmStepNumber">Krok 02</span>
+                <div class="cjmStepTitle">Rejestracja & Onboarding</div>
+              </div>
+              <div class="cjmStepCard" onclick="showStep(2)">
+                <span class="cjmStepNumber">Krok 03</span>
+                <div class="cjmStepTitle">Doładowanie Konta</div>
+              </div>
+              <div class="cjmStepCard" onclick="showStep(3)">
+                <span class="cjmStepNumber">Krok 04</span>
+                <div class="cjmStepTitle">Wybór & Postawienie Kuponu</div>
+              </div>
+              <div class="cjmStepCard" onclick="showStep(4)">
+                <span class="cjmStepNumber">Krok 05</span>
+                <div class="cjmStepTitle">Obserwacja & Wynik</div>
+              </div>
+            </div>
+
+            <div class="cjmDetails" id="cjmDetails">
+              <div class="cjmBox risk">
+                <h5>
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    style="color: #e74c3c"
+                  ></i>
+                  Zagrożenie / Psyche Flow
+                </h5>
+                <p id="cjmRisk">
+                  Skomplikowane formularze powodują spadek motywacji i
+                  porzucenie lejka.
+                </p>
+              </div>
+              <div class="cjmBox opportunity">
+                <h5>
+                  <i class="fa-solid fa-lightbulb" style="color: #2ecc71"></i>
+                  Szansa / Rozwiązanie
+                </h5>
+                <p id="cjmOpportunity">
+                  Wdrożenie One-Click onboarding oraz przyznanie statusu
+                  „Debiutant”.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="gamifikacja" style="margin-top: 60px">
+          <h2>3. System Gamifikacji: Daily Quest & Streaks</h2>
+          <p>
+            Aby utrzymać Michała w aplikacji również w „nudny wtorek”,
+            zaprojektowałem mechanizm budowania nawyku oparty na micro-taskach i
+            nagrodach lojalnościowych.
+          </p>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+              gap: 16px;
+              margin: 24px 0;
+            "
+          >
+            <div
+              style="
+                background: var(--bg-card);
+                border: 1px solid var(--border-subtle);
+                padding: 16px;
+                border-radius: 12px;
+              "
+            >
+              <h4>Filar 1: Daily Quest & Streak</h4>
+              <p style="font-size: 14px">
+                Codzienne proste wyzwanie (np. „Postaw AKO za 10 zł”). 5 dni z
+                rzędu odblokowuje Fan Box ze zniżkami/freebetami.
+              </p>
+            </div>
+            <div
+              style="
+                background: var(--bg-card);
+                border: 1px solid var(--border-subtle);
+                padding: 16px;
+                border-radius: 12px;
+              "
+            >
+              <h4>Filar 2: Tagi Statusu & Achievementy</h4>
+              <p style="font-size: 14px">
+                Użytkownik odblokowuje tytuły (np. „Snajper”, „Weteran
+                Ekstraklasy”), którymi może chwalić się w społeczności.
+              </p>
+            </div>
+            <div
+              style="
+                background: var(--bg-card);
+                border: 1px solid var(--border-subtle);
+                padding: 16px;
+                border-radius: 12px;
+              "
+            >
+              <h4>Filar 3: Soft-landing po Porażce</h4>
+              <p style="font-size: 14px">
+                Przegrany kupon i tak daje +5% do paska progresu odznaki.
+                Zmniejsza to poczucie porażki.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="wdrozenie" style="margin-top: 60px">
+          <h2>4. Wdrożenie, KPI i Współpraca Cross-functional</h2>
+          <p>
+            Projekt wymagał ścisłej współpracy z wieloma zespołami oraz
+            zdefiniowania jasnych wskaźników sukcesu:
+          </p>
+
+          <ul>
+            <li>
+              <strong>CRM & Loyalty:</strong> Konfiguracja PUSH z
+              powiadomieniami o wygasającym streaku.
+            </li>
+            <li>
+              <strong>Mierniki Sukcesu (KPI):</strong> Monitorowanie Retention
+              Rate, Average Bets per User oraz Bonus Burn Rate.
+            </li>
+            <li>
+              <strong>Red Flagi:</strong> Sygnał ostrzegawczy przy ujemnym ROI
+              bonusów lub sztucznym podtrzymywaniu streaków bez realnego obrotu.
+            </li>
+          </ul>
+        </section>
+
+        <section class="navLoopWrapper">
+          <span class="navLoop">
+            <span data-i18n="project_web_planetroad_navloop_text"
+              >Zobacz kolejny projekt:</span
+            ><br />
+            <a href="aplikacja-mobilna-monexo.html" class="loopLink">
+              Aplikacja Mobilna Monexo
+            </a>
+          </span>
+        </section>
+      </article>
+    </main>
+
+    <nav class="floatingNav" id="floatingNav">
+      <div class="floatingNavWrapper" id="floatingNavWrapper">
+        <a href="#o-projekcie" class="active">1. O projekcie</a>
+        <a href="#cjm">2. Customer Journey</a>
+        <a href="#gamifikacja">3. Gamifikacja</a>
+        <a href="#wdrozenie">4. Wdrożenie & KPI</a>
+      </div>
+      <button class="floatingNavToggle" id="floatingNavToggle">
+        <span>Spis treści</span>
+        <i class="fa-solid fa-chevron-up floatingNavArrow"></i>
+      </button>
+    </nav>
+    <!-- COOKIES -->
+    <div id="cookie-banner" class="cookie-banner">
+      <div class="cookie-text" data-i18n="cookies_text">
+        🍪 Używam cookies do analizy ruchu i ciągłego ulepszania działania
+        strony.
+        <!--<a href="/privacy">Polityka prywatności</a>-->
+      </div>
+
+      <div class="cookie-buttons">
+        <button
+          id="accept-cookies"
+          class="cookie-btn primary"
+          data-i18n="cookies_primary_button"
+        >
+          Akceptuję
+        </button>
+        <button
+          id="decline-cookies"
+          class="cookie-btn secondary"
+          data-i18n="cookies_secondary_button"
+        >
+          Odrzucam
+        </button>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="logoWithLinks">
+        <a href="../index.html" class="logo-link">
+          <img
+            src="../assets/brand/mw_logo_web_white.png"
+            class="logo-monogram"
+            alt="Marek Wietecki Design Logo"
+          />
+        </a>
+        <div class="social-links">
+          <a
+            href="https://www.linkedin.com/in/marekwietecki/"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a
+            href="https://www.behance.net/marekwietecki"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="fab fa-behance"></i>
+          </a>
+          <a
+            href="https://www.youtube.com/@marekwietecki"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footerLinks">
+        <a class="navLinks" href="../index.html#top">
+          <span data-i18n="footer_link_main">&nbsp;Strona Główna</span>
+        </a>
+
+        <a class="navLinks" href="../index.html#projects">
+          <span data-i18n="footer_link_projects">&nbsp;Projekty</span>
+        </a>
+
+        <a class="navLinks" href="../index.html#contact">
+          <span data-i18n="footer_link_contact">&nbsp;Kontakt</span>
+        </a>
+
+        <a
+          href="../assets/index/Marek_Wietecki_CV_3.1.pdf"
+          target="_blank"
+          class="navLinks"
+        >
+          <span data-i18n="footer_link_cv">CV</span>
+        </a>
+        <a class="navLinks" href="../polityka-prywatnosci.html">
+          <span data-i18n="footer_link_privacy">Polityka Prywatności</span>
+        </a>
+        <!-- testimonials -->
+      </div>
+      <div class="footerTexts">
+        <p class="footerText" data-i18n="footer_copyright">
+          © Marek Wietecki 2026. Treści chronione prawem autorskim.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Dane dla interaktywnego CJM
+      const cjmData = [
+        {
+          risk: "Pierwszy kontakt z marką — rekrutacja uwagi. Ryzyko zagubienia przekazu w szumie reklamowym.",
+          opportunity:
+            "Wykorzystanie Social Proof i banerów nastawionych na wyzwania/promocje meczowe.",
+        },
+        {
+          risk: "Zbyt długi i skomplikowany onboarding (wymóg skanów dowodu) obniża Psyche Flow.",
+          opportunity:
+            "Szybka rejestracja (Konto Tymczasowe) + automatyczny tag statusu „Debiutant” po pierwszym kuponie[cite: 4].",
+        },
+        {
+          risk: "Oczekiwanie na księgowanie wpłaty wygasza impuls do postawienia zakładu.",
+          opportunity:
+            "Blik / Szybkie płatności wewnątrz aplikacji z natychmiastowym potwierdzeniem graficznym.",
+        },
+        {
+          risk: "Trudność w znalezieniu niszowych zdarzeń przy przeładowanym interfejsie.",
+          opportunity:
+            "Personalizowane rekomendacje meczy i szybkie filtry na bazie profilu Michała.",
+        },
+        {
+          risk: "Rozczarowanie i opuszczenie aplikacji w przypadku przegranej w 90. minucie.",
+          opportunity:
+            "Komunikat „Głowa do góry! To zadanie zbliżyło Cię do odznaki Snajper o 5%”[cite: 4].",
+        },
+      ];
+
+      function showStep(index) {
+        document.querySelectorAll(".cjmStepCard").forEach((card, i) => {
+          card.classList.toggle("active", i === index);
+        });
+        document.getElementById("cjmRisk").innerText = cjmData[index].risk;
+        document.getElementById("cjmOpportunity").innerText =
+          cjmData[index].opportunity;
+      }
+    </script>
+
+    <script src="../js/project-nav.js"></script>
+    <script src="../js/settings.js"></script>
+    <script src="../js/cursor.js"></script>
+  </body>
+  <script src="../js/cookie.js"></script>
+</html>

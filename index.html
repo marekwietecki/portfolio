@@ -113,6 +113,7 @@
         color: var(--accent);
         line-height: 110%;
         padding-bottom: 4px;
+        margin: 0px;
       }
 
       .czesc {
@@ -210,7 +211,7 @@
       }
 
       .profileImg {
-        width: 48%;
+        width: 56%;
         height: auto;
         border-radius: 48px;
         margin-bottom: 4vh;
@@ -741,7 +742,7 @@
           padding-bottom: 0%;
           margin-top: 12%;
           margin-bottom: 0;
-          width: 54%;
+          width: 64%;
         }
         .hero {
           padding-top: 12px;
@@ -898,7 +899,7 @@
         -->
         <p class="czesc" data-i18n="hero_hi">Cześć!</p>
         <p class="czesc" data-i18n="hero_hi2">Od ponad 3 lat działam jako</p>
-        <h2 class="ja typewriter">UX Designer.</h2>
+        <h1 class="ja typewriter">UX Designer.</h2>
         <div class="gapp"></div>
         <!-- <p>
           Projektuję produkty cyfrowe, rozwiązujące realne problemy użytkowników
@@ -1141,6 +1142,46 @@
                 <p class="tag">#Branding</p>
                 <p class="tag">#IdentyfikacjaWizualna</p>
                 <p class="tag">#SocialMediaBranding</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="projects/customer-journey-betfan.html" class="is-inactive">
+          <div
+            class="projectContainer disabled-project"
+            data-tooltip="Dostępne wkrótce!"
+            style="opacity: 0.56"
+          >
+              <img
+                src="assets/projects/customer-journey-betfan/betfan.png"
+                alt="Zdjęcie przedstawia Okładkę mojego projektu Customer Journey & Gamified Loyalty dla Betfan"
+              />
+            <div class="descriptionWrapper">
+              <div>
+                <p
+                  class="title"
+                  data-i18n="projects_betfan_title"
+                >
+                Customer Journey Betfan
+                </p>
+                <p
+                  class="subtitle"
+                  data-i18n="projects_betfan_subtitle"
+                >
+                Jak przekształcić okazjonalnego gracza w zaangażowanego fana?
+                </p>
+              </div>
+              <!--
+              <p class="subtitle">
+                Alternatywne wersje logotypu, spójna kolorystyka, typografia i
+                wdrożenie brandingu w mediach społecznościowych.
+              </p>
+              -->
+              <div class="tagWrapper">
+                <p class="tag">#Customer Journey Mapping</p>
+                <p class="tag">#Loyalty</p>
+                <p class="tag">#Gamification</p>
               </div>
             </div>
           </div>
@@ -1647,128 +1688,138 @@
       });
     </script>
 
-    <!-- card dealing-->
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const section = document.querySelector(".reveal-section");
-        if (!section) return;
+<!-- card dealing-->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const section = document.querySelector(".reveal-section");
+    if (!section) return;
 
-        const gallery = section.querySelector(".gridGallery");
-        const items = Array.from(gallery.children);
+    const gallery = section.querySelector(".gridGallery");
+    const items = Array.from(gallery.children);
 
-        const STACK = [
-          { idx: 0, z: 1, rot: -5, delay: 0.7 },
-          { idx: 1, z: 3, rot: -1, delay: 0.4 },
-          { idx: 2, z: 5, rot: -3, delay: 0.05 },
-          { idx: 3, z: 2, rot: 4, delay: 0.55 },
-          { idx: 4, z: 4, rot: 2, delay: 0.2 },
-        ];
+    // Zaktualizowano STACK dla 6 kart (idx: 0 do 5)
+    const STACK = [
+      { idx: 0, z: 1, rot: -5, delay: 0.7 },
+      { idx: 1, z: 3, rot: -1, delay: 0.4 },
+      { idx: 2, z: 5, rot: -3, delay: 0.05 },
+      { idx: 3, z: 2, rot: 4, delay: 0.55 },
+      { idx: 4, z: 4, rot: 2, delay: 0.2 },
+      { idx: 5, z: 6, rot: -2, delay: 0.35 },
+    ];
 
-        let observer = null;
-        let dealTimers = [];
-        let hasDealt = false; // Flag informująca, czy karty zostały już rozdane
+    let observer = null;
+    let dealTimers = [];
+    let hasDealt = false; // Flag informująca, czy karty zostały już rozdane
 
-        function getCardOpacity(idx) {
-          const card = items[idx].querySelector(".projectContainer");
-          /* Jeśli karta jest disabled, zachowaj jej oryginalne opacity */
-          return card.classList.contains("disabled-project") ? "0.56" : "1";
-        }
+    function getCardOpacity(idx) {
+      if (!items[idx]) return "1";
+      const card = items[idx].querySelector(".projectContainer");
+      if (!card) return "1";
+      /* Jeśli karta jest disabled, zachowaj jej oryginalne opacity */
+      return card.classList.contains("disabled-project") ? "0.56" : "1";
+    }
 
-        function setupStack() {
-          /* Anuluj ewentualne trwające timery rozdawania */
-          dealTimers.forEach((t) => clearTimeout(t));
-          dealTimers = [];
+    function setupStack() {
+      /* Anuluj ewentualne trwające timery rozdawania */
+      dealTimers.forEach((t) => clearTimeout(t));
+      dealTimers = [];
 
-          const galleryRect = gallery.getBoundingClientRect();
-          const stackCX = galleryRect.left + galleryRect.width / 2;
-          const stackCY = galleryRect.top + galleryRect.height * 0.18;
+      const galleryRect = gallery.getBoundingClientRect();
+      const stackCX = galleryRect.left + galleryRect.width / 2;
+      const stackCY = galleryRect.top + galleryRect.height * 0.18;
 
-          STACK.forEach(({ idx, z, rot }) => {
-            const card = items[idx].querySelector(".projectContainer");
-            const rect = items[idx].getBoundingClientRect();
+      STACK.forEach(({ idx, z, rot }) => {
+        if (!items[idx]) return; // Zabezpieczenie na przypadek mniejszej liczby kart
+        const card = items[idx].querySelector(".projectContainer");
+        if (!card) return;
 
-            const dx = stackCX - (rect.left + rect.width / 2);
-            const dy = stackCY - (rect.top + rect.height / 2);
+        const rect = items[idx].getBoundingClientRect();
 
-            card.style.transition = "none";
-            card.style.transform = `translate(${dx}px, ${dy}px) rotate(${rot}deg) scale(0.88)`;
-            card.style.opacity = getCardOpacity(idx);
-            card.style.zIndex = z;
-          });
-        }
+        const dx = stackCX - (rect.left + rect.width / 2);
+        const dy = stackCY - (rect.top + rect.height / 2);
 
-        function dealCards() {
-          if (hasDealt) return; // Jeśli już raz rozdano karty, przerwij
-          hasDealt = true;
-
-          if (observer) {
-            observer.disconnect(); // Odłączamy obserwator, żeby nie reagował w przyszłości
-          }
-
-          STACK.forEach(({ idx, delay }) => {
-            const card = items[idx].querySelector(".projectContainer");
-            const t = setTimeout(() => {
-              card.style.transition = `transform 0.9s cubic-bezier(0.19,1,0.22,1), opacity 0.5s ease`;
-              card.style.transform = "translate(0,0) rotate(0deg) scale(1)";
-              card.style.zIndex = "";
-              card.style.opacity = getCardOpacity(idx);
-            }, delay * 1000);
-            dealTimers.push(t);
-          });
-        }
-
-        function isSectionVisible() {
-          const rect = section.getBoundingClientRect();
-          const windowHeight =
-            window.innerHeight || document.documentElement.clientHeight;
-          const visiblePx =
-            Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
-          return visiblePx / rect.height >= 0.25;
-        }
-
-        function attachObserver() {
-          if (observer) observer.disconnect();
-
-          observer = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting && !hasDealt) {
-                  dealCards();
-                }
-              });
-            },
-            { threshold: 0.25 }
-          );
-
-          observer.observe(section);
-        }
-
-        function init() {
-          if (hasDealt) return; // Zabezpieczenie przed przeładowaniem pozycji po rozdaniu
-
-          setupStack();
-
-          if (isSectionVisible()) {
-            dealCards();
-          } else {
-            attachObserver();
-          }
-        }
-
-        requestAnimationFrame(init);
-
-        let resizeTimer;
-        window.addEventListener("resize", () => {
-          // Przy zmianie wielkości okna przeliczaj pozycję początkową TYLKO dopóki karty nie zostały jeszcze rozdane
-          if (hasDealt) return;
-
-          clearTimeout(resizeTimer);
-          resizeTimer = setTimeout(() => {
-            init();
-          }, 150);
-        });
+        card.style.transition = "none";
+        card.style.transform = `translate(${dx}px, ${dy}px) rotate(${rot}deg) scale(0.88)`;
+        card.style.opacity = getCardOpacity(idx);
+        card.style.zIndex = z;
       });
-    </script>
+    }
+
+    function dealCards() {
+      if (hasDealt) return; // Jeśli już raz rozdano karty, przerwij
+      hasDealt = true;
+
+      if (observer) {
+        observer.disconnect(); // Odłączamy obserwator, żeby nie reagował w przyszłości
+      }
+
+      STACK.forEach(({ idx, delay }) => {
+        if (!items[idx]) return;
+        const card = items[idx].querySelector(".projectContainer");
+        if (!card) return;
+
+        const t = setTimeout(() => {
+          card.style.transition = `transform 0.9s cubic-bezier(0.19,1,0.22,1), opacity 0.5s ease`;
+          card.style.transform = "translate(0,0) rotate(0deg) scale(1)";
+          card.style.zIndex = "";
+          card.style.opacity = getCardOpacity(idx);
+        }, delay * 1000);
+        dealTimers.push(t);
+      });
+    }
+
+    function isSectionVisible() {
+      const rect = section.getBoundingClientRect();
+      const windowHeight =
+        window.innerHeight || document.documentElement.clientHeight;
+      const visiblePx =
+        Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
+      return visiblePx / rect.height >= 0.25;
+    }
+
+    function attachObserver() {
+      if (observer) observer.disconnect();
+
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && !hasDealt) {
+              dealCards();
+            }
+          });
+        },
+        { threshold: 0.25 }
+      );
+
+      observer.observe(section);
+    }
+
+    function init() {
+      if (hasDealt) return; // Zabezpieczenie przed przeładowaniem pozycji po rozdaniu
+
+      setupStack();
+
+      if (isSectionVisible()) {
+        dealCards();
+      } else {
+        attachObserver();
+      }
+    }
+
+    requestAnimationFrame(init);
+
+    let resizeTimer;
+    window.addEventListener("resize", () => {
+      // Przy zmianie wielkości okna przeliczaj pozycję początkową TYLKO dopóki karty nie zostały jeszcze rozdane
+      if (hasDealt) return;
+
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        init();
+      }, 150);
+    });
+  });
+</script>
 
     <!-- Scroll Reveal (fade-in przy wjeżdżaniu na ekran) -->
     <!-- UWAGA: celowo bez .projectContainer / .gridGallery z #projects --

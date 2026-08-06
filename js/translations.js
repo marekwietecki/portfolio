@@ -51,6 +51,9 @@ const translations = {
       "Identyfikacja Wizualna PlanetRoad",
     projects_planetroad_visualidentity_subtitle:
       "Jak wdrożyłem PlanetRoad w świat cyfrowy, tworząc spójną komunikację wizualną?",
+    projects_betfan_title: "Customer Journey Betfan",
+    projects_betfan_subtitle:
+      "Jak przekształcić okazjonalnego gracza w zaangażowanego fana?    ",
 
     // quick contact
     contact_title: "Porozmawiajmy o współpracy",
@@ -479,8 +482,7 @@ const translations = {
     // PROJECT WEB PLANET
     project_web_planetroad_nav_offer: "Oferta",
     project_web_planetroad_nav_about: "O Mnie",
-    project_web_planetroad_project_title:
-      "Strona Internetowa",
+    project_web_planetroad_project_title: "Strona Internetowa",
     project_web_planetroad_project_description:
       "Nowa strona internetowa firmy PlanetRoad, którą zaprojektowałem w celu uproszczenia klientom poznania firmy, prezentacji dotychczasowych realizacji w czytelny i atrakcyjny sposób oraz ułatwienia kontaktu z firmą",
     project_web_planetroad_role_label: "Rola:",
@@ -976,7 +978,7 @@ const translations = {
     project_vi_planetroad_thumb_7: "Miniatura 7",
     project_vi_planetroad_thumb_8: "Miniatura 8",
     project_vi_planetroad_next_project_label: "Zobacz kolejny projekt:",
-    project_vi_planetroad_next_project_link: "Aplikacja Mobilna - monexo",
+    project_vi_planetroad_next_project_link: "Customer Journey - Betfan",
   },
   en: {
     // meta titles
@@ -1006,7 +1008,7 @@ const translations = {
     hero_title: "I design simply for users and effectively for business.",
     hero_subtitle:
       "I create digital products that combine intuitive user experiences with real business profits. I believe that in the world of interfaces, it's the small details that make the biggest difference.",
-    hero_button_primary: "See my projects",
+    hero_button_primary: "Check out my projects",
     hero_button_secondary: "Check out my offer",
 
     projects_title: "My Projects",
@@ -1025,6 +1027,9 @@ const translations = {
     projects_planetroad_visualidentity_title: "PlanetRoad Visual Identity",
     projects_planetroad_visualidentity_subtitle:
       "How i introduced PlanetRoad to the digital world, creating a coherent visual identity?",
+    projects_betfan_title: "Customer Journey Betfan",
+    projects_betfan_subtitle:
+      "How to turn a casual player into a commited fan?",
 
     // quick contact
     contact_title: "Let's work together",
@@ -1927,7 +1932,7 @@ const translations = {
     project_vi_planetroad_thumb_7: "Thumbnail 7",
     project_vi_planetroad_thumb_8: "Thumbnail 8",
     project_vi_planetroad_next_project_label: "See next project:",
-    project_vi_planetroad_next_project_link: "Mobile Application - monexo",
+    project_vi_planetroad_next_project_link: "Customer Journey - Betfan",
   },
 };
 
