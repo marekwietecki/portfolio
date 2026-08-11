@@ -2119,53 +2119,6 @@
         });
       });
     </script>
-    <script>
-      const header = document.querySelector("header");
-      const spacex = document.querySelector(".spaceX");
-
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (!entry.isIntersecting) {
-            header.classList.add("headerShadow");
-          } else {
-            header.classList.add("headerShadow");
-          }
-        },
-        { threshold: 0.1 } // reaguje, gdy choć 10% hero jest widoczne
-      );
-
-      observer.observe(spacex);
-
-      /**/
-
-      function toggleMenu() {
-        const links = document.querySelector(".headerLinks");
-        links.classList.toggle("show");
-      }
-
-      /**/
-
-      document.addEventListener("DOMContentLoaded", function () {
-        const header = document.querySelector("header");
-        const spacex = document.querySelector(".spaceX");
-
-        function updatePadding() {
-          const headerHeight = header.offsetHeight;
-          spacex.style.paddingTop = headerHeight * 1.18 + "px";
-        }
-
-        window.addEventListener("resize", updatePadding);
-        updatePadding(); // Uruchomienie przy załadowaniu strony
-
-        // Przykładowa logika, która zmienia wysokość nagłówka np. po kliknięciu
-        document
-          .querySelector(".menuToggle")
-          .addEventListener("click", function () {
-            header.classList.toggle("header-hidden");
-            updatePadding();
-          });
-      });
-    </script>
     <!-- Scroll Reveal (fade-in przy wjeżdżaniu na ekran) -->
     <script src="js/reveal-elements.js"></script>
     <script>
@@ -2174,6 +2127,7 @@
         [".gridGallery .galleryItem"]
       );
     </script>
+    <script src="js/header.js"></script>
     <script src="js/settings.js"></script>
     <script src="js/cursor.js"></script>
   </body>

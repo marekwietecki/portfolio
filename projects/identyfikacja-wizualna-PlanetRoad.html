@@ -94,34 +94,11 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js"></script>
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/projects.css" />
     <style>
       /* ==========================================================================
    PAGE SPECIFIC STYLES — PROJECT / CASE STUDY VARIANT
    ========================================================================== */
-
-      /* --- MAIN LAYOUT GRID --- */
-      .projectLayout {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Wyśrodkowuje zawartość w poziomie */
-        width: 100%;
-        max-width: 800px;
-        margin: 0 auto;
-        padding-inline: 4vw;
-        box-sizing: border-box;
-      }
-
-      .projectContent {
-        flex: 1;
-        max-width: 1000px;
-
-        /* 1. Marginesy auto wyśrodkują blok w poziomie */
-        margin-left: auto;
-        margin-right: auto;
-
-        /* 2. Zabezpieczenie szerokości dla mniejszych ekranów */
-        width: 100%;
-      }
 
       /* --- HERO GRADIENT BANNER --- */
       .gradientBackground {
@@ -226,205 +203,6 @@
         transform: scale(1.02);
         border-color: var(--accent);
       }
-
-      /* ========================================================
-   FLOATING BOTTOM NAVIGATION (RESPONSIVE & UNIVERSAL)
-   ======================================================== */
-      .floatingNav {
-        position: fixed;
-        bottom: 24px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1000;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: max-content;
-        max-width: 90vw;
-        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-      }
-      .floatingNav.hidden {
-        opacity: 0;
-        visibility: hidden;
-        transform: translate(-50%, 20px); /* Przesunięcie w dół przy znukaniu */
-        pointer-events: none; /* Zapobiega przypadkowym kliknięciom w niewidoczny element */
-      }
-
-      /* --------------------------------------------------------
-         DYSKRETNY, PROGRESYWNY BLUR (MAX 8px -> 0px)
-         -------------------------------------------------------- */
-
-      /* Warstwa zewnętrzna: ultra-subtelne wygaszenie w nicość (1.5px) */
-      .floatingNav::after {
-        content: "";
-        position: absolute;
-        top: -60px;
-        bottom: -60px;
-        left: -90px;
-        right: -90px;
-        z-index: -2;
-        border-radius: 90px;
-        pointer-events: none;
-
-        backdrop-filter: blur(1.5px);
-        -webkit-backdrop-filter: blur(1.5px);
-
-        mask-image: radial-gradient(
-          ellipse at center,
-          rgba(0, 0, 0, 1) 15%,
-          rgba(0, 0, 0, 0.3) 55%,
-          rgba(0, 0, 0, 0) 100%
-        );
-        -webkit-mask-image: radial-gradient(
-          ellipse at center,
-          rgba(0, 0, 0, 1) 15%,
-          rgba(0, 0, 0, 0.3) 55%,
-          rgba(0, 0, 0, 0) 100%
-        );
-      }
-
-      /* Warstwa wewnętrzna: łagodniejszy blur główny (max 8px) */
-      .floatingNav::before {
-        content: "";
-        position: absolute;
-        top: -30px;
-        bottom: -30px;
-        left: -45px;
-        right: -45px;
-        z-index: -1;
-        border-radius: 60px;
-        pointer-events: none;
-
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-
-        mask-image: radial-gradient(
-          ellipse at center,
-          rgba(0, 0, 0, 1) 25%,
-          rgba(0, 0, 0, 0.35) 65%,
-          rgba(0, 0, 0, 0) 100%
-        );
-        -webkit-mask-image: radial-gradient(
-          ellipse at center,
-          rgba(0, 0, 0, 1) 25%,
-          rgba(0, 0, 0, 0.35) 65%,
-          rgba(0, 0, 0, 0) 100%
-        );
-      }
-
-      /* Przycisk aktywujący menu (Pigułka - ORYGINALNA, BEZ ZMIAN) */
-      .floatingNavToggle {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-        background: var(--bg-card);
-        border: 1px solid var(--border-subtle);
-        box-shadow: var(--shadow-header-scrolled);
-        padding: 10px 20px;
-        border-radius: 30px;
-        font-size: 14px;
-        font-weight: 600;
-        color: var(--text-heading);
-        cursor: pointer;
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        transition: transform 0.2s ease, border-color 0.3s ease;
-      }
-
-      .floatingNavToggle:hover {
-        border-color: var(--accent);
-        transform: scale(1.02);
-      }
-
-      .floatingNavArrow {
-        font-size: 10px;
-        transition: transform 0.3s ease;
-      }
-
-      /* Menu ze spisem treści (Dropdown otwierany w górę - ORYGINALNE, BEZ ZMIAN) */
-      .floatingNavWrapper {
-        display: none;
-        position: absolute;
-        bottom: calc(100% + 12px);
-        left: 50%;
-        transform: translateX(-50%);
-        background: var(--bg-card);
-        border: 1px solid var(--border-subtle);
-        box-shadow: var(--shadow-header-scrolled);
-        border-radius: 16px;
-        padding: 8px;
-        width: 220px;
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        flex-direction: column;
-        gap: 4px;
-      }
-
-      .floatingNavWrapper a {
-        color: var(--text-secondary);
-        text-decoration: none;
-        padding: 10px 14px;
-        width: 100%;
-        box-sizing: border-box;
-        border-radius: 8px;
-        font-size: 14px;
-        font-weight: 500;
-        transition: background 0.2s ease, color 0.2s ease;
-        cursor: pointer;
-      }
-
-      .floatingNavWrapper a:hover {
-        background: rgba(30, 110, 214, 0.08);
-        color: var(--text-heading);
-      }
-
-      .floatingNavWrapper a.active {
-        background: rgba(30, 110, 214, 0.12);
-        color: var(--accent);
-        font-weight: 600;
-      }
-
-      /* Stan otwarty (dodawany przez JS) */
-      .floatingNav.open .floatingNavWrapper {
-        display: flex;
-      }
-
-      .floatingNav.open .floatingNavArrow {
-        transform: rotate(180deg);
-      }
-
-      /* --- BOTTOM NAV LOOP --- */
-      .navLoopWrapper {
-        padding-top: 20vh;
-        padding-bottom: 8vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        box-sizing: border-box;
-      }
-
-      .navLoop {
-        flex: 1;
-        text-align: center;
-        line-height: 130%;
-      }
-
-      .loopLink {
-        cursor: pointer;
-        text-align: center;
-        color: var(--text-heading);
-        font-weight: 600;
-        text-decoration: underline;
-        transition: opacity 0.2s ease, color 0.2s ease;
-      }
-
-      .loopLink:hover {
-        color: var(--accent);
-        opacity: 0.8;
-      }
-
       /* ========================================================
    RESPONSIVE MEDIA QUERIES
    ======================================================== */
@@ -462,7 +240,7 @@
     <script src="../js/translations.js"></script>
     <script src="../js/theme.js"></script>
   </head>
-  <body>
+  <body data-project-title="Identyfikacja Wizualna PlanetRoad">
     <!-- HEADER (NAV) -->
     <header>
       <div class="headerNav">
@@ -1087,6 +865,67 @@
             </a>
           </div>
         </section>
+
+        <section id="po-projekcie">
+          <h2 style="padding-top: 8vh" data-i18n="project_branding_after_title">
+            Po Projekcie
+          </h2>
+          <h3
+            style="margin-bottom: 1vh"
+            data-i18n="project_branding_takeaways_title"
+          >
+            Kluczowe Wnioski
+          </h3>
+          <p>
+            🧠
+            <span data-i18n="project_branding_takeaway_part1"
+              >Projektowanie elastycznego systemowo sygnetu i spójnej palety
+              barw
+            </span>
+            <b data-i18n="project_branding_takeaway_b"
+              >skalowalność na każdym punkcie styku z marką</b
+            >
+            <span data-i18n="project_branding_takeaway_part2">
+              jest fundamentem silnej tożsamości. Dobry branding musi
+              funkcjonować równie precyzyjnie jako mikroskopijny favicon w
+              przeglądarce, cyfrowy avatar w social mediach, jak i na
+              wielkoformatowych materiałach drukowanych.</span
+            >
+          </p>
+
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_branding_next_steps_title"
+          >
+            Następne Kroki
+          </h3>
+
+          <p>
+            <b
+              >🔜
+              <span data-i18n="project_branding_next_2_b"
+                >System szablonów dla Social Media & Marketingu</span
+              ></b
+            >
+            <span data-i18n="project_branding_next_2_text">
+              - przygotowanie spójnych komponentów graficznych w Figmie dla
+              postów, relacji (Stories) oraz bannerów reklamowych,
+              zapewniających łatwą komunikację wizualną.</span
+            >
+          </p>
+          <p>
+            <b
+              >🔜
+              <span data-i18n="project_branding_next_3_b"
+                >Materiały Drukowane i Merch</span
+              ></b
+            >
+            <span data-i18n="project_branding_next_3_text">
+              - przeniesienie identyfikacji na fizyczne nośniki reklamy:
+              wizytówki, papier firmowy oraz wzorniki dokumentów.</span
+            >
+          </p>
+        </section>
         <section class="navLoopWrapper">
           <span class="navLoop">
             <span data-i18n="project_vi_planetroad_next_project_label"
@@ -1306,7 +1145,9 @@
         [".mini-gallery > a"]
       );
     </script>
-
+    <script src="../js/header.js"></script>
+    <script src="../js/title-typewriter.js"></script>
+    <script src="../js/project-progress.js"></script>
     <script src="../js/project-nav.js"></script>
     <script src="../js/settings.js"></script>
     <script src="../js/cursor.js"></script>

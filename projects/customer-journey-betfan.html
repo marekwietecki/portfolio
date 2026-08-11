@@ -80,74 +80,179 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/projects.css" />
     <style>
-      /* --- WŁASNE STYLE DLA INTERAKTYWNEGO CJM --- */
       .cjmContainer {
         width: 100%;
         margin: 40px 0;
-        background: var(--bg-card);
-        border: 1px solid var(--border-subtle);
-        border-radius: 20px;
-        padding: 24px;
+        background: var(--bg-card, #121824);
+        border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.1));
+        border-radius: 24px;
+        padding: 28px;
         box-sizing: border-box;
       }
 
       .cjmSlider {
         display: flex;
-        gap: 16px;
+        gap: 12px;
         overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 16px;
+        scroll-behavior: smooth;
+        padding-bottom: 6px;
+        margin-bottom: 24px;
       }
 
       .cjmStepCard {
-        flex: 0 0 280px;
-        scroll-snap-align: start;
+        flex: 0 0 180px;
         background: rgba(255, 255, 255, 0.03);
-        border: 1px solid var(--border-subtle);
+        border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.1));
         border-radius: 12px;
-        padding: 16px;
+        padding: 12px 14px;
         cursor: pointer;
         transition: all 0.2s ease;
       }
 
       .cjmStepCard:hover,
       .cjmStepCard.active {
-        border-color: var(--accent);
-        background: rgba(30, 110, 214, 0.08);
+        border-color: var(--accent, #1e6ed6);
+        background: rgba(30, 110, 214, 0.12);
       }
 
       .cjmStepNumber {
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 700;
-        color: var(--accent);
+        color: var(--accent, #1e6ed6);
         text-transform: uppercase;
       }
 
       .cjmStepTitle {
-        font-size: 16px;
+        font-size: 13px;
         font-weight: 600;
-        margin: 4px 0 12px 0;
-        color: var(--text-heading);
+        margin-top: 4px;
+        color: var(--text-heading, #fff);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
-      .cjmDetails {
+      /* Mockup Telefonu i Nawigacja */
+      .cjmInteractiveWrapper {
+        display: flex;
+        gap: 20px;
+        align-items: center; /* Wyśrodkowuje przyciski i zdjęcie w pionie */
+        justify-content: center;
+        overflow: visible !important; /* Pozwala pokazać całe zdjęcie, jeśli wychodziło poza kadrowanie */
+        height: auto; /* Żeby kontener dopasował się do wysokości zdjęcia */
+      }
+
+      .cjmNavBtn {
+        background: rgba(255, 255, 255, 0.55);
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        color: #303030;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        transition: all 0.2s ease;
+      }
+
+      .cjmNavBtn:hover {
+        background: var(--accent, #1e6ed6);
+        border-color: var(--accent, #1e6ed6);
+        color: #fff;
+      }
+      .phoneMockupImage {
+        max-width: 238px;
+        width: 100%;
+        height: auto; /* Kluczowe: pozwala obrazkowi rozwinąć pełną wysokość */
+        max-height: none !important; /* Nadpisuje wszelkie ograniczenia wysokości */
+        object-fit: contain; /* Gwarantuje brak przycinania */
+        display: block; /* Zapobiega problemom z dolną linią bazową tekstu */
+        flex-shrink: 0; /* Jeśli rodzic to flex, zabrania ściskania obrazka w pionie */
+      }
+      /* .phoneMockupImage video {
+        mix-blend-mode: screen;
+      } */
+
+      .phoneMockupImage img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+
+      /* Szczegóły Kroku */
+      .cjmDetailsCard {
+        background: rgba(255, 255, 255, 0.25);
+        border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.08));
+        border-radius: 16px;
+        padding: 24px;
         margin-top: 24px;
-        padding-top: 20px;
-        border-top: 1px solid var(--border-subtle);
+      }
+
+      .cjmHeaderMeta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+
+      .cjmPhaseBadge {
+        background: rgba(30, 110, 214, 0.2);
+        border: 1px solid var(--accent, #1e6ed6);
+        color: #60a5fa;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .cjmActionTitle {
+        margin: 0;
+        font-size: 20px;
+        color: var(--text-heading, #fff);
+      }
+
+      .cjmEmotionBox {
+        background: rgba(255, 255, 255, 0.04);
+        padding: 12px 0px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 15px;
+      }
+
+      .cjmEmotionLabel {
+        color: #a0aec0;
+        font-weight: 500;
+      }
+
+      .cjmEmotionValue {
+        font-weight: 600;
+        color: #f6ad55;
+      }
+
+      .cjmDetailsGrid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
+        gap: 16px;
       }
 
       .cjmBox {
-        background: rgba(0, 0, 0, 0.2);
-        padding: 16px;
-        border-radius: 10px;
+        padding: 18px;
+        border-radius: 12px;
+        background: rgba(223, 224, 234, 0.2);
       }
 
       .cjmBox.risk {
         border-left: 4px solid #e74c3c;
       }
+
       .cjmBox.opportunity {
         border-left: 4px solid #2ecc71;
       }
@@ -159,41 +264,12 @@
         align-items: center;
         gap: 8px;
       }
-
-      /* --- FOOTER / LOOP NAVIGATION --- */
-      .navLoopWrapper {
-        padding-top: 20vh;
-        padding-bottom: 8vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        box-sizing: border-box;
-      }
-
-      .navLoop {
-        flex: 1;
-        text-align: center;
-        line-height: 130%;
-      }
-
-      .loopLink {
-        cursor: pointer;
-        text-align: center;
-        color: var(--text-heading);
-        font-weight: 600;
-        text-decoration: underline;
-        transition: opacity 0.2s ease, color 0.2s ease;
-      }
-
-      .loopLink:hover {
-        color: var(--accent);
-        opacity: 0.8;
-      }
     </style>
+    <script src="../js/translations.js"></script>
+    <script src="../js/theme.js"></script>
   </head>
 
-  <body>
+  <body data-project-title="Customer Journey Betfan">
     <!-- HEADER (NAV) -->
     <header>
       <div class="headerNav">
@@ -293,6 +369,7 @@
         </div>
       </div>
     </header>
+    <div id="scrollProgress" class="scroll-progress-bar"></div>
 
     <div class="spaceX"></div>
 
@@ -300,42 +377,40 @@
       <article class="projectContent">
         <section style="padding-top: 20vh" id="o-projekcie">
           <span style="font-size: 18px">Betfan</span>
-          <h1 data-i18n="project_app_monexo_title" style="margin-top: 8px">
+          <h1 data-i18n="project_betfan_title" style="margin-top: 8px">
             Customer Journey Map & Gamifikacja Retencji
           </h1>
-          <!-- <p style="padding-top: 2vh" data-i18n="project_app_monexo_desc">
+          <p style="padding-top: 2vh" data-i18n="project_betfan_desc">
             BETFAN to platforma bukmacherska stawiająca na emocje, progres i
             szybkie zawieranie zakładów w celu budowania wysokiej retencji
             graczy. Projekt polegał na zmapowaniu customer journey od reklamy do
             kuponu oraz zaprojektowaniu mechanizmów motywacyjnych budujących
             nawyk powrotu do aplikacji.
-          </p> -->
+          </p>
 
           <p style="padding-top: 3vh">
-            <b data-i18n="project_app_monexo_role_label">Rola:</b>
-            <span data-i18n="project_app_monexo_role_val"
-              >Product Designer</span
-            >
+            <b data-i18n="project_betfan_role_label">Rola:</b>
+            <span data-i18n="project_betfan_role_val">Product Designer</span>
           </p>
 
           <p style="padding-top: 1vh">
-            <b data-i18n="project_app_monexo_scope_label"
+            <b data-i18n="project_betfan_scope_label"
               >Zakres odpowiedzialności:</b
             >
-            <span data-i18n="project_app_monexo_scope_val"
+            <span data-i18n="project_betfan_scope_val"
               >Customer Journey Map, System Lojalizacji, Wyznaczenie Mierników
               Sukcesu (KPI)</span
             >
           </p>
 
           <p style="padding-top: 1vh">
-            <b data-i18n="project_app_monexo_duration_label">Czas trwania:</b>
-            <span data-i18n="project_app_monexo_duration_val">2 tygodnie</span>
+            <b data-i18n="project_betfan_duration_label">Czas trwania:</b>
+            <span data-i18n="project_betfan_duration_val">2 tygodnie</span>
           </p>
 
           <p style="padding-top: 1vh">
-            <b data-i18n="project_app_monexo_methodology_label">Metodyka:</b>
-            <span data-i18n="project_app_monexo_methodology_val"
+            <b data-i18n="project_betfan_methodology_label">Metodyka:</b>
+            <span data-i18n="project_betfan_methodology_val"
               >Design Thinking — mapowanie Customer Journey, identyfikacja
               punktów drop-offu oraz projektowanie mechanizmów retencji przy
               użyciu framework'a Octalisys i motywacji w oparciu o pętle nawyków
@@ -388,7 +463,7 @@
           <h3 style="padding-top: 3vh; margin-bottom: 1vh">Ograniczenia</h3>
           <p>
             ⚠️ <b>Wysoki spadek motywacji przy porażce</b> — konieczność
-            łagodzenia negatywnych emocji po przegranym kuponie[cite: 4].
+            łagodzenia negatywnych emocji po przegranym kuponie.
           </p>
           <p>
             ⚠️ <b>Rentowność biznesowa nagród</b> — zachowanie umiaru w
@@ -402,13 +477,17 @@
           </p>
         </section>
 
-        <section id="o-projekcie" style="margin-top: 60px">
-          <h2>1. O projekcie i wyzwaniu</h2>
+        <section id="persona" style="margin-top: 60px">
+          <h2 style="padding-top: 8vh; margin-bottom: 2vh">
+            Persona dla Customer Journey
+          </h2>
           <p>
-            Celem koncepcji było rozwiązanie problemu
+            Celem utworzenia persony jest lepsze zrozumienie problemu
             <strong>niski retencji graczy po rejestracji</strong> oraz zjawiska
             tzw. „jednorazowego gracza”, który otwiera aplikację wyłącznie
-            podczas kluczowych wydarzeń sportowych (np. Liga Mistrzów).
+            podczas kluczowych wydarzeń sportowych (np. Liga Mistrzów). Dzięki
+            utworzonej postaci łatwiej dostrzec potencjalne przeszkody lub
+            tarcie, które może napotkać na swojej drodze użytkownik serwisu.
           </p>
 
           <div
@@ -420,8 +499,8 @@
               margin: 24px 0;
             "
           >
-            <h3 style="margin-top: 0; color: var(--accent)">
-              Persona: Michał (28 lat) — „Weekendowy Wojownik”
+            <h3 style="margin-top: 0">
+              👱🏼‍♂️ Persona: Michał (28 lat) — „Weekendowy Wojownik”
             </h3>
             <p>
               <strong>Kim jest:</strong> Pracuje w biurze, piłka nożna to jego
@@ -445,66 +524,84 @@
         </section>
 
         <section id="cjm" style="margin-top: 60px">
-          <h2>2. Customer Journey Map (Interaktywna Ścieżka)</h2>
+          <h2 style="padding-top: 8vh; margin-bottom: 2vh">
+            2. Customer Journey Map (Interaktywna Ścieżka)
+          </h2>
           <p>
-            Przeanalizuj poszczególne kroki Michała — kliknij w wybrany etap,
-            aby zobaczyć zidentyfikowane ryzyka i szanse UX.
+            Przeanalizuj poszczególne kroki Michała — przełączaj kroki
+            strzałkami lub kliknij w wybrany etap, aby zobaczyć ekran telefonu,
+            poziom emocji oraz zidentyfikowane ryzyka i szanse UX.
           </p>
 
           <div class="cjmContainer">
-            <div class="cjmSlider" id="cjmSlider">
-              <div class="cjmStepCard active" onclick="showStep(0)">
-                <span class="cjmStepNumber">Krok 01</span>
-                <div class="cjmStepTitle">Pierwszy kontakt</div>
+            <div class="cjmSlider" id="cjmSlider"></div>
+
+            <div class="cjmInteractiveWrapper">
+              <button
+                class="cjmNavBtn prev"
+                id="cjmPrevBtn"
+                onclick="changeStep(-1)"
+                aria-label="Poprzedni krok"
+              >
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+
+              <div class="phoneMockupImage" id="phoneScreen">
+                <img src="..." id="phoneScreen" alt="Ekran aplikacji" />
               </div>
-              <div class="cjmStepCard" onclick="showStep(1)">
-                <span class="cjmStepNumber">Krok 02</span>
-                <div class="cjmStepTitle">Rejestracja & Onboarding</div>
-              </div>
-              <div class="cjmStepCard" onclick="showStep(2)">
-                <span class="cjmStepNumber">Krok 03</span>
-                <div class="cjmStepTitle">Doładowanie Konta</div>
-              </div>
-              <div class="cjmStepCard" onclick="showStep(3)">
-                <span class="cjmStepNumber">Krok 04</span>
-                <div class="cjmStepTitle">Wybór & Postawienie Kuponu</div>
-              </div>
-              <div class="cjmStepCard" onclick="showStep(4)">
-                <span class="cjmStepNumber">Krok 05</span>
-                <div class="cjmStepTitle">Obserwacja & Wynik</div>
-              </div>
+
+              <button
+                class="cjmNavBtn next"
+                id="cjmNextBtn"
+                onclick="changeStep(1)"
+                aria-label="Następny krok"
+              >
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
             </div>
 
-            <div class="cjmDetails" id="cjmDetails">
-              <div class="cjmBox risk">
-                <h5>
-                  <i
-                    class="fa-solid fa-triangle-exclamation"
-                    style="color: #e74c3c"
-                  ></i>
-                  Zagrożenie / Psyche Flow
-                </h5>
-                <p id="cjmRisk">
-                  Skomplikowane formularze powodują spadek motywacji i
-                  porzucenie lejka.
-                </p>
+            <div class="cjmDetailsCard">
+              <div class="cjmHeaderMeta">
+                <h3 class="cjmActionTitle" id="cjmAction">
+                  1. Pierwszy kontakt z aplikacją
+                </h3>
+                <div class="cjmPhaseBadge" id="cjmPhase">Faza: Awareness</div>
               </div>
-              <div class="cjmBox opportunity">
-                <h5>
-                  <i class="fa-solid fa-lightbulb" style="color: #2ecc71"></i>
-                  Szansa / Rozwiązanie
-                </h5>
-                <p id="cjmOpportunity">
-                  Wdrożenie One-Click onboarding oraz przyznanie statusu
-                  „Debiutant”.
-                </p>
+
+              <div class="cjmEmotionBox">
+                <span class="cjmEmotionLabel">Emocje użytkownika:</span>
+                <span class="cjmEmotionValue" id="cjmEmotion"
+                  >😐 Neutralne / Ciekawość</span
+                >
+              </div>
+
+              <div class="cjmDetailsGrid">
+                <div class="cjmBox risk">
+                  <h5>
+                    <i
+                      class="fa-solid fa-triangle-exclamation"
+                      style="color: #e74c3c"
+                    ></i>
+                    Zagrożenie / Psyche Flow
+                  </h5>
+                  <p id="cjmRisk">Opis zagrożenia...</p>
+                </div>
+                <div class="cjmBox opportunity">
+                  <h5>
+                    <i class="fa-solid fa-lightbulb" style="color: #2ecc71"></i>
+                    Szansa / Rozwiązanie
+                  </h5>
+                  <p id="cjmOpportunity">Opis szansy...</p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         <section id="gamifikacja" style="margin-top: 60px">
-          <h2>3. System Gamifikacji: Daily Quest & Streaks</h2>
+          <h2 style="padding-top: 8vh; margin-bottom: 2vh">
+            System Gamifikacji: Daily Quest & Streaks
+          </h2>
           <p>
             Aby utrzymać Michała w aplikacji również w „nudny wtorek”,
             zaprojektowałem mechanizm budowania nawyku oparty na micro-taskach i
@@ -523,11 +620,13 @@
               style="
                 background: var(--bg-card);
                 border: 1px solid var(--border-subtle);
-                padding: 16px;
-                border-radius: 12px;
+                padding: 20px 24px;
+                border-radius: 20px;
               "
             >
-              <h4>Filar 1: Daily Quest & Streak</h4>
+              <h4 style="margin-top: 0px; margin-bottom: 8px">
+                🏛️ Filar 1: Daily Quest & Streak
+              </h4>
               <p style="font-size: 14px">
                 Codzienne proste wyzwanie (np. „Postaw AKO za 10 zł”). 5 dni z
                 rzędu odblokowuje Fan Box ze zniżkami/freebetami.
@@ -537,11 +636,13 @@
               style="
                 background: var(--bg-card);
                 border: 1px solid var(--border-subtle);
-                padding: 16px;
-                border-radius: 12px;
+                padding: 20px 24px;
+                border-radius: 20px;
               "
             >
-              <h4>Filar 2: Tagi Statusu & Achievementy</h4>
+              <h4 style="margin-top: 0px; margin-bottom: 8px">
+                🏛️ Filar 2: Tagi Statusu & Achievementy
+              </h4>
               <p style="font-size: 14px">
                 Użytkownik odblokowuje tytuły (np. „Snajper”, „Weteran
                 Ekstraklasy”), którymi może chwalić się w społeczności.
@@ -551,11 +652,13 @@
               style="
                 background: var(--bg-card);
                 border: 1px solid var(--border-subtle);
-                padding: 16px;
-                border-radius: 12px;
+                padding: 20px 24px;
+                border-radius: 20px;
               "
             >
-              <h4>Filar 3: Soft-landing po Porażce</h4>
+              <h4 style="margin-top: 0px; margin-bottom: 8px">
+                🏛️ Filar 3: Soft-landing po Porażce
+              </h4>
               <p style="font-size: 14px">
                 Przegrany kupon i tak daje +5% do paska progresu odznaki.
                 Zmniejsza to poczucie porażki.
@@ -565,7 +668,9 @@
         </section>
 
         <section id="wdrozenie" style="margin-top: 60px">
-          <h2>4. Wdrożenie, KPI i Współpraca Cross-functional</h2>
+          <h2 style="padding-top: 8vh; margin-bottom: 2vh">
+            Wdrożenie, KPI i Współpraca Cross-functional
+          </h2>
           <p>
             Projekt wymagał ścisłej współpracy z wieloma zespołami oraz
             zdefiniowania jasnych wskaźników sukcesu:
@@ -602,10 +707,11 @@
 
     <nav class="floatingNav" id="floatingNav">
       <div class="floatingNavWrapper" id="floatingNavWrapper">
-        <a href="#o-projekcie" class="active">1. O projekcie</a>
-        <a href="#cjm">2. Customer Journey</a>
-        <a href="#gamifikacja">3. Gamifikacja</a>
-        <a href="#wdrozenie">4. Wdrożenie & KPI</a>
+        <a href="#o-projekcie" class="active">O Projekcie</a>
+        <a href="#persona" class="active">Persona</a>
+        <a href="#cjm">Customer Journey</a>
+        <a href="#gamifikacja">Gamifikacja</a>
+        <a href="#wdrozenie">Wdrożenie & KPI</a>
       </div>
       <button class="floatingNavToggle" id="floatingNavToggle">
         <span>Spis treści</span>
@@ -706,45 +812,214 @@
     </footer>
 
     <script>
-      // Dane dla interaktywnego CJM
-      const cjmData = [
+      // Dane dla wszystkich kroków CJM rozwinięte o fazy i emocje
+      const cjmStepsData = [
         {
-          risk: "Pierwszy kontakt z marką — rekrutacja uwagi. Ryzyko zagubienia przekazu w szumie reklamowym.",
+          stepNum: "Krok 01",
+          title: "Reklama / Baner",
+          action: "1. Zobaczenie reklamy z promocją",
+          phase: "Awareness (Świadomość)",
+          emotion: "🤔 Ciekawość / Sceptycyzm",
+          risk: "Szum informacyjny, brak wyróżnienia oferty na tle konkurencji i generyczny przekaz reklamowy.",
           opportunity:
-            "Wykorzystanie Social Proof i banerów nastawionych na wyzwania/promocje meczowe.",
+            "Mocny Social Proof, reklamy nawiązujące do emocji meczowych w czasie rzeczywistym oraz jasny bonus powitalny.",
+          image: "../assets/projects/customer-journey-betfan/betfan_step1.png",
         },
         {
-          risk: "Zbyt długi i skomplikowany onboarding (wymóg skanów dowodu) obniża Psyche Flow.",
+          stepNum: "Krok 02",
+          title: "Pierwszy kontakt",
+          action: "2. Wejście na stronę / do aplikacji",
+          phase: "Awareness (Świadomość)",
+          emotion: "🧐 Oczekiwanie / Pobudzenie",
+          risk: "Przeładowanie ekranu startowego komunikatami powodujące dezorientację po pierwszym kliknięciu.",
           opportunity:
-            "Szybka rejestracja (Konto Tymczasowe) + automatyczny tag statusu „Debiutant” po pierwszym kuponie[cite: 4].",
+            "Czysty ekran lądowania (Landing Page) z natychmiastową prezentacją propozycji wartości i przyciskiem Call To Action.",
+          image: "../assets/projects/customer-journey-betfan/betfan_step2.png",
         },
         {
-          risk: "Oczekiwanie na księgowanie wpłaty wygasza impuls do postawienia zakładu.",
+          stepNum: "Krok 03",
+          title: "Wybór rejestracji",
+          action: "3. Wybór metody zakładania konta",
+          phase: "Interest (Zainteresowanie)",
+          emotion: "🔍 Chęć szybkiego przejścia procesów",
+          risk: "Zbytnie skomplikowanie wyboru (np. brak opcji Konto Tymczasowe / Szybka rejestracja).",
           opportunity:
-            "Blik / Szybkie płatności wewnątrz aplikacji z natychmiastowym potwierdzeniem graficznym.",
+            "Wyraźne wyróżnienie rejestracji bez dowodu osobistego oraz wsparcie logowania przez bankowość lub Social Media.",
+          image: "../assets/projects/customer-journey-betfan/betfan_step3.png",
         },
         {
-          risk: "Trudność w znalezieniu niszowych zdarzeń przy przeładowanym interfejsie.",
+          stepNum: "Krok 04",
+          title: "Zakładanie konta",
+          action: "4. Wypełnianie formularza rejestracyjnego",
+          phase: "Interest (Zainteresowanie)",
+          emotion: "⌛ Zniecierpliwienie / Obawa o prywatność",
+          risk: "Długie formularze i konieczność ręcznego wpisywania danych powodują duży spadek motywacji (drop-off).",
           opportunity:
-            "Personalizowane rekomendacje meczy i szybkie filtry na bazie profilu Michała.",
+            "Wdrożenie One-Click onboarding, automatyczne uzupełnianie danych oraz przyznanie statusu 'Debiutant'.",
+          image: "../assets/projects/customer-journey-betfan/betfan_step4.webm",
         },
         {
-          risk: "Rozczarowanie i opuszczenie aplikacji w przypadku przegranej w 90. minucie.",
+          stepNum: "Krok 05",
+          title: "Doładowanie konta",
+          action: "5. Pierwsza wpłata środków",
+          phase: "Purchase (Zakup)",
+          emotion: "💳 Niepewność / Obawa o bezpieczeństwo",
+          risk: "Brak ulubionej metody płatności (np. BLIK / Apple Pay) lub zbyt wysoki minimalny próg wpłaty.",
           opportunity:
-            "Komunikat „Głowa do góry! To zadanie zbliżyło Cię do odznaki Snajper o 5%”[cite: 4].",
+            "Szybkie płatności BLIK jednym kliknięciem oraz natychmiastowe wizualne przyznanie bonusu startowego.",
+          image: "../assets/projects/customer-journey-betfan/betfan_step5.png",
+        },
+        {
+          stepNum: "Krok 06",
+          title: "Oczekiwanie na środki",
+          action: "6. Księgowanie wpłaty",
+          phase: "Purchase (Zakup)",
+          emotion: "⏳ Oczekiwanie / Presja czasu",
+          risk: "Opóźnienia w księgowaniu niszczą impuls do natychmiastowego postawienia zakładu przed meczem.",
+          opportunity:
+            "Natychmiastowy feedback wizualny i informacja o zaksięgowaniu środków na koncie w czasie rzeczywistym.",
+          image: "../assets/projects/customer-journey-betfan/betfan_step6.png",
+        },
+        {
+          stepNum: "Krok 07",
+          title: "Wybór kategorii",
+          action: "7. Nawigacja po ofercie sportowej",
+          phase: "Purchase (Zakup)",
+          emotion: "🎯 Zagubienie w gąszczu oferty",
+          risk: "Przeładowany interfejs sprawia, że Michał nie może szybko znaleźć interesującego go meczu.",
+          opportunity:
+            "Personalizowany dashboard na bazie ulubionych lig oraz szybkie filtry 'Popularne dzisiaj'.",
+          image: "../assets/projects/customer-journey-betfan/betfan_step7.png",
+        },
+        {
+          stepNum: "Krok 08",
+          title: "Dodawanie zdarzeń",
+          action: "8. Komponowanie kuponu (AKO)",
+          phase: "Purchase (Zakup)",
+          emotion: "⚡ Ekscytacja / Budowanie strategii",
+          risk: "Brak jasnej informacji o zmianie kursów na żywo lub skomplikowane zarządzanie koszykiem.",
+          opportunity:
+            "Akwizycja mikro-gestami, podpowiedzi popularnych typów i automatyczny przelicznik ewentualnej wygranej.",
+          image: "../assets/projects/customer-journey-betfan/betfan_step8.webm",
+        },
+        {
+          stepNum: "Krok 09",
+          title: "Wybór stawki & Kupon",
+          action: "9. Ustalenie stawki i postawienie kuponu",
+          phase: "Purchase (Zakup)",
+          emotion: "🔥 Wysokie napięcie / Ważenie ryzyka",
+          risk: "Brak szybkiego wyboru domyślnych stawek (np. 10 zł, 20 zł) spowalnia proces w trakcie przerwy reklamowej.",
+          opportunity:
+            "Quick-Bet – szybkie przyciski kwotowe i wyrazisty, natychmiast potwierdzający przycisk 'Postaw Kupon'.",
+          image: "../assets/projects/customer-journey-betfan/betfan_step9.png",
+        },
+        {
+          stepNum: "Krok 10",
+          title: "Obserwacja kuponu",
+          action: "10. Śledzenie meczu i wyników na żywo",
+          phase: "Retention (Retencja)",
+          emotion: "💓 Silne emocje / Oczekiwanie",
+          risk: "Gdy mecz nie idzie po myśli Michała, opuszcza aplikację z poczuciem porażki.",
+          opportunity:
+            "Cash-out na żywo, animowane statystyki match-center oraz punkty do streaku/wyzwań nawet przy braku wygranej.",
+          image: "../assets/projects/customer-journey-betfan/betfan_step10.png",
+        },
+        {
+          stepNum: "Krok 11",
+          title: "Wynik & Social Proof",
+          action: "11. Zakończenie zakładu i udostępnienie",
+          phase: "Advocacy (Lojalność)",
+          emotion: "🎉 Duma z wygranej / 🛡️ Soft-landing po przegranej",
+          risk: "Gorycz porażki powoduje brak powrotu do aplikacji na dłuższy czas.",
+          opportunity:
+            "Łatwe generowanie grafik z wygranym kuponem do Social Media oraz nagroda pocieszenia (+5% do paska postępu odznaki).",
+          image: "../assets/projects/customer-journey-betfan/betfan_step11.png",
         },
       ];
 
+      let currentCjmIndex = 0;
+
+      function renderCjmSlider() {
+        const slider = document.getElementById("cjmSlider");
+        if (!slider) return;
+
+        slider.innerHTML = cjmStepsData
+          .map(
+            (step, i) => `
+        <div class="cjmStepCard ${
+          i === 0 ? "active" : ""
+        }" onclick="showStep(${i})">
+          <span class="cjmStepNumber">${step.stepNum}</span>
+          <div class="cjmStepTitle">${step.title}</div>
+        </div>
+        `
+          )
+          .join("");
+      }
+
+      // Funkcja pomocnicza do bezpiecznego wpisywania tekstu
+      function setElementText(id, text) {
+        const el = document.getElementById(id);
+        if (el) el.innerText = text;
+      }
+
       function showStep(index) {
-        document.querySelectorAll(".cjmStepCard").forEach((card, i) => {
+        if (index < 0 || index >= cjmStepsData.length) return;
+        currentCjmIndex = index;
+
+        const data = cjmStepsData[index];
+
+        // Aktualizacja aktywnej karty w sliderze
+        const cards = document.querySelectorAll(".cjmStepCard");
+        cards.forEach((card, i) => {
           card.classList.toggle("active", i === index);
         });
-        document.getElementById("cjmRisk").innerText = cjmData[index].risk;
-        document.getElementById("cjmOpportunity").innerText =
-          cjmData[index].opportunity;
-      }
-    </script>
 
+        // Przewinięcie slidera do aktywnego elementu
+        if (cards[index]) {
+          cards[index].scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "center",
+          });
+        }
+
+        // Bezpieczna aktualizacja tekstu
+        setElementText("cjmPhase", `Faza: ${data.phase}`);
+        setElementText("cjmAction", data.action);
+        setElementText("cjmEmotion", data.emotion);
+        setElementText("cjmRisk", data.risk);
+        setElementText("cjmOpportunity", data.opportunity);
+        setElementText("screenStepTitle", data.title);
+
+        // Renderowanie kontenera z obrazem lub wideo
+        const phoneScreenContainer = document.getElementById("phoneScreen");
+        if (phoneScreenContainer && data.image) {
+          const isVideo =
+            data.image.endsWith(".mp4") || data.image.endsWith(".webm");
+
+          phoneScreenContainer.innerHTML = isVideo
+            ? `<video src="${data.image}" autoplay loop muted playsinline class="phoneMockupImage"></video>`
+            : `<img src="${data.image}" alt="${data.title}" class="phoneMockupImage">`;
+        }
+      }
+
+      function changeStep(direction) {
+        let newIndex = currentCjmIndex + direction;
+        if (newIndex < 0) newIndex = cjmStepsData.length - 1;
+        if (newIndex >= cjmStepsData.length) newIndex = 0;
+        showStep(newIndex);
+      }
+
+      // Inicjalizacja przy załadowaniu strony
+      document.addEventListener("DOMContentLoaded", () => {
+        renderCjmSlider();
+        showStep(0);
+      });
+    </script>
+    <script src="../js/header.js"></script>
+    <script src="../js/title-typewriter.js"></script>
+    <script src="../js/project-progress.js"></script>
     <script src="../js/project-nav.js"></script>
     <script src="../js/settings.js"></script>
     <script src="../js/cursor.js"></script>
