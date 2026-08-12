@@ -51,9 +51,221 @@ const translations = {
       "Identyfikacja Wizualna PlanetRoad",
     projects_planetroad_visualidentity_subtitle:
       "Jak wdrożyłem PlanetRoad w świat cyfrowy, tworząc spójną komunikację wizualną?",
-    projects_betfan_title: "Customer Journey Betfan",
-    projects_betfan_subtitle:
-      "Jak przekształcić okazjonalnego gracza w zaangażowanego fana?    ",
+    projects_betfan_badge: "Betfan",
+    projects_betfan_title: "Customer Journey Map & Gamifikacja Retencji",
+    projects_betfan_desc:
+      "BETFAN to platforma bukmacherska stawiająca na emocje, progres i szybkie zawieranie zakładów w celu budowania wysokiej retencji graczy. Projekt polegał na zmapowaniu customer journey od reklamy do kuponu oraz zaprojektowaniu mechanizmów motywacyjnych budujących nawyk powrotu do aplikacji.",
+    projects_betfan_role_label: "Rola:",
+    projects_betfan_role_val: "Product Designer",
+    projects_betfan_scope_label: "Zakres odpowiedzialności:",
+    projects_betfan_scope_val:
+      "Customer Journey Map, System Lojalizacji, Wyznaczenie Mierników Sukcesu (KPI)",
+    projects_betfan_duration_label: "Czas trwania:",
+    projects_betfan_duration_val: "2 tygodnie",
+    projects_betfan_methodology_label: "Metodyka:",
+    projects_betfan_methodology_val:
+      "Design Thinking — mapowanie Customer Journey, identyfikacja punktów drop-offu oraz projektowanie mechanizmów retencji przy użyciu framework'a Octalisys i motywacji w oparciu o pętle nawyków (Habit Loop) i wskaźniki biznesowe (KPI).",
+    projects_betfan_img_alt:
+      "Okładka projektu Customer Journey & Gamifies Loyalty dla Betfan",
+
+    projects_betfan_context_title: "Kontekst",
+    projects_betfan_context_desc:
+      "BETFAN to dynamiczna platforma bukmacherska, w której kluczowym wyzwaniem biznesowym jest niska retencja po rejestracji oraz zjawisko „jednorazowego gracza”, wchodzącego do aplikacji wyłącznie przy okazji dużych wydarzeń sportowych.",
+
+    projects_betfan_problem_title: "Problem",
+    projects_betfan_problem_desc:
+      "Nowi gracze często porzucają proces onboardingowy ze względu na tarcie na ścieżce od reklamy do zawarcia pierwszego zakładu, a brak stałych bodźców motywacyjnych i wyrazistego poczucia progresu sprawia, że nie wracają regularnie do produktu.",
+
+    projects_betfan_goals_title: "Cele",
+    projects_betfan_goals_item1:
+      "🎯 <b>Optymalizacja Customer Journey</b> — zmapowanie ścieżki użytkownika, wyeliminowanie barier i skrócenie czasu do zawarcia pierwszego zakładu.",
+    projects_betfan_goals_item2:
+      "🎯 <b>Budowa nawyku i retencji</b> — zaprojektowanie pętli zaangażowania (Daily Quests, Streaks) budujących poczucie progresu i zachęcających do stałego powrotu.",
+
+    projects_betfan_constraints_title: "Ograniczenia",
+    projects_betfan_constraints_item1:
+      "⚠️ <b>Wysoki spadek motywacji przy porażce</b> — konieczność łagodzenia negatywnych emocji po przegranym kuponie.",
+    projects_betfan_constraints_item2:
+      "⚠️ <b>Rentowność biznesowa nagród</b> — zachowanie umiaru w bonusach, aby uniknąć ujemnego ROI i sztucznego podtrzymywania aktywności.",
+    projects_betfan_constraints_item3:
+      "⚠️ <b>Logika doświadczenia ponad UI</b> — skupienie na psychologii użytkownika, flow i wyzwalaczach behawioralnych zamiast na samej warstwie wizualnej ekranów.",
+
+    projects_betfan_persona_title: "Persona dla Customer Journey",
+    projects_betfan_persona_intro:
+      "Celem utworzenia persony jest lepsze zrozumienie problemu <strong>niski retencji graczy po rejestracji</strong> oraz zjawiska tzw. „jednorazowego gracza”, który otwiera aplikację wyłącznie podczas kluczowych wydarzeń sportowych (np. Liga Mistrzów). Dzięki utworzonej postaci łatwiej dostrzec potencjalne przeszkody lub tarcie, które może napotkać na swojej drodze użytkownik serwisu.",
+    projects_betfan_persona_card_title:
+      "👱🏼‍♂️ Persona: Michał (28 lat) — „Weekendowy Wojownik”",
+    projects_betfan_persona_who:
+      "<strong>Kim jest:</strong> Pracuje w biurze, piłka nożna to jego pasja i odskocznia. Ogląda mecze od Ekstraklasy po Ligę Mistrzów.",
+    projects_betfan_persona_behavior:
+      "<strong>Zachowanie:</strong> Multi-screening (TV + telefon na żywo), szukanie Social Proof na grupach FB.",
+    projects_betfan_persona_motivation:
+      "<strong>Motywacje:</strong> Rywalizacja z kolegami z biura, uznanie znajomości sportu, szukanie emocji i zabawy.",
+    projects_betfan_persona_needs:
+      "<strong>Potrzeby:</strong> Szybkość i prostota stawiania kuponu (np. w trakcie przerwy reklamowej).",
+
+    projects_betfan_cjm_title: "2. Customer Journey Map (Interaktywna Ścieżka)",
+    projects_betfan_cjm_desc:
+      "Przeanalizuj poszczególne kroki Michała — przełączaj kroki strzałkami lub kliknij w wybrany etap, aby zobaczyć ekran telefonu, poziom emocji oraz zidentyfikowane ryzyka i szanse UX.",
+    projects_betfan_cjm_prev_aria: "Poprzedni krok",
+    projects_betfan_cjm_next_aria: "Następny krok",
+    projects_betfan_cjm_action_default: "1. Pierwszy kontakt z aplikacją",
+    projects_betfan_cjm_phase_default: "Faza: Awareness",
+    projects_betfan_cjm_emotion_label: "Emocje użytkownika:",
+    projects_betfan_cjm_emotion_default: "😐 Neutralne / Ciekawość",
+    projects_betfan_cjm_risk_title: "Zagrożenie / Psyche Flow",
+    projects_betfan_cjm_risk_default: "Opis zagrożenia...",
+    projects_betfan_cjm_opportunity_title: "Szansa / Rozwiązanie",
+    projects_betfan_cjm_opportunity_default: "Opis szansy...",
+
+    projects_betfan_gamification_title:
+      "System Gamifikacji: Daily Quest & Streaks",
+    projects_betfan_gamification_desc:
+      "Aby utrzymać Michała w aplikacji również w „nudny wtorek”, zaprojektowałem mechanizm budowania nawyku oparty na micro-taskach i nagrodach lojalnościowych.",
+    projects_betfan_pillar1_title: "🏛️ Filar 1: Daily Quest & Streak",
+    projects_betfan_pillar1_desc:
+      "Codzienne proste wyzwanie (np. „Postaw AKO za 10 zł”). 5 dni z rzędu odblokowuje Fan Box ze zniżkami/freebetami.",
+    projects_betfan_pillar2_title: "🏛️ Filar 2: Tagi Statusu & Achievementy",
+    projects_betfan_pillar2_desc:
+      "Użytkownik odblokowuje tytuły (np. „Snajper”, „Weteran Ekstraklasy”), którymi może chwalić się w społeczności.",
+    projects_betfan_pillar3_title: "🏛️ Filar 3: Soft-landing po Porażce",
+    projects_betfan_pillar3_desc:
+      "Przegrany kupon i tak daje +5% do paska progresu odznaki. Zmniejsza to poczucie porażki.",
+
+    projects_betfan_implementation_title:
+      "Wdrożenie, KPI i Współpraca Cross-functional",
+    projects_betfan_implementation_desc:
+      "Projekt wymagał ścisłej współpracy z wieloma zespołami oraz zdefiniowania jasnych wskaźników sukcesu:",
+    projects_betfan_implementation_item1:
+      "<strong>CRM & Loyalty:</strong> Konfiguracja PUSH z powiadomieniami o wygasającym streaku.",
+    projects_betfan_implementation_item2:
+      "<strong>Mierniki Sukcesu (KPI):</strong> Monitorowanie Retention Rate, Average Bets per User oraz Bonus Burn Rate.",
+    projects_betfan_implementation_item3:
+      "<strong>Red Flagi:</strong> Sygnał ostrzegawczy przy ujemnym ROI bonusów lub sztucznym podtrzymywaniu streaków bez realnego obrotu.",
+
+    projects_betfan_navloop_text: "Zobacz kolejny projekt:",
+    projects_betfan_navloop_link: "Aplikacja Mobilna Monexo",
+
+    projects_betfan_floatnav_about: "O Projekcie",
+    projects_betfan_floatnav_persona: "Persona",
+    projects_betfan_floatnav_cjm: "Customer Journey",
+    projects_betfan_floatnav_gamification: "Gamifikacja",
+    projects_betfan_floatnav_implementation: "Wdrożenie & KPI",
+    projects_betfan_floatnav_toggle: "Spis treści",
+    projects_betfan_cjm_step1_stepNum: "Krok 01",
+    projects_betfan_cjm_step1_title: "Reklama / Baner",
+    projects_betfan_cjm_step1_action: "1. Zobaczenie reklamy z promocją",
+    projects_betfan_cjm_step1_phase: "Awareness (Świadomość)",
+    projects_betfan_cjm_step1_emotion: "🤔 Ciekawość / Sceptycyzm",
+    projects_betfan_cjm_step1_risk:
+      "Szum informacyjny, brak wyróżnienia oferty na tle konkurencji i generyczny przekaz reklamowy.",
+    projects_betfan_cjm_step1_opportunity:
+      "Mocny Social Proof, reklamy nawiązujące do emocji meczowych w czasie rzeczywistym oraz jasny bonus powitalny.",
+
+    projects_betfan_cjm_step2_stepNum: "Krok 02",
+    projects_betfan_cjm_step2_title: "Pierwszy kontakt",
+    projects_betfan_cjm_step2_action: "2. Wejście na stronę / do aplikacji",
+    projects_betfan_cjm_step2_phase: "Awareness (Świadomość)",
+    projects_betfan_cjm_step2_emotion: "🧐 Oczekiwanie / Pobudzenie",
+    projects_betfan_cjm_step2_risk:
+      "Przeładowanie ekranu startowego komunikatami powodujące dezorientację po pierwszym kliknięciu.",
+    projects_betfan_cjm_step2_opportunity:
+      "Czysty ekran lądowania (Landing Page) z natychmiastową prezentacją propozycji wartości i przyciskiem Call To Action.",
+
+    projects_betfan_cjm_step3_stepNum: "Krok 03",
+    projects_betfan_cjm_step3_title: "Wybór rejestracji",
+    projects_betfan_cjm_step3_action: "3. Wybór metody zakładania konta",
+    projects_betfan_cjm_step3_phase: "Interest (Zainteresowanie)",
+    projects_betfan_cjm_step3_emotion: "🔍 Chęć szybkiego przejścia procesów",
+    projects_betfan_cjm_step3_risk:
+      "Zbytnie skomplikowanie wyboru (np. brak opcji Konto Tymczasowe / Szybka rejestracja).",
+    projects_betfan_cjm_step3_opportunity:
+      "Wyraźne wyróżnienie rejestracji bez dowodu osobistego oraz wsparcie logowania przez bankowość lub Social Media.",
+
+    projects_betfan_cjm_step4_stepNum: "Krok 04",
+    projects_betfan_cjm_step4_title: "Zakładanie konta",
+    projects_betfan_cjm_step4_action:
+      "4. Wypełnianie formularza rejestracyjnego",
+    projects_betfan_cjm_step4_phase: "Interest (Zainteresowanie)",
+    projects_betfan_cjm_step4_emotion:
+      "⌛ Zniecierpliwienie / Obawa o prywatność",
+    projects_betfan_cjm_step4_risk:
+      "Długie formularze i konieczność ręcznego wpisywania danych powodują duży spadek motywacji (drop-off).",
+    projects_betfan_cjm_step4_opportunity:
+      "Wdrożenie One-Click onboarding, automatyczne uzupełnianie danych oraz przyznanie statusu 'Debiutant'.",
+
+    projects_betfan_cjm_step5_stepNum: "Krok 05",
+    projects_betfan_cjm_step5_title: "Doładowanie konta",
+    projects_betfan_cjm_step5_action: "5. Pierwsza wpłata środków",
+    projects_betfan_cjm_step5_phase: "Purchase (Zakup)",
+    projects_betfan_cjm_step5_emotion: "💳 Niepewność / Obawa o bezpieczeństwo",
+    projects_betfan_cjm_step5_risk:
+      "Brak ulubionej metody płatności (np. BLIK / Apple Pay) lub zbyt wysoki minimalny próg wpłaty.",
+    projects_betfan_cjm_step5_opportunity:
+      "Szybkie płatności BLIK jednym kliknięciem oraz natychmiastowe wizualne przyznanie bonusu startowego.",
+
+    projects_betfan_cjm_step6_stepNum: "Krok 06",
+    projects_betfan_cjm_step6_title: "Oczekiwanie na środki",
+    projects_betfan_cjm_step6_action: "6. Księgowanie wpłaty",
+    projects_betfan_cjm_step6_phase: "Purchase (Zakup)",
+    projects_betfan_cjm_step6_emotion: "⏳ Oczekiwanie / Presja czasu",
+    projects_betfan_cjm_step6_risk:
+      "Opóźnienia w księgowaniu niszczą impuls do natychmiastowego postawienia zakładu przed meczem.",
+    projects_betfan_cjm_step6_opportunity:
+      "Natychmiastowy feedback wizualny i informacja o zaksięgowaniu środków na koncie w czasie rzeczywistym.",
+
+    projects_betfan_cjm_step7_stepNum: "Krok 07",
+    projects_betfan_cjm_step7_title: "Wybór kategorii",
+    projects_betfan_cjm_step7_action: "7. Nawigacja po ofercie sportowej",
+    projects_betfan_cjm_step7_phase: "Purchase (Zakup)",
+    projects_betfan_cjm_step7_emotion: "🎯 Zagubienie w gąszczu oferty",
+    projects_betfan_cjm_step7_risk:
+      "Przeładowany interfejs sprawia, że Michał nie może szybko znaleźć interesującego go meczu.",
+    projects_betfan_cjm_step7_opportunity:
+      "Personalizowany dashboard na bazie ulubionych lig oraz szybkie filtry 'Popularne dzisiaj'.",
+
+    projects_betfan_cjm_step8_stepNum: "Krok 08",
+    projects_betfan_cjm_step8_title: "Dodawanie zdarzeń",
+    projects_betfan_cjm_step8_action: "8. Komponowanie kuponu (AKO)",
+    projects_betfan_cjm_step8_phase: "Purchase (Zakup)",
+    projects_betfan_cjm_step8_emotion: "⚡ Ekscytacja / Budowanie strategii",
+    projects_betfan_cjm_step8_risk:
+      "Brak jasnej informacji o zmianie kursów na żywo lub skomplikowane zarządzanie koszykiem.",
+    projects_betfan_cjm_step8_opportunity:
+      "Akwizycja mikro-gestami, podpowiedzi popularnych typów i automatyczny przelicznik ewentualnej wygranej.",
+
+    projects_betfan_cjm_step9_stepNum: "Krok 09",
+    projects_betfan_cjm_step9_title: "Wybór stawki & Kupon",
+    projects_betfan_cjm_step9_action:
+      "9. Ustalenie stawki i postawienie kuponu",
+    projects_betfan_cjm_step9_phase: "Purchase (Zakup)",
+    projects_betfan_cjm_step9_emotion: "🔥 Wysokie napięcie / Ważenie ryzyka",
+    projects_betfan_cjm_step9_risk:
+      "Brak szybkiego wyboru domyślnych stawek (np. 10 zł, 20 zł) spowalnia proces w trakcie przerwy reklamowej.",
+    projects_betfan_cjm_step9_opportunity:
+      "Quick-Bet – szybkie przyciski kwotowe i wyrazisty, natychmiast potwierdzający przycisk 'Postaw Kupon'.",
+
+    projects_betfan_cjm_step10_stepNum: "Krok 10",
+    projects_betfan_cjm_step10_title: "Obserwacja kuponu",
+    projects_betfan_cjm_step10_action: "10. Śledzenie meczu i wyników na żywo",
+    projects_betfan_cjm_step10_phase: "Retention (Retencja)",
+    projects_betfan_cjm_step10_emotion: "💓 Silne emocje / Oczekiwanie",
+    projects_betfan_cjm_step10_risk:
+      "Gdy mecz nie idzie po myśli Michała, opuszcza aplikację z poczuciem porażki.",
+    projects_betfan_cjm_step10_opportunity:
+      "Cash-out na żywo, animowane statystyki match-center oraz punkty do streaku/wyzwań nawet przy braku wygranej.",
+
+    projects_betfan_cjm_step11_stepNum: "Krok 11",
+    projects_betfan_cjm_step11_title: "Wynik & Social Proof",
+    projects_betfan_cjm_step11_action:
+      "11. Zakończenie zakładu i udostępnienie",
+    projects_betfan_cjm_step11_phase: "Advocacy (Lojalność)",
+    projects_betfan_cjm_step11_emotion:
+      "🎉 Duma z wygranej / 🛡️ Soft-landing po przegranej",
+    projects_betfan_cjm_step11_risk:
+      "Gorycz porażki powoduje brak powrotu do aplikacji na dłuższy czas.",
+    projects_betfan_cjm_step11_opportunity:
+      "Łatwe generowanie grafik z wygranym kuponem do Social Media oraz nagroda pocieszenia (+5% do paska postępu odznaki).",
 
     // quick contact
     contact_title: "Porozmawiajmy o współpracy",
@@ -1027,9 +1239,218 @@ const translations = {
     projects_planetroad_visualidentity_title: "PlanetRoad Visual Identity",
     projects_planetroad_visualidentity_subtitle:
       "How i introduced PlanetRoad to the digital world, creating a coherent visual identity?",
-    projects_betfan_title: "Customer Journey Betfan",
-    projects_betfan_subtitle:
-      "How to turn a casual player into a commited fan?",
+    projects_betfan_badge: "Betfan",
+    projects_betfan_title: "Customer Journey Map & Retention Gamification",
+    projects_betfan_desc:
+      "BETFAN is a sports betting platform focused on emotions, progress, and quick bet placement to build high player retention. The project involved mapping the customer journey from ad to bet slip and designing motivational mechanisms to foster a daily app return habit.",
+    projects_betfan_role_label: "Role:",
+    projects_betfan_role_val: "Product Designer",
+    projects_betfan_scope_label: "Scope of Responsibility:",
+    projects_betfan_scope_val:
+      "Customer Journey Map, Loyalty System, Defining Key Performance Indicators (KPIs)",
+    projects_betfan_duration_label: "Duration:",
+    projects_betfan_duration_val: "2 weeks",
+    projects_betfan_methodology_label: "Methodology:",
+    projects_betfan_methodology_val:
+      "Design Thinking — Customer Journey mapping, drop-off point identification, and designing retention mechanisms using the Octalysis framework, Habit Loop motivation, and business metrics (KPIs).",
+    projects_betfan_img_alt:
+      "Cover image for Betfan Customer Journey & Gamified Loyalty project",
+
+    projects_betfan_context_title: "Context",
+    projects_betfan_context_desc:
+      "BETFAN is a dynamic sports betting platform where the key business challenge is low post-registration retention and the phenomenon of the 'one-time player' who opens the app exclusively during major sporting events.",
+
+    projects_betfan_problem_title: "Problem",
+    projects_betfan_problem_desc:
+      "New players frequently drop out of the onboarding process due to friction between seeing an ad and placing their first bet. Additionally, a lack of continuous motivational triggers and a clear sense of progress prevents them from returning regularly.",
+
+    projects_betfan_goals_title: "Goals",
+    projects_betfan_goals_item1:
+      "🎯 <b>Customer Journey Optimization</b> — Map the user path, eliminate friction, and shorten the time to place the first bet.",
+    projects_betfan_goals_item2:
+      "🎯 <b>Habit Building & Retention</b> — Design engagement loops (Daily Quests, Streaks) that build a sense of progress and encourage regular returns.",
+
+    projects_betfan_constraints_title: "Constraints",
+    projects_betfan_constraints_item1:
+      "⚠️ <b>High motivation drop upon loss</b> — The need to cushion negative emotions following a lost bet slip.",
+    projects_betfan_constraints_item2:
+      "⚠️ <b>Business profitability of rewards</b> — Maintaining moderation with bonuses to avoid negative ROI and artificially sustained activity.",
+    projects_betfan_constraints_item3:
+      "⚠️ <b>Experience logic over UI</b> — Focusing on user psychology, flow, and behavioral triggers rather than just the visual UI layer.",
+
+    projects_betfan_persona_title: "Persona for Customer Journey",
+    projects_betfan_persona_intro:
+      "The goal of creating this persona is to better understand the issue of <strong>low post-registration player retention</strong> and the 'one-time player' phenomenon—users who only open the app during major sporting events (e.g., Champions League). This character makes it easier to spot potential obstacles and friction along the user path.",
+    projects_betfan_persona_card_title:
+      "👱🏼‍♂️ Persona: Michał (28) — “Weekend Warrior”",
+    projects_betfan_persona_who:
+      "<strong>Who he is:</strong> Works an office job; football is his passion and getaway. He watches matches ranging from local leagues to the Champions League.",
+    projects_betfan_persona_behavior:
+      "<strong>Behavior:</strong> Multi-screening (TV + live phone usage), seeking Social Proof in Facebook groups.",
+    projects_betfan_persona_motivation:
+      "<strong>Motivations:</strong> Friendly rivalry with office colleagues, recognition of sports knowledge, seeking thrill and fun.",
+    projects_betfan_persona_needs:
+      "<strong>Needs:</strong> Quick and seamless bet placement (e.g., during commercial breaks).",
+
+    projects_betfan_cjm_title: "2. Customer Journey Map (Interactive Path)",
+    projects_betfan_cjm_desc:
+      "Analyze Michał's individual steps — use the arrows or click on a specific phase to inspect the phone screen, emotion levels, and identified UX risks and opportunities.",
+    projects_betfan_cjm_prev_aria: "Previous step",
+    projects_betfan_cjm_next_aria: "Next step",
+    projects_betfan_cjm_action_default: "1. First contact with the app",
+    projects_betfan_cjm_phase_default: "Phase: Awareness",
+    projects_betfan_cjm_emotion_label: "User Emotion:",
+    projects_betfan_cjm_emotion_default: "😐 Neutral / Curiosity",
+    projects_betfan_cjm_risk_title: "Risk / Psyche Flow",
+    projects_betfan_cjm_risk_default: "Risk description...",
+    projects_betfan_cjm_opportunity_title: "Opportunity / Solution",
+    projects_betfan_cjm_opportunity_default: "Opportunity description...",
+
+    projects_betfan_gamification_title:
+      "Gamification System: Daily Quest & Streaks",
+    projects_betfan_gamification_desc:
+      "To keep Michał engaged even on a 'boring Tuesday', I designed a habit-forming mechanism based on micro-tasks and loyalty rewards.",
+    projects_betfan_pillar1_title: "🏛️ Pillar 1: Daily Quest & Streak",
+    projects_betfan_pillar1_desc:
+      "A simple daily challenge (e.g., 'Place an accumulator bet for 10 PLN'). Completing 5 days in a row unlocks a Fan Box with discounts/freebets.",
+    projects_betfan_pillar2_title: "🏛️ Pillar 2: Status Tags & Achievements",
+    projects_betfan_pillar2_desc:
+      "Users unlock titles (e.g., 'Sniper', 'League Veteran') that they can show off within the community.",
+    projects_betfan_pillar3_title: "🏛️ Pillar 3: Soft Landing After Loss",
+    projects_betfan_pillar3_desc:
+      "A lost bet slip still grants +5% towards the badge progress bar, reducing the feeling of defeat.",
+
+    projects_betfan_implementation_title:
+      "Implementation, KPIs & Cross-functional Collaboration",
+    projects_betfan_implementation_desc:
+      "The project required close collaboration across multiple teams and setting clear success metrics:",
+    projects_betfan_implementation_item1:
+      "<strong>CRM & Loyalty:</strong> Configuring push notifications for expiring streaks.",
+    projects_betfan_implementation_item2:
+      "<strong>Success Metrics (KPIs):</strong> Tracking Retention Rate, Average Bets per User, and Bonus Burn Rate.",
+    projects_betfan_implementation_item3:
+      "<strong>Red Flags:</strong> Warning triggers for negative bonus ROI or artificial streak maintenance without real turnover.",
+
+    projects_betfan_navloop_text: "View next project:",
+    projects_betfan_navloop_link: "Monexo Mobile App",
+
+    projects_betfan_floatnav_about: "About Project",
+    projects_betfan_floatnav_persona: "Persona",
+    projects_betfan_floatnav_cjm: "Customer Journey",
+    projects_betfan_floatnav_gamification: "Gamification",
+    projects_betfan_floatnav_implementation: "Implementation & KPIs",
+    projects_betfan_floatnav_toggle: "Table of contents",
+
+    projects_betfan_cjm_step1_stepNum: "Step 01",
+    projects_betfan_cjm_step1_title: "Ad / Banner",
+    projects_betfan_cjm_step1_action: "1. Seeing a promotional ad",
+    projects_betfan_cjm_step1_phase: "Awareness",
+    projects_betfan_cjm_step1_emotion: "🤔 Curiosity / Skepticism",
+    projects_betfan_cjm_step1_risk:
+      "Information noise, lack of offer differentiation against competitors, and generic ad messaging.",
+    projects_betfan_cjm_step1_opportunity:
+      "Strong Social Proof, real-time match emotion ads, and a clear welcome bonus.",
+
+    projects_betfan_cjm_step2_stepNum: "Step 02",
+    projects_betfan_cjm_step2_title: "First Touchpoint",
+    projects_betfan_cjm_step2_action: "2. Entering the website / app",
+    projects_betfan_cjm_step2_phase: "Awareness",
+    projects_betfan_cjm_step2_emotion: "🧐 Anticipation / Excitement",
+    projects_betfan_cjm_step2_risk:
+      "Overloaded home screen messages causing disorientation upon first tap.",
+    projects_betfan_cjm_step2_opportunity:
+      "Clean landing page with an instant value proposition and clear Call To Action button.",
+
+    projects_betfan_cjm_step3_stepNum: "Step 03",
+    projects_betfan_cjm_step3_title: "Registration Choice",
+    projects_betfan_cjm_step3_action: "3. Choosing account creation method",
+    projects_betfan_cjm_step3_phase: "Interest",
+    projects_betfan_cjm_step3_emotion: "🔍 Desire for a quick process",
+    projects_betfan_cjm_step3_risk:
+      "Overcomplicating choices (e.g., lack of a Temporary Account / Quick Registration option).",
+    projects_betfan_cjm_step3_opportunity:
+      "Prominently highlighting ID-free registration and supporting bank/Social Media login.",
+
+    projects_betfan_cjm_step4_stepNum: "Step 04",
+    projects_betfan_cjm_step4_title: "Account Creation",
+    projects_betfan_cjm_step4_action: "4. Filling out the registration form",
+    projects_betfan_cjm_step4_phase: "Interest",
+    projects_betfan_cjm_step4_emotion: "⌛ Impatience / Privacy concern",
+    projects_betfan_cjm_step4_risk:
+      "Long forms and manual data entry cause high user drop-off.",
+    projects_betfan_cjm_step4_opportunity:
+      "Implementing One-Click onboarding, autofill features, and granting 'Rookie' status.",
+
+    projects_betfan_cjm_step5_stepNum: "Step 05",
+    projects_betfan_cjm_step5_title: "Account Top-up",
+    projects_betfan_cjm_step5_action: "5. First deposit",
+    projects_betfan_cjm_step5_phase: "Purchase",
+    projects_betfan_cjm_step5_emotion: "💳 Uncertainty / Security concern",
+    projects_betfan_cjm_step5_risk:
+      "Missing preferred payment methods (e.g., BLIK / Apple Pay) or a high minimum deposit limit.",
+    projects_betfan_cjm_step5_opportunity:
+      "1-click BLIK fast payments and immediate visual confirmation of the welcome bonus.",
+
+    projects_betfan_cjm_step6_stepNum: "Step 06",
+    projects_betfan_cjm_step6_title: "Awaiting Deposit",
+    projects_betfan_cjm_step6_action: "6. Processing payment",
+    projects_betfan_cjm_step6_phase: "Purchase",
+    projects_betfan_cjm_step6_emotion: "⏳ Waiting / Time pressure",
+    projects_betfan_cjm_step6_risk:
+      "Processing delays kill the impulse to place an immediate pre-match bet.",
+    projects_betfan_cjm_step6_opportunity:
+      "Instant visual feedback and real-time confirmation of credited funds.",
+
+    projects_betfan_cjm_step7_stepNum: "Step 07",
+    projects_betfan_cjm_step7_title: "Category Selection",
+    projects_betfan_cjm_step7_action: "7. Browsing sports offer",
+    projects_betfan_cjm_step7_phase: "Purchase",
+    projects_betfan_cjm_step7_emotion: "🎯 Overwhelmed by options",
+    projects_betfan_cjm_step7_risk:
+      "Cluttered interface prevents user from quickly finding the desired match.",
+    projects_betfan_cjm_step7_opportunity:
+      "Personalized dashboard based on favorite leagues and quick 'Trending Today' filters.",
+
+    projects_betfan_cjm_step8_stepNum: "Step 08",
+    projects_betfan_cjm_step8_title: "Adding Events",
+    projects_betfan_cjm_step8_action: "8. Building a bet slip (Accumulator)",
+    projects_betfan_cjm_step8_phase: "Purchase",
+    projects_betfan_cjm_step8_emotion: "⚡ Excitement / Strategy building",
+    projects_betfan_cjm_step8_risk:
+      "Lack of clear live odds updates or cumbersome bet slip management.",
+    projects_betfan_cjm_step8_opportunity:
+      "Micro-gesture interaction, popular pick suggestions, and automatic payout calculator.",
+
+    projects_betfan_cjm_step9_stepNum: "Step 09",
+    projects_betfan_cjm_step9_title: "Stake & Bet Placement",
+    projects_betfan_cjm_step9_action: "9. Setting stake and placing bet",
+    projects_betfan_cjm_step9_phase: "Purchase",
+    projects_betfan_cjm_step9_emotion: "🔥 High tension / Risk assessment",
+    projects_betfan_cjm_step9_risk:
+      "Lack of quick preset stakes (e.g., $10, $20) slows down placement during ad breaks.",
+    projects_betfan_cjm_step9_opportunity:
+      "Quick-Bet feature with preset amount buttons and a prominent, instantly confirming 'Place Bet' button.",
+
+    projects_betfan_cjm_step10_stepNum: "Step 10",
+    projects_betfan_cjm_step10_title: "Bet Tracking",
+    projects_betfan_cjm_step10_action: "10. Following live match & results",
+    projects_betfan_cjm_step10_phase: "Retention",
+    projects_betfan_cjm_step10_emotion: "💓 Strong emotions / Anticipation",
+    projects_betfan_cjm_step10_risk:
+      "If the match goes south, the user closes the app with a feeling of defeat.",
+    projects_betfan_cjm_step10_opportunity:
+      "Live cash-out, animated match-center stats, and streak/challenge progress even on a lost bet.",
+
+    projects_betfan_cjm_step11_stepNum: "Step 11",
+    projects_betfan_cjm_step11_title: "Result & Social Proof",
+    projects_betfan_cjm_step11_action: "11. Bet settlement & sharing",
+    projects_betfan_cjm_step11_phase: "Advocacy",
+    projects_betfan_cjm_step11_emotion:
+      "🎉 Pride in winning / 🛡️ Soft-landing after loss",
+    projects_betfan_cjm_step11_risk:
+      "Bitterness of defeat leads to long-term app churn.",
+    projects_betfan_cjm_step11_opportunity:
+      "Easy creation of shareable winning bet graphics for Social Media and a consolation reward (+5% badge progress).",
 
     // quick contact
     contact_title: "Let's work together",
@@ -1936,6 +2357,40 @@ const translations = {
   },
 };
 
+// Bezpieczne wstawianie tekstu z ograniczonym formatowaniem (whitelist).
+// Rozpoznaje WYŁĄCZNIE dosłowne tagi <b> i <strong> - są tworzone jawnie
+// przez createElement(), a cała reszta (łącznie z ewentualnym <script>,
+// atrybutami typu onerror="..." itp.) trafia do DOM wyłącznie jako zwykły
+// tekst przez textContent/createTextNode. Dzięki temu nic z treści
+// tłumaczenia nigdy nie jest parsowane jako HTML/JS - w przeciwieństwie
+// do innerHTML tutaj fizycznie nie ma jak wstrzyknąć działającego kodu.
+function setFormattedText(element, text) {
+  element.textContent = "";
+
+  const allowedTagPattern = /<(b|strong)>([\s\S]*?)<\/\1>/gi;
+  let lastIndex = 0;
+  let match;
+
+  while ((match = allowedTagPattern.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      element.appendChild(
+        document.createTextNode(text.slice(lastIndex, match.index))
+      );
+    }
+
+    const tagName = match[1].toLowerCase();
+    const inlineEl = document.createElement(tagName);
+    inlineEl.textContent = match[2]; // treść pogrubienia też jako czysty tekst
+    element.appendChild(inlineEl);
+
+    lastIndex = allowedTagPattern.lastIndex;
+  }
+
+  if (lastIndex < text.length) {
+    element.appendChild(document.createTextNode(text.slice(lastIndex)));
+  }
+}
+
 function switchLanguage(lang) {
   localStorage.setItem("selectedLanguage", lang);
 
@@ -1951,8 +2406,7 @@ function switchLanguage(lang) {
       if (element.tagName.toLowerCase() === "img") {
         element.setAttribute("src", translationValue);
       } else {
-        // W przeciwnym wypadku traktuj jak zwykły tekst
-        element.innerText = translationValue;
+        setFormattedText(element, translationValue);
       }
     }
   });

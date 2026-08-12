@@ -78,13 +78,13 @@
   --accent: #4a8fe0;
   --accent-hover-bg: #2a2b30;
 
-  --border-subtle: #2e2f33;
+  --border-subtle: #34363a;
   --shadow-header: 0 0px 32px rgba(0, 0, 0, 0.4);
   --shadow-header-scrolled: 0 0px 32px rgba(0, 0, 0, 0.6);
   --shadow-cookie: 0 10px 30px rgba(0, 0, 0, 0.5);
 
   --wave-stroke: #4a8fe0;
-  --footer-border: #444444; /* celowo bez zmian względem jasnego motywu */
+  --footer-border: #28282c; /* celowo bez zmian względem jasnego motywu */
 
   --cursor-fill: #e4e4e7;
   --cursor-stroke: #121316;
@@ -246,6 +246,10 @@ body {
 section {
   width: 100%;
 }
+h1 {
+  font-family: "Unbounded", "Outfit", "Segoe UI", Tahoma, Geneva, Verdana,
+    sans-serif;
+}
 
 h2 {
   align-items: center;
@@ -253,7 +257,8 @@ h2 {
   line-height: 1;
   color: var(--text-heading);
   margin: 0px 0px;
-  font-family: "Outfit", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Unbounded", "Outfit", "Segoe UI", Tahoma, Geneva, Verdana,
+    sans-serif;
 }
 @media (max-width: 480px) {
   h2 {
@@ -297,7 +302,7 @@ text {
 }
 
 .miniText {
-  font-size: clamp(0.5rem, calc(1vw + 0.33rem), 1.25rem);
+  font-size: clamp(0.48rem, calc(0.8vw + 0.25rem), 1.1rem);
   font-weight: 300;
   margin-left: 2px;
 }
@@ -346,7 +351,6 @@ header {
   box-shadow: var(--shadow-header);
   transition: background-color 0.25s ease, box-shadow 0.25s ease;
 }
-
 
 .headerNav {
   display: flex;

@@ -65,6 +65,10 @@
       rel="stylesheet"
     />
     <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
       rel="stylesheet"
     />
@@ -165,6 +169,7 @@
       .phoneMockupImage {
         max-width: 238px;
         width: 100%;
+        min-height: 200px;
         height: auto; /* Kluczowe: pozwala obrazkowi rozwinąć pełną wysokość */
         max-height: none !important; /* Nadpisuje wszelkie ograniczenia wysokości */
         object-fit: contain; /* Gwarantuje brak przycinania */
@@ -376,11 +381,13 @@
     <main class="projectLayout">
       <article class="projectContent">
         <section style="padding-top: 20vh" id="o-projekcie">
-          <span style="font-size: 18px">Betfan</span>
-          <h1 data-i18n="project_betfan_title" style="margin-top: 8px">
+          <span style="font-size: 18px" data-i18n="projects_betfan_badge"
+            >Betfan</span
+          >
+          <h1 data-i18n="projects_betfan_title" style="margin-top: 8px">
             Customer Journey Map & Gamifikacja Retencji
           </h1>
-          <p style="padding-top: 2vh" data-i18n="project_betfan_desc">
+          <p style="padding-top: 2vh" data-i18n="projects_betfan_desc">
             BETFAN to platforma bukmacherska stawiająca na emocje, progres i
             szybkie zawieranie zakładów w celu budowania wysokiej retencji
             graczy. Projekt polegał na zmapowaniu customer journey od reklamy do
@@ -389,28 +396,28 @@
           </p>
 
           <p style="padding-top: 3vh">
-            <b data-i18n="project_betfan_role_label">Rola:</b>
-            <span data-i18n="project_betfan_role_val">Product Designer</span>
+            <b data-i18n="projects_betfan_role_label">Rola:</b>
+            <span data-i18n="projects_betfan_role_val">Product Designer</span>
           </p>
 
           <p style="padding-top: 1vh">
-            <b data-i18n="project_betfan_scope_label"
+            <b data-i18n="projects_betfan_scope_label"
               >Zakres odpowiedzialności:</b
             >
-            <span data-i18n="project_betfan_scope_val"
+            <span data-i18n="projects_betfan_scope_val"
               >Customer Journey Map, System Lojalizacji, Wyznaczenie Mierników
               Sukcesu (KPI)</span
             >
           </p>
 
           <p style="padding-top: 1vh">
-            <b data-i18n="project_betfan_duration_label">Czas trwania:</b>
-            <span data-i18n="project_betfan_duration_val">2 tygodnie</span>
+            <b data-i18n="projects_betfan_duration_label">Czas trwania:</b>
+            <span data-i18n="projects_betfan_duration_val">2 tygodnie</span>
           </p>
 
           <p style="padding-top: 1vh">
-            <b data-i18n="project_betfan_methodology_label">Metodyka:</b>
-            <span data-i18n="project_betfan_methodology_val"
+            <b data-i18n="projects_betfan_methodology_label">Metodyka:</b>
+            <span data-i18n="projects_betfan_methodology_val"
               >Design Thinking — mapowanie Customer Journey, identyfikacja
               punktów drop-offu oraz projektowanie mechanizmów retencji przy
               użyciu framework'a Octalisys i motywacji w oparciu o pętle nawyków
@@ -421,56 +428,78 @@
           <a
             href="../assets/projects/customer-journey-betfan/betfan.png"
             data-lightbox="betfan-process"
+            data-i18n="[data-title]projects_betfan_img_alt"
             data-title="Okładka projektu Customer Journey & Gamifies Loyalty dla Betfan"
           >
             <div class="gradientBackground">
               <img
                 style="width: 88%; border-radius: 32px; margin-top: 40px"
                 src="../assets/projects/customer-journey-betfan/betfan.png"
+                data-i18n="[alt]projects_betfan_img_alt"
                 alt="Okładka projektu Customer Journey & Gamifies Loyalty dla Betfan"
               />
             </div>
           </a>
 
-          <h3 style="padding-top: 3vh; margin-bottom: 1vh">Kontekst</h3>
-          <p>
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="projects_betfan_context_title"
+          >
+            Kontekst
+          </h3>
+          <p data-i18n="projects_betfan_context_desc">
             BETFAN to dynamiczna platforma bukmacherska, w której kluczowym
             wyzwaniem biznesowym jest niska retencja po rejestracji oraz
             zjawisko „jednorazowego gracza”, wchodzącego do aplikacji wyłącznie
             przy okazji dużych wydarzeń sportowych.
           </p>
 
-          <h3 style="padding-top: 3vh; margin-bottom: 1vh">Problem</h3>
-          <p>
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="projects_betfan_problem_title"
+          >
+            Problem
+          </h3>
+          <p data-i18n="projects_betfan_problem_desc">
             Nowi gracze często porzucają proces onboardingowy ze względu na
             tarcie na ścieżce od reklamy do zawarcia pierwszego zakładu, a brak
             stałych bodźców motywacyjnych i wyrazistego poczucia progresu
             sprawia, że nie wracają regularnie do produktu.
           </p>
 
-          <h3 style="padding-top: 3vh; margin-bottom: 1vh">Cele</h3>
-          <p>
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="projects_betfan_goals_title"
+          >
+            Cele
+          </h3>
+          <p data-i18n="projects_betfan_goals_item1">
             🎯 <b>Optymalizacja Customer Journey</b> — zmapowanie ścieżki
             użytkownika, wyeliminowanie barier i skrócenie czasu do zawarcia
             pierwszego zakładu.
           </p>
-          <p>
+          <p data-i18n="projects_betfan_goals_item2">
             🎯 <b>Budowa nawyku i retencji</b> — zaprojektowanie pętli
             zaangażowania (Daily Quests, Streaks) budujących poczucie progresu i
             zachęcających do stałego powrotu.
           </p>
 
-          <h3 style="padding-top: 3vh; margin-bottom: 1vh">Ograniczenia</h3>
-          <p>
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="projects_betfan_constraints_title"
+          >
+            Ograniczenia
+          </h3>
+          <p data-i18n="projects_betfan_constraints_item1">
             ⚠️ <b>Wysoki spadek motywacji przy porażce</b> — konieczność
             łagodzenia negatywnych emocji po przegranym kuponie.
           </p>
-          <p>
+          <p data-i18n="projects_betfan_constraints_item2">
             ⚠️ <b>Rentowność biznesowa nagród</b> — zachowanie umiaru w
             bonusach, aby uniknąć ujemnego ROI i sztucznego podtrzymywania
             aktywności.
           </p>
-          <p>
+          <p data-i18n="projects_betfan_constraints_item3">
             ⚠️ <b>Logika doświadczenia ponad UI</b> — skupienie na psychologii
             użytkownika, flow i wyzwalaczach behawioralnych zamiast na samej
             warstwie wizualnej ekranów.
@@ -478,10 +507,13 @@
         </section>
 
         <section id="persona" style="margin-top: 60px">
-          <h2 style="padding-top: 8vh; margin-bottom: 2vh">
+          <h2
+            style="padding-top: 8vh; margin-bottom: 2vh"
+            data-i18n="projects_betfan_persona_title"
+          >
             Persona dla Customer Journey
           </h2>
-          <p>
+          <p data-i18n="projects_betfan_persona_intro">
             Celem utworzenia persony jest lepsze zrozumienie problemu
             <strong>niski retencji graczy po rejestracji</strong> oraz zjawiska
             tzw. „jednorazowego gracza”, który otwiera aplikację wyłącznie
@@ -499,23 +531,26 @@
               margin: 24px 0;
             "
           >
-            <h3 style="margin-top: 0">
+            <h3
+              style="margin-top: 0"
+              data-i18n="projects_betfan_persona_card_title"
+            >
               👱🏼‍♂️ Persona: Michał (28 lat) — „Weekendowy Wojownik”
             </h3>
-            <p>
+            <p data-i18n="projects_betfan_persona_who">
               <strong>Kim jest:</strong> Pracuje w biurze, piłka nożna to jego
               pasja i odskocznia. Ogląda mecze od Ekstraklasy po Ligę Mistrzów.
             </p>
             <ul>
-              <li>
+              <li data-i18n="projects_betfan_persona_behavior">
                 <strong>Zachowanie:</strong> Multi-screening (TV + telefon na
                 żywo), szukanie Social Proof na grupach FB.
               </li>
-              <li>
+              <li data-i18n="projects_betfan_persona_motivation">
                 <strong>Motywacje:</strong> Rywalizacja z kolegami z biura,
                 uznanie znajomości sportu, szukanie emocji i zabawy.
               </li>
-              <li>
+              <li data-i18n="projects_betfan_persona_needs">
                 <strong>Potrzeby:</strong> Szybkość i prostota stawiania kuponu
                 (np. w trakcie przerwy reklamowej).
               </li>
@@ -524,10 +559,13 @@
         </section>
 
         <section id="cjm" style="margin-top: 60px">
-          <h2 style="padding-top: 8vh; margin-bottom: 2vh">
+          <h2
+            style="padding-top: 8vh; margin-bottom: 2vh"
+            data-i18n="projects_betfan_cjm_title"
+          >
             2. Customer Journey Map (Interaktywna Ścieżka)
           </h2>
-          <p>
+          <p data-i18n="projects_betfan_cjm_desc">
             Przeanalizuj poszczególne kroki Michała — przełączaj kroki
             strzałkami lub kliknij w wybrany etap, aby zobaczyć ekran telefonu,
             poziom emocji oraz zidentyfikowane ryzyka i szanse UX.
@@ -541,6 +579,7 @@
                 class="cjmNavBtn prev"
                 id="cjmPrevBtn"
                 onclick="changeStep(-1)"
+                data-i18n="[aria-label]projects_betfan_cjm_prev_aria"
                 aria-label="Poprzedni krok"
               >
                 <i class="fa-solid fa-chevron-left"></i>
@@ -554,6 +593,7 @@
                 class="cjmNavBtn next"
                 id="cjmNextBtn"
                 onclick="changeStep(1)"
+                data-i18n="[aria-label]projects_betfan_cjm_next_aria"
                 aria-label="Następny krok"
               >
                 <i class="fa-solid fa-chevron-right"></i>
@@ -562,36 +602,60 @@
 
             <div class="cjmDetailsCard">
               <div class="cjmHeaderMeta">
-                <h3 class="cjmActionTitle" id="cjmAction">
+                <h3
+                  class="cjmActionTitle"
+                  id="cjmAction"
+                  data-i18n="projects_betfan_cjm_action_default"
+                >
                   1. Pierwszy kontakt z aplikacją
                 </h3>
-                <div class="cjmPhaseBadge" id="cjmPhase">Faza: Awareness</div>
+                <div
+                  class="cjmPhaseBadge"
+                  id="cjmPhase"
+                  data-i18n="projects_betfan_cjm_phase_default"
+                >
+                  Faza: Awareness
+                </div>
               </div>
 
               <div class="cjmEmotionBox">
-                <span class="cjmEmotionLabel">Emocje użytkownika:</span>
-                <span class="cjmEmotionValue" id="cjmEmotion"
+                <span
+                  class="cjmEmotionLabel"
+                  data-i18n="projects_betfan_cjm_emotion_label"
+                  >Emocje użytkownika:</span
+                >
+                <span
+                  class="cjmEmotionValue"
+                  id="cjmEmotion"
+                  data-i18n="projects_betfan_cjm_emotion_default"
                   >😐 Neutralne / Ciekawość</span
                 >
               </div>
 
               <div class="cjmDetailsGrid">
                 <div class="cjmBox risk">
-                  <h5>
+                  <h5 data-i18n="projects_betfan_cjm_risk_title">
                     <i
                       class="fa-solid fa-triangle-exclamation"
                       style="color: #e74c3c"
                     ></i>
                     Zagrożenie / Psyche Flow
                   </h5>
-                  <p id="cjmRisk">Opis zagrożenia...</p>
+                  <p id="cjmRisk" data-i18n="projects_betfan_cjm_risk_default">
+                    Opis zagrożenia...
+                  </p>
                 </div>
                 <div class="cjmBox opportunity">
-                  <h5>
+                  <h5 data-i18n="projects_betfan_cjm_opportunity_title">
                     <i class="fa-solid fa-lightbulb" style="color: #2ecc71"></i>
                     Szansa / Rozwiązanie
                   </h5>
-                  <p id="cjmOpportunity">Opis szansy...</p>
+                  <p
+                    id="cjmOpportunity"
+                    data-i18n="projects_betfan_cjm_opportunity_default"
+                  >
+                    Opis szansy...
+                  </p>
                 </div>
               </div>
             </div>
@@ -599,10 +663,13 @@
         </section>
 
         <section id="gamifikacja" style="margin-top: 60px">
-          <h2 style="padding-top: 8vh; margin-bottom: 2vh">
+          <h2
+            style="padding-top: 8vh; margin-bottom: 2vh"
+            data-i18n="projects_betfan_gamification_title"
+          >
             System Gamifikacji: Daily Quest & Streaks
           </h2>
-          <p>
+          <p data-i18n="projects_betfan_gamification_desc">
             Aby utrzymać Michała w aplikacji również w „nudny wtorek”,
             zaprojektowałem mechanizm budowania nawyku oparty na micro-taskach i
             nagrodach lojalnościowych.
@@ -624,10 +691,16 @@
                 border-radius: 20px;
               "
             >
-              <h4 style="margin-top: 0px; margin-bottom: 8px">
+              <h4
+                style="margin-top: 0px; margin-bottom: 8px"
+                data-i18n="projects_betfan_pillar1_title"
+              >
                 🏛️ Filar 1: Daily Quest & Streak
               </h4>
-              <p style="font-size: 14px">
+              <p
+                style="font-size: 14px"
+                data-i18n="projects_betfan_pillar1_desc"
+              >
                 Codzienne proste wyzwanie (np. „Postaw AKO za 10 zł”). 5 dni z
                 rzędu odblokowuje Fan Box ze zniżkami/freebetami.
               </p>
@@ -640,10 +713,16 @@
                 border-radius: 20px;
               "
             >
-              <h4 style="margin-top: 0px; margin-bottom: 8px">
+              <h4
+                style="margin-top: 0px; margin-bottom: 8px"
+                data-i18n="projects_betfan_pillar2_title"
+              >
                 🏛️ Filar 2: Tagi Statusu & Achievementy
               </h4>
-              <p style="font-size: 14px">
+              <p
+                style="font-size: 14px"
+                data-i18n="projects_betfan_pillar2_desc"
+              >
                 Użytkownik odblokowuje tytuły (np. „Snajper”, „Weteran
                 Ekstraklasy”), którymi może chwalić się w społeczności.
               </p>
@@ -656,10 +735,16 @@
                 border-radius: 20px;
               "
             >
-              <h4 style="margin-top: 0px; margin-bottom: 8px">
+              <h4
+                style="margin-top: 0px; margin-bottom: 8px"
+                data-i18n="projects_betfan_pillar3_title"
+              >
                 🏛️ Filar 3: Soft-landing po Porażce
               </h4>
-              <p style="font-size: 14px">
+              <p
+                style="font-size: 14px"
+                data-i18n="projects_betfan_pillar3_desc"
+              >
                 Przegrany kupon i tak daje +5% do paska progresu odznaki.
                 Zmniejsza to poczucie porażki.
               </p>
@@ -668,24 +753,27 @@
         </section>
 
         <section id="wdrozenie" style="margin-top: 60px">
-          <h2 style="padding-top: 8vh; margin-bottom: 2vh">
+          <h2
+            style="padding-top: 8vh; margin-bottom: 2vh"
+            data-i18n="projects_betfan_implementation_title"
+          >
             Wdrożenie, KPI i Współpraca Cross-functional
           </h2>
-          <p>
+          <p data-i18n="projects_betfan_implementation_desc">
             Projekt wymagał ścisłej współpracy z wieloma zespołami oraz
             zdefiniowania jasnych wskaźników sukcesu:
           </p>
 
           <ul>
-            <li>
+            <li data-i18n="projects_betfan_implementation_item1">
               <strong>CRM & Loyalty:</strong> Konfiguracja PUSH z
               powiadomieniami o wygasającym streaku.
             </li>
-            <li>
+            <li data-i18n="projects_betfan_implementation_item2">
               <strong>Mierniki Sukcesu (KPI):</strong> Monitorowanie Retention
               Rate, Average Bets per User oraz Bonus Burn Rate.
             </li>
-            <li>
+            <li data-i18n="projects_betfan_implementation_item3">
               <strong>Red Flagi:</strong> Sygnał ostrzegawczy przy ujemnym ROI
               bonusów lub sztucznym podtrzymywaniu streaków bez realnego obrotu.
             </li>
@@ -694,10 +782,14 @@
 
         <section class="navLoopWrapper">
           <span class="navLoop">
-            <span data-i18n="project_web_planetroad_navloop_text"
+            <span data-i18n="projects_betfan_navloop_text"
               >Zobacz kolejny projekt:</span
             ><br />
-            <a href="aplikacja-mobilna-monexo.html" class="loopLink">
+            <a
+              href="aplikacja-mobilna-monexo.html"
+              class="loopLink"
+              data-i18n="projects_betfan_navloop_link"
+            >
               Aplikacja Mobilna Monexo
             </a>
           </span>
@@ -707,14 +799,30 @@
 
     <nav class="floatingNav" id="floatingNav">
       <div class="floatingNavWrapper" id="floatingNavWrapper">
-        <a href="#o-projekcie" class="active">O Projekcie</a>
-        <a href="#persona" class="active">Persona</a>
-        <a href="#cjm">Customer Journey</a>
-        <a href="#gamifikacja">Gamifikacja</a>
-        <a href="#wdrozenie">Wdrożenie & KPI</a>
+        <a
+          href="#o-projekcie"
+          class="active"
+          data-i18n="projects_betfan_floatnav_about"
+          >O Projekcie</a
+        >
+        <a
+          href="#persona"
+          class="active"
+          data-i18n="projects_betfan_floatnav_persona"
+          >Persona</a
+        >
+        <a href="#cjm" data-i18n="projects_betfan_floatnav_cjm"
+          >Customer Journey</a
+        >
+        <a href="#gamifikacja" data-i18n="projects_betfan_floatnav_gamification"
+          >Gamifikacja</a
+        >
+        <a href="#wdrozenie" data-i18n="projects_betfan_floatnav_implementation"
+          >Wdrożenie & KPI</a
+        >
       </div>
       <button class="floatingNavToggle" id="floatingNavToggle">
-        <span>Spis treści</span>
+        <span data-i18n="projects_betfan_floatnav_toggle">Spis treści</span>
         <i class="fa-solid fa-chevron-up floatingNavArrow"></i>
       </button>
     </nav>
