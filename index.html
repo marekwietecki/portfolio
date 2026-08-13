@@ -70,7 +70,7 @@
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-i18n="meta_main">Marek Wietecki | Strona Główna</title>
+    <title data-i18n="meta_main">Strona Główna | Marek Wietecki</title>
     <link
       rel="icon"
       type="image/png"
@@ -639,11 +639,10 @@
         opacity: 1;
       }
 
-      /* --- QUICK CONTACT --- */
-      .quick-contact-section {
+    /* --- QUICK CONTACT --- */
+    .quick-contact-section {
         padding: 120px 20px;
       }
-
       .contact-card {
         max-width: 720px;
         margin: 0 auto;
@@ -655,19 +654,16 @@
         box-shadow: var(--shadow-header);
         transition: background-color 0.25s ease, border-color 0.25s ease;
       }
-
       .contact-header {
         display: flex;
         flex-direction: column;
         justify-content: center;
       }
-
       .contact-header h2 {
         font-size: 1.8rem;
         margin-bottom: 10px;
         color: var(--text-heading);
       }
-
       .contact-header p {
         font-size: 1rem;
         font-weight: 500;
@@ -675,7 +671,6 @@
         margin-bottom: 28px;
         text-align: center;
       }
-
       .contact-actions {
         display: flex;
         gap: 16px;
@@ -683,7 +678,6 @@
         flex-wrap: wrap;
         margin-bottom: 24px;
       }
-
       .btn-primary {
         display: inline-flex;
         align-items: center;
@@ -696,12 +690,10 @@
         text-decoration: none;
         transition: transform 0.2s, background-color 0.2s;
       }
-
       .btn-primary:hover {
         background-color: #084e96;
         transform: translateY(-2px);
       }
-
       .btn-secondary {
         display: inline-flex;
         align-items: center;
@@ -715,12 +707,10 @@
         text-decoration: none;
         transition: transform 0.2s, background-color 0.2s;
       }
-
       .btn-secondary:hover {
         background-color: var(--accent-hover-bg);
         transform: translateY(-2px);
       }
-
       .contact-direct {
         font-size: 0.95rem;
         color: var(--text-secondary);
@@ -730,7 +720,6 @@
         gap: 8px;
         flex-wrap: wrap;
       }
-
       .email-link {
         color: var(--text-heading);
         font-weight: 600;
@@ -738,7 +727,6 @@
         text-underline-offset: 4px;
         transition: color 0.2s ease;
       }
-
       .email-link:hover {
         color: var(--accent);
       }
@@ -1166,11 +1154,7 @@
         </a>
 
         <a href="projects/customer-journey-betfan.html" class="is-inactive">
-          <div
-            class="projectContainer disabled-project"
-            data-tooltip="Dostępne wkrótce!"
-            style="opacity: 0.56"
-          >
+          <div class="projectContainer">
             <img
               src="assets/projects/customer-journey-betfan/betfan.png"
               alt="Zdjęcie przedstawia Okładkę mojego projektu Customer Journey & Gamified Loyalty dla Betfan"
@@ -1233,46 +1217,59 @@
     <section id="contact" class="quick-contact-section">
       <div class="container">
         <div class="contact-card">
-          <!-- Nagłówek i kontekst -->
+          <div class="contact-decoration" aria-hidden="true">
+            <svg
+              class="contact-plane"
+              width="34"
+              height="34"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M22 2 11 13"></path>
+              <path d="m22 2-7 20-4-9-9-4Z"></path>
+            </svg>
+          </div>
+    
           <div class="contact-header">
-            <h2 data-i18n="contact_title">Podoba Ci się to, co widzisz?</h2>
+            <span class="contact-eyebrow">Porozmawiajmy</span>
+    
+            <h2 data-i18n="contact_title">
+              Podoba Ci się to, co widzisz?
+            </h2>
+    
             <p data-i18n="contact_subtitle">
               Szukasz UX Designera do zespołu, czy masz projekt do omówienia?
             </p>
           </div>
-
-          <!-- Akcje dla Rekruterów i Klientów (Główne interakcje) -->
+    
           <div class="contact-actions">
-            <!-- Główna Akcja: Fast Track (Napisz wiadomość) -->
             <a
               href="https://www.linkedin.com/in/marekwietecki"
               target="_blank"
               rel="noopener noreferrer"
               class="btn btn-primary"
-              data-i18n="btn_linkedin"
             >
               <svg
                 width="20"
                 height="20"
                 viewBox="0 0 24 24"
                 fill="currentColor"
+                aria-hidden="true"
               >
-                <!-- Ikona LinkedIn -->
                 <path
                   d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.7a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26Z"
                 />
               </svg>
-              Napisz na LinkedIn
+    
+              <span data-i18n="btn_linkedin">Napisz na LinkedIn</span>
             </a>
-
-            <!-- Druga Akcja: Pobranie CV (MUST-HAVE dla Rekrutera!) -->
+    
             <a
-              href="./assets/index/Marek_Wietecki_CV_3.1.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-secondary"
-              data-i18n="btn_cv"
-            >
+              href="./assets/index/Marekf
               <svg
                 width="20"
                 height="20"
@@ -1280,20 +1277,19 @@
                 fill="none"
                 stroke="currentColor"
                 stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                aria-hidden="true"
               >
-                <!-- Ikona oka (View/Preview) -->
                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                 <circle cx="12" cy="12" r="3"></circle>
               </svg>
-              Zobacz CV (PDF)
+    
+              <span data-i18n="btn_cv">Zobacz CV (PDF)</span>
             </a>
           </div>
-
-          <!-- Szybki kontakt bezpośredni (Fallback) -->
+    
           <div class="contact-direct">
-            <span data-i18n="contact_or">lub po prostu napisz maila:</span>
+            <span data-i18n="contact_or">lub po prostu napisz e-mail:</span>
+    
             <a href="mailto:kontakt@marekwietecki.pl" class="email-link">
               kontakt@marekwietecki.pl
             </a>

@@ -1189,6 +1189,22 @@ const translations = {
     project_vi_planetroad_thumb_6: "Miniatura 6",
     project_vi_planetroad_thumb_7: "Miniatura 7",
     project_vi_planetroad_thumb_8: "Miniatura 8",
+    project_vi_planetroad_after_title: "Po Projekcie",
+    project_vi_planetroad_takeaways_title: "Kluczowe Wnioski",
+    project_vi_planetroad_takeaway_part1:
+      "Projektowanie elastycznego systemowo sygnetu i spójnej palety barw zapewniających ",
+    project_vi_planetroad_takeaway_b:
+      "skalowalność na każdym punkcie styku z marką",
+    project_vi_planetroad_takeaway_part2:
+      " jest fundamentem silnej tożsamości. Dobry branding musi funkcjonować równie precyzyjnie jako mikroskopijny favicon w przeglądarce, cyfrowy avatar w social mediach, jak i na wielkoformatowych materiałach drukowanych.",
+    project_vi_planetroad_next_steps_title: "Następne Kroki",
+    project_vi_planetroad_next_2_b:
+      "System szablonów dla Social Media & Marketingu",
+    project_vi_planetroad_next_2_text:
+      " - przygotowanie spójnych komponentów graficznych w Figmie dla postów, relacji (Stories) oraz bannerów reklamowych, zapewniających łatwą komunikację wizualną.",
+    project_vi_planetroad_next_3_b: "Materiały Drukowane i Merch",
+    project_vi_planetroad_next_3_text:
+      " - przeniesienie identyfikacji na fizyczne nośniki reklamy: wizytówki, papier firmowy oraz wzorniki dokumentów.",
     project_vi_planetroad_next_project_label: "Zobacz kolejny projekt:",
     project_vi_planetroad_next_project_link: "Customer Journey - Betfan",
   },
@@ -2352,6 +2368,21 @@ const translations = {
     project_vi_planetroad_thumb_6: "Thumbnail 6",
     project_vi_planetroad_thumb_7: "Thumbnail 7",
     project_vi_planetroad_thumb_8: "Thumbnail 8",
+    project_vi_planetroad_after_title: "After the Project",
+    project_vi_planetroad_takeaways_title: "Key Takeaways",
+    project_vi_planetroad_takeaway_part1:
+      "Designing a flexible brand mark system and a consistent color palette that ensure ",
+    project_vi_planetroad_takeaway_b:
+      "scalability across every brand touchpoint",
+    project_vi_planetroad_takeaway_part2:
+      " is the foundation of a strong brand identity. Effective branding must perform equally well as a tiny browser favicon, a digital social media avatar, and on large-scale printed materials.",
+    project_vi_planetroad_next_steps_title: "Next Steps",
+    project_vi_planetroad_next_2_b: "Social Media & Marketing Template System",
+    project_vi_planetroad_next_2_text:
+      " - creating a cohesive set of graphic components in Figma for posts, Stories, and advertising banners, enabling efficient and consistent visual communication.",
+    project_vi_planetroad_next_3_b: "Print Materials & Merchandise",
+    project_vi_planetroad_next_3_text:
+      " - extending the visual identity to physical brand assets such as business cards, letterheads, and document templates.",
     project_vi_planetroad_next_project_label: "See next project:",
     project_vi_planetroad_next_project_link: "Customer Journey - Betfan",
   },
