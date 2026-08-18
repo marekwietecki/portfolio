@@ -83,7 +83,7 @@
   --shadow-header-scrolled: 0 0px 32px rgba(0, 0, 0, 0.6);
   --shadow-cookie: 0 10px 30px rgba(0, 0, 0, 0.5);
 
-  --wave-stroke: #4a8fe0;
+  --wave-stroke: #1e6ed6;
   --footer-border: #28282c; /* celowo bez zmian względem jasnego motywu */
 
   --cursor-fill: #e4e4e7;
@@ -284,18 +284,17 @@ a {
   color: var(--text-muted);
   text-decoration: none;
   font-size: 16px;
-  transition: color 0.3s ease;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
 a:hover {
-  color: var(--border-subtle);
+  opacity: 0.64;
 }
 
 a svg {
   fill: currentColor;
-  transition: fill 0.3s ease;
 }
-
 text {
   text-align: left;
   color: var(--accent);

@@ -562,6 +562,30 @@
         top: -1px;
       }
 
+      .serviceProject {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+      }
+
+      .serviceProject span {
+        color: var(--text-body);
+        font-size: 12px;
+      }
+
+      .serviceProject a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 12px;
+      }
+
+      .serviceProject a:hover {
+        text-decoration: underline;
+      }
+
       /* =========================
    PROCESS SECTION
 ========================= */
@@ -633,6 +657,39 @@
         background: var(--bg-card);
         transition: transform 0.25s ease, border-color 0.25s ease,
           background-color 0.25s ease;
+      }
+      .processCard {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease, transform 0.6s ease,
+          border-color 0.25s ease, background-color 0.25s ease;
+      }
+
+      .processGrid.is-visible .processCard {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .processGrid .processCard:nth-child(1) {
+        transition-delay: 0s;
+      }
+      .processGrid .processCard:nth-child(2) {
+        transition-delay: 0.15s;
+      }
+      .processGrid .processCard:nth-child(3) {
+        transition-delay: 0.3s;
+      }
+      .processGrid .processCard:nth-child(4) {
+        transition-delay: 0.45s;
+      }
+      .processGrid .processCard:nth-child(5) {
+        transition-delay: 0.6s;
+      }
+      .processGrid .processCard:nth-child(6) {
+        transition-delay: 0.75s;
+      }
+      .processGrid .processCard:nth-child(7) {
+        transition-delay: 0.9s;
       }
 
       .processCard::after {
@@ -1550,6 +1607,14 @@
               Praca na Design Systemamach
             </li>
           </ul>
+          <div class="serviceProject">
+            <span>Przykładowy projekt:</span>
+            <a
+              href="/projects/aplikacja-mobilna-monexo.html"
+              data-i18n="offer_interfaces_example"
+              >Aplikacja Mobilna Monexo ➚</a
+            >
+          </div>
         </div>
 
         <div class="serviceCard">
@@ -1575,6 +1640,14 @@
               Identyfikacja wizualna i spójny branding
             </li>
           </ul>
+          <div class="serviceProject">
+            <span>Przykładowy projekt:</span>
+            <a
+              href="/projects/customer-journey-betfan.html"
+              data-i18n="offer_strategy_example"
+              >Customer Journey Betfan ➚</a
+            >
+          </div>
         </div>
 
         <div class="serviceCard">
@@ -1600,6 +1673,14 @@
               Optymalizacja stron pod SEO i wydajność
             </li>
           </ul>
+          <div class="serviceProject">
+            <span>Przykładowy projekt:</span>
+            <a
+              href="/projects/strona-internetowa-PlanetRoad.html"
+              data-i18n="offer_analitycs_example"
+              >Strona Internetowa PlanetRoad ➚</a
+            >
+          </div>
         </div>
       </section>
       <section id="proces-wspolpracy" class="processSection">
@@ -1991,7 +2072,9 @@
     <!-- reveal project hub list items -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        const projectHubLists = document.querySelectorAll(".projectHubList");
+        const projectHubLists = document.querySelectorAll(
+          ".projectHubList, .processGrid"
+        );
 
         const observer = new IntersectionObserver(
           (entries, observerInstance) => {

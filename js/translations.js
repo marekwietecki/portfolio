@@ -30,7 +30,7 @@ const translations = {
     hero_hi2: "Od ponad 3 lat działam jako",
     hero_title: "Projektuję prosto dla ludzi i skutecznie dla biznesu.",
     hero_subtitle:
-      "Tworzę produkty cyfrowe, które łączą intuicyjne doświadczenia użytkowników z realnymi zyskami firm. Wierzę, że w świecie interfejsówto małe detale robią największą różnicę.",
+      "Tworzę produkty cyfrowe, które łączą intuicyjne doświadczenia użytkowników z realnymi zyskami firm. Wierzę, że w świecie interfejsów to małe detale robią największą różnicę.",
     hero_button_primary: "Zobacz projekty",
     hero_button_secondary: "Poznaj moją ofertę",
 
@@ -267,6 +267,127 @@ const translations = {
     projects_betfan_cjm_step11_opportunity:
       "Łatwe generowanie grafik z wygranym kuponem do Social Media oraz nagroda pocieszenia (+5% do paska postępu odznaki).",
 
+    // PROJECT WKDZIK
+    projects_wkdzik_badge: "Case Study / Audyt UX",
+    projects_wkdzik_title: "Audyt WKDZIK.pl",
+    projects_wkdzik_desc:
+      "WKDZIK.pl to rozwijający się sklep e-commerce marki energetyków „Dzik”, z dużą i zaangażowaną społecznością. Przeprowadziłem samodzielny audyt UX i wydajności strony, żeby sprawdzić, ile realnej sprzedaży ucieka przez detale, które łatwo przeoczyć.",
+    projects_wkdzik_role_label: "Rola:",
+    projects_wkdzik_role_val: "UX Designer (audyt własny)",
+    projects_wkdzik_scope_label: "Zakres odpowiedzialności:",
+    projects_wkdzik_scope_val:
+      "Audyt UX/UI, Analiza Wydajności, Rekomendacje Wdrożeniowe",
+    projects_wkdzik_duration_label: "Czas trwania:",
+    projects_wkdzik_duration_val: "3 dni",
+    projects_wkdzik_methodology_label: "Metodyka:",
+    projects_wkdzik_methodology_val:
+      "Audyt heurystyczny ścieżki zakupowej + testy wydajności (Google Lighthouse), oparte na danych porównawczych z branży e-commerce.",
+    projects_wkdzik_cover_title: "🐗 Audyt WKDZIK.pl",
+    projects_wkdzik_cover_subtitle:
+      "od 5–6s ładowania do realnych punktów procentowych konwersji",
+
+    projects_wkdzik_context_title: "Kontekst",
+    projects_wkdzik_context_desc:
+      "Mimo mocnego brandu i lojalnej społeczności, strona traciła sprzedaż przez rzeczy, których na pierwszy rzut oka nikt nie zauważa: ciężkie grafiki, ciasne odstępy i elementy interfejsu, które łatwo pomylić ze sobą w trakcie zakupów.",
+
+    projects_wkdzik_problem_title: "Problem",
+    projects_wkdzik_problem_desc:
+      "Strona ładowała się wolno — nowemu użytkownikowi zajmowało to 5–6 sekund, głównie przez nieoptymalizowane zdjęcia. Do tego kilka miejsc na ścieżce zakupowej wprowadzało w błąd: od zbyt ciasnych odstępów, przez przycisk „Dodaj do koszyka” wyglądający niemal identycznie jak baner z adresem siedziby firmy, po nieczytelny ekran potwierdzenia dodania produktu.",
+
+    projects_wkdzik_goals_title: "Cele",
+    projects_wkdzik_goals_item1:
+      "🎯 <b>Przyspieszyć ładowanie strony</b> — bez utraty jakości wizualnej grafik.",
+    projects_wkdzik_goals_item2:
+      "🎯 <b>Uporządkować hierarchię wizualną</b> — odstępy i kontrast między elementami tak, aby strona „oddychała”.",
+    projects_wkdzik_goals_item3:
+      "🎯 <b>Wyeliminować mylące elementy</b> na ścieżce od produktu do koszyka.",
+
+    projects_wkdzik_owca_title: "Zgadnij: która owca waży mniej?",
+    projects_wkdzik_owca_desc:
+      "Dwie identycznie wyglądające grafiki. Jedna z nich waży 37 razy mniej niż druga — i gołym okiem różnicy po prostu nie widać. Kliknij tę, która Twoim zdaniem mogłaby spokojnie trafić na stronę główną.",
+    projects_wkdzik_owca_hint: "Kliknij jedną z owiec, żeby zobaczyć wynik 👇",
+    projects_wkdzik_owca_label_a: "Wersja A",
+    projects_wkdzik_owca_label_b: "Wersja B",
+    projects_wkdzik_owca_alt_a: "Owca z energetykiem — wersja A",
+    projects_wkdzik_owca_alt_b: "Owca z energetykiem — wersja B",
+    projects_wkdzik_owca_result:
+      "<b>Nie dało się zgadnąć — i o to chodzi. 😄</b> Obie wersje wyglądają identycznie. Wersja B waży 1,5 MB, wersja A po bezstratnej kompresji — tylko 40 KB.",
+    projects_wkdzik_owca_stat1_number: "40 KB",
+    projects_wkdzik_owca_stat1_label: "po optymalizacji",
+    projects_wkdzik_owca_stat2_number: "1,5 MB",
+    projects_wkdzik_owca_stat2_label: "przed optymalizacją",
+    projects_wkdzik_owca_stat3_number: "-97%",
+    projects_wkdzik_owca_stat3_label: "wagi pliku",
+    projects_wkdzik_owca_stat4_number: "37×",
+    projects_wkdzik_owca_stat4_label: "lżej, bez utraty jakości",
+    projects_wkdzik_owca_context:
+      "To jedno zdjęcie widoczne od razu na górze strony głównej. Przy miliardowych obrotach Amazon policzył, że każde dodatkowe 100 ms opóźnienia kosztowało ich 1% sprzedaży. Google z kolei podaje, że 53% użytkowników mobilnych opuszcza stronę, jeśli ładuje się dłużej niż 3 sekundy — a nowy użytkownik czekał na WKDZIK.pl 5–6 sekund.",
+
+    projects_wkdzik_space_title: "Kilka pikseli, inne wrażenie",
+    projects_wkdzik_space_desc:
+      "Za mało światła między elementami sprawia, że nawet dobry design wygląda tanio. Przesuń suwak i zobacz, jak sam odstęp wewnątrz kafelka zmienia jego odbiór — kolor się nie zmienia, zmienia się tylko przestrzeń.",
+    projects_wkdzik_space_hint: "Przesuń suwak, żeby dodać „oddech” kafelkowi",
+    projects_wkdzik_space_tile_title: "DZIK Energy 500ml",
+    projects_wkdzik_space_tile_price: "4,99 zł",
+    projects_wkdzik_space_label_tight: "bardzo ciasno",
+    projects_wkdzik_space_label_better: "lepiej",
+    projects_wkdzik_space_label_premium: "premium ✨",
+    projects_wkdzik_space_unit_label: "odstępu —",
+    projects_wkdzik_label_before: "Przed",
+    projects_wkdzik_label_after: "Po",
+
+    projects_wkdzik_clarity_title: "Który przycisk to „Dodaj do koszyka”?",
+    projects_wkdzik_clarity_desc:
+      "Na karcie produktu przycisk dodania do koszyka wyglądał niemal identycznie jak baner z adresem siedziby firmy — ten sam kolor, ta sama forma. Zobacz stan „Przed” i „Po”, żeby poczuć różnicę.",
+    projects_wkdzik_clarity_address:
+      "WK sp. z o.o. — ul. Mszczonowska 13, 05-090 Janki",
+    projects_wkdzik_clarity_cta: "Dodaj do koszyka",
+    projects_wkdzik_clarity_feedback_default:
+      "Kliknij którykolwiek blok powyżej — spróbuj trafić w przycisk zakupu.",
+    projects_wkdzik_clarity_feedback_after:
+      "Teraz nie ma wątpliwości, który blok to zakup, a który to adres.",
+    projects_wkdzik_clarity_click_before:
+      "Trafiłeś? W realu część użytkowników klikała adres firmy, myśląc, że to koszyk.",
+    projects_wkdzik_clarity_click_after:
+      "Dokładnie tak — teraz trudno się pomylić.",
+
+    projects_wkdzik_impact_title: "Potencjalny efekt wdrożenia",
+    projects_wkdzik_impact_desc:
+      "Żadna z powyższych poprawek nie wymaga przebudowy sklepu od zera — to detale, które da się wdrożyć szybko, a które realnie przekładają się na liczby:",
+    projects_wkdzik_impact_card1_number: "-80%",
+    projects_wkdzik_impact_card1_label:
+      "średnia redukcja wagi grafik po kompresji",
+    projects_wkdzik_impact_card2_number: "<2s",
+    projects_wkdzik_impact_card2_label: "docelowy czas ładowania, zamiast 5–6s",
+    projects_wkdzik_impact_card3_number: "53%",
+    projects_wkdzik_impact_card3_label:
+      "użytkowników mobile opuszcza stronę >3s (Google)",
+    projects_wkdzik_impact_card4_number: "+2%",
+    projects_wkdzik_impact_card4_label:
+      "szacowany wzrost obrotu przy konwersji zaledwie 2 na 100 niezdecydowanych",
+    projects_wkdzik_impact_profit_number: "+200 000 zł",
+    projects_wkdzik_impact_profit_label:
+      "Przy zysku netto na poziomie 10 mln zł rocznie(2025), te 2% wzrostu konwersji to dodatkowe 200 000 zł czystego zysku — bez zwiększania budżetu marketingowego.",
+    projects_wkdzik_impact_quote:
+      "Dokręcanie śruby w UX przekłada się na realne zyski.",
+
+    projects_wkdzik_after_title: "Po audycie",
+    projects_wkdzik_after_p1:
+      "To, co znalazłem, to efekt wstępnego przeglądu — bez dostępu do danych analitycznych, które pozwoliłyby precyzyjnie wskazać, gdzie użytkownicy najczęściej rezygnują z zakupu. Każdy sklep ma takie momenty — pytanie tylko, czy są zmierzone.",
+    projects_wkdzik_after_p2:
+      "Sport i społeczność WK Dzik są mi bliskie, a rzetelny audyt UX to tani sposób na sprawdzenie, ile sprzedaży realnie leży na stole. Mała inwestycja, potencjalnie duży zwrot.",
+
+    projects_wkdzik_floatnav_about: "O Projekcie",
+    projects_wkdzik_floatnav_owca: "Owca Test",
+    projects_wkdzik_floatnav_space: "Przestrzeń",
+    projects_wkdzik_floatnav_clarity: "Klarowność",
+    projects_wkdzik_floatnav_impact: "Efekt",
+    projects_wkdzik_floatnav_after: "Po Audycie",
+    projects_wkdzik_floatnav_toggle: "Spis treści",
+
+    projects_wkdzik_navloop_text: "Zobacz kolejny projekt:",
+    projects_wkdzik_navloop_link: "Aplikacja Mobilna Monexo",
+
     // quick contact
     contact_title: "Porozmawiajmy o współpracy",
     contact_subtitle:
@@ -368,6 +489,9 @@ const translations = {
     offer_interfaces_list_2: "Landing pages zoptymalizowane pod konwersję",
     offer_interfaces_list_3: "Interaktywne, klikalne prototypy high-fidelity",
     offer_interfaces_list_4: "Praca na Design Systemamach",
+    offer_interfaces_example: "Aplikacja Mobilna Monexo ➚",
+    offer_strategy_example: "Customer Journey Betfan ➚",
+    offer_analitycs_example: "Strona Internetowa PlanetRoad ➚",
     offer_strategy_header: "Audyty, Strategia & CJM",
     offer_strategy_description:
       "Twoja strona nie zarabia, a użytkownicy uciekają? Mapuję ich ścieżki i znajduje krytyczne wąskie gardła w procesie.",
@@ -1468,6 +1592,128 @@ const translations = {
     projects_betfan_cjm_step11_opportunity:
       "Easy creation of shareable winning bet graphics for Social Media and a consolation reward (+5% badge progress).",
 
+    // PROJECT WKDZIK
+    projects_wkdzik_badge: "Case Study / UX Audit",
+    projects_wkdzik_title: "WKDZIK.pl Audit",
+    projects_wkdzik_desc:
+      "WKDZIK.pl is a growing e-commerce store for the energy drink brand 'Dzik', with a large and engaged community. I ran a self-initiated UX and performance audit to find out how much real revenue was slipping away through easy-to-miss details.",
+    projects_wkdzik_role_label: "Role:",
+    projects_wkdzik_role_val: "UX Designer (self-initiated audit)",
+    projects_wkdzik_scope_label: "Scope of Responsibility:",
+    projects_wkdzik_scope_val:
+      "UX/UI Audit, Performance Analysis, Implementation Recommendations",
+    projects_wkdzik_duration_label: "Duration:",
+    projects_wkdzik_duration_val: "3 days",
+    projects_wkdzik_methodology_label: "Methodology:",
+    projects_wkdzik_methodology_val:
+      "Heuristic evaluation of the purchase path + performance testing (Google Lighthouse), benchmarked against e-commerce industry data.",
+    projects_wkdzik_cover_title: "🐗 WKDZIK.pl Audit",
+    projects_wkdzik_cover_subtitle:
+      "from a 5–6s load time to real percentage points of conversion",
+
+    projects_wkdzik_context_title: "Context",
+    projects_wkdzik_context_desc:
+      "Despite a strong brand and a loyal community, the store was losing sales to things nobody notices at first glance: heavy images, cramped spacing, and interface elements that were easy to mix up while shopping.",
+
+    projects_wkdzik_problem_title: "Problem",
+    projects_wkdzik_problem_desc:
+      "The site loaded slowly — a new user waited 5–6 seconds, mostly due to unoptimized images. On top of that, several spots along the purchase path were misleading: cramped spacing, an 'Add to cart' button that looked almost identical to the company address banner, and an unclear add-to-cart confirmation screen.",
+
+    projects_wkdzik_goals_title: "Goals",
+    projects_wkdzik_goals_item1:
+      "🎯 <b>Speed up page load</b> — without losing visual image quality.",
+    projects_wkdzik_goals_item2:
+      "🎯 <b>Clean up the visual hierarchy</b> — spacing and contrast between elements so the page can 'breathe'.",
+    projects_wkdzik_goals_item3:
+      "🎯 <b>Remove misleading elements</b> along the path from product to cart.",
+
+    projects_wkdzik_owca_title: "Guess: which sheep weighs less?",
+    projects_wkdzik_owca_desc:
+      "Two identical-looking images. One of them weighs 37 times less than the other — and you simply can't tell the difference by eye. Click the one you think could safely go on the homepage.",
+    projects_wkdzik_owca_hint: "Click one of the sheep to see the result 👇",
+    projects_wkdzik_owca_label_a: "Version A",
+    projects_wkdzik_owca_label_b: "Version B",
+    projects_wkdzik_owca_alt_a: "Sheep with an energy drink — version A",
+    projects_wkdzik_owca_alt_b: "Sheep with an energy drink — version B",
+    projects_wkdzik_owca_result:
+      "<b>There was no way to guess — and that's the point. 😄</b> Both versions look identical. Version B weighs 1.5 MB, while version A, after lossless compression, is just 40 KB.",
+    projects_wkdzik_owca_stat1_number: "40 KB",
+    projects_wkdzik_owca_stat1_label: "after optimization",
+    projects_wkdzik_owca_stat2_number: "1.5 MB",
+    projects_wkdzik_owca_stat2_label: "before optimization",
+    projects_wkdzik_owca_stat3_number: "-97%",
+    projects_wkdzik_owca_stat3_label: "file size",
+    projects_wkdzik_owca_stat4_number: "37×",
+    projects_wkdzik_owca_stat4_label: "lighter, no quality loss",
+    projects_wkdzik_owca_context:
+      "That's a single image visible right at the top of the homepage. At their scale, Amazon calculated that every extra 100ms of delay cost them 1% of sales. Google reports that 53% of mobile users abandon a page that takes longer than 3 seconds to load — and a new user waited 5–6 seconds on WKDZIK.pl.",
+
+    projects_wkdzik_space_title: "A few pixels, a different feeling",
+    projects_wkdzik_space_desc:
+      "Too little breathing room between elements makes even good design look cheap. Drag the slider and watch how the spacing inside a tile alone changes how it reads — the color stays the same, only the space changes.",
+    projects_wkdzik_space_hint:
+      "Drag the slider to give the tile some room to breathe",
+    projects_wkdzik_space_tile_title: "DZIK Energy 500ml",
+    projects_wkdzik_space_tile_price: "4.99 zł",
+    projects_wkdzik_space_label_tight: "very tight",
+    projects_wkdzik_space_label_better: "better",
+    projects_wkdzik_space_label_premium: "premium ✨",
+    projects_wkdzik_space_unit_label: "of spacing —",
+    projects_wkdzik_label_before: "Before",
+    projects_wkdzik_label_after: "After",
+
+    projects_wkdzik_clarity_title: "Which button is 'Add to cart'?",
+    projects_wkdzik_clarity_desc:
+      "On the product card, the add-to-cart button looked almost identical to the banner showing the company's registered address — same color, same shape. Compare the 'Before' and 'After' states to feel the difference.",
+    projects_wkdzik_clarity_address:
+      "WK sp. z o.o. — ul. Mszczonowska 13, 05-090 Janki",
+    projects_wkdzik_clarity_cta: "Add to cart",
+    projects_wkdzik_clarity_feedback_default:
+      "Click either block above — try to land on the purchase button.",
+    projects_wkdzik_clarity_feedback_after:
+      "Now there's no doubt which block is the purchase button and which is the address.",
+    projects_wkdzik_clarity_click_before:
+      "Got it right? In reality, some users clicked the company address thinking it was the cart button.",
+    projects_wkdzik_clarity_click_after:
+      "Exactly — now it's hard to get it wrong.",
+
+    projects_wkdzik_impact_title: "Potential impact of implementation",
+    projects_wkdzik_impact_desc:
+      "None of the fixes above require rebuilding the store from scratch — they're details that can be shipped quickly, and they translate into real numbers:",
+    projects_wkdzik_impact_card1_number: "-80%",
+    projects_wkdzik_impact_card1_label:
+      "average image size reduction after compression",
+    projects_wkdzik_impact_card2_number: "<2s",
+    projects_wkdzik_impact_card2_label: "target load time, down from 5–6s",
+    projects_wkdzik_impact_card3_number: "53%",
+    projects_wkdzik_impact_card3_label:
+      "of mobile users leave a page that loads in >3s (Google)",
+    projects_wkdzik_impact_card4_number: "+2%",
+    projects_wkdzik_impact_card4_label:
+      "estimated revenue increase from converting just 2 in 100 undecided visitors",
+    projects_wkdzik_impact_profit_number: "+200,000 zł",
+    projects_wkdzik_impact_profit_label:
+      "At a net profit of around 10M zł a year (2025), that 2% conversion lift is an extra 200,000 zł in clean profit — without increasing the marketing budget.",
+    projects_wkdzik_impact_quote:
+      "Tightening the UX screws translates into real profit.",
+
+    projects_wkdzik_after_title: "After the Audit",
+    projects_wkdzik_after_p1:
+      "What I found here is the result of an initial review — without access to analytics data that would pinpoint exactly where users most often abandon a purchase. Every store has these moments — the only question is whether they're actually measured.",
+    projects_wkdzik_after_p2:
+      "Sport and the WK Dzik community are close to my heart, and a solid UX audit is a cheap way to find out how much revenue is really on the table. A small investment, potentially a big return.",
+
+    projects_wkdzik_floatnav_about: "About Project",
+    projects_wkdzik_floatnav_owca: "Sheep Test",
+    projects_wkdzik_floatnav_space: "Spacing",
+    projects_wkdzik_floatnav_clarity: "Clarity",
+    projects_wkdzik_floatnav_impact: "Impact",
+    projects_wkdzik_floatnav_after: "After the Audit",
+    projects_wkdzik_floatnav_toggle: "Table of contents",
+
+    projects_wkdzik_navloop_text: "See next project:",
+    projects_wkdzik_navloop_link: "Monexo Mobile App",
+
     // quick contact
     contact_title: "Let's work together",
     contact_subtitle:
@@ -1567,6 +1813,7 @@ const translations = {
     offer_interfaces_list_2: "Conversion-optimized landing pages",
     offer_interfaces_list_3: "Interactive, clickable high-fidelity prototypes",
     offer_interfaces_list_4: "Design Systems development and scaling",
+    offer_interfaces_example: "Monexo Mobile App ➚",
     offer_strategy_header: "Audits, Strategy & CJM",
     offer_strategy_description:
       "Is your website failing to convert, and users are dropping off? I map out their journeys and identify critical bottlenecks in the process.",
@@ -1574,6 +1821,7 @@ const translations = {
     offer_strategy_list_2: "Customer Journey Mapping (CJM)",
     offer_strategy_list_3: "Business process design",
     offer_strategy_list_4: "Visual identity and cohesive branding",
+    offer_strategy_example: "Customer Journey Betfan ➚",
     offer_analitycs_header: "Development & Analytics",
     offer_analitycs_description:
       "I bridge the gap where other designers stop. I deliver a fully functional product integrated with advanced web analytics.",
@@ -1582,6 +1830,7 @@ const translations = {
       "Analytics integration (Google Ads, tracking tags, conversions)",
     offer_analitycs_list_3: "Asset preparation and clean graphic design",
     offer_analitycs_list_4: "SEO optimization and performance tuning",
+    offer_analitycs_example: "PlanetRoad Website➚",
     offer_cta_heading:
       "Have a project in mind? Let's see if we're playing to the same goal.",
     offer_cta_p1:

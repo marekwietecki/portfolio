@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-5WEZ1GN7W6"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("consent", "default", {
+        ad_storage: "denied",
+        analytics_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+      });
+      gtag("js", new Date());
+      gtag("config", "G-5WEZ1GN7W6", { anonymize_ip: true });
+      gtag("config", "AW-17997930573");
+    </script>
+    <script type="text/javascript">
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "xpif7gh2qb");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audyt UX WKDZIK.pl | Marek Wietecki</title>
+    <meta
+      name="description"
+      content="Interaktywne case study audytu UX i wydajności sklepu WKDZIK.pl — od ciężkich grafik po mylące elementy ścieżki zakupowej."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/brand/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/brand/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/brand/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/brand/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="MW Design" />
+    <link rel="manifest" href="/assets/brand/site.webmanifest" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/projects.css" />
+    <style>
+      /* ==========================================================================
+         PAGE SPECIFIC STYLES — AUDYT WKDZIK.PL (INTERACTIVE CASE STUDY)
+         ========================================================================== */
+
+      .gradientBackground {
+        background: linear-gradient(45deg, #070814, #2a0f4d, #1e6ed6);
+        background-size: 400% 400%;
+        animation: gradientMove 6s ease infinite;
+        width: 88%;
+        height: auto;
+        margin-top: 3vh;
+        border-radius: 16px;
+        aspect-ratio: 16/9;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 8px;
+        padding: 24px;
+        box-sizing: border-box;
+        box-shadow: var(--shadow-header);
+      }
+
+      .gradientBackground span {
+        font-family: "Unbounded", sans-serif;
+        color: #fff;
+        font-size: clamp(1.1rem, 3vw, 2rem);
+        font-weight: 600;
+      }
+
+      .gradientBackground small {
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 13px;
+      }
+
+      @keyframes gradientMove {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* ---------- Shared interactive card shell ---------- */
+      .interactiveCard {
+        width: 100%;
+        margin: 32px 0;
+        background: var(--bg-card, #121824);
+        border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.1));
+        border-radius: 24px;
+        padding: 28px;
+        box-sizing: border-box;
+      }
+
+      .interactiveHint {
+        font-size: 13px;
+        color: var(--text-muted, #a0aec0);
+        margin-bottom: 20px;
+      }
+
+      /* ---------- Owca Game ---------- */
+      .sheepGame {
+        display: flex;
+        gap: 24px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      /* Made a bit bigger per feedback — these two are a "spot the difference"
+         pair, so they get room to actually show detail. */
+      .sheepOption {
+        flex: 1 1 220px;
+        max-width: 260px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 2px solid var(--border-subtle, rgba(255, 255, 255, 0.1));
+        border-radius: 16px;
+        padding: 16px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .sheepOption:hover {
+        border-color: var(--accent, #1e6ed6);
+        transform: translateY(-3px);
+      }
+
+      .sheepOption.picked {
+        border-color: #7928ca;
+        background: rgba(121, 40, 202, 0.12);
+      }
+
+      .sheepImgFrame {
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .sheepImgFrame img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .sheepLabel {
+        margin-top: 10px;
+        font-weight: 700;
+        color: var(--text-heading, #fff);
+        font-size: 14px;
+      }
+
+      .sheepGameResult {
+        margin-top: 24px;
+        display: none;
+      }
+
+      .sheepGameResult.show {
+        display: block;
+        animation: fadeSlideIn 0.4s ease;
+      }
+
+      @keyframes fadeSlideIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .statGrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 12px;
+        margin-top: 16px;
+      }
+
+      .statCard {
+        background: rgba(255, 255, 255, 0.04);
+        border-radius: 12px;
+        padding: 16px 12px;
+        text-align: center;
+        border-left: 4px solid var(--accent, #1e6ed6);
+      }
+
+      .statCard.big {
+        border-left-color: #7928ca;
+      }
+
+      .statNumber {
+        font-family: "Unbounded", sans-serif;
+        font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+        font-weight: 700;
+        color: var(--text-heading, #fff);
+        display: block;
+      }
+
+      .statLabel {
+        font-size: 12px;
+        color: var(--text-muted, #a0aec0);
+        margin-top: 4px;
+        display: block;
+      }
+
+      /* ---------- Generic before/after image placeholder ---------- */
+      .beforeAfterGrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+        margin-top: 24px;
+      }
+
+      .beforeAfterItem {
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+      }
+
+      .beforeAfterItem .baLabel {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--text-muted, #a0aec0);
+        margin-bottom: 8px;
+        display: block;
+      }
+
+      .imgPlaceholder {
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        border: 1px dashed var(--border-subtle, rgba(255, 255, 255, 0.2));
+        border-radius: 14px;
+        position: relative;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.03);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .imgPlaceholder img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .imgPlaceholder .placeholderLabel {
+        position: relative;
+        z-index: 1;
+        font-size: 12px;
+        color: var(--text-muted, #a0aec0);
+        text-align: center;
+        padding: 12px;
+        line-height: 1.5;
+      }
+
+      /* Wide variant = real screenshots (przestrzeń / klarowność).
+         These should NOT be cropped: the image's own dimensions set
+         the size of the box, since spacing/proportion is the point. */
+      .imgPlaceholder.wide {
+        aspect-ratio: auto;
+        min-height: 160px;
+        border-radius: 14px;
+      }
+
+      .imgPlaceholder.wide img {
+        position: static;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+      }
+
+      /* ---------- Space / breathing room demo ---------- */
+      .spaceDemoWrapper {
+        display: flex;
+        gap: 32px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .spaceDemoTile {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.1));
+        border-radius: 14px;
+        width: 220px;
+        text-align: center;
+        transition: padding 0.15s ease;
+      }
+
+      .spaceDemoTile .tileTitle {
+        font-weight: 700;
+        color: var(--text-heading, #fff);
+        font-size: 14px;
+      }
+
+      .spaceDemoTile .tilePrice {
+        color: #60a5fa;
+        font-size: 13px;
+        margin-top: 4px;
+      }
+
+      .spaceControls {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        min-width: 200px;
+      }
+
+      .spaceControls input[type="range"] {
+        width: 100%;
+        accent-color: var(--accent, #1e6ed6);
+      }
+
+      .spacePxLabel {
+        font-family: "Unbounded", sans-serif;
+        font-size: 13px;
+        color: var(--text-muted, #a0aec0);
+      }
+
+      /* ---------- Clarity (CTA vs banner) demo ---------- */
+      .clarityDemo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .clarityScreen {
+        width: 100%;
+        max-width: 320px;
+        border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.1));
+        border-radius: 16px;
+        padding: 18px;
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .clarityBlock {
+        border-radius: 10px;
+        padding: 12px 14px;
+        margin-bottom: 10px;
+        font-size: 13px;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.15s ease;
+      }
+
+      .clarityBlock:hover {
+        transform: scale(1.02);
+      }
+
+      /* Before: both blocks look almost identical on purpose */
+      .clarityDemo[data-state="before"] .clarityCta,
+      .clarityDemo[data-state="before"] .clarityAddress {
+        background: #e7e2f5;
+        color: #2b2b2b;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        font-weight: 500;
+      }
+
+      /* After: CTA is unmistakable, address is quiet */
+      .clarityDemo[data-state="after"] .clarityCta {
+        background: var(--accent, #1e6ed6);
+        color: #fff;
+        font-weight: 700;
+        padding: 14px;
+      }
+
+      .clarityDemo[data-state="after"] .clarityAddress {
+        background: transparent;
+        color: var(--text-muted, #a0aec0);
+        border: none;
+        font-size: 11px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+      }
+
+      .clarityToggle {
+        display: flex;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 4px;
+      }
+
+      .clarityToggleBtn {
+        border: none;
+        background: transparent;
+        color: var(--text-muted, #a0aec0);
+        padding: 8px 18px;
+        border-radius: 16px;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .clarityToggleBtn.active {
+        background: var(--accent, #1e6ed6);
+        color: #fff;
+      }
+
+      .clarityFeedback {
+        font-size: 13px;
+        color: var(--text-muted, #a0aec0);
+        text-align: center;
+        min-height: 18px;
+      }
+
+      /* ---------- Final impact numbers ---------- */
+      .impactGrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 16px;
+        margin: 24px 0;
+      }
+
+      .impactCard {
+        background: var(--bg-card, #121824);
+        border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.1));
+        border-radius: 20px;
+        padding: 22px;
+      }
+
+      .impactNumber {
+        font-family: "Unbounded", sans-serif;
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        font-weight: 700;
+        background: linear-gradient(90deg, #1e6ed6, #7928ca);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .impactLabel {
+        margin-top: 6px;
+        font-size: 13px;
+        color: var(--text-muted, #a0aec0);
+      }
+
+      .caveatQuote {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        margin: 32px 0;
+      }
+
+      .caveatIcons {
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
+      }
+
+      .caveatText {
+        font-family: "Caveat", cursive;
+        font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+        color: var(--accent, #1e6ed6);
+        text-align: center;
+      }
+
+      .profitHighlight {
+        background: var(--bg-card, #121824);
+        border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.1));
+        border-radius: 20px;
+        padding: 28px 22px;
+        text-align: center;
+        margin: 24px 0;
+      }
+
+      .profitNumber {
+        font-family: "Unbounded", sans-serif;
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 700;
+        background: linear-gradient(90deg, #1e6ed6, #7928ca);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        display: block;
+      }
+
+      .profitLabel {
+        margin-top: 8px;
+        font-size: 14px;
+        color: var(--text-muted, #a0aec0);
+        max-width: 460px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+    </style>
+    <script src="../js/translations.js"></script>
+    <script src="../js/theme.js"></script>
+  </head>
+
+  <body data-project-title="Audyt WKDZIK.pl">
+    <!-- HEADER (NAV) -->
+    <header>
+      <div class="headerNav">
+        <a class="headerLink" href="../index.html">
+          <img
+            src="/assets/brand/mw_logo_2.0.png"
+            alt="Logo MW Desgin - Marek Wietecki"
+            class="logo"
+          />
+        </a>
+        <button class="menuToggle" id="menuToggle" onclick="toggleMenu()">
+          ☰
+        </button>
+      </div>
+      <div class="headerLinks">
+        <a class="headerLink" href="oferta.html" data-i18n="nav_offer"
+          >Oferta</a
+        >
+        <a class="headerLink" href="o-mnie.html" data-i18n="nav_about"
+          >O Mnie</a
+        >
+        <div class="settings-dropdown-wrapper">
+          <button
+            class="settings-toggle-btn"
+            id="settingsToggle"
+            aria-label="Ustawienia"
+            aria-expanded="false"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-settings2-icon lucide-settings-2"
+            >
+              <path d="M14 17H5" />
+              <path d="M19 7h-9" />
+              <circle cx="17" cy="17" r="3" />
+              <circle cx="7" cy="7" r="3" />
+            </svg>
+          </button>
+
+          <div class="settings-dropdown" id="settingsDropdown">
+            <div class="lang-switcher">
+              <button
+                class="lang-btn"
+                data-lang="pl"
+                onclick="switchLanguage('pl')"
+              >
+                🇵🇱
+              </button>
+              <button
+                class="lang-btn"
+                data-lang="en"
+                onclick="switchLanguage('en')"
+              >
+                🇬🇧
+              </button>
+            </div>
+
+            <div class="settings-divider"></div>
+
+            <label class="theme-switch" aria-label="Przełącz motyw">
+              <input type="checkbox" id="themeToggle" />
+              <span class="theme-switch-track">
+                <span class="theme-switch-thumb">
+                  <svg class="icon-sun" viewBox="0 0 24 24">
+                    <path
+                      d="M12 4V2M12 22v-2M4 12H2m20 0h-2M6.34 6.34 4.93 4.93m14.14 14.14-1.41-1.41M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      fill="none"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                  <svg class="icon-moon" viewBox="0 0 24 24">
+                    <path
+                      d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div id="scrollProgress" class="scroll-progress-bar"></div>
+
+    <div class="spaceX"></div>
+
+    <main class="projectLayout">
+      <article class="projectContent">
+        <section style="padding-top: 20vh" id="o-projekcie">
+          <span style="font-size: 18px" data-i18n="projects_wkdzik_badge"
+            >Case Study / Audyt UX</span
+          >
+          <h1 style="margin-top: 8px" data-i18n="projects_wkdzik_title">
+            Audyt WKDZIK.pl
+          </h1>
+          <p style="padding-top: 2vh" data-i18n="projects_wkdzik_desc">
+            WKDZIK.pl to rozwijający się sklep e-commerce marki energetyków
+            „Dzik", z dużą i zaangażowaną społecznością. Przeprowadziłem
+            samodzielny audyt UX i wydajności strony, żeby sprawdzić, ile
+            realnej sprzedaży ucieka przez detale, które łatwo przeoczyć.
+          </p>
+
+          <p style="padding-top: 3vh">
+            <b data-i18n="projects_wkdzik_role_label">Rola:</b>
+            <span data-i18n="projects_wkdzik_role_val"
+              >UX Designer (audyt własny)</span
+            >
+          </p>
+          <p style="padding-top: 1vh">
+            <b data-i18n="projects_wkdzik_scope_label"
+              >Zakres odpowiedzialności:</b
+            >
+            <span data-i18n="projects_wkdzik_scope_val"
+              >Audyt UX/UI, Analiza Wydajności, Rekomendacje Wdrożeniowe</span
+            >
+          </p>
+          <p style="padding-top: 1vh">
+            <b data-i18n="projects_wkdzik_duration_label">Czas trwania:</b>
+            <span data-i18n="projects_wkdzik_duration_val">3 dni</span>
+          </p>
+          <p style="padding-top: 1vh">
+            <b data-i18n="projects_wkdzik_methodology_label">Metodyka:</b>
+            <span data-i18n="projects_wkdzik_methodology_val">
+              Audyt heurystyczny ścieżki zakupowej + testy wydajności (Google
+              Lighthouse), oparte na danych porównawczych z branży e-commerce.
+            </span>
+          </p>
+
+          <div class="gradientBackground">
+            <span data-i18n="projects_wkdzik_cover_title"
+              >🐗 Audyt WKDZIK.pl</span
+            >
+            <small data-i18n="projects_wkdzik_cover_subtitle"
+              >od 5–6s ładowania do realnych punktów procentowych
+              konwersji</small
+            >
+          </div>
+
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="projects_wkdzik_context_title"
+          >
+            Kontekst
+          </h3>
+          <p data-i18n="projects_wkdzik_context_desc">
+            Mimo mocnego brandu i lojalnej społeczności, strona traciła sprzedaż
+            przez rzeczy, których na pierwszy rzut oka nikt nie zauważa: ciężkie
+            grafiki, ciasne odstępy i elementy interfejsu, które łatwo pomylić
+            ze sobą w trakcie zakupów.
+          </p>
+
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="projects_wkdzik_problem_title"
+          >
+            Problem
+          </h3>
+          <p data-i18n="projects_wkdzik_problem_desc">
+            Strona ładowała się wolno — nowemu użytkownikowi zajmowało to 5–6
+            sekund, głównie przez nieoptymalizowane zdjęcia. Do tego kilka
+            miejsc na ścieżce zakupowej wprowadzało w błąd: od zbyt ciasnych
+            odstępów, przez przycisk „Dodaj do koszyka" wyglądający niemal
+            identycznie jak baner z adresem siedziby firmy, po nieczytelny ekran
+            potwierdzenia dodania produktu.
+          </p>
+
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="projects_wkdzik_goals_title"
+          >
+            Cele
+          </h3>
+          <p data-i18n="projects_wkdzik_goals_item1">
+            🎯 <b>Przyspieszyć ładowanie strony</b> — bez utraty jakości
+            wizualnej grafik.
+          </p>
+          <p data-i18n="projects_wkdzik_goals_item2">
+            🎯 <b>Uporządkować hierarchię wizualną</b> — odstępy i kontrast
+            między elementami tak, aby strona „oddychała".
+          </p>
+          <p data-i18n="projects_wkdzik_goals_item3">
+            🎯 <b>Wyeliminować mylące elementy</b> na ścieżce od produktu do
+            koszyka.
+          </p>
+        </section>
+
+        <section id="owca" style="margin-top: 60px">
+          <h2
+            style="padding-top: 8vh; margin-bottom: 2vh"
+            data-i18n="projects_wkdzik_owca_title"
+          >
+            Zgadnij: która owca waży mniej?
+          </h2>
+          <p data-i18n="projects_wkdzik_owca_desc">
+            Dwie identycznie wyglądające grafiki. Jedna z nich waży 37 razy
+            mniej niż druga — i gołym okiem różnicy po prostu nie widać. Kliknij
+            tę, która Twoim zdaniem mogłaby spokojnie trafić na stronę główną.
+          </p>
+
+          <div class="interactiveCard">
+            <div class="interactiveHint" data-i18n="projects_wkdzik_owca_hint">
+              Kliknij jedną z owiec, żeby zobaczyć wynik 👇
+            </div>
+            <div class="sheepGame" id="sheepGame">
+              <div class="sheepOption" data-sheep="A" onclick="pickSheep('A')">
+                <div class="sheepImgFrame">
+                  <img
+                    src="/assets/projects/audyt-wkdzik/owca-reduced.png"
+                    alt="Owca z energetykiem — wersja A"
+                    data-i18n="[alt]projects_wkdzik_owca_alt_a"
+                    onload="this.nextElementSibling.style.display='none'"
+                    onerror="this.style.display='none'"
+                  />
+                  <span class="placeholderLabel"
+                    >🖼️ Wstaw zdjęcie:<br />Owca A</span
+                  >
+                </div>
+                <div
+                  class="sheepLabel"
+                  data-i18n="projects_wkdzik_owca_label_a"
+                >
+                  Wersja A
+                </div>
+              </div>
+              <div class="sheepOption" data-sheep="B" onclick="pickSheep('B')">
+                <div class="sheepImgFrame">
+                  <img
+                    src="/assets/projects/audyt-wkdzik/owca.png"
+                    alt="Owca z energetykiem — wersja B"
+                    data-i18n="[alt]projects_wkdzik_owca_alt_b"
+                    onload="this.nextElementSibling.style.display='none'"
+                    onerror="this.style.display='none'"
+                  />
+                  <span class="placeholderLabel"
+                    >🖼️ Wstaw zdjęcie:<br />Owca B</span
+                  >
+                </div>
+                <div
+                  class="sheepLabel"
+                  data-i18n="projects_wkdzik_owca_label_b"
+                >
+                  Wersja B
+                </div>
+              </div>
+            </div>
+
+            <div class="sheepGameResult" id="sheepGameResult">
+              <p
+                style="margin-top: 20px; margin-bottom: 0"
+                data-i18n="projects_wkdzik_owca_result"
+              >
+                <b>Nie dało się zgadnąć — i o to chodzi. 😄</b> Obie wersje
+                wyglądają identycznie. Wersja B waży 1,5 MB, wersja A po
+                bezstratnej kompresji — tylko 40 KB.
+              </p>
+              <div class="statGrid">
+                <div class="statCard">
+                  <span
+                    class="statNumber"
+                    data-i18n="projects_wkdzik_owca_stat1_number"
+                    >40 KB</span
+                  >
+                  <span
+                    class="statLabel"
+                    data-i18n="projects_wkdzik_owca_stat1_label"
+                    >po optymalizacji</span
+                  >
+                </div>
+                <div class="statCard">
+                  <span
+                    class="statNumber"
+                    data-i18n="projects_wkdzik_owca_stat2_number"
+                    >1,5 MB</span
+                  >
+                  <span
+                    class="statLabel"
+                    data-i18n="projects_wkdzik_owca_stat2_label"
+                    >przed optymalizacją</span
+                  >
+                </div>
+                <div class="statCard big">
+                  <span
+                    class="statNumber"
+                    data-i18n="projects_wkdzik_owca_stat3_number"
+                    >-97%</span
+                  >
+                  <span
+                    class="statLabel"
+                    data-i18n="projects_wkdzik_owca_stat3_label"
+                    >wagi pliku</span
+                  >
+                </div>
+                <div class="statCard big">
+                  <span
+                    class="statNumber"
+                    data-i18n="projects_wkdzik_owca_stat4_number"
+                    >37×</span
+                  >
+                  <span
+                    class="statLabel"
+                    data-i18n="projects_wkdzik_owca_stat4_label"
+                    >lżej, bez utraty jakości</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p data-i18n="projects_wkdzik_owca_context">
+            To jedno zdjęcie widoczne od razu na górze strony głównej. Przy
+            miliardowych obrotach Amazon policzył, że każde dodatkowe 100 ms
+            opóźnienia kosztowało ich 1% sprzedaży. Google z kolei podaje, że
+            53% użytkowników mobilnych opuszcza stronę, jeśli ładuje się dłużej
+            niż 3 sekundy — a nowy użytkownik czekał na WKDZIK.pl 5–6 sekund.
+          </p>
+        </section>
+
+        <section id="przestrzen" style="margin-top: 60px">
+          <h2
+            style="padding-top: 8vh; margin-bottom: 2vh"
+            data-i18n="projects_wkdzik_space_title"
+          >
+            Kilka pikseli, inne wrażenie
+          </h2>
+          <p data-i18n="projects_wkdzik_space_desc">
+            Za mało światła między elementami sprawia, że nawet dobry design
+            wygląda tanio. Przesuń suwak i zobacz, jak sam odstęp wewnątrz
+            kafelka zmienia jego odbiór — kolor się nie zmienia, zmienia się
+            tylko przestrzeń.
+          </p>
+
+          <div class="interactiveCard">
+            <div class="interactiveHint" data-i18n="projects_wkdzik_space_hint">
+              Przesuń suwak, żeby dodać „oddech" kafelkowi
+            </div>
+            <div class="spaceDemoWrapper">
+              <div
+                class="spaceDemoTile"
+                id="spaceDemoTile"
+                style="padding: 0px"
+              >
+                <div
+                  class="tileTitle"
+                  data-i18n="projects_wkdzik_space_tile_title"
+                >
+                  DZIK Energy 500ml
+                </div>
+                <div
+                  class="tilePrice"
+                  data-i18n="projects_wkdzik_space_tile_price"
+                >
+                  4,99 zł
+                </div>
+              </div>
+              <div class="spaceControls">
+                <input
+                  type="range"
+                  id="spaceSlider"
+                  min="0"
+                  max="24"
+                  value="0"
+                  oninput="updateSpaceDemo(this.value)"
+                />
+                <span class="spacePxLabel" id="spacePxLabel"
+                  >0px odstępu — bardzo ciasno</span
+                >
+              </div>
+            </div>
+
+            <div class="beforeAfterGrid">
+              <div class="beforeAfterItem">
+                <span class="baLabel" data-i18n="projects_wkdzik_label_before"
+                  >Przed</span
+                >
+                <div class="imgPlaceholder wide">
+                  <img
+                    src="/assets/projects/audyt-wkdzik/przestrzen_przed.png"
+                    alt="Kafelek produktu przed poprawą odstępów"
+                    onload="this.nextElementSibling.style.display='none'"
+                    onerror="this.style.display='none'"
+                  />
+                  <span class="placeholderLabel"
+                    >🖼️ Wstaw zrzut ekranu:<br />Przed</span
+                  >
+                </div>
+              </div>
+              <div class="beforeAfterItem">
+                <span class="baLabel" data-i18n="projects_wkdzik_label_after"
+                  >Po</span
+                >
+                <div class="imgPlaceholder wide">
+                  <img
+                    src="/assets/projects/audyt-wkdzik/przestrzen_po.png"
+                    alt="Kafelek produktu po poprawie odstępów"
+                    onload="this.nextElementSibling.style.display='none'"
+                    onerror="this.style.display='none'"
+                  />
+                  <span class="placeholderLabel"
+                    >🖼️ Wstaw zrzut ekranu:<br />Po</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="klarownosc" style="margin-top: 60px">
+          <h2
+            style="padding-top: 8vh; margin-bottom: 2vh"
+            data-i18n="projects_wkdzik_clarity_title"
+          >
+            Który przycisk to „Dodaj do koszyka"?
+          </h2>
+          <p data-i18n="projects_wkdzik_clarity_desc">
+            Na karcie produktu przycisk dodania do koszyka wyglądał niemal
+            identycznie jak baner z adresem siedziby firmy — ten sam kolor, ta
+            sama forma. Zobacz stan „Przed" i „Po", żeby poczuć różnicę.
+          </p>
+
+          <div class="interactiveCard">
+            <div class="clarityDemo" id="clarityDemo" data-state="before">
+              <div class="clarityToggle">
+                <button
+                  class="clarityToggleBtn active"
+                  id="btnBefore"
+                  onclick="setClarityState('before')"
+                  data-i18n="projects_wkdzik_label_before"
+                >
+                  Przed
+                </button>
+                <button
+                  class="clarityToggleBtn"
+                  id="btnAfter"
+                  onclick="setClarityState('after')"
+                  data-i18n="projects_wkdzik_label_after"
+                >
+                  Po
+                </button>
+              </div>
+
+              <div class="clarityScreen">
+                <div
+                  class="clarityBlock clarityAddress"
+                  data-i18n="projects_wkdzik_clarity_address"
+                >
+                  WK sp. z o.o. — ul. Mszczonowska 13, 05-090 Janki
+                </div>
+                <div
+                  class="clarityBlock clarityCta"
+                  onclick="tryClickCta()"
+                  data-i18n="projects_wkdzik_clarity_cta"
+                >
+                  Dodaj do koszyka
+                </div>
+              </div>
+
+              <div
+                class="clarityFeedback"
+                id="clarityFeedback"
+                data-i18n="projects_wkdzik_clarity_feedback_default"
+              >
+                Kliknij którykolwiek blok powyżej — spróbuj trafić w przycisk
+                zakupu.
+              </div>
+
+              <div class="beforeAfterGrid">
+                <div class="beforeAfterItem">
+                  <span class="baLabel" data-i18n="projects_wkdzik_label_before"
+                    >Przed</span
+                  >
+                  <div class="imgPlaceholder wide">
+                    <img
+                      src="/assets/projects/audyt-wkdzik/transparentnosc_przed.png"
+                      alt="Karta produktu przed poprawą klarowności CTA"
+                      onload="this.nextElementSibling.style.display='none'"
+                      onerror="this.style.display='none'"
+                    />
+                    <span class="placeholderLabel"
+                      >🖼️ Wstaw zrzut ekranu:<br />Przed</span
+                    >
+                  </div>
+                </div>
+                <div class="beforeAfterItem">
+                  <span class="baLabel" data-i18n="projects_wkdzik_label_after"
+                    >Po</span
+                  >
+                  <div class="imgPlaceholder wide">
+                    <img
+                      src="/assets/projects/audyt-wkdzik/transparentnosc_po.png"
+                      alt="Karta produktu po poprawie klarowności CTA"
+                      onload="this.nextElementSibling.style.display='none'"
+                      onerror="this.style.display='none'"
+                    />
+                    <span class="placeholderLabel"
+                      >🖼️ Wstaw zrzut ekranu:<br />Po</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="efekt" style="margin-top: 60px">
+          <h2
+            style="padding-top: 8vh; margin-bottom: 2vh"
+            data-i18n="projects_wkdzik_impact_title"
+          >
+            Potencjalny efekt wdrożenia
+          </h2>
+          <p data-i18n="projects_wkdzik_impact_desc">
+            Żadna z powyższych poprawek nie wymaga przebudowy sklepu od zera —
+            to detale, które da się wdrożyć szybko, a które realnie przekładają
+            się na liczby:
+          </p>
+
+          <div class="impactGrid">
+            <div class="impactCard">
+              <div
+                class="impactNumber"
+                data-i18n="projects_wkdzik_impact_card1_number"
+              >
+                -80%
+              </div>
+              <div
+                class="impactLabel"
+                data-i18n="projects_wkdzik_impact_card1_label"
+              >
+                średnia redukcja wagi grafik po kompresji
+              </div>
+            </div>
+            <div class="impactCard">
+              <div
+                class="impactNumber"
+                data-i18n="projects_wkdzik_impact_card2_number"
+              >
+                &lt;2s
+              </div>
+              <div
+                class="impactLabel"
+                data-i18n="projects_wkdzik_impact_card2_label"
+              >
+                docelowy czas ładowania, zamiast 5–6s
+              </div>
+            </div>
+            <div class="impactCard">
+              <div
+                class="impactNumber"
+                data-i18n="projects_wkdzik_impact_card3_number"
+              >
+                53%
+              </div>
+              <div
+                class="impactLabel"
+                data-i18n="projects_wkdzik_impact_card3_label"
+              >
+                użytkowników mobile opuszcza stronę &gt;3s (Google)
+              </div>
+            </div>
+            <div class="impactCard">
+              <div
+                class="impactNumber"
+                data-i18n="projects_wkdzik_impact_card4_number"
+              >
+                +2%
+              </div>
+              <div
+                class="impactLabel"
+                data-i18n="projects_wkdzik_impact_card4_label"
+              >
+                szacowany wzrost obrotu przy konwersji zaledwie 2 na 100
+                niezdecydowanych
+              </div>
+            </div>
+          </div>
+
+          <div class="profitHighlight">
+            <span
+              class="profitNumber"
+              data-i18n="projects_wkdzik_impact_profit_number"
+              >+200 000 zł</span
+            >
+            <span
+              class="profitLabel"
+              data-i18n="projects_wkdzik_impact_profit_label"
+              >Przy zysku netto na poziomie 10 mln zł rocznie (2025), te 2% wzrostu
+              konwersji to dodatkowe 200 000 zł czystego zysku — bez zwiększania
+              budżetu marketingowego.</span
+            >
+          </div>
+
+          <div class="caveatQuote">
+            <span class="caveatIcons">🔩 → 💸</span>
+            <span class="caveatText" data-i18n="projects_wkdzik_impact_quote"
+              >Dokręcanie śruby w UX przekłada się na realne zyski.</span
+            >
+          </div>
+        </section>
+
+        <section id="po-audycie" style="margin-top: 60px">
+          <h2
+            style="padding-top: 8vh; margin-bottom: 2vh"
+            data-i18n="projects_wkdzik_after_title"
+          >
+            Po audycie
+          </h2>
+          <p data-i18n="projects_wkdzik_after_p1">
+            To, co znalazłem, to efekt wstępnego przeglądu — bez dostępu do
+            danych analitycznych, które pozwoliłyby precyzyjnie wskazać, gdzie
+            użytkownicy najczęściej rezygnują z zakupu. Każdy sklep ma takie
+            momenty — pytanie tylko, czy są zmierzone.
+          </p>
+          <p data-i18n="projects_wkdzik_after_p2">
+            Sport i społeczność WK Dzik są mi bliskie, a rzetelny audyt UX to
+            tani sposób na sprawdzenie, ile sprzedaży realnie leży na stole.
+            Mała inwestycja, potencjalnie duży zwrot.
+          </p>
+        </section>
+      </article>
+    </main>
+
+    <nav class="floatingNav" id="floatingNav">
+      <div class="floatingNavWrapper" id="floatingNavWrapper">
+        <a
+          href="#o-projekcie"
+          class="active"
+          data-i18n="projects_wkdzik_floatnav_about"
+          >O Projekcie</a
+        >
+        <a href="#owca" data-i18n="projects_wkdzik_floatnav_owca">Owca Test</a>
+        <a href="#przestrzen" data-i18n="projects_wkdzik_floatnav_space"
+          >Przestrzeń</a
+        >
+        <a href="#klarownosc" data-i18n="projects_wkdzik_floatnav_clarity"
+          >Klarowność</a
+        >
+        <a href="#efekt" data-i18n="projects_wkdzik_floatnav_impact">Efekt</a>
+        <a href="#po-audycie" data-i18n="projects_wkdzik_floatnav_after"
+          >Po Audycie</a
+        >
+      </div>
+      <button class="floatingNavToggle" id="floatingNavToggle">
+        <span data-i18n="projects_wkdzik_floatnav_toggle">Spis treści</span>
+        <i class="fa-solid fa-chevron-up floatingNavArrow"></i>
+      </button>
+    </nav>
+
+    <section class="navLoopWrapper">
+      <span class="navLoop">
+        <span data-i18n="projects_wkdzik_navloop_text"
+          >Zobacz kolejny projekt:</span
+        ><br />
+        <a
+          href="aplikacja-mobilna-monexo.html"
+          class="loopLink"
+          data-i18n="projects_wkdzik_navloop_link"
+        >
+          Aplikacja Mobilna Monexo
+        </a>
+      </span>
+    </section>
+
+    <!-- COOKIES -->
+    <div id="cookie-banner" class="cookie-banner">
+      <div class="cookie-text" data-i18n="cookies_text">
+        🍪 Używam cookies do analizy ruchu i ciągłego ulepszania działania
+        strony.
+      </div>
+      <div class="cookie-buttons">
+        <button
+          id="accept-cookies"
+          class="cookie-btn primary"
+          data-i18n="cookies_primary_button"
+        >
+          Akceptuję
+        </button>
+        <button
+          id="decline-cookies"
+          class="cookie-btn secondary"
+          data-i18n="cookies_secondary_button"
+        >
+          Odrzucam
+        </button>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="logoWithLinks">
+        <a href="../index.html" class="logo-link">
+          <img
+            src="/assets/brand/mw_logo_white_2.0.png"
+            class="logo-monogram"
+            alt="Marek Wietecki Design Logo"
+          />
+        </a>
+        <div class="social-links">
+          <a
+            href="https://www.linkedin.com/in/marekwietecki/"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a
+            href="https://www.behance.net/marekwietecki"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="fab fa-behance"></i>
+          </a>
+          <a
+            href="https://www.youtube.com/@marekwietecki"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footerLinks">
+        <a class="navLinks" href="../index.html#top"
+          ><span data-i18n="footer_link_main">&nbsp;Strona Główna</span></a
+        >
+        <a class="navLinks" href="../index.html#projects"
+          ><span data-i18n="footer_link_projects">&nbsp;Projekty</span></a
+        >
+        <a class="navLinks" href="../index.html#contact"
+          ><span data-i18n="footer_link_contact">&nbsp;Kontakt</span></a
+        >
+        <a
+          href="../assets/index/Marek_Wietecki_CV_3.1.pdf"
+          target="_blank"
+          class="navLinks"
+        >
+          <span data-i18n="footer_link_cv">CV</span>
+        </a>
+        <a class="navLinks" href="../polityka-prywatnosci.html">
+          <span data-i18n="footer_link_privacy">Polityka Prywatności</span>
+        </a>
+      </div>
+      <div class="footerTexts">
+        <p class="footerText" data-i18n="footer_copyright">
+          © Marek Wietecki 2026. Treści chronione prawem autorskim.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // ---------- i18n helper (reads the same dictionary/lang as translations.js,
+      // used only for the bits of copy this page builds dynamically in JS) ----------
+      function wkT(key, fallback) {
+        const lang = localStorage.getItem("selectedLanguage") || "pl";
+        return (
+          (window.translations &&
+            translations[lang] &&
+            translations[lang][key]) ||
+          fallback
+        );
+      }
+
+      // ---------- Owca game ----------
+      function pickSheep(letter) {
+        document.querySelectorAll(".sheepOption").forEach((el) => {
+          el.classList.toggle("picked", el.dataset.sheep === letter);
+          el.style.pointerEvents = "none";
+        });
+        document.getElementById("sheepGameResult").classList.add("show");
+      }
+
+      // ---------- Space / breathing room demo ----------
+      function updateSpaceDemo(value) {
+        const tile = document.getElementById("spaceDemoTile");
+        const label = document.getElementById("spacePxLabel");
+        tile.style.padding = value + "px";
+        const feelKey =
+          value < 14
+            ? "projects_wkdzik_space_label_tight"
+            : value < 22
+            ? "projects_wkdzik_space_label_better"
+            : "projects_wkdzik_space_label_premium";
+        const feelFallback =
+          value < 14 ? "bardzo ciasno" : value < 22 ? "lepiej" : "premium ✨";
+        const feel = wkT(feelKey, feelFallback);
+        const unit = wkT("projects_wkdzik_space_unit_label", "odstępu —");
+        label.textContent = value + "px " + unit + " " + feel;
+      }
+
+      // ---------- Clarity (CTA vs address) demo ----------
+      function setClarityState(state) {
+        document.getElementById("clarityDemo").dataset.state = state;
+        document
+          .getElementById("btnBefore")
+          .classList.toggle("active", state === "before");
+        document
+          .getElementById("btnAfter")
+          .classList.toggle("active", state === "after");
+        document.getElementById("clarityFeedback").textContent =
+          state === "before"
+            ? wkT(
+                "projects_wkdzik_clarity_feedback_default",
+                "Kliknij którykolwiek blok powyżej — spróbuj trafić w przycisk zakupu."
+              )
+            : wkT(
+                "projects_wkdzik_clarity_feedback_after",
+                "Teraz nie ma wątpliwości, który blok to zakup, a który to adres."
+              );
+      }
+
+      function tryClickCta() {
+        const state = document.getElementById("clarityDemo").dataset.state;
+        const feedback = document.getElementById("clarityFeedback");
+        feedback.textContent =
+          state === "before"
+            ? wkT(
+                "projects_wkdzik_clarity_click_before",
+                "Trafiłeś? W realu część użytkowników klikała adres firmy, myśląc, że to koszyk."
+              )
+            : wkT(
+                "projects_wkdzik_clarity_click_after",
+                "Dokładnie tak — teraz trudno się pomylić."
+              );
+      }
+
+    //   // Keep the JS-built copy above in sync whenever the language switches.
+    //   // We wrap (not replace) the global switchLanguage from translations.js,
+    //   // so its own logic is untouched — this just refreshes the dynamic bits
+    //   // this page renders itself (slider label, clarity feedback) afterwards.
+    //   if (typeof switchLanguage === "function") {
+    //     const _wkOriginalSwitchLanguage = switchLanguage;
+    //     window.switchLanguage = function (lang) {
+    //       _wkOriginalSwitchLanguage(lang);
+    //       const slider = document.getElementById("spaceSlider");
+    //       const clarityDemo = document.getElementById("clarityDemo");
+    //       if (slider) updateSpaceDemo(slider.value);
+    //       if (clarityDemo) setClarityState(clarityDemo.dataset.state);
+    //     };
+    //   }
+    </script>
+    <script src="../js/header.js"></script>
+    <script src="../js/title-typewriter.js"></script>
+    <script src="../js/project-progress.js"></script>
+    <script src="../js/project-nav.js"></script>
+    <script src="../js/settings.js"></script>
+    <script src="../js/cursor.js"></script>
+  </body>
+  <script src="../js/cookie.js"></script>
+</html>
