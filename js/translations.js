@@ -144,7 +144,7 @@ const translations = {
       "<strong>Red Flagi:</strong> Sygnał ostrzegawczy przy ujemnym ROI bonusów lub sztucznym podtrzymywaniu streaków bez realnego obrotu.",
 
     projects_betfan_navloop_text: "Zobacz kolejny projekt:",
-    projects_betfan_navloop_link: "Aplikacja Mobilna Monexo",
+    projects_betfan_navloop_link: "Audyt WKDZIK.PL",
 
     projects_betfan_floatnav_about: "O Projekcie",
     projects_betfan_floatnav_persona: "Persona",
@@ -474,7 +474,10 @@ const translations = {
     about_certificates_item12_alt:
       "Certyfikat Projektowania Witryn Internetowych",
     about_certificates_item12_caption: "Projektowanie witryn Internetowych",
-
+    about_certificates_item13_alt: "Certyfikat ukończenia Claude 101 od Anthropic",
+    about_certificates_item13_caption: "Claude 101 od Anthropic",
+    about_certificates_show_more: "Pokaż więcej certyfikatów",
+    about_certificates_show_less: "Pokaż mniej certyfikatów",
     // OFFER
     offer_breadcrumbs_main: "Strona Główna",
     offer_breadcrumbs_current: "Oferta",
@@ -589,7 +592,7 @@ const translations = {
     // PROJECT APP MONEXO
     project_app_monexo_title: "Aplikacja Mobilna",
     project_app_monexo_desc:
-      "Monexo to mobilna aplikacji do wymiany walut, którą zaprojektowałem jako odpowiedź na realne problemy użytkowników korzystających z istniejących rozwiązań FinTech.",
+      "Monexo to mobilna aplikacja do wymiany walut, którą zaprojektowałem jako odpowiedź na realne problemy użytkowników korzystających z istniejących rozwiązań FinTech.",
     project_app_monexo_role_label: "Rola:",
     project_app_monexo_role_val: "UX Designer; Front-end Developer",
     project_app_monexo_scope_label: "Zakres odpowiedzialności:",
@@ -655,7 +658,7 @@ const translations = {
       " – użytkownicy wyrażając opinie na temat konkurencji często skarżą się na chaos w opcjach i trudności w szybkim wykonaniu podstawowych operacji.",
     project_app_monexo_comp_p1_b2: "Nieintuicyjna nawigacja",
     project_app_monexo_comp_p1_text2:
-      " – Użytkownicy często miewają również problemy z dotarciem do pożądanej funkcji w apolikacji.",
+      " – Użytkownicy często miewają również problemy z dotarciem do pożądanej funkcji w aplikacji.",
     project_app_monexo_comp_p1_b3: "Brak transparentności w opłatach",
     project_app_monexo_comp_p1_text3:
       " – użytkownicy odczuwają brak przejrzystości i spójności w opłatach i niepewność co do zwrotów oraz oprocentowania.",
@@ -677,17 +680,18 @@ const translations = {
       "Kształtowanie produktu rozpocząłem od stworzenia trzech ",
     project_app_monexo_target_p_b: "person",
     project_app_monexo_target_p_part2:
-      " dla naszego produktu. To pokazało mi, że",
+      " dla naszego produktu. To pokazało mi, jakie potrzeby użytkowników są dla nich najważniejsze.",
     project_app_monexo_fig_personae: "User Persony",
     project_app_monexo_needs_b: "Głównymi potrzebami",
     project_app_monexo_needs_intro: " naszych użytkowników okazały się być:",
     project_app_monexo_needs_1: "• Szybkość dostępu do najważniejszych funkcji",
     project_app_monexo_needs_2: "• Prostota w obsłudze aplikacji",
     project_app_monexo_needs_3:
-      "• Transparentność w opłatach za tranzakcje oraz",
+      "• Transparentność w opłatach za transakcje oraz",
     project_app_monexo_needs_4:
-      "• Poczucie kontroli nad tranzakcjami w aplikacji",
-    project_app_monexo_prio_title: "Co będzie najważniejsze? - Prioretyzacja",
+      "• Poczucie kontroli nad transakcjami w aplikacji",
+    project_app_monexo_prio_title:
+      "Co będzie najważniejsze? - Priorytetyzacja",
     project_app_monexo_prio_p_part1: "Używając ",
     project_app_monexo_prio_p_b: "MoSCow",
     project_app_monexo_prio_p_part2:
@@ -697,10 +701,10 @@ const translations = {
     project_app_monexo_mvp_intro_b: "MVP",
     project_app_monexo_mvp_intro_part2: " weszły funkcjonalności:",
     project_app_monexo_mvp_1:
-      "• Wirtualnego portfela z možliwościa podglądu posiadanych walut",
+      "• Wirtualnego portfela z możliwością podglądu posiadanych walut",
     project_app_monexo_mvp_2: "• Przeglądu kursów NBP",
     project_app_monexo_mvp_3: "• Wymiany walut",
-    project_app_monexo_mvp_4: "• Historii tranzakcji",
+    project_app_monexo_mvp_4: "• Historii transakcji",
     project_app_monexo_mvp_5: "• Doładowania konta",
     project_app_monexo_mvp_6:
       "• Rejestracji, Logowania, Zmiany hasła i Usunięcia konta",
@@ -1472,7 +1476,7 @@ const translations = {
       "<strong>Red Flags:</strong> Warning triggers for negative bonus ROI or artificial streak maintenance without real turnover.",
 
     projects_betfan_navloop_text: "View next project:",
-    projects_betfan_navloop_link: "Monexo Mobile App",
+    projects_betfan_navloop_link: "WKDZIK.PL Audit",
 
     projects_betfan_floatnav_about: "About Project",
     projects_betfan_floatnav_persona: "Persona",
@@ -1798,6 +1802,10 @@ const translations = {
     about_certificates_item11_caption: "Design System Intro",
     about_certificates_item12_alt: "Website Design Certificate",
     about_certificates_item12_caption: "Web Design",
+    about_certificates_item13_alt: "Certificate of Completion Claude 101 by Anthropic",
+    about_certificates_item13_caption: "Claude 101 by Anthropic",
+    about_certificates_show_more: "Show more certificates",
+    about_certificates_show_less: "Show fewer certificates",
 
     // OFFER
     offer_breadcrumbs_main: "Main Page",
@@ -1998,7 +2006,8 @@ const translations = {
     project_app_monexo_target_p_part1:
       "I began shaping the product by defining three ",
     project_app_monexo_target_p_b: "user personae",
-    project_app_monexo_target_p_part2: " for our product. This revealed that",
+    project_app_monexo_target_p_part2:
+      " for our product. This revealed which needs mattered most to them.",
     project_app_monexo_fig_personae: "User Personae",
     project_app_monexo_needs_b: "Primary needs",
     project_app_monexo_needs_intro: " of our users were:",

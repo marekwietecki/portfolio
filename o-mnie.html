@@ -327,6 +327,50 @@
         color: var(--text-secondary);
       }
 
+      .certExtra {
+        display: none;
+      }
+
+      .certExtra.isRevealed {
+        display: flex;
+      }
+
+      .certToggleWrapper {
+        display: flex;
+        justify-content: center;
+        padding: 0 4vw 6vh 4vw;
+      }
+
+      .certToggleBtn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--bg-card);
+        color: var(--text-heading);
+        border: 1px solid var(--border-subtle);
+        border-radius: 999px;
+        padding: 12px 24px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        font-family: inherit;
+        cursor: pointer;
+        transition: border-color 0.2s ease, transform 0.2s ease,
+          background-color 0.2s ease;
+      }
+
+      .certToggleBtn:hover {
+        border-color: var(--accent);
+        transform: translateY(-2px);
+      }
+
+      .certToggleBtn i {
+        transition: transform 0.25s ease;
+      }
+
+      .certToggleBtn[aria-expanded="true"] i {
+        transform: rotate(180deg);
+      }
+
       /* ========================================================
    BENTO GRID CONTAINER
    ======================================================== */
@@ -1667,6 +1711,23 @@
         <div class="galleryItem">
           <div class="itemContainer">
             <a
+              href="assets/certificates/Claude_101_certificate.png"
+              data-lightbox="galeria_certyfikatów"
+            >
+              <img
+                src="assets/certificates/Claude_101_certificate.png"
+                alt="Certificate of Completion Claude 101 by Anthropic"
+                data-i18n-alt="about_certificates_item13_alt"
+              />
+            </a>
+            <p data-i18n="about_certificates_item13_caption">
+              Claude 101 by Anthropic
+            </p>
+          </div>
+        </div>
+        <div class="galleryItem">
+          <div class="itemContainer">
+            <a
               href="assets/certificates/Certyfikat_Marketing_internetowy-Umiejetnosci_jutra.webp"
               data-lightbox="galeria_certyfikatów"
             >
@@ -1681,7 +1742,7 @@
             </p>
           </div>
         </div>
-        <div class="galleryItem">
+        <div class="galleryItem certExtra">
           <div class="itemContainer">
             <a
               href="assets/certificates/ZalacznikDoCertyfikatu-PL.webp"
@@ -1698,7 +1759,7 @@
             </p>
           </div>
         </div>
-        <div class="galleryItem">
+        <div class="galleryItem certExtra">
           <div class="itemContainer">
             <a
               href="assets/certificates/Nueve_AIv1_Certificate.webp"
@@ -1713,7 +1774,7 @@
             <p data-i18n="about_certificates_item7_caption">Design with AI</p>
           </div>
         </div>
-        <div class="galleryItem">
+        <div class="galleryItem certExtra">
           <div class="itemContainer">
             <a
               href="assets/certificates/Perfect_Design_Process.webp"
@@ -1730,7 +1791,7 @@
             </p>
           </div>
         </div>
-        <div class="galleryItem">
+        <div class="galleryItem certExtra">
           <div class="itemContainer">
             <a
               href="assets/certificates/PrototypeProCertificate.webp"
@@ -1745,7 +1806,7 @@
             <p data-i18n="about_certificates_item9_caption">Prototype Pro</p>
           </div>
         </div>
-        <div class="galleryItem">
+        <div class="galleryItem certExtra">
           <div class="itemContainer">
             <a
               href="assets/certificates/Certyfikat_udziału_w_szkoleniu_Design_Thinking.webp"
@@ -1762,7 +1823,7 @@
             </p>
           </div>
         </div>
-        <div class="galleryItem">
+        <div class="galleryItem certExtra">
           <div class="itemContainer">
             <a
               href="assets/certificates/Design-System-Intro-certificate.webp"
@@ -1779,7 +1840,7 @@
             </p>
           </div>
         </div>
-        <div class="galleryItem">
+        <div class="galleryItem certExtra">
           <div class="itemContainer">
             <a
               href="assets/certificates/ProjektowanieWitrynInternetowych.webp"
@@ -1797,6 +1858,22 @@
           </div>
         </div>
         <!-- Dodaj więcej galleryItem w razie potrzeby -->
+      </div>
+      <div class="certToggleWrapper">
+        <button
+          type="button"
+          id="certToggleBtn"
+          class="certToggleBtn"
+          aria-expanded="false"
+        >
+          <span class="certToggleLabel certToggleLabel--more" data-i18n="about_certificates_show_more"
+            >Pokaż więcej certyfikatów</span
+          >
+          <span class="certToggleLabel certToggleLabel--less" hidden data-i18n="about_certificates_show_less"
+            >Pokaż mniej certyfikatów</span
+          >
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
       </div>
     </section>
 
@@ -2134,6 +2211,38 @@
     <script src="js/header.js"></script>
     <script src="js/settings.js"></script>
     <script src="js/cursor.js"></script>
+    <script>
+      (function () {
+        const toggleBtn = document.getElementById("certToggleBtn");
+        if (!toggleBtn) return;
+
+        const extraItems = document.querySelectorAll(
+          "#gridGallery .certExtra"
+        );
+        const labelMore = toggleBtn.querySelector(".certToggleLabel--more");
+        const labelLess = toggleBtn.querySelector(".certToggleLabel--less");
+
+        toggleBtn.addEventListener("click", () => {
+          const expanded = toggleBtn.getAttribute("aria-expanded") === "true";
+          const next = !expanded;
+
+          extraItems.forEach((item) => {
+            item.classList.toggle("isRevealed", next);
+            if (next) item.classList.add("is-visible");
+          });
+
+          toggleBtn.setAttribute("aria-expanded", String(next));
+          labelMore.hidden = next;
+          labelLess.hidden = !next;
+
+          if (!next) {
+            document
+              .getElementById("gridGallery")
+              .scrollIntoView({ behavior: "smooth", block: "nearest" });
+          }
+        });
+      })();
+    </script>
   </body>
   <script src="js/cookie.js"></script>
 </html>

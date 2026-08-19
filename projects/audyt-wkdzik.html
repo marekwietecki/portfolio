@@ -88,10 +88,8 @@
          PAGE SPECIFIC STYLES — AUDYT WKDZIK.PL (INTERACTIVE CASE STUDY)
          ========================================================================== */
 
-      .gradientBackground {
-        background: linear-gradient(45deg, #070814, #2a0f4d, #1e6ed6);
+      .projectCover {
         background-size: 400% 400%;
-        animation: gradientMove 6s ease infinite;
         width: 88%;
         height: auto;
         margin-top: 3vh;
@@ -106,30 +104,17 @@
         padding: 24px;
         box-sizing: border-box;
         box-shadow: var(--shadow-header);
+        overflow: hidden;
+        position: relative;
       }
 
-      .gradientBackground span {
-        font-family: "Unbounded", sans-serif;
-        color: #fff;
-        font-size: clamp(1.1rem, 3vw, 2rem);
-        font-weight: 600;
-      }
-
-      .gradientBackground small {
-        color: rgba(255, 255, 255, 0.65);
-        font-size: 13px;
-      }
-
-      @keyframes gradientMove {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
+      .projectCover img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 16px;
       }
 
       /* ---------- Shared interactive card shell ---------- */
@@ -262,16 +247,20 @@
 
       /* ---------- Generic before/after image placeholder ---------- */
       .beforeAfterGrid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 16px;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 12px;
         margin-top: 24px;
+        justify-content: center;
       }
 
       .beforeAfterItem {
+        flex: 1 1 0;
+        min-width: 0;
+        max-width: 220px;
         text-align: center;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
       }
 
       .beforeAfterItem .baLabel {
@@ -287,7 +276,7 @@
       .imgPlaceholder {
         width: 100%;
         aspect-ratio: 3 / 4;
-        border: 1px dashed var(--border-subtle, rgba(255, 255, 255, 0.2));
+        /* border: 1px dashed var(--border-subtle, rgba(255, 255, 255, 0.2)); */
         border-radius: 14px;
         position: relative;
         overflow: hidden;
@@ -560,7 +549,7 @@
     <!-- HEADER (NAV) -->
     <header>
       <div class="headerNav">
-        <a class="headerLink" href="../index.html">
+        <a class="headerLink" href="/index.html">
           <img
             src="/assets/brand/mw_logo_2.0.png"
             alt="Logo MW Desgin - Marek Wietecki"
@@ -572,10 +561,10 @@
         </button>
       </div>
       <div class="headerLinks">
-        <a class="headerLink" href="oferta.html" data-i18n="nav_offer"
+        <a class="headerLink" href="/oferta.html" data-i18n="nav_offer"
           >Oferta</a
         >
-        <a class="headerLink" href="o-mnie.html" data-i18n="nav_about"
+        <a class="headerLink" href="/o-mnie.html" data-i18n="nav_about"
           >O Mnie</a
         >
         <div class="settings-dropdown-wrapper">
@@ -656,7 +645,7 @@
 
     <main class="projectLayout">
       <article class="projectContent">
-        <section style="padding-top: 20vh" id="o-projekcie">
+        <section style="padding-top: 8vh" id="o-projekcie">
           <span style="font-size: 18px" data-i18n="projects_wkdzik_badge"
             >Case Study / Audyt UX</span
           >
@@ -696,14 +685,15 @@
             </span>
           </p>
 
-          <div class="gradientBackground">
-            <span data-i18n="projects_wkdzik_cover_title"
-              >🐗 Audyt WKDZIK.pl</span
-            >
-            <small data-i18n="projects_wkdzik_cover_subtitle"
+          <div class="projectCover">
+            <img
+              src="/assets/projects/audyt-wkdzik/dzik.png"
+              alt="Zdjęcie przedstawia Okładkę mojego projektu Audyt wkdzik.pl"
+            />
+            <!-- <small data-i18n="projects_wkdzik_cover_subtitle"
               >od 5–6s ładowania do realnych punktów procentowych
               konwersji</small
-            >
+            > -->
           </div>
 
           <h3
@@ -932,7 +922,7 @@
                   oninput="updateSpaceDemo(this.value)"
                 />
                 <span class="spacePxLabel" id="spacePxLabel"
-                  >0px odstępu — bardzo ciasno</span
+                  >0px odstępu — ciasno</span
                 >
               </div>
             </div>
@@ -1153,7 +1143,7 @@
             <span
               class="profitLabel"
               data-i18n="projects_wkdzik_impact_profit_label"
-              >Przy zysku netto na poziomie 10 mln zł rocznie (2025), te 2% wzrostu
+              >Przy zysku netto na poziomie 10 mln zł rocznie(2025), te 2% wzrostu
               konwersji to dodatkowe 200 000 zł czystego zysku — bez zwiększania
               budżetu marketingowego.</span
             >
@@ -1345,13 +1335,13 @@
         const label = document.getElementById("spacePxLabel");
         tile.style.padding = value + "px";
         const feelKey =
-          value < 14
+          value < 8
             ? "projects_wkdzik_space_label_tight"
-            : value < 22
+            : value < 20
             ? "projects_wkdzik_space_label_better"
             : "projects_wkdzik_space_label_premium";
         const feelFallback =
-          value < 14 ? "bardzo ciasno" : value < 22 ? "lepiej" : "premium ✨";
+          value < 8 ? "ciasno" : value < 20 ? "lepiej" : "premium ✨";
         const feel = wkT(feelKey, feelFallback);
         const unit = wkT("projects_wkdzik_space_unit_label", "odstępu —");
         label.textContent = value + "px " + unit + " " + feel;
@@ -1408,12 +1398,12 @@
     //     };
     //   }
     </script>
-    <script src="../js/header.js"></script>
-    <script src="../js/title-typewriter.js"></script>
-    <script src="../js/project-progress.js"></script>
-    <script src="../js/project-nav.js"></script>
-    <script src="../js/settings.js"></script>
-    <script src="../js/cursor.js"></script>
+    <script src="/js/header.js"></script>
+    <script src="/js/title-typewriter.js"></script>
+    <script src="/js/project-progress.js"></script>
+    <script src="/js/project-nav.js"></script>
+    <script src="/js/settings.js"></script>
+    <script src="/js/cursor.js"></script>
   </body>
-  <script src="../js/cookie.js"></script>
+  <script src="/js/cookie.js"></script>
 </html>
