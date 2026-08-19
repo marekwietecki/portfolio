@@ -1,28 +1,36 @@
 (function initScrollProgress() {
   const progressBar = document.getElementById("scrollProgress");
-  const mainElement = document.querySelector("main");
 
-  if (!progressBar || !mainElement) return;
+  if (!progressBar) return;
 
   function updateProgress() {
-    const mainRect = mainElement.getBoundingClientRect();
+    // Realna pozycja scrolla dokumentu — działa niezależnie od tego,
+    // czy to <main> czy jakiś inny kontener jest tym, co faktycznie
+    // przewija się w danym layoucie (w przeciwieństwie do liczenia
+    // z getBoundingClientRect() elementu <main>, co zawodzi jeśli
+    // <main> ma własny overflow/scroll zamiast normalnego scrolla strony).
+    const scrollTop =
+      window.scrollY ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop ||
+      0;
+
+    const docHeight = Math.max(
+      document.documentElement.scrollHeight,
+      document.body.scrollHeight
+    );
     const windowHeight =
       window.innerHeight || document.documentElement.clientHeight;
 
-    // Wysokość całej sekcji main pomniejszona o wysokość okna
-    const totalScrollableHeight = mainRect.height - windowHeight;
+    const totalScrollableHeight = docHeight - windowHeight;
 
     if (totalScrollableHeight <= 0) {
       progressBar.style.width = "0%";
       return;
     }
 
-    // Dystans przescrollowany od początku sekcji main
-    const scrolled = -mainRect.top;
-
-    // Obliczenie procentu i ograniczenie go do przedziału 0% - 100%
     const progress = Math.min(
-      Math.max((scrolled / totalScrollableHeight) * 100, 0),
+      Math.max((scrollTop / totalScrollableHeight) * 100, 0),
       100
     );
 

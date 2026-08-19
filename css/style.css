@@ -344,6 +344,7 @@ header {
   left: 0;
   padding: 28px 6vw;
   width: 100%;
+  height: 120px;
   max-width: 100%;
   box-sizing: border-box;
   z-index: 1000;
@@ -864,11 +865,13 @@ footer {
      RESPONSIVE — breakpoint ujednolicony na 794px (index.html był bazą)
      ========================================================================== */
 @media (max-width: 794px) {
-  /* Header */
   header {
     flex-direction: column;
-    padding: 20px 6vw;
+    align-items: stretch;
+    height: auto;
+    min-height: 92px;
   }
+
   .headerLinks {
     padding-top: 4vh;
     flex-direction: column;
@@ -876,8 +879,9 @@ footer {
     width: 100%;
     align-items: center;
   }
-  .headerLink {
-    text-align: center;
+
+  .headerLinks.show {
+    display: flex;
   }
   .menuToggle {
     display: block;
