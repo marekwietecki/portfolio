@@ -347,6 +347,166 @@
         display: inline-block;
       }
 
+      /* --- AUDIENCE FORK (dla firm / dla rekrutera) --- */
+      #heroFork,
+      #heroMain {
+        text-align: initial;
+      }
+
+      #heroFork {
+        display: none;
+      }
+
+      html[data-audience="unset"] #heroFork {
+        display: block;
+      }
+
+      html[data-audience="unset"] #heroMain {
+        display: none;
+      }
+
+      .forkTitle {
+        font-family: "Unbounded", sans-serif;
+        font-weight: 700;
+        font-size: clamp(1.5rem, 1.05rem + 1.6vw, 2.3rem);
+        line-height: 1.2;
+        color: var(--text-heading);
+        margin: 4px 0 12px;
+      }
+
+      .forkCards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        width: 100%;
+        margin-top: 32px;
+      }
+
+      .forkCard {
+        flex: 1 1 260px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        text-align: left;
+        padding: 24px 24px 22px;
+        border-radius: 24px;
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-subtle);
+        box-shadow: var(--shadow-header);
+        cursor: pointer;
+        font-family: "Outfit", sans-serif;
+        transition: transform 0.25s ease, box-shadow 0.25s ease,
+          border-color 0.25s ease;
+      }
+
+      .forkCard:hover {
+        transform: translateY(-3px);
+        border-color: var(--accent);
+        box-shadow: var(--shadow-header-scrolled);
+      }
+
+      .forkCard__tag {
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--accent);
+      }
+
+      .forkCard--recruiter .forkCard__tag,
+      .forkCard--recruiter .forkCard__cta {
+        color: var(--accent-2);
+      }
+
+      .forkCard__title {
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--text-heading);
+      }
+
+      .forkCard__desc {
+        font-size: 0.92rem;
+        color: var(--text-secondary);
+        line-height: 1.5;
+      }
+
+      .forkCard__cta {
+        margin-top: 8px;
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: var(--accent);
+      }
+
+      .forkSkip {
+        margin-top: 24px;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+      }
+
+      .forkSkip a {
+        color: var(--text-secondary);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        cursor: pointer;
+      }
+
+      .forkSkip a:hover {
+        color: var(--accent);
+      }
+
+      /* --- CHIP: "widzisz wersję X · zmień" --- */
+      .audienceChip {
+        display: none;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 16px;
+        padding: 6px 14px 6px 10px;
+        border-radius: 999px;
+        background: var(--bg-card);
+        border: 1px solid var(--border-subtle);
+        font-size: 0.78rem;
+        color: var(--text-secondary);
+        width: fit-content;
+      }
+
+      .audienceChip__dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--accent);
+        flex-shrink: 0;
+      }
+
+      .audienceChip strong {
+        color: var(--text-heading);
+        font-weight: 600;
+      }
+
+      .audienceChip a {
+        color: var(--accent);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+
+      html[data-audience="business"] .audienceChip {
+        display: inline-flex;
+      }
+
+      html[data-audience="recruiter"] .audienceChip {
+        display: inline-flex;
+      }
+
+      html[data-audience="recruiter"] .audienceChip__dot {
+        background: var(--accent-2);
+      }
+
+      html[data-audience="recruiter"] .audienceChip a {
+        color: var(--accent-2);
+      }
+
       .chevronDownWrapper {
         width: 100%;
         display: flex;
@@ -967,6 +1127,7 @@
     </style>
     <script src="/js/translations.js"></script>
     <script src="/js/theme.js"></script>
+    <script src="/js/audience.js"></script>
   </head>
   <body>
     <!-- HEADER (NAV) -->
@@ -991,7 +1152,7 @@
         </button>
       </div>
       <div class="headerLinks">
-        <a class="headerLink" href="oferta.html" data-i18n="nav_offer"
+        <a class="headerLink" href="oferta.html" data-i18n="nav_offer" data-business-href="oferta.html" data-recruiter-href="index.html#projects"
           >Oferta</a
         >
         <a class="headerLink" href="o-mnie.html" data-i18n="nav_about"
@@ -1046,6 +1207,28 @@
 
             <div class="settings-divider"></div>
 
+            <!-- Twoja ścieżka: dla firm / dla rekrutera -->
+            <div class="audience-switcher">
+              <button
+                class="audience-btn"
+                data-audience="business"
+                data-i18n="settings_audience_business"
+                onclick="setAudience('business')"
+              >
+                Dla firm
+              </button>
+              <button
+                class="audience-btn"
+                data-audience="recruiter"
+                data-i18n="settings_audience_recruiter"
+                onclick="setAudience('recruiter')"
+              >
+                Dla rekrutera
+              </button>
+            </div>
+
+            <div class="settings-divider"></div>
+
             <!-- 2. Twój przełącznik motywu -->
             <label class="theme-switch" aria-label="Przełącz motyw">
               <input type="checkbox" id="themeToggle" />
@@ -1077,57 +1260,119 @@
     <!-- HERO -->
     <section class="hero" id="hero">
       <div class="profile">
-        <!--
-        <h2 class="ja">Marek Wietecki</h2>
-        -->
-        <p class="czesc" data-i18n="hero_hi">Cześć!</p>
-        <p class="czesc" data-i18n="hero_hi2">Od ponad 3 lat działam jako</p>
-        <h1 class="ja typewriter">UX Designer.</h1>
-        <div class="gapp"></div>
-        <!-- <p>
-          Projektuję produkty cyfrowe, rozwiązujące realne problemy użytkowników
-          i skutecznie wspierające cele biznesowe.
-        </p> -->
-        <p data-i18n="hero_title">
-          Projektuję prosto dla ludzi. Skutecznie dla biznesu.
-        </p>
-        <div class="gap2"></div>
-        <!-- <p class="miniText">
-          Projektuję prosto dla użytkownika, skutecznie dla biznesu i
-          estetycznie dla oka. Wierzę, że małe detale mogą zrobić wielką
-          różnicę.
-        </p> -->
-        <p class="miniText" data-i18n="hero_subtitle">
-          Tworzę produkty cyfrowe, które łączą intuicyjne doświadczenia
-          użytkowników z realnymi zyskami firm. Wierzę, że w świecie interfejsów
-          to małe detale robią największą różnicę.
-        </p>
+        <!-- Rozdroże: dla firm / dla rekrutera — widoczne, dopóki gość nie wybrał ścieżki -->
+        <div class="heroFork" id="heroFork">
+          <p class="czesc" data-i18n="hero_fork_kicker">
+            Cześć! Miło Cię widzieć.
+          </p>
+          <p class="forkTitle" data-i18n="hero_fork_title">
+            Co Cię tu sprowadza?
+          </p>
+          <p class="miniText" data-i18n="hero_fork_subtitle">
+            Dobierz ścieżkę, a dopasuję to, co widzisz.
+          </p>
+          <div class="forkCards">
+            <button
+              type="button"
+              class="forkCard"
+              onclick="setAudience('business')"
+            >
+              <span class="forkCard__tag" data-i18n="hero_fork_business_tag"
+                >Dla firm</span
+              >
+              <span
+                class="forkCard__title"
+                data-i18n="hero_fork_business_title"
+                >Szukam designera</span
+              >
+              <span class="forkCard__desc" data-i18n="hero_fork_business_desc"
+                >Zobacz ofertę, proces i jak mogę pomóc Twojemu
+                biznesowi.</span
+              >
+              <span class="forkCard__cta" data-i18n="hero_fork_business_cta"
+                >Zobacz jak mogę pomóc →</span
+              >
+            </button>
+            <button
+              type="button"
+              class="forkCard forkCard--recruiter"
+              onclick="setAudience('recruiter')"
+            >
+              <span class="forkCard__tag" data-i18n="hero_fork_recruiter_tag"
+                >Dla rekrutera</span
+              >
+              <span
+                class="forkCard__title"
+                data-i18n="hero_fork_recruiter_title"
+                >Oglądam portfolio</span
+              >
+              <span
+                class="forkCard__desc"
+                data-i18n="hero_fork_recruiter_desc"
+                >Zobacz moje projekty, doświadczenie i poznaj mnie
+                lepiej.</span
+              >
+              <span class="forkCard__cta" data-i18n="hero_fork_recruiter_cta"
+                >Zobacz moje projekty →</span
+              >
+            </button>
+          </div>
+          <p class="forkSkip">
+            <span data-i18n="hero_fork_skip_prefix"
+              >Wolisz rozejrzeć się sam?</span
+            >
+            <a href="#" onclick="setAudience('general'); return false"
+              ><span data-i18n="hero_fork_skip_link"
+                >Zobacz stronę bez podziału</span
+              ></a
+            >
+          </p>
+        </div>
 
-        <div class="buttonWrapper">
-          <a
-            class="buttonPrimary"
-            href="#projects"
-            data-i18n="hero_button_primary"
-            >Zobacz Projekty</a
-          >
-          <!-- <a
-            class="buttonSecondary"
-            href="/assets/index/Marek_Wietecki_CV_2.8.pdf"
-            download
-            >Pobierz CV</a
-          > -->
-          <!-- <a
-            href="/assets/index/Marek_Wietecki_CV_2.8.pdf"
-            target="_blank"
-            class="buttonSecondary"
-            >CV</a
-          > -->
-          <a
-            href="/oferta.html"
-            class="buttonSecondary"
-            data-i18n="hero_button_secondary"
-            >Poznaj moją ofertę</a
-          >
+        <!-- Treść dopasowana do wybranej ścieżki (albo domyślna, jeśli gość pominął wybór) -->
+        <div class="heroMain" id="heroMain">
+          <div class="audienceChip" id="audienceChip">
+            <span class="audienceChip__dot"></span>
+            <span data-i18n="audience_chip_prefix">Widzisz wersję</span>
+            <strong id="audienceChipLabel" data-i18n="hero_fork_business_tag"
+              >Dla firm</strong
+            >
+            <a href="#" onclick="setAudience('unset'); return false"
+              ><span data-i18n="hero_fork_switch_short">Zmień</span></a
+            >
+          </div>
+          <p class="czesc" data-i18n="hero_hi">Cześć!</p>
+          <p class="czesc" id="heroKicker2" data-i18n="hero_hi2">
+            Od ponad 3 lat działam jako
+          </p>
+          <h1 class="ja typewriter">UX Designer.</h1>
+          <div class="gapp"></div>
+          <p data-i18n="hero_title">
+            Projektuję prosto dla ludzi. Skutecznie dla biznesu.
+          </p>
+          <div class="gap2"></div>
+          <p class="miniText" id="heroSubtitle" data-i18n="hero_subtitle">
+            Tworzę produkty cyfrowe, które łączą intuicyjne doświadczenia
+            użytkowników z realnymi zyskami firm. Wierzę, że w świecie
+            interfejsów to małe detale robią największą różnicę.
+          </p>
+
+          <div class="buttonWrapper">
+            <a
+              class="buttonPrimary"
+              href="#projects"
+              id="heroBtnPrimary"
+              data-i18n="hero_button_primary"
+              >Zobacz Projekty</a
+            >
+            <a
+              href="/oferta.html"
+              class="buttonSecondary"
+              id="heroBtnSecondary"
+              data-i18n="hero_button_secondary"
+              >Poznaj moją ofertę</a
+            >
+          </div>
         </div>
       </div>
       <div class="profilePicture">

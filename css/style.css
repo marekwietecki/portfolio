@@ -34,6 +34,7 @@
 
   /* Marka / akcent (NIE zmienia się między motywami) */
   --accent: #1e6ed6;
+  --accent-2: #d6641e;
   --accent-hover-bg: #f2f2f2;
 
   /* Obramowania / cienie */
@@ -76,6 +77,7 @@
   --text-on-dark: #f4f4f5;
 
   --accent: #4a8fe0;
+  --accent-2: #e08a4a;
   --accent-hover-bg: #2a2b30;
 
   --border-subtle: #34363a;
@@ -467,6 +469,67 @@ header {
   color: var(--text-subtle);
   font-size: 12px;
   user-select: none;
+}
+
+/* ==========================================================================
+     PRZEŁĄCZNIK ŚCIEŻKI — dla firm / dla rekrutera (settings dropdown)
+     ========================================================================== */
+.audience-switcher {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  background: var(--bg-page);
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+  padding: 3px;
+  font-family: "Outfit", sans-serif;
+}
+
+.audience-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  padding: 6px 11px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.audience-btn::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.audience-btn[data-audience="recruiter"]::before {
+  background: var(--accent-2);
+}
+
+.audience-btn:hover {
+  color: var(--text-heading);
+}
+
+.audience-btn.active {
+  background: var(--accent);
+  color: var(--text-on-dark);
+  pointer-events: none;
+}
+
+.audience-btn[data-audience="recruiter"].active {
+  background: var(--accent-2);
+}
+
+.audience-btn.active::before {
+  background: var(--text-on-dark);
 }
 
 /* ==========================================================================

@@ -272,6 +272,7 @@
     </style>
     <script src="../js/translations.js"></script>
     <script src="../js/theme.js"></script>
+    <script src="../js/audience.js"></script>
   </head>
 
   <body data-project-title="Customer Journey Betfan">
@@ -292,7 +293,7 @@
         </button>
       </div>
       <div class="headerLinks">
-        <a class="headerLink" href="/oferta.html" data-i18n="nav_offer"
+        <a class="headerLink" href="/oferta.html" data-i18n="nav_offer" data-business-href="/oferta.html" data-recruiter-href="/index.html#projects"
           >Oferta</a
         >
         <a class="headerLink" href="/o-mnie.html" data-i18n="nav_about"
@@ -342,6 +343,28 @@
                 onclick="switchLanguage('en')"
               >
                 🇬🇧
+              </button>
+            </div>
+
+            <div class="settings-divider"></div>
+
+            <!-- Twoja ścieżka: dla firm / dla rekrutera -->
+            <div class="audience-switcher">
+              <button
+                class="audience-btn"
+                data-audience="business"
+                data-i18n="settings_audience_business"
+                onclick="setAudience('business')"
+              >
+                Dla firm
+              </button>
+              <button
+                class="audience-btn"
+                data-audience="recruiter"
+                data-i18n="settings_audience_recruiter"
+                onclick="setAudience('recruiter')"
+              >
+                Dla rekrutera
               </button>
             </div>
 

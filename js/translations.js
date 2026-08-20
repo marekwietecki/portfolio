@@ -9,6 +9,7 @@ const translations = {
     // nav
     nav_offer: "Oferta",
     nav_about: "O mnie",
+    nav_projects: "Projekty",
 
     // cookies
     cookies_text:
@@ -33,6 +34,43 @@ const translations = {
       "Tworzę produkty cyfrowe, które łączą intuicyjne doświadczenia użytkowników z realnymi zyskami firm. Wierzę, że w świecie interfejsów to małe detale robią największą różnicę.",
     hero_button_primary: "Zobacz projekty",
     hero_button_secondary: "Poznaj moją ofertę",
+
+    // hero — rozdroże dla firm / rekruterów
+    hero_fork_kicker: "Cześć! Miło Cię widzieć.",
+    hero_fork_title: "Co Cię tu sprowadza?",
+    hero_fork_subtitle: "Dobierz ścieżkę, a dopasuję to, co widzisz.",
+    hero_fork_business_tag: "Dla firm",
+    hero_fork_business_title: "Szukam designera",
+    hero_fork_business_desc:
+      "Zobacz ofertę, proces i jak mogę pomóc Twojemu biznesowi.",
+    hero_fork_business_cta: "Zobacz jak mogę pomóc",
+    hero_fork_recruiter_tag: "Dla rekrutera",
+    hero_fork_recruiter_title: "Oglądam portfolio",
+    hero_fork_recruiter_desc:
+      "Zobacz moje projekty, doświadczenie i poznaj mnie lepiej.",
+    hero_fork_recruiter_cta: "Zobacz moje projekty",
+    hero_fork_skip_prefix: "Wolisz rozejrzeć się sam?",
+    hero_fork_skip_link: "Zobacz stronę bez podziału",
+    audience_chip_prefix: "Widzisz wersję:",
+    hero_fork_switch_short: "Zmień",
+
+    // hero — wersja dla firm
+    hero_business_kicker: "Szukasz designera?",
+    hero_business_title: "Zaprojektuję produkt, który sprzeda się sam.",
+    hero_business_subtitle:
+      "Od researchu po finalny UI — pomagam firmom budować produkty cyfrowe, które użytkownicy rozumieją od pierwszego kliknięcia.",
+    hero_business_button_primary: "Zobacz ofertę",
+    hero_business_button_secondary: "Umów rozmowę",
+
+    // hero — wersja dla rekrutera
+    hero_recruiter_subtitle:
+      "Zobacz moje projekty, doświadczenie i poznaj mnie lepiej.",
+    hero_recruiter_button_primary: "Zobacz projekty",
+    hero_recruiter_button_secondary: "Poznaj mnie",
+
+    // ustawienia — przełącznik ścieżki
+    settings_audience_business: "Dla firm",
+    settings_audience_recruiter: "Dla rekrutera",
 
     projects_title: "Moje Projekty",
     projects_monexo_title: "Monexo aplikacja mobilna",
@@ -1346,6 +1384,7 @@ const translations = {
     //   nav_home: "Home",
     nav_offer: "Offer",
     nav_about: "About me",
+    nav_projects: "Projects",
 
     cookies_text:
       "🍪 I use cookies to analyze traffic and to continuously improve the website.",
@@ -1366,6 +1405,43 @@ const translations = {
       "I create digital products that combine intuitive user experiences with real business profits. I believe that in the world of interfaces, it's the small details that make the biggest difference.",
     hero_button_primary: "Check out my projects",
     hero_button_secondary: "Check out my offer",
+
+    // hero — business / recruiter fork
+    hero_fork_kicker: "Hi! Great to see you.",
+    hero_fork_title: "What brings you here?",
+    hero_fork_subtitle: "Pick a path and I'll tailor what you see.",
+    hero_fork_business_tag: "For businesses",
+    hero_fork_business_title: "I'm looking for a designer",
+    hero_fork_business_desc:
+      "See the offer, process, and how I can help your business.",
+    hero_fork_business_cta: "See how I can help",
+    hero_fork_recruiter_tag: "For recruiters",
+    hero_fork_recruiter_title: "I'm browsing the portfolio",
+    hero_fork_recruiter_desc:
+      "See my projects, experience, and get to know me better.",
+    hero_fork_recruiter_cta: "See my projects",
+    hero_fork_skip_prefix: "Prefer to look around yourself?",
+    hero_fork_skip_link: "See the page without the split",
+    audience_chip_prefix: "Showing:",
+    hero_fork_switch_short: "Switch",
+
+    // hero — business variant
+    hero_business_kicker: "Looking for a designer?",
+    hero_business_title: "I'll design a product that sells itself.",
+    hero_business_subtitle:
+      "From research to final UI — I help businesses build digital products users understand from the first click.",
+    hero_business_button_primary: "See the offer",
+    hero_business_button_secondary: "Book a call",
+
+    // hero — recruiter variant
+    hero_recruiter_subtitle:
+      "See my projects, experience, and get to know me better.",
+    hero_recruiter_button_primary: "See my projects",
+    hero_recruiter_button_secondary: "Get to know me",
+
+    // settings — audience switcher
+    settings_audience_business: "For businesses",
+    settings_audience_recruiter: "For recruiters",
 
     projects_title: "My Projects",
     projects_monexo_title: "Monexo Mobile App",
