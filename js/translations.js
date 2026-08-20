@@ -578,6 +578,33 @@ const translations = {
     offer_cta_button_secondary: "Zobacz moje projekty",
     offer_cta_button_primary: "Porozmawiajmy o projekcie",
 
+    offer_process_badge: "Jak pracuję?",
+    offer_process_title:
+      "Wiesz, co dzieje się z projektem na każdym etapie",
+    offer_process_desc:
+      "Stawiam na otwartą komunikację, jasno określone etapy i regularne podsumowania. Od początku wiesz, nad czym aktualnie pracuję, jakie decyzje zostały podjęte i co wydarzy się dalej. Dzięki temu wspólnie rozwijamy projekt bez chaosu, niejasności i rozproszonej komunikacji.",
+    offer_process_step1_title: "Poznajemy cele",
+    offer_process_step1_desc:
+      "Rozmawiamy o Twoim biznesie, użytkownikach i oczekiwanych efektach. Ustalamy zakres, priorytety oraz sposób mierzenia sukcesu projektu.",
+    offer_process_step2_title: "Ustalamy zasady współpracy",
+    offer_process_step2_desc:
+      "Określamy harmonogram, sposób komunikacji, terminy spotkań oraz momenty, w których potrzebny będzie Twój feedback.",
+    offer_process_step3_title: "Badam i definiuję kierunek",
+    offer_process_step3_desc:
+      "Analizuję potrzeby użytkowników, rynek i konkurencję. Wnioski przekładam na strategię oraz konkretne założenia projektowe.",
+    offer_process_step4_title: "Projektuję i testuję",
+    offer_process_step4_desc:
+      "Tworzę architekturę, makiety i interaktywny prototyp. Prezentuję postępy, zbieram feedback i sprawdzam kluczowe rozwiązania.",
+    offer_process_step5_title: "Dopracowujemy rozwiązanie",
+    offer_process_step5_desc:
+      "Wspólnie analizujemy projekt i podejmujemy decyzje na podstawie celów, danych oraz potrzeb użytkowników.",
+    offer_process_step6_title: "Wspieram wdrożenie",
+    offer_process_step6_desc:
+      "Przygotowuję pliki, komponenty i dokumentację. Wspieram implementację oraz weryfikuję zgodność produktu z projektem.",
+    offer_process_step7_title: "Rozliczamy się bezpiecznie",
+    offer_process_step7_desc:
+      "Rozliczam się w pełni bezpiecznie przez platformę Useme. Wystawiam fakturę VAT, a cały proces jest uporządkowany i pozbawiony ryzyka dla obydwu stron.",
+
     offer_projecthub_badge: "Project Hub",
     offer_projecthub_title: "Cały projekt w jednym miejscu",
     offer_projecthub_desc:
@@ -2143,6 +2170,33 @@ const translations = {
     offer_cta_button_secondary: "View my projects",
     offer_cta_button_primary: "Let's discuss your project",
 
+    offer_process_badge: "How I Work",
+    offer_process_title:
+      "You'll know what's happening with the project at every stage",
+    offer_process_desc:
+      "I focus on open communication, clearly defined stages, and regular check-ins. From the start, you know what I'm working on, what decisions have been made, and what's coming next — so we build the project together without chaos, ambiguity, or scattered communication.",
+    offer_process_step1_title: "We define the goals",
+    offer_process_step1_desc:
+      "We talk about your business, your users, and the outcomes you expect. We set the scope, priorities, and how we'll measure the project's success.",
+    offer_process_step2_title: "We set the ground rules",
+    offer_process_step2_desc:
+      "We agree on the timeline, how we'll communicate, meeting cadence, and the moments where I'll need your feedback.",
+    offer_process_step3_title: "I research and define the direction",
+    offer_process_step3_desc:
+      "I analyze user needs, the market, and the competition, and turn the findings into a strategy and concrete design assumptions.",
+    offer_process_step4_title: "I design and test",
+    offer_process_step4_desc:
+      "I build the information architecture, wireframes, and an interactive prototype. I present progress, gather feedback, and validate key decisions.",
+    offer_process_step5_title: "We refine the solution",
+    offer_process_step5_desc:
+      "We review the design together and make decisions based on goals, data, and user needs.",
+    offer_process_step6_title: "I support the rollout",
+    offer_process_step6_desc:
+      "I prepare files, components, and documentation, support implementation, and verify the build matches the design.",
+    offer_process_step7_title: "We settle up securely",
+    offer_process_step7_desc:
+      "I invoice fully securely through the Useme platform. I issue a VAT invoice, and the whole process is orderly and risk-free for both sides.",
+
     offer_projecthub_badge: "Project Hub",
     offer_projecthub_title: "Your whole project in one place",
     offer_projecthub_desc:
@@ -3152,13 +3206,19 @@ function switchLanguage(lang) {
   const elements = document.querySelectorAll("[data-i18n]");
 
   elements.forEach((element) => {
-    const key = element.getAttribute("data-i18n");
+    const rawKey = element.getAttribute("data-i18n");
+    // Obsługa składni "[atrybut]klucz" — tłumaczy podany atrybut
+    // (np. placeholder, alt, data-title) zamiast treści elementu.
+    const attrMatch = rawKey.match(/^\[([a-zA-Z-]+)\](.+)$/);
+    const key = attrMatch ? attrMatch[2] : rawKey;
 
     if (translations[lang] && translations[lang][key]) {
       const translationValue = translations[lang][key];
 
-      // Jeśli element to tag <img>, podmień jego atrybut 'src'
-      if (element.tagName.toLowerCase() === "img") {
+      if (attrMatch) {
+        element.setAttribute(attrMatch[1], translationValue);
+      } else if (element.tagName.toLowerCase() === "img") {
+        // Jeśli element to tag <img>, podmień jego atrybut 'src'
         element.setAttribute("src", translationValue);
       } else {
         setFormattedText(element, translationValue);

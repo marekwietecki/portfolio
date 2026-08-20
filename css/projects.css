@@ -69,7 +69,7 @@
 
 /* Przygaszenie podczas aktywnego scrollowania — nie zasłania tekstu pod spodem */
 .floatingNav.is-scrolling:not(.open) {
-  opacity: 0.28;
+  opacity: 0.6;
   pointer-events: none;
 }
 
