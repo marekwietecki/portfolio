@@ -474,8 +474,9 @@ const translations = {
     about_certificates_item12_alt:
       "Certyfikat Projektowania Witryn Internetowych",
     about_certificates_item12_caption: "Projektowanie witryn Internetowych",
-    about_certificates_item13_alt: "Certyfikat ukończenia Claude 101 od Anthropic",
-    about_certificates_item13_caption: "Claude 101 od Anthropic",
+    about_certificates_item13_alt:
+      "Certyfikat ukończenia Claude 101 od Anthropic",
+    about_certificates_item13_caption: "Claude 101",
     about_certificates_show_more: "Pokaż więcej certyfikatów",
     about_certificates_show_less: "Pokaż mniej certyfikatów",
     // OFFER
@@ -690,8 +691,7 @@ const translations = {
       "• Transparentność w opłatach za transakcje oraz",
     project_app_monexo_needs_4:
       "• Poczucie kontroli nad transakcjami w aplikacji",
-    project_app_monexo_prio_title:
-      "Co będzie najważniejsze? - Priorytetyzacja",
+    project_app_monexo_prio_title: "Co będzie najważniejsze? - Priorytetyzacja",
     project_app_monexo_prio_p_part1: "Używając ",
     project_app_monexo_prio_p_b: "MoSCow",
     project_app_monexo_prio_p_part2:
@@ -1802,8 +1802,9 @@ const translations = {
     about_certificates_item11_caption: "Design System Intro",
     about_certificates_item12_alt: "Website Design Certificate",
     about_certificates_item12_caption: "Web Design",
-    about_certificates_item13_alt: "Certificate of Completion Claude 101 by Anthropic",
-    about_certificates_item13_caption: "Claude 101 by Anthropic",
+    about_certificates_item13_alt:
+      "Certificate of Completion Claude 101 by Anthropic",
+    about_certificates_item13_caption: "Claude 101",
     about_certificates_show_more: "Show more certificates",
     about_certificates_show_less: "Show fewer certificates",
 
