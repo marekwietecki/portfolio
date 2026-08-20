@@ -67,6 +67,12 @@
   pointer-events: none; /* Zapobiega przypadkowym kliknięciom w niewidoczny element */
 }
 
+/* Przygaszenie podczas aktywnego scrollowania — nie zasłania tekstu pod spodem */
+.floatingNav.is-scrolling:not(.open) {
+  opacity: 0.28;
+  pointer-events: none;
+}
+
 /* --------------------------------------------------------
      DYSKRETNY, PROGRESYWNY BLUR (MAX 8px -> 0px)
      -------------------------------------------------------- */

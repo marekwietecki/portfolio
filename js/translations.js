@@ -181,14 +181,37 @@ const translations = {
     projects_betfan_implementation_item3:
       "<strong>Red Flagi:</strong> Sygnał ostrzegawczy przy ujemnym ROI bonusów lub sztucznym podtrzymywaniu streaków bez realnego obrotu.",
 
+    projects_betfan_recruitment_note:
+      "Projekt zrealizowany jako zadanie w procesie rekrutacyjnym do Betfan.",
+
+    projects_betfan_impact_title: "Oczekiwany Efekt",
+    projects_betfan_impact_desc:
+      "Projekt powstał bez dostępu do danych produkcyjnych — poniżej kierunek, w jaki miały działać zaproponowane mechanizmy, powiązany z metrykami zdefiniowanymi w KPI:",
+    projects_betfan_impact_item1:
+      "<strong>Regularność powrotów:</strong> system streaków i powiadomienia PUSH miały podnosić Retention Rate poprzez budowanie nawyku codziennego zaglądania do aplikacji.",
+    projects_betfan_impact_item2:
+      "<strong>Zdrowe zaangażowanie:</strong> tempo nagród oparte na frameworku Octalysis miało zwiększać Average Bets per User bez zachęcania do ryzykownego, impulsywnego obstawiania.",
+    projects_betfan_impact_item3:
+      "<strong>Kontrola kosztu bonusów:</strong> red-flagi przy podejrzanych wzorcach miały ograniczać Bonus Burn Rate i chronić marżę przed nadużyciami.",
+    projects_betfan_impact_quote:
+      "Bez wdrożenia i testów A/B to hipotezy oparte na mechanizmach motywacyjnych, nie zmierzone wyniki — realną skuteczność dałoby się ocenić dopiero po miesiącach działania w produkcie.",
+
+    projects_betfan_after_title: "Po Projekcie",
+    projects_betfan_after_p1:
+      "Ten projekt zrealizowałem jako zadanie w procesie rekrutacyjnym do Betfan. Sam proces — mapowanie customer journey pod kątem emocji i ryzyka w produkcie bukmacherskim — był jednym z bardziej wymagających etycznie projektów, jakie robiłem: trzeba było równoważyć retencję biznesową z odpowiedzialnym podejściem do mechanizmów nagradzania.",
+    projects_betfan_after_p2:
+      "Kierunek, w jaki poszły później realne działania Betfan w obszarze lojalizacji, pokrył się z logiką zaproponowanych przeze mnie mechanizmów — co traktuję jako potwierdzenie, że przyjęte założenia miały sens.",
+
     projects_betfan_navloop_text: "Zobacz kolejny projekt:",
-    projects_betfan_navloop_link: "Audyt WKDZIK.PL",
+    projects_betfan_navloop_link: "Progresywna Aplikacja HabitBubbl",
 
     projects_betfan_floatnav_about: "O Projekcie",
     projects_betfan_floatnav_persona: "Persona",
     projects_betfan_floatnav_cjm: "Customer Journey",
     projects_betfan_floatnav_gamification: "Gamifikacja",
     projects_betfan_floatnav_implementation: "Wdrożenie & KPI",
+    projects_betfan_floatnav_impact: "Efekt",
+    projects_betfan_floatnav_after: "Po Projekcie",
     projects_betfan_floatnav_toggle: "Spis treści",
     projects_betfan_cjm_step1_stepNum: "Krok 01",
     projects_betfan_cjm_step1_title: "Reklama / Baner",
@@ -405,7 +428,7 @@ const translations = {
       "szacowany wzrost obrotu przy konwersji zaledwie 2 na 100 niezdecydowanych",
     projects_wkdzik_impact_profit_number: "+200 000 zł",
     projects_wkdzik_impact_profit_label:
-      "Przy zysku netto na poziomie 10 mln zł rocznie(2025), te 2% wzrostu konwersji to dodatkowe 200 000 zł czystego zysku — bez zwiększania budżetu marketingowego.",
+      "Przy zysku netto na poziomie 10 mln zł rocznie (2025), te 2% wzrostu konwersji to dodatkowe 200 000 zł czystego zysku — bez zwiększania budżetu marketingowego.",
     projects_wkdzik_impact_quote:
       "Dokręcanie śruby w UX przekłada się na realne zyski.",
 
@@ -477,7 +500,7 @@ const translations = {
     about_timeline_step3_year: "2024+",
     about_timeline_step3_title: "Partner Strategiczny",
     about_timeline_step3_text:
-      "Pierwsza praca. Pierwsze projekty. Ukończenie studiów Inżynierskich. Łączenie potrzeb i strategii biznesowych z designem. Rozpoczęcie działalności freelancerskiej.",
+      "Pierwsza praca komercyjna. Pierwsze projekty klienckie. Ukończenie studiów Inżynierskich. Łączenie potrzeb i strategii biznesowych z designem. Rozpoczęcie działalności freelancerskiej.",
 
     about_certificates_title: "Moje Certyfikaty",
     about_certificates_item1_alt: "Certyfikat Nueve - Masterclass UX",
@@ -554,6 +577,31 @@ const translations = {
     offer_cta_p2: "(wystawiam fakturę VAT, brak ryzyka dla obydwu stron).",
     offer_cta_button_secondary: "Zobacz moje projekty",
     offer_cta_button_primary: "Porozmawiajmy o projekcie",
+
+    offer_projecthub_badge: "Project Hub",
+    offer_projecthub_title: "Cały projekt w jednym miejscu",
+    offer_projecthub_desc:
+      "Współpracę organizuję w dedykowanym Project Hubie. Masz stały dostęp do postępów, materiałów, terminów i podjętych decyzji, bez przeszukiwania wiadomości oraz załączników.",
+    offer_projecthub_item1: "Aktualny status i następne działania",
+    offer_projecthub_item2: "Zakres, cele i mierniki sukcesu",
+    offer_projecthub_item3: "Harmonogram i kamienie milowe",
+    offer_projecthub_item4: "Materiały, prototypy i linki do Figmy",
+    offer_projecthub_item5: "Feedback oraz rejestr decyzji",
+    offer_projecthub_item6: "Podsumowania spotkań i dokumentacja",
+
+    offer_testimonials_title:
+      "Zobacz, co mówią o współpracy ze mną moi klienci",
+    offer_testimonials_subtitle:
+      "Opinie osób i firm, z którymi miałem przyjemność pracować",
+    offer_testimonial1_text:
+      "„Polecam współpracę z <b>Markiem Wieteckim</b>. Komunikacja była sprawna, a wszelkie poprawki zostały niezwłocznie opracowane z należytą starannością oraz zgodnie z oczekiwaniami zamawiającego.”",
+    offer_testimonial1_role: "Prezes Fundacji Fair",
+    offer_testimonial2_text:
+      "„Rzetelny fachowiec z świetnym podejściem do klienta. Bardzo dobrze zrozumiał nasze potrzeby biznesowe i doradził rozwiązania, na które sami byśmy nie wpadli.”",
+    offer_testimonial2_role: "CEO PlanetRoad",
+    offer_testimonial3_text:
+      "„Współpraca przebiegła bezproblemowo. Strona działa szybko, wygląda nowocześnie i co najważniejsze – zaczęła przynosić pierwszych klientów od razu po wdrożeniu.”",
+    offer_testimonial3_role: "Własny Biznes",
 
     // PRIVACY
     privacy_breadcrumbs_main: "Strona Główna",
@@ -1228,6 +1276,153 @@ const translations = {
     project_web_planetroad_navloop_text: "Zobacz kolejny projekt: ",
     project_web_planetroad_navloop_link: "Identyfikacja Wizualna - PlanetRoad",
 
+    // PROJECT HABITBUBBL
+    project_habitbubbl_badge: "Habit Bubbl",
+    project_habitbubbl_title: "Progresywna Aplikacja Mobilna",
+    project_habitbubbl_desc:
+      "Kompleksowe narzędzie wspierające produktywność i realizację celów — progresywna aplikacja mobilna (PWA) łącząca zarządzanie zadaniami, budowanie nawyków i długoterminowe cele w jednym systemie.",
+    project_habitbubbl_role_label: "Rola:",
+    project_habitbubbl_role_val: "UX/UI Designer & Front-end Developer",
+    project_habitbubbl_scope_label: "Zakres odpowiedzialności:",
+    project_habitbubbl_scope_val:
+      "Research, Architektura Informacji, Projekt UX/UI, Implementacja PWA, Badania Użyteczności, Optymalizacja Wydajności",
+    project_habitbubbl_duration_label: "Czas trwania:",
+    project_habitbubbl_duration_val: "4 miesiące",
+    project_habitbubbl_methodology_label: "Metodyka:",
+    project_habitbubbl_methodology_val:
+      "Proces iteracyjny mobile-first i offline-first — od desk research, przez architekturę informacji i projekt UI w Figmie, po badania użyteczności i optymalizację w Google Lighthouse.",
+
+    project_habitbubbl_about_h2: "1. O Projekcie",
+    project_habitbubbl_context_title: "Kontekst",
+    project_habitbubbl_about_p1:
+      "<strong>Habit Bubbl</strong> to progresywna aplikacja mobilna (PWA) stworzona jako projekt dyplomowy na kierunku Informatyka (Uniwersytet Vizja) pod kierunkiem dra inż. Marcina Kacprowicza.",
+    project_habitbubbl_problem_title: "Problem",
+    project_habitbubbl_about_p3:
+      "Grupa docelowa to osoby dorosłe aktywne zawodowo (ze szczególnym uwzględnieniem grupy wiekowej 18–30 lat), które mierzą się z brakiem motywacji, trudnościami w organizacji czasu, prokrastynacją oraz wysokim obciążeniem poznawczym wynikającym z łączenia pracy i obowiązków domowych — a dostępne na rynku aplikacje produktywnościowe nie oferują żadnego wsparcia, gdy zabraknie im samodyscypliny.",
+    project_habitbubbl_goals_title: "Cel",
+    project_habitbubbl_goal1:
+      "🎯 <b>Skuteczna realizacja codziennych zadań i budowanie trwałych nawyków</b> prowadzących do osiągania długoterminowych celów, niezależnie od stopnia ich trudności.",
+    project_habitbubbl_goal2:
+      "🎯 <b>Duży nacisk na techniki UX</b> — zoptymalizowaną ścieżkę użytkownika, intuicyjny interfejs oraz elementy gamifikacji — wspierające regularność działań i poczucie realnego postępu.",
+    project_habitbubbl_constraints_title: "Ograniczenia",
+    project_habitbubbl_constraint1:
+      "⚠️ <b>Niestabilność połączeń mobilnych</b> — aż 56% użytkowników smartfonów regularnie doświadcza problemów z siecią, więc aplikacja musiała w pełni działać offline.",
+    project_habitbubbl_constraint2:
+      "⚠️ <b>Realizacja solo w ramach pracy dyplomowej</b> — od researchu po wdrożenie i optymalizację, bez zespołu, w 4 miesiące.",
+    project_habitbubbl_constraint3:
+      "⚠️ <b>Minimalizacja obciążenia poznawczego</b> — interfejs musiał zostać prosty i intuicyjny mimo łączenia trzech warstw (zadania, nawyki, cele) w jednym systemie.",
+
+    project_habitbubbl_research_h2: "2. Badania",
+    project_habitbubbl_research_p1:
+      "Zamiast ograniczonej, autorskiej ankiety wybrałem analizę danych już dostępnych w internecie (desk research), opierając założenia na globalnych raportach rynkowych (m.in. Statista, Google Web.dev, Global Wireless Solutions).",
+    project_habitbubbl_research_p2:
+      "Na rynku istnieje wiele aplikacji wspierających produktywność — m.in. Microsoft To Do, InnerGrow Habit czy Apple Reminders. Ich zaletą jest prostota, ale analiza konkurencji ujawniła wspólną, istotną lukę funkcjonalną:",
+    project_habitbubbl_research_item1:
+      "<strong>Brak mechanizmów motywacyjnych:</strong> gdy użytkownik nie wykona zadania, żadna z tych aplikacji nie oferuje wbudowanego sposobu na pomoc mu wrócić na właściwe tory.",
+    project_habitbubbl_research_item2:
+      "<strong>Brak powiązań strukturalnych:</strong> zadanie, nawyk i cel funkcjonują osobno — nie ma połączenia, które wspierałoby regularność i budowanie trwałych nawyków.",
+    project_habitbubbl_research_item3:
+      "<strong>Brak celów w ogóle:</strong> większość nawet najmniejszych zadań użytkownicy wykonują w imię większego celu, a żadna z analizowanych aplikacji go nie uwzględnia.",
+    project_habitbubbl_research_p3:
+      "Dane ilościowe potwierdziły też słuszność wyboru architektury: ponad połowa globalnego ruchu w internecie pochodzi z urządzeń mobilnych, a aż <strong>56%</strong> ich użytkowników regularnie doświadcza problemów ze stabilnością sieci. Skalę potencjału PWA pokazuje przykład Alibaby, która po przejściu na tę architekturę odnotowała średnio <strong>76-procentowy</strong> wzrost konwersji i zaangażowania użytkowników.",
+    project_habitbubbl_research_p4:
+      "Habit Bubbl odpowiada na zidentyfikowaną lukę zintegrowanym systemem, w którym pojedyncze działania budują nawyki, a te bezpośrednio przekładają się na postęp w realizacji celów głównych.",
+
+    project_habitbubbl_ideation_h2: "3. Ideacja",
+    project_habitbubbl_ideation_p1:
+      "Architekturę informacji oparłem na czterech ekranach — Liście Zadań, Kalendarzu, Nawykach ze statystykami oraz Ekranie Bohatera — połączonych Tab Navigation, znaną użytkownikom z natywnych aplikacji mobilnych. Dla kluczowych funkcji przygotowałem w FigJam user flows, które przeanalizowałem pod kątem liczby kroków i potencjalnych pain pointów.",
+    project_habitbubbl_ideation_p2:
+      "Jedną z decyzji podjętych na tym etapie było celowe <strong>wykluczenie edycji pojedynczego zadania</strong> — żeby nie obciążać użytkownika nadmiarem opcji na ekranie głównym, edycję zostawiłem tylko dla powtarzalnych nawyków i długoterminowych celów.",
+    project_habitbubbl_ideation_p3:
+      "Pracę nad warstwą wizualną zacząłem od logo i style guide w stylu „Liquid Glass\", który wyznaczył ramy projektowe: spójną kolorystykę, minimalizację obciążenia poznawczego oraz dostępność (kontrast, wielkość elementów interaktywnych). Interfejs zaprojektowałem w Figmie — od makiet niskiej wierności, przez makiety wysokiej wierności, po interaktywny prototyp — weryfikując założenia jeszcze przed implementacją.",
+    project_habitbubbl_ideation_stack_label:
+      "<strong>Stos technologiczny i narzędzia:</strong>",
+    project_habitbubbl_ideation_stack_item1:
+      "<strong>Projektowanie UX/UI:</strong> Figma (makiety lo-fi/hi-fi, design system), FigJam (user flows, diagramy).",
+    project_habitbubbl_ideation_stack_item2:
+      "<strong>Frontend:</strong> HTML5, CSS3, JavaScript (ES6+).",
+    project_habitbubbl_ideation_stack_item3:
+      "<strong>PWA i architektura:</strong> Service Worker (tryb offline, cache), Web App Manifest (instalowalność), IndexedDB (asynchroniczna baza lokalna, wydajniejsza niż Local Storage przy większej ilości danych).",
+    project_habitbubbl_ideation_stack_item4:
+      "<strong>Narzędzia i testy:</strong> Visual Studio Code, Chrome DevTools, Google Lighthouse.",
+
+    project_habitbubbl_iterations_h2: "4. Iteracje",
+    project_habitbubbl_iterations_p1:
+      "Przeprowadziłem serię badań użyteczności — testy scenariuszowe, testy first-click oraz analizę heurystyczną — na grupie docelowych użytkowników. Ujawniły one złamania heurystyk elastyczności i obsługi błędów (H7, H9) oraz spójności (H4), a także bariery dostępności WCAG (kontrast poniżej 4.5:1 na neonowych elementach tła). Każdy znaleziony problem przełożył się na konkretną poprawkę:",
+    project_habitbubbl_iterations_item1:
+      "<strong>Zbyt agresywny kolor i nieczytelne tło:</strong> intensywna fuksja na ekranie startowym męczyła wzrok, a słabe przyciemnienie tła sprawiało, że teksty pod spodem przebijały i dekoncentrowały. Złagodziłem odcień i wdrożyłem pełne tło ponad warstwą danych w onboardingu.",
+    project_habitbubbl_iterations_item2:
+      "<strong>Gesty w przewodniku ignorowane:</strong> użytkownicy intuicyjnie próbowali przewijać tutorial gestem swipe zamiast klikać kropki nawigacyjne, a po włączeniu powiadomień brakowało potwierdzenia. Dodałem pełną obsługę swipe oraz systemowe potwierdzenie po aktywacji powiadomień.",
+    project_habitbubbl_iterations_item3:
+      "<strong>Niespójne nazewnictwo sekcji głównej:</strong> etykieta „today's tasks\" nie pasowała do zawartości, bo mieszała zadania i nawyki. Zmieniłem nazwę i nagłówek na „To Do Today\".",
+    project_habitbubbl_iterations_item4:
+      "<strong>Za małe tarcie przy usuwaniu:</strong> kliknięcie gdziekolwiek w kafelek natychmiast odznaczało nawyk, a usunięcie wymagało tylko dwóch kliknięć, bez cofnięcia. Wprowadziłem mechanizm przytrzymania — element znika dopiero po 3 sekundach.",
+    project_habitbubbl_iterations_item5:
+      "<strong>Brak feedbacku XP i błędy audio:</strong> po odhaczeniu zadania brakowało wyraźnej informacji o zdobytym XP, a dźwięk odhaczenia aktywował się błędnie też przy cofaniu zaznaczenia. Dodałem wyskakujący „bąbelek z XP\" i podpiąłem dźwięk pękającej bańki wyłącznie pod pozytywną akcję ukończenia.",
+    project_habitbubbl_iterations_item6:
+      "<strong>Blokująca się lista nawyków na mobile:</strong> elementy nachodziły na siebie, a interfejs okazjonalnie blokował się przy edycji kilku pozycji naraz. Zmieniłem architekturę na rozwijaną listę pionową, eliminując nakładanie się elementów.",
+    project_habitbubbl_iterations_item7:
+      "<strong>Spowolnienia głównego wątku:</strong> dynamiczne renderowanie wielu „bąbelków\" nawyków blokowało interfejs na słabszych urządzeniach (długie Long Tasks, słabe FCP/LCP). Zoptymalizowałem kod pod kątem Total Blocking Time i usunąłem render-blocking CSS z krytycznej ścieżki renderowania.",
+    project_habitbubbl_hero_alt: "Habit Bubbl - baner projektu",
+    project_habitbubbl_styleguide_alt: "Style Guide aplikacji Habit Bubbl",
+    project_habitbubbl_styleguide_caption:
+      "Style guide „Liquid Glass\" (1/2) — paleta kolorów i typografia",
+    project_habitbubbl_styleguide2_alt:
+      "Style Guide aplikacji Habit Bubbl - strona 2",
+    project_habitbubbl_styleguide2_caption:
+      "Style guide „Liquid Glass\" (2/2) — DNA komponentów, wersje logo, spacing",
+    project_habitbubbl_lofi_alt: "Makiety niskiej wierności Habit Bubbl",
+    project_habitbubbl_lofi_caption:
+      "Makiety niskiej wierności — Today, Calendar, Habits, Hero, Modal",
+
+    project_habitbubbl_final_h2: "5. Efekt Końcowy",
+    project_habitbubbl_final_p1:
+      "Aplikacja składa się z czterech głównych modułów wspierających produktywność:",
+    project_habitbubbl_final_item1:
+      "<strong>Lista Zadań:</strong> Zarządzanie bieżącymi obowiązkami w danym dniu.",
+    project_habitbubbl_final_item2:
+      "<strong>Kalendarz:</strong> Planowanie przyszłych działań oraz weryfikacja historii zadań.",
+    project_habitbubbl_final_item3:
+      "<strong>Ekran Nawyków i Statystyk:</strong> Śledzenie regularności i analiza stopnia utrwalenia nawyków.",
+    project_habitbubbl_final_item4:
+      "<strong>Ekran Bohatera (Gamifikacja):</strong> Zarządzanie długoterminowymi celami, podgląd statystyk rozwoju oraz poziomu zaawansowania użytkownika.",
+    project_habitbubbl_screenscore_caption:
+      "Splash Screen, Today, Calendar oraz Habits",
+    project_habitbubbl_screens_caption:
+      "Onboarding, dodawanie nawyku, przewodnik i system nagród (Level Up)",
+    project_habitbubbl_final_p2:
+      "Optymalizacja wydajności — podział jednego pliku CSS (86 KB) na mniejsze arkusze ładowane tylko tam, gdzie są potrzebne, lokalne hostowanie czcionek zamiast Google Fonts, minifikacja CSS oraz konwersja grafik do WebP i dźwięków do MP3 — przełożyła się na wymierną poprawę wyników Google Lighthouse:",
+    project_habitbubbl_impact_card1_number: "-52%",
+    project_habitbubbl_impact_card1_label:
+      "First Contentful Paint: z 2,35 s do 1,13 s",
+    project_habitbubbl_impact_card2_number: "-52%",
+    project_habitbubbl_impact_card2_label:
+      "Largest Contentful Paint: z 2,85 s do 1,38 s",
+    project_habitbubbl_impact_card3_number: "100/100",
+    project_habitbubbl_impact_card3_label:
+      "wynik Google Lighthouse w niemal wszystkich kategoriach",
+    project_habitbubbl_impact_card4_number: "do -44%",
+    project_habitbubbl_impact_card4_label:
+      "mniej pobieranych stylów CSS na podstronę",
+
+    project_habitbubbl_after_h2: "6. Po Projekcie",
+    project_habitbubbl_takeaways_h3: "Kluczowe Wnioski",
+    project_habitbubbl_after_p1:
+      "🧠 Wykorzystanie architektury PWA w połączeniu z zasadami UX oraz mechanizmami grywalizacji pozwoliło stworzyć lekkie, wydajne i niezależne od połączenia internetowego narzędzie. Połączenie zadań, nawyków i celów w jednym systemie skutecznie redukuje obciążenie poznawcze i pomaga utrzymać długofalową motywację użytkowników.",
+    project_habitbubbl_after_p2:
+      "🔁 Implementacja w PWA pozwoliła mi przetestować każdą funkcję w praktyce, także w trybie offline, i wprowadzać poprawki na podstawie własnych obserwacji zachowań użytkowników — nie tylko założeń projektowych.",
+    project_habitbubbl_roadmap_h3: "Perspektywy Rozwoju",
+    project_habitbubbl_roadmap_p1:
+      "Trzy kierunki, w które rozwijałbym Habit Bubbl dalej:",
+    project_habitbubbl_roadmap_item1:
+      "🔜 <strong>Grywalizacja społecznościowa (priorytet):</strong> konta z synchronizacją w chmurze, ekran znajomych ze wspólnymi wyzwaniami i rywalizacją, system losowych nagród z personalizowanymi awatarami.",
+    project_habitbubbl_roadmap_item2:
+      "🔜 <strong>Rozbudowa systemu RPG i nagród:</strong> naliczanie XP per konkretny nawyk z rozwojem powiązanej umiejętności Bohatera, odblokowywane skórki interfejsu.",
+    project_habitbubbl_roadmap_item3:
+      "🔜 <strong>Optymalizacja UX i danych:</strong> system flag do kategoryzacji i filtrowania zadań, zaawansowane sortowanie celów wg terminu realizacji, zapamiętywanie ulubionych lokalizacji dla szybszego planowania.",
+    project_habitbubbl_navloop_text: "Zobacz kolejny projekt:",
+    project_habitbubbl_navloop_link: "Audyt WKDZIK.PL",
+
     // PROJECT VI PLANETROAD
     // Identyfikacja Wizualna - PlanetRoad
     project_vi_planetroad_title: "Identyfikacja Wizualna",
@@ -1551,14 +1746,37 @@ const translations = {
     projects_betfan_implementation_item3:
       "<strong>Red Flags:</strong> Warning triggers for negative bonus ROI or artificial streak maintenance without real turnover.",
 
-    projects_betfan_navloop_text: "View next project:",
-    projects_betfan_navloop_link: "WKDZIK.PL Audit",
+    projects_betfan_recruitment_note:
+      "Completed as a task during Betfan's recruitment process.",
+
+    projects_betfan_impact_title: "Expected Impact",
+    projects_betfan_impact_desc:
+      "The project was built without access to production data — below is the direction the proposed mechanisms were meant to move, tied to the KPIs defined earlier:",
+    projects_betfan_impact_item1:
+      "<strong>Return regularity:</strong> the streak system and expiry push notifications were meant to raise Retention Rate by building a daily-return habit.",
+    projects_betfan_impact_item2:
+      "<strong>Healthy engagement:</strong> reward pacing based on the Octalysis framework was meant to grow Average Bets per User without encouraging risky, impulsive betting.",
+    projects_betfan_impact_item3:
+      "<strong>Bonus cost control:</strong> red flags on suspicious patterns were meant to keep Bonus Burn Rate in check and protect margin from abuse.",
+    projects_betfan_impact_quote:
+      "Without implementation and A/B testing, these are hypotheses grounded in motivational mechanics, not measured results — real effectiveness could only be judged after months live in the product.",
+
+    projects_betfan_after_title: "After the Project",
+    projects_betfan_after_p1:
+      "I completed this project as a task during Betfan's recruitment process. The process itself — mapping the customer journey for emotion and risk in a betting product — was one of the more ethically demanding projects I've worked on: balancing business retention against a responsible approach to reward mechanics.",
+    projects_betfan_after_p2:
+      "The direction Betfan's actual loyalty work later took lined up with the logic behind the mechanisms I proposed — which I take as confirmation that the underlying assumptions held up.",
+
+    projects_betfan_navloop_text: "See next project:",
+    projects_betfan_navloop_link: "Progressive App HabitBubbl",
 
     projects_betfan_floatnav_about: "About Project",
     projects_betfan_floatnav_persona: "Persona",
     projects_betfan_floatnav_cjm: "Customer Journey",
     projects_betfan_floatnav_gamification: "Gamification",
     projects_betfan_floatnav_implementation: "Implementation & KPIs",
+    projects_betfan_floatnav_impact: "Impact",
+    projects_betfan_floatnav_after: "After the Project",
     projects_betfan_floatnav_toggle: "Table of contents",
 
     projects_betfan_cjm_step1_stepNum: "Step 01",
@@ -1845,7 +2063,7 @@ const translations = {
     about_timeline_step3_year: "2024+",
     about_timeline_step3_title: "Strategic Partner",
     about_timeline_step3_text:
-      "First job. First projects. Completed my engineering degree. Combining business needs and strategy with design. Started freelancing.",
+      "First commercial job. First client projects. Completed my engineering degree. Combining business needs and strategy with design. Started freelancing.",
 
     about_certificates_title: "My Certifications",
     about_certificates_item1_alt: "Nueve Certificate - UX Masterclass",
@@ -1924,6 +2142,31 @@ const translations = {
       "(VAT invoice provided, ensuring zero risk for both parties).",
     offer_cta_button_secondary: "View my projects",
     offer_cta_button_primary: "Let's discuss your project",
+
+    offer_projecthub_badge: "Project Hub",
+    offer_projecthub_title: "Your whole project in one place",
+    offer_projecthub_desc:
+      "I run collaboration through a dedicated Project Hub. You get constant access to progress, materials, deadlines, and decisions made — without digging through messages and attachments.",
+    offer_projecthub_item1: "Current status and next steps",
+    offer_projecthub_item2: "Scope, goals, and success metrics",
+    offer_projecthub_item3: "Timeline and milestones",
+    offer_projecthub_item4: "Materials, prototypes, and Figma links",
+    offer_projecthub_item5: "Feedback and a decision log",
+    offer_projecthub_item6: "Meeting summaries and documentation",
+
+    offer_testimonials_title:
+      "See what my clients say about working with me",
+    offer_testimonials_subtitle:
+      "Reviews from people and companies I've had the pleasure of working with",
+    offer_testimonial1_text:
+      "\"I recommend working with <b>Marek Wietecki</b>. Communication was smooth, and every revision was handled promptly, with care, and in line with what we asked for.\"",
+    offer_testimonial1_role: "President, Fundacja Fair",
+    offer_testimonial2_text:
+      "\"A reliable professional with a great client approach. He understood our business needs very well and suggested solutions we wouldn't have thought of ourselves.\"",
+    offer_testimonial2_role: "CEO, PlanetRoad",
+    offer_testimonial3_text:
+      "\"The collaboration went smoothly. The site is fast, looks modern, and — most importantly — started bringing in first customers right after launch.\"",
+    offer_testimonial3_role: "Business Owner",
 
     // PRIVACY
     privacy_breadcrumbs_main: "Main Page",
@@ -2579,6 +2822,152 @@ const translations = {
       "🔜 Advanced analytics and conversion rate optimization",
     project_web_planetroad_navloop_text: "See next project: ",
     project_web_planetroad_navloop_link: "Visual Identity - PlanetRoad",
+
+    // PROJECT HABITBUBBL
+    project_habitbubbl_badge: "Habit Bubbl",
+    project_habitbubbl_title: "Progressive Mobile App",
+    project_habitbubbl_desc:
+      "A complete toolkit for productivity and goal achievement — a progressive mobile app (PWA) bringing task management, habit-building, and long-term goals into one system.",
+    project_habitbubbl_role_label: "Role:",
+    project_habitbubbl_role_val: "UX/UI Designer & Front-end Developer",
+    project_habitbubbl_scope_label: "Scope:",
+    project_habitbubbl_scope_val:
+      "Research, Information Architecture, UX/UI Design, PWA Implementation, Usability Testing, Performance Optimization",
+    project_habitbubbl_duration_label: "Duration:",
+    project_habitbubbl_duration_val: "4 months",
+    project_habitbubbl_methodology_label: "Methodology:",
+    project_habitbubbl_methodology_val:
+      "An iterative mobile-first and offline-first process — from desk research, through information architecture and UI design in Figma, to usability testing and Google Lighthouse optimization.",
+
+    project_habitbubbl_about_h2: "1. About the Project",
+    project_habitbubbl_context_title: "Context",
+    project_habitbubbl_about_p1:
+      "<strong>Habit Bubbl</strong> is a progressive mobile app (PWA) built as my engineering thesis in Computer Science (Vizja University), supervised by Dr. Eng. Marcin Kacprowicz.",
+    project_habitbubbl_problem_title: "Problem",
+    project_habitbubbl_about_p3:
+      "The target audience is working adults (with a particular focus on the 18–30 age group) dealing with low motivation, difficulty organizing their time, procrastination, and the high cognitive load of balancing work with home responsibilities — and the productivity apps on the market offer no support once their self-discipline runs out.",
+    project_habitbubbl_goals_title: "Goal",
+    project_habitbubbl_goal1:
+      "🎯 <b>Effectively completing daily tasks and building lasting habits</b> that feed into long-term goals, regardless of how difficult they are.",
+    project_habitbubbl_goal2:
+      "🎯 <b>A strong focus on UX techniques</b> — an optimized user journey, an intuitive interface, and gamification elements — supporting regularity and a genuine sense of progress.",
+    project_habitbubbl_constraints_title: "Constraints",
+    project_habitbubbl_constraint1:
+      "⚠️ <b>Unstable mobile connections</b> — as many as 56% of smartphone users regularly run into network issues, so the app had to work fully offline.",
+    project_habitbubbl_constraint2:
+      "⚠️ <b>Built solo as a thesis project</b> — from research through implementation and optimization, without a team, in 4 months.",
+    project_habitbubbl_constraint3:
+      "⚠️ <b>Minimizing cognitive load</b> — the interface had to stay simple and intuitive despite bringing three layers (tasks, habits, goals) into one system.",
+
+    project_habitbubbl_research_h2: "2. Research",
+    project_habitbubbl_research_p1:
+      "Instead of a limited, custom survey, I chose desk research based on data already available online, grounding the assumptions in global market reports (Statista, Google Web.dev, Global Wireless Solutions, among others).",
+    project_habitbubbl_research_p2:
+      "There are plenty of productivity apps on the market — Microsoft To Do, InnerGrow Habit, Apple Reminders among them. Their strength is simplicity, but the competitive analysis revealed one shared, significant functional gap:",
+    project_habitbubbl_research_item1:
+      "<strong>No motivational mechanisms:</strong> when a user misses a task, none of these apps offer a built-in way to help them get back on track.",
+    project_habitbubbl_research_item2:
+      "<strong>No structural links:</strong> tasks, habits, and goals exist in isolation — there's no connection that would support regularity or building lasting habits.",
+    project_habitbubbl_research_item3:
+      "<strong>No goals at all:</strong> users complete even the smallest tasks in service of a bigger goal, yet none of the analyzed apps account for that.",
+    project_habitbubbl_research_p3:
+      "The quantitative data also confirmed the architecture choice was sound: over half of global internet traffic comes from mobile devices, and as many as <strong>56%</strong> of mobile users regularly run into network stability issues. The scale of PWA's potential is shown by Alibaba, which saw an average <strong>76% increase</strong> in conversion and user engagement after adopting the architecture.",
+    project_habitbubbl_research_p4:
+      "Habit Bubbl addresses that gap with an integrated system where individual actions build habits, which in turn feed directly into progress on the underlying goals.",
+
+    project_habitbubbl_ideation_h2: "3. Ideation",
+    project_habitbubbl_ideation_p1:
+      "I based the information architecture on four screens — Task List, Calendar, Habits with statistics, and the Hero screen — connected via Tab Navigation, familiar to users from native mobile apps. For the key features, I mapped out user flows in FigJam and analyzed them for step count and potential pain points.",
+    project_habitbubbl_ideation_p2:
+      "One decision made at this stage was deliberately <strong>excluding single-task editing</strong> — to avoid overloading the user with options on the main screen, I kept editing to recurring habits and long-term goals only.",
+    project_habitbubbl_ideation_p3:
+      "I started the visual work with a logo and a \"Liquid Glass\" style guide, which set the design constraints: consistent colors, minimizing cognitive load, and accessibility (contrast, size of interactive elements). I designed the interface in Figma — from low-fidelity wireframes, through high-fidelity mockups, to an interactive prototype — validating assumptions before implementation began.",
+    project_habitbubbl_ideation_stack_label:
+      "<strong>Tech stack and tools:</strong>",
+    project_habitbubbl_ideation_stack_item1:
+      "<strong>UX/UI design:</strong> Figma (lo-fi/hi-fi mockups, design system), FigJam (user flows, diagrams).",
+    project_habitbubbl_ideation_stack_item2:
+      "<strong>Frontend:</strong> HTML5, CSS3, JavaScript (ES6+).",
+    project_habitbubbl_ideation_stack_item3:
+      "<strong>PWA & architecture:</strong> Service Worker (offline mode, caching), Web App Manifest (installability), IndexedDB (asynchronous local database, faster than Local Storage at larger data volumes).",
+    project_habitbubbl_ideation_stack_item4:
+      "<strong>Tools & testing:</strong> Visual Studio Code, Chrome DevTools, Google Lighthouse.",
+
+    project_habitbubbl_iterations_h2: "4. Iterations",
+    project_habitbubbl_iterations_p1:
+      "I ran a series of usability studies — scenario testing, first-click testing, and heuristic analysis — with target users. They surfaced violations of flexibility and error-handling heuristics (H7, H9) and consistency (H4), plus WCAG accessibility barriers (contrast below 4.5:1 on neon background elements). Every finding turned into a specific fix:",
+    project_habitbubbl_iterations_item1:
+      "<strong>Overly aggressive color and unreadable background:</strong> the intense fuchsia on the splash screen tired the eyes, and weak background dimming let text underneath bleed through and distract. I softened the hue and added a full background layer above the data layer during onboarding.",
+    project_habitbubbl_iterations_item2:
+      "<strong>Guide gestures ignored:</strong> users instinctively tried to swipe through the tutorial instead of using the nav dots, and there was no confirmation after enabling notifications. I added full swipe support and a system confirmation after notifications are enabled.",
+    project_habitbubbl_iterations_item3:
+      "<strong>Inconsistent naming on the main section:</strong> the \"today's tasks\" label didn't match its contents, since it mixed tasks and habits. I renamed the heading to \"To Do Today.\"",
+    project_habitbubbl_iterations_item4:
+      "<strong>Too little friction on deletion:</strong> tapping anywhere on a habit tile instantly unchecked it, and deleting an item took only two clicks with no undo. I introduced a hold-to-delete gesture — the item disappears only after 3 seconds.",
+    project_habitbubbl_iterations_item5:
+      "<strong>No XP feedback and audio bugs:</strong> completing a task gave no clear indication of XP earned, and the check-off sound incorrectly fired when unchecking too. I added a pop-up \"XP bubble\" and tied the bubble-pop sound exclusively to the positive completion action.",
+    project_habitbubbl_iterations_item6:
+      "<strong>Habit list breaking on mobile:</strong> elements overlapped, and the interface occasionally froze when editing several items at once. I switched the layout to a vertically expandable list, eliminating the overlap.",
+    project_habitbubbl_iterations_item7:
+      "<strong>Main-thread slowdowns:</strong> dynamically rendering many habit \"bubbles\" blocked the interface on weaker devices (long Long Tasks, poor FCP/LCP). I optimized the code for Total Blocking Time and removed render-blocking CSS from the critical rendering path.",
+    project_habitbubbl_hero_alt: "Habit Bubbl - project banner",
+    project_habitbubbl_styleguide_alt: "Habit Bubbl app style guide",
+    project_habitbubbl_styleguide_caption:
+      "\"Liquid Glass\" style guide (1/2) — color palette and typography",
+    project_habitbubbl_styleguide2_alt: "Habit Bubbl app style guide - page 2",
+    project_habitbubbl_styleguide2_caption:
+      "\"Liquid Glass\" style guide (2/2) — component DNA, logo versions, spacing",
+    project_habitbubbl_lofi_alt: "Habit Bubbl low-fidelity wireframes",
+    project_habitbubbl_lofi_caption:
+      "Low-fidelity wireframes — Today, Calendar, Habits, Hero, Modal",
+
+    project_habitbubbl_final_h2: "5. Final Result",
+    project_habitbubbl_final_p1:
+      "The app consists of four main modules supporting productivity:",
+    project_habitbubbl_final_item1:
+      "<strong>Task List:</strong> managing the current day's tasks.",
+    project_habitbubbl_final_item2:
+      "<strong>Calendar:</strong> planning ahead and reviewing past tasks.",
+    project_habitbubbl_final_item3:
+      "<strong>Habits & Stats screen:</strong> tracking regularity and how well habits have stuck.",
+    project_habitbubbl_final_item4:
+      "<strong>Hero screen (gamification):</strong> managing long-term goals, and viewing growth stats and user level.",
+    project_habitbubbl_screenscore_caption:
+      "Splash Screen, Today, Calendar, and Habits",
+    project_habitbubbl_screens_caption:
+      "Onboarding, adding a habit, the guide, and the reward system (Level Up)",
+    project_habitbubbl_final_p2:
+      "Performance work — splitting one 86 KB CSS file into smaller sheets loaded only where needed, hosting fonts locally instead of via Google Fonts, CSS minification, and converting images to WebP and audio to MP3 — translated into a measurable Google Lighthouse improvement:",
+    project_habitbubbl_impact_card1_number: "-52%",
+    project_habitbubbl_impact_card1_label:
+      "First Contentful Paint: 2.35s to 1.13s",
+    project_habitbubbl_impact_card2_number: "-52%",
+    project_habitbubbl_impact_card2_label:
+      "Largest Contentful Paint: 2.85s to 1.38s",
+    project_habitbubbl_impact_card3_number: "100/100",
+    project_habitbubbl_impact_card3_label:
+      "Google Lighthouse score in nearly every category",
+    project_habitbubbl_impact_card4_number: "up to -44%",
+    project_habitbubbl_impact_card4_label:
+      "less CSS downloaded per page",
+
+    project_habitbubbl_after_h2: "6. After the Project",
+    project_habitbubbl_takeaways_h3: "Key Takeaways",
+    project_habitbubbl_after_p1:
+      "🧠 Building on a PWA architecture together with UX principles and gamification mechanics let me create a lightweight, fast tool that works independently of the network connection. Bringing tasks, habits, and goals into one system meaningfully cuts cognitive load and helps sustain long-term user motivation.",
+    project_habitbubbl_after_p2:
+      "🔁 Implementing it as a PWA let me test every feature in practice, offline included, and make adjustments based on my own observations of user behavior — not just design assumptions.",
+    project_habitbubbl_roadmap_h3: "Where I'd Take It Next",
+    project_habitbubbl_roadmap_p1:
+      "Three directions I'd develop Habit Bubbl in further:",
+    project_habitbubbl_roadmap_item1:
+      "🔜 <strong>Social gamification (priority):</strong> accounts with cloud sync, a friends screen with shared challenges and leaderboards, a random-reward system with personalized avatars.",
+    project_habitbubbl_roadmap_item2:
+      "🔜 <strong>Expanding the RPG & rewards system:</strong> XP tracked per specific habit feeding into the related Hero skill's level, unlockable interface skins.",
+    project_habitbubbl_roadmap_item3:
+      "🔜 <strong>UX & data optimization:</strong> a flag system for categorizing and filtering tasks, advanced goal sorting by deadline, and remembering favorite locations for faster task planning.",
+    project_habitbubbl_navloop_text: "See next project:",
+    project_habitbubbl_navloop_link: "WKDZIK.PL Audit",
 
     // PROJECT VI PLANETROAD
     project_vi_planetroad_title: "Visual Identity",

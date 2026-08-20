@@ -177,6 +177,56 @@
         font-size: 12px;
       }
 
+      /* --- IMPACT STATS (Google Lighthouse) --- */
+      .impactGrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 16px;
+        margin: 24px 0;
+      }
+
+      .impactCard {
+        background: var(--bg-card, #121824);
+        border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.1));
+        border-radius: 20px;
+        padding: 22px;
+      }
+
+      .impactNumber {
+        font-family: "Unbounded", sans-serif;
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        font-weight: 700;
+        background: linear-gradient(90deg, #1e6ed6, #7928ca);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .impactLabel {
+        margin-top: 6px;
+        font-size: 13px;
+        color: var(--text-muted, #a0aec0);
+      }
+
+      .caveatQuote {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        margin: 32px 0;
+      }
+
+      .caveatIcons {
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
+      }
+
+      .caveatText {
+        font-family: "Caveat", cursive;
+        font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+        color: var(--accent, #1e6ed6);
+        text-align: center;
+      }
+
       /* ========================================================
    RESPONSIVE MEDIA QUERIES
    ======================================================== */
@@ -224,9 +274,6 @@
     <script src="../js/audience.js"></script>
   </head>
   <body data-project-title="Progresywna Aplikacja Mobilna HabitBubbl">
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
-
     <!-- HEADER (NAV) -->
     <header>
       <div class="headerNav">
@@ -352,164 +399,380 @@
     <section class="spaceX" id="spaceX"></section>
     <main class="projectLayout">
       <div class="projectContent">
-        <span style="font-size: 18px" data-i18n="project_vi_planetroad_subtitle"
+        <span style="font-size: 18px" data-i18n="project_habitbubbl_badge"
           >Habit Bubbl</span
         >
-        <h1 style="margin-top: 8px" data-i18n="project_vi_planetroad_title">
+        <h1 style="margin-top: 8px" data-i18n="project_habitbubbl_title">
           Progresywna Aplikacja Mobilna
         </h1>
-        <p class="caveat" style="font-size: 1.4rem; color: #1e6ed6">
-          Kompleksowe narzędzie wspierające produktywność i realizację celów
+        <p style="padding-top: 2vh" data-i18n="project_habitbubbl_desc">
+          Kompleksowe narzędzie wspierające produktywność i realizację celów —
+          progresywna aplikacja mobilna (PWA) łącząca zarządzanie zadaniami,
+          budowanie nawyków i długoterminowe cele w jednym systemie.
         </p>
+
+        <p style="padding-top: 3vh">
+          <b data-i18n="project_habitbubbl_role_label">Rola:</b>
+          <span data-i18n="project_habitbubbl_role_val"
+            >UX/UI Designer &amp; Front-end Developer</span
+          >
+        </p>
+        <p style="padding-top: 1vh">
+          <b data-i18n="project_habitbubbl_scope_label"
+            >Zakres odpowiedzialności:</b
+          >
+          <span data-i18n="project_habitbubbl_scope_val"
+            >Research, Architektura Informacji, Projekt UX/UI, Implementacja
+            PWA, Badania Użyteczności, Optymalizacja Wydajności</span
+          >
+        </p>
+        <p style="padding-top: 1vh">
+          <b data-i18n="project_habitbubbl_duration_label">Czas trwania:</b>
+          <span data-i18n="project_habitbubbl_duration_val">4 miesiące</span>
+        </p>
+        <p style="padding-top: 1vh">
+          <b data-i18n="project_habitbubbl_methodology_label">Metodyka:</b>
+          <span data-i18n="project_habitbubbl_methodology_val"
+            >Proces iteracyjny mobile-first i offline-first — od desk
+            research, przez architekturę informacji i projekt UI w Figmie, po
+            badania użyteczności i optymalizację w Google Lighthouse.</span
+          >
+        </p>
+
         <a
-          href="assets/projects/habit-bubbl/hero.png"
+          href="/assets/projects/habit-bubbl/hero.png"
           data-lightbox="project-gallery"
-          data-title="Habit Bubbl - Banner główny"
+          data-i18n="[data-title]project_habitbubbl_hero_alt"
+          data-title="Habit Bubbl - baner projektu"
         >
           <div class="gradientBackground">
             <img
-              src="assets/projects/habit-bubbl/hero.png"
-              alt="Habit Bubbl Mockup"
-              style="max-width: 90%; max-height: 85%"
+              src="/assets/projects/habit-bubbl/hero.png"
+              data-i18n="[alt]project_habitbubbl_hero_alt"
+              alt="Habit Bubbl - baner projektu"
+              style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px"
             />
           </div>
         </a>
 
         <section id="o-projekcie">
-          <h2>1. O Projekcie</h2>
-          <p>
+          <h2 style="padding-top: 8vh" data-i18n="project_habitbubbl_about_h2">
+            1. O Projekcie
+          </h2>
+
+          <h3
+            style="margin-bottom: 1vh"
+            data-i18n="project_habitbubbl_context_title"
+          >
+            Kontekst
+          </h3>
+          <p data-i18n="project_habitbubbl_about_p1">
             <strong>Habit Bubbl</strong> to progresywna aplikacja mobilna (PWA)
             stworzona jako projekt dyplomowy na kierunku Informatyka
             (Uniwersytet Vizja) pod kierunkiem dra inż. Marcina Kacprowicza.
           </p>
-          <p>
-            <strong>Cel projektu:</strong> Zaprojektowanie i wdrożenie
-            progresywnej aplikacji mobilnej wspierającej użytkowników w
-            skutecznej realizacji codziennych zadań, budowaniu trwałych nawyków
-            oraz osiąganiu długoterminowych celów.
-          </p>
-          <p>
-            <strong>Grupa docelowa:</strong> Osoby dorosłe aktywne zawodowo (ze
-            szczególnym uwzględnieniem grupy wiekowej 18–30 lat), które mierzą
-            się z brakiem motywacji, trudnościami w organizacji czasu,
+
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_habitbubbl_problem_title"
+          >
+            Problem
+          </h3>
+          <p data-i18n="project_habitbubbl_about_p3">
+            Grupa docelowa to osoby dorosłe aktywne zawodowo (ze szczególnym
+            uwzględnieniem grupy wiekowej 18–30 lat), które mierzą się z
+            brakiem motywacji, trudnościami w organizacji czasu,
             prokrastynacją oraz wysokim obciążeniem poznawczym wynikającym z
-            łączenia pracy i obowiązków domowych.
+            łączenia pracy i obowiązków domowych — a dostępne na rynku
+            aplikacje produktywnościowe nie oferują żadnego wsparcia, gdy
+            zabraknie im samodyscypliny.
+          </p>
+
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_habitbubbl_goals_title"
+          >
+            Cel
+          </h3>
+          <p data-i18n="project_habitbubbl_goal1">
+            🎯
+            <b>Skuteczna realizacja codziennych zadań i budowanie trwałych
+            nawyków</b>
+            prowadzących do osiągania długoterminowych celów, niezależnie od
+            stopnia ich trudności.
+          </p>
+          <p data-i18n="project_habitbubbl_goal2">
+            🎯
+            <b>Duży nacisk na techniki UX</b>
+            — zoptymalizowaną ścieżkę użytkownika, intuicyjny interfejs oraz
+            elementy gamifikacji — wspierające regularność działań i poczucie
+            realnego postępu.
+          </p>
+
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_habitbubbl_constraints_title"
+          >
+            Ograniczenia
+          </h3>
+          <p data-i18n="project_habitbubbl_constraint1">
+            ⚠️
+            <b>Niestabilność połączeń mobilnych</b>
+            — aż 56% użytkowników smartfonów regularnie doświadcza problemów z
+            siecią, więc aplikacja musiała w pełni działać offline.
+          </p>
+          <p data-i18n="project_habitbubbl_constraint2">
+            ⚠️
+            <b>Realizacja solo w ramach pracy dyplomowej</b>
+            — od researchu po wdrożenie i optymalizację, bez zespołu, w 4
+            miesiące.
+          </p>
+          <p data-i18n="project_habitbubbl_constraint3">
+            ⚠️
+            <b>Minimalizacja obciążenia poznawczego</b>
+            — interfejs musiał zostać prosty i intuicyjny mimo łączenia
+            trzech warstw (zadania, nawyki, cele) w jednym systemie.
           </p>
         </section>
 
         <section id="badania">
-          <h2>2. Badania</h2>
-          <p>
-            Na rynku istnieje wiele rozwiązań wspierających produktywność (np.
-            Microsoft To Do, InnerGrow Habit, Apple Reminders). Mimo ich
-            popularności, z przeprowadzonych badań i analizy konkurencji (desk
-            research) wynikają istotne luki funkcjonalne:
+          <h2 style="padding-top: 8vh" data-i18n="project_habitbubbl_research_h2">2. Badania</h2>
+          <p data-i18n="project_habitbubbl_research_p1">
+            Zamiast ograniczonej, autorskiej ankiety wybrałem analizę danych
+            już dostępnych w internecie (desk research), opierając założenia
+            na globalnych raportach rynkowych (m.in. Statista, Google
+            Web.dev, Global Wireless Solutions).
+          </p>
+          <p data-i18n="project_habitbubbl_research_p2">
+            Na rynku istnieje wiele aplikacji wspierających produktywność —
+            m.in. Microsoft To Do, InnerGrow Habit czy Apple Reminders. Ich
+            zaletą jest prostota, ale analiza konkurencji ujawniła wspólną,
+            istotną lukę funkcjonalną:
           </p>
           <ul>
-            <li>
-              <strong>Brak mechanizmów motywacyjnych:</strong> Większość
-              aplikacji nie oferuje wbudowanych narzędzi pomagających
-              użytkownikowi wrócić na właściwe tory w przypadku braku realizacji
-              zadania.
+            <li data-i18n="project_habitbubbl_research_item1">
+              <strong>Brak mechanizmów motywacyjnych:</strong> gdy
+              użytkownik nie wykona zadania, żadna z tych aplikacji nie
+              oferuje wbudowanego sposobu na pomoc mu wrócić na właściwe
+              tory.
             </li>
-            <li>
-              <strong>Brak powiązań strukturalnych:</strong> Brak połączenia
-              pomiędzy codziennym zadaniem, utrwalonym nawykiem a
-              długoterminowym celem osobistym.
+            <li data-i18n="project_habitbubbl_research_item2">
+              <strong>Brak powiązań strukturalnych:</strong> zadanie,
+              nawyk i cel funkcjonują osobno — nie ma połączenia, które
+              wspierałoby regularność i budowanie trwałych nawyków.
+            </li>
+            <li data-i18n="project_habitbubbl_research_item3">
+              <strong>Brak celów w ogóle:</strong> większość nawet
+              najmniejszych zadań użytkownicy wykonują w imię większego
+              celu, a żadna z analizowanych aplikacji go nie uwzględnia.
             </li>
           </ul>
-          <p>
-            Habit Bubbl rozwiązuje ten problem poprzez zintegrowany system, w
-            którym pojedyncze działania budują nawyki, a te z kolei bezpośrednio
-            przekładają się na postęp w realizacji celów głównych.
+          <p data-i18n="project_habitbubbl_research_p3">
+            Dane ilościowe potwierdziły też słuszność wyboru architektury:
+            ponad połowa globalnego ruchu w internecie pochodzi z urządzeń
+            mobilnych, a aż <strong>56%</strong> ich użytkowników regularnie
+            doświadcza problemów ze stabilnością sieci. Skalę potencjału PWA
+            pokazuje przykład Alibaby, która po przejściu na tę architekturę
+            odnotowała średnio <strong>76-procentowy</strong> wzrost
+            konwersji i zaangażowania użytkowników.
+          </p>
+          <p data-i18n="project_habitbubbl_research_p4">
+            Habit Bubbl odpowiada na zidentyfikowaną lukę zintegrowanym
+            systemem, w którym pojedyncze działania budują nawyki, a te
+            bezpośrednio przekładają się na postęp w realizacji celów
+            głównych.
           </p>
         </section>
 
         <section id="ideacja">
-          <h2>3. Ideacja</h2>
-          <p>
-            Aplikacja została zaplanowana w architekturze
-            <strong>Progressive Web App (PWA)</strong> z wykorzystaniem
-            podejścia <em>mobile-first</em> oraz <em>offline-first</em>.
+          <h2 style="padding-top: 8vh" data-i18n="project_habitbubbl_ideation_h2">3. Ideacja</h2>
+          <p data-i18n="project_habitbubbl_ideation_p1">
+            Architekturę informacji oparłem na czterech ekranach — Liście
+            Zadań, Kalendarzu, Nawykach ze statystykami oraz Ekranie
+            Bohatera — połączonych Tab Navigation, znaną użytkownikom z
+            natywnych aplikacji mobilnych. Dla kluczowych funkcji
+            przygotowałem w FigJam user flows, które przeanalizowałem pod
+            kątem liczby kroków i potencjalnych pain pointów.
           </p>
-          <p><strong>Stos technologiczny i narzędzia:</strong></p>
+          <p data-i18n="project_habitbubbl_ideation_p2">
+            Jedną z decyzji podjętych na tym etapie było celowe
+            <strong>wykluczenie edycji pojedynczego zadania</strong> — żeby
+            nie obciążać użytkownika nadmiarem opcji na ekranie głównym,
+            edycję zostawiłem tylko dla powtarzalnych nawyków i
+            długoterminowych celów.
+          </p>
+          <p data-i18n="project_habitbubbl_ideation_p3">
+            Pracę nad warstwą wizualną zacząłem od logo i style guide w
+            stylu <strong>„Liquid Glass"</strong>, który wyznaczył ramy
+            projektowe: spójną kolorystykę, minimalizację obciążenia
+            poznawczego oraz dostępność (kontrast, wielkość elementów
+            interaktywnych). Interfejs zaprojektowałem w Figmie —
+            od makiet niskiej wierności, przez makiety wysokiej wierności,
+            po interaktywny prototyp — weryfikując założenia jeszcze przed
+            implementacją.
+          </p>
+          <p data-i18n="project_habitbubbl_ideation_stack_label">
+            <strong>Stos technologiczny i narzędzia:</strong>
+          </p>
           <ul>
-            <li>
+            <li data-i18n="project_habitbubbl_ideation_stack_item1">
               <strong>Projektowanie UX/UI:</strong> Figma (makiety lo-fi/hi-fi,
               design system), FigJam (user flows, diagramy).
             </li>
-            <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript (ES6+).</li>
-            <li>
-              <strong>PWA & Architektura:</strong> Service Worker (obsługa trybu
-              offline i buforowanie pamięci cache), Web App Manifest
-              (instalowalność na urządzeniu mobilnym).
+            <li data-i18n="project_habitbubbl_ideation_stack_item2">
+              <strong>Frontend:</strong> HTML5, CSS3, JavaScript (ES6+).
             </li>
-            <li>
+            <li data-i18n="project_habitbubbl_ideation_stack_item3">
+              <strong>PWA i architektura:</strong> Service Worker (tryb
+              offline, cache), Web App Manifest (instalowalność), IndexedDB
+              (asynchroniczna baza lokalna, wydajniejsza niż Local Storage
+              przy większej ilości danych).
+            </li>
+            <li data-i18n="project_habitbubbl_ideation_stack_item4">
               <strong>Narzędzia i testy:</strong> Visual Studio Code, Chrome
               DevTools, Google Lighthouse.
             </li>
           </ul>
-        </section>
-
-        <section id="iteracje">
-          <h2>4. Iteracje</h2>
-          <p>
-            Proces realizacji projektu miał charakter iteracyjny i obejmował
-            etapowe projektowanie przepływów oraz interfejsu użytkownika:
-          </p>
-          <ol style="margin-left: 20px; line-height: 1.6em">
-            <li>
-              Analiza potrzeb użytkownika i definicja architektury informacji.
-            </li>
-            <li>
-              Szkice oraz cyfrowe makiety lo-fi do weryfikacji układu nawigacji.
-            </li>
-            <li>
-              Projektowanie systemu komponentów oraz makiet hi-fi w Figmie.
-            </li>
-            <li>
-              Badania użyteczności i wdrożenie poprawek przed etapie kodowania.
-            </li>
-          </ol>
 
           <figure class="imageFigure">
             <a
-              href="assets/projects/habit-bubbl/user-flow.png"
+              href="/assets/projects/habit-bubbl/style-guide.png"
               data-lightbox="project-gallery"
-              data-title="User Flow aplikacji Habit Bubbl"
+              data-i18n="[data-title]project_habitbubbl_styleguide_alt"
+              data-title="Style Guide aplikacji Habit Bubbl"
             >
               <img
-                src="assets/projects/habit-bubbl/user-flow.png"
-                alt="User Flow diagram"
+                src="/assets/projects/habit-bubbl/style-guide.png"
+                data-i18n="[alt]project_habitbubbl_styleguide_alt"
+                alt="Style Guide aplikacji Habit Bubbl"
               />
             </a>
-            <figcaption>
-              Schemat architektury informacji oraz przepływu użytkownika (User
-              Flow)
+            <figcaption data-i18n="project_habitbubbl_styleguide_caption">
+              Style guide „Liquid Glass" (1/2) — paleta kolorów i typografia
+            </figcaption>
+          </figure>
+
+          <figure class="imageFigure">
+            <a
+              href="/assets/projects/habit-bubbl/style-guide-2.png"
+              data-lightbox="project-gallery"
+              data-i18n="[data-title]project_habitbubbl_styleguide2_alt"
+              data-title="Style Guide aplikacji Habit Bubbl - strona 2"
+            >
+              <img
+                src="/assets/projects/habit-bubbl/style-guide-2.png"
+                data-i18n="[alt]project_habitbubbl_styleguide2_alt"
+                alt="Style Guide aplikacji Habit Bubbl - strona 2"
+              />
+            </a>
+            <figcaption data-i18n="project_habitbubbl_styleguide2_caption">
+              Style guide „Liquid Glass" (2/2) — DNA komponentów, wersje
+              logo, spacing
+            </figcaption>
+          </figure>
+
+          <figure class="imageFigure">
+            <a
+              href="/assets/projects/habit-bubbl/lofi-wireframes.png"
+              data-lightbox="project-gallery"
+              data-i18n="[data-title]project_habitbubbl_lofi_alt"
+              data-title="Makiety niskiej wierności Habit Bubbl"
+            >
+              <img
+                src="/assets/projects/habit-bubbl/lofi-wireframes.png"
+                data-i18n="[alt]project_habitbubbl_lofi_alt"
+                alt="Makiety niskiej wierności Habit Bubbl"
+              />
+            </a>
+            <figcaption data-i18n="project_habitbubbl_lofi_caption">
+              Makiety niskiej wierności — Today, Calendar, Habits, Hero,
+              Modal
             </figcaption>
           </figure>
         </section>
 
+        <section id="iteracje">
+          <h2 style="padding-top: 8vh" data-i18n="project_habitbubbl_iterations_h2">4. Iteracje</h2>
+          <p data-i18n="project_habitbubbl_iterations_p1">
+            Przeprowadziłem serię badań użyteczności — testy scenariuszowe,
+            testy first-click oraz analizę heurystyczną — na grupie
+            docelowych użytkowników. Ujawniły one złamania heurystyk
+            elastyczności i obsługi błędów (H7, H9) oraz spójności (H4), a
+            także bariery dostępności WCAG (kontrast poniżej 4.5:1 na
+            neonowych elementach tła). Każdy znaleziony problem przełożył
+            się na konkretną poprawkę:
+          </p>
+          <ul>
+            <li data-i18n="project_habitbubbl_iterations_item1">
+              <strong>Zbyt agresywny kolor i nieczytelne tło:</strong>
+              intensywna fuksja na ekranie startowym męczyła wzrok, a słabe
+              przyciemnienie tła sprawiało, że teksty pod spodem przebijały
+              i dekoncentrowały. Złagodziłem odcień i wdrożyłem pełne tło
+              ponad warstwą danych w onboardingu.
+            </li>
+            <li data-i18n="project_habitbubbl_iterations_item2">
+              <strong>Gesty w przewodniku ignorowane:</strong> użytkownicy
+              intuicyjnie próbowali przewijać tutorial gestem swipe zamiast
+              klikać kropki nawigacyjne, a po włączeniu powiadomień
+              brakowało potwierdzenia. Dodałem pełną obsługę swipe oraz
+              systemowe potwierdzenie po aktywacji powiadomień.
+            </li>
+            <li data-i18n="project_habitbubbl_iterations_item3">
+              <strong>Niespójne nazewnictwo sekcji głównej:</strong> etykieta
+              „today's tasks" nie pasowała do zawartości, bo mieszała
+              zadania i nawyki. Zmieniłem nazwę i nagłówek na
+              „To Do Today".
+            </li>
+            <li data-i18n="project_habitbubbl_iterations_item4">
+              <strong>Za małe tarcie przy usuwaniu:</strong> kliknięcie
+              gdziekolwiek w kafelek natychmiast odznaczało nawyk, a
+              usunięcie wymagało tylko dwóch kliknięć, bez cofnięcia.
+              Wprowadziłem mechanizm przytrzymania — element znika dopiero
+              po 3 sekundach.
+            </li>
+            <li data-i18n="project_habitbubbl_iterations_item5">
+              <strong>Brak feedbacku XP i błędy audio:</strong> po odhaczeniu
+              zadania brakowało wyraźnej informacji o zdobytym XP, a dźwięk
+              odhaczenia aktywował się błędnie też przy cofaniu zaznaczenia.
+              Dodałem wyskakujący „bąbelek z XP" i podpiąłem dźwięk pękającej
+              bańki wyłącznie pod pozytywną akcję ukończenia.
+            </li>
+            <li data-i18n="project_habitbubbl_iterations_item6">
+              <strong>Blokująca się lista nawyków na mobile:</strong> elementy
+              nachodziły na siebie, a interfejs okazjonalnie blokował się
+              przy edycji kilku pozycji naraz. Zmieniłem architekturę na
+              rozwijaną listę pionową, eliminując nakładanie się elementów.
+            </li>
+            <li data-i18n="project_habitbubbl_iterations_item7">
+              <strong>Spowolnienia głównego wątku:</strong> dynamiczne
+              renderowanie wielu „bąbelków" nawyków blokowało interfejs na
+              słabszych urządzeniach (długie Long Tasks, słabe FCP/LCP).
+              Zoptymalizowałem kod pod kątem Total Blocking Time i usunąłem
+              render-blocking CSS z krytycznej ścieżki renderowania.
+            </li>
+          </ul>
+        </section>
+
         <section id="efekt-koncowy">
-          <h2>5. Efekt Końcowy</h2>
-          <p>
+          <h2 style="padding-top: 8vh" data-i18n="project_habitbubbl_final_h2">5. Efekt Końcowy</h2>
+          <p data-i18n="project_habitbubbl_final_p1">
             Aplikacja składa się z czterech głównych modułów wspierających
             produktywność:
           </p>
           <ul>
-            <li>
+            <li data-i18n="project_habitbubbl_final_item1">
               <strong>Lista Zadań:</strong> Zarządzanie bieżącymi obowiązkami w
               danym dniu.
             </li>
-            <li>
+            <li data-i18n="project_habitbubbl_final_item2">
               <strong>Kalendarz:</strong> Planowanie przyszłych działań oraz
               weryfikacja historii zadań.
             </li>
-            <li>
+            <li data-i18n="project_habitbubbl_final_item3">
               <strong>Ekran Nawyków i Statystyk:</strong> Śledzenie regularności
               i analiza stopnia utrwalenia nawyków.
             </li>
-            <li>
+            <li data-i18n="project_habitbubbl_final_item4">
               <strong>Ekran Bohatera (Gamifikacja):</strong> Zarządzanie
               długoterminowymi celami, podgląd statystyk rozwoju oraz poziomu
               zaawansowania użytkownika.
@@ -518,30 +781,149 @@
 
           <figure class="imageFigure">
             <a
-              href="assets/projects/habit-bubbl/screens.png"
+              href="/assets/projects/habit-bubbl/screens-core.png"
               data-lightbox="project-gallery"
+              data-i18n="[data-title]project_habitbubbl_screenscore_caption"
+              data-title="Kluczowe ekrany Habit Bubbl"
+            >
+              <img
+                src="/assets/projects/habit-bubbl/screens-core.png"
+                data-i18n="[alt]project_habitbubbl_screenscore_caption"
+                alt="Kluczowe ekrany Habit Bubbl"
+              />
+            </a>
+            <figcaption data-i18n="project_habitbubbl_screenscore_caption">
+              Splash Screen, Today, Calendar oraz Habits
+            </figcaption>
+          </figure>
+
+          <figure class="imageFigure">
+            <a
+              href="/assets/projects/habit-bubbl/screens.png"
+              data-lightbox="project-gallery"
+              data-i18n="[data-title]project_habitbubbl_screens_caption"
               data-title="Ekrany interfejsu Habit Bubbl"
             >
               <img
-                src="assets/projects/habit-bubbl/screens.png"
+                src="/assets/projects/habit-bubbl/screens.png"
+                data-i18n="[alt]project_habitbubbl_screens_caption"
                 alt="Ekrany Habit Bubbl"
               />
             </a>
-            <figcaption>
+            <figcaption data-i18n="project_habitbubbl_screens_caption">
               Przegląd kluczowych ekranów aplikacji mobilnej Habit Bubbl
             </figcaption>
           </figure>
+
+          <p data-i18n="project_habitbubbl_final_p2">
+            Optymalizacja wydajności — podział jednego pliku CSS (86 KB) na
+            mniejsze arkusze ładowane tylko tam, gdzie są potrzebne, lokalne
+            hostowanie czcionek zamiast Google Fonts, minifikacja CSS oraz
+            konwersja grafik do WebP i dźwięków do MP3 — przełożyła się na
+            wymierną poprawę wyników Google Lighthouse:
+          </p>
+
+          <div class="impactGrid">
+            <div class="impactCard">
+              <div class="impactNumber" data-i18n="project_habitbubbl_impact_card1_number">
+                -52%
+              </div>
+              <div class="impactLabel" data-i18n="project_habitbubbl_impact_card1_label">
+                First Contentful Paint: z 2,35 s do 1,13 s
+              </div>
+            </div>
+            <div class="impactCard">
+              <div class="impactNumber" data-i18n="project_habitbubbl_impact_card2_number">
+                -52%
+              </div>
+              <div class="impactLabel" data-i18n="project_habitbubbl_impact_card2_label">
+                Largest Contentful Paint: z 2,85 s do 1,38 s
+              </div>
+            </div>
+            <div class="impactCard">
+              <div class="impactNumber" data-i18n="project_habitbubbl_impact_card3_number">
+                100/100
+              </div>
+              <div class="impactLabel" data-i18n="project_habitbubbl_impact_card3_label">
+                wynik Google Lighthouse w niemal wszystkich kategoriach
+              </div>
+            </div>
+            <div class="impactCard">
+              <div class="impactNumber" data-i18n="project_habitbubbl_impact_card4_number">
+                do -44%
+              </div>
+              <div class="impactLabel" data-i18n="project_habitbubbl_impact_card4_label">
+                mniej pobieranych stylów CSS na podstronę
+              </div>
+            </div>
+          </div>
         </section>
 
         <section id="po-projekcie">
-          <h2>6. Po Projekcie</h2>
-          <p>
-            Wykorzystanie architektury PWA w połączeniu z zasadami UX oraz
+          <h2 style="padding-top: 8vh" data-i18n="project_habitbubbl_after_h2">6. Po Projekcie</h2>
+
+          <h3
+            style="margin-bottom: 1vh"
+            data-i18n="project_habitbubbl_takeaways_h3"
+          >
+            Kluczowe Wnioski
+          </h3>
+          <p data-i18n="project_habitbubbl_after_p1">
+            🧠 Wykorzystanie architektury PWA w połączeniu z zasadami UX oraz
             mechanizmami grywalizacji pozwoliło stworzyć lekkie, wydajne i
             niezależne od połączenia internetowego narzędzie. Połączenie zadań,
             nawyków i celów w jednym systemie skutecznie redukuje obciążenie
             poznawcze i pomaga utrzymać długofalową motywację użytkowników.
           </p>
+          <p data-i18n="project_habitbubbl_after_p2">
+            🔁 Implementacja w PWA pozwoliła mi przetestować każdą funkcję w
+            praktyce, także w trybie offline, i wprowadzać poprawki na
+            podstawie własnych obserwacji zachowań użytkowników — nie tylko
+            założeń projektowych.
+          </p>
+
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_habitbubbl_roadmap_h3"
+          >
+            Perspektywy Rozwoju
+          </h3>
+          <p data-i18n="project_habitbubbl_roadmap_p1">
+            Trzy kierunki, w które rozwijałbym Habit Bubbl dalej:
+          </p>
+          <ul>
+            <li data-i18n="project_habitbubbl_roadmap_item1">
+              🔜 <strong>Grywalizacja społecznościowa (priorytet):</strong>
+              konta z synchronizacją w chmurze, ekran znajomych ze wspólnymi
+              wyzwaniami i rywalizacją, system losowych nagród z
+              personalizowanymi awatarami.
+            </li>
+            <li data-i18n="project_habitbubbl_roadmap_item2">
+              🔜 <strong>Rozbudowa systemu RPG i nagród:</strong> naliczanie XP
+              per konkretny nawyk z rozwojem powiązanej umiejętności
+              Bohatera, odblokowywane skórki interfejsu.
+            </li>
+            <li data-i18n="project_habitbubbl_roadmap_item3">
+              🔜 <strong>Optymalizacja UX i danych:</strong> system flag do
+              kategoryzacji i filtrowania zadań, zaawansowane sortowanie
+              celów wg terminu realizacji, zapamiętywanie ulubionych
+              lokalizacji dla szybszego planowania.
+            </li>
+          </ul>
+        </section>
+
+        <section class="navLoopWrapper">
+          <span class="navLoop">
+            <span data-i18n="project_habitbubbl_navloop_text"
+              >Zobacz kolejny projekt:</span
+            ><br />
+            <a
+              class="loopLink"
+              href="audyt-wkdzik.html"
+              data-i18n="project_habitbubbl_navloop_link"
+              >Audyt WKDZIK.PL</a
+            >
+          </span>
         </section>
       </div>
 
@@ -585,11 +967,6 @@
       </nav>
     </main>
 
-    <div class="navLoopWrapper">
-      <a class="loopLink" href="aplikacja-mobilna-monexo.html"
-        >← Poprzedni projekt: Monexo</a
-      >
-    </div>
     <div id="cookie-banner" class="cookie-banner">
       <div class="cookie-text">
         🍪 Używam cookies do analizy ruchu i ciągłego ulepszania działania

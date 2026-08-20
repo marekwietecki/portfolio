@@ -59,6 +59,23 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", updateActiveLink);
   updateActiveLink();
 
+  // 1b. Przygaszanie pływającej nawigacji podczas aktywnego scrollowania,
+  // żeby nie zasłaniała tekstu — wraca do pełnej widoczności po zatrzymaniu.
+  if (floatingNav) {
+    let dimTimeout;
+    window.addEventListener(
+      "scroll",
+      () => {
+        floatingNav.classList.add("is-scrolling");
+        clearTimeout(dimTimeout);
+        dimTimeout = setTimeout(() => {
+          floatingNav.classList.remove("is-scrolling");
+        }, 220);
+      },
+      { passive: true }
+    );
+  }
+
   // 3. Smooth scroll po kliknięciu w link z offsetem + zamykanie menu
   navLinks.forEach((link) => {
     link.addEventListener("click", (e) => {

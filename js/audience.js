@@ -33,7 +33,7 @@
         "data-i18n",
         "hero_business_button_secondary"
       );
-      btnSecondary.setAttribute("href", "oferta.html#contact");
+      btnSecondary.setAttribute("href", "oferta.html#form");
       if (chipLabel) chipLabel.setAttribute("data-i18n", "hero_fork_business_tag");
     } else if (audience === "recruiter") {
       kicker2.setAttribute("data-i18n", "hero_hi2");
