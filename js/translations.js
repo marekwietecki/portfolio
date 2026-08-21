@@ -23,6 +23,157 @@ const translations = {
     footer_link_contact: "Kontakt",
     footer_link_cv: "CV",
     footer_link_privacy: "Polityka Prywatności",
+    cv_download_button: "Pobierz CV",
+    cv_update_note:
+      "CV jest częścią portfolio i aktualizuję je na bieżąco — pobrany plik zawsze odzwierciedla najnowszą wersję.",
+    cv_print_hint:
+      "Wskazówka: w oknie drukowania odznacz opcję „Nagłówki i stopki”, żeby uzyskać czystszy eksport.",
+
+    cv_role: "UX & Product Designer",
+
+    cv_about_h2: "O mnie",
+    cv_about_p1:
+      "Jestem <strong>UX & Product Designerem</strong> oraz inżynierem informatyki z ukończonymi specjalizacjami User Experience i zarządzanie projektami oraz Projektowanie Aplikacji Mobilnych. Wiedzę dotyczącą <strong>projektowania produktów cyfrowych</strong> łączę ze znajomością podstaw <strong>programowania</strong> oraz <strong>marketingu internetowego</strong>, co pozwala mi całościowo rozumieć produkty cyfrowe.",
+    cv_about_p2:
+      "Posiadam ponad 15-letnie doświadczenie w <strong>pracy zespołowej</strong> — od projektów inżynierskich po różnorodne inicjatywy grupowe. Nauczyło mnie ono dbania o relacje i zaufanie w zespołach, klarownej komunikacji oraz odpowiedzialności za wspólny wynik.",
+
+    cv_details_h2: "Szczegóły",
+    cv_details_portfolio_label: "PORTFOLIO",
+    cv_details_mail_label: "MAIL",
+    cv_details_phone_label: "TELEFON",
+    cv_details_address_label: "ADRES",
+    cv_details_address_value: "Łomianki, Polska",
+
+    cv_skills_h2: "Umiejętności",
+    cv_skill_figma: "Figma",
+    cv_skill_customer_journey: "Customer Journey",
+    cv_skill_user_research: "User Research",
+    cv_skill_product_strategy: "Strategia Produktowa",
+    cv_skill_agile: "Agile",
+    cv_skill_usability_testing: "Testy Użyteczności",
+    cv_skill_clickup: "ClickUp",
+    cv_skill_design_systems: "Design Systems",
+    cv_skill_claude_code: "Claude Code",
+    cv_skill_html_css_js: "HTML & CSS/JS",
+    cv_skill_react_native: "React Native",
+    cv_skill_ga4: "GA4",
+    cv_skill_graphic_design: "Projektowanie graficzne",
+    cv_skill_git: "Git",
+
+    cv_languages_h2: "Języki",
+    cv_lang_polish_name: "Polski",
+    cv_lang_polish_level: "— język ojczysty",
+    cv_lang_english_name: "Angielski",
+    cv_lang_english_level: "— C1",
+    cv_lang_spanish_name: "Hiszpański",
+    cv_lang_spanish_level: "— A2/B1",
+    cv_lang_german_name: "Niemiecki",
+    cv_lang_german_level: "— A1",
+
+    cv_experience_h2: "Doświadczenie",
+
+    cv_exp1_title: "UX Designer (Freelance)",
+    cv_exp1_item1:
+      "Kompleksowe projektowanie i wdrażanie stron internetowych oraz interfejsów cyfrowych dla klientów indywidualnych.",
+    cv_exp1_item2:
+      "Zbieranie wymagań biznesowych i prowadzenie warsztatów/konsultacji z klientami w celu zdefiniowania celów projektu oraz potrzeb użytkowników końcowych.",
+    cv_exp1_item3:
+      "Tworzenie makiet (wireframes) oraz wysokiej wierności prototypów (Hi-Fi) w programie Figma, dbanie o spójność wizualną (UI) oraz intuicyjną architekturę informacji.",
+    cv_exp1_item4:
+      "Współtworzenie strategii rozwoju biznesu klientów poprzez przekładanie ich celów rynkowych na efektywne rozwiązania produktowe, architekturę informacji oraz mierzalne ścieżki konwersji.",
+    cv_exp1_item5:
+      "Zarządzanie harmonogramem projektów, budżetem oraz komunikacją z klientem na każdym etapie cyklu życia produktu.",
+    cv_exp1_date: "Czerwiec 2025 – Obecnie",
+    cv_exp1_location: "Warszawa",
+
+    cv_exp2_title: "UX & Web Designer, PlanetRoad",
+    cv_exp2_item1:
+      "Analiza konkurencji, określanie grup docelowych, analiza potrzeb biznesowych i celów klienta.",
+    cv_exp2_item2:
+      "Definiowanie problemów użytkownika, projektowanie ścieżek użytkownika, mapowanie doświadczeń użytkownika i definiowanie kluczowych punktów styku użytkownika z produktem.",
+    cv_exp2_item3:
+      "Projektowanie responsywnego interfejsu firmowej strony internetowej wg. myśli Mobile First, wdrożenie zaprojektowanej strony internetowej.",
+    cv_exp2_item4:
+      "Dostosowanie strony do zasad dostępności WCAG, prowadzenie testów użyteczności moderowanych i niemoderowanych, optymalizacja strony pod kątem SEO.",
+    cv_exp2_item5:
+      "Iteracyjne usprawnianie projektu na podstawie testów użyteczności i wymagań klienta.",
+    cv_exp2_item6:
+      "Tworzenie identyfikacji wizualnej marki, projektowanie grafik na potrzeby firmy, założenie i konfiguracja firmowych kanałów Social Media.",
+    cv_exp2_date: "Maj 2024 – Obecnie",
+    cv_exp2_location: "Warszawa",
+
+    cv_exp3_title:
+      "Prowadzenie indywidualnych zajęć edukacyjnych (Matematyka i j. Angielski)",
+    cv_exp3_item1:
+      "Rozwijanie umiejętności przystępnego tłumaczenia skomplikowanych i abstrakcyjnych zagadnień.",
+    cv_exp3_item2:
+      "Diagnozowanie indywidualnych barier w nauce (analiza potrzeb) i elastyczne dostosowywanie metod do odbiorcy.",
+    cv_exp3_item3:
+      "Budowanie cierpliwości, empatii i umiejętności aktywnego słuchania.",
+    cv_exp3_date: "Listopad 2023 – Obecnie",
+    cv_exp3_location: "Łomianki",
+
+    cv_education_h2: "Wykształcenie",
+
+    cv_edu1_title: "Inżynier Informatyki, Uniwersytet Vizja",
+    cv_edu1_item1:
+      "Specjalizacja User Experience & Zarządzanie Projektami.",
+    cv_edu1_item2: "Specjalizacja Projektowanie Aplikacji Mobilnych.",
+    cv_edu1_date: "Październik 2022 – Lipiec 2026",
+    cv_edu1_location: "Warszawa",
+
+    cv_edu2_title: "Wykształcenie Średnie, LO im. Króla Jana III Sobieskiego",
+    cv_edu2_item1: "Rozszerzona Matematyka i j. Angielski.",
+    cv_edu2_date: "Wrzesień 2019 – Maj 2022",
+    cv_edu2_location: "Warszawa",
+
+    cv_certs_h2: "Certyfikaty",
+
+    cv_cert1_desc:
+      "Nauka wykorzystywania ChatGPT, Midjourney, Hotjar i Formless w celu usprawnienia procesu projektowego.",
+    cv_cert1_date: "Grudzień 2025",
+
+    cv_cert2_desc:
+      "Pojęcie procesu jako produktu, który ewoluuje i jest dostosowany do potrzeb konkretnego typu projektu lub klienta.",
+    cv_cert2_date: "Listopad 2025",
+
+    cv_cert3_desc:
+      "Certyfikat poświadczający umiejętności języka angielskiego na poziomie C1.",
+    cv_cert3_date: "Lipiec 2025",
+
+    cv_cert4_desc:
+      "Rola prototypu w cyklu życia produktu. Nauka budowania interaktywnych prototypów w Figmie i ProtoPie.",
+    cv_cert4_date: "Październik 2024",
+
+    cv_cert5_desc:
+      "Nauka tworzenia Design Systemów w praktyce, wykorzystując narzędzia usprawniające proces tworzenia Design Systemu.",
+    cv_cert5_date: "Wrzesień 2024",
+
+    cv_cert6_title: "Szkolenie: Prowadź Warsztaty metodą Design Thinking",
+    cv_cert6_desc:
+      "Nauka wykorzystywania metody Design Thinking w prowadzeniu efektywnych warsztatów oraz angażowania interesariuszy.",
+    cv_cert6_date: "Lipiec 2024",
+
+    cv_cert7_desc:
+      "Kompleksowa nauka poprzez praktykę blisko 30 technik i narzędzi projektowych, będącymi fundamentem pracy UX Designera.",
+    cv_cert7_date: "Styczeń 2024 – Kwiecień 2024",
+
+    cv_cert8_desc: "Nauka narzędzia Webflow do projektowania stron no-code.",
+    cv_cert8_date: "Styczeń 2024",
+
+    cv_cert9_desc: "Nauka projektowania interfejsów mobilnych w Figmie.",
+    cv_cert9_date: "Grudzień 2023",
+
+    cv_cert10_title: "Umiejętności Jutra – Marketing Internetowy, Google",
+    cv_cert10_desc:
+      "Kompleksowa nauka praktycznych umiejętności z różnych dziedzin Marketingu Internetowego, w tym User Experience.",
+    cv_cert10_date: "Czerwiec 2023",
+
+    cv_interests_h2: "Zainteresowania",
+    cv_interest1: "Piłka Nożna",
+    cv_interest2: "Czytanie Książek",
+    cv_interest3: "Nauka Języków",
+
     footer_copyright:
       "© Marek Wietecki 2026. Treści chronione prawem autorskim.",
 
@@ -839,11 +990,11 @@ const translations = {
     project_app_monexo_fig_wireframes1: "Wireframe'y cz.1",
     project_app_monexo_fig_wireframes2: "Wireframe'y cz.2",
     project_app_monexo_breadboards_title:
-      "I dokąd z tych ekranów będzie można przejść..",
+      "I dokąd z tych ekranów będzie można przejść?",
     project_app_monexo_breadboards_p_part1: "Zająłem się więc zaprojektowaniem",
     project_app_monexo_breadboards_p_b: " Breadboardów",
     project_app_monexo_breadboards_p_part2:
-      " - wszystkich możliwych ścieżek z poszczególnych ekranów, tak aby użytkownik mógł w łatwy sposób dostać się tam gdzie tego potrzebuje. W aplikacji wykorzystuje tab navigation, co już znacznie ułatwia przemieszczanie się pomiędzy ekranami, a linki w dobrych miejscach jedynie podpowiadają co i gdzie zrobić jako następny krok. Na tym etapie dodałem np. ...",
+      " - wszystkich możliwych ścieżek z poszczególnych ekranów, tak aby użytkownik mógł w łatwy sposób dostać się tam gdzie tego potrzebuje. W aplikacji wykorzystuje tab navigation, co już znacznie ułatwia przemieszczanie się pomiędzy ekranami, a linki w dobrych miejscach jedynie podpowiadają co i gdzie zrobić jako następny krok.",
     project_app_monexo_fig_breadboards1: "Breadboardy cz.1",
     project_app_monexo_fig_breadboards2: "Breadboardy cz.2",
     project_app_monexo_iterations_title: "Iteracje",
@@ -988,26 +1139,31 @@ const translations = {
       " podczas wdrożenia – firma musi nadal być w pełni dostępna dla klientów.",
     project_web_planetroad_research_heading: "Badania",
     project_web_planetroad_research_p1:
-      "Projekt nowej strony internetowej dla PlanetRoad rozpocząłem od audytu starej strony i poznania szegółowych oczekiwań mojego Klienta.",
+      "Projekt nowej strony internetowej dla PlanetRoad rozpocząłem od audytu starej strony i poznania szczegółowych oczekiwań mojego Klienta.",
     project_web_planetroad_research_p2_bold1: "Rozmowa z CEO",
     project_web_planetroad_research_p2_text1:
       " zarysowała mi obraz tego, jak miałaby wyglądać strona firmy. PlanetRoad skupia się głównie na ",
     project_web_planetroad_research_p2_bold2: "współpracy B2B",
     project_web_planetroad_research_p2_text2:
       " - (np. Developerami) oraz jednostkami samorządowymi. Dlatego priorytetem jest profesjonalizm, oraz budowanie zaufania do marki i zwiększania jej wiarygodności. Sam CEO dał mi również kilka swoich pomysłów odnośnie informacji, które chciałby posiadać na stronie oraz klika użytecznych linków do dolnej nawigacji strony które mogłem później wkomponować w projekt.",
+    project_web_planetroad_research_p3_lead: "Następnie przeprowadziłem",
     project_web_planetroad_research_p3_bold: "analizę konkurencji",
     project_web_planetroad_research_p3_text:
-      " w branży drogowej, która ujawniła dużą powtarzalność wizualną - wiele firm korzystało z podobnych układów stron i schematycznych kompozycji. W tym przypadku problemem nie było więc wyróżnienie się spośród konkurencji, a zachowanie balansu pomiędzy profesjonalizmem i technicznym charakterem strony, a nieco bardziej nowowczesnych podejściem do projektowania stron internetowych.",
+      " w branży drogowej, która ujawniła dużą powtarzalność wizualną - wiele firm korzystało z podobnych układów stron i schematycznych kompozycji. W tym przypadku problemem nie było więc wyróżnienie się spośród konkurencji, a zachowanie balansu pomiędzy profesjonalizmem i technicznym charakterem strony, a nieco bardziej nowoczesnym podejściem do projektowania stron internetowych.",
+    project_web_planetroad_research_p4_lead: "Kolejno",
     project_web_planetroad_research_p4_bold:
       "zbadałem oczekiwania użytkowników",
     project_web_planetroad_research_p4_text:
-      " i najczęściej wyszukiwane informacje o firmach z branży, aby zapewnić użyteczność nowej strony internetowej pod kątem UX i SEO. Analiza treści pokazała, że kluczowe są: przejrzysta oferta, szybki kontakt oraz portfolio poprzedncih projektów.",
+      " i najczęściej wyszukiwane informacje o firmach z branży, aby zapewnić użyteczność nowej strony internetowej pod kątem UX i SEO. Analiza treści pokazała, że kluczowe są: przejrzysta oferta, szybki kontakt oraz portfolio poprzednich projektów.",
+    project_web_planetroad_research_p5_lead: "Potem przeszedłem do",
     project_web_planetroad_research_p5_bold: "analizy ścieżki użytkownika",
     project_web_planetroad_research_p5_text:
       ", która pozwoliła mi lepiej zrozumieć, jakie działania podejmuje potencjalny klient od momentu wejścia na stronę do skontaktowania się z firmą. Zmapowanie tych etapów umożliwiło mi zaplanowanie logicznej i intuicyjnej struktury strony — tak, aby użytkownik mógł łatwo odnaleźć informacje o usługach, przeglądać realizacje i bezproblemowo przejść do sekcji kontaktu.",
+    project_web_planetroad_research_p6_lead: "Równolegle przeprowadziłem",
     project_web_planetroad_research_p6_bold: "analizę SEO",
     project_web_planetroad_research_p6_text:
       " w celu poznania najczęściej wyszukiwanych fraz związanych z branżą drogową i projektowaniem infrastruktury. Wyniki pozwoliły mi dobrać odpowiednie słowa kluczowe do treści oraz zaplanować strukturę nagłówków i sekcji. Dzięki temu strona jest nie tylko atrakcyjna wizualnie, ale również lepiej widoczna w wyszukiwarkach internetowych.",
+    project_web_planetroad_research_p7_lead: "Przeprowadziłem także",
     project_web_planetroad_research_p7_bold: "audyt techniczny starej strony",
     project_web_planetroad_research_p7_text:
       ", który ujawnił problemy z prędkością ładowania, nieczytelnością na urządzeniach mobilnych oraz brakiem wyraźnych ścieżek konwersji. Te obserwacje stały się podstawą do zaprojektowania nowego układu i optymalizacji strony pod kątem wydajności oraz zgodności z aktualnymi standardami webowymi.",
@@ -1015,9 +1171,10 @@ const translations = {
     project_web_planetroad_ideation_heading: "Ideacja",
     project_web_planetroad_ideation_p1:
       "Na etapie ideacji przełożyłem wnioski z badań na konkretne założenia projektowe. Skupiłem się na zaprojektowaniu struktury strony, która w pierwszych sekundach odpowiada na kluczowe pytania użytkownika: czym firma się zajmuje, jakie realizacje ma za sobą i jak szybko można nawiązać kontakt.",
+    project_web_planetroad_ideation_p2_lead: "Projekt zacząłem od",
     project_web_planetroad_ideation_p2_bold: "priorytetyzacji",
     project_web_planetroad_ideation_p2_text:
-      " - jako główny cel wyznaczyłem ułatwienie klientom zapoznania się z firmą i ukończonymi przez nią projektami. Za nieco mniej ważną przyjąłem estetykę wykonania strony, mimo wszsytko chciałem, aby przyciągała klienta swoim wizualnie przyjemnym dla oka wyglądem. Najniższy priorytet nadałem natomiast utrzymaniu spójności z innymi kanałami komunikacji (działając według wcześniej stworzonej Identyfikacji Wizualnej ten cel niejako sam się wypełnia).",
+      " - jako główny cel wyznaczyłem ułatwienie klientom zapoznania się z firmą i ukończonymi przez nią projektami. Za nieco mniej ważną przyjąłem estetykę wykonania strony, mimo wszystko chciałem, aby przyciągała klienta swoim wizualnie przyjemnym dla oka wyglądem. Najniższy priorytet nadałem natomiast utrzymaniu spójności z innymi kanałami komunikacji (działając według wcześniej stworzonej Identyfikacji Wizualnej ten cel niejako sam się wypełnia).",
     project_web_planetroad_ideation_p3:
       "Równolegle pracowałem na niskopoziomowych wireframe’ach, testując różne układy treści i hierarchię informacji, zanim przeszedłem do finalnego interfejsu.",
     project_web_planetroad_ideation_p4:
@@ -1046,6 +1203,8 @@ const translations = {
       "Aby to zmienić zacząłem zmieniać firmową stronę od podstaw, aby stała się ona prawdziwą wizytówką firmy. Na początku zastanowiłem się...",
     project_web_planetroad_iter1_subheading:
       "Jak zbuduję zaufanie użytkownika od pierwszego kontaktu? — Rozszerzenie struktury strony",
+    project_web_planetroad_iter1_p1_lead:
+      "Na wczesnym etapie rozwoju strony stwierdziłem, że:",
     project_web_planetroad_iter1_p1_bold1:
       "Hero nie informuje użytkownika bezpośrednio czym się zajmujemy",
     project_web_planetroad_iter1_p1_text1:
@@ -1189,49 +1348,31 @@ const translations = {
     project_web_planetroad_iter_h3_3:
       "Jak skracam czas decyzji w procesie przetargowym? — Sortowanie i grupowanie referencji",
     project_web_planetroad_iter_p_12:
-      "W trakcie rozwoju strony firma ukończyła kilka projektów, a liczba referencji znacząco wzrosła. Wpłynęło to na {b}",
-    project_web_planetroad_iter_p_12_b:
-      "wydłużenie czasu wyszukiwania konkretnej referencji",
+      "W trakcie rozwoju strony firma ukończyła kilka projektów, a liczba referencji znacząco wzrosła. Wpłynęło to na <b>wydłużenie czasu wyszukiwania konkretnej referencji</b>",
     project_web_planetroad_iter_p_13:
-      "Podczas rozmowy z CEO poprosiłem go o znalezienie najdłuższej referencji z zakresu PFU. Zadanie zajęło mu {b}, mimo znajomości struktury strony.",
-    project_web_planetroad_iter_p_13_b: "około 3 minuty",
+      "Podczas rozmowy z CEO poprosiłem go o znalezienie najdłuższej referencji z zakresu PFU. Zadanie zajęło mu <b>około 3 minuty</b>, mimo znajomości struktury strony.",
     project_web_planetroad_iter_p_14:
-      "Ta informacja jasno pokazała, że {b1}. W odpowiedzi na ten problem {b2}, gdyż potencjalny klient firmy szuka wykonawcy z doświadczeniem w konkretnym typie projektu np. Program Funkcjonalno-Użytkowy o określonych w wymaganiach parametrach.",
-    project_web_planetroad_iter_p_14_b1:
-      "obecny sposób prezentacji referencji nie wspiera realnych potrzeb biznesowych",
-    project_web_planetroad_iter_p_14_b2:
-      "pogrupowałem referencje według rodzaju realizowanej usługi",
-    project_web_planetroad_iter_p_15: "Efektem było {b}.",
-    project_web_planetroad_iter_p_15_b:
-      "znaczące skrócenie czasu wyszukiwania konkretnych referencji i wsparcie realnego procesu przetargowego",
+      "Ta informacja jasno pokazała, że <b>obecny sposób prezentacji referencji nie wspiera realnych potrzeb biznesowych</b>. W odpowiedzi na ten problem <b>pogrupowałem referencje według rodzaju realizowanej usługi</b>, gdyż potencjalny klient firmy szuka wykonawcy z doświadczeniem w konkretnym typie projektu np. Program Funkcjonalno-Użytkowy o określonych w wymaganiach parametrach.",
+    project_web_planetroad_iter_p_15:
+      "Efektem było <b>znaczące skrócenie czasu wyszukiwania konkretnych referencji i wsparcie realnego procesu przetargowego</b>.",
     project_web_planetroad_fig_title_24: "Kategoryzacja Referencji",
     project_web_planetroad_iter_h3_4:
       "Jak wzmacniam poczucie bezpieczeństwa użytkownika? — Transparentność i RODO",
     project_web_planetroad_iter_p_16:
-      "Wraz z rozwojem strony pojawiła się potrzeba {b}, zarówno z perspektywy formalnej, jak i wizerunkowej.",
-    project_web_planetroad_iter_p_16_b:
-      "lepszego zadbania o transparentność przetwarzania danych osobowych",
+      "Wraz z rozwojem strony pojawiła się potrzeba <b>lepszego zadbania o transparentność przetwarzania danych osobowych</b>, zarówno z perspektywy formalnej, jak i wizerunkowej.",
     project_web_planetroad_iter_p_17:
-      "Stworzyłem {b}, jasno komunikującą sposób przetwarzania danych klientów. Teraz każdy zainteresowany może z poziomu dolnej nawigacji dostać się na tę podstronę i rozwiać swoje ewentualne wątpliwości.",
-    project_web_planetroad_iter_p_17_b:
-      "dedykowaną stronę polityki prywatności",
-    project_web_planetroad_iter_p_18: "Efektem była {b}.",
-    project_web_planetroad_iter_p_18_b:
-      "większa wiarygodność firmy i poczucie bezpieczeństwa po stronie użytkowników",
+      "Stworzyłem <b>dedykowaną stronę polityki prywatności</b>, jasno komunikującą sposób przetwarzania danych klientów. Teraz każdy zainteresowany może z poziomu dolnej nawigacji dostać się na tę podstronę i rozwiać swoje ewentualne wątpliwości.",
+    project_web_planetroad_iter_p_18:
+      "Efektem była <b>większa wiarygodność firmy i poczucie bezpieczeństwa po stronie użytkowników</b>.",
     project_web_planetroad_fig_title_25: "Podstrona z Polityką Prywatności",
     project_web_planetroad_iter_h3_5:
       "Jak pokazuję realną wartość pracy zespołu? — Wizualna prezentacja efektów realizacji",
     project_web_planetroad_iter_p_19:
-      "Rewolucja Social Mediów ostatnich lat jasno pokazała, że {b} mają ogromny wpływ na postrzeganą wartość usług, a krótkie filmiki to klucz do zdobycia uwagi odbiorcy.",
-    project_web_planetroad_iter_p_19_b: "wizualne przedstawienie efektów pracy",
+      "Rewolucja Social Mediów ostatnich lat jasno pokazała, że <b>wizualne przedstawienie efektów pracy</b> mają ogromny wpływ na postrzeganą wartość usług, a krótkie filmiki to klucz do zdobycia uwagi odbiorcy.",
     project_web_planetroad_iter_p_20:
-      'W odpowiedzi na powyższy wynik analizy wzbogaciłem podstrony "Doświadczenia" oraz "Realizacje" {b}.',
-    project_web_planetroad_iter_p_20_b:
-      "o materiał wideo, pokazując proces - zdjęcia projektu oraz zdjęcia „przed i po”",
+      'W odpowiedzi na powyższy wynik analizy wzbogaciłem podstrony "Doświadczenia" oraz "Realizacje" <b>o materiał wideo, pokazując proces - zdjęcia projektu oraz zdjęcia „przed i po”</b>.',
     project_web_planetroad_iter_p_21:
-      "Dzięki temu potencjalni klienci mogą {b}.",
-    project_web_planetroad_iter_p_21_b:
-      "lepiej zrozumieć zakres pracy firmy i zobaczyć finalny efekt inwestycji",
+      "Dzięki temu potencjalni klienci mogą <b>lepiej zrozumieć zakres pracy firmy i zobaczyć finalny efekt inwestycji</b>.",
     project_web_planetroad_fig_title_26:
       "Sekcja przedstawiająca konkretną realizację",
     project_web_planetroad_final_h2: "Efekt Końcowy",
@@ -1618,6 +1759,155 @@ const translations = {
     footer_link_contact: "Contact",
     footer_link_cv: "CV",
     footer_link_privacy: "Privacy Policy",
+    cv_download_button: "Download CV",
+    cv_update_note:
+      "The CV is part of the portfolio and I keep it up to date — the downloaded file always reflects the latest version.",
+    cv_print_hint:
+      "Tip: uncheck “Headers and footers” in the print dialog for a cleaner export.",
+
+    cv_role: "UX & Product Designer",
+
+    cv_about_h2: "About Me",
+    cv_about_p1:
+      "I'm a <strong>UX & Product Designer</strong> and computer science engineer with completed specializations in User Experience & Project Management and Mobile App Design. I combine knowledge of <strong>digital product design</strong> with a grounding in <strong>programming</strong> and <strong>online marketing</strong>, which lets me understand digital products holistically.",
+    cv_about_p2:
+      "I have over 15 years of experience in <strong>teamwork</strong> — from engineering projects to a variety of group initiatives. It has taught me to nurture relationships and trust within teams, communicate clearly, and take responsibility for the shared outcome.",
+
+    cv_details_h2: "Details",
+    cv_details_portfolio_label: "PORTFOLIO",
+    cv_details_mail_label: "MAIL",
+    cv_details_phone_label: "PHONE",
+    cv_details_address_label: "ADDRESS",
+    cv_details_address_value: "Łomianki, Poland",
+
+    cv_skills_h2: "Skills",
+    cv_skill_figma: "Figma",
+    cv_skill_customer_journey: "Customer Journey",
+    cv_skill_user_research: "User Research",
+    cv_skill_product_strategy: "Product Strategy",
+    cv_skill_agile: "Agile",
+    cv_skill_usability_testing: "Usability Testing",
+    cv_skill_clickup: "ClickUp",
+    cv_skill_design_systems: "Design Systems",
+    cv_skill_claude_code: "Claude Code",
+    cv_skill_html_css_js: "HTML & CSS/JS",
+    cv_skill_react_native: "React Native",
+    cv_skill_ga4: "GA4",
+    cv_skill_graphic_design: "Graphic Design",
+    cv_skill_git: "Git",
+
+    cv_languages_h2: "Languages",
+    cv_lang_polish_name: "Polish",
+    cv_lang_polish_level: "— native",
+    cv_lang_english_name: "English",
+    cv_lang_english_level: "— C1",
+    cv_lang_spanish_name: "Spanish",
+    cv_lang_spanish_level: "— A2/B1",
+    cv_lang_german_name: "German",
+    cv_lang_german_level: "— A1",
+
+    cv_experience_h2: "Experience",
+
+    cv_exp1_title: "UX Designer (Freelance)",
+    cv_exp1_item1:
+      "End-to-end design and implementation of websites and digital interfaces for individual clients.",
+    cv_exp1_item2:
+      "Gathering business requirements and running workshops/consultations with clients to define project goals and end-user needs.",
+    cv_exp1_item3:
+      "Creating wireframes and high-fidelity prototypes in Figma, ensuring visual consistency (UI) and intuitive information architecture.",
+    cv_exp1_item4:
+      "Co-shaping clients' business growth strategy by translating their market goals into effective product solutions, information architecture, and measurable conversion paths.",
+    cv_exp1_item5:
+      "Managing project timelines, budgets, and client communication at every stage of the product lifecycle.",
+    cv_exp1_date: "June 2025 – Present",
+    cv_exp1_location: "Warsaw",
+
+    cv_exp2_title: "UX & Web Designer, PlanetRoad",
+    cv_exp2_item1:
+      "Competitor analysis, target audience definition, and analysis of business needs and client goals.",
+    cv_exp2_item2:
+      "Defining user problems, designing user flows, mapping user experience, and identifying key touchpoints between users and the product.",
+    cv_exp2_item3:
+      "Designing a responsive interface for the company website following a Mobile First approach, and implementing the designed website.",
+    cv_exp2_item4:
+      "Aligning the site with WCAG accessibility guidelines, running moderated and unmoderated usability tests, and optimizing the site for SEO.",
+    cv_exp2_item5:
+      "Iteratively improving the design based on usability testing and client requirements.",
+    cv_exp2_item6:
+      "Building the brand's visual identity, designing graphics for the company, and setting up and configuring the company's social media channels.",
+    cv_exp2_date: "May 2024 – Present",
+    cv_exp2_location: "Warsaw",
+
+    cv_exp3_title: "Private Tutoring (Mathematics and English)",
+    cv_exp3_item1:
+      "Developing the ability to explain complex and abstract topics in an accessible way.",
+    cv_exp3_item2:
+      "Diagnosing individual learning barriers (needs analysis) and flexibly adapting methods to each student.",
+    cv_exp3_item3:
+      "Building patience, empathy, and active-listening skills.",
+    cv_exp3_date: "November 2023 – Present",
+    cv_exp3_location: "Łomianki",
+
+    cv_education_h2: "Education",
+
+    cv_edu1_title: "Computer Science Engineering, Vizja University",
+    cv_edu1_item1: "Specialization in User Experience & Project Management.",
+    cv_edu1_item2: "Specialization in Mobile App Design.",
+    cv_edu1_date: "October 2022 – July 2026",
+    cv_edu1_location: "Warsaw",
+
+    cv_edu2_title: "Secondary Education, King Jan III Sobieski High School",
+    cv_edu2_item1: "Advanced Mathematics and English.",
+    cv_edu2_date: "September 2019 – May 2022",
+    cv_edu2_location: "Warsaw",
+
+    cv_certs_h2: "Certificates",
+
+    cv_cert1_desc:
+      "Learning to use ChatGPT, Midjourney, Hotjar, and Formless to streamline the design process.",
+    cv_cert1_date: "December 2025",
+
+    cv_cert2_desc:
+      "Understanding process as a product that evolves and adapts to the needs of a given project type or client.",
+    cv_cert2_date: "November 2025",
+
+    cv_cert3_desc:
+      "Certificate confirming English language proficiency at the C1 level.",
+    cv_cert3_date: "July 2025",
+
+    cv_cert4_desc:
+      "The role of the prototype in the product lifecycle. Learning to build interactive prototypes in Figma and ProtoPie.",
+    cv_cert4_date: "October 2024",
+
+    cv_cert5_desc:
+      "Learning to build design systems in practice, using tools that streamline the design system creation process.",
+    cv_cert5_date: "September 2024",
+
+    cv_cert6_title: "Training: Running Design Thinking Workshops",
+    cv_cert6_desc:
+      "Learning to apply the Design Thinking method to run effective workshops and engage stakeholders.",
+    cv_cert6_date: "July 2024",
+
+    cv_cert7_desc:
+      "Hands-on learning of nearly 30 design techniques and tools forming the foundation of a UX Designer's work.",
+    cv_cert7_date: "January 2024 – April 2024",
+
+    cv_cert8_desc: "Learning the Webflow tool for no-code website design.",
+    cv_cert8_date: "January 2024",
+
+    cv_cert9_desc: "Learning to design mobile interfaces in Figma.",
+    cv_cert9_date: "December 2023",
+
+    cv_cert10_title: "Skills for Tomorrow – Online Marketing, Google",
+    cv_cert10_desc:
+      "Comprehensive, hands-on learning across various areas of online marketing, including User Experience.",
+    cv_cert10_date: "June 2023",
+
+    cv_interests_h2: "Interests",
+    cv_interest1: "Football",
+    cv_interest2: "Reading Books",
+    cv_interest3: "Language Learning",
+
     footer_copyright: "© Marek Wietecki 2026. Copyrighted content.",
 
     hero_hi: "Hello!",
@@ -2575,18 +2865,23 @@ const translations = {
     project_web_planetroad_research_p2_bold2: "B2B partnerships",
     project_web_planetroad_research_p2_text2:
       " - (e.g., developers) and local government units. Therefore, professionalism, building brand trust, and increasing credibility were top priorities. The CEO also shared ideas regarding key information to feature and provided useful links for footer navigation.",
+    project_web_planetroad_research_p3_lead: "Next, I conducted a",
     project_web_planetroad_research_p3_bold: "competitor analysis",
     project_web_planetroad_research_p3_text:
       " in the road infrastructure industry, which revealed significant visual repetition — many companies relied on similar layouts and repetitive compositions. Here, the challenge wasn't merely standing out, but striking a balance between technical professionalism and a modern approach to web design.",
+    project_web_planetroad_research_p4_lead: "I then",
     project_web_planetroad_research_p4_bold: "researched user expectations",
     project_web_planetroad_research_p4_text:
       " and frequently searched terms regarding industry firms to ensure the usability of the new site from both UX and SEO perspectives. Content analysis showed three essentials: a clear offer, quick contact options, and a project portfolio.",
+    project_web_planetroad_research_p5_lead: "After that, I moved on to",
     project_web_planetroad_research_p5_bold: "user journey analysis",
     project_web_planetroad_research_p5_text:
       ", which helped me better understand the steps a potential client takes from landing on the site to reaching out. Mapping these stages allowed me to structure a logical, intuitive page hierarchy so users could easily find services, view projects, and get in touch.",
+    project_web_planetroad_research_p6_lead: "In parallel, I conducted an",
     project_web_planetroad_research_p6_bold: "SEO analysis",
     project_web_planetroad_research_p6_text:
       " to identify top search terms related to road construction and infrastructure design. The findings helped select optimal keywords and structure headers and sections effectively, ensuring the site is not only visually appealing but also visible in search engines.",
+    project_web_planetroad_research_p7_lead: "I also carried out a",
     project_web_planetroad_research_p7_bold:
       "technical audit of the old website",
     project_web_planetroad_research_p7_text:
@@ -2595,6 +2890,7 @@ const translations = {
     project_web_planetroad_ideation_heading: "Ideation",
     project_web_planetroad_ideation_p1:
       "During the ideation phase, I translated research findings into concrete design decisions. I focused on structuring the site so that within the first few seconds it answers core user questions: what the company does, what projects it has completed, and how to quickly get in touch.",
+    project_web_planetroad_ideation_p2_lead: "I started the project with",
     project_web_planetroad_ideation_p2_bold: "prioritization",
     project_web_planetroad_ideation_p2_text:
       " - setting the primary goal as making it effortless for clients to explore the company and its completed work. Visual aesthetics were treated as a secondary priority, though still essential for creating an engaging experience. The lowest priority was assigned to cross-channel consistency, as adherence to the newly established Visual Identity naturally resolved this requirement.",
@@ -2627,6 +2923,8 @@ const translations = {
       "To change this, I began rebuilding the corporate website from the ground up to make it a true brand showcase. First, I considered...",
     project_web_planetroad_iter1_subheading:
       "How to build user trust from first contact? — Expanding the site structure",
+    project_web_planetroad_iter1_p1_lead:
+      "Early in the site's development, I identified that:",
     project_web_planetroad_iter1_p1_bold1:
       "The Hero section failed to immediately communicate what the company does",
     project_web_planetroad_iter1_p1_text1:
@@ -2766,47 +3064,31 @@ const translations = {
     project_web_planetroad_iter_h3_3:
       "How do I reduce decision-making time in the tender process? — Sorting and grouping references",
     project_web_planetroad_iter_p_12:
-      "As the website developed, the company completed several projects, and the number of references increased significantly. This led to {b}",
-    project_web_planetroad_iter_p_12_b:
-      "longer search times for specific references",
+      "As the website developed, the company completed several projects, and the number of references increased significantly. This led to <b>longer search times for specific references</b>",
     project_web_planetroad_iter_p_13:
-      "During a conversation with the CEO, I asked him to find the longest PFU reference. The task took him {b}, despite knowing the structure of the website.",
-    project_web_planetroad_iter_p_13_b: "about 3 minutes",
+      "During a conversation with the CEO, I asked him to find the longest PFU reference. The task took him <b>about 3 minutes</b>, despite knowing the structure of the website.",
     project_web_planetroad_iter_p_14:
-      "This clearly showed that {b1}. In response to this issue, {b2}, as a potential client looks for a contractor with experience in a specific project type, e.g., Functional and Utility Program with requirements matching specific parameters.",
-    project_web_planetroad_iter_p_14_b1:
-      "the current presentation of references did not support actual business needs",
-    project_web_planetroad_iter_p_14_b2:
-      "I grouped references by the type of service provided",
-    project_web_planetroad_iter_p_15: "The result was {b}.",
-    project_web_planetroad_iter_p_15_b:
-      "a significant reduction in search time for specific references and support for the real tender process",
+      "This clearly showed that <b>the current presentation of references did not support actual business needs</b>. In response to this issue, <b>I grouped references by the type of service provided</b>, as a potential client looks for a contractor with experience in a specific project type, e.g., Functional and Utility Program with requirements matching specific parameters.",
+    project_web_planetroad_iter_p_15:
+      "The result was <b>a significant reduction in search time for specific references and support for the real tender process</b>.",
     project_web_planetroad_fig_title_24: "Reference Categorization",
     project_web_planetroad_iter_h3_4:
       "How do I enhance user sense of security? — Transparency and GDPR",
     project_web_planetroad_iter_p_16:
-      "With the growth of the website came the need to {b}, both from a formal and brand image perspective.",
-    project_web_planetroad_iter_p_16_b:
-      "better ensure transparency in personal data processing",
+      "With the growth of the website came the need to <b>better ensure transparency in personal data processing</b>, both from a formal and brand image perspective.",
     project_web_planetroad_iter_p_17:
-      "I created a {b} clearly communicating how client data is processed. Now, anyone interested can access this subpage from the bottom navigation and resolve any doubts.",
-    project_web_planetroad_iter_p_17_b: "dedicated privacy policy page",
-    project_web_planetroad_iter_p_18: "The result was {b}.",
-    project_web_planetroad_iter_p_18_b:
-      "higher company credibility and a greater sense of security for users",
+      "I created a <b>dedicated privacy policy page</b> clearly communicating how client data is processed. Now, anyone interested can access this subpage from the bottom navigation and resolve any doubts.",
+    project_web_planetroad_iter_p_18:
+      "The result was <b>higher company credibility and a greater sense of security for users</b>.",
     project_web_planetroad_fig_title_25: "Privacy Policy Subpage",
     project_web_planetroad_iter_h3_5:
       "How do I show the real value of the team's work? — Visual presentation of project outcomes",
     project_web_planetroad_iter_p_19:
-      "The social media revolution in recent years clearly showed that {b} has a huge impact on perceived service value, and short videos are key to capturing user attention.",
-    project_web_planetroad_iter_p_19_b: "visual presentation of work results",
+      "The social media revolution in recent years clearly showed that <b>visual presentation of work results</b> has a huge impact on perceived service value, and short videos are key to capturing user attention.",
     project_web_planetroad_iter_p_20:
-      'In response to this analysis, I enriched the "Experience" and "Projects" subpages {b}.',
-    project_web_planetroad_iter_p_20_b:
-      "with video material showing the process - project photos as well as 'before and after' photos",
-    project_web_planetroad_iter_p_21: "As a result, potential clients can {b}.",
-    project_web_planetroad_iter_p_21_b:
-      "better understand the scope of work and see the final result of the investment",
+      'In response to this analysis, I enriched the "Experience" and "Projects" subpages <b>with video material showing the process - project photos as well as \'before and after\' photos</b>.',
+    project_web_planetroad_iter_p_21:
+      "As a result, potential clients can <b>better understand the scope of work and see the final result of the investment</b>.",
     project_web_planetroad_fig_title_26:
       "Section showcasing a specific project",
     project_web_planetroad_final_h2: "Final Outcome",
@@ -2859,19 +3141,19 @@ const translations = {
       "🧠 Technical performance and accessibility (WCAG) aren't just extra additions — for public sector clients and major investors, they become real criteria for judging professionalism. Furthermore, in competitive bidding rankings, performance and accessibility can determine whether a contract is awarded or lost if slow loading leads users to abandon the site.",
     project_web_planetroad_after_h3_2: "Next Steps",
     project_web_planetroad_after_p_3:
-      "{b}\n– each project could be expanded into a case study outlining the challenge, scope of work, solutions applied, and results, reinforcing an expert image and facilitating purchasing decisions.",
+      "\n– each project could be expanded into a case study outlining the challenge, scope of work, solutions applied, and results, reinforcing an expert image and facilitating purchasing decisions.",
     project_web_planetroad_after_p_3_b:
       "🔜 Expanding portfolio items with case studies",
     project_web_planetroad_after_p_4:
-      "{b}\n– dedicated subpages for road design, traffic management, or technical consulting would allow better SEO positioning and targeted communication tailored to specific client segments.",
+      "\n– dedicated subpages for road design, traffic management, or technical consulting would allow better SEO positioning and targeted communication tailored to specific client segments.",
     project_web_planetroad_after_p_4_b:
       "🔜 Creating dedicated landing pages for specific services",
     project_web_planetroad_after_p_5:
-      "{b}\n– an insights or news section (e.g., regulatory changes, design best practices) could build long-term visibility on Google and position PlanetRoad as an industry thought leader.",
+      "\n– an insights or news section (e.g., regulatory changes, design best practices) could build long-term visibility on Google and position PlanetRoad as an industry thought leader.",
     project_web_planetroad_after_p_5_b:
       "🔜 Adding expert content and industry insights",
     project_web_planetroad_after_p_6:
-      "{b}\n– further user behavior analysis (scroll depth, click maps, A/B testing) would refine page layout and increase lead generation without needing more traffic.",
+      "\n– further user behavior analysis (scroll depth, click maps, A/B testing) would refine page layout and increase lead generation without needing more traffic.",
     project_web_planetroad_after_p_6_b:
       "🔜 Advanced analytics and conversion rate optimization",
     project_web_planetroad_navloop_text: "See next project: ",
