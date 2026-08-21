@@ -1,5 +1,14 @@
 // audience.js — dopasowanie strony do ścieżki: dla firm / dla rekrutera
 (function () {
+  // Link z ?audience=recruiter (lub business/general) ustawia tryb od razu
+  // przy pierwszym wejściu — przydatne np. wysyłając link do CV rekruterowi.
+  const urlAudience = new URLSearchParams(window.location.search).get(
+    "audience"
+  );
+  if (["business", "recruiter", "general"].includes(urlAudience)) {
+    localStorage.setItem("audience", urlAudience);
+  }
+
   const stored = localStorage.getItem("audience") || "unset";
   document.documentElement.setAttribute("data-audience", stored);
 
