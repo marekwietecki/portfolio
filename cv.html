@@ -283,11 +283,12 @@
       .details-grid {
         display: flex;
         flex-wrap: wrap;
-        gap: 24px 32px;
+        justify-content: space-between;
+        gap: 16px 24px;
       }
 
       .detail-item {
-        min-width: 150px;
+        min-width: 0;
       }
 
       .detail-item .label {
@@ -296,22 +297,24 @@
         gap: 6px;
         font-family: "Outfit", sans-serif;
         font-weight: 500;
-        font-size: 16px;
+        font-size: 14px;
         color: var(--cv-text-strong);
         margin-bottom: 6px;
+        white-space: nowrap;
       }
 
       .detail-item .icon {
-        width: 16px;
-        height: 16px;
+        width: 15px;
+        height: 15px;
         flex-shrink: 0;
         stroke: var(--cv-text-muted);
       }
 
       .detail-item .value {
         font-family: "Outfit", sans-serif;
-        font-size: 16px;
+        font-size: 14px;
         color: var(--cv-text-muted);
+        white-space: nowrap;
       }
 
       .detail-item a {
@@ -323,6 +326,16 @@
       }
 
       /* ---------- UMIEJĘTNOŚCI ---------- */
+
+      /* Trzy osobne listy (dark/mid/light), każda we własnym wierszu —
+         chipy różnych poziomów nigdy się nie mieszają w tym samym
+         rzędzie; w obrębie jednego poziomu mogą zawijać się na kolejne
+         wiersze, jeśli zabraknie miejsca na małych ekranach. */
+      .skills-groups {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
 
       .skills-list {
         display: flex;
@@ -360,7 +373,8 @@
       .languages-list {
         display: flex;
         flex-wrap: wrap;
-        gap: 8px 0;
+        justify-content: space-between;
+        gap: 12px 0;
       }
 
       .lang-item {
@@ -380,7 +394,7 @@
 
       .lang-sep {
         color: var(--cv-line);
-        margin: 0 20px;
+        margin: 0 12px;
         font-family: "Outfit", sans-serif;
       }
 
@@ -826,22 +840,28 @@
 
         <section id="umiejetnosci">
           <h2 class="section-title" data-i18n="cv_skills_h2">Umiejętności</h2>
-          <ul class="section-body skills-list">
-            <li class="chip-dark" data-i18n="cv_skill_figma">Figma</li>
-            <li class="chip-dark" data-i18n="cv_skill_customer_journey">Customer Journey</li>
-            <li class="chip-dark" data-i18n="cv_skill_user_research">User Research</li>
-            <li class="chip-dark" data-i18n="cv_skill_usability_testing">Testy Użyteczności</li>
-            <li class="chip-mid" data-i18n="cv_skill_product_strategy">Strategia Produktowa</li>
-            <li class="chip-mid" data-i18n="cv_skill_agile">Agile</li>
-            <li class="chip-mid" data-i18n="cv_skill_design_systems">Design Systems</li>
-            <li class="chip-mid" data-i18n="cv_skill_claude_code">Claude Code</li>
-            <li class="chip-mid" data-i18n="cv_skill_git">Git</li>
-            <li class="chip-light" data-i18n="cv_skill_html_css_js">HTML &amp; CSS/JS</li>
-            <li class="chip-light" data-i18n="cv_skill_react_native">React Native</li>
-            <li class="chip-light" data-i18n="cv_skill_graphic_design">Projektowanie graficzne</li>
-            <li class="chip-light" data-i18n="cv_skill_clickup">ClickUp</li>
-            <li class="chip-light" data-i18n="cv_skill_ga4">GA4</li>
-          </ul>
+          <div class="section-body skills-groups">
+            <ul class="skills-list">
+              <li class="chip-dark" data-i18n="cv_skill_figma">Figma</li>
+              <li class="chip-dark" data-i18n="cv_skill_customer_journey">Customer Journey</li>
+              <li class="chip-dark" data-i18n="cv_skill_user_research">User Research</li>
+              <li class="chip-dark" data-i18n="cv_skill_usability_testing">Testy Użyteczności</li>
+            </ul>
+            <ul class="skills-list">
+              <li class="chip-mid" data-i18n="cv_skill_product_strategy">Strategia Produktowa</li>
+              <li class="chip-mid" data-i18n="cv_skill_agile">Agile</li>
+              <li class="chip-mid" data-i18n="cv_skill_design_systems">Design Systems</li>
+              <li class="chip-mid" data-i18n="cv_skill_claude_code">Claude Code</li>
+              <li class="chip-mid" data-i18n="cv_skill_git">Git</li>
+            </ul>
+            <ul class="skills-list">
+              <li class="chip-light" data-i18n="cv_skill_html_css_js">HTML &amp; CSS/JS</li>
+              <li class="chip-light" data-i18n="cv_skill_react_native">React Native</li>
+              <li class="chip-light" data-i18n="cv_skill_graphic_design">Projektowanie graficzne</li>
+              <li class="chip-light" data-i18n="cv_skill_clickup">ClickUp</li>
+              <li class="chip-light" data-i18n="cv_skill_ga4">GA4</li>
+            </ul>
+          </div>
         </section>
 
         <section id="jezyki">
