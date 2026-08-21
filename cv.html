@@ -542,17 +542,22 @@
           margin: 16mm 15mm;
         }
 
-        /* Celowo NIE blokujemy łamania całych sekcji (np. Certyfikaty) —
-           przy break-inside:avoid na całej sekcji długie listy potrafią
-           zostawiać ogromne puste miejsce na stronie. Pilnujemy tylko,
-           żeby pojedynczy wpis (jedno doświadczenie, jeden certyfikat)
-           nie rozjechał się na dwie strony. */
+        /* Blokujemy łamanie sekcji i tytuł od zawartości */
+        .page section {
+          break-inside: avoid;
+          break-before: avoid;
+        }
         .entry,
         .cert-item {
           break-inside: avoid;
         }
         .section-title {
           break-after: avoid;
+        }
+
+        /* Niech ostatnia sekcja może się łamać jeśli jest zbyt długa */
+        .page section:last-child {
+          break-inside: auto;
         }
 
       }
