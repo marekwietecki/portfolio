@@ -542,24 +542,18 @@
           margin: 16mm 15mm;
         }
 
-        /* Blokujemy łamanie sekcji i tytuł od zawartości */
-        .page section {
-          break-inside: avoid;
-          break-before: avoid;
+        /* Sekcje (np. Certyfikaty) mogą się swobodnie łamać między
+           stronami — to OK. Pilnujemy tylko dwóch rzeczy:
+           1) tytuł sekcji nigdy nie zostaje sam, oderwany od treści,
+           2) pojedynczy wpis (jedno doświadczenie, jeden certyfikat)
+           nie rozjeżdża się na dwie strony. */
+        .section-title {
+          break-after: avoid;
         }
         .entry,
         .cert-item {
           break-inside: avoid;
         }
-        .section-title {
-          break-after: avoid;
-        }
-
-        /* Niech ostatnia sekcja może się łamać jeśli jest zbyt długa */
-        .page section:last-child {
-          break-inside: auto;
-        }
-
       }
     </style>
     <script src="/js/translations.js"></script>
