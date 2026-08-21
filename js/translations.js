@@ -62,13 +62,13 @@ const translations = {
 
     cv_languages_h2: "Języki",
     cv_lang_polish_name: "Polski",
-    cv_lang_polish_level: "— język ojczysty",
+    cv_lang_polish_level: "– język ojczysty",
     cv_lang_english_name: "Angielski",
-    cv_lang_english_level: "— C1",
+    cv_lang_english_level: "– C1",
     cv_lang_spanish_name: "Hiszpański",
-    cv_lang_spanish_level: "— A2/B1",
+    cv_lang_spanish_level: "– A2/B1",
     cv_lang_german_name: "Niemiecki",
-    cv_lang_german_level: "— A1",
+    cv_lang_german_level: "– A1",
 
     cv_experience_h2: "Doświadczenie",
 
@@ -1798,13 +1798,13 @@ const translations = {
 
     cv_languages_h2: "Languages",
     cv_lang_polish_name: "Polish",
-    cv_lang_polish_level: "— native",
+    cv_lang_polish_level: "– native",
     cv_lang_english_name: "English",
-    cv_lang_english_level: "— C1",
+    cv_lang_english_level: "– C1",
     cv_lang_spanish_name: "Spanish",
-    cv_lang_spanish_level: "— A2/B1",
+    cv_lang_spanish_level: "– A2/B1",
     cv_lang_german_name: "German",
-    cv_lang_german_level: "— A1",
+    cv_lang_german_level: "– A1",
 
     cv_experience_h2: "Experience",
 

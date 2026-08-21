@@ -186,6 +186,8 @@
         color: var(--cv-text-body);
         font-family: "Inter", sans-serif;
         -webkit-font-smoothing: antialiased;
+        font-kerning: none;
+        font-variant-ligatures: none;
         padding: 56px 74px 72px;
         border-radius: 20px;
         box-shadow: var(--shadow-header-scrolled);
@@ -303,7 +305,7 @@
         width: 16px;
         height: 16px;
         flex-shrink: 0;
-        stroke: var(--cv-accent);
+        stroke: var(--cv-text-muted);
       }
 
       .detail-item .value {
@@ -341,8 +343,8 @@
         white-space: nowrap;
       }
 
-      /* Kolejność (najciemniejsze → najjaśniejsze) liczona w JS na
-         podstawie długości listy — patrz skrypt przy .skills-list. */
+      /* Kolor chipa ustawiany ręcznie klasą na każdym <li> w HTML —
+         dark = kluczowe kompetencje, mid = wspierające, light = dodatkowe. */
       .skills-list li.chip-dark {
         background: var(--cv-chip-bg-2);
       }
@@ -826,20 +828,20 @@
         <section id="umiejetnosci">
           <h2 class="section-title" data-i18n="cv_skills_h2">Umiejętności</h2>
           <ul class="section-body skills-list">
-            <li data-i18n="cv_skill_figma">Figma</li>
-            <li data-i18n="cv_skill_customer_journey">Customer Journey</li>
-            <li data-i18n="cv_skill_user_research">User Research</li>
-            <li data-i18n="cv_skill_product_strategy">Strategia Produktowa</li>
-            <li data-i18n="cv_skill_usability_testing">Testy Użyteczności</li>
-            <li data-i18n="cv_skill_agile">Agile</li>
-            <li data-i18n="cv_skill_design_systems">Design Systems</li>
-            <li data-i18n="cv_skill_claude_code">Claude Code</li>
-            <li data-i18n="cv_skill_ga4">GA4</li>
-            <li data-i18n="cv_skill_git">Git</li>
-            <li data-i18n="cv_skill_clickup">ClickUp</li>
-            <li data-i18n="cv_skill_html_css_js">HTML &amp; CSS/JS</li>
-            <li data-i18n="cv_skill_react_native">React Native</li>
-            <li data-i18n="cv_skill_graphic_design">Projektowanie graficzne</li>
+            <li class="chip-dark" data-i18n="cv_skill_figma">Figma</li>
+            <li class="chip-dark" data-i18n="cv_skill_customer_journey">Customer Journey</li>
+            <li class="chip-dark" data-i18n="cv_skill_user_research">User Research</li>
+            <li class="chip-dark" data-i18n="cv_skill_usability_testing">Testy Użyteczności</li>
+            <li class="chip-mid" data-i18n="cv_skill_product_strategy">Strategia Produktowa</li>
+            <li class="chip-mid" data-i18n="cv_skill_agile">Agile</li>
+            <li class="chip-mid" data-i18n="cv_skill_design_systems">Design Systems</li>
+            <li class="chip-mid" data-i18n="cv_skill_claude_code">Claude Code</li>
+            <li class="chip-mid" data-i18n="cv_skill_git">Git</li>
+            <li class="chip-light" data-i18n="cv_skill_html_css_js">HTML &amp; CSS/JS</li>
+            <li class="chip-light" data-i18n="cv_skill_react_native">React Native</li>
+            <li class="chip-light" data-i18n="cv_skill_graphic_design">Projektowanie graficzne</li>
+            <li class="chip-light" data-i18n="cv_skill_clickup">ClickUp</li>
+            <li class="chip-light" data-i18n="cv_skill_ga4">GA4</li>
           </ul>
         </section>
 
@@ -1290,21 +1292,6 @@
       })();
     </script>
 
-    <!-- Kolejność kolorów chipów w Umiejętnościach: najciemniejsze na
-         początku listy, potem średnie, na końcu najjaśniejsze — liczone
-         od długości listy, więc działa niezależnie od tego, ile chipów
-         dodasz/usuniesz. -->
-    <script>
-      (function () {
-        const chips = document.querySelectorAll(".skills-list li");
-        const third = Math.ceil(chips.length / 3);
-        chips.forEach((chip, i) => {
-          chip.classList.add(
-            i < third ? "chip-dark" : i < third * 2 ? "chip-mid" : "chip-light"
-          );
-        });
-      })();
-    </script>
   </body>
   <script src="js/cookie.js"></script>
 </html>
