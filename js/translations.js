@@ -242,6 +242,8 @@ const translations = {
       "Jak wdrożyłem PlanetRoad w świat cyfrowy, tworząc spójną komunikację wizualną?",
     projects_betfan_badge: "Betfan",
     projects_betfan_title: "Customer Journey Map & Gamifikacja Retencji",
+    projects_betfan_subtitle:
+      "Jak przekształcić okazjonalnego gracza w zaangażowanego fana?",
     projects_betfan_desc:
       "BETFAN to platforma bukmacherska stawiająca na emocje, progres i szybkie zawieranie zakładów w celu budowania wysokiej retencji graczy. Projekt polegał na zmapowaniu customer journey od reklamy do kuponu oraz zaprojektowaniu mechanizmów motywacyjnych budujących nawyk powrotu do aplikacji.",
     projects_betfan_role_label: "Rola:",
@@ -482,6 +484,8 @@ const translations = {
     // PROJECT WKDZIK
     projects_wkdzik_badge: "Case Study / Audyt UX",
     projects_wkdzik_title: "Audyt WKDZIK.pl",
+    projects_wkdzik_subtitle:
+      "Jak małe poprawki mogą znacznie ulepszyć doświadczenie użytkownika?",
     projects_wkdzik_desc:
       "WKDZIK.pl to rozwijający się sklep e-commerce marki energetyków „Dzik”, z dużą i zaangażowaną społecznością. Przeprowadziłem samodzielny audyt UX i wydajności strony, żeby sprawdzić, ile realnej sprzedaży ucieka przez detale, które łatwo przeoczyć.",
     projects_wkdzik_role_label: "Rola:",
@@ -835,7 +839,7 @@ const translations = {
       "Prawo do wniesienia sprzeciwu wobec przetwarzania danych,",
     privacy_6_right6:
       "Prawo do wycofania zgody na przetwarzanie danych w dowolnym momencie (bez wpływu na zgodność z prawem przetwarzania dokonanego przed jej wycofaniem).",
-    privacy_6_contact:
+    privacy_6_contact_part1:
       "W celu realizacji powyższych praw skontaktuj się ze mną pod adresem e-mail:",
     privacy_back_btn: "Powrót do strony głównej",
 
@@ -1973,6 +1977,8 @@ const translations = {
       "How i introduced PlanetRoad to the digital world, creating a coherent visual identity?",
     projects_betfan_badge: "Betfan",
     projects_betfan_title: "Customer Journey Map & Retention Gamification",
+    projects_betfan_subtitle:
+      "How to turn an occasional player into an engaged fan?",
     projects_betfan_desc:
       "BETFAN is a sports betting platform focused on emotions, progress, and quick bet placement to build high player retention. The project involved mapping the customer journey from ad to bet slip and designing motivational mechanisms to foster a daily app return habit.",
     projects_betfan_role_label: "Role:",
@@ -2210,6 +2216,8 @@ const translations = {
     // PROJECT WKDZIK
     projects_wkdzik_badge: "Case Study / UX Audit",
     projects_wkdzik_title: "WKDZIK.pl Audit",
+    projects_wkdzik_subtitle:
+      "How can small fixes significantly improve the user experience?",
     projects_wkdzik_desc:
       "WKDZIK.pl is a growing e-commerce store for the energy drink brand 'Dzik', with a large and engaged community. I ran a self-initiated UX and performance audit to find out how much real revenue was slipping away through easy-to-miss details.",
     projects_wkdzik_role_label: "Role:",
@@ -2563,7 +2571,7 @@ const translations = {
     privacy_6_right5: "Right to object to data processing,",
     privacy_6_right6:
       "Right to withdraw consent to data processing at any time (without affecting the lawfulness of processing based on consent before its withdrawal).",
-    privacy_6_contact:
+    privacy_6_contact_part1:
       "In order to exercise the above rights, please contact me at the e-mail address:",
     privacy_back_btn: "Back to Main Page",
 
