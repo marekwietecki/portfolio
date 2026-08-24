@@ -51,7 +51,6 @@ const translations = {
     cv_skill_product_strategy: "Strategia Produktowa",
     cv_skill_agile: "Agile",
     cv_skill_usability_testing: "Testy Użyteczności",
-    cv_skill_clickup: "ClickUp",
     cv_skill_design_systems: "Design Systems",
     cv_skill_claude_code: "Claude Code",
     cv_skill_html_css_js: "HTML & CSS/JS",
@@ -59,6 +58,8 @@ const translations = {
     cv_skill_ga4: "GA4",
     cv_skill_graphic_design: "Projektowanie graficzne",
     cv_skill_git: "Git",
+    cv_skill_mobile_design: "Mobile Design (iOS i Android)",
+    cv_skill_motion_design: "Motion Design",
 
     cv_languages_h2: "Języki",
     cv_lang_polish_name: "Polski",
@@ -1809,7 +1810,6 @@ const translations = {
     cv_skill_product_strategy: "Product Strategy",
     cv_skill_agile: "Agile",
     cv_skill_usability_testing: "Usability Testing",
-    cv_skill_clickup: "ClickUp",
     cv_skill_design_systems: "Design Systems",
     cv_skill_claude_code: "Claude Code",
     cv_skill_html_css_js: "HTML & CSS/JS",
@@ -1817,6 +1817,8 @@ const translations = {
     cv_skill_ga4: "GA4",
     cv_skill_graphic_design: "Graphic Design",
     cv_skill_git: "Git",
+    cv_skill_mobile_design: "Mobile Design (iOS & Android)",
+    cv_skill_motion_design: "Motion Design",
 
     cv_languages_h2: "Languages",
     cv_lang_polish_name: "Polish",
