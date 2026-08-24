@@ -51,7 +51,7 @@ const translations = {
     cv_skill_product_strategy: "Strategia Produktowa",
     cv_skill_agile: "Agile",
     cv_skill_usability_testing: "Testy Użyteczności",
-    cv_skill_design_systems: "Design Systems",
+    cv_skill_design_systems: "Systemy Projektowe",
     cv_skill_claude_code: "Claude Code",
     cv_skill_html_css_js: "HTML & CSS/JS",
     cv_skill_react_native: "React Native",
