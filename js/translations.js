@@ -113,6 +113,24 @@ const translations = {
     cv_exp3_date: "Listopad 2023 – Obecnie",
     cv_exp3_location: "Łomianki",
 
+    cv_projects_h2: "Projekty",
+    cv_proj1_title: "Monexo — Aplikacja Mobilna",
+    cv_proj1_desc:
+      "Projekt aplikacji mobilnej do wymiany walut — odpowiedź na realne problemy użytkowników istniejących rozwiązań FinTech. Pełny proces od researchu po testy użyteczności.",
+    cv_proj1_tag: "Fintech · Mobile App · Figma",
+    cv_proj2_title: "HabitBubbl — Progresywna Aplikacja Mobilna",
+    cv_proj2_desc:
+      "Kompleksowe narzędzie do budowania nawyków i zarządzania celami — projekt inżynierski łączący UX/UI, architekturę informacji i wdrożenie PWA.",
+    cv_proj2_tag: "PWA · Productivity · Figma",
+    cv_proj3_title: "Customer Journey Map — Betfan",
+    cv_proj3_desc:
+      "Zmapowanie ścieżki użytkownika platformy bukmacherskiej od reklamy do zakładu oraz zaprojektowanie mechanizmów motywacyjnych budujących nawyk powrotu.",
+    cv_proj3_tag: "Customer Journey · Gamification",
+    cv_proj4_title: "Audyt WKDZIK.pl",
+    cv_proj4_desc:
+      "Samodzielny audyt UX i wydajności sklepu e-commerce w celu identyfikacji szczegółów ograniczających realną sprzedaż.",
+    cv_proj4_tag: "UX Audit · E-commerce",
+
     cv_education_h2: "Wykształcenie",
 
     cv_edu1_title: "Inżynier Informatyki, Uniwersytet Vizja",
@@ -1851,6 +1869,24 @@ const translations = {
       "Building patience, empathy, and active-listening skills.",
     cv_exp3_date: "November 2023 – Present",
     cv_exp3_location: "Łomianki",
+
+    cv_projects_h2: "Projects",
+    cv_proj1_title: "Monexo — Mobile App",
+    cv_proj1_desc:
+      "A currency-exchange mobile app designed as a response to real problems in existing FinTech products. Full process from research to usability testing.",
+    cv_proj1_tag: "Fintech · Mobile App · Figma",
+    cv_proj2_title: "HabitBubbl — Progressive Mobile App",
+    cv_proj2_desc:
+      "A complete toolkit for habit-building and goal management — an engineering thesis project combining UX/UI, information architecture, and PWA implementation.",
+    cv_proj2_tag: "PWA · Productivity · Figma",
+    cv_proj3_title: "Customer Journey Map — Betfan",
+    cv_proj3_desc:
+      "Mapped the user journey of a sports betting platform from ad to bet slip and designed motivational mechanisms to build a return-to-app habit.",
+    cv_proj3_tag: "Customer Journey · Gamification",
+    cv_proj4_title: "WKDZIK.pl Audit",
+    cv_proj4_desc:
+      "Self-initiated UX and performance audit of an e-commerce store to identify details limiting real sales.",
+    cv_proj4_tag: "UX Audit · E-commerce",
 
     cv_education_h2: "Education",
 
