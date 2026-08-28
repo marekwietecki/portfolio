@@ -200,31 +200,6 @@
         line-height: 1.4;
       }
 
-      .about-intro-cv {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: var(--text-heading);
-        color: var(--bg-card);
-        font-weight: 700;
-        font-size: 0.9rem;
-        padding: 12px 22px;
-        border-radius: 999px;
-        transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
-      }
-
-      .about-intro-cv svg {
-        width: 16px;
-        height: 16px;
-        fill: currentColor;
-      }
-
-      .about-intro-cv:hover {
-        background: var(--accent);
-        color: #ffffff;
-        transform: translateY(-2px);
-      }
-
       /* Kompaktowa karta z liczbami po prawej */
       .about-intro-card {
         background: var(--bg-card);
@@ -1297,7 +1272,7 @@
         data-i18n="about_breadcrumbs_main"
         >Strona Główna</a
       >
-      <span class="arrow">&nbsp;>&nbsp;</span>
+      <span class="arrow">&nbsp;/&nbsp;</span>
       <span class="currentCard" data-i18n="about_breadcrumbs_current"
         >O Mnie</span
       >
@@ -1456,7 +1431,7 @@
             </div>
             <a
               href="cv.html"
-              class="about-intro-cv"
+              class="btn-outline"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1728,6 +1703,23 @@
             </a>
             <p data-i18n="about_certificates_item4_caption">
               Cambridge Advanced English Certificate
+            </p>
+          </div>
+        </div>
+        <div class="galleryItem">
+          <div class="itemContainer">
+            <a
+              href="assets/certificates/Claude_Code_101_certificate.png"
+              data-lightbox="galeria_certyfikatów"
+            >
+              <img
+                src="assets/certificates/Claude_Code_101_certificate.png"
+                alt="Certificate of Completion Claude Code 101 by Anthropic"
+                data-i18n-alt="about_certificates_item14_alt"
+              />
+            </a>
+            <p data-i18n="about_certificates_item14_caption">
+              Claude Code 101
             </p>
           </div>
         </div>

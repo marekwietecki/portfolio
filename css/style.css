@@ -737,6 +737,35 @@ footer {
   color: var(--text-primary);
 }
 
+/* ---------- PRZYCISK OUTLINE (delikatny secondary) ---------- */
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  border: 1.5px solid var(--text-heading);
+  color: var(--text-heading);
+  background: transparent;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-outline svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.btn-outline:hover {
+  background: var(--text-heading);
+  color: var(--bg-card);
+}
+
 /* ==========================================================================
      THEME SWITCH — przełącznik motywu w stylu Apple/iOS
      Markup (wstaw w headerze, np. obok .lang-switcher):

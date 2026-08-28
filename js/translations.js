@@ -209,7 +209,7 @@ const translations = {
     hero_fork_kicker: "Cześć! Miło Cię widzieć.",
     hero_fork_title: "Co Cię tu sprowadza?",
     hero_fork_subtitle: "Dobierz ścieżkę, a dopasuję to, co widzisz.",
-    hero_fork_business_tag: "Dla firm",
+    hero_fork_business_tag: "Dla firmy",
     hero_fork_business_title: "Szukam designera",
     hero_fork_business_desc:
       "Zobacz ofertę, proces i jak mogę pomóc Twojemu biznesowi.",
@@ -712,6 +712,9 @@ const translations = {
     about_certificates_item13_alt:
       "Certyfikat ukończenia Claude 101 od Anthropic",
     about_certificates_item13_caption: "Claude 101",
+    about_certificates_item14_alt:
+      "Certyfikat ukończenia Claude Code 101 od Anthropic",
+    about_certificates_item14_caption: "Claude Code 101",
     about_certificates_show_more: "Pokaż więcej certyfikatów",
     about_certificates_show_less: "Pokaż mniej certyfikatów",
     // OFFER
@@ -2462,6 +2465,9 @@ const translations = {
     about_certificates_item13_alt:
       "Certificate of Completion Claude 101 by Anthropic",
     about_certificates_item13_caption: "Claude 101",
+    about_certificates_item14_alt:
+      "Certificate of Completion Claude Code 101 by Anthropic",
+    about_certificates_item14_caption: "Claude Code 101",
     about_certificates_show_more: "Show more certificates",
     about_certificates_show_less: "Show fewer certificates",
 
@@ -3551,6 +3557,17 @@ function switchLanguage(lang) {
       } else {
         setFormattedText(element, translationValue);
       }
+    }
+  });
+
+  // Osobny atrybut data-i18n-alt tłumaczy 'alt' na <img>, niezależnie od
+  // ewentualnego data-i18n na tym samym elemencie (np. podpis pod zdjęciem
+  // tłumaczy treść, a data-i18n-alt tłumaczy alt tego samego obrazka).
+  const altElements = document.querySelectorAll("[data-i18n-alt]");
+  altElements.forEach((element) => {
+    const key = element.getAttribute("data-i18n-alt");
+    if (translations[lang] && translations[lang][key]) {
+      element.setAttribute("alt", translations[lang][key]);
     }
   });
 
