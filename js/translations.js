@@ -877,6 +877,7 @@ const translations = {
     side_nav_research: "Badania",
     side_nav_ideation: "Ideacja",
     side_nav_iterations: "Iteracje",
+    side_nav_storybook: "Storybook",
     side_nav_final_effect: "Efekt Końcowy",
     side_nav_post_project: "Po Projekcie",
 
@@ -1569,7 +1570,18 @@ const translations = {
     project_habitbubbl_lofi_caption:
       "Makiety niskiej wierności — Today, Calendar, Habits, Hero, Modal",
 
-    project_habitbubbl_final_h2: "5. Efekt Końcowy",
+    project_habitbubbl_storybook_h2: "5. Systematyzacja Komponentów: Storybook",
+    project_habitbubbl_storybook_p1:
+      "Po ukończeniu głównej wersji aplikacji chciałem usystematyzować swoją pracę i jeszcze mocniej skupić się na komponentach interfejsu — dlatego wdrożyłem Storybook (26 stories dla 5 komponentów) do istniejącej aplikacji vanilla JS/HTML/CSS, bez kroku budowania. Zamiast wymuszać framework, dobrałem narzędzie (@storybook/html-vite) do faktycznej architektury kodu — funkcje zwracające węzły DOM, które aplikacja już traktowała jak komponenty.",
+    project_habitbubbl_storybook_item1:
+      "<strong>Świadomy zakres, nie przepisywanie od zera:</strong> nie refaktoryzowałem całego ~2000-liniowego pliku UI na bibliotekę komponentów. Wydzieliłem tylko elementy z realnym powodem — rzeczywistą czystością funkcji albo potwierdzonym powielaniem tego samego znacznika na 4 podstronach.",
+    project_habitbubbl_storybook_item2:
+      "<strong>Izolacja komponentów ujawniła realne błędy:</strong> animacja pierścienia postępu była martwa przez niedopasowaną nazwę klasy CSS (naprawione), a dodatek do testowania dostępności wykrył brakujące atrybuty „for\" w etykietach formularza — po znalezieniu 2 z 8 przypadków, przejrzałem cały modal i naprawiłem wszystkie osiem.",
+    project_habitbubbl_storybook_item3:
+      "<strong>Redesign „premium glass\" bez nowych wartości:</strong> podniosłem bąbelki zadań o jeden poziom na istniejącej pięciopoziomowej skali tokenów „--glass-*\" (tło, rozmycie, obramowanie, cień) — żadna wartość nie została wymyślona od nowa.",
+    project_habitbubbl_storybook_link: "Zobacz Storybook →",
+
+    project_habitbubbl_final_h2: "6. Efekt Końcowy",
     project_habitbubbl_final_p1:
       "Aplikacja składa się z czterech głównych modułów wspierających produktywność:",
     project_habitbubbl_final_item1:
@@ -1599,7 +1611,7 @@ const translations = {
     project_habitbubbl_impact_card4_label:
       "mniej pobieranych stylów CSS na podstronę",
 
-    project_habitbubbl_after_h2: "6. Po Projekcie",
+    project_habitbubbl_after_h2: "7. Po Projekcie",
     project_habitbubbl_takeaways_h3: "Kluczowe Wnioski",
     project_habitbubbl_after_p1:
       "🧠 Wykorzystanie architektury PWA w połączeniu z zasadami UX oraz mechanizmami grywalizacji pozwoliło stworzyć lekkie, wydajne i niezależne od połączenia internetowego narzędzie. Połączenie zadań, nawyków i celów w jednym systemie skutecznie redukuje obciążenie poznawcze i pomaga utrzymać długofalową motywację użytkowników.",
@@ -2631,6 +2643,7 @@ const translations = {
     side_nav_research: "Research",
     side_nav_ideation: "Ideation",
     side_nav_iterations: "Iterations",
+    side_nav_storybook: "Storybook",
     side_nav_final_effect: "Final Result",
     side_nav_post_project: "Post-Project",
 
@@ -3309,7 +3322,18 @@ const translations = {
     project_habitbubbl_lofi_caption:
       "Low-fidelity wireframes — Today, Calendar, Habits, Hero, Modal",
 
-    project_habitbubbl_final_h2: "5. Final Result",
+    project_habitbubbl_storybook_h2: "5. Systemizing Components: Storybook",
+    project_habitbubbl_storybook_p1:
+      "After finishing the main version of the app, I wanted to systemize my workflow and focus even more on components — so I introduced Storybook (26 stories across 5 components) into the existing vanilla JS/HTML/CSS app, with no build step. Rather than forcing a framework, I picked the tool (@storybook/html-vite) to fit the codebase's actual architecture — plain functions returning DOM nodes, the exact shape the app already used for its components.",
+    project_habitbubbl_storybook_item1:
+      "<strong>Deliberate scope, not a rewrite:</strong> I didn't refactor the entire ~2,000-line UI file into a component library. I only extracted pieces with a real reason to move — genuine functional purity, or proven duplication of the same markup across all 4 pages.",
+    project_habitbubbl_storybook_item2:
+      "<strong>Isolating components surfaced real bugs:</strong> the progress-ring animation was silently dead due to a mismatched CSS class name (fixed), and the accessibility addon flagged missing \"for\" attributes on form labels — after it caught 2 of 8 instances, I audited the whole modal and fixed all eight.",
+    project_habitbubbl_storybook_item3:
+      "<strong>\"Premium glass\" redesign with zero new values:</strong> I stepped the task bubbles up one tier on the project's existing five-level \"--glass-*\" token scale (background, blur, border, shadow) — nothing was invented from scratch.",
+    project_habitbubbl_storybook_link: "View Storybook →",
+
+    project_habitbubbl_final_h2: "6. Final Result",
     project_habitbubbl_final_p1:
       "The app consists of four main modules supporting productivity:",
     project_habitbubbl_final_item1:
@@ -3339,7 +3363,7 @@ const translations = {
     project_habitbubbl_impact_card4_label:
       "less CSS downloaded per page",
 
-    project_habitbubbl_after_h2: "6. After the Project",
+    project_habitbubbl_after_h2: "7. After the Project",
     project_habitbubbl_takeaways_h3: "Key Takeaways",
     project_habitbubbl_after_p1:
       "🧠 Building on a PWA architecture together with UX principles and gamification mechanics let me create a lightweight, fast tool that works independently of the network connection. Bringing tasks, habits, and goals into one system meaningfully cuts cognitive load and helps sustain long-term user motivation.",

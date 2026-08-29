@@ -227,6 +227,19 @@
         text-align: center;
       }
 
+      .siteLink {
+        display: inline-block;
+        color: var(--accent);
+        font-weight: 600;
+        font-size: clamp(0.7rem, calc(0.5vw + 0.5rem), 1.2rem);
+        text-decoration: underline;
+        transition: opacity 0.2s ease;
+      }
+
+      .siteLink:hover {
+        opacity: 0.75;
+      }
+
       /* ========================================================
    RESPONSIVE MEDIA QUERIES
    ======================================================== */
@@ -753,8 +766,60 @@
           </ul>
         </section>
 
+        <section id="storybook">
+          <h2
+            style="padding-top: 8vh"
+            data-i18n="project_habitbubbl_storybook_h2"
+          >
+            5. Systematyzacja Komponentów: Storybook
+          </h2>
+          <p data-i18n="project_habitbubbl_storybook_p1">
+            Po ukończeniu głównej wersji aplikacji chciałem usystematyzować
+            swoją pracę i jeszcze mocniej skupić się na komponentach
+            interfejsu — dlatego wdrożyłem Storybook (26 stories dla 5
+            komponentów) do istniejącej aplikacji vanilla JS/HTML/CSS, bez
+            kroku budowania. Zamiast wymuszać framework, dobrałem narzędzie
+            (@storybook/html-vite) do faktycznej architektury kodu — funkcje
+            zwracające węzły DOM, które aplikacja już traktowała jak
+            komponenty.
+          </p>
+          <ul>
+            <li data-i18n="project_habitbubbl_storybook_item1">
+              <strong>Świadomy zakres, nie przepisywanie od zera:</strong> nie
+              refaktoryzowałem całego ~2000-liniowego pliku UI na bibliotekę
+              komponentów. Wydzieliłem tylko elementy z realnym powodem —
+              rzeczywistą czystością funkcji albo potwierdzonym powielaniem
+              tego samego znacznika na 4 podstronach.
+            </li>
+            <li data-i18n="project_habitbubbl_storybook_item2">
+              <strong>Izolacja komponentów ujawniła realne błędy:</strong>
+              animacja pierścienia postępu była martwa przez niedopasowaną
+              nazwę klasy CSS (naprawione), a dodatek do testowania
+              dostępności wykrył brakujące atrybuty „for" w etykietach
+              formularza — po znalezieniu 2 z 8 przypadków, przejrzałem cały
+              modal i naprawiłem wszystkie osiem.
+            </li>
+            <li data-i18n="project_habitbubbl_storybook_item3">
+              <strong>Redesign „premium glass" bez nowych wartości:</strong>
+              podniosłem bąbelki zadań o jeden poziom na istniejącej
+              pięciopoziomowej skali tokenów „--glass-*" (tło, rozmycie,
+              obramowanie, cień) — żadna wartość nie została wymyślona od
+              nowa.
+            </li>
+          </ul>
+          <a
+            href="https://main--6a931571e9ffd13d5bff96d2.chromatic.com"
+            target="_blank"
+            rel="noopener"
+            class="siteLink"
+            data-i18n="project_habitbubbl_storybook_link"
+          >
+            Zobacz Storybook →
+          </a>
+        </section>
+
         <section id="efekt-koncowy">
-          <h2 style="padding-top: 8vh" data-i18n="project_habitbubbl_final_h2">5. Efekt Końcowy</h2>
+          <h2 style="padding-top: 8vh" data-i18n="project_habitbubbl_final_h2">6. Efekt Końcowy</h2>
           <p data-i18n="project_habitbubbl_final_p1">
             Aplikacja składa się z czterech głównych modułów wspierających
             produktywność:
@@ -860,7 +925,7 @@
         </section>
 
         <section id="po-projekcie">
-          <h2 style="padding-top: 8vh" data-i18n="project_habitbubbl_after_h2">6. Po Projekcie</h2>
+          <h2 style="padding-top: 8vh" data-i18n="project_habitbubbl_after_h2">7. Po Projekcie</h2>
 
           <h3
             style="margin-bottom: 1vh"
@@ -957,6 +1022,7 @@
           <a href="#badania" data-i18n="side_nav_research">Badania</a>
           <a href="#ideacja" data-i18n="side_nav_ideation">Ideacja</a>
           <a href="#iteracje" data-i18n="side_nav_iterations">Iteracje</a>
+          <a href="#storybook" data-i18n="side_nav_storybook">Storybook</a>
           <a href="#efekt-koncowy" data-i18n="side_nav_final_effect"
             >Efekt Końcowy</a
           >
