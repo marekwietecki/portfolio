@@ -122,7 +122,7 @@ const translations = {
     cv_proj2_title: "HabitBubbl — Progresywna Aplikacja Mobilna",
     cv_proj2_desc:
       "Kompleksowe narzędzie do budowania nawyków i zarządzania celami — projekt inżynierski łączący UX/UI, architekturę informacji i wdrożenie PWA.",
-    cv_proj2_tag: "PWA · Productivity · Figma",
+    cv_proj2_tag: "PWA · Productivity · Figma · Storybook",
     cv_proj3_title: "Customer Journey Map — Betfan",
     cv_proj3_desc:
       "Zmapowanie ścieżki użytkownika platformy bukmacherskiej od reklamy do zakładu oraz zaprojektowanie mechanizmów motywacyjnych budujących nawyk powrotu.",
@@ -1895,7 +1895,7 @@ const translations = {
     cv_proj2_title: "HabitBubbl — Progressive Mobile App",
     cv_proj2_desc:
       "A complete toolkit for habit-building and goal management — an engineering thesis project combining UX/UI, information architecture, and PWA implementation.",
-    cv_proj2_tag: "PWA · Productivity · Figma",
+    cv_proj2_tag: "PWA · Productivity · Figma · Storybook",
     cv_proj3_title: "Customer Journey Map — Betfan",
     cv_proj3_desc:
       "Mapped the user journey of a sports betting platform from ad to bet slip and designed motivational mechanisms to build a return-to-app habit.",
