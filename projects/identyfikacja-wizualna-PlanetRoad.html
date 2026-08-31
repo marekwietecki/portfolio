@@ -104,7 +104,8 @@
    PAGE SPECIFIC STYLES — PROJECT / CASE STUDY VARIANT
    ========================================================================== */
 
-      /* --- HERO GRADIENT BANNER --- */
+      /* --- HERO GRADIENT BANNER (ten sam przepis co karta na stronie
+         głównej — index.html .gradientBackground) --- */
       .gradientBackground {
         position: relative;
         overflow: hidden;
@@ -128,215 +129,92 @@
         isolation: isolate;
       }
 
-      .gradientBackground::before {
-        content: "";
-        position: absolute;
-        inset: -20%;
-
-        background: radial-gradient(
-            circle at 15% 20%,
-            #151e4d 0%,
-            transparent 35%
-          ),
-          radial-gradient(circle at 75% 25%, #0f1a5a 0%, transparent 40%),
-          radial-gradient(circle at 85% 85%, #151e4d 0%, transparent 35%),
-          radial-gradient(circle at 20% 80%, #0f1a5a 0%, transparent 35%),
-          radial-gradient(circle at 50% 50%, #151e4d 0%, transparent 50%);
-
-        filter: blur(70px);
-
-        animation: liquidBlob1 8s ease-in-out infinite alternate;
-      }
-
-      .gradientBackground::after {
-        content: "";
-        position: absolute;
-        inset: -25%;
-
-        background: radial-gradient(
-            circle at 30% 40%,
-            #0f1a5a 0%,
-            transparent 30%
-          ),
-          radial-gradient(circle at 70% 60%, #151e4d 0%, transparent 35%),
-          radial-gradient(circle at 50% 20%, #0f1a5a 0%, transparent 25%);
-
-        filter: blur(90px);
-        mix-blend-mode: screen;
-
-        animation: liquidBlob2 10s ease-in-out infinite alternate-reverse;
-      }
-
-      .gradientBackground > * {
-        position: relative;
-        z-index: 2;
-      }
-
-      @keyframes liquidBlob1 {
-        0% {
-          transform: translate(-8%, -6%) scale(1);
-        }
-
-        25% {
-          transform: translate(5%, -10%) scale(1.25);
-        }
-
-        50% {
-          transform: translate(12%, 8%) scale(0.9);
-        }
-
-        75% {
-          transform: translate(-10%, 12%) scale(1.3);
-        }
-
-        100% {
-          transform: translate(8%, -4%) scale(1.1);
-        }
-      }
-
-      @keyframes liquidBlob2 {
-        0% {
-          transform: translate(10%, 8%) scale(1.2) rotate(0deg);
-        }
-
-        50% {
-          transform: translate(-12%, -8%) scale(0.85) rotate(90deg);
-        }
-
-        100% {
-          transform: translate(8%, -12%) scale(1.35) rotate(180deg);
-        }
-      }
-      /* .gradientBackground {
-        position: relative;
-        overflow: hidden;
-
-        width: 100%;
-        margin-bottom: 12px;
-        aspect-ratio: 16 / 9;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-
-        border-radius: 16px;
-        background: #070814;
-
-        color: #fafafa;
-        font-weight: 200;
-        font-size: 12px;
-
-        cursor: pointer;
-        transition: transform 0.3s ease;
-
-        isolation: isolate;
-      }
-
-      .gradientBackground:hover {
-        transform: translateY(-2px);
-      }
-
       .gradientBackground::before,
       .gradientBackground::after {
         content: "";
         position: absolute;
-        inset: -25%;
-        pointer-events: none;
+
+        width: 140%;
+        height: 140%;
+
+        border-radius: 50%;
+        transform-origin: center center;
+
+        will-change: transform;
+
+        filter: blur(60px);
       }
 
-      /* Główne plamy koloru */
       .gradientBackground::before {
         background: radial-gradient(
-            circle at 20% 30%,
-            #1e6ed6 0%,
-            transparent 30%
-          ),
-          radial-gradient(circle at 75% 20%, #7928ca 0%, transparent 35%),
-          radial-gradient(circle at 80% 75%, #173c8c 0%, transparent 32%),
-          radial-gradient(circle at 30% 80%, #151e4d 0%, transparent 34%),
-          radial-gradient(circle at 55% 50%, #0f1a5a 0%, transparent 40%);
+          circle,
+          #151e4d 0%,
+          #0f1a5a 35%,
+          transparent 70%
+        );
 
-        filter: blur(90px);
+        top: -30%;
+        left: -30%;
 
-        animation: blobFloat 28s ease-in-out infinite alternate;
+        animation: blob1 9s ease-in-out infinite;
       }
 
-      /* Dodatkowa warstwa "oleju" */
       .gradientBackground::after {
         background: radial-gradient(
-            circle at 30% 60%,
-            rgba(59, 130, 246, 0.6) 0%,
-            transparent 22%
-          ),
-          radial-gradient(
-            circle at 70% 35%,
-            rgba(124, 58, 237, 0.5) 0%,
-            transparent 24%
-          ),
-          radial-gradient(
-            circle at 55% 75%,
-            rgba(30, 110, 214, 0.45) 0%,
-            transparent 20%
-          );
+          circle,
+          #0f1a5a 0%,
+          #151e4d 40%,
+          transparent 75%
+        );
 
-        filter: blur(130px);
+        bottom: -30%;
+        right: -30%;
 
-        mix-blend-mode: screen;
+        opacity: 0.9;
 
-        animation: blobRotate 36s linear infinite,
-          blobPulse 14s ease-in-out infinite;
+        animation: blob2 7s ease-in-out infinite;
       }
 
-      /* Treść zawsze na wierzchu */
       .gradientBackground > * {
         position: relative;
         z-index: 2;
       }
 
-      @keyframes blobFloat {
+      @keyframes blob1 {
         0% {
-          transform: translate(-3%, -2%) scale(1);
+          transform: translate(35%, -30%) scale(1.5) rotate(0deg);
         }
 
-        25% {
-          transform: translate(4%, -3%) scale(1.08);
+        33% {
+          transform: translate(40%, 25%) scale(0.7) rotate(120deg);
         }
 
-        50% {
-          transform: translate(-2%, 4%) scale(1.15);
-        }
-
-        75% {
-          transform: translate(3%, 2%) scale(1.05);
+        66% {
+          transform: translate(-30%, 20%) scale(1.4) rotate(240deg);
         }
 
         100% {
-          transform: translate(-4%, -2%) scale(1.12);
+          transform: translate(35%, -30%) scale(1.5) rotate(360deg);
         }
       }
 
-      @keyframes blobRotate {
-        from {
-          transform: rotate(0deg) scale(1);
+      @keyframes blob2 {
+        0% {
+          transform: translate(-40%, 30%) scale(0.7) rotate(0deg);
         }
 
-        to {
-          transform: rotate(360deg) scale(1.15);
+        33% {
+          transform: translate(-30%, -35%) scale(1.8) rotate(-120deg);
         }
-      }
 
-      @keyframes blobPulse {
-        0%,
+        66% {
+          transform: translate(35%, -25%) scale(0.8) rotate(-240deg);
+        }
+
         100% {
-          opacity: 0.7;
-        }
-
-        50% {
-          opacity: 1;
+          transform: translate(-40%, 30%) scale(0.7) rotate(-360deg);
         }
       }
-      */
 
       /* --- PROCESS SECTION & MEDIA --- */
       .processWrapper {
@@ -588,6 +466,41 @@
             stworzenia identyfikacji wizualnej, która pomoże firmie wejść w
             świat cyfrowy i zaistnieć w internecie.
           </p>
+
+          <p style="padding-top: 3vh">
+            <b data-i18n="project_vi_planetroad_role_label">Rola:</b>
+            <span data-i18n="project_vi_planetroad_role_value"
+              >Brand & Graphic Designer</span
+            >
+          </p>
+          <p style="padding-top: 1vh">
+            <b data-i18n="project_vi_planetroad_responsibilities_label"
+              >Zakres odpowiedzialności:</b
+            >
+            <span data-i18n="project_vi_planetroad_responsibilities_value"
+              >Research, Strategia marki, System kolorystyczny, Projekt
+              logotypu, Typografia, Wdrożenie w social media</span
+            >
+          </p>
+          <p style="padding-top: 1vh">
+            <b data-i18n="project_vi_planetroad_duration_label"
+              >Czas trwania:</b
+            >
+            <span data-i18n="project_vi_planetroad_duration_value"
+              >3 tygodnie</span
+            >
+          </p>
+          <p style="padding-top: 1vh">
+            <b data-i18n="project_vi_planetroad_methodology_label"
+              >Metodyka:</b
+            >
+            <span data-i18n="project_vi_planetroad_methodology_value"
+              >Iteracyjny proces marki — od badania i wywiadu z CEO, przez
+              strategię i system kolorystyczny, po projekt logotypu,
+              typografię i wdrożenie w social media.</span
+            >
+          </p>
+
           <a
             href="../assets/projects/identyfikacja-wizualna-PlanetRoad/BrandVisualIdentity-Cover.webp"
             data-lightbox="galeria-identyfikacja-wizualna-PlanetRoad"

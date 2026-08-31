@@ -1635,6 +1635,16 @@ const translations = {
     project_vi_planetroad_subtitle: "PlanetRoad",
     project_vi_planetroad_intro:
       "PlanetRoad jest firmą projektującą drogi w Polsce od niespełna 30 lat. W internecie firma posiadała jedynie prostą stronę internetową i nie dawała klientowi większej szansy się poznać ani zapaść w pamięć z pozytywnej strony. Współpracę z firmą zacząłem od stworzenia identyfikacji wizualnej, która pomoże firmie wejść w świat cyfrowy i zaistnieć w internecie.",
+    project_vi_planetroad_role_label: "Rola:",
+    project_vi_planetroad_role_value: "Brand & Graphic Designer",
+    project_vi_planetroad_responsibilities_label: "Zakres odpowiedzialności:",
+    project_vi_planetroad_responsibilities_value:
+      "Research, Strategia marki, System kolorystyczny, Projekt logotypu, Typografia, Wdrożenie w social media",
+    project_vi_planetroad_duration_label: "Czas trwania:",
+    project_vi_planetroad_duration_value: "3 tygodnie",
+    project_vi_planetroad_methodology_label: "Metodyka:",
+    project_vi_planetroad_methodology_value:
+      "Iteracyjny proces marki — od badania i wywiadu z CEO, przez strategię i system kolorystyczny, po projekt logotypu, typografię i wdrożenie w social media.",
     project_vi_planetroad_img_alt_logo: "Logo PlanetRoad",
     project_vi_planetroad_goal_title: "Cel",
     project_vi_planetroad_goal_1_b:
@@ -3386,6 +3396,16 @@ const translations = {
     project_vi_planetroad_subtitle: "PlanetRoad",
     project_vi_planetroad_intro:
       "PlanetRoad is a road design company in Poland with nearly 30 years of experience. Online, the company only had a basic website, which didn't allow clients to get to know them or make a memorable, positive impression. I began my collaboration with the company by creating a visual identity to help them transition into the digital space and establish an online presence.",
+    project_vi_planetroad_role_label: "Role:",
+    project_vi_planetroad_role_value: "Brand & Graphic Designer",
+    project_vi_planetroad_responsibilities_label: "Scope of Responsibility:",
+    project_vi_planetroad_responsibilities_value:
+      "Research, Brand Strategy, Color System, Logo Design, Typography, Social Media Rollout",
+    project_vi_planetroad_duration_label: "Duration:",
+    project_vi_planetroad_duration_value: "3 weeks",
+    project_vi_planetroad_methodology_label: "Methodology:",
+    project_vi_planetroad_methodology_value:
+      "An iterative brand process — from research and a CEO interview, through strategy and the color system, to logo design, typography, and social media rollout.",
     project_vi_planetroad_img_alt_logo: "PlanetRoad Logo",
     project_vi_planetroad_goal_title: "Goal",
     project_vi_planetroad_goal_1_b: "Create a consistent visual identity",
