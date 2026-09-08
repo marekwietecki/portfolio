@@ -953,6 +953,20 @@ footer {
   }
 }
 
+/* Wariant dla wersji wyśrodkowanej pod przyciskiem (mobile) — animacja
+   musi nieść translateX(-50%) przez cały czas, inaczej zniknie po
+   zakończeniu (nadpisze je dropdownFadeIn, które ma tylko translateY). */
+@keyframes dropdownFadeInCentered {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -6px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
 /* ==========================================================================
      RESPONSIVE — breakpoint ujednolicony na 794px (index.html był bazą)
      ========================================================================== */
@@ -987,6 +1001,19 @@ footer {
   }
   .headerLinks.show {
     display: flex;
+  }
+
+  /* Menu ustawień (języki/motyw/tryb) — na małych ekranach wyśrodkowane
+     pod przyciskiem zamiast otwierać się w lewo, żeby nie wychodziło
+     poza krawędź ekranu. */
+  .settings-dropdown {
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, 0);
+  }
+
+  .settings-dropdown.open {
+    animation: dropdownFadeInCentered 0.2s ease;
   }
 
   /* Footer */
