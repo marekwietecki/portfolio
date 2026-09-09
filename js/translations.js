@@ -204,6 +204,8 @@ const translations = {
       "Tworzę produkty cyfrowe, które łączą intuicyjne doświadczenia użytkowników z realnymi zyskami firm. Wierzę, że w świecie interfejsów to małe detale robią największą różnicę.",
     hero_button_primary: "Zobacz projekty",
     hero_button_secondary: "Poznaj moją ofertę",
+    hero_micro_hint:
+      "Większość strony kryje mikrointerakcje — najeżdżaj i klikaj śmiało.",
 
     // hero — rozdroże dla firm / rekruterów
     hero_fork_kicker: "Cześć! Miło Cię widzieć.",
@@ -249,9 +251,9 @@ const translations = {
     projects_planetroad_website_title: "Strona Internetowa PlanetRoad",
     projects_planetroad_website_subtitle:
       "Jak przebudowałem stronę firmową, aby umożliwiła klientom poznanie pełnej oferty i doświadczenia PlanetRoad?",
-    projects_zpsiegonanasze_title: "Landing Page Z Psiego Na Nasze",
+    projects_zpsiegonanasze_title: "Strona Internetowa Z Psiego Na Nasze",
     projects_zpsiegonanasze_subtitle:
-      "Jak zbudowałem strategię rozwoju biznesu dzięki jakościowej stronie docelowej?",
+      "Jak przebudowałem stronę i podniosłem jej wydajność, żeby wesprzeć rozwój marki behawiorystycznej?",
     projects_habitbubbl_title: "Progresywna Aplikacja Habit Bubbl",
     projects_habitbubbl_subtitle:
       "Jak stworzyłem aplikację, która pomaga, ludziom pokochać produktywność?",
@@ -621,7 +623,236 @@ const translations = {
     projects_wkdzik_floatnav_toggle: "Spis treści",
 
     projects_wkdzik_navloop_text: "Zobacz kolejny projekt:",
-    projects_wkdzik_navloop_link: "Aplikacja Mobilna Monexo",
+    projects_wkdzik_navloop_link: "Strona Internetowa Z Psiego Na Nasze",
+
+    // project: strona internetowa Z Psiego Na Nasze
+    project_web_zpn_project_title: "Strona Internetowa",
+    project_web_zpn_project_description:
+      "Kompleksowy redesign i optymalizacja strony internetowej marki Z Psiego Na Nasze — behawiorystki i trenerki szkolenia psów. Zakres objął migrację hostingu, redukcję kosztów utrzymania, przebudowę UX strony głównej i podstron, znaczącą poprawę wydajności oraz wsparcie strategii marketingowej w social media.",
+    project_web_zpn_role_label: "Rola:",
+    project_web_zpn_role_value: "CX & Product Designer",
+    project_web_zpn_responsibilities_label: "Zakres odpowiedzialności:",
+    project_web_zpn_responsibilities_value:
+      "Redesign UX/UI, Optymalizacja wydajności, Migracja hostingu, Strategia treści i social media, Zgodność RODO",
+    project_web_zpn_duration_label: "Czas trwania:",
+    project_web_zpn_duration_value: "W trakcie (od sierpnia 2026)",
+    project_web_zpn_methodology_label: "Metodyka:",
+    project_web_zpn_methodology_value:
+      "Iteracyjne wdrożenia oparte na danych (Lighthouse, analityka Instagram)",
+    project_web_zpn_banner_badge: "Strona Internetowa",
+    project_web_zpn_context_heading: "Kontekst i Problem",
+    project_web_zpn_context_p1:
+      "Do współpracy dołączyłem, gdy strona działała na niepotrzebnie drogim hostingu, a jej treść była chaotyczna — na stronie głównej informacje o behawiorystce pojawiały się w dwóch różnych, mało spójnych miejscach, a doświadczenie zawodowe było wypisane jako jedna gęsta, nieuporządkowana lista bez podziału na kategorie.",
+    project_web_zpn_context_p2_lead: "Do tego doszedł problem techniczny —",
+    project_web_zpn_context_p2_bold:
+      "audyt w Lighthouse wykazał wynik wydajności zaledwie 42/100",
+    project_web_zpn_context_p2_text:
+      ", co realnie wydłużało czas ładowania strony i mogło zniechęcać odwiedzających jeszcze przed poznaniem oferty.",
+    project_web_zpn_goals_heading: "Cele",
+    project_web_zpn_goal_1_label: "Obniżenie kosztów utrzymania strony",
+    project_web_zpn_goal_1_text:
+      "– bez utraty jakości i dostępności strony dla klientów.",
+    project_web_zpn_goal_2_label:
+      "Uporządkowanie treści i eliminacja duplikatów",
+    project_web_zpn_goal_2_text:
+      "– jedna spójna opowieść o marce zamiast rozproszonych, powtarzających się fragmentów.",
+    project_web_zpn_goal_3_label: "Realna poprawa wydajności strony",
+    project_web_zpn_goal_3_text:
+      "– szybsze ładowanie, lżejsze zasoby, zgodność z dobrymi praktykami.",
+    project_web_zpn_goal_4_label: "Wsparcie rozwoju marki w social media",
+    project_web_zpn_goal_4_text:
+      "– strona i komunikacja w social media mają się wzajemnie wzmacniać.",
+
+    project_web_zpn_iter0_heading: "Migracja strony na tańszy hosting",
+    project_web_zpn_iter0_p1:
+      "Pracę zacząłem od migracji istniejącej strony WordPress na nowe, znacznie tańsze środowisko hostingowe — bez utraty ciągłości działania strony ani adresu domeny. To otworzyło drogę do kolejnego kroku — realnej redukcji kosztów.",
+
+    project_web_zpn_iter1_heading:
+      "Redukcja kosztów — 3-krotnie niższy hosting",
+    project_web_zpn_iter1_p1_text1:
+      "Po migracji dobrałem plan hostingowy dopasowany do realnych potrzeb strony, zamiast przewymiarowanego pakietu. Efektem było",
+    project_web_zpn_iter1_p1_bold:
+      "3-krotne zmniejszenie rocznego kosztu utrzymania strony",
+    project_web_zpn_iter1_p1_text2:
+      ". Budżet, który wcześniej starczał na rok hostingu i domeny, teraz pokrywa",
+    project_web_zpn_iter1_p1_bold2:
+      "3 lata utrzymania strony (Hosting Runway)",
+    project_web_zpn_stat_hosting_cost: "-66%",
+    project_web_zpn_stat_hosting_cost_label: "Roczny koszt hostingu",
+    project_web_zpn_stat_hosting_runway: "3×",
+    project_web_zpn_stat_hosting_runway_label: "Dłuższy Hosting Runway",
+
+    project_web_zpn_iter2_heading: "Landing page „Konsultacja Szczeniaczkowa”",
+    project_web_zpn_iter2_p1:
+      "Zaprojektowałem i wdrożyłem dedykowaną stronę docelową dla najczęściej wybieranej usługi — konsultacji szczeniaczkowej — skracając drogę od pierwszego wejścia na stronę do zapisania się na spotkanie.",
+    project_web_zpn_iter2_p2:
+      "Zrzut ekranu landing page dołączę tutaj po ukończeniu materiałów.",
+
+    project_web_zpn_iter3_heading: "Strategia w social media — pierwszy viral",
+    project_web_zpn_iter3_p1_text1:
+      "Równolegle doradzałem mocniejsze wejście w Instagram i cały ekosystem Meta — a przede wszystkim",
+    project_web_zpn_iter3_p1_bold:
+      "przełamanie się co do tworzenia „rolek” i mówienia wprost do telefonu",
+    project_web_zpn_iter3_p1_text2: "zamiast wyłącznie cichych materiałów.",
+    project_web_zpn_iter3_p2_text1: "Efekt przyszedł szybciej niż zakładaliśmy —",
+    project_web_zpn_iter3_p2_bold:
+      "trzecia mówiona, ekspercka rolka osiągnęła ponad 188 tys. wyświetleń",
+    project_web_zpn_iter3_p2_text2:
+      ", podczas gdy nieme materiały wcześniej osiągały maksymalnie ok. 1200 wyświetleń. Oprócz zasięgu, rolka przyniosła ponad 600 nowych obserwujących — podwajając ich liczbę i otwierając kolejne możliwości przekuwania zaangażowanych odbiorców w klientów marki.",
+    project_web_zpn_stat_ig_views: "188K+",
+    project_web_zpn_stat_ig_views_label: "Wyświetleń trzeciej mówionej rolki",
+    project_web_zpn_stat_ig_multiplier: "~156×",
+    project_web_zpn_stat_ig_multiplier_label:
+      "Więcej niż przeciętny niemy materiał",
+    project_web_zpn_stat_ig_followers: "+600",
+    project_web_zpn_stat_ig_followers_label:
+      "Nowych obserwujących (2× wzrost)",
+    project_web_zpn_caption_instagram:
+      "188 tys. wyświetleń rolki na tle pozostałych materiałów (nawet 150× więcej)",
+
+    project_web_zpn_iter4_heading:
+      "Redesign strony głównej — koniec duplikacji treści",
+    project_web_zpn_iter4_p1_text1: "Na stronie głównej były",
+    project_web_zpn_iter4_p1_bold: "dwa osobne miejsca „o mnie”",
+    project_web_zpn_iter4_p1_text2:
+      ", a żadne z nich samo w sobie nie było wystarczające — link „dowiedz się więcej” prowadził do podstrony, na której nie było nic nowego. Zostawiłem na stronie głównej jedną, estetyczną sekcję „o mnie”, a resztę treści o Kasi i Nubim przeniosłem na podstronę „O Nas”.",
+    project_web_zpn_iter4_p2_text1:
+      "Stworzyłem też nowe Hero od zera i dodałem na stronie głównej zarys oferty, tak aby",
+    project_web_zpn_iter4_p2_bold:
+      "kluczowe usługi były widoczne już przy pierwszym kontakcie ze stroną",
+    project_web_zpn_iter4_p3:
+      "Na stronę główną przeniosłem też opinie zadowolonych klientów, tak aby budować zaufanie do marki jeszcze zanim odwiedzający przejdzie do pełnej oferty.",
+    project_web_zpn_ba_before: "Przed",
+    project_web_zpn_ba_after: "Po",
+    project_web_zpn_caption_home_before:
+      "Zduplikowane „o mnie” i brak zarysu oferty",
+    project_web_zpn_caption_home_after:
+      "Nowe Hero, zarys oferty i opinie klientów na jednej stronie",
+
+    project_web_zpn_iter5_heading: "Redesign podstrony „O Nas”",
+    project_web_zpn_iter5_p1_text1:
+      "Doświadczenie zawodowe Kasi było wcześniej wypisane jako jedna gęsta, nieuporządkowana lista. Podzieliłem je na kategorie (kursy i wolontariat, prelekcje i wystąpienia, konferencje, webinary) i zamknąłem w",
+    project_web_zpn_iter5_p1_bold: "rozwijanym akordeonie",
+    project_web_zpn_iter5_p1_text2:
+      ", dzięki czemu strona jest czytelna od razu, a szczegóły są o jedno kliknięcie dalej.",
+    project_web_zpn_iter5_p2:
+      "Przy okazji zaktualizowałem też licznik osiągnięć na dole strony (godziny spacerów, wykonane zdjęcia Nubiemu i inne) o aktualne liczby.",
+    project_web_zpn_caption_onas_before:
+      "Cała lista doświadczenia rozwinięta naraz",
+    project_web_zpn_caption_onas_after:
+      "Doświadczenie podzielone na akordeon kategorii",
+
+    project_web_zpn_iter6_heading: "Redesign Oferty",
+    project_web_zpn_iter6_p1:
+      "Przebudowałem układ podstrony z ofertą, tak aby każda usługa — konsultacja behawioralna, konsultacja szczeniaczkowa, trening indywidualny, psie przedszkole, konsultacja online i spacery socjalizacyjne — była prezentowana w spójnym, przejrzystym formacie zgodnym z nową identyfikacją wizualną strony.",
+    project_web_zpn_caption_oferta_before: "Stary układ podstrony z ofertą",
+    project_web_zpn_caption_oferta_after: "Nowy, spójny układ oferty",
+
+    project_web_zpn_iter7_heading:
+      "Redesign podstrony Kontakt, nowa stopka i sticky header",
+    project_web_zpn_iter7_p1_text1: "Uporządkowałem stopkę, dodając link do",
+    project_web_zpn_iter7_p1_bold:
+      "polityki prywatności i edycji preferencji cookies",
+    project_web_zpn_iter7_p1_text2:
+      ", których wcześniej tam nie było. Górne menu nawigacyjne zrobiłem",
+    project_web_zpn_iter7_p1_bold2: "sticky",
+    project_web_zpn_iter7_p1_text3:
+      ", tak aby najpotrzebniejsza nawigacja była zawsze pod ręką użytkownika, niezależnie od miejsca przewijania strony.",
+    project_web_zpn_iter7_p2:
+      "Dodałem też headerowi płynną animację przejścia — przy przewijaniu strony w dół nawigacja płynnie zmienia się z przezroczystego, ciemnego wariantu na jasne tło z dobrze kontrastującymi linkami, zamiast twardo przeskakiwać między stanami.",
+    project_web_zpn_iter7_p3_text1:
+      "Samą podstronę Kontakt przeprojektowałem od podstaw —",
+    project_web_zpn_iter7_p3_bold1:
+      "czytelne karty z Instagramem, mailem i telefonem",
+    project_web_zpn_iter7_p3_text2:
+      "zamiast jednego bloku tekstu, a do tego krótką listę „Czego się spodziewać po kontakcie” — trzy proste kroki, które",
+    project_web_zpn_iter7_p3_bold2:
+      "obniżają niepewność przed pierwszym kontaktem",
+    project_web_zpn_iter7_p3_text3:
+      ". Dodałem też mapkę z obszarem działania (Warszawa i okolice) oraz lekką, uśmiechniętą galerię zdjęć Nubiego, żeby strona kontaktu nie była wyłącznie formalna.",
+    project_web_zpn_caption_kontakt_before:
+      "Stopka bez linków do polityki prywatności i cookies",
+    project_web_zpn_caption_kontakt_after:
+      "Karty kontaktowe, mapka obszaru działania i galeria Nubiego",
+
+    project_web_zpn_iter8_heading: "Nowy branding — logo i kolorystyka",
+    project_web_zpn_iter8_p1:
+      "Zmieniłem logo na wersję z okrągłą ikoną na górze i tekstem pod spodem, zaktualizowałem kolorystykę w style guide strony, a także poprawiłem tytuły podstron (meta title), aby lepiej opisywały ich zawartość zarówno użytkownikom, jak i wyszukiwarkom.",
+
+    project_web_zpn_iter9_heading: "Optymalizacja wydajności — Lighthouse",
+    project_web_zpn_iter9_p1:
+      "Po wdrożeniu redesignu przetestowałem stronę w Google Lighthouse i w ciągu jednego dnia pracy nad hostingiem współdzielonym poprawiłem wszystkie kluczowe metryki wydajności.",
+    project_web_zpn_stat_perf: "42→78",
+    project_web_zpn_stat_perf_label: "Performance (Lighthouse), +36 pkt",
+    project_web_zpn_stat_si: "~5×",
+    project_web_zpn_stat_si_label: "Szybszy Speed Index (9,2s → 1,8s)",
+    project_web_zpn_stat_tbt: "-73%",
+    project_web_zpn_stat_tbt_label: "Total Blocking Time (900ms → 240ms)",
+    project_web_zpn_stat_fcp: "-52%",
+    project_web_zpn_stat_fcp_label: "First Contentful Paint (2,5s → 1,2s)",
+    project_web_zpn_stat_weight: "-24%",
+    project_web_zpn_stat_weight_label: "Waga strony (1294 KB → 981 KB)",
+    project_web_zpn_stat_cache: "0 → 28 dni",
+    project_web_zpn_stat_cache_label: "Cache przeglądarki",
+    project_web_zpn_iter9_p2_lead: "Za tymi liczbami stoją konkretne decyzje:",
+    project_web_zpn_iter9_p3_bold: "Kompresja zdjęć",
+    project_web_zpn_iter9_p3_text:
+      "— zdjęcie Alexandry Horowitz spadło z 344 KB do 46 KB dzięki kompresji i responsywnym rozmiarom.",
+    project_web_zpn_iter9_p4_bold: "Odłożenie Google Ads (gtag.js)",
+    project_web_zpn_iter9_p4_text:
+      "— skrypt przestał ładować się bezwarunkowo na starcie, a zaczął ładować się dopiero po zgodzie użytkownika, zdjęty z krytycznej ścieżki renderowania.",
+    project_web_zpn_iter9_p5_bold: "Odchudzenie WordPressa",
+    project_web_zpn_iter9_p5_text:
+      "— 6 usuniętych lub skonsolidowanych wtyczek (dublujące cache, sitemapy, analitykę i zbędny plugin startowy).",
+    project_web_zpn_iter9_p6:
+      "Best Practices poprawiło się z 77 do 96/100, a SEO pozostało na maksymalnym poziomie 100/100.",
+
+    project_web_zpn_iter10_heading: "Zgodność z RODO i dostępność",
+    project_web_zpn_iter10_p1:
+      "Oprócz samych liczb z Lighthouse zadbałem o pełną zgodność cookies z RODO — realne blokowanie Google Analytics i Ads do momentu wyrażenia zgody oraz aktualną politykę prywatności — a także o poprawki dostępności: opisy alternatywne przy linkach i lepszy kontrast menu.",
+
+    project_web_zpn_iter11_heading: "W budowie: Brand Book",
+    project_web_zpn_iter11_p1:
+      "Równolegle tworzę pełny brand book marki. Prace czekają obecnie na finalne czcionki od graficzki, po otrzymaniu których dokument zostanie dokończony.",
+
+    project_web_zpn_final_p_1:
+      "✅ Zredukowałem roczny koszt utrzymania strony 3-krotnie — budżet starczający wcześniej na rok teraz starcza na 3 lata hostingu i domeny.",
+    project_web_zpn_final_p_2:
+      "✅ Podniosłem wynik Performance w Google Lighthouse z 42 do 78/100 (+36 punktów), przy ~5-krotnie szybszym Speed Index i o 24% lżejszej stronie.",
+    project_web_zpn_final_p_3:
+      "✅ Uporządkowałem treść strony głównej i podstrony „O Nas”, eliminując zduplikowane sekcje „o mnie” i chaotyczną listę doświadczenia.",
+    project_web_zpn_final_p_4:
+      "✅ Wsparłem strategię social media, która przyniosła pierwszy viral — ponad 188 tys. wyświetleń i +600 nowych obserwujących (2× wzrost).",
+    project_web_zpn_final_p_5:
+      "✅ Zapewniłem pełną zgodność cookies z RODO oraz poprawki dostępności, budując większe zaufanie i bezpieczeństwo użytkowników.",
+    project_web_zpn_stat_hosting_cost_2: "-66%",
+    project_web_zpn_stat_hosting_cost_label_2: "Roczny koszt hostingu",
+    project_web_zpn_stat_perf_2: "+36 pkt",
+    project_web_zpn_stat_perf_label_2: "Performance Lighthouse (42→78)",
+    project_web_zpn_stat_ig_views_2: "188K+",
+    project_web_zpn_stat_ig_views_label_2: "Wyświetleń pierwszego virala",
+    project_web_zpn_stat_ig_followers_2: "+600",
+    project_web_zpn_stat_ig_followers_label_2: "Nowych obserwujących na IG",
+    project_web_zpn_final_link_text:
+      "Stronę w pełnym wymiarze można zobaczyć pod linkiem",
+
+    project_web_zpn_after_h3_1: "Następne Kroki",
+    project_web_zpn_after_p_1_b: "3️⃣ Dokończenie Brand Booka",
+    project_web_zpn_after_p_1:
+      "– po otrzymaniu finalnych czcionek od graficzki dopracuję kompletny dokument identyfikacji wizualnej marki.",
+    project_web_zpn_after_p_2_b: "3️⃣ Landing page dla kolejnych usług",
+    project_web_zpn_after_p_2:
+      "– dedykowane strony docelowe dla pozostałych usług z oferty, na wzór strony konsultacji szczeniaczkowej.",
+    project_web_zpn_after_p_3_b:
+      "3️⃣ Dalsza optymalizacja treści pod lokalne SEO",
+    project_web_zpn_after_p_3:
+      "– rozszerzenie widoczności strony w wyszukiwarce dla Warszawy i okolic.",
+    project_web_zpn_after_p_4_b: "3️⃣ Odchudzenie opisów na podstronie Oferty",
+    project_web_zpn_after_p_4:
+      "– skrócenie opisów usług do krótkich „teaserów”, tak aby strona zachęcała do kontaktu zamiast odpowiadać na wszystko od razu.",
+
+    project_web_zpn_navloop_text: "Zobacz kolejny projekt:",
+    project_web_zpn_navloop_link: "Aplikacja Mobilna Monexo",
 
     // quick contact
     contact_title: "Porozmawiajmy o współpracy",
@@ -1984,6 +2215,8 @@ const translations = {
       "I create digital products that combine intuitive user experiences with real business profits. I believe that in the world of interfaces, it's the small details that make the biggest difference.",
     hero_button_primary: "Check out my projects",
     hero_button_secondary: "Check out my offer",
+    hero_micro_hint:
+      "Most of this page hides microinteractions — hover, tap, and click around.",
 
     // hero — business / recruiter fork
     hero_fork_kicker: "Hi! Great to see you.",
@@ -2029,9 +2262,9 @@ const translations = {
     projects_planetroad_website_title: "PlanetRoad Website",
     projects_planetroad_website_subtitle:
       "How i rebuild company's website, so it allows clients aknowledging full offer and experience of PlanetRoad?",
-    projects_zpsiegonanasze_title: "Landing Page Z Psiego Na Nasze",
+    projects_zpsiegonanasze_title: "Z Psiego Na Nasze Website",
     projects_zpsiegonanasze_subtitle:
-      "How i build business growth strategy thanks to a quality landing page?",
+      "How I rebuilt the site and boosted its performance to support a dog-behavior brand's growth?",
     projects_habitbubbl_title: "Habit Bubbl Progressive App",
     projects_habitbubbl_subtitle:
       "How i build an app, which helps people love productivity?",
@@ -2398,7 +2631,228 @@ const translations = {
     projects_wkdzik_floatnav_toggle: "Table of contents",
 
     projects_wkdzik_navloop_text: "See next project:",
-    projects_wkdzik_navloop_link: "Monexo Mobile App",
+    projects_wkdzik_navloop_link: "Z Psiego Na Nasze Website",
+
+    // project: Z Psiego Na Nasze website
+    project_web_zpn_project_title: "Website",
+    project_web_zpn_project_description:
+      "A complete redesign and optimization of the Z Psiego Na Nasze website — a dog behaviorist and trainer's brand. Scope covered a hosting migration, cutting running costs, rebuilding the UX of the homepage and subpages, a significant performance boost, and support for the social media marketing strategy.",
+    project_web_zpn_role_label: "Role:",
+    project_web_zpn_role_value: "CX & Product Designer",
+    project_web_zpn_responsibilities_label: "Scope of Responsibilities:",
+    project_web_zpn_responsibilities_value:
+      "UX/UI redesign, Performance optimization, Hosting migration, Content & social media strategy, GDPR compliance",
+    project_web_zpn_duration_label: "Duration:",
+    project_web_zpn_duration_value: "Ongoing (since August 2026)",
+    project_web_zpn_methodology_label: "Methodology:",
+    project_web_zpn_methodology_value:
+      "Iterative, data-driven rollouts (Lighthouse, Instagram analytics)",
+    project_web_zpn_banner_badge: "Website",
+    project_web_zpn_context_heading: "Context & Problem",
+    project_web_zpn_context_p1:
+      "I joined the project when the site was running on needlessly expensive hosting and its content was chaotic — the homepage featured information about the behaviorist in two separate, poorly connected places, and professional experience was listed as one dense, unstructured wall of text with no categories.",
+    project_web_zpn_context_p2_lead: "On top of that came a technical problem —",
+    project_web_zpn_context_p2_bold:
+      "a Lighthouse audit showed a performance score of just 42/100",
+    project_web_zpn_context_p2_text:
+      ", which noticeably slowed page load times and could put visitors off before they even reached the offer.",
+    project_web_zpn_goals_heading: "Goals",
+    project_web_zpn_goal_1_label: "Lower the site's running costs",
+    project_web_zpn_goal_1_text:
+      "– without losing quality or availability for clients.",
+    project_web_zpn_goal_2_label: "Organize content and remove duplication",
+    project_web_zpn_goal_2_text:
+      "– one coherent brand story instead of scattered, repeated fragments.",
+    project_web_zpn_goal_3_label: "Genuinely improve site performance",
+    project_web_zpn_goal_3_text:
+      "– faster loading, lighter assets, alignment with best practices.",
+    project_web_zpn_goal_4_label: "Support brand growth on social media",
+    project_web_zpn_goal_4_text:
+      "– the website and social media communication should reinforce each other.",
+
+    project_web_zpn_iter0_heading: "Migrating to cheaper hosting",
+    project_web_zpn_iter0_p1:
+      "I started by migrating the existing WordPress site to a new, significantly cheaper hosting environment — without any downtime or losing the domain. That opened the door to the next step: a real cost reduction.",
+
+    project_web_zpn_iter1_heading: "Cutting costs — hosting 3x cheaper",
+    project_web_zpn_iter1_p1_text1:
+      "After the migration I picked a hosting plan sized to the site's actual needs instead of an oversized package. The result was a",
+    project_web_zpn_iter1_p1_bold:
+      "3x reduction in the site's annual running cost",
+    project_web_zpn_iter1_p1_text2:
+      ". The budget that used to cover one year of hosting and the domain now covers",
+    project_web_zpn_iter1_p1_bold2: "3 years of running the site (Hosting Runway)",
+    project_web_zpn_stat_hosting_cost: "-66%",
+    project_web_zpn_stat_hosting_cost_label: "Annual hosting cost",
+    project_web_zpn_stat_hosting_runway: "3×",
+    project_web_zpn_stat_hosting_runway_label: "Longer Hosting Runway",
+
+    project_web_zpn_iter2_heading: "\"Puppy Consultation\" landing page",
+    project_web_zpn_iter2_p1:
+      "I designed and shipped a dedicated landing page for the most-booked service — the puppy consultation — shortening the path from first visit to booked appointment.",
+    project_web_zpn_iter2_p2:
+      "I'll add a screenshot of the landing page here once the materials are ready.",
+
+    project_web_zpn_iter3_heading: "Social media strategy — the first viral hit",
+    project_web_zpn_iter3_p1_text1:
+      "In parallel, I pushed for a stronger presence on Instagram and the wider Meta ecosystem — and above all",
+    project_web_zpn_iter3_p1_bold:
+      "for breaking the barrier of making Reels and talking straight to the camera",
+    project_web_zpn_iter3_p1_text2: "instead of silent-only content.",
+    project_web_zpn_iter3_p2_text1: "The payoff came faster than expected —",
+    project_web_zpn_iter3_p2_bold:
+      "the third spoken, expert-style Reel reached over 188K views",
+    project_web_zpn_iter3_p2_text2:
+      ", while silent content had previously topped out at around 1,200 views. Beyond reach, the Reel brought in over 600 new followers — doubling the account and opening up new ways to turn engaged viewers into clients.",
+    project_web_zpn_stat_ig_views: "188K+",
+    project_web_zpn_stat_ig_views_label: "Views on the third spoken Reel",
+    project_web_zpn_stat_ig_multiplier: "~156×",
+    project_web_zpn_stat_ig_multiplier_label:
+      "More than the average silent video",
+    project_web_zpn_stat_ig_followers: "+600",
+    project_web_zpn_stat_ig_followers_label: "New followers (2× growth)",
+    project_web_zpn_caption_instagram:
+      "188K views on one Reel against the rest of the account (up to 150× more)",
+
+    project_web_zpn_iter4_heading:
+      "Homepage redesign — the end of duplicated content",
+    project_web_zpn_iter4_p1_text1: "The homepage had",
+    project_web_zpn_iter4_p1_bold: "two separate \"about me\" sections",
+    project_web_zpn_iter4_p1_text2:
+      ", and neither was sufficient on its own — the \"learn more\" link led to a subpage with nothing new on it. I left one polished \"about me\" section on the homepage and moved the rest of the content about Kasia and Nubi to the \"About Us\" subpage.",
+    project_web_zpn_iter4_p2_text1:
+      "I also built a new Hero from scratch and added an offer preview to the homepage, so that",
+    project_web_zpn_iter4_p2_bold:
+      "the key services are visible from the very first contact with the site",
+    project_web_zpn_iter4_p3:
+      "I also brought client testimonials onto the homepage, building trust in the brand before a visitor even reaches the full offer.",
+    project_web_zpn_ba_before: "Before",
+    project_web_zpn_ba_after: "After",
+    project_web_zpn_caption_home_before:
+      "Duplicated \"about me\" and no offer preview",
+    project_web_zpn_caption_home_after:
+      "New Hero, offer preview, and testimonials on one page",
+
+    project_web_zpn_iter5_heading: "\"About Us\" subpage redesign",
+    project_web_zpn_iter5_p1_text1:
+      "Kasia's professional experience used to be listed as one dense, unstructured wall of text. I split it into categories (courses & volunteering, talks & appearances, conferences, webinars) and tucked it into an",
+    project_web_zpn_iter5_p1_bold: "expandable accordion",
+    project_web_zpn_iter5_p1_text2:
+      ", so the page reads clearly at a glance while the details stay one click away.",
+    project_web_zpn_iter5_p2:
+      "While I was at it, I also updated the achievement counters at the bottom of the page (hours walked, photos taken of Nubi, and more) with current numbers.",
+    project_web_zpn_caption_onas_before:
+      "The whole experience list expanded at once",
+    project_web_zpn_caption_onas_after:
+      "Experience split into a category accordion",
+
+    project_web_zpn_iter6_heading: "Offer page redesign",
+    project_web_zpn_iter6_p1:
+      "I rebuilt the layout of the offer subpage so every service — behavioral consultation, puppy consultation, individual training, dog kindergarten, online consultation, and socialization walks — is presented in a consistent, clear format matching the site's new visual identity.",
+    project_web_zpn_caption_oferta_before: "Old offer page layout",
+    project_web_zpn_caption_oferta_after: "New, consistent offer layout",
+
+    project_web_zpn_iter7_heading:
+      "Contact page redesign, new footer, and sticky header",
+    project_web_zpn_iter7_p1_text1: "I cleaned up the footer, adding a link to the",
+    project_web_zpn_iter7_p1_bold: "privacy policy and cookie preference editing",
+    project_web_zpn_iter7_p1_text2: ", which weren't there before. I made the top navigation",
+    project_web_zpn_iter7_p1_bold2: "sticky",
+    project_web_zpn_iter7_p1_text3:
+      ", so the most-needed navigation stays within reach no matter where the user has scrolled to.",
+    project_web_zpn_iter7_p2:
+      "I also gave the header a smooth transition animation — scrolling down, the navigation eases from a transparent, dark variant into a light background with well-contrasting links, instead of snapping hard between states.",
+    project_web_zpn_iter7_p3_text1:
+      "I redesigned the Contact page itself from scratch —",
+    project_web_zpn_iter7_p3_bold1:
+      "clear cards for Instagram, email, and phone",
+    project_web_zpn_iter7_p3_text2:
+      "instead of one block of text, plus a short \"What to expect after contacting me\" list — three simple steps that",
+    project_web_zpn_iter7_p3_bold2:
+      "lower the uncertainty of reaching out for the first time",
+    project_web_zpn_iter7_p3_text3:
+      ". I also added a map of the service area (Warsaw and surroundings) and a light, smile-worthy photo gallery of Nubi, so the contact page wouldn't feel purely formal.",
+    project_web_zpn_caption_kontakt_before:
+      "Footer with no privacy policy or cookie links",
+    project_web_zpn_caption_kontakt_after:
+      "Contact cards, service-area map, and a Nubi photo gallery",
+
+    project_web_zpn_iter8_heading: "New branding — logo and colors",
+    project_web_zpn_iter8_p1:
+      "I switched to a new logo with a round icon on top and text below, updated the colors in the site's style guide, and rewrote the subpage titles (meta titles) so they better describe their content for both users and search engines.",
+
+    project_web_zpn_iter9_heading: "Performance optimization — Lighthouse",
+    project_web_zpn_iter9_p1:
+      "After shipping the redesign I tested the site in Google Lighthouse and, over a single day of work on shared hosting, improved every key performance metric.",
+    project_web_zpn_stat_perf: "42→78",
+    project_web_zpn_stat_perf_label: "Performance (Lighthouse), +36 pts",
+    project_web_zpn_stat_si: "~5×",
+    project_web_zpn_stat_si_label: "Faster Speed Index (9.2s → 1.8s)",
+    project_web_zpn_stat_tbt: "-73%",
+    project_web_zpn_stat_tbt_label: "Total Blocking Time (900ms → 240ms)",
+    project_web_zpn_stat_fcp: "-52%",
+    project_web_zpn_stat_fcp_label: "First Contentful Paint (2.5s → 1.2s)",
+    project_web_zpn_stat_weight: "-24%",
+    project_web_zpn_stat_weight_label: "Page weight (1294 KB → 981 KB)",
+    project_web_zpn_stat_cache: "0 → 28 days",
+    project_web_zpn_stat_cache_label: "Browser cache",
+    project_web_zpn_iter9_p2_lead: "Specific decisions sit behind those numbers:",
+    project_web_zpn_iter9_p3_bold: "Image compression",
+    project_web_zpn_iter9_p3_text:
+      "— the Alexandra Horowitz photo dropped from 344 KB to 46 KB through compression and responsive sizes.",
+    project_web_zpn_iter9_p4_bold: "Deferring Google Ads (gtag.js)",
+    project_web_zpn_iter9_p4_text:
+      "— the script stopped loading unconditionally on start and now only loads after user consent, off the critical rendering path.",
+    project_web_zpn_iter9_p5_bold: "Trimming down WordPress",
+    project_web_zpn_iter9_p5_text:
+      "— 6 plugins removed or consolidated (duplicate caching, sitemaps, analytics, and a redundant starter plugin).",
+    project_web_zpn_iter9_p6:
+      "Best Practices improved from 77 to 96/100, while SEO stayed at a perfect 100/100.",
+
+    project_web_zpn_iter10_heading: "GDPR compliance and accessibility",
+    project_web_zpn_iter10_p1:
+      "Beyond the Lighthouse numbers, I made sure cookies were fully GDPR-compliant — genuinely blocking Google Analytics and Ads until consent, plus an up-to-date privacy policy — along with accessibility fixes: alt text on links and better menu contrast.",
+
+    project_web_zpn_iter11_heading: "In progress: Brand Book",
+    project_web_zpn_iter11_p1:
+      "In parallel, I'm building out the brand's full brand book. Work is currently on hold pending final fonts from the graphic designer, after which the document will be finished.",
+
+    project_web_zpn_final_p_1:
+      "✅ Cut the site's annual running cost 3x — a budget that used to cover one year now covers 3 years of hosting and the domain.",
+    project_web_zpn_final_p_2:
+      "✅ Raised the Google Lighthouse Performance score from 42 to 78/100 (+36 points), with a ~5x faster Speed Index and a 24% lighter page.",
+    project_web_zpn_final_p_3:
+      "✅ Organized the homepage and \"About Us\" content, removing duplicated \"about me\" sections and the chaotic experience list.",
+    project_web_zpn_final_p_4:
+      "✅ Supported a social media strategy that landed the first viral hit — over 188K views and +600 new followers (2× growth).",
+    project_web_zpn_final_p_5:
+      "✅ Delivered full GDPR cookie compliance and accessibility fixes, building more trust and safety for users.",
+    project_web_zpn_stat_hosting_cost_2: "-66%",
+    project_web_zpn_stat_hosting_cost_label_2: "Annual hosting cost",
+    project_web_zpn_stat_perf_2: "+36 pts",
+    project_web_zpn_stat_perf_label_2: "Lighthouse Performance (42→78)",
+    project_web_zpn_stat_ig_views_2: "188K+",
+    project_web_zpn_stat_ig_views_label_2: "Views on the first viral Reel",
+    project_web_zpn_stat_ig_followers_2: "+600",
+    project_web_zpn_stat_ig_followers_label_2: "New Instagram followers",
+    project_web_zpn_final_link_text: "You can see the full site at",
+
+    project_web_zpn_after_h3_1: "Next Steps",
+    project_web_zpn_after_p_1_b: "3️⃣ Finish the Brand Book",
+    project_web_zpn_after_p_1:
+      "– once I receive the final fonts from the graphic designer, I'll complete the full brand identity document.",
+    project_web_zpn_after_p_2_b: "3️⃣ Landing pages for more services",
+    project_web_zpn_after_p_2:
+      "– dedicated landing pages for the remaining services, following the puppy consultation page as a model.",
+    project_web_zpn_after_p_3_b: "3️⃣ Further local SEO content optimization",
+    project_web_zpn_after_p_3:
+      "– expanding the site's search visibility for Warsaw and the surrounding area.",
+    project_web_zpn_after_p_4_b: "3️⃣ Trimming down the Offer page copy",
+    project_web_zpn_after_p_4:
+      "– shortening service descriptions into short \"teasers\", so the page nudges visitors toward contact instead of answering everything upfront.",
+
+    project_web_zpn_navloop_text: "See next project:",
+    project_web_zpn_navloop_link: "Monexo Mobile App",
 
     // quick contact
     contact_title: "Let's work together",

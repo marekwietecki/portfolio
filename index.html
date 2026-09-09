@@ -236,6 +236,14 @@
         transform: scale(1.07);
       }
 
+      .microHint {
+        font-size: 0.8rem;
+        font-weight: 300;
+        color: var(--text-muted);
+        text-align: center;
+        margin-top: -2vh;
+      }
+
       /* --- BUTTONS --- */
       .buttonPrimary {
         position: relative;
@@ -1079,6 +1087,10 @@
           margin-bottom: 0;
           width: 64%;
         }
+        .microHint {
+          margin-top: 1.5vh;
+          margin-bottom: 2vh;
+        }
         .hero {
           padding-top: 12px;
           flex-direction: column;
@@ -1379,6 +1391,9 @@
           alt="Moje zdjęcie"
           class="profileImg"
         />
+        <p class="microHint" data-i18n="hero_micro_hint">
+          Większość strony kryje mikrointerakcje — najeżdżaj i klikaj śmiało.
+        </p>
       </div>
     </section>
 
@@ -1477,28 +1492,24 @@
           </div>
         </a>
 
-        <a href="" class="is-inactive">
-          <div
-            class="projectContainer disabled-project"
-            data-tooltip="Dostępne wkrótce!"
-            style="opacity: 0.56"
-          >
+        <a href="projects/strona-internetowa-ZPsiegoNaNasze.html">
+          <div class="projectContainer">
             <img
               src="assets/index/zpsiegonanasze.png"
-              alt="Zdjęcie przedstawia Landing Page Z Psiego Na Nasze"
+              alt="Zdjęcie przedstawia Stronę Internetową Z Psiego Na Nasze"
             />
             <div class="descriptionWrapper">
               <p class="title" data-i18n="projects_zpsiegonanasze_title">
-                Landing Page zpsiegonanasze
+                Strona Internetowa Z Psiego Na Nasze
               </p>
               <p class="subtitle" data-i18n="projects_zpsiegonanasze_subtitle">
-                Jak zbudowałem strategię rozwoju biznesu dzięki jakościowej
-                stronie docelowej?
+                Jak przebudowałem stronę i podniosłem jej wydajność, żeby
+                wesprzeć rozwój marki behawiorystycznej?
               </p>
               <div class="tagWrapper">
                 <p class="tag">#UX Design</p>
-                <p class="tag">#Landing page</p>
-                <p class="tag">#Business Strategy</p>
+                <p class="tag">#Web Performance</p>
+                <p class="tag">#Growth</p>
               </div>
             </div>
           </div>
