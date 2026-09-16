@@ -133,7 +133,7 @@ const translations = {
     cv_proj4_tag: "UX Audit · E-commerce",
     cv_proj5_title: "Strona Internetowa i Strategia Rozwoju Z Psiego Na Nasze",
     cv_proj5_desc:
-      "Redesign i optymalizacja strony marki behawiorystycznej — migracja hostingu i 3-krotna redukcja kosztów, przebudowa UX, poprawa wydajności (Lighthouse 42→78) oraz wsparcie strategii social media, która przyniosła pierwszy viral.",
+      "Redesign i optymalizacja strony marki behawiorystycznej — migracja hostingu i 3-krotna redukcja kosztów, przebudowa strony internetowej pod kątem użyteczności, estetyki oraz nowej kolorystyki, poprawa wydajności (Lighthouse 42→78) oraz wsparcie strategii social media, która przyniosła pierwszy viral.",
     cv_proj5_tag: "UX Design · Web Performance · Growth",
 
     cv_education_h2: "Wykształcenie",
@@ -2179,7 +2179,7 @@ const translations = {
     cv_proj4_tag: "UX Audit · E-commerce",
     cv_proj5_title: "Z Psiego Na Nasze — Website & Growth Strategy",
     cv_proj5_desc:
-      "Redesign and optimization of a dog-behaviorist brand's website — hosting migration and a 3x cost cut, a UX rebuild, performance gains (Lighthouse 42→78), and support for a social media strategy that landed its first viral hit.",
+      "Redesign and optimization of a dog-behaviorist brand's website — hosting migration and a 3x cost cut, a site rebuild focused on usability, aesthetics, and a new color palette, performance gains (Lighthouse 42→78), and support for a social media strategy that landed its first viral hit.",
     cv_proj5_tag: "UX Design · Web Performance · Growth",
 
     cv_education_h2: "Education",
