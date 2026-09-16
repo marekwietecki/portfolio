@@ -164,6 +164,11 @@ const translations = {
       "Podstawy pracy z Claude Code — agentowe wykorzystanie AI w code review, developmencie i automatyzacji zadań.",
     cv_cert13_date: "Sierpień 2026",
 
+    cv_cert14_title: "Profesjonalny Certyfikat Google UX Design",
+    cv_cert14_desc:
+      "Formalny program Google z zakresu procesu projektowania UX — research, wireframing, prototypowanie i testy użyteczności.",
+    cv_cert14_date: "W trakcie",
+
     cv_cert1_desc:
       "Nauka wykorzystywania ChatGPT, Midjourney, Hotjar i Formless w celu usprawnienia procesu projektowego.",
     cv_cert1_date: "Grudzień 2025",
@@ -2203,6 +2208,11 @@ const translations = {
     cv_cert13_desc:
       "Fundamentals of working with Claude Code — agentic use of AI in code review, development, and task automation.",
     cv_cert13_date: "August 2026",
+
+    cv_cert14_title: "Google UX Design Professional Certificate",
+    cv_cert14_desc:
+      "Google's formal program covering the UX design process — research, wireframing, prototyping, and usability testing.",
+    cv_cert14_date: "In progress",
 
     cv_cert1_desc:
       "Learning to use ChatGPT, Midjourney, Hotjar, and Formless to streamline the design process.",
