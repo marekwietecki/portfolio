@@ -152,6 +152,14 @@ const translations = {
       "Rozwijanie biegłości w wykorzystywaniu AI w procesach kreatywnych — od researchu i ideacji po tworzenie i iterację finalnych materiałów.",
     cv_cert11_date: "Wrzesień 2026",
 
+    cv_cert12_desc:
+      "Podstawy efektywnej pracy z Claude — prompt engineering, zarządzanie kontekstem i praktyczne zastosowania w codziennych zadaniach.",
+    cv_cert12_date: "Sierpień 2026",
+
+    cv_cert13_desc:
+      "Podstawy pracy z Claude Code — agentowe wykorzystanie AI w code review, developmencie i automatyzacji zadań.",
+    cv_cert13_date: "Sierpień 2026",
+
     cv_cert1_desc:
       "Nauka wykorzystywania ChatGPT, Midjourney, Hotjar i Formless w celu usprawnienia procesu projektowego.",
     cv_cert1_date: "Grudzień 2025",
@@ -2179,6 +2187,14 @@ const translations = {
     cv_cert11_desc:
       "Building fluency in applying AI across creative workflows — from research and ideation to producing and iterating on final work.",
     cv_cert11_date: "September 2026",
+
+    cv_cert12_desc:
+      "Fundamentals of working effectively with Claude — prompt engineering, context management, and practical applications in everyday tasks.",
+    cv_cert12_date: "August 2026",
+
+    cv_cert13_desc:
+      "Fundamentals of working with Claude Code — agentic use of AI in code review, development, and task automation.",
+    cv_cert13_date: "August 2026",
 
     cv_cert1_desc:
       "Learning to use ChatGPT, Midjourney, Hotjar, and Formless to streamline the design process.",
