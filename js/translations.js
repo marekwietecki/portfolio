@@ -25,7 +25,7 @@ const translations = {
     footer_link_privacy: "Polityka Prywatności",
     cv_download_button: "Pobierz CV",
     cv_update_note:
-      "CV jest częścią portfolio i aktualizuję je na bieżąco — pobrany plik zawsze odzwierciedla najnowszą wersję.",
+      "CV jest częścią portfolio i aktualizuję je na bieżąco - pobrany plik zawsze odzwierciedla najnowszą wersję.",
     cv_print_hint:
       "Wskazówka: w oknie drukowania odznacz opcję „Nagłówki i stopki”, żeby uzyskać czystszy eksport.",
 
@@ -35,7 +35,7 @@ const translations = {
     cv_about_p1:
       "Jestem <strong>UX & Product Designerem</strong> oraz inżynierem informatyki z ukończonymi specjalizacjami User Experience i zarządzanie projektami oraz Projektowanie Aplikacji Mobilnych. Wiedzę dotyczącą <strong>projektowania produktów cyfrowych</strong> łączę ze znajomością podstaw <strong>programowania</strong> oraz <strong>marketingu internetowego</strong>, co pozwala mi całościowo rozumieć produkty cyfrowe.",
     cv_about_p2:
-      "Posiadam ponad 15-letnie doświadczenie w <strong>pracy zespołowej</strong> — od projektów inżynierskich po różnorodne inicjatywy grupowe. Nauczyło mnie ono dbania o relacje i zaufanie w zespołach, klarownej komunikacji oraz odpowiedzialności za wspólny wynik.",
+      "Posiadam ponad 15-letnie doświadczenie w <strong>pracy zespołowej</strong> - od projektów inżynierskich po różnorodne inicjatywy grupowe. Nauczyło mnie ono dbania o relacje i zaufanie w zespołach, klarownej komunikacji oraz odpowiedzialności za wspólny wynik.",
 
     cv_details_h2: "Szczegóły",
     cv_details_portfolio_label: "PORTFOLIO",
@@ -63,13 +63,13 @@ const translations = {
 
     cv_languages_h2: "Języki",
     cv_lang_polish_name: "Polski",
-    cv_lang_polish_level: "– język ojczysty",
+    cv_lang_polish_level: "- język ojczysty",
     cv_lang_english_name: "Angielski",
-    cv_lang_english_level: "– C1",
+    cv_lang_english_level: "- C1",
     cv_lang_spanish_name: "Hiszpański",
-    cv_lang_spanish_level: "– A2/B1",
+    cv_lang_spanish_level: "- A2/B1",
     cv_lang_german_name: "Niemiecki",
-    cv_lang_german_level: "– A1",
+    cv_lang_german_level: "- A1",
 
     cv_experience_h2: "Doświadczenie",
 
@@ -84,7 +84,7 @@ const translations = {
       "Współtworzenie strategii rozwoju biznesu klientów poprzez przekładanie ich celów rynkowych na efektywne rozwiązania produktowe, architekturę informacji oraz mierzalne ścieżki konwersji.",
     cv_exp1_item5:
       "Zarządzanie harmonogramem projektów, budżetem oraz komunikacją z klientem na każdym etapie cyklu życia produktu.",
-    cv_exp1_date: "Czerwiec 2025 – Obecnie",
+    cv_exp1_date: "Czerwiec 2025 - Obecnie",
     cv_exp1_location: "Warszawa",
 
     cv_exp2_title: "UX & Web Designer, PlanetRoad",
@@ -100,7 +100,7 @@ const translations = {
       "Iteracyjne usprawnianie projektu na podstawie testów użyteczności i wymagań klienta.",
     cv_exp2_item6:
       "Tworzenie identyfikacji wizualnej marki, projektowanie grafik na potrzeby firmy, założenie i konfiguracja firmowych kanałów Social Media.",
-    cv_exp2_date: "Maj 2024 – Obecnie",
+    cv_exp2_date: "Maj 2024 - Obecnie",
     cv_exp2_location: "Warszawa",
 
     cv_exp3_title:
@@ -111,19 +111,19 @@ const translations = {
       "Diagnozowanie indywidualnych barier w nauce (analiza potrzeb) i elastyczne dostosowywanie metod do odbiorcy.",
     cv_exp3_item3:
       "Budowanie cierpliwości, empatii i umiejętności aktywnego słuchania.",
-    cv_exp3_date: "Listopad 2023 – Obecnie",
+    cv_exp3_date: "Listopad 2023 - Obecnie",
     cv_exp3_location: "Łomianki",
 
     cv_projects_h2: "Projekty",
-    cv_proj1_title: "Monexo — Aplikacja Mobilna",
+    cv_proj1_title: "Monexo - Aplikacja Mobilna",
     cv_proj1_desc:
-      "Projekt aplikacji mobilnej do wymiany walut — odpowiedź na realne problemy użytkowników istniejących rozwiązań FinTech. Pełny proces od researchu po testy użyteczności.",
+      "Projekt aplikacji mobilnej do wymiany walut - odpowiedź na realne problemy użytkowników istniejących rozwiązań FinTech. Pełny proces od researchu po testy użyteczności.",
     cv_proj1_tag: "Fintech · Mobile App · Figma",
-    cv_proj2_title: "HabitBubbl — Progresywna Aplikacja Mobilna",
+    cv_proj2_title: "HabitBubbl - Progresywna Aplikacja Mobilna",
     cv_proj2_desc:
-      "Kompleksowe narzędzie do budowania nawyków i zarządzania celami — projekt inżynierski łączący UX/UI, architekturę informacji i wdrożenie PWA. Skomponowałem też Storybook do systematyzacji komponentów.",
+      "Kompleksowe narzędzie do budowania nawyków i zarządzania celami - projekt inżynierski łączący UX/UI, architekturę informacji i wdrożenie PWA. Skomponowałem też Storybook do systematyzacji komponentów.",
     cv_proj2_tag: "PWA · Productivity · Figma · Storybook",
-    cv_proj3_title: "Customer Journey Map — Betfan",
+    cv_proj3_title: "Customer Journey Map - Betfan",
     cv_proj3_desc:
       "Zmapowanie ścieżki użytkownika platformy bukmacherskiej od reklamy do zakładu oraz zaprojektowanie mechanizmów motywacyjnych budujących nawyk powrotu.",
     cv_proj3_tag: "Customer Journey · Gamification",
@@ -133,7 +133,7 @@ const translations = {
     cv_proj4_tag: "UX Audit · E-commerce",
     cv_proj5_title: "Strona Internetowa i Strategia Rozwoju Z Psiego Na Nasze",
     cv_proj5_desc:
-      "Redesign i optymalizacja strony marki behawiorystycznej — migracja hostingu i 3-krotna redukcja kosztów, przebudowa strony internetowej pod kątem użyteczności, estetyki oraz nowej kolorystyki, poprawa wydajności (Lighthouse 42→78) oraz wsparcie strategii social media, która przyniosła pierwszy viral.",
+      "Redesign i optymalizacja strony marki behawiorystycznej - migracja hostingu i 3-krotna redukcja kosztów, przebudowa strony internetowej pod kątem użyteczności, estetyki oraz nowej kolorystyki, poprawa wydajności (Lighthouse 42→78) oraz wsparcie strategii social media, która przyniosła pierwszy viral.",
     cv_proj5_tag: "UX Design · Web Performance · Growth",
 
     cv_education_h2: "Wykształcenie",
@@ -142,31 +142,31 @@ const translations = {
     cv_edu1_item1:
       "Specjalizacja User Experience & Zarządzanie Projektami.",
     cv_edu1_item2: "Specjalizacja Projektowanie Aplikacji Mobilnych.",
-    cv_edu1_date: "Październik 2022 – Lipiec 2026",
+    cv_edu1_date: "Październik 2022 - Lipiec 2026",
     cv_edu1_location: "Warszawa",
 
     cv_edu2_title: "Wykształcenie Średnie, LO im. Króla Jana III Sobieskiego",
     cv_edu2_item1: "Rozszerzona Matematyka i j. Angielski.",
-    cv_edu2_date: "Wrzesień 2019 – Maj 2022",
+    cv_edu2_date: "Wrzesień 2019 - Maj 2022",
     cv_edu2_location: "Warszawa",
 
     cv_certs_h2: "Certyfikaty",
 
     cv_cert11_desc:
-      "Rozwijanie biegłości w wykorzystywaniu AI w procesach kreatywnych — od researchu i ideacji po tworzenie i iterację finalnych materiałów.",
+      "Rozwijanie biegłości w wykorzystywaniu AI w procesach kreatywnych - od researchu i ideacji po tworzenie i iterację finalnych materiałów.",
     cv_cert11_date: "Wrzesień 2026",
 
     cv_cert12_desc:
-      "Podstawy efektywnej pracy z Claude — prompt engineering, zarządzanie kontekstem i praktyczne zastosowania w codziennych zadaniach.",
+      "Podstawy efektywnej pracy z Claude - prompt engineering, zarządzanie kontekstem i praktyczne zastosowania w codziennych zadaniach.",
     cv_cert12_date: "Sierpień 2026",
 
     cv_cert13_desc:
-      "Podstawy pracy z Claude Code — agentowe wykorzystanie AI w code review, developmencie i automatyzacji zadań.",
+      "Podstawy pracy z Claude Code - agentowe wykorzystanie AI w code review, developmencie i automatyzacji zadań.",
     cv_cert13_date: "Sierpień 2026",
 
     cv_cert14_title: "Profesjonalny Certyfikat Google UX Design",
     cv_cert14_desc:
-      "Formalny program Google z zakresu procesu projektowania UX — research, wireframing, prototypowanie i testy użyteczności.",
+      "Formalny program Google z zakresu procesu projektowania UX - research, wireframing, prototypowanie i testy użyteczności.",
     cv_cert14_date: "W trakcie",
 
     cv_cert1_desc:
@@ -196,7 +196,7 @@ const translations = {
 
     cv_cert7_desc:
       "Kompleksowa nauka poprzez praktykę blisko 30 technik i narzędzi projektowych, będącymi fundamentem pracy UX Designera.",
-    cv_cert7_date: "Styczeń 2024 – Kwiecień 2024",
+    cv_cert7_date: "Styczeń 2024 - Kwiecień 2024",
 
     cv_cert8_desc: "Nauka narzędzia Webflow do projektowania stron no-code.",
     cv_cert8_date: "Styczeń 2024",
@@ -204,7 +204,7 @@ const translations = {
     cv_cert9_desc: "Nauka projektowania interfejsów mobilnych w Figmie.",
     cv_cert9_date: "Grudzień 2023",
 
-    cv_cert10_title: "Umiejętności Jutra – Marketing Internetowy, Google",
+    cv_cert10_title: "Umiejętności Jutra - Marketing Internetowy, Google",
     cv_cert10_desc:
       "Kompleksowa nauka praktycznych umiejętności z różnych dziedzin Marketingu Internetowego, w tym User Experience.",
     cv_cert10_date: "Czerwiec 2023",
@@ -2072,7 +2072,7 @@ const translations = {
     footer_link_privacy: "Privacy Policy",
     cv_download_button: "Download CV",
     cv_update_note:
-      "The CV is part of the portfolio and I keep it up to date — the downloaded file always reflects the latest version.",
+      "The CV is part of the portfolio and I keep it up to date - the downloaded file always reflects the latest version.",
     cv_print_hint:
       "Tip: uncheck “Headers and footers” in the print dialog for a cleaner export.",
 
@@ -2082,7 +2082,7 @@ const translations = {
     cv_about_p1:
       "I'm a <strong>UX & Product Designer</strong> and computer science engineer with completed specializations in User Experience & Project Management and Mobile App Design. I combine knowledge of <strong>digital product design</strong> with a grounding in <strong>programming</strong> and <strong>online marketing</strong>, which lets me understand digital products holistically.",
     cv_about_p2:
-      "I have over 15 years of experience in <strong>teamwork</strong> — from engineering projects to a variety of group initiatives. It has taught me to nurture relationships and trust within teams, communicate clearly, and take responsibility for the shared outcome.",
+      "I have over 15 years of experience in <strong>teamwork</strong> - from engineering projects to a variety of group initiatives. It has taught me to nurture relationships and trust within teams, communicate clearly, and take responsibility for the shared outcome.",
 
     cv_details_h2: "Details",
     cv_details_portfolio_label: "PORTFOLIO",
@@ -2110,13 +2110,13 @@ const translations = {
 
     cv_languages_h2: "Languages",
     cv_lang_polish_name: "Polish",
-    cv_lang_polish_level: "– native",
+    cv_lang_polish_level: "- native",
     cv_lang_english_name: "English",
-    cv_lang_english_level: "– C1",
+    cv_lang_english_level: "- C1",
     cv_lang_spanish_name: "Spanish",
-    cv_lang_spanish_level: "– A2/B1",
+    cv_lang_spanish_level: "- A2/B1",
     cv_lang_german_name: "German",
-    cv_lang_german_level: "– A1",
+    cv_lang_german_level: "- A1",
 
     cv_experience_h2: "Experience",
 
@@ -2131,7 +2131,7 @@ const translations = {
       "Co-shaping clients' business growth strategy by translating their market goals into effective product solutions, information architecture, and measurable conversion paths.",
     cv_exp1_item5:
       "Managing project timelines, budgets, and client communication at every stage of the product lifecycle.",
-    cv_exp1_date: "June 2025 – Present",
+    cv_exp1_date: "June 2025 - Present",
     cv_exp1_location: "Warsaw",
 
     cv_exp2_title: "UX & Web Designer, PlanetRoad",
@@ -2147,7 +2147,7 @@ const translations = {
       "Iteratively improving the design based on usability testing and client requirements.",
     cv_exp2_item6:
       "Building the brand's visual identity, designing graphics for the company, and setting up and configuring the company's social media channels.",
-    cv_exp2_date: "May 2024 – Present",
+    cv_exp2_date: "May 2024 - Present",
     cv_exp2_location: "Warsaw",
 
     cv_exp3_title: "Private Tutoring (Mathematics and English)",
@@ -2157,19 +2157,19 @@ const translations = {
       "Diagnosing individual learning barriers (needs analysis) and flexibly adapting methods to each student.",
     cv_exp3_item3:
       "Building patience, empathy, and active-listening skills.",
-    cv_exp3_date: "November 2023 – Present",
+    cv_exp3_date: "November 2023 - Present",
     cv_exp3_location: "Łomianki",
 
     cv_projects_h2: "Projects",
-    cv_proj1_title: "Monexo — Mobile App",
+    cv_proj1_title: "Monexo - Mobile App",
     cv_proj1_desc:
       "A currency-exchange mobile app designed as a response to real problems in existing FinTech products. Full process from research to usability testing.",
     cv_proj1_tag: "Fintech · Mobile App · Figma",
-    cv_proj2_title: "HabitBubbl — Progressive Mobile App",
+    cv_proj2_title: "HabitBubbl - Progressive Mobile App",
     cv_proj2_desc:
-      "A complete toolkit for habit-building and goal management — an engineering thesis project combining UX/UI, information architecture, and PWA implementation. I also set up Storybook to systemize the components.",
+      "A complete toolkit for habit-building and goal management - an engineering thesis project combining UX/UI, information architecture, and PWA implementation. I also set up Storybook to systemize the components.",
     cv_proj2_tag: "PWA · Productivity · Figma · Storybook",
-    cv_proj3_title: "Customer Journey Map — Betfan",
+    cv_proj3_title: "Customer Journey Map - Betfan",
     cv_proj3_desc:
       "Mapped the user journey of a sports betting platform from ad to bet slip and designed motivational mechanisms to build a return-to-app habit.",
     cv_proj3_tag: "Customer Journey · Gamification",
@@ -2177,9 +2177,9 @@ const translations = {
     cv_proj4_desc:
       "Self-initiated UX and performance audit of an e-commerce store to identify details limiting real sales.",
     cv_proj4_tag: "UX Audit · E-commerce",
-    cv_proj5_title: "Z Psiego Na Nasze — Website & Growth Strategy",
+    cv_proj5_title: "Z Psiego Na Nasze - Website & Growth Strategy",
     cv_proj5_desc:
-      "Redesign and optimization of a dog-behaviorist brand's website — hosting migration and a 3x cost cut, a site rebuild focused on usability, aesthetics, and a new color palette, performance gains (Lighthouse 42→78), and support for a social media strategy that landed its first viral hit.",
+      "Redesign and optimization of a dog-behaviorist brand's website - hosting migration and a 3x cost cut, a site rebuild focused on usability, aesthetics, and a new color palette, performance gains (Lighthouse 42→78), and support for a social media strategy that landed its first viral hit.",
     cv_proj5_tag: "UX Design · Web Performance · Growth",
 
     cv_education_h2: "Education",
@@ -2187,31 +2187,31 @@ const translations = {
     cv_edu1_title: "Computer Science Engineering, Vizja University",
     cv_edu1_item1: "Specialization in User Experience & Project Management.",
     cv_edu1_item2: "Specialization in Mobile App Design.",
-    cv_edu1_date: "October 2022 – July 2026",
+    cv_edu1_date: "October 2022 - July 2026",
     cv_edu1_location: "Warsaw",
 
     cv_edu2_title: "Secondary Education, King Jan III Sobieski High School",
     cv_edu2_item1: "Advanced Mathematics and English.",
-    cv_edu2_date: "September 2019 – May 2022",
+    cv_edu2_date: "September 2019 - May 2022",
     cv_edu2_location: "Warsaw",
 
     cv_certs_h2: "Certificates",
 
     cv_cert11_desc:
-      "Building fluency in applying AI across creative workflows — from research and ideation to producing and iterating on final work.",
+      "Building fluency in applying AI across creative workflows - from research and ideation to producing and iterating on final work.",
     cv_cert11_date: "September 2026",
 
     cv_cert12_desc:
-      "Fundamentals of working effectively with Claude — prompt engineering, context management, and practical applications in everyday tasks.",
+      "Fundamentals of working effectively with Claude - prompt engineering, context management, and practical applications in everyday tasks.",
     cv_cert12_date: "August 2026",
 
     cv_cert13_desc:
-      "Fundamentals of working with Claude Code — agentic use of AI in code review, development, and task automation.",
+      "Fundamentals of working with Claude Code - agentic use of AI in code review, development, and task automation.",
     cv_cert13_date: "August 2026",
 
     cv_cert14_title: "Google UX Design Professional Certificate",
     cv_cert14_desc:
-      "Google's formal program covering the UX design process — research, wireframing, prototyping, and usability testing.",
+      "Google's formal program covering the UX design process - research, wireframing, prototyping, and usability testing.",
     cv_cert14_date: "In progress",
 
     cv_cert1_desc:
@@ -2241,7 +2241,7 @@ const translations = {
 
     cv_cert7_desc:
       "Hands-on learning of nearly 30 design techniques and tools forming the foundation of a UX Designer's work.",
-    cv_cert7_date: "January 2024 – April 2024",
+    cv_cert7_date: "January 2024 - April 2024",
 
     cv_cert8_desc: "Learning the Webflow tool for no-code website design.",
     cv_cert8_date: "January 2024",
@@ -2249,7 +2249,7 @@ const translations = {
     cv_cert9_desc: "Learning to design mobile interfaces in Figma.",
     cv_cert9_date: "December 2023",
 
-    cv_cert10_title: "Skills for Tomorrow – Online Marketing, Google",
+    cv_cert10_title: "Skills for Tomorrow - Online Marketing, Google",
     cv_cert10_desc:
       "Comprehensive, hands-on learning across various areas of online marketing, including User Experience.",
     cv_cert10_date: "June 2023",
