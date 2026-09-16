@@ -148,6 +148,10 @@ const translations = {
 
     cv_certs_h2: "Certyfikaty",
 
+    cv_cert11_desc:
+      "Rozwijanie biegłości w wykorzystywaniu AI w procesach kreatywnych — od researchu i ideacji po tworzenie i iterację finalnych materiałów.",
+    cv_cert11_date: "Wrzesień 2026",
+
     cv_cert1_desc:
       "Nauka wykorzystywania ChatGPT, Midjourney, Hotjar i Formless w celu usprawnienia procesu projektowego.",
     cv_cert1_date: "Grudzień 2025",
@@ -666,6 +670,11 @@ const translations = {
     project_web_zpn_iter0_heading: "Migracja strony na tańszy hosting",
     project_web_zpn_iter0_p1:
       "Pracę zacząłem od migracji istniejącej strony WordPress na nowe, znacznie tańsze środowisko hostingowe — bez utraty ciągłości działania strony ani adresu domeny. To otworzyło drogę do kolejnego kroku — realnej redukcji kosztów.",
+    project_web_zpn_iter0_p2_text1:
+      "Świadomie zostałem przy WordPressie zamiast przenosić stronę na inny stack —",
+    project_web_zpn_iter0_p2_bold: "w planach jest dodanie bloga",
+    project_web_zpn_iter0_p2_text2:
+      ", a WordPress daje tę funkcjonalność od ręki, bez konieczności budowania jej od zera na nowej platformie.",
 
     project_web_zpn_iter1_heading:
       "Redukcja kosztów — 3-krotnie niższy hosting",
@@ -946,6 +955,12 @@ const translations = {
     about_certificates_item14_alt:
       "Certyfikat ukończenia Claude Code 101 od Anthropic",
     about_certificates_item14_caption: "Claude Code 101",
+    about_certificates_item15_alt:
+      "Dyplom Inżyniera Informatyki ze specjalnością User Experience",
+    about_certificates_item15_caption: "Dyplom Inżyniera Informatyki (UX)",
+    about_certificates_item16_alt:
+      "Certyfikat ukończenia AI Fluency for Creative Work od Anthropic, UCC i Ringling College of Art + Design",
+    about_certificates_item16_caption: "AI Fluency for Creative Work",
     about_certificates_show_more: "Pokaż więcej certyfikatów",
     about_certificates_show_less: "Pokaż mniej certyfikatów",
     // OFFER
@@ -2161,6 +2176,10 @@ const translations = {
 
     cv_certs_h2: "Certificates",
 
+    cv_cert11_desc:
+      "Building fluency in applying AI across creative workflows — from research and ideation to producing and iterating on final work.",
+    cv_cert11_date: "September 2026",
+
     cv_cert1_desc:
       "Learning to use ChatGPT, Midjourney, Hotjar, and Formless to streamline the design process.",
     cv_cert1_date: "December 2025",
@@ -2673,6 +2692,11 @@ const translations = {
     project_web_zpn_iter0_heading: "Migrating to cheaper hosting",
     project_web_zpn_iter0_p1:
       "I started by migrating the existing WordPress site to a new, significantly cheaper hosting environment — without any downtime or losing the domain. That opened the door to the next step: a real cost reduction.",
+    project_web_zpn_iter0_p2_text1:
+      "I deliberately stayed on WordPress instead of moving the site to a different stack —",
+    project_web_zpn_iter0_p2_bold: "a blog is on the roadmap",
+    project_web_zpn_iter0_p2_text2:
+      ", and WordPress gives that functionality out of the box, without having to build it from scratch on a new platform.",
 
     project_web_zpn_iter1_heading: "Cutting costs — hosting 3x cheaper",
     project_web_zpn_iter1_p1_text1:
@@ -2944,6 +2968,13 @@ const translations = {
     about_certificates_item14_alt:
       "Certificate of Completion Claude Code 101 by Anthropic",
     about_certificates_item14_caption: "Claude Code 101",
+    about_certificates_item15_alt:
+      "Bachelor of Engineering diploma in Computer Science, User Experience specialization",
+    about_certificates_item15_caption:
+      "B.Eng. in Computer Science (UX)",
+    about_certificates_item16_alt:
+      "Certificate of Completion AI Fluency for Creative Work by Anthropic, UCC and Ringling College of Art + Design",
+    about_certificates_item16_caption: "AI Fluency for Creative Work",
     about_certificates_show_more: "Show more certificates",
     about_certificates_show_less: "Show fewer certificates",
 
