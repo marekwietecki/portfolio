@@ -138,7 +138,7 @@ const translations = {
 
     cv_education_h2: "Wykształcenie",
 
-    cv_edu3_title: "Informatyka (Studia Magisterskie), PJATK",
+    cv_edu3_title: "Magister Informatyki, PJATK",
     cv_edu3_item1: "Specjalizacja Interaktywne Media.",
     cv_edu3_date: "Październik 2026 - Obecnie",
     cv_edu3_location: "Warszawa",
@@ -2189,7 +2189,7 @@ const translations = {
 
     cv_education_h2: "Education",
 
-    cv_edu3_title: "Computer Science (Master's Degree), PJATK",
+    cv_edu3_title: "Master's in Computer Science, PJATK",
     cv_edu3_item1: "Interactive Media specialization.",
     cv_edu3_date: "October 2026 - Present",
     cv_edu3_location: "Warsaw",
