@@ -138,6 +138,11 @@ const translations = {
 
     cv_education_h2: "Wykształcenie",
 
+    cv_edu3_title: "Informatyka (Studia Magisterskie), PJATK",
+    cv_edu3_item1: "Specjalizacja Interaktywne Media.",
+    cv_edu3_date: "Październik 2026 - Obecnie",
+    cv_edu3_location: "Warszawa",
+
     cv_edu1_title: "Inżynier Informatyki, Uniwersytet Vizja",
     cv_edu1_item1:
       "Specjalizacja User Experience & Zarządzanie Projektami.",
@@ -2183,6 +2188,11 @@ const translations = {
     cv_proj5_tag: "UX Design · Web Performance · Growth",
 
     cv_education_h2: "Education",
+
+    cv_edu3_title: "Computer Science (Master's Degree), PJATK",
+    cv_edu3_item1: "Interactive Media specialization.",
+    cv_edu3_date: "October 2026 - Present",
+    cv_edu3_location: "Warsaw",
 
     cv_edu1_title: "Computer Science Engineering, Vizja University",
     cv_edu1_item1: "Specialization in User Experience & Project Management.",
