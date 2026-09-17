@@ -727,19 +727,19 @@ const translations = {
     project_web_zpn_iter3_p1_text2: "zamiast wyłącznie cichych materiałów.",
     project_web_zpn_iter3_p2_text1: "Efekt przyszedł szybciej niż zakładaliśmy —",
     project_web_zpn_iter3_p2_bold:
-      "trzecia mówiona, ekspercka rolka osiągnęła ponad 188 tys. wyświetleń",
+      "trzecia mówiona, ekspercka rolka osiągnęła ponad 200 tys. wyświetleń",
     project_web_zpn_iter3_p2_text2:
-      ", podczas gdy nieme materiały wcześniej osiągały maksymalnie ok. 1200 wyświetleń. Oprócz zasięgu, rolka przyniosła ponad 600 nowych obserwujących — podwajając ich liczbę i otwierając kolejne możliwości przekuwania zaangażowanych odbiorców w klientów marki.",
-    project_web_zpn_stat_ig_views: "188K+",
+      ", podczas gdy nieme materiały wcześniej osiągały maksymalnie ok. 1,5 tys. wyświetleń. Oprócz zasięgu, rolka przyniosła ponad 800 nowych obserwujących — trzykrotnie zwiększając ich liczbę (z ok. 400 do ponad 1200) i otwierając kolejne możliwości przekuwania zaangażowanych odbiorców w klientów marki.",
+    project_web_zpn_stat_ig_views: "200K+",
     project_web_zpn_stat_ig_views_label: "Wyświetleń trzeciej mówionej rolki",
-    project_web_zpn_stat_ig_multiplier: "~156×",
+    project_web_zpn_stat_ig_multiplier: "~133×",
     project_web_zpn_stat_ig_multiplier_label:
       "Więcej niż przeciętny niemy materiał",
-    project_web_zpn_stat_ig_followers: "+600",
+    project_web_zpn_stat_ig_followers: "+800",
     project_web_zpn_stat_ig_followers_label:
-      "Nowych obserwujących (2× wzrost)",
+      "Nowych obserwujących (3× wzrost)",
     project_web_zpn_caption_instagram:
-      "188 tys. wyświetleń rolki na tle pozostałych materiałów (nawet 150× więcej)",
+      "200 tys. wyświetleń rolki na tle pozostałych materiałów (nawet 130× więcej)",
 
     project_web_zpn_iter4_heading:
       "Redesign strony głównej — koniec duplikacji treści",
@@ -853,16 +853,16 @@ const translations = {
     project_web_zpn_final_p_3:
       "✅ Uporządkowałem treść strony głównej i podstrony „O Nas”, eliminując zduplikowane sekcje „o mnie” i chaotyczną listę doświadczenia.",
     project_web_zpn_final_p_4:
-      "✅ Wsparłem strategię social media, która przyniosła pierwszy viral — ponad 188 tys. wyświetleń i +600 nowych obserwujących (2× wzrost).",
+      "✅ Wsparłem strategię social media, która przyniosła pierwszy viral — ponad 200 tys. wyświetleń i +800 nowych obserwujących (3× wzrost).",
     project_web_zpn_final_p_5:
       "✅ Zapewniłem pełną zgodność cookies z RODO oraz poprawki dostępności, budując większe zaufanie i bezpieczeństwo użytkowników.",
     project_web_zpn_stat_hosting_cost_2: "-66%",
     project_web_zpn_stat_hosting_cost_label_2: "Roczny koszt hostingu",
     project_web_zpn_stat_perf_2: "+36 pkt",
     project_web_zpn_stat_perf_label_2: "Performance Lighthouse (42→78)",
-    project_web_zpn_stat_ig_views_2: "188K+",
+    project_web_zpn_stat_ig_views_2: "200K+",
     project_web_zpn_stat_ig_views_label_2: "Wyświetleń pierwszego virala",
-    project_web_zpn_stat_ig_followers_2: "+600",
+    project_web_zpn_stat_ig_followers_2: "+800",
     project_web_zpn_stat_ig_followers_label_2: "Nowych obserwujących na IG",
     project_web_zpn_final_link_text:
       "Stronę w pełnym wymiarze można zobaczyć pod linkiem",
@@ -2769,18 +2769,18 @@ const translations = {
     project_web_zpn_iter3_p1_text2: "instead of silent-only content.",
     project_web_zpn_iter3_p2_text1: "The payoff came faster than expected —",
     project_web_zpn_iter3_p2_bold:
-      "the third spoken, expert-style Reel reached over 188K views",
+      "the third spoken, expert-style Reel reached over 200K views",
     project_web_zpn_iter3_p2_text2:
-      ", while silent content had previously topped out at around 1,200 views. Beyond reach, the Reel brought in over 600 new followers — doubling the account and opening up new ways to turn engaged viewers into clients.",
-    project_web_zpn_stat_ig_views: "188K+",
+      ", while silent content had previously topped out at around 1,500 views. Beyond reach, the Reel brought in over 800 new followers — tripling the account (from around 400 to over 1,200) and opening up new ways to turn engaged viewers into clients.",
+    project_web_zpn_stat_ig_views: "200K+",
     project_web_zpn_stat_ig_views_label: "Views on the third spoken Reel",
-    project_web_zpn_stat_ig_multiplier: "~156×",
+    project_web_zpn_stat_ig_multiplier: "~133×",
     project_web_zpn_stat_ig_multiplier_label:
       "More than the average silent video",
-    project_web_zpn_stat_ig_followers: "+600",
-    project_web_zpn_stat_ig_followers_label: "New followers (2× growth)",
+    project_web_zpn_stat_ig_followers: "+800",
+    project_web_zpn_stat_ig_followers_label: "New followers (3× growth)",
     project_web_zpn_caption_instagram:
-      "188K views on one Reel against the rest of the account (up to 150× more)",
+      "200K views on one Reel against the rest of the account (up to 130× more)",
 
     project_web_zpn_iter4_heading:
       "Homepage redesign — the end of duplicated content",
@@ -2892,16 +2892,16 @@ const translations = {
     project_web_zpn_final_p_3:
       "✅ Organized the homepage and \"About Us\" content, removing duplicated \"about me\" sections and the chaotic experience list.",
     project_web_zpn_final_p_4:
-      "✅ Supported a social media strategy that landed the first viral hit — over 188K views and +600 new followers (2× growth).",
+      "✅ Supported a social media strategy that landed the first viral hit — over 200K views and +800 new followers (3× growth).",
     project_web_zpn_final_p_5:
       "✅ Delivered full GDPR cookie compliance and accessibility fixes, building more trust and safety for users.",
     project_web_zpn_stat_hosting_cost_2: "-66%",
     project_web_zpn_stat_hosting_cost_label_2: "Annual hosting cost",
     project_web_zpn_stat_perf_2: "+36 pts",
     project_web_zpn_stat_perf_label_2: "Lighthouse Performance (42→78)",
-    project_web_zpn_stat_ig_views_2: "188K+",
+    project_web_zpn_stat_ig_views_2: "200K+",
     project_web_zpn_stat_ig_views_label_2: "Views on the first viral Reel",
-    project_web_zpn_stat_ig_followers_2: "+600",
+    project_web_zpn_stat_ig_followers_2: "+800",
     project_web_zpn_stat_ig_followers_label_2: "New Instagram followers",
     project_web_zpn_final_link_text: "You can see the full site at",
 
