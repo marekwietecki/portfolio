@@ -37,7 +37,7 @@ const translations = {
     cv_about_p2:
       "Posiadam ponad 15-letnie doświadczenie w <strong>pracy zespołowej</strong> - od projektów inżynierskich po różnorodne inicjatywy grupowe. Nauczyło mnie ono dbania o relacje i zaufanie w zespołach, klarownej komunikacji oraz odpowiedzialności za wspólny wynik.",
 
-    cv_details_h2: "Szczegóły",
+    cv_details_h2: "Kontakt",
     cv_details_portfolio_label: "PORTFOLIO",
     cv_details_mail_label: "MAIL",
     cv_details_phone_label: "TELEFON",
@@ -2089,7 +2089,7 @@ const translations = {
     cv_about_p2:
       "I have over 15 years of experience in <strong>teamwork</strong> - from engineering projects to a variety of group initiatives. It has taught me to nurture relationships and trust within teams, communicate clearly, and take responsibility for the shared outcome.",
 
-    cv_details_h2: "Details",
+    cv_details_h2: "Contact",
     cv_details_portfolio_label: "PORTFOLIO",
     cv_details_mail_label: "MAIL",
     cv_details_phone_label: "PHONE",
