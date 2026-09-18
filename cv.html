@@ -568,12 +568,12 @@
         }
 
         /* Długie sekcje (Doświadczenie, Wykształcenie, Certyfikaty) mogą
-           się swobodnie łamać między stronami — to OK. Krótkie sekcje
+           się swobodnie łamać między stronami, także w środku pojedynczego
+           wpisu — to lepsze niż duża pusta przerwa na stronie, gdy cały
+           wpis nie mieści się w pozostałym miejscu. Krótkie sekcje
            (bez długich list) trzymamy w całości, żeby nigdy nie łamały
            się w połowie. Tytuł sekcji (i jego podkreślenie) nigdy nie
-           zostaje sam, oderwany od treści, a pojedynczy wpis (jedno
-           doświadczenie, jeden certyfikat) nie rozjeżdża się na dwie
-           strony. */
+           zostaje sam, oderwany od treści. */
         .section-title {
           break-after: avoid;
           break-inside: avoid;
@@ -583,10 +583,6 @@
         #umiejetnosci,
         #jezyki,
         #zainteresowania {
-          break-inside: avoid;
-        }
-        .entry,
-        .cert-item {
           break-inside: avoid;
         }
       }
