@@ -156,6 +156,8 @@ const translations = {
     cv_edu2_location: "Warszawa",
 
     cv_certs_h2: "Certyfikaty",
+    cv_certs_show_more: "Pokaż więcej certyfikatów",
+    cv_certs_show_less: "Pokaż mniej certyfikatów",
 
     cv_cert11_desc:
       "Rozwijanie biegłości w wykorzystywaniu AI w procesach kreatywnych - od researchu i ideacji po tworzenie i iterację finalnych materiałów.",
@@ -2206,6 +2208,8 @@ const translations = {
     cv_edu2_location: "Warsaw",
 
     cv_certs_h2: "Certificates",
+    cv_certs_show_more: "Show more certificates",
+    cv_certs_show_less: "Show fewer certificates",
 
     cv_cert11_desc:
       "Building fluency in applying AI across creative workflows - from research and ideation to producing and iterating on final work.",

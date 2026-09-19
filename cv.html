@@ -487,6 +487,50 @@
         color: var(--cv-text-muted);
       }
 
+      .cert-item.certExtra {
+        display: none;
+      }
+
+      .cert-item.certExtra.isRevealed {
+        display: block;
+      }
+
+      .certToggleWrapper {
+        display: flex;
+        justify-content: center;
+        padding-top: 4px;
+      }
+
+      .certToggleBtn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: transparent;
+        color: var(--cv-text-muted);
+        border: 1px solid var(--cv-line);
+        border-radius: 999px;
+        padding: 8px 18px;
+        font-family: "Outfit", sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: border-color 0.2s ease, color 0.2s ease;
+      }
+
+      .certToggleBtn:hover {
+        border-color: var(--cv-accent);
+        color: var(--cv-accent);
+      }
+
+      .certToggleBtn i {
+        font-size: 11px;
+        transition: transform 0.25s ease;
+      }
+
+      .certToggleBtn[aria-expanded="true"] i {
+        transform: rotate(180deg);
+      }
+
       /* ---------- ZAINTERESOWANIA ---------- */
 
       .interests-list {
@@ -535,12 +579,68 @@
         .cvActions,
         .cvUpdateNote,
         .cvPrintHint,
+        .certToggleWrapper,
         footer,
         #cookie-banner,
         .cursor-dot,
         .cursor-outline,
         #cursor-liquid-canvas {
           display: none !important;
+        }
+
+        /* PDF/druk zawsze pokazuje pełną listę certyfikatów, niezależnie
+           od tego, czy "Pokaż więcej" zostało kliknięte na żywej stronie.
+           Kolejność wizualna na stronie (najpierw Google UX/Claude 101/
+           Cambridge/AI Fluency) jest inna niż w druku — w PDF trzymamy
+           czystą chronologię (klasy chrono-1..14 na każdym .cert-item). */
+        .cert-item.certExtra {
+          display: block !important;
+        }
+        #certyfikaty .cert-list {
+          display: flex;
+          flex-direction: column;
+        }
+        #certyfikaty .chrono-1 {
+          order: 1 !important;
+        }
+        #certyfikaty .chrono-2 {
+          order: 2 !important;
+        }
+        #certyfikaty .chrono-3 {
+          order: 3 !important;
+        }
+        #certyfikaty .chrono-4 {
+          order: 4 !important;
+        }
+        #certyfikaty .chrono-5 {
+          order: 5 !important;
+        }
+        #certyfikaty .chrono-6 {
+          order: 6 !important;
+        }
+        #certyfikaty .chrono-7 {
+          order: 7 !important;
+        }
+        #certyfikaty .chrono-8 {
+          order: 8 !important;
+        }
+        #certyfikaty .chrono-9 {
+          order: 9 !important;
+        }
+        #certyfikaty .chrono-10 {
+          order: 10 !important;
+        }
+        #certyfikaty .chrono-11 {
+          order: 11 !important;
+        }
+        #certyfikaty .chrono-12 {
+          order: 12 !important;
+        }
+        #certyfikaty .chrono-13 {
+          order: 13 !important;
+        }
+        #certyfikaty .chrono-14 {
+          order: 14 !important;
         }
 
         body {
@@ -1211,7 +1311,7 @@
         <section id="certyfikaty">
           <h2 class="section-title" data-i18n="cv_certs_h2">Certyfikaty</h2>
           <div class="section-body cert-list">
-            <div class="cert-item">
+            <div class="cert-item chrono-1">
               <p class="cert-title" data-i18n="cv_cert14_title">
                 Profesjonalny Certyfikat Google UX Design
               </p>
@@ -1222,7 +1322,28 @@
               <p class="cert-date" data-i18n="cv_cert14_date">W trakcie</p>
             </div>
 
-            <div class="cert-item">
+            <div class="cert-item chrono-3">
+              <p class="cert-title">Claude 101, Anthropic</p>
+              <p class="cert-desc" data-i18n="cv_cert12_desc">
+                Podstawy efektywnej pracy z Claude - prompt engineering,
+                zarządzanie kontekstem i praktyczne zastosowania w codziennych
+                zadaniach.
+              </p>
+              <p class="cert-date" data-i18n="cv_cert12_date">Sierpień 2026</p>
+            </div>
+
+            <div class="cert-item chrono-7">
+              <p class="cert-title">
+                Certificate in Advanced English, Cambridge
+              </p>
+              <p class="cert-desc" data-i18n="cv_cert3_desc">
+                Certyfikat poświadczający umiejętności języka angielskiego na
+                poziomie C1.
+              </p>
+              <p class="cert-date" data-i18n="cv_cert3_date">Lipiec 2025</p>
+            </div>
+
+            <div class="cert-item chrono-2">
               <p class="cert-title">
                 AI Fluency for Creative Work, Anthropic
               </p>
@@ -1234,17 +1355,7 @@
               <p class="cert-date" data-i18n="cv_cert11_date">Wrzesień 2026</p>
             </div>
 
-            <div class="cert-item">
-              <p class="cert-title">Claude 101, Anthropic</p>
-              <p class="cert-desc" data-i18n="cv_cert12_desc">
-                Podstawy efektywnej pracy z Claude - prompt engineering,
-                zarządzanie kontekstem i praktyczne zastosowania w codziennych
-                zadaniach.
-              </p>
-              <p class="cert-date" data-i18n="cv_cert12_date">Sierpień 2026</p>
-            </div>
-
-            <div class="cert-item">
+            <div class="cert-item certExtra chrono-4">
               <p class="cert-title">Claude Code 101, Anthropic</p>
               <p class="cert-desc" data-i18n="cv_cert13_desc">
                 Podstawy pracy z Claude Code - agentowe wykorzystanie AI w
@@ -1253,7 +1364,7 @@
               <p class="cert-date" data-i18n="cv_cert13_date">Sierpień 2026</p>
             </div>
 
-            <div class="cert-item">
+            <div class="cert-item certExtra chrono-5">
               <p class="cert-title">Design with AI, Nueve Design</p>
               <p class="cert-desc" data-i18n="cv_cert1_desc">
                 Nauka wykorzystywania ChatGPT, Midjourney, Hotjar i Formless w
@@ -1262,7 +1373,7 @@
               <p class="cert-date" data-i18n="cv_cert1_date">Grudzień 2025</p>
             </div>
 
-            <div class="cert-item">
+            <div class="cert-item certExtra chrono-6">
               <p class="cert-title">Perfect Design Process, Nueve Design</p>
               <p class="cert-desc" data-i18n="cv_cert2_desc">
                 Pojęcie procesu jako produktu, który ewoluuje i jest
@@ -1271,18 +1382,7 @@
               <p class="cert-date" data-i18n="cv_cert2_date">Listopad 2025</p>
             </div>
 
-            <div class="cert-item">
-              <p class="cert-title">
-                Certificate in Advanced English, Cambridge
-              </p>
-              <p class="cert-desc" data-i18n="cv_cert3_desc">
-                Certyfikat poświadczający umiejętności języka angielskiego na
-                poziomie C1.
-              </p>
-              <p class="cert-date" data-i18n="cv_cert3_date">Lipiec 2025</p>
-            </div>
-
-            <div class="cert-item">
+            <div class="cert-item certExtra chrono-8">
               <p class="cert-title">Prototype Pro, Nueve Design</p>
               <p class="cert-desc" data-i18n="cv_cert4_desc">
                 Rola prototypu w cyklu życia produktu. Nauka budowania
@@ -1291,7 +1391,7 @@
               <p class="cert-date" data-i18n="cv_cert4_date">Październik 2024</p>
             </div>
 
-            <div class="cert-item">
+            <div class="cert-item certExtra chrono-9">
               <p class="cert-title">Design System Intro, Nueve Design</p>
               <p class="cert-desc" data-i18n="cv_cert5_desc">
                 Nauka tworzenia Design Systemów w praktyce, wykorzystując
@@ -1300,7 +1400,7 @@
               <p class="cert-date" data-i18n="cv_cert5_date">Wrzesień 2024</p>
             </div>
 
-            <div class="cert-item">
+            <div class="cert-item certExtra chrono-10">
               <p class="cert-title" data-i18n="cv_cert6_title">
                 Szkolenie: Prowadź Warsztaty metodą Design Thinking
               </p>
@@ -1311,7 +1411,7 @@
               <p class="cert-date" data-i18n="cv_cert6_date">Lipiec 2024</p>
             </div>
 
-            <div class="cert-item">
+            <div class="cert-item certExtra chrono-11">
               <p class="cert-title">UX Masterclass, Nueve Design</p>
               <p class="cert-desc" data-i18n="cv_cert7_desc">
                 Kompleksowa nauka poprzez praktykę blisko 30 technik i
@@ -1323,7 +1423,7 @@
               </p>
             </div>
 
-            <div class="cert-item">
+            <div class="cert-item certExtra chrono-12">
               <p class="cert-title">Webflow Intro, Nueve Design</p>
               <p class="cert-desc" data-i18n="cv_cert8_desc">
                 Nauka narzędzia Webflow do projektowania stron no-code.
@@ -1331,7 +1431,7 @@
               <p class="cert-date" data-i18n="cv_cert8_date">Styczeń 2024</p>
             </div>
 
-            <div class="cert-item">
+            <div class="cert-item certExtra chrono-13">
               <p class="cert-title">App Design Intro, Nueve Design</p>
               <p class="cert-desc" data-i18n="cv_cert9_desc">
                 Nauka projektowania interfejsów mobilnych w Figmie.
@@ -1339,7 +1439,7 @@
               <p class="cert-date" data-i18n="cv_cert9_date">Grudzień 2023</p>
             </div>
 
-            <div class="cert-item">
+            <div class="cert-item certExtra chrono-14">
               <p class="cert-title" data-i18n="cv_cert10_title">
                 Umiejętności Jutra - Marketing Internetowy, Google
               </p>
@@ -1348,6 +1448,28 @@
                 Marketingu Internetowego, w tym User Experience.
               </p>
               <p class="cert-date" data-i18n="cv_cert10_date">Czerwiec 2023</p>
+            </div>
+
+            <div class="certToggleWrapper">
+              <button
+                type="button"
+                id="cvCertToggleBtn"
+                class="certToggleBtn"
+                aria-expanded="false"
+              >
+                <span
+                  class="certToggleLabel certToggleLabel--more"
+                  data-i18n="cv_certs_show_more"
+                  >Pokaż więcej certyfikatów</span
+                >
+                <span
+                  class="certToggleLabel certToggleLabel--less"
+                  hidden
+                  data-i18n="cv_certs_show_less"
+                  >Pokaż mniej certyfikatów</span
+                >
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
             </div>
           </div>
         </section>
@@ -1483,6 +1605,38 @@
 
         window.addEventListener("afterprint", () => {
           document.title = baseTitle;
+        });
+      })();
+    </script>
+
+    <script>
+      (function () {
+        const toggleBtn = document.getElementById("cvCertToggleBtn");
+        if (!toggleBtn) return;
+
+        const extraItems = document.querySelectorAll(
+          "#certyfikaty .certExtra"
+        );
+        const labelMore = toggleBtn.querySelector(".certToggleLabel--more");
+        const labelLess = toggleBtn.querySelector(".certToggleLabel--less");
+
+        toggleBtn.addEventListener("click", () => {
+          const expanded = toggleBtn.getAttribute("aria-expanded") === "true";
+          const next = !expanded;
+
+          extraItems.forEach((item) => {
+            item.classList.toggle("isRevealed", next);
+          });
+
+          toggleBtn.setAttribute("aria-expanded", String(next));
+          labelMore.hidden = next;
+          labelLess.hidden = !next;
+
+          if (!next) {
+            document
+              .getElementById("certyfikaty")
+              .scrollIntoView({ behavior: "smooth", block: "start" });
+          }
         });
       })();
     </script>
