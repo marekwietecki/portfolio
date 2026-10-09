@@ -20,6 +20,83 @@ const translations = {
     // footer
     footer_link_main: "Strona Główna",
     footer_link_projects: "Projekty",
+    footer_link_playground: "Playground",
+
+    // creative playground
+    about_playground_text:
+      "Poza UX tworzę też branding, grafiki i motion design. Zobacz moje prace kreatywne i eksperymenty.",
+    about_playground_btn: "Creative Playground →",
+    playground_breadcrumbs_main: "Strona Główna",
+    playground_breadcrumbs_current: "Creative Playground",
+    playground_h1: "Creative Playground",
+    playground_intro:
+      "Miejsce na branding, grafikę i motion design. Część prac powstała dla klientów, część to eksperymenty i nauka. Moim głównym obszarem jest UX i produkt, ale tutaj pozwalam sobie na więcej wizualnej swobody.",
+    playground_tag_learning: "#Nauka",
+    playground_tag_client: "#PracaDlaKlienta",
+    playground_tag_graphic: "#Grafika",
+    playground_tag_exercise: "#Ćwiczenie",
+    playground_motion_title: "PlanetRoad - animacja o usługach firmy",
+    playground_motion_desc:
+      "35-sekundowa animacja: ruchoma typografia i uproszczone schematy dróg, skrzyżowań i ronda. To moje pierwsze kroki w motion designie, wciąż się w nim uczę.",
+    playground_brand_badge: "Identyfikacja Wizualna",
+    playground_brand_title: "Identyfikacja Wizualna PlanetRoad",
+    playground_brand_desc:
+      "Pełna identyfikacja marki: wywiad z CEO, strategia, system kolorystyczny, logotyp, typografia i wdrożenie w mediach społecznościowych.",
+    playground_brand_link: "Zobacz case study →",
+    playground_banner_title: "Red Bull Racing 2023 - banner",
+    playground_banner_desc:
+      "Ćwiczenie graficzne: kompozycja banera z ciemnym ujęciem bolidu i paskiem partnerów.",
+    playground_banner_note:
+      "Projekt własny, nieoficjalny, bez powiązania z marką Red Bull.",
+    playground_fair_title: "Notatnik dla Fundacji FAIR",
+    playground_fair_desc:
+      "Projekt pojedynczej strony notatnika (A4). Fundacja chciała prostoty: logo, kratka do notatek i stopka z danymi firmy.",
+    playground_tag_cover: "#Okładka",
+    playground_cover_title: "Outer Banks - fikcyjna okładka książki",
+    playground_cover_desc:
+      "Zabawa w Photoshopie: okładka książki na podstawie mojego ulubionego wtedy serialu, pokazana na mockupie. W lightboxie znajdziesz też plakat do tej książki.",
+    playground_cover_note:
+      "Projekt własny, fikcyjny, bez powiązania z serialem czy wydawnictwem.",
+    playground_tag_miniproject: "#MiniProjekt",
+    playground_player_title: "Odtwarzacz muzyki na małe ekrany",
+    playground_player_desc:
+      "Mini projekt UI/graficzny: interfejs odtwarzacza na małe, prawie kwadratowe ekrany pierwszych składanych telefonów, takich jak Galaxy Z Flip. W lightboxie znajdziesz też pierwszą wersję.",
+    playground_player_note:
+      "Utwory i okładka albumu to wyłącznie przykładowa zawartość.",
+    playground_tag_decomposition: "#Dekompozycja",
+    playground_tucasa_title: "Tu Casa - projekt własnej aplikacji",
+    playground_tucasa_desc:
+      "Zwieńczenie kursu App Design Intro: aplikacja mobilna do przeglądania pomysłów na wnętrza i wyposażenie. Od ekranu startowego i rekomendacji, przez wyszukiwarkę z historią i wyniki, po ulubione i profil. Interfejs jest w języku hiszpańskim.",
+    playground_decomp_title: "Dekompozycje UI: Airbnb i App Store",
+    playground_decomp_desc:
+      "Ćwiczenie z kursu App Design Intro: odtwarzanie istniejących ekranów, żeby nauczyć się siatek, odstępów i komponentów. Po lewej oryginał, po prawej moja wersja. W lightboxie jest też druga dekompozycja.",
+    playground_tag_readability: "#Czytelność",
+    playground_tag_clarity: "#Przejrzystość",
+    playground_tag_hierarchy: "#Hierarchia",
+    playground_pgnig_title: "Przeprojektowany rachunek za gaz",
+    playground_pgnig_desc:
+      "Redesign rachunku PGNiG, żeby kontrast i hierarchia informacji działały tak, jak trzeba: najważniejsze (kwota, termin, kod QR) widać od razu, a dokument jest czytelniejszy i bardziej przejrzysty. W lightboxie znajdziesz oryginał.",
+    playground_pgnig_note:
+      "Ćwiczenie własne, nieoficjalne, bez powiązania z PGNiG. Dane na rachunku są przykładowe.",
+    playground_tag_poster: "#Plakat",
+    playground_tag_masking: "#Maskowanie",
+    playground_tag_colorchange: "#ZmianaKolorów",
+    playground_tag_isometric: "#Izometria",
+    playground_poster_title: "Plakat „Nowa zimowa kolekcja\"",
+    playground_poster_desc:
+      "Plakat składany w Photoshopie: zdjęcie, półprzezroczyste, geometryczne kształty i typografia z poświatą, w mocnej, różowo-niebieskiej kolorystyce.",
+    playground_recolor_title: "Maskowanie i zmiana kolorów",
+    playground_recolor_desc:
+      "Retusz w Photoshopie: maskowanie kurtki i tła oraz zmiana kolorystyki z fioletowo-różowej na zieloną. W lightboxie znajdziesz oryginał.",
+    playground_geoanim_title: "Prosta animacja geometryczna",
+    playground_geoanim_desc:
+      "6-sekundowa animacja: kolorowe, izometryczne bloki wyrastają z siatki i znikają. Ćwiczenie podstaw ruchu i kolorystyki.",
+    playground_tag_retouch: "#Retusz",
+    playground_tag_colorgrading: "#Kolorystyka",
+    playground_winter_title: "Usuwanie osób i zmiana tonacji",
+    playground_winter_desc:
+      "Retusz w Photoshopie: usunięcie ludzi ze sceny i zmiana tonacji barw z ciepłej na zimną, żeby nocne zdjęcie zyskało zupełnie inny nastrój. W lightboxie znajdziesz oryginał.",
+    playground_back_btn: "Powrót do strony głównej",
     footer_link_contact: "Kontakt",
     footer_link_cv: "CV",
     footer_link_privacy: "Polityka Prywatności",
@@ -2075,6 +2152,83 @@ const translations = {
 
     footer_link_main: "Main",
     footer_link_projects: "Projects",
+    footer_link_playground: "Playground",
+
+    // creative playground
+    about_playground_text:
+      "Beyond UX I also create branding, graphics and motion design. See my creative work and experiments.",
+    about_playground_btn: "Creative Playground →",
+    playground_breadcrumbs_main: "Main Page",
+    playground_breadcrumbs_current: "Creative Playground",
+    playground_h1: "Creative Playground",
+    playground_intro:
+      "A space for branding, graphics and motion design. Some of these pieces were made for clients, others are experiments and learning. My main focus is UX and product, but here I allow myself more visual freedom.",
+    playground_tag_learning: "#Learning",
+    playground_tag_client: "#ClientWork",
+    playground_tag_graphic: "#Graphic",
+    playground_tag_exercise: "#Exercise",
+    playground_motion_title: "PlanetRoad - company services animation",
+    playground_motion_desc:
+      "A 35-second animation: kinetic typography and simplified diagrams of roads, junctions and a roundabout. These are my first steps in motion design and I'm still learning.",
+    playground_brand_badge: "Visual Identity",
+    playground_brand_title: "PlanetRoad Visual Identity",
+    playground_brand_desc:
+      "A full brand identity: CEO interview, strategy, color system, logo, typography and social media rollout.",
+    playground_brand_link: "See the case study →",
+    playground_banner_title: "Red Bull Racing 2023 - banner",
+    playground_banner_desc:
+      "A graphic exercise: a banner composition with a dark shot of the car and a partner strip.",
+    playground_banner_note:
+      "Personal, unofficial project, not affiliated with Red Bull.",
+    playground_fair_title: "Notepad for the FAIR Foundation",
+    playground_fair_desc:
+      "A single-page notepad design (A4). The foundation wanted simplicity: logo, a grid for notes and a footer with company details.",
+    playground_tag_cover: "#BookCover",
+    playground_cover_title: "Outer Banks - fictional book cover",
+    playground_cover_desc:
+      "A Photoshop experiment: a book cover based on what was then my favorite TV series, shown on a mockup. Open the lightbox to see a poster for the book too.",
+    playground_cover_note:
+      "Personal, fictional project, not affiliated with the series or any publisher.",
+    playground_tag_miniproject: "#MiniProject",
+    playground_player_title: "Music player for small screens",
+    playground_player_desc:
+      "A UI/graphic mini project: a music player interface for the small, nearly square screens of early foldable phones such as the Galaxy Z Flip. Open the lightbox to see the first version too.",
+    playground_player_note:
+      "Tracks and album cover are sample content only.",
+    playground_tag_decomposition: "#Decomposition",
+    playground_tucasa_title: "Tu Casa - my own app design",
+    playground_tucasa_desc:
+      "The capstone of the App Design Intro course: a mobile app for browsing interior and furnishing ideas. From the splash screen and recommendations, through search with history and results, to favorites and profile. The interface is in Spanish.",
+    playground_decomp_title: "UI decompositions: Airbnb and App Store",
+    playground_decomp_desc:
+      "An exercise from the App Design Intro course: recreating existing screens to learn grids, spacing and components. Original on the left, my version on the right. Open the lightbox to see the second decomposition too.",
+    playground_tag_readability: "#Readability",
+    playground_tag_clarity: "#Clarity",
+    playground_tag_hierarchy: "#Hierarchy",
+    playground_pgnig_title: "Redesigned gas bill",
+    playground_pgnig_desc:
+      "A redesign of a PGNiG gas bill so that contrast and information hierarchy do their job: the key items (amount, due date, QR code) are visible at a glance, and the document is more readable and clear. Open the lightbox to see the original.",
+    playground_pgnig_note:
+      "A personal, unofficial exercise, not affiliated with PGNiG. The data on the bill is sample data.",
+    playground_tag_poster: "#Poster",
+    playground_tag_masking: "#Masking",
+    playground_tag_colorchange: "#ColorChange",
+    playground_tag_isometric: "#Isometric",
+    playground_poster_title: "\"New Winter Collection\" poster",
+    playground_poster_desc:
+      "A poster built in Photoshop: a photo, semi-transparent geometric shapes and glowing typography in a bold pink and blue palette.",
+    playground_recolor_title: "Masking and color change",
+    playground_recolor_desc:
+      "A Photoshop retouch: masking the jacket and background and changing the palette from purple-pink to green. Open the lightbox to see the original.",
+    playground_geoanim_title: "Simple geometric animation",
+    playground_geoanim_desc:
+      "A 6-second animation: colorful isometric blocks rise from a grid and disappear. An exercise in basic motion and color.",
+    playground_tag_retouch: "#Retouch",
+    playground_tag_colorgrading: "#ColorGrading",
+    playground_winter_title: "Removing people and shifting the color tone",
+    playground_winter_desc:
+      "A Photoshop retouch: removing people from the scene and shifting the color tone from warm to cold, giving the night photo a completely different mood. Open the lightbox to see the original.",
+    playground_back_btn: "Back to the homepage",
     footer_link_contact: "Contact",
     footer_link_cv: "CV",
     footer_link_privacy: "Privacy Policy",

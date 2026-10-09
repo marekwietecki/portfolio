@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <!-- Google Tag Manager 
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KP2BLH2V');
+    </script>
+     End Google Tag Manager -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-5WEZ1GN7W6"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      // 🔴 DOMYŚLNA ZGODA (BRAK ZGODY)
+      gtag("consent", "default", {
+        ad_storage: "denied",
+        analytics_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+      });
+
+      gtag("js", new Date());
+
+      // GA4
+      gtag("config", "G-5WEZ1GN7W6", {
+        anonymize_ip: true,
+      });
+
+      // Google Ads
+      gtag("config", "AW-17997930573");
+    </script>
+    <!-- CLARITY -->
+    <script type="text/javascript">
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "xpif7gh2qb");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creative Playground | Marek Wietecki</title>
+    <meta
+      name="description"
+      content="Creative Playground Marka Wieteckiego - branding, grafika i motion design: identyfikacja wizualna, animacje i eksperymenty graficzne."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/brand/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/brand/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/brand/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/brand/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="MW Design" />
+    <link rel="manifest" href="/assets/brand/site.webmanifest" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+      /* ==========================================================================
+   PAGE SPECIFIC STYLES — CREATIVE PLAYGROUND
+   ========================================================================== */
+
+      .arrow {
+        font-size: smaller;
+        color: var(--text-muted);
+      }
+
+      .breadcrumbs {
+        color: var(--text-secondary);
+        margin-left: 6vw;
+        cursor: pointer;
+        transition: color 0.2s ease;
+      }
+
+      .breadcrumbs:hover {
+        color: var(--text-heading);
+        text-decoration: underline;
+        text-decoration-color: var(--accent);
+      }
+
+      .currentCard {
+        opacity: 0.64;
+      }
+
+      .breadcrumbsWrapper {
+        padding-top: 1%;
+      }
+
+      .pgPage {
+        padding: 0 6vw;
+        margin-top: 6svh;
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .pgIntro {
+        max-width: 760px;
+        margin: 12px 0 0;
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--text-secondary);
+      }
+
+      .pgGrid {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 32px;
+        margin: 5vh 0 4vh;
+      }
+
+      .pgCard {
+        display: flex;
+        flex-direction: column;
+        background: var(--bg-card);
+        border: 1px solid var(--border-subtle);
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: var(--shadow-header);
+        transition: transform 0.3s ease, box-shadow 0.3s ease,
+          border-color 0.3s ease;
+      }
+
+      .pgCard:hover {
+        transform: translateY(-4px);
+        border-color: var(--accent);
+        box-shadow: var(--shadow-header-scrolled);
+      }
+
+      .pgCard {
+        grid-column: span 3;
+      }
+
+      .pgCard--wide {
+        grid-column: 1 / -1;
+      }
+
+      @media (min-width: 1100px) {
+        .pgCard:not(.pgCard--wide) {
+          grid-column: span 2;
+        }
+      }
+
+      .pgMedia {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background: #05060f;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .pgCard:not(.pgCard--wide) .pgMedia {
+        aspect-ratio: 4 / 3;
+      }
+
+      .pgMedia--doc {
+        background: #e4e7eb;
+        padding: 14px 0 0;
+      }
+
+      .pgMedia.pgMedia--doc img,
+      .pgMedia.pgMedia--mockup img,
+      .pgMedia.pgMedia--black img {
+        object-fit: contain;
+      }
+
+      .pgMedia--black {
+        background: #000;
+      }
+
+      .pgMedia--mockup {
+        background: #dcdcdc;
+      }
+
+      .pgMedia--ui {
+        background: #eef0f4;
+      }
+
+      .pgMedia--light {
+        background: #ffffff;
+      }
+
+      .pgMedia--poster {
+        background: #d75fa5;
+      }
+
+      .pgMedia.pgMedia--poster img {
+        object-fit: contain;
+      }
+
+      .pgMedia.pgMedia--black.pgMedia--top img {
+        object-fit: cover;
+        object-position: center 80%;
+      }
+
+      .pgMedia.pgMedia--face img {
+        object-position: center 20%;
+      }
+
+      .pgMedia.pgMedia--cover video {
+        object-fit: cover;
+        background: #2b86d1;
+      }
+
+      .pgMedia--wideimg {
+        aspect-ratio: 2.77 / 1;
+      }
+
+      .pgMedia.pgMedia--light img {
+        object-fit: contain;
+      }
+
+      .pgMedia.pgMedia--top img {
+        object-fit: cover;
+        object-position: top;
+      }
+
+      .pgMedia img,
+      .pgMedia video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .pgMedia video {
+        object-fit: contain;
+        background: #ffffff;
+      }
+
+      .pgMedia a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        cursor: zoom-in;
+      }
+
+      .pgMedia--brand {
+        flex-direction: column;
+        gap: 14px;
+        background: radial-gradient(
+            circle at 25% 20%,
+            rgba(70, 110, 255, 0.35),
+            transparent 55%
+          ),
+          radial-gradient(
+            circle at 80% 85%,
+            rgba(30, 60, 190, 0.45),
+            transparent 55%
+          ),
+          #0a1240;
+      }
+
+      .pgMedia--brand img {
+        width: 44%;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .pgMedia--brand span {
+        font-family: "Unbounded", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 0.75rem;
+        color: #fafafa;
+        opacity: 0.8;
+      }
+
+      .pgBody {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 20px 24px 24px;
+      }
+
+      .pgTags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .pgTag {
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 3px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border-subtle);
+        color: var(--text-muted);
+      }
+
+      .pgTitle {
+        margin: 4px 0 0;
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--text-heading);
+      }
+
+      .pgDesc {
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.55;
+        color: var(--text-secondary);
+      }
+
+      .pgNote {
+        margin: 0;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+      }
+
+      .pgLink {
+        margin-top: 4px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: var(--accent);
+        text-decoration: underline;
+        transition: opacity 0.2s ease;
+      }
+
+      .pgLink:hover {
+        opacity: 0.75;
+      }
+
+      @media (max-width: 794px) {
+        .pgGrid {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .pgCard,
+        .pgCard--wide {
+          grid-column: 1 / -1;
+        }
+        .pgBody {
+          padding: 16px 18px 20px;
+        }
+      }
+    </style>
+    <script src="/js/translations.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="/js/audience.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="headerNav">
+        <a class="headerLink" href="index.html">
+          <img
+            src="assets/brand/mw_logo_2.0.png"
+            alt="Logo MW Desgin - Marek Wietecki"
+            class="logo"
+          />
+        </a>
+        <button class="menuToggle" id="menuToggle" onclick="toggleMenu()">
+          ☰
+        </button>
+      </div>
+      <div class="headerLinks">
+        <a
+          class="headerLink"
+          href="oferta.html"
+          data-i18n="nav_offer"
+          data-business-href="oferta.html"
+          data-recruiter-href="index.html#projects"
+          >Oferta</a
+        >
+        <a class="headerLink" href="o-mnie.html" data-i18n="nav_about"
+          >O Mnie</a
+        >
+        <div class="settings-dropdown-wrapper">
+          <button
+            class="settings-toggle-btn"
+            id="settingsToggle"
+            aria-label="Ustawienia"
+            aria-expanded="false"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-settings2-icon lucide-settings-2"
+            >
+              <path d="M14 17H5" />
+              <path d="M19 7h-9" />
+              <circle cx="17" cy="17" r="3" />
+              <circle cx="7" cy="7" r="3" />
+            </svg>
+          </button>
+
+          <div class="settings-dropdown" id="settingsDropdown">
+            <!-- 1. Twoje flagi -->
+            <div class="lang-switcher">
+              <button
+                class="lang-btn"
+                data-lang="pl"
+                onclick="switchLanguage('pl')"
+              >
+                🇵🇱
+              </button>
+              <button
+                class="lang-btn"
+                data-lang="en"
+                onclick="switchLanguage('en')"
+              >
+                🇬🇧
+              </button>
+            </div>
+
+            <div class="settings-divider"></div>
+
+            <!-- Twoja ścieżka: dla firm / dla rekrutera -->
+            <div class="audience-switcher">
+              <button
+                class="audience-btn"
+                data-audience="business"
+                data-i18n="settings_audience_business"
+                onclick="setAudience('business')"
+              >
+                Dla firm
+              </button>
+              <button
+                class="audience-btn"
+                data-audience="recruiter"
+                data-i18n="settings_audience_recruiter"
+                onclick="setAudience('recruiter')"
+              >
+                Dla rekrutera
+              </button>
+            </div>
+
+            <div class="settings-divider"></div>
+
+            <!-- 2. Twój przełącznik motywu -->
+            <label class="theme-switch" aria-label="Przełącz motyw">
+              <input type="checkbox" id="themeToggle" />
+              <span class="theme-switch-track">
+                <span class="theme-switch-thumb">
+                  <svg class="icon-sun" viewBox="0 0 24 24">
+                    <path
+                      d="M12 4V2M12 22v-2M4 12H2m20 0h-2M6.34 6.34 4.93 4.93m14.14 14.14-1.41-1.41M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      fill="none"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                  <svg class="icon-moon" viewBox="0 0 24 24">
+                    <path
+                      d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="spaceX" id="spaceX"></section>
+    <!-- Breadcrumbsy -->
+    <div class="breadcrumbsWrapper">
+      <a
+        href="index.html"
+        class="breadcrumbs"
+        style="text-decoration: underline"
+        data-i18n="playground_breadcrumbs_main"
+        >Strona Główna</a
+      >
+      <span class="arrow">&nbsp;/&nbsp;</span>
+      <span class="currentCard" data-i18n="playground_breadcrumbs_current"
+        >Creative Playground</span
+      >
+    </div>
+
+    <main class="pgPage">
+      <h1 data-i18n="playground_h1">Creative Playground</h1>
+      <p class="pgIntro" data-i18n="playground_intro">
+        Miejsce na branding, grafikę i motion design. Część prac powstała dla
+        klientów, część to eksperymenty i nauka. Moim głównym obszarem jest UX
+        i produkt, ale tutaj pozwalam sobie na więcej wizualnej swobody.
+      </p>
+
+      <div class="pgGrid">
+        <article class="pgCard pgCard--wide">
+          <div class="pgMedia">
+            <video
+              controls
+              preload="none"
+              playsinline
+              poster="assets/playground/planetroad-motion-poster.jpg"
+            >
+              <source
+                src="assets/playground/planetroad-motion.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div class="pgBody">
+            <div class="pgTags">
+              <span class="pgTag">#Motion Design</span>
+              <span class="pgTag">#Kinetic Typography</span>
+              <span class="pgTag" data-i18n="playground_tag_learning"
+                >#Nauka</span
+              >
+            </div>
+            <h2 class="pgTitle" data-i18n="playground_motion_title">
+              PlanetRoad - animacja o usługach firmy
+            </h2>
+            <p class="pgDesc" data-i18n="playground_motion_desc">
+              35-sekundowa animacja: ruchoma typografia i uproszczone schematy
+              dróg, skrzyżowań i ronda. To moje pierwsze kroki w motion
+              designie, wciąż się w nim uczę.
+            </p>
+          </div>
+        </article>
+
+        <article class="pgCard">
+          <div class="pgMedia pgMedia--brand">
+            <img
+              src="assets/projects/identyfikacja-wizualna-PlanetRoad/PlanetRoad_logo_portfolio_white.png"
+              alt="Logo PlanetRoad"
+            />
+            <span data-i18n="playground_brand_badge">Identyfikacja Wizualna</span>
+          </div>
+          <div class="pgBody">
+            <div class="pgTags">
+              <span class="pgTag">#Branding</span>
+              <span class="pgTag">#IdentyfikacjaWizualna</span>
+              <span class="pgTag" data-i18n="playground_tag_client"
+                >#PracaDlaKlienta</span
+              >
+            </div>
+            <h2 class="pgTitle" data-i18n="playground_brand_title">
+              Identyfikacja Wizualna PlanetRoad
+            </h2>
+            <p class="pgDesc" data-i18n="playground_brand_desc">
+              Pełna identyfikacja marki: wywiad z CEO, strategia, system
+              kolorystyczny, logotyp, typografia i wdrożenie w mediach
+              społecznościowych.
+            </p>
+            <a
+              class="pgLink"
+              href="projects/identyfikacja-wizualna-PlanetRoad.html"
+              data-i18n="playground_brand_link"
+              >Zobacz case study →</a
+            >
+          </div>
+        </article>
+
+        <article class="pgCard">
+          <div class="pgMedia pgMedia--black">
+            <a
+              href="assets/playground/redbull-racing-2023.jpg"
+              data-lightbox="playground"
+              data-title="Red Bull Racing 2023 - banner"
+            >
+              <img
+                src="assets/playground/redbull-racing-2023.jpg"
+                alt="Banner z bolidem Red Bull Racing 2023 i paskiem partnerów"
+                loading="lazy"
+              />
+            </a>
+          </div>
+          <div class="pgBody">
+            <div class="pgTags">
+              <span class="pgTag" data-i18n="playground_tag_graphic"
+                >#Grafika</span
+              >
+              <span class="pgTag">#Banner</span>
+              <span class="pgTag" data-i18n="playground_tag_exercise"
+                >#Ćwiczenie</span
+              >
+            </div>
+            <h2 class="pgTitle" data-i18n="playground_banner_title">
+              Red Bull Racing 2023 - banner
+            </h2>
+            <p class="pgDesc" data-i18n="playground_banner_desc">
+              Ćwiczenie graficzne: kompozycja banera z ciemnym ujęciem bolidu i
+              paskiem partnerów.
+            </p>
+            <p class="pgNote" data-i18n="playground_banner_note">
+              Projekt własny, nieoficjalny, bez powiązania z marką Red Bull.
+            </p>
+          </div>
+        </article>
+
+        <article class="pgCard">
+          <div class="pgMedia pgMedia--doc">
+            <a
+              href="assets/playground/fair-notatnik.jpg"
+              data-lightbox="playground"
+              data-title="Notatnik dla Fundacji FAIR"
+            >
+              <img
+                src="assets/playground/fair-notatnik.jpg"
+                alt="Projekt strony notatnika w kratkę z logo Fundacji FAIR i stopką z danymi firmy"
+                loading="lazy"
+              />
+            </a>
+          </div>
+          <div class="pgBody">
+            <div class="pgTags">
+              <span class="pgTag" data-i18n="playground_tag_graphic"
+                >#Grafika</span
+              >
+              <span class="pgTag">#Print</span>
+              <span class="pgTag" data-i18n="playground_tag_client"
+                >#PracaDlaKlienta</span
+              >
+            </div>
+            <h2 class="pgTitle" data-i18n="playground_fair_title">
+              Notatnik dla Fundacji FAIR
+            </h2>
+            <p class="pgDesc" data-i18n="playground_fair_desc">
+              Projekt pojedynczej strony notatnika (A4). Fundacja chciała
+              prostoty: logo, kratka do notatek i stopka z danymi firmy.
+            </p>
+          </div>
+        </article>
+
+
+        <article class="pgCard pgCard--wide">
+          <div class="pgMedia pgMedia--light pgMedia--wideimg">
+            <a
+              href="assets/playground/tu-casa-aplikacja.webp"
+              data-lightbox="tu-casa"
+              data-title="Tu Casa - projekt własnej aplikacji"
+            >
+              <img
+                src="assets/playground/tu-casa-aplikacja.webp"
+                alt="Siedem ekranów aplikacji mobilnej Tu Casa: ekran startowy, rekomendacje, wyszukiwarka z historią, wyniki, ulubione i profil"
+                loading="lazy"
+              />
+            </a>
+          </div>
+          <div class="pgBody">
+            <div class="pgTags">
+              <span class="pgTag">#UI</span>
+              <span class="pgTag">#MobileDesign</span>
+              <span class="pgTag" data-i18n="playground_tag_learning"
+                >#Nauka</span
+              >
+            </div>
+            <h2 class="pgTitle" data-i18n="playground_tucasa_title">
+              Tu Casa - projekt własnej aplikacji
+            </h2>
+            <p class="pgDesc" data-i18n="playground_tucasa_desc">
+              Zwieńczenie kursu App Design Intro: aplikacja mobilna do
+              przeglądania pomysłów na wnętrza i wyposażenie. Od ekranu
+              startowego i rekomendacji, przez wyszukiwarkę z historią i wyniki,
+              po ulubione i profil. Interfejs jest w języku hiszpańskim.
+            </p>
+          </div>
+        </article>
+        <article class="pgCard">
+          <div class="pgMedia pgMedia--mockup">
+            <a
+              href="assets/playground/outer-banks-okladka.jpg"
+              data-lightbox="outer-banks"
+              data-title="Outer Banks - fikcyjna okładka książki"
+            >
+              <img
+                src="assets/playground/outer-banks-okladka.jpg"
+                alt="Fikcyjna okładka książki Outer Banks z lotniczym ujęciem wybrzeża, tytułem i nazwiskiem autora"
+                loading="lazy"
+              />
+            </a>
+            <a
+              href="assets/playground/outer-banks-plakat.webp"
+              data-lightbox="outer-banks"
+              data-title="Outer Banks - plakat do książki"
+              style="display: none"
+              aria-hidden="true"
+              tabindex="-1"
+            ></a>
+          </div>
+          <div class="pgBody">
+            <div class="pgTags">
+              <span class="pgTag" data-i18n="playground_tag_graphic"
+                >#Grafika</span
+              >
+              <span class="pgTag" data-i18n="playground_tag_cover">#Okładka</span>
+              <span class="pgTag" data-i18n="playground_tag_exercise"
+                >#Ćwiczenie</span
+              >
+            </div>
+            <h2 class="pgTitle" data-i18n="playground_cover_title">
+              Outer Banks - fikcyjna okładka książki
+            </h2>
+            <p class="pgDesc" data-i18n="playground_cover_desc">
+              Zabawa w Photoshopie: okładka książki na podstawie mojego
+              ulubionego wtedy serialu, pokazana na mockupie. W lightboxie
+              znajdziesz też plakat do tej książki.
+            </p>
+            <p class="pgNote" data-i18n="playground_cover_note">
+              Projekt własny, fikcyjny, bez powiązania z serialem czy
+              wydawnictwem.
+            </p>
+          </div>
+        </article>
+
+        <article class="pgCard">
+          <div class="pgMedia pgMedia--mockup pgMedia--ui">
+            <a
+              href="assets/playground/music-player-v2.png"
+              data-lightbox="music-player"
+              data-title="Odtwarzacz muzyki - wersja 2"
+            >
+              <img
+                src="assets/playground/music-player-v2.png"
+                alt="Interfejs odtwarzacza muzyki na mały, prawie kwadratowy ekran: lista utworów, okładka albumu, suwaki głośności i postępu oraz przyciski sterowania"
+                loading="lazy"
+              />
+            </a>
+            <a
+              href="assets/playground/music-player-v1.png"
+              data-lightbox="music-player"
+              data-title="Odtwarzacz muzyki - wersja 1"
+              style="display: none"
+              aria-hidden="true"
+              tabindex="-1"
+            ></a>
+          </div>
+          <div class="pgBody">
+            <div class="pgTags">
+              <span class="pgTag">#UI</span>
+              <span class="pgTag" data-i18n="playground_tag_graphic"
+                >#Grafika</span
+              >
+              <span class="pgTag" data-i18n="playground_tag_miniproject"
+                >#MiniProjekt</span
+              >
+            </div>
+            <h2 class="pgTitle" data-i18n="playground_player_title">
+              Odtwarzacz muzyki na małe ekrany
+            </h2>
+            <p class="pgDesc" data-i18n="playground_player_desc">
+              Mini projekt UI/graficzny: interfejs odtwarzacza na małe, prawie
+              kwadratowe ekrany pierwszych składanych telefonów, takich jak
+              Galaxy Z Flip. W lightboxie znajdziesz też pierwszą wersję.
+            </p>
+            <p class="pgNote" data-i18n="playground_player_note">
+              Utwory i okładka albumu to wyłącznie przykładowa zawartość.
+            </p>
+          </div>
+        </article>
+
+        <article class="pgCard">
+          <div class="pgMedia pgMedia--light pgMedia--top">
+            <a
+              href="assets/playground/app-design-intro-airbnb.webp"
+              data-lightbox="decomposition"
+              data-title="Dekompozycja: ekrany Airbnb - oryginał (lewo) i moja wersja (prawo)"
+            >
+              <img
+                src="assets/playground/app-design-intro-airbnb.webp"
+                alt="Porównanie ekranów aplikacji Airbnb: oryginał po lewej i moje odtworzenie po prawej"
+                loading="lazy"
+              />
+            </a>
+            <a
+              href="assets/playground/app-design-intro-appstore.webp"
+              data-lightbox="decomposition"
+              data-title="Dekompozycja: ekrany App Store - oryginał (lewo) i moja wersja (prawo)"
+              style="display: none"
+              aria-hidden="true"
+              tabindex="-1"
+            ></a>
+          </div>
+          <div class="pgBody">
+            <div class="pgTags">
+              <span class="pgTag">#UI</span>
+              <span class="pgTag" data-i18n="playground_tag_decomposition"
+                >#Dekompozycja</span
+              >
+              <span class="pgTag" data-i18n="playground_tag_learning"
+                >#Nauka</span
+              >
+            </div>
+            <h2 class="pgTitle" data-i18n="playground_decomp_title">
+              Dekompozycje UI: Airbnb i App Store
+            </h2>
+            <p class="pgDesc" data-i18n="playground_decomp_desc">
+              Ćwiczenie z kursu App Design Intro: odtwarzanie istniejących
+              ekranów, żeby nauczyć się siatek, odstępów i komponentów. Po
+              lewej oryginał, po prawej moja wersja. W lightboxie jest też
+              druga dekompozycja.
+            </p>
+          </div>
+        </article>
+
+        <article class="pgCard">
+          <div class="pgMedia pgMedia--light pgMedia--top">
+            <a
+              href="assets/playground/pgnig-rachunek-redesign.webp"
+              data-lightbox="pgnig"
+              data-title="Rachunek PGNiG - moja wersja"
+            >
+              <img
+                src="assets/playground/pgnig-rachunek-redesign.webp"
+                alt="Przeprojektowany rachunek za gaz PGNiG z wyraźną hierarchią: kwota do zapłaty, termin płatności i kod QR wyeksponowane na górze"
+                loading="lazy"
+              />
+            </a>
+            <a
+              href="assets/playground/pgnig-rachunek-oryginal.webp"
+              data-lightbox="pgnig"
+              data-title="Rachunek PGNiG - oryginał"
+              style="display: none"
+              aria-hidden="true"
+              tabindex="-1"
+            ></a>
+          </div>
+          <div class="pgBody">
+            <div class="pgTags">
+              <span class="pgTag" data-i18n="playground_tag_readability"
+                >#Czytelność</span
+              >
+              <span class="pgTag" data-i18n="playground_tag_clarity"
+                >#Przejrzystość</span
+              >
+              <span class="pgTag" data-i18n="playground_tag_hierarchy"
+                >#Hierarchia</span
+              >
+            </div>
+            <h2 class="pgTitle" data-i18n="playground_pgnig_title">
+              Przeprojektowany rachunek za gaz
+            </h2>
+            <p class="pgDesc" data-i18n="playground_pgnig_desc">
+              Redesign rachunku PGNiG, żeby kontrast i hierarchia informacji
+              działały tak, jak trzeba: najważniejsze (kwota, termin, kod QR)
+              widać od razu, a dokument jest czytelniejszy i bardziej
+              przejrzysty. W lightboxie znajdziesz oryginał.
+            </p>
+            <p class="pgNote" data-i18n="playground_pgnig_note">
+              Ćwiczenie własne, nieoficjalne, bez powiązania z PGNiG. Dane na
+              rachunku są przykładowe.
+            </p>
+          </div>
+        </article>
+
+        <article class="pgCard">
+          <div class="pgMedia pgMedia--poster">
+            <a
+              href="assets/playground/nowa-zimowa-kolekcja-plakat.webp"
+              data-lightbox="photoshop-plakat"
+              data-title="Plakat - Nowa zimowa kolekcja"
+            >
+              <img
+                src="assets/playground/nowa-zimowa-kolekcja-plakat.webp"
+                alt="Plakat Nowa zimowa kolekcja: kobieta w fioletowej kurtce na różowym tle, z niebieskimi półprzezroczystymi trójkątami i napisem"
+                loading="lazy"
+              />
+            </a>
+          </div>
+          <div class="pgBody">
+            <div class="pgTags">
+              <span class="pgTag" data-i18n="playground_tag_poster">#Plakat</span>
+              <span class="pgTag" data-i18n="playground_tag_graphic"
+                >#Grafika</span
+              >
+              <span class="pgTag">#Photoshop</span>
+            </div>
+            <h2 class="pgTitle" data-i18n="playground_poster_title">
+              Plakat „Nowa zimowa kolekcja"
+            </h2>
+            <p class="pgDesc" data-i18n="playground_poster_desc">
+              Plakat składany w Photoshopie: zdjęcie, półprzezroczyste,
+              geometryczne kształty i typografia z poświatą, w mocnej, różowo-
+              niebieskiej kolorystyce.
+            </p>
+          </div>
+        </article>
+
+        <article class="pgCard">
+          <div class="pgMedia pgMedia--light pgMedia--top pgMedia--face">
+            <a
+              href="assets/playground/kurtka-zielona-edycja.webp"
+              data-lightbox="photoshop-kolory"
+              data-title="Zmiana kolorów - moja wersja (zielona)"
+            >
+              <img
+                src="assets/playground/kurtka-zielona-edycja.webp"
+                alt="Zdjęcie kobiety w zielonej kurtce na zielonym tle, po zmianie kolorów w Photoshopie"
+                loading="lazy"
+              />
+            </a>
+            <a
+              href="assets/playground/kurtka-oryginal.webp"
+              data-lightbox="photoshop-kolory"
+              data-title="Zmiana kolorów - oryginał (fioletowa kurtka, różowe tło)"
+              style="display: none"
+              aria-hidden="true"
+              tabindex="-1"
+            ></a>
+          </div>
+          <div class="pgBody">
+            <div class="pgTags">
+              <span class="pgTag">#Photoshop</span>
+              <span class="pgTag" data-i18n="playground_tag_masking"
+                >#Maskowanie</span
+              >
+              <span class="pgTag" data-i18n="playground_tag_colorchange"
+                >#ZmianaKolorów</span
+              >
+            </div>
+            <h2 class="pgTitle" data-i18n="playground_recolor_title">
+              Maskowanie i zmiana kolorów
+            </h2>
+            <p class="pgDesc" data-i18n="playground_recolor_desc">
+              Retusz w Photoshopie: maskowanie kurtki i tła oraz zmiana
+              kolorystyki z fioletowo-różowej na zieloną. W lightboxie
+              znajdziesz oryginał.
+            </p>
+          </div>
+        </article>
+
+        <article class="pgCard">
+          <div class="pgMedia pgMedia--cover">
+            <video
+              controls
+              loop
+              muted
+              preload="none"
+              playsinline
+              poster="assets/playground/simple-animation-poster.jpg"
+            >
+              <source
+                src="assets/playground/simple-animation.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div class="pgBody">
+            <div class="pgTags">
+              <span class="pgTag">#Motion Design</span>
+              <span class="pgTag" data-i18n="playground_tag_isometric"
+                >#Izometria</span
+              >
+              <span class="pgTag" data-i18n="playground_tag_learning"
+                >#Nauka</span
+              >
+            </div>
+            <h2 class="pgTitle" data-i18n="playground_geoanim_title">
+              Prosta animacja geometryczna
+            </h2>
+            <p class="pgDesc" data-i18n="playground_geoanim_desc">
+              6-sekundowa animacja: kolorowe, izometryczne bloki wyrastają z
+              siatki i znikają. Ćwiczenie podstaw ruchu i kolorystyki.
+            </p>
+          </div>
+        </article>
+
+        <article class="pgCard">
+          <div class="pgMedia pgMedia--top pgMedia--black">
+            <a
+              href="assets/playground/zima-retusz-zimna.webp"
+              data-lightbox="photoshop-zima"
+              data-title="Retusz - moja wersja (zimna tonacja, bez ludzi)"
+            >
+              <img
+                src="assets/playground/zima-retusz-zimna.webp"
+                alt="Nocne zdjęcie górskiej miejscowości zimą po retuszu: zimna, niebieska tonacja, bez ludzi na drodze"
+                loading="lazy"
+              />
+            </a>
+            <a
+              href="assets/playground/zima-oryginal.webp"
+              data-lightbox="photoshop-zima"
+              data-title="Retusz - oryginał (ciepła tonacja, z ludźmi)"
+              style="display: none"
+              aria-hidden="true"
+              tabindex="-1"
+            ></a>
+          </div>
+          <div class="pgBody">
+            <div class="pgTags">
+              <span class="pgTag">#Photoshop</span>
+              <span class="pgTag" data-i18n="playground_tag_retouch"
+                >#Retusz</span
+              >
+              <span class="pgTag" data-i18n="playground_tag_colorgrading"
+                >#Kolorystyka</span
+              >
+            </div>
+            <h2 class="pgTitle" data-i18n="playground_winter_title">
+              Usuwanie osób i zmiana tonacji
+            </h2>
+            <p class="pgDesc" data-i18n="playground_winter_desc">
+              Retusz w Photoshopie: usunięcie ludzi ze sceny i zmiana tonacji
+              barw z ciepłej na zimną, żeby nocne zdjęcie zyskało zupełnie inny
+              nastrój. W lightboxie znajdziesz oryginał.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div style="display: flex; justify-content: center">
+        <a
+          class="btn-outline"
+          style="margin-bottom: 40px"
+          href="index.html"
+          data-i18n="playground_back_btn"
+          >Powrót do strony głównej</a
+        >
+      </div>
+    </main>
+
+    <div id="cookie-banner" class="cookie-banner">
+      <div class="cookie-text">
+        🍪 Używam cookies do analizy ruchu i ciągłego ulepszania działania
+        strony.
+        <!--<a href="/privacy">Polityka prywatności</a>-->
+      </div>
+
+      <div class="cookie-buttons">
+        <button id="accept-cookies" class="cookie-btn primary">
+          Akceptuję
+        </button>
+        <button id="decline-cookies" class="cookie-btn secondary">
+          Odrzucam
+        </button>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="logoWithLinks">
+        <a href="index.html" class="logo-link">
+          <img
+            src="./assets/brand/mw_logo_white_2.0.png"
+            class="logo-monogram"
+            alt="Marek Wietecki Design Logo"
+          />
+        </a>
+        <div class="social-links">
+          <a
+            href="https://www.linkedin.com/in/marekwietecki/"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a
+            href="https://www.behance.net/marekwietecki"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="fab fa-behance"></i>
+          </a>
+          <a
+            href="https://www.youtube.com/@marekwietecki"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footerLinks">
+        <a class="navLinks" href="index.html#top">
+          <span data-i18n="footer_link_main">&nbsp;Strona Główna</span>
+        </a>
+
+        <a class="navLinks" href="index.html#projects">
+          <span data-i18n="footer_link_projects">&nbsp;Projekty</span>
+        </a>
+
+        <a class="navLinks" href="playground.html">
+          <span data-i18n="footer_link_playground">&nbsp;Playground</span>
+        </a>
+
+        <a class="navLinks" href="index.html#contact">
+          <span data-i18n="footer_link_contact">&nbsp;Kontakt</span>
+        </a>
+
+        <a
+          href="cv.html"
+          class="navLinks"
+        >
+          <span data-i18n="footer_link_cv">CV</span>
+        </a>
+        <a class="navLinks" href="polityka-prywatnosci.html">
+          <span data-i18n="footer_link_privacy">Polityka Prywatności</span>
+        </a>
+        <!-- testimonials -->
+      </div>
+      <div class="footerTexts">
+        <p class="footerText" data-i18n="footer_copyright">
+          © Marek Wietecki 2026. Treści chronione prawem autorskim.
+        </p>
+      </div>
+    </footer>
+    <!-- Scroll Reveal (fade-in przy wjeżdżaniu na ekran) -->
+    <script src="js/reveal-elements.js"></script>
+    <script>
+      initRevealElements([".pgCard"]);
+    </script>
+    <script src="js/header.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/cursor.js"></script>
+  </body>
+  <script src="js/cookie.js"></script>
+</html>
