@@ -241,7 +241,54 @@
       }
 
       .pgMedia--wideimg {
-        aspect-ratio: 2.77 / 1;
+        aspect-ratio: 2.49 / 1;
+      }
+
+      .pgMedia--slides {
+        position: relative;
+      }
+
+      .pgMedia--slides .pgSlide {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 0.6s ease;
+        z-index: 0;
+      }
+
+      .pgMedia--slides .pgSlide.is-active {
+        opacity: 1;
+        z-index: 1;
+      }
+
+      .pgDots {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 10px;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        pointer-events: none;
+      }
+
+      .pgDots button {
+        pointer-events: auto;
+        width: 9px;
+        height: 9px;
+        padding: 0;
+        border-radius: 50%;
+        border: 1px solid rgba(0, 0, 0, 0.35);
+        background: rgba(255, 255, 255, 0.85);
+        cursor: pointer;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+      }
+
+      .pgDots button.is-active {
+        background: var(--accent);
+        border-color: var(--accent);
+        transform: scale(1.2);
       }
 
       .pgMedia.pgMedia--light img {
@@ -687,10 +734,11 @@
               Tu Casa - projekt własnej aplikacji
             </h2>
             <p class="pgDesc" data-i18n="playground_tucasa_desc">
-              Zwieńczenie kursu App Design Intro: aplikacja mobilna do
-              przeglądania pomysłów na wnętrza i wyposażenie. Od ekranu
-              startowego i rekomendacji, przez wyszukiwarkę z historią i wyniki,
-              po ulubione i profil. Interfejs jest w języku hiszpańskim.
+              Mój pierwszy projekt aplikacji, zwieńczenie kursu App Design
+              Intro: aplikacja mobilna do przeglądania pomysłów na wnętrza i
+              wyposażenie. Od ekranu startowego i rekomendacji, przez
+              wyszukiwarkę z historią i wyniki, po ulubione i profil. Przy
+              okazji jest zrobiony po hiszpańsku.
             </p>
           </div>
         </article>
@@ -774,7 +822,7 @@
               >
             </div>
             <h2 class="pgTitle" data-i18n="playground_player_title">
-              Odtwarzacz muzyki na małe ekrany
+              Odtwarzacz muzyki na urządzenia foldable
             </h2>
             <p class="pgDesc" data-i18n="playground_player_desc">
               Mini projekt UI/graficzny: interfejs odtwarzacza na małe, prawie
@@ -788,26 +836,73 @@
         </article>
 
         <article class="pgCard">
-          <div class="pgMedia pgMedia--light pgMedia--top">
+          <div
+            class="pgMedia pgMedia--light pgMedia--slides"
+            data-slideshow
+            aria-roledescription="carousel"
+            aria-label="Dekompozycje ekranów App Store i Airbnb: oryginał i moja wersja"
+          >
             <a
-              href="assets/playground/app-design-intro-airbnb.webp"
+              class="pgSlide is-active"
+              href="assets/playground/app-design-intro-appstore-1.webp"
               data-lightbox="decomposition"
-              data-title="Dekompozycja: ekrany Airbnb - oryginał (lewo) i moja wersja (prawo)"
+              data-title="Dekompozycja App Store 1/3 - oryginał (lewo) i moja wersja (prawo)"
             >
               <img
-                src="assets/playground/app-design-intro-airbnb.webp"
-                alt="Porównanie ekranów aplikacji Airbnb: oryginał po lewej i moje odtworzenie po prawej"
+                src="assets/playground/app-design-intro-appstore-1.webp"
+                alt="Ekran Today w App Store: oryginał z Roblox po lewej i moja wersja z Monopoly po prawej"
                 loading="lazy"
               />
             </a>
             <a
-              href="assets/playground/app-design-intro-appstore.webp"
+              class="pgSlide"
+              href="assets/playground/app-design-intro-appstore-2.webp"
               data-lightbox="decomposition"
-              data-title="Dekompozycja: ekrany App Store - oryginał (lewo) i moja wersja (prawo)"
-              style="display: none"
-              aria-hidden="true"
-              tabindex="-1"
-            ></a>
+              data-title="Dekompozycja App Store 2/3 - oryginał (lewo) i moja wersja (prawo)"
+            >
+              <img
+                src="assets/playground/app-design-intro-appstore-2.webp"
+                alt="Sekcja What we're playing now w App Store: oryginał po lewej i moja wersja po prawej"
+                loading="lazy"
+              />
+            </a>
+            <a
+              class="pgSlide"
+              href="assets/playground/app-design-intro-appstore-3.webp"
+              data-lightbox="decomposition"
+              data-title="Dekompozycja App Store 3/3 - oryginał (lewo) i moja wersja (prawo)"
+            >
+              <img
+                src="assets/playground/app-design-intro-appstore-3.webp"
+                alt="Sekcja Board Games Reimagined w App Store: oryginał po lewej i moja wersja po prawej"
+                loading="lazy"
+              />
+            </a>
+            <a
+              class="pgSlide"
+              href="assets/playground/app-design-intro-airbnb-1.webp"
+              data-lightbox="decomposition"
+              data-title="Dekompozycja Airbnb 1/2 - oryginał (lewo) i moja wersja (prawo)"
+            >
+              <img
+                src="assets/playground/app-design-intro-airbnb-1.webp"
+                alt="Ekran główny aplikacji Airbnb: oryginał po lewej i moje odtworzenie po prawej"
+                loading="lazy"
+              />
+            </a>
+            <a
+              class="pgSlide"
+              href="assets/playground/app-design-intro-airbnb-2.webp"
+              data-lightbox="decomposition"
+              data-title="Dekompozycja Airbnb 2/2 - oryginał (lewo) i moja wersja (prawo)"
+            >
+              <img
+                src="assets/playground/app-design-intro-airbnb-2.webp"
+                alt="Ekran wyszukiwania Where to w aplikacji Airbnb: oryginał po lewej i moje odtworzenie po prawej"
+                loading="lazy"
+              />
+            </a>
+            <div class="pgDots" data-dots></div>
           </div>
           <div class="pgBody">
             <div class="pgTags">
@@ -825,8 +920,8 @@
             <p class="pgDesc" data-i18n="playground_decomp_desc">
               Ćwiczenie z kursu App Design Intro: odtwarzanie istniejących
               ekranów, żeby nauczyć się siatek, odstępów i komponentów. Po
-              lewej oryginał, po prawej moja wersja. W lightboxie jest też
-              druga dekompozycja.
+              lewej oryginał, po prawej moja wersja. Pokaz slajdów przechodzi
+              przez trzy ekrany App Store i dwa ekrany Airbnb.
             </p>
           </div>
         </article>
@@ -1138,6 +1233,67 @@
     <script src="js/reveal-elements.js"></script>
     <script>
       initRevealElements([".pgCard"]);
+    </script>
+    <script>
+      (function () {
+        const reduceMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        document.querySelectorAll("[data-slideshow]").forEach((box) => {
+          const slides = [...box.querySelectorAll(".pgSlide")];
+          const dotsWrap = box.querySelector("[data-dots]");
+          if (slides.length < 2 || !dotsWrap) return;
+
+          let index = 0;
+          let timer = null;
+
+          const dots = slides.map((_, i) => {
+            const b = document.createElement("button");
+            b.type = "button";
+            b.setAttribute("aria-label", "Slajd " + (i + 1));
+            b.addEventListener("click", () => {
+              show(i);
+              restart();
+            });
+            dotsWrap.appendChild(b);
+            return b;
+          });
+
+          function show(i) {
+            index = i;
+            slides.forEach((s, n) => s.classList.toggle("is-active", n === i));
+            dots.forEach((d, n) => d.classList.toggle("is-active", n === i));
+          }
+
+          function next() {
+            show((index + 1) % slides.length);
+          }
+
+          function stop() {
+            clearInterval(timer);
+            timer = null;
+          }
+
+          function start() {
+            if (reduceMotion || timer) return;
+            timer = setInterval(next, 3500);
+          }
+
+          function restart() {
+            stop();
+            start();
+          }
+
+          box.addEventListener("mouseenter", stop);
+          box.addEventListener("mouseleave", start);
+          box.addEventListener("focusin", stop);
+          box.addEventListener("focusout", start);
+
+          show(0);
+          start();
+        });
+      })();
     </script>
     <script src="js/header.js"></script>
     <script src="js/settings.js"></script>

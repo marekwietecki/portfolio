@@ -58,7 +58,7 @@ const translations = {
     playground_cover_note:
       "Projekt własny, fikcyjny, bez powiązania z serialem czy wydawnictwem.",
     playground_tag_miniproject: "#MiniProjekt",
-    playground_player_title: "Odtwarzacz muzyki na małe ekrany",
+    playground_player_title: "Odtwarzacz muzyki na urządzenia foldable",
     playground_player_desc:
       "Mini projekt UI/graficzny: interfejs odtwarzacza na małe, prawie kwadratowe ekrany pierwszych składanych telefonów, takich jak Galaxy Z Flip. W lightboxie znajdziesz też pierwszą wersję.",
     playground_player_note:
@@ -66,10 +66,10 @@ const translations = {
     playground_tag_decomposition: "#Dekompozycja",
     playground_tucasa_title: "Tu Casa - projekt własnej aplikacji",
     playground_tucasa_desc:
-      "Zwieńczenie kursu App Design Intro: aplikacja mobilna do przeglądania pomysłów na wnętrza i wyposażenie. Od ekranu startowego i rekomendacji, przez wyszukiwarkę z historią i wyniki, po ulubione i profil. Interfejs jest w języku hiszpańskim.",
+      "Mój pierwszy projekt aplikacji, zwieńczenie kursu App Design Intro: aplikacja mobilna do przeglądania pomysłów na wnętrza i wyposażenie. Od ekranu startowego i rekomendacji, przez wyszukiwarkę z historią i wyniki, po ulubione i profil. Przy okazji jest zrobiony po hiszpańsku.",
     playground_decomp_title: "Dekompozycje UI: Airbnb i App Store",
     playground_decomp_desc:
-      "Ćwiczenie z kursu App Design Intro: odtwarzanie istniejących ekranów, żeby nauczyć się siatek, odstępów i komponentów. Po lewej oryginał, po prawej moja wersja. W lightboxie jest też druga dekompozycja.",
+      "Ćwiczenie z kursu App Design Intro: odtwarzanie istniejących ekranów, żeby nauczyć się siatek, odstępów i komponentów. Po lewej oryginał, po prawej moja wersja. Pokaz slajdów przechodzi przez trzy ekrany App Store i dwa ekrany Airbnb.",
     playground_tag_readability: "#Czytelność",
     playground_tag_clarity: "#Przejrzystość",
     playground_tag_hierarchy: "#Hierarchia",
@@ -2190,7 +2190,7 @@ const translations = {
     playground_cover_note:
       "Personal, fictional project, not affiliated with the series or any publisher.",
     playground_tag_miniproject: "#MiniProject",
-    playground_player_title: "Music player for small screens",
+    playground_player_title: "Music player for foldable devices",
     playground_player_desc:
       "A UI/graphic mini project: a music player interface for the small, nearly square screens of early foldable phones such as the Galaxy Z Flip. Open the lightbox to see the first version too.",
     playground_player_note:
@@ -2198,10 +2198,10 @@ const translations = {
     playground_tag_decomposition: "#Decomposition",
     playground_tucasa_title: "Tu Casa - my own app design",
     playground_tucasa_desc:
-      "The capstone of the App Design Intro course: a mobile app for browsing interior and furnishing ideas. From the splash screen and recommendations, through search with history and results, to favorites and profile. The interface is in Spanish.",
+      "My first app project and the capstone of the App Design Intro course: a mobile app for browsing interior and furnishing ideas. From the splash screen and recommendations, through search with history and results, to favorites and profile. It happens to be designed in Spanish.",
     playground_decomp_title: "UI decompositions: Airbnb and App Store",
     playground_decomp_desc:
-      "An exercise from the App Design Intro course: recreating existing screens to learn grids, spacing and components. Original on the left, my version on the right. Open the lightbox to see the second decomposition too.",
+      "An exercise from the App Design Intro course: recreating existing screens to learn grids, spacing and components. Original on the left, my version on the right. The slideshow runs through three App Store screens and two Airbnb screens.",
     playground_tag_readability: "#Readability",
     playground_tag_clarity: "#Clarity",
     playground_tag_hierarchy: "#Hierarchy",
