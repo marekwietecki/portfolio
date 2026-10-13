@@ -59,6 +59,39 @@
       name="description"
       content="Creative Playground Marka Wieteckiego - branding, grafika i motion design: identyfikacja wizualna, animacje i eksperymenty graficzne."
     />
+    <link rel="canonical" href="https://www.marekwietecki.pl/playground.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Marek Wietecki" />
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:title" content="Creative Playground | Marek Wietecki" />
+    <meta
+      property="og:description"
+      content="Branding, grafika i motion design: identyfikacja wizualna, animacje i eksperymenty graficzne."
+    />
+    <meta
+      property="og:url"
+      content="https://www.marekwietecki.pl/playground.html"
+    />
+    <meta
+      property="og:image"
+      content="https://www.marekwietecki.pl/assets/playground/simple-animation-poster.jpg"
+    />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="720" />
+    <meta
+      property="og:image:alt"
+      content="Kolorowe, izometryczne bloki wyrastające z siatki - kadr z animacji w Creative Playground"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Creative Playground | Marek Wietecki" />
+    <meta
+      name="twitter:description"
+      content="Branding, grafika i motion design: identyfikacja wizualna, animacje i eksperymenty graficzne."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.marekwietecki.pl/assets/playground/simple-animation-poster.jpg"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -194,7 +227,7 @@
 
       .pgMedia--doc {
         background: #e4e7eb;
-        padding: 14px 0 0;
+        padding: 14px 0;
       }
 
       .pgMedia.pgMedia--doc img,
@@ -242,7 +275,7 @@
       }
 
       .pgMedia--wideimg {
-        aspect-ratio: 2.49 / 1;
+        aspect-ratio: 2000 / 703;
       }
 
       .pgFilters {
@@ -283,25 +316,43 @@
 
       .pgPause {
         position: absolute;
-        top: 10px;
-        right: 10px;
+        top: 8px;
+        right: 8px;
         z-index: 3;
-        width: 32px;
-        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
         padding: 0;
-        border-radius: 50%;
-        border: 1px solid rgba(0, 0, 0, 0.25);
-        background: rgba(255, 255, 255, 0.9);
-        color: #1a1a1a;
-        font-size: 0.6rem;
-        letter-spacing: -1px;
+        border: none;
+        background: transparent;
+        color: #ffffff;
         cursor: pointer;
-        transition: transform 0.2s ease, border-color 0.2s ease;
+        filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.75));
+        transition: transform 0.2s ease;
+      }
+
+      .pgPause .icon-play {
+        display: none;
+      }
+
+      .pgPause[aria-pressed="true"] .icon-play {
+        display: block;
+      }
+
+      .pgPause[aria-pressed="true"] .icon-pause {
+        display: none;
       }
 
       .pgPause:hover {
-        transform: scale(1.08);
-        border-color: var(--accent);
+        transform: scale(1.12);
+      }
+
+      .pgPause:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+        border-radius: 8px;
       }
 
       .pgMedia--slides {
@@ -757,7 +808,9 @@
             </h2>
             <p class="pgDesc" data-i18n="playground_fair_desc">
               Projekt pojedynczej strony notatnika (A4). Fundacja chciała
-              prostoty: logo, kratka do notatek i stopka z danymi firmy.
+              prostoty: logo, kratka do notatek i stopka z danymi firmy. Logo
+              zostało zwektoryzowane, ponieważ fundacja nie miała jego wersji
+              SVG.
             </p>
           </div>
         </article>
@@ -838,7 +891,8 @@
               aria-label="Wstrzymaj pokaz slajdów"
               data-i18n="[aria-label]playground_slideshow_toggle"
             >
-              <span aria-hidden="true">❚❚</span>
+              <svg class="icon-pause" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="3" width="5" height="18" rx="1"/><rect x="5" y="3" width="5" height="18" rx="1"/></svg>
+              <svg class="icon-play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
             </button>
             <div class="pgDots" data-dots></div>
           </div>
@@ -900,8 +954,15 @@
         </article>
 
         <article class="pgCard" data-category="ui">
-          <div class="pgMedia pgMedia--light pgMedia--top">
+          <div
+            class="pgMedia pgMedia--light pgMedia--top pgMedia--slides"
+            data-slideshow
+            data-transition="fade"
+            aria-roledescription="carousel"
+            aria-label="Przejście między oryginałem a moją wersją rachunku"
+          >
             <a
+              class="pgSlide is-active"
               href="assets/playground/pgnig-rachunek-redesign.webp"
               data-lightbox="pgnig"
               data-title="Rachunek PGNiG - moja wersja"
@@ -913,13 +974,29 @@
               />
             </a>
             <a
+              class="pgSlide"
               href="assets/playground/pgnig-rachunek-oryginal.webp"
               data-lightbox="pgnig"
               data-title="Rachunek PGNiG - oryginał"
-              style="display: none"
-              aria-hidden="true"
-              tabindex="-1"
-            ></a>
+            >
+              <img
+                src="assets/playground/pgnig-rachunek-oryginal.webp"
+                alt="Oryginalny rachunek za gaz PGNiG, gęsty i trudny do przejrzenia"
+                loading="lazy"
+              />
+            </a>
+            <button
+              type="button"
+              class="pgPause"
+              data-pause
+              aria-pressed="false"
+              aria-label="Wstrzymaj pokaz slajdów"
+              data-i18n="[aria-label]playground_slideshow_toggle"
+            >
+              <svg class="icon-pause" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="3" width="5" height="18" rx="1"/><rect x="5" y="3" width="5" height="18" rx="1"/></svg>
+              <svg class="icon-play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+            </button>
+            <div class="pgDots" data-dots></div>
           </div>
           <div class="pgBody">
             <div class="pgTags">
@@ -940,7 +1017,8 @@
               Redesign rachunku PGNiG, żeby kontrast i hierarchia informacji
               działały tak, jak trzeba: najważniejsze (kwota, termin, kod QR)
               widać od razu, a dokument jest czytelniejszy i bardziej
-              przejrzysty. W lightboxie znajdziesz oryginał.
+              przejrzysty. Pokaz płynnie przechodzi między oryginałem a moją
+              wersją.
             </p>
             <p class="pgNote" data-i18n="playground_pgnig_note">
               Ćwiczenie własne, nieoficjalne, bez powiązania z PGNiG. Dane na
@@ -950,18 +1028,26 @@
         </article>
 
         <article class="pgCard" data-category="ui">
-          <div class="pgMedia pgMedia--mockup pgMedia--ui">
+          <div class="pgMedia">
+            <a
+              href="assets/playground/music-player-showcase.webp"
+              data-lightbox="music-player"
+              data-title="Odtwarzacz muzyki - prezentacja na urządzeniach foldable"
+            >
+              <img
+                src="assets/playground/music-player-showcase.webp"
+                alt="Prezentacja odtwarzacza muzyki iMusic na dwóch składanych telefonach: lista utworów z okładką albumu i sterowaniem oraz widok na mały, prawie kwadratowy ekran"
+                loading="lazy"
+              />
+            </a>
             <a
               href="assets/playground/music-player-v2.png"
               data-lightbox="music-player"
               data-title="Odtwarzacz muzyki - wersja 2"
-            >
-              <img
-                src="assets/playground/music-player-v2.png"
-                alt="Interfejs odtwarzacza muzyki na mały, prawie kwadratowy ekran: lista utworów, okładka albumu, suwaki głośności i postępu oraz przyciski sterowania"
-                loading="lazy"
-              />
-            </a>
+              style="display: none"
+              aria-hidden="true"
+              tabindex="-1"
+            ></a>
             <a
               href="assets/playground/music-player-v1.png"
               data-lightbox="music-player"
@@ -996,8 +1082,15 @@
         </article>
 
         <article class="pgCard" data-category="graphic">
-          <div class="pgMedia pgMedia--mockup">
+          <div
+            class="pgMedia pgMedia--mockup pgMedia--slides"
+            data-slideshow
+            data-transition="fade"
+            aria-roledescription="carousel"
+            aria-label="Przejście między okładką książki Outer Banks a plakatem do niej"
+          >
             <a
+              class="pgSlide is-active"
               href="assets/playground/outer-banks-okladka.jpg"
               data-lightbox="outer-banks"
               data-title="Outer Banks - fikcyjna okładka książki"
@@ -1009,13 +1102,29 @@
               />
             </a>
             <a
+              class="pgSlide"
               href="assets/playground/outer-banks-plakat.webp"
               data-lightbox="outer-banks"
               data-title="Outer Banks - plakat do książki"
-              style="display: none"
-              aria-hidden="true"
-              tabindex="-1"
-            ></a>
+            >
+              <img
+                src="assets/playground/outer-banks-plakat.webp"
+                alt="Plakat reklamowy książki Outer Banks na zielono-turkusowym tle z okładką pośrodku i napisem o dostępności w księgarniach"
+                loading="lazy"
+              />
+            </a>
+            <button
+              type="button"
+              class="pgPause"
+              data-pause
+              aria-pressed="false"
+              aria-label="Wstrzymaj pokaz slajdów"
+              data-i18n="[aria-label]playground_slideshow_toggle"
+            >
+              <svg class="icon-pause" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="3" width="5" height="18" rx="1"/><rect x="5" y="3" width="5" height="18" rx="1"/></svg>
+              <svg class="icon-play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+            </button>
+            <div class="pgDots" data-dots></div>
           </div>
           <div class="pgBody">
             <div class="pgTags">
@@ -1032,12 +1141,12 @@
             </h2>
             <p class="pgDesc" data-i18n="playground_cover_desc">
               Zabawa w Photoshopie: okładka książki na podstawie mojego
-              ulubionego wtedy serialu, pokazana na mockupie. W lightboxie
-              znajdziesz też plakat do tej książki.
+              ulubionego wtedy serialu, pokazana na mockupie. Pokaz płynnie
+              przechodzi między okładką a plakatem do tej książki.
             </p>
             <p class="pgNote" data-i18n="playground_cover_note">
-              Projekt własny, fikcyjny, bez powiązania z serialem czy
-              wydawnictwem.
+              Projekt własny, fikcyjny, bez powiązania z serialem, Netflixem
+              ani wydawnictwem.
             </p>
           </div>
         </article>
@@ -1048,7 +1157,8 @@
               controls
               loop
               muted
-              preload="none"
+              data-autoplay
+              preload="metadata"
               playsinline
               poster="assets/playground/simple-animation-poster.jpg"
             >
@@ -1110,7 +1220,8 @@
               aria-label="Wstrzymaj pokaz slajdów"
               data-i18n="[aria-label]playground_slideshow_toggle"
             >
-              <span aria-hidden="true">❚❚</span>
+              <svg class="icon-pause" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="3" width="5" height="18" rx="1"/><rect x="5" y="3" width="5" height="18" rx="1"/></svg>
+              <svg class="icon-play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
             </button>
             <div class="pgDots" data-dots></div>
           </div>
@@ -1168,7 +1279,8 @@
               aria-label="Wstrzymaj pokaz slajdów"
               data-i18n="[aria-label]playground_slideshow_toggle"
             >
-              <span aria-hidden="true">❚❚</span>
+              <svg class="icon-pause" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="3" width="5" height="18" rx="1"/><rect x="5" y="3" width="5" height="18" rx="1"/></svg>
+              <svg class="icon-play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
             </button>
             <div class="pgDots" data-dots></div>
           </div>
@@ -1372,6 +1484,36 @@
           "(prefers-reduced-motion: reduce)"
         ).matches;
 
+        /* --- Autoplay wideo (tylko gdy widoczne, bez dźwięku) --- */
+        document.querySelectorAll("video[data-autoplay]").forEach((video) => {
+          if (reduceMotion || !("IntersectionObserver" in window)) return;
+          let userPaused = false;
+          let autoPaused = false;
+          video.addEventListener("pause", () => {
+            if (!autoPaused && !video.ended) userPaused = true;
+            autoPaused = false;
+          });
+          video.addEventListener("play", () => {
+            userPaused = false;
+          });
+          new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  if (!userPaused && video.paused) {
+                    const p = video.play();
+                    if (p && p.catch) p.catch(() => {});
+                  }
+                } else if (!video.paused) {
+                  autoPaused = true;
+                  video.pause();
+                }
+              });
+            },
+            { threshold: 0.5 }
+          ).observe(video);
+        });
+
         /* --- Pokaz slajdów (fade lub wsuwanie z boku) --- */
         document.querySelectorAll("[data-slideshow]").forEach((box) => {
           const slides = [...box.querySelectorAll(".pgSlide")];
@@ -1442,14 +1584,13 @@
             if (userPaused || timer) return;
             timer = setInterval(
               () => show((index + 1) % slides.length),
-              slideMode ? 3500 : 3200
+              2500
             );
           }
 
           function syncButton() {
             if (!pauseBtn) return;
             pauseBtn.setAttribute("aria-pressed", String(userPaused));
-            pauseBtn.firstElementChild.textContent = userPaused ? "▶" : "❚❚";
           }
 
           if (pauseBtn) {

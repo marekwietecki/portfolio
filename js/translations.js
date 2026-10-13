@@ -50,17 +50,17 @@ const translations = {
       "Projekt własny, nieoficjalny, bez powiązania z marką Red Bull.",
     playground_fair_title: "Notatnik dla Fundacji FAIR",
     playground_fair_desc:
-      "Projekt pojedynczej strony notatnika (A4). Fundacja chciała prostoty: logo, kratka do notatek i stopka z danymi firmy.",
+      "Projekt pojedynczej strony notatnika (A4). Fundacja chciała prostoty: logo, kratka do notatek i stopka z danymi firmy. Logo zostało zwektoryzowane, ponieważ fundacja nie miała jego wersji SVG.",
     playground_tag_cover: "#Okładka",
     playground_cover_title: "Outer Banks - fikcyjna okładka książki",
     playground_cover_desc:
-      "Zabawa w Photoshopie: okładka książki na podstawie mojego ulubionego wtedy serialu, pokazana na mockupie. W lightboxie znajdziesz też plakat do tej książki.",
+      "Zabawa w Photoshopie: okładka książki na podstawie mojego ulubionego wtedy serialu, pokazana na mockupie. Pokaz płynnie przechodzi między okładką a plakatem do tej książki.",
     playground_cover_note:
-      "Projekt własny, fikcyjny, bez powiązania z serialem czy wydawnictwem.",
+      "Projekt własny, fikcyjny, bez powiązania z serialem, Netflixem ani wydawnictwem.",
     playground_tag_miniproject: "#MiniProjekt",
     playground_player_title: "Odtwarzacz muzyki na urządzenia foldable",
     playground_player_desc:
-      "Mini projekt UI/graficzny: interfejs odtwarzacza na małe, prawie kwadratowe ekrany pierwszych składanych telefonów, takich jak Galaxy Z Flip. W lightboxie znajdziesz też pierwszą wersję.",
+      "Mini projekt UI/graficzny: interfejs odtwarzacza na małe, prawie kwadratowe ekrany pierwszych składanych telefonów, takich jak Galaxy Z Flip. W lightboxie znajdziesz też sam interfejs w dwóch wersjach.",
     playground_player_note:
       "Utwory i okładka albumu to wyłącznie przykładowa zawartość.",
     playground_tag_decomposition: "#Dekompozycja",
@@ -75,7 +75,7 @@ const translations = {
     playground_tag_hierarchy: "#Hierarchia",
     playground_pgnig_title: "Przeprojektowany rachunek za gaz",
     playground_pgnig_desc:
-      "Redesign rachunku PGNiG, żeby kontrast i hierarchia informacji działały tak, jak trzeba: najważniejsze (kwota, termin, kod QR) widać od razu, a dokument jest czytelniejszy i bardziej przejrzysty. W lightboxie znajdziesz oryginał.",
+      "Redesign rachunku PGNiG, żeby kontrast i hierarchia informacji działały tak, jak trzeba: najważniejsze (kwota, termin, kod QR) widać od razu, a dokument jest czytelniejszy i bardziej przejrzysty. Pokaz płynnie przechodzi między oryginałem a moją wersją.",
     playground_pgnig_note:
       "Ćwiczenie własne, nieoficjalne, bez powiązania z PGNiG. Dane na rachunku są przykładowe.",
     playground_tag_poster: "#Plakat",
@@ -2192,17 +2192,17 @@ const translations = {
       "Personal, unofficial project, not affiliated with Red Bull.",
     playground_fair_title: "Notepad for the FAIR Foundation",
     playground_fair_desc:
-      "A single-page notepad design (A4). The foundation wanted simplicity: logo, a grid for notes and a footer with company details.",
+      "A single-page notepad design (A4). The foundation wanted simplicity: logo, a grid for notes and a footer with company details. The logo was vectorized because the foundation had no SVG version of it.",
     playground_tag_cover: "#BookCover",
     playground_cover_title: "Outer Banks - fictional book cover",
     playground_cover_desc:
-      "A Photoshop experiment: a book cover based on what was then my favorite TV series, shown on a mockup. Open the lightbox to see a poster for the book too.",
+      "A Photoshop experiment: a book cover based on what was then my favorite TV series, shown on a mockup. The slideshow fades between the cover and a poster for the book.",
     playground_cover_note:
-      "Personal, fictional project, not affiliated with the series or any publisher.",
+      "Personal, fictional project, not affiliated with the series, Netflix or any publisher.",
     playground_tag_miniproject: "#MiniProject",
     playground_player_title: "Music player for foldable devices",
     playground_player_desc:
-      "A UI/graphic mini project: a music player interface for the small, nearly square screens of early foldable phones such as the Galaxy Z Flip. Open the lightbox to see the first version too.",
+      "A UI/graphic mini project: a music player interface for the small, nearly square screens of early foldable phones such as the Galaxy Z Flip. Open the lightbox to see the interface itself in two versions.",
     playground_player_note:
       "Tracks and album cover are sample content only.",
     playground_tag_decomposition: "#Decomposition",
@@ -2217,7 +2217,7 @@ const translations = {
     playground_tag_hierarchy: "#Hierarchy",
     playground_pgnig_title: "Redesigned gas bill",
     playground_pgnig_desc:
-      "A redesign of a PGNiG gas bill so that contrast and information hierarchy do their job: the key items (amount, due date, QR code) are visible at a glance, and the document is more readable and clear. Open the lightbox to see the original.",
+      "A redesign of a PGNiG gas bill so that contrast and information hierarchy do their job: the key items (amount, due date, QR code) are visible at a glance, and the document is more readable and clear. The slideshow fades between the original and my version.",
     playground_pgnig_note:
       "A personal, unofficial exercise, not affiliated with PGNiG. The data on the bill is sample data.",
     playground_tag_poster: "#Poster",
