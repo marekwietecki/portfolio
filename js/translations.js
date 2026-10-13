@@ -50,7 +50,7 @@ const translations = {
       "Projekt własny, nieoficjalny, bez powiązania z marką Red Bull.",
     playground_fair_title: "Notatnik dla Fundacji FAIR",
     playground_fair_desc:
-      "Projekt pojedynczej strony notatnika (A4). Fundacja chciała prostoty: logo, kratka do notatek i stopka z danymi firmy. Logo zostało zwektoryzowane, ponieważ fundacja nie miała jego wersji SVG.",
+      "Projekt pojedynczej strony notatnika (A4). Fundacja chciała prostoty: logo, kratka do notatek i stopka z danymi firmy. Logo zostało zwektoryzowane, ponieważ fundacja nie miała jego wersji SVG. Pokaz przechodzi między projektem strony a mockupem notatnika.",
     playground_tag_cover: "#Okładka",
     playground_cover_title: "Outer Banks - fikcyjna okładka książki",
     playground_cover_desc:
@@ -104,7 +104,7 @@ const translations = {
     playground_filter_graphic: "Grafika i foto",
     playground_slideshow_toggle: "Wstrzymaj pokaz slajdów",
     projects_playground_text:
-      "Lubisz też branding, grafikę i motion? Zobacz moje prace kreatywne i eksperymenty.",
+      "Lubię też branding, grafikę i motion design. Zobacz moje prace kreatywne i eksperymenty.",
     projects_playground_btn: "Creative Playground →",
     playground_back_btn: "Powrót do strony głównej",
     footer_link_contact: "Kontakt",
@@ -327,7 +327,7 @@ const translations = {
     hero_fork_kicker: "Cześć! Miło Cię widzieć.",
     hero_fork_title: "Co Cię tu sprowadza?",
     hero_fork_subtitle: "Dobierz ścieżkę, a dopasuję to, co widzisz.",
-    hero_fork_business_tag: "Dla firmy",
+    hero_fork_business_tag: "Dla biznesu",
     hero_fork_business_title: "Szukam designera",
     hero_fork_business_desc:
       "Zobacz ofertę, proces i jak mogę pomóc Twojemu biznesowi.",
@@ -357,7 +357,7 @@ const translations = {
     hero_recruiter_button_secondary: "Poznaj mnie",
 
     // ustawienia — przełącznik ścieżki
-    settings_audience_business: "Dla firm",
+    settings_audience_business: "Dla biznesu",
     settings_audience_recruiter: "Dla rekrutera",
 
     projects_title: "Moje Projekty",
@@ -2192,7 +2192,7 @@ const translations = {
       "Personal, unofficial project, not affiliated with Red Bull.",
     playground_fair_title: "Notepad for the FAIR Foundation",
     playground_fair_desc:
-      "A single-page notepad design (A4). The foundation wanted simplicity: logo, a grid for notes and a footer with company details. The logo was vectorized because the foundation had no SVG version of it.",
+      "A single-page notepad design (A4). The foundation wanted simplicity: logo, a grid for notes and a footer with company details. The logo was vectorized because the foundation had no SVG version of it. The slideshow moves between the page design and a notepad mockup.",
     playground_tag_cover: "#BookCover",
     playground_cover_title: "Outer Banks - fictional book cover",
     playground_cover_desc:
@@ -2246,7 +2246,7 @@ const translations = {
     playground_filter_graphic: "Graphics & photo",
     playground_slideshow_toggle: "Pause slideshow",
     projects_playground_text:
-      "Into branding, graphics and motion too? See my creative work and experiments.",
+      "I also enjoy branding, graphics and motion design. See my creative work and experiments.",
     projects_playground_btn: "Creative Playground →",
     playground_back_btn: "Back to the homepage",
     footer_link_contact: "Contact",

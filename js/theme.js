@@ -4,10 +4,8 @@
   const LOGO_DARK = "/assets/brand/mw_logo_white_2.0.png";
 
   const saved = localStorage.getItem("theme");
-  const prefersDark =
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const initialTheme = saved || (prefersDark ? "dark" : "light");
+  // Domyślnie ciemny motyw, dopóki użytkownik sam nie wybierze innego
+  const initialTheme = saved || "dark";
   document.documentElement.setAttribute("data-theme", initialTheme);
 
   // Podmiana logo z płynnym zanikaniem (animated = true tylko przy kliknięciu)

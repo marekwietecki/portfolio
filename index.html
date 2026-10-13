@@ -572,7 +572,8 @@
         padding: 16px;
         margin: 16px auto;
         transition: transform 0.3s ease, box-shadow 0.3s ease,
-          background-color 0.25s ease;
+          background-color 0.25s ease, opacity 0.3s ease;
+        opacity: 0.88;
         box-shadow: var(--shadow-header);
         border-radius: 32px;
         background-color: var(--bg-card);
@@ -627,6 +628,10 @@
       .projectContainer:hover {
         transform: translateY(-4px);
         box-shadow: var(--shadow-header-scrolled);
+      }
+
+      .projectContainer:not(.disabled-project):hover {
+        opacity: 1;
       }
 
       .is-inactive {
@@ -1241,7 +1246,7 @@
                 data-i18n="settings_audience_business"
                 onclick="setAudience('business')"
               >
-                Dla firm
+                Dla biznesu
               </button>
               <button
                 class="audience-btn"
@@ -1304,7 +1309,7 @@
               onclick="setAudience('business')"
             >
               <span class="forkCard__tag" data-i18n="hero_fork_business_tag"
-                >Dla firmy</span
+                >Dla biznesu</span
               >
               <span
                 class="forkCard__title"
@@ -1361,7 +1366,7 @@
             <span class="audienceChip__dot"></span>
             <span data-i18n="audience_chip_prefix">Widzisz wersję</span>
             <strong id="audienceChipLabel" data-i18n="hero_fork_business_tag"
-              >Dla firmy</strong
+              >Dla biznesu</strong
             >
             <a href="#" onclick="setAudience('unset'); return false"
               ><span data-i18n="hero_fork_switch_short">Zmień</span></a
@@ -1654,8 +1659,8 @@
           style="color: var(--text-secondary)"
           data-i18n="projects_playground_text"
         >
-          Lubisz też branding, grafikę i motion? Zobacz moje prace kreatywne i
-          eksperymenty.
+          Lubię też branding, grafikę i motion design. Zobacz moje prace
+          kreatywne i eksperymenty.
         </p>
         <a
           class="btn-outline"
@@ -2134,11 +2139,11 @@
         let hasDealt = false; // Flag informująca, czy karty zostały już rozdane
 
         function getCardOpacity(idx) {
-          if (!items[idx]) return "1";
+          if (!items[idx]) return "";
           const card = items[idx].querySelector(".projectContainer");
-          if (!card) return "1";
-          /* Jeśli karta jest disabled, zachowaj jej oryginalne opacity */
-          return card.classList.contains("disabled-project") ? "0.56" : "1";
+          if (!card) return "";
+          /* Disabled zachowuje .56; reszta zostaje pod kontrolą CSS (.88 / hover 1) */
+          return card.classList.contains("disabled-project") ? "0.56" : "";
         }
 
         function setupStack() {

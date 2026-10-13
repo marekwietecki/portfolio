@@ -764,6 +764,7 @@ footer {
 .btn-outline:hover {
   background: var(--text-heading);
   color: var(--bg-card);
+  opacity: 1; /* bez przygaszania z globalnego a:hover - zmienia się tylko kolor */
 }
 
 /* ==========================================================================
