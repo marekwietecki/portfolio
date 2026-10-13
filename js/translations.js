@@ -20,7 +20,7 @@ const translations = {
     // footer
     footer_link_main: "Strona Główna",
     footer_link_projects: "Projekty",
-    footer_link_playground: "Playground",
+    footer_link_playground: "Creative",
 
     // creative playground
     about_playground_text:
@@ -2162,7 +2162,7 @@ const translations = {
 
     footer_link_main: "Main",
     footer_link_projects: "Projects",
-    footer_link_playground: "Playground",
+    footer_link_playground: "Creative",
 
     // creative playground
     about_playground_text:
@@ -4333,6 +4333,32 @@ function switchLanguage(lang) {
     }
   });
 }
+
+// Link z ?language=en (albo ?lang=...) ustawia język od razu przy wejściu,
+// np. /?audience=recruiter&language=english. Akceptuje: pl/polish/polski,
+// en/eng/english/angielski. Drugi "?" zamiast "&" też zadziała.
+(function applyLanguageFromUrl() {
+  try {
+    const params = new URLSearchParams(
+      window.location.search.slice(1).replace(/\?/g, "&")
+    );
+    const raw = (params.get("language") || params.get("lang") || "")
+      .trim()
+      .toLowerCase();
+    const aliases = {
+      pl: "pl",
+      polish: "pl",
+      polski: "pl",
+      en: "en",
+      eng: "en",
+      english: "en",
+      angielski: "en",
+    };
+    if (aliases[raw]) localStorage.setItem("selectedLanguage", aliases[raw]);
+  } catch (e) {
+    /* localStorage może być niedostępny - zostaje język domyślny */
+  }
+})();
 
 document.addEventListener("DOMContentLoaded", () => {
   const savedLang = localStorage.getItem("selectedLanguage") || "pl";

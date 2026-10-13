@@ -2,9 +2,13 @@
 (function () {
   // Link z ?audience=recruiter (lub business/general) ustawia tryb od razu
   // przy pierwszym wejściu — przydatne np. wysyłając link do CV rekruterowi.
-  const urlAudience = new URLSearchParams(window.location.search).get(
-    "audience"
-  );
+  // Można go łączyć z ?language=en, np. /?audience=recruiter&language=en
+  // (drugi "?" zamiast "&" też zadziała).
+  const urlAudience = (
+    new URLSearchParams(window.location.search.slice(1).replace(/\?/g, "&")).get(
+      "audience"
+    ) || ""
+  ).toLowerCase();
   if (["business", "recruiter", "general"].includes(urlAudience)) {
     localStorage.setItem("audience", urlAudience);
   }
