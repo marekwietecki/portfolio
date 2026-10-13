@@ -87,7 +87,7 @@ const translations = {
       "Plakat składany w Photoshopie: zdjęcie, półprzezroczyste, geometryczne kształty i typografia z poświatą, w mocnej, różowo-niebieskiej kolorystyce.",
     playground_recolor_title: "Maskowanie i zmiana kolorów",
     playground_recolor_desc:
-      "Retusz w Photoshopie: maskowanie kurtki i tła oraz zmiana kolorystyki z fioletowo-różowej na zieloną. W lightboxie znajdziesz oryginał.",
+      "Retusz w Photoshopie: maskowanie kurtki i tła oraz zmiana kolorystyki z fioletowo-różowej na zieloną. Pokaz płynnie przechodzi między oryginałem a moją wersją.",
     playground_geoanim_title: "Prosta animacja geometryczna",
     playground_geoanim_desc:
       "6-sekundowa animacja: kolorowe, izometryczne bloki wyrastają z siatki i znikają. Ćwiczenie podstaw ruchu i kolorystyki.",
@@ -95,7 +95,17 @@ const translations = {
     playground_tag_colorgrading: "#Kolorystyka",
     playground_winter_title: "Usuwanie osób i zmiana tonacji",
     playground_winter_desc:
-      "Retusz w Photoshopie: usunięcie ludzi ze sceny i zmiana tonacji barw z ciepłej na zimną, żeby nocne zdjęcie zyskało zupełnie inny nastrój. W lightboxie znajdziesz oryginał.",
+      "Retusz w Photoshopie: usunięcie ludzi ze sceny i zmiana tonacji barw z ciepłej na zimną, żeby nocne zdjęcie zyskało zupełnie inny nastrój. Pokaz płynnie przechodzi między oryginałem a moją wersją.",
+    playground_filter_label: "Filtruj prace według kategorii",
+    playground_filter_all: "Wszystko",
+    playground_filter_branding: "Branding",
+    playground_filter_ui: "UI",
+    playground_filter_motion: "Motion",
+    playground_filter_graphic: "Grafika i foto",
+    playground_slideshow_toggle: "Wstrzymaj pokaz slajdów",
+    projects_playground_text:
+      "Lubisz też branding, grafikę i motion? Zobacz moje prace kreatywne i eksperymenty.",
+    projects_playground_btn: "Creative Playground →",
     playground_back_btn: "Powrót do strony głównej",
     footer_link_contact: "Kontakt",
     footer_link_cv: "CV",
@@ -2219,7 +2229,7 @@ const translations = {
       "A poster built in Photoshop: a photo, semi-transparent geometric shapes and glowing typography in a bold pink and blue palette.",
     playground_recolor_title: "Masking and color change",
     playground_recolor_desc:
-      "A Photoshop retouch: masking the jacket and background and changing the palette from purple-pink to green. Open the lightbox to see the original.",
+      "A Photoshop retouch: masking the jacket and background and changing the palette from purple-pink to green. The slideshow fades between the original and my version.",
     playground_geoanim_title: "Simple geometric animation",
     playground_geoanim_desc:
       "A 6-second animation: colorful isometric blocks rise from a grid and disappear. An exercise in basic motion and color.",
@@ -2227,7 +2237,17 @@ const translations = {
     playground_tag_colorgrading: "#ColorGrading",
     playground_winter_title: "Removing people and shifting the color tone",
     playground_winter_desc:
-      "A Photoshop retouch: removing people from the scene and shifting the color tone from warm to cold, giving the night photo a completely different mood. Open the lightbox to see the original.",
+      "A Photoshop retouch: removing people from the scene and shifting the color tone from warm to cold, giving the night photo a completely different mood. The slideshow fades between the original and my version.",
+    playground_filter_label: "Filter works by category",
+    playground_filter_all: "All",
+    playground_filter_branding: "Branding",
+    playground_filter_ui: "UI",
+    playground_filter_motion: "Motion",
+    playground_filter_graphic: "Graphics & photo",
+    playground_slideshow_toggle: "Pause slideshow",
+    projects_playground_text:
+      "Into branding, graphics and motion too? See my creative work and experiments.",
+    projects_playground_btn: "Creative Playground →",
     playground_back_btn: "Back to the homepage",
     footer_link_contact: "Contact",
     footer_link_cv: "CV",
