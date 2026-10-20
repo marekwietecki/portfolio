@@ -133,6 +133,10 @@ const translations = {
 
     cv_skills_h2: "Umiejętności",
     cv_skill_figma: "Figma",
+    cv_skill_interface_design: "Projektowanie Interfejsów",
+    cv_skill_interactive_prototypes: "Interaktywne Prototypy",
+    cv_skill_ucd: "User-Centered Design (UCD)",
+    cv_skill_empathetic_thinking: "Empathetic Thinking",
     cv_skill_customer_journey: "Customer Journey",
     cv_skill_user_research: "User Research",
     cv_skill_product_strategy: "Strategia Produktowa",
@@ -2275,6 +2279,10 @@ const translations = {
 
     cv_skills_h2: "Skills",
     cv_skill_figma: "Figma",
+    cv_skill_interface_design: "Interface Design",
+    cv_skill_interactive_prototypes: "Interactive Prototypes",
+    cv_skill_ucd: "User-Centered Design (UCD)",
+    cv_skill_empathetic_thinking: "Empathetic Thinking",
     cv_skill_customer_journey: "Customer Journey",
     cv_skill_user_research: "User Research",
     cv_skill_product_strategy: "Product Strategy",
