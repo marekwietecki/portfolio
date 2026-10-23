@@ -122,7 +122,7 @@ const translations = {
     cv_about_p1:
       "Jestem <strong>UX & Product Designerem</strong> oraz inżynierem informatyki z ukończonymi specjalizacjami User Experience i zarządzanie projektami oraz Projektowanie Aplikacji Mobilnych. Wiedzę dotyczącą <strong>projektowania produktów cyfrowych</strong> łączę ze znajomością podstaw <strong>programowania</strong> oraz <strong>marketingu internetowego</strong>, co pozwala mi całościowo rozumieć produkty cyfrowe.",
     cv_about_p2:
-      "Posiadam ponad 15-letnie doświadczenie w <strong>pracy zespołowej</strong> - od projektów inżynierskich po różnorodne inicjatywy grupowe. Nauczyło mnie ono dbania o relacje i zaufanie w zespołach, klarownej komunikacji oraz odpowiedzialności za wspólny wynik.",
+      "Od małego pracuję w <strong>zespołach</strong> - od projektów inżynierskich przez sporty zespołowe po różnorodne inicjatywy grupowe. Nauczyło mnie to dbania o relacje i zaufanie w zespołach, klarownej komunikacji oraz odpowiedzialności za wspólny wynik.",
 
     cv_details_h2: "Kontakt",
     cv_details_portfolio_label: "PORTFOLIO",
@@ -151,6 +151,7 @@ const translations = {
     cv_skill_git: "Git",
     cv_skill_mobile_design: "Mobile Design (iOS i Android)",
     cv_skill_motion_design: "Motion Design",
+    cv_skill_axure: "Axure",
 
     cv_languages_h2: "Języki",
     cv_lang_polish_name: "Polski",
@@ -2268,7 +2269,7 @@ const translations = {
     cv_about_p1:
       "I'm a <strong>UX & Product Designer</strong> and computer science engineer with completed specializations in User Experience & Project Management and Mobile App Design. I combine knowledge of <strong>digital product design</strong> with a grounding in <strong>programming</strong> and <strong>online marketing</strong>, which lets me understand digital products holistically.",
     cv_about_p2:
-      "I have over 15 years of experience in <strong>teamwork</strong> - from engineering projects to a variety of group initiatives. It has taught me to nurture relationships and trust within teams, communicate clearly, and take responsibility for the shared outcome.",
+      "I have worked in <strong>teams</strong> since childhood - from engineering projects through team sports to a variety of group initiatives. It has taught me to nurture relationships and trust within teams, communicate clearly, and take responsibility for the shared outcome.",
 
     cv_details_h2: "Contact",
     cv_details_portfolio_label: "PORTFOLIO",
@@ -2297,6 +2298,7 @@ const translations = {
     cv_skill_git: "Git",
     cv_skill_mobile_design: "Mobile Design (iOS & Android)",
     cv_skill_motion_design: "Motion Design",
+    cv_skill_axure: "Axure",
 
     cv_languages_h2: "Languages",
     cv_lang_polish_name: "Polish",
