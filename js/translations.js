@@ -313,6 +313,7 @@ const translations = {
     cv_interest2: "Czytanie Książek",
     cv_interest3: "Nauka Języków",
     cv_interest4: "Lotnictwo",
+    cv_interest5: "Counter-Strike 2",
 
     footer_copyright:
       "© Marek Wietecki 2026. Treści chronione prawem autorskim.",
@@ -2458,6 +2459,7 @@ const translations = {
     cv_interest2: "Reading Books",
     cv_interest3: "Language Learning",
     cv_interest4: "Aviation",
+    cv_interest5: "Counter-Strike 2",
 
     footer_copyright: "© Marek Wietecki 2026. Copyrighted content.",
 
