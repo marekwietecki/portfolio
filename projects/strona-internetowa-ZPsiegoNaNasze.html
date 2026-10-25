@@ -261,6 +261,40 @@
         display: block;
       }
 
+      /* --- INSIGHTY Z WYWIADÓW IDI --- */
+      .insightGrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 12px;
+        margin: 2vh 0;
+        width: 92%;
+      }
+
+      .insightCard {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--border-subtle);
+        border-radius: 12px;
+        padding: 18px 16px;
+      }
+
+      /* Nieparzysta liczba kart: ostatnia zajmuje całą szerokość rzędu */
+      .insightCard:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+      }
+
+      .insightCard .insightTitle {
+        font-weight: 700;
+        margin: 0 0 8px;
+        color: var(--text-heading);
+      }
+
+      .insightCard .insightText {
+        margin: 0;
+        font-size: clamp(0.6rem, 0.36rem + 0.7vw, 0.9rem);
+        line-height: 1.55;
+      }
+
+
       /* --- MINI GALLERY --- */
       .mini-gallery {
         display: flex;
@@ -562,6 +596,63 @@
               wzmacniać.</span
             >
           </p>
+
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_web_zpn_idi_heading"
+          >
+            Badanie wstępne: wywiady pogłębione (IDI)
+          </h3>
+          <p data-i18n="project_web_zpn_idi_intro">
+            Na wczesnym etapie projektu przeprowadziłem dwa wywiady pogłębione
+            (IDI): z właścicielką Wicia oraz z właścicielką Mii i Dafi. To
+            badanie jakościowe, więc wnioski pokazują kierunek, ale nie są
+            reprezentatywne. Poniżej pięć insightów, które najmocniej dotyczą
+            strony.
+          </p>
+
+          <div class="insightGrid">
+            <div class="insightCard">
+              <p class="insightTitle" data-i18n="project_web_zpn_idi_c1_title">
+                Ufają ludziom, nie opiniom w sieci
+              </p>
+              <p class="insightText" data-i18n="project_web_zpn_idi_c1_text">
+                Obie rozmówczynie najbardziej ufają poleceniom znajomych z „grupy psiarskiej”. Opinie online czytają dopiero w desperacji. <strong>Wniosek:</strong> zaufanie buduje się osobiście, a nie ogólnymi referencjami.
+              </p>
+            </div>
+            <div class="insightCard">
+              <p class="insightTitle" data-i18n="project_web_zpn_idi_c2_title">
+                Instagram jest wizytówką
+              </p>
+              <p class="insightText" data-i18n="project_web_zpn_idi_c2_text">
+                Właścicielka Mii i Dafi szuka specjalisty na Instagramie i w Google. Ocenia estetykę profilu, spokojne podejście na filmikach i liczbę obserwujących. <strong>Wniosek:</strong> profil w social media rozstrzyga, zanim ktoś wejdzie na stronę.
+              </p>
+            </div>
+            <div class="insightCard">
+              <p class="insightTitle" data-i18n="project_web_zpn_idi_c3_title">
+                Behawiorysta to ostateczność
+              </p>
+              <p class="insightText" data-i18n="project_web_zpn_idi_c3_text">
+                Behawiorysta kojarzy się z psychologiem na trudne przypadki. Właścicielka Mii i Dafi nigdy go nie rozważała: uważa, że poradzi sobie sama, a problemy nie są jeszcze na tyle duże. <strong>Wniosek:</strong> klienci przychodzą późno, więc trzeba obniżać próg pierwszego kontaktu.
+              </p>
+            </div>
+            <div class="insightCard">
+              <p class="insightTitle" data-i18n="project_web_zpn_idi_c4_title">
+                Płacą za pewność efektu, nie za godziny
+              </p>
+              <p class="insightText" data-i18n="project_web_zpn_idi_c4_text">
+                Właścicielka Wicia zapłaciłaby ok. 800 zł za pakiet, ale tylko przy pewności, że problem zniknie, i wybrałaby ofertę ze średniej półki. Właścicielka Mii i Dafi woli pojedyncze wizyty za ok. 100–150 zł. <strong>Wniosek:</strong> komunikuj rezultat i bezpieczeństwo, a nie liczbę godzin.
+              </p>
+            </div>
+            <div class="insightCard">
+              <p class="insightTitle" data-i18n="project_web_zpn_idi_c5_title">
+                Mówią o sytuacjach, nie o metodach
+              </p>
+              <p class="insightText" data-i18n="project_web_zpn_idi_c5_text">
+                Chcą spokoju, bezpieczeństwa i kontroli w konkretnych momentach: na spacerze, przy przywołaniu, przy zakładaniu szelek. Dobry specjalista to ktoś, kogo pies pokocha, a wychowanie to zasady i dużo miłości, nie sztywne metody. <strong>Wniosek:</strong> copy ze scenek i języka klientek, ton spokojny i ciepły.
+              </p>
+            </div>
+          </div>
         </section>
 
         <!-- ITERACJE -->
@@ -1488,6 +1579,7 @@
           "main.projectContent > section > p",
           "main.projectContent > section > .gradientBackground",
           "main.projectContent > section > .statGrid",
+          "main.projectContent > section > .insightGrid",
           "main.projectContent > figure.imageFigure",
           "main.projectContent > section > figure.imageFigure",
           "main.projectContent > section > .beforeAfterGrid",

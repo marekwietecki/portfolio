@@ -785,6 +785,31 @@ const translations = {
     project_web_zpn_goal_4_text:
       "– strona i komunikacja w social media mają się wzajemnie wzmacniać.",
 
+    project_web_zpn_idi_heading:
+      "Badanie wstępne: wywiady pogłębione (IDI)",
+    project_web_zpn_idi_intro:
+      "Na wczesnym etapie projektu przeprowadziłem dwa wywiady pogłębione (IDI): z właścicielką Wicia oraz z właścicielką Mii i Dafi. To badanie jakościowe, więc wnioski pokazują kierunek, ale nie są reprezentatywne. Poniżej pięć insightów, które najmocniej dotyczą strony.",
+    project_web_zpn_idi_c1_title:
+      "Ufają ludziom, nie opiniom w sieci",
+    project_web_zpn_idi_c1_text:
+      "Obie rozmówczynie najbardziej ufają poleceniom znajomych z „grupy psiarskiej”. Opinie online czytają dopiero w desperacji. <strong>Wniosek:</strong> zaufanie buduje się osobiście, a nie ogólnymi referencjami.",
+    project_web_zpn_idi_c2_title:
+      "Instagram jest wizytówką",
+    project_web_zpn_idi_c2_text:
+      "Właścicielka Mii i Dafi szuka specjalisty na Instagramie i w Google. Ocenia estetykę profilu, spokojne podejście na filmikach i liczbę obserwujących. <strong>Wniosek:</strong> profil w social media rozstrzyga, zanim ktoś wejdzie na stronę.",
+    project_web_zpn_idi_c3_title:
+      "Behawiorysta to ostateczność",
+    project_web_zpn_idi_c3_text:
+      "Behawiorysta kojarzy się z psychologiem na trudne przypadki. Właścicielka Mii i Dafi nigdy go nie rozważała: uważa, że poradzi sobie sama, a problemy nie są jeszcze na tyle duże. <strong>Wniosek:</strong> klienci przychodzą późno, więc trzeba obniżać próg pierwszego kontaktu.",
+    project_web_zpn_idi_c4_title:
+      "Płacą za pewność efektu, nie za godziny",
+    project_web_zpn_idi_c4_text:
+      "Właścicielka Wicia zapłaciłaby ok. 800 zł za pakiet, ale tylko przy pewności, że problem zniknie, i wybrałaby ofertę ze średniej półki. Właścicielka Mii i Dafi woli pojedyncze wizyty za ok. 100–150 zł. <strong>Wniosek:</strong> komunikuj rezultat i bezpieczeństwo, a nie liczbę godzin.",
+    project_web_zpn_idi_c5_title:
+      "Mówią o sytuacjach, nie o metodach",
+    project_web_zpn_idi_c5_text:
+      "Chcą spokoju, bezpieczeństwa i kontroli w konkretnych momentach: na spacerze, przy przywołaniu, przy zakładaniu szelek. Dobry specjalista to ktoś, kogo pies pokocha, a wychowanie to zasady i dużo miłości, nie sztywne metody. <strong>Wniosek:</strong> copy ze scenek i języka klientek, ton spokojny i ciepły.",
+
     project_web_zpn_iter0_heading: "Migracja strony na tańszy hosting",
     project_web_zpn_iter0_p1:
       "Pracę zacząłem od migracji istniejącej strony WordPress na nowe, znacznie tańsze środowisko hostingowe — bez utraty ciągłości działania strony ani adresu domeny. To otworzyło drogę do kolejnego kroku — realnej redukcji kosztów.",
@@ -2924,6 +2949,31 @@ const translations = {
     project_web_zpn_goal_4_label: "Support brand growth on social media",
     project_web_zpn_goal_4_text:
       "– the website and social media communication should reinforce each other.",
+
+    project_web_zpn_idi_heading:
+      "Early research: in-depth interviews (IDI)",
+    project_web_zpn_idi_intro:
+      "Early in the project I ran two in-depth interviews (IDI): with Witek’s owner and with the owner of Mia and Dafi. This is qualitative research, so the findings show a direction but are not representative. Below are the five insights that matter most for the website.",
+    project_web_zpn_idi_c1_title:
+      "They trust people, not online reviews",
+    project_web_zpn_idi_c1_text:
+      "Both interviewees trust recommendations from friends in their “dog-owner group” most. They read online reviews only when desperate. <strong>Takeaway:</strong> trust is built personally, not with generic references.",
+    project_web_zpn_idi_c2_title:
+      "Instagram is the storefront",
+    project_web_zpn_idi_c2_text:
+      "The owner of Mia and Dafi looks for a specialist on Instagram and Google. She judges the profile’s aesthetics, a calm approach in videos and the follower count. <strong>Takeaway:</strong> the social media profile decides before anyone visits the website.",
+    project_web_zpn_idi_c3_title:
+      "A behaviorist is a last resort",
+    project_web_zpn_idi_c3_text:
+      "A behaviorist is associated with a psychologist for hard cases. The owner of Mia and Dafi never considered one: she believes she can manage on her own and her problems are not big enough yet. <strong>Takeaway:</strong> clients come late, so the threshold for a first contact has to be lowered.",
+    project_web_zpn_idi_c4_title:
+      "They pay for certainty of results, not for hours",
+    project_web_zpn_idi_c4_text:
+      "Witek’s owner would pay about PLN 800 for a package, but only if the problem is certain to go away, and she would pick a mid-range offer. The owner of Mia and Dafi prefers single visits at about PLN 100–150. <strong>Takeaway:</strong> communicate the result and safety, not the number of hours.",
+    project_web_zpn_idi_c5_title:
+      "They talk about situations, not methods",
+    project_web_zpn_idi_c5_text:
+      "They want calm, safety and control in specific moments: on walks, when recalling the dog, when putting on a harness. A good specialist is someone the dog will love, and raising a dog means rules and lots of love, not rigid methods. <strong>Takeaway:</strong> copy built on scenes and the clients’ own words, in a calm and warm tone.",
 
     project_web_zpn_iter0_heading: "Migrating to cheaper hosting",
     project_web_zpn_iter0_p1:

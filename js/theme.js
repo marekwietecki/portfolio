@@ -3,6 +3,22 @@
   const LOGO_LIGHT = "/assets/brand/mw_logo_2.0.png";
   const LOGO_DARK = "/assets/brand/mw_logo_white_2.0.png";
 
+  // Link z ?mode=dark (lub light) wymusza motyw od razu, np.
+  // /?mode=dark&language=english (alias: ?theme=dark; drugi "?" też zadziała).
+  try {
+    const params = new URLSearchParams(
+      window.location.search.slice(1).replace(/\?/g, "&")
+    );
+    const urlMode = (params.get("mode") || params.get("theme") || "")
+      .trim()
+      .toLowerCase();
+    if (urlMode === "dark" || urlMode === "light") {
+      localStorage.setItem("theme", urlMode);
+    }
+  } catch (e) {
+    /* localStorage może być niedostępny - zostaje motyw domyślny */
+  }
+
   const saved = localStorage.getItem("theme");
   // Domyślnie ciemny motyw, dopóki użytkownik sam nie wybierze innego
   const initialTheme = saved || "dark";
