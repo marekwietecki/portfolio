@@ -225,7 +225,7 @@ const translations = {
     cv_proj4_tag: "UX Audit · E-commerce",
     cv_proj5_title: "Strona Internetowa i Strategia Rozwoju Z Psiego Na Nasze",
     cv_proj5_desc:
-      "Redesign i optymalizacja strony marki behawiorystycznej - migracja hostingu i 3-krotna redukcja kosztów, przebudowa strony internetowej pod kątem użyteczności, estetyki oraz nowej kolorystyki, poprawa wydajności (Lighthouse 42→78) oraz wsparcie strategii social media, która przyniosła pierwszy viral.",
+      "Redesign i optymalizacja strony marki behawiorystycznej - migracja hostingu i 3-krotna redukcja kosztów, przebudowa strony internetowej pod kątem użyteczności, estetyki oraz nowej kolorystyki, poprawa wydajności (Lighthouse mobile 42→85) oraz wsparcie strategii social media, która przyniosła pierwszy viral.",
     cv_proj5_tag: "UX Design · Web Performance · Growth",
 
     cv_education_h2: "Wykształcenie",
@@ -767,7 +767,7 @@ const translations = {
       "Do współpracy dołączyłem, gdy strona działała na niepotrzebnie drogim hostingu, a jej treść była chaotyczna — na stronie głównej informacje o behawiorystce pojawiały się w dwóch różnych, mało spójnych miejscach, a doświadczenie zawodowe było wypisane jako jedna gęsta, nieuporządkowana lista bez podziału na kategorie.",
     project_web_zpn_context_p2_lead: "Do tego doszedł problem techniczny —",
     project_web_zpn_context_p2_bold:
-      "audyt w Lighthouse wykazał wynik wydajności zaledwie 42/100",
+      "audyt w Lighthouse na urządzeniach mobilnych wykazał wynik wydajności zaledwie 42/100",
     project_web_zpn_context_p2_text:
       ", co realnie wydłużało czas ładowania strony i mogło zniechęcać odwiedzających jeszcze przed poznaniem oferty.",
     project_web_zpn_goals_heading: "Cele",
@@ -933,13 +933,13 @@ const translations = {
 
     project_web_zpn_iter9_heading: "Optymalizacja wydajności — Lighthouse",
     project_web_zpn_iter9_p1:
-      "Po wdrożeniu redesignu przetestowałem stronę w Google Lighthouse i w ciągu jednego dnia pracy nad hostingiem współdzielonym poprawiłem wszystkie kluczowe metryki wydajności.",
-    project_web_zpn_stat_perf: "42→78",
-    project_web_zpn_stat_perf_label: "Performance (Lighthouse), +36 pkt",
+      "Po wdrożeniu redesignu przetestowałem stronę w Google Lighthouse i w ciągu jednego dnia pracy nad hostingiem współdzielonym poprawiłem wszystkie kluczowe metryki wydajności. Podane liczby dotyczą wersji mobilnej, a na desktopie praktycznie wszystkie metryki osiągają wartości maksymalne.",
+    project_web_zpn_stat_perf: "42→85",
+    project_web_zpn_stat_perf_label: "Performance (Lighthouse, mobile), nawet +43 pkt",
     project_web_zpn_stat_si: "~5×",
-    project_web_zpn_stat_si_label: "Szybszy Speed Index (9,2s → 1,8s)",
-    project_web_zpn_stat_tbt: "-73%",
-    project_web_zpn_stat_tbt_label: "Total Blocking Time (900ms → 240ms)",
+    project_web_zpn_stat_si_label: "Szybszy Speed Index, mobile (9,2s → ok. 1,8s)",
+    project_web_zpn_stat_tbt: "~-90%",
+    project_web_zpn_stat_tbt_label: "Total Blocking Time, mobile (900ms → ok. 80–110ms)",
     project_web_zpn_stat_fcp: "-52%",
     project_web_zpn_stat_fcp_label: "First Contentful Paint (2,5s → 1,2s)",
     project_web_zpn_stat_weight: "-24%",
@@ -970,7 +970,7 @@ const translations = {
     project_web_zpn_final_p_1:
       "✅ Zredukowałem roczny koszt utrzymania strony 3-krotnie — budżet starczający wcześniej na rok teraz starcza na 3 lata hostingu i domeny.",
     project_web_zpn_final_p_2:
-      "✅ Podniosłem wynik Performance w Google Lighthouse z 42 do 78/100 (+36 punktów), przy ~5-krotnie szybszym Speed Index i o 24% lżejszej stronie.",
+      "✅ Podniosłem wynik Performance w Google Lighthouse na urządzeniach mobilnych z 42 do nawet 85/100 (do +43 punktów, zależnie od testu), przy ~5-krotnie szybszym Speed Index i o 24% lżejszej stronie.",
     project_web_zpn_final_p_3:
       "✅ Uporządkowałem treść strony głównej i podstrony „O Nas”, eliminując zduplikowane sekcje „o mnie” i chaotyczną listę doświadczenia.",
     project_web_zpn_final_p_4:
@@ -979,8 +979,8 @@ const translations = {
       "✅ Zapewniłem pełną zgodność cookies z RODO oraz poprawki dostępności, budując większe zaufanie i bezpieczeństwo użytkowników.",
     project_web_zpn_stat_hosting_cost_2: "-66%",
     project_web_zpn_stat_hosting_cost_label_2: "Roczny koszt hostingu",
-    project_web_zpn_stat_perf_2: "+36 pkt",
-    project_web_zpn_stat_perf_label_2: "Performance Lighthouse (42→78)",
+    project_web_zpn_stat_perf_2: "do +43 pkt",
+    project_web_zpn_stat_perf_label_2: "Performance Lighthouse, mobile (42→85)",
     project_web_zpn_stat_ig_views_2: "200K+",
     project_web_zpn_stat_ig_views_label_2: "Wyświetleń pierwszego virala",
     project_web_zpn_stat_ig_followers_2: "+800",
@@ -2397,7 +2397,7 @@ const translations = {
     cv_proj4_tag: "UX Audit · E-commerce",
     cv_proj5_title: "Z Psiego Na Nasze - Website & Growth Strategy",
     cv_proj5_desc:
-      "Redesign and optimization of a dog-behaviorist brand's website - hosting migration and a 3x cost cut, a site rebuild focused on usability, aesthetics, and a new color palette, performance gains (Lighthouse 42→78), and support for a social media strategy that landed its first viral hit.",
+      "Redesign and optimization of a dog-behaviorist brand's website - hosting migration and a 3x cost cut, a site rebuild focused on usability, aesthetics, and a new color palette, performance gains (Lighthouse mobile 42→85), and support for a social media strategy that landed its first viral hit.",
     cv_proj5_tag: "UX Design · Web Performance · Growth",
 
     cv_education_h2: "Education",
@@ -2933,7 +2933,7 @@ const translations = {
       "I joined the project when the site was running on needlessly expensive hosting and its content was chaotic — the homepage featured information about the behaviorist in two separate, poorly connected places, and professional experience was listed as one dense, unstructured wall of text with no categories.",
     project_web_zpn_context_p2_lead: "On top of that came a technical problem —",
     project_web_zpn_context_p2_bold:
-      "a Lighthouse audit showed a performance score of just 42/100",
+      "a Lighthouse audit on mobile showed a performance score of just 42/100",
     project_web_zpn_context_p2_text:
       ", which noticeably slowed page load times and could put visitors off before they even reached the offer.",
     project_web_zpn_goals_heading: "Goals",
@@ -3093,13 +3093,13 @@ const translations = {
 
     project_web_zpn_iter9_heading: "Performance optimization — Lighthouse",
     project_web_zpn_iter9_p1:
-      "After shipping the redesign I tested the site in Google Lighthouse and, over a single day of work on shared hosting, improved every key performance metric.",
-    project_web_zpn_stat_perf: "42→78",
-    project_web_zpn_stat_perf_label: "Performance (Lighthouse), +36 pts",
+      "After shipping the redesign I tested the site in Google Lighthouse and, over a single day of work on shared hosting, improved every key performance metric. The figures refer to the mobile version, while on desktop practically all metrics reach their maximum values.",
+    project_web_zpn_stat_perf: "42→85",
+    project_web_zpn_stat_perf_label: "Performance (Lighthouse, mobile), up to +43 pts",
     project_web_zpn_stat_si: "~5×",
-    project_web_zpn_stat_si_label: "Faster Speed Index (9.2s → 1.8s)",
-    project_web_zpn_stat_tbt: "-73%",
-    project_web_zpn_stat_tbt_label: "Total Blocking Time (900ms → 240ms)",
+    project_web_zpn_stat_si_label: "Faster Speed Index, mobile (9.2s → approx. 1.8s)",
+    project_web_zpn_stat_tbt: "~-90%",
+    project_web_zpn_stat_tbt_label: "Total Blocking Time, mobile (900ms → approx. 80–110ms)",
     project_web_zpn_stat_fcp: "-52%",
     project_web_zpn_stat_fcp_label: "First Contentful Paint (2.5s → 1.2s)",
     project_web_zpn_stat_weight: "-24%",
@@ -3130,7 +3130,7 @@ const translations = {
     project_web_zpn_final_p_1:
       "✅ Cut the site's annual running cost 3x — a budget that used to cover one year now covers 3 years of hosting and the domain.",
     project_web_zpn_final_p_2:
-      "✅ Raised the Google Lighthouse Performance score from 42 to 78/100 (+36 points), with a ~5x faster Speed Index and a 24% lighter page.",
+      "✅ Raised the Google Lighthouse Performance score on mobile from 42 to as high as 85/100 (up to +43 points, depending on the test), with a ~5x faster Speed Index and a 24% lighter page.",
     project_web_zpn_final_p_3:
       "✅ Organized the homepage and \"About Us\" content, removing duplicated \"about me\" sections and the chaotic experience list.",
     project_web_zpn_final_p_4:
@@ -3139,8 +3139,8 @@ const translations = {
       "✅ Delivered full GDPR cookie compliance and accessibility fixes, building more trust and safety for users.",
     project_web_zpn_stat_hosting_cost_2: "-66%",
     project_web_zpn_stat_hosting_cost_label_2: "Annual hosting cost",
-    project_web_zpn_stat_perf_2: "+36 pts",
-    project_web_zpn_stat_perf_label_2: "Lighthouse Performance (42→78)",
+    project_web_zpn_stat_perf_2: "up to +43 pts",
+    project_web_zpn_stat_perf_label_2: "Lighthouse Performance, mobile (42→85)",
     project_web_zpn_stat_ig_views_2: "200K+",
     project_web_zpn_stat_ig_views_label_2: "Views on the first viral Reel",
     project_web_zpn_stat_ig_followers_2: "+800",
