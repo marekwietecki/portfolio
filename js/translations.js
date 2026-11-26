@@ -859,19 +859,19 @@ const translations = {
     project_web_zpn_iter3_p1_text2: "zamiast wyłącznie cichych materiałów.",
     project_web_zpn_iter3_p2_text1: "Efekt przyszedł szybciej niż zakładaliśmy —",
     project_web_zpn_iter3_p2_bold:
-      "trzecia mówiona, ekspercka rolka osiągnęła ponad 200 tys. wyświetleń",
+      "trzecia mówiona, ekspercka rolka osiągnęła ponad 275 tys. wyświetleń",
     project_web_zpn_iter3_p2_text2:
       ", podczas gdy nieme materiały wcześniej osiągały maksymalnie ok. 1,5 tys. wyświetleń. Oprócz zasięgu, rolka przyniosła ponad 800 nowych obserwujących — trzykrotnie zwiększając ich liczbę (z ok. 400 do ponad 1200) i otwierając kolejne możliwości przekuwania zaangażowanych odbiorców w klientów marki.",
-    project_web_zpn_stat_ig_views: "200K+",
+    project_web_zpn_stat_ig_views: "275K+",
     project_web_zpn_stat_ig_views_label: "Wyświetleń trzeciej mówionej rolki",
-    project_web_zpn_stat_ig_multiplier: "~133×",
+    project_web_zpn_stat_ig_multiplier: "~183×",
     project_web_zpn_stat_ig_multiplier_label:
       "Więcej niż przeciętny niemy materiał",
     project_web_zpn_stat_ig_followers: "+800",
     project_web_zpn_stat_ig_followers_label:
       "Nowych obserwujących (3× wzrost)",
     project_web_zpn_caption_instagram:
-      "200 tys. wyświetleń rolki na tle pozostałych materiałów (nawet 130× więcej)",
+      "275 tys. wyświetleń rolki na tle pozostałych materiałów (nawet 180× więcej)",
 
     project_web_zpn_iter4_heading:
       "Redesign strony głównej — koniec duplikacji treści",
@@ -985,14 +985,14 @@ const translations = {
     project_web_zpn_final_p_3:
       "✅ Uporządkowałem treść strony głównej i podstrony „O Nas”, eliminując zduplikowane sekcje „o mnie” i chaotyczną listę doświadczenia.",
     project_web_zpn_final_p_4:
-      "✅ Wsparłem strategię social media, która przyniosła pierwszy viral — ponad 200 tys. wyświetleń i +800 nowych obserwujących (3× wzrost).",
+      "✅ Wsparłem strategię social media, która przyniosła pierwszy viral — ponad 275 tys. wyświetleń i +800 nowych obserwujących (3× wzrost).",
     project_web_zpn_final_p_5:
       "✅ Zapewniłem pełną zgodność cookies z RODO oraz poprawki dostępności, budując większe zaufanie i bezpieczeństwo użytkowników.",
     project_web_zpn_stat_hosting_cost_2: "-66%",
     project_web_zpn_stat_hosting_cost_label_2: "Roczny koszt hostingu",
     project_web_zpn_stat_perf_2: "do +43 pkt",
     project_web_zpn_stat_perf_label_2: "Performance Lighthouse, mobile (42→85)",
-    project_web_zpn_stat_ig_views_2: "200K+",
+    project_web_zpn_stat_ig_views_2: "275K+",
     project_web_zpn_stat_ig_views_label_2: "Wyświetleń pierwszego virala",
     project_web_zpn_stat_ig_followers_2: "+800",
     project_web_zpn_stat_ig_followers_label_2: "Nowych obserwujących na IG",
@@ -1204,8 +1204,8 @@ const translations = {
       "„Rzetelny fachowiec z świetnym podejściem do klienta. Bardzo dobrze zrozumiał nasze potrzeby biznesowe i doradził rozwiązania, na które sami byśmy nie wpadli.”",
     offer_testimonial2_role: "CEO PlanetRoad",
     offer_testimonial3_text:
-      "„Współpraca przebiegła bezproblemowo. Strona działa szybko, wygląda nowocześnie i co najważniejsze – zaczęła przynosić pierwszych klientów od razu po wdrożeniu.”",
-    offer_testimonial3_role: "Własny Biznes",
+      "„Bardzo polecam współpracę z Markiem! Marek pomógł mi zmniejszyć koszta prowadzenia mojej strony oraz zupełnie ją przebudował, dzięki czemu lepiej odpowiada potrzebom mojej marki. Współpraca z Markiem to czysta przyjemność, był zawsze dostępny, pomocny i rozumiejący. Polecam każdemu kto potrzebuje pomocy w zakresie Google Ads, SEO, budowania strony internetowej i identyfikacji wizualnej marki ❤️”",
+    offer_testimonial3_role: "Właścicielka Z Psiego Na Nasze",
 
     // PRIVACY
     privacy_breadcrumbs_main: "Strona Główna",
@@ -3196,18 +3196,18 @@ const translations = {
     project_web_zpn_iter3_p1_text2: "instead of silent-only content.",
     project_web_zpn_iter3_p2_text1: "The payoff came faster than expected —",
     project_web_zpn_iter3_p2_bold:
-      "the third spoken, expert-style Reel reached over 200K views",
+      "the third spoken, expert-style Reel reached over 275K views",
     project_web_zpn_iter3_p2_text2:
       ", while silent content had previously topped out at around 1,500 views. Beyond reach, the Reel brought in over 800 new followers — tripling the account (from around 400 to over 1,200) and opening up new ways to turn engaged viewers into clients.",
-    project_web_zpn_stat_ig_views: "200K+",
+    project_web_zpn_stat_ig_views: "275K+",
     project_web_zpn_stat_ig_views_label: "Views on the third spoken Reel",
-    project_web_zpn_stat_ig_multiplier: "~133×",
+    project_web_zpn_stat_ig_multiplier: "~183×",
     project_web_zpn_stat_ig_multiplier_label:
       "More than the average silent video",
     project_web_zpn_stat_ig_followers: "+800",
     project_web_zpn_stat_ig_followers_label: "New followers (3× growth)",
     project_web_zpn_caption_instagram:
-      "200K views on one Reel against the rest of the account (up to 130× more)",
+      "275K views on one Reel against the rest of the account (up to 180× more)",
 
     project_web_zpn_iter4_heading:
       "Homepage redesign — the end of duplicated content",
@@ -3319,14 +3319,14 @@ const translations = {
     project_web_zpn_final_p_3:
       "✅ Organized the homepage and \"About Us\" content, removing duplicated \"about me\" sections and the chaotic experience list.",
     project_web_zpn_final_p_4:
-      "✅ Supported a social media strategy that landed the first viral hit — over 200K views and +800 new followers (3× growth).",
+      "✅ Supported a social media strategy that landed the first viral hit — over 275K views and +800 new followers (3× growth).",
     project_web_zpn_final_p_5:
       "✅ Delivered full GDPR cookie compliance and accessibility fixes, building more trust and safety for users.",
     project_web_zpn_stat_hosting_cost_2: "-66%",
     project_web_zpn_stat_hosting_cost_label_2: "Annual hosting cost",
     project_web_zpn_stat_perf_2: "up to +43 pts",
     project_web_zpn_stat_perf_label_2: "Lighthouse Performance, mobile (42→85)",
-    project_web_zpn_stat_ig_views_2: "200K+",
+    project_web_zpn_stat_ig_views_2: "275K+",
     project_web_zpn_stat_ig_views_label_2: "Views on the first viral Reel",
     project_web_zpn_stat_ig_followers_2: "+800",
     project_web_zpn_stat_ig_followers_label_2: "New Instagram followers",
@@ -3539,8 +3539,8 @@ const translations = {
       "\"A reliable professional with a great client approach. He understood our business needs very well and suggested solutions we wouldn't have thought of ourselves.\"",
     offer_testimonial2_role: "CEO, PlanetRoad",
     offer_testimonial3_text:
-      "\"The collaboration went smoothly. The site is fast, looks modern, and — most importantly — started bringing in first customers right after launch.\"",
-    offer_testimonial3_role: "Business Owner",
+      "\"I highly recommend working with Marek! He helped me cut the running costs of my website and completely rebuilt it, so it now fits my brand's needs much better. Working with Marek is a pure pleasure: he was always available, helpful and understanding. I recommend him to anyone who needs help with Google Ads, SEO, building a website and brand visual identity ❤️\"",
+    offer_testimonial3_role: "Owner, Z Psiego Na Nasze",
 
     // PRIVACY
     privacy_breadcrumbs_main: "Main Page",
