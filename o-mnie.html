@@ -114,6 +114,7 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js"></script>
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/bookshelf.css" />
     <style>
       /* ==========================================================================
    PAGE SPECIFIC STYLES — ABOUT / BENTO GRID & TIMELINE
@@ -1472,6 +1473,28 @@
           </div>
         </div>
 
+        <!-- KAFEL: BIBLIOTECZKA (książki z js/bookshelf.js) -->
+        <div class="bento-card bento-books" id="bookshelf">
+          <div class="books-head">
+            <h3 data-i18n="about_books_title">Biblioteczka</h3>
+            <p data-i18n="about_books_sub">
+              Książki, które przeczytałem. Kolejne tytuły lądują tutaj.
+            </p>
+            <p class="books-caption" id="booksCaption" aria-live="polite">
+              <span class="books-hint" data-i18n="about_books_hint"
+                >Najedź na książkę lub dotknij jej, żeby zobaczyć tytuł.</span
+              >
+              <span class="books-detail" hidden></span>
+            </p>
+          </div>
+          <div class="shelf">
+            <div class="shelf-scroll">
+              <div class="shelf-row" role="list"></div>
+            </div>
+            <div class="shelf-board" aria-hidden="true"></div>
+          </div>
+        </div>
+
         <!-- KAFEL 5: KOMPAKTOWA OŚ CZASU (MOJA DROGA) -->
         <div class="bento-card bento-timeline">
           <div class="timeline-header">
@@ -2176,6 +2199,7 @@
         [".gridGallery .galleryItem"]
       );
     </script>
+    <script src="js/bookshelf.js"></script>
     <script src="js/header.js"></script>
     <script src="js/settings.js"></script>
     <script src="js/cursor.js"></script>

@@ -1056,6 +1056,10 @@ const translations = {
     about_stats_experience_label: "lata doświadczenia",
     about_stats_certifications_label: "ukończonych certyfikacji",
     about_stats_projects_label: "zrealizowanych projektów",
+    about_books_title: "Biblioteczka",
+    about_books_sub:
+      "Książki, które przeczytałem. Kolejne tytuły lądują tutaj.",
+    about_books_hint: "Najedź na książkę lub dotknij jej, żeby zobaczyć tytuł.",
     about_timeline_title: "Moja Droga",
     about_timeline_step1_year: "2011 – 2022",
     about_timeline_step1_title: "Szkoła charakteru",
@@ -3388,6 +3392,10 @@ const translations = {
     about_stats_experience_label: "years of experience",
     about_stats_certifications_label: "completed certifications",
     about_stats_projects_label: "completed projects",
+    about_books_title: "Bookshelf",
+    about_books_sub:
+      "Books I have read. New titles end up here.",
+    about_books_hint: "Hover over or tap a book to see its title.",
     about_timeline_title: "My Journey",
     about_timeline_step1_year: "2011 – 2022",
     about_timeline_step1_title: "A School of Character",

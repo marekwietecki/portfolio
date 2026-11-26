@@ -1,0 +1,331 @@
+/* ==========================================================================
+   BIBLIOTECZKA (o-mnie) — książki 3D złożone z samej okładki
+   Dane książek: js/bookshelf.js. Tu tylko wygląd.
+   Wymiary w px liczone od jednej zmiennej --bh (wysokość książki).
+   ========================================================================== */
+
+.bento-books {
+  grid-column: span 3;
+  display: grid;
+  grid-template-columns: minmax(200px, 260px) 1fr;
+  gap: 12px 32px;
+  align-items: end;
+  --bh: 196; /* wysokość książki w px (bez jednostki) */
+  --yaw: 64deg; /* kąt ustawienia grzbietów na półce */
+  --lie-tilt: 68deg; /* nachylenie książek leżących */
+}
+
+.books-head h3 {
+  font-size: 1.2rem;
+  color: var(--text-heading);
+  margin-bottom: 6px;
+}
+
+.books-head p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.books-caption {
+  margin-top: 18px;
+  min-height: 3.2em;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.books-caption strong {
+  display: block;
+  color: var(--text-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* --- PÓŁKA ------------------------------------------------------------ */
+.shelf {
+  position: relative;
+  min-width: 0;
+}
+
+.shelf-scroll {
+  padding: 36px 8px 0; /* góra: zapas na uniesienie książki przy hoverze */
+}
+
+.shelf-row {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  min-height: calc(var(--bh) * 1px);
+  position: relative;
+}
+
+/* stojące: z prawej zapas na okładkę ostatniej książki, która "wystaje" w głąb */
+.group-standing {
+  display: flex;
+  align-items: flex-end;
+  flex: none;
+  padding-right: calc(var(--bh) * 0.36px);
+}
+
+/* leżące stosy wypełniają wolne miejsce po prawej, wyśrodkowane w nim */
+.group-lying {
+  display: flex;
+  align-items: flex-end;
+  gap: calc(var(--bh) * 0.1px);
+  margin-inline: auto;
+}
+
+.shelf-board {
+  height: 14px;
+  margin: 0 -12px;
+  border-radius: 4px;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--text-muted) 38%, var(--bg-card)) 0,
+    color-mix(in srgb, var(--text-muted) 62%, var(--bg-card)) 100%
+  );
+  box-shadow: 0 8px 14px -6px rgb(0 0 0 / 0.35);
+}
+
+/* --- JEDNA KSIĄŻKA (wspólne) ----------------------------------------- */
+.book {
+  --s: 1; /* skala wysokości (lekkie różnice między książkami) */
+  --ar: 0.782; /* proporcje okładki, ustawiane z pliku obrazu */
+  --H: calc(var(--bh) * var(--s) * 1px);
+  --W: calc(var(--H) * var(--ar));
+  --T: calc(var(--t) * var(--bh) / 220 * 1px);
+  --spine: #2b2d33;
+  --spine-ink: #fff;
+  position: relative;
+  flex: none;
+  height: var(--H);
+  outline: none;
+  cursor: default;
+}
+
+.book-box {
+  position: absolute;
+  bottom: 0;
+  width: var(--W);
+  height: var(--H);
+  transform-style: preserve-3d;
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.face {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.f-front {
+  inset: 0;
+  transform: translateZ(calc(var(--T) / 2));
+  background: var(--cover) center / cover no-repeat, #ddd;
+  border-radius: 2px 5px 5px 2px;
+}
+
+/* zagłębienie przy grzbiecie + delikatny połysk */
+.f-front::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    linear-gradient(
+      90deg,
+      rgb(0 0 0 / 0.28) 0,
+      rgb(255 255 255 / 0.16) 2.2%,
+      rgb(0 0 0 / 0.1) 4%,
+      transparent 9%
+    ),
+    linear-gradient(115deg, rgb(255 255 255 / 0.14), transparent 40%);
+}
+
+.f-back {
+  inset: 0;
+  transform: rotateY(180deg) translateZ(calc(var(--T) / 2));
+  background: var(--spine);
+  border-radius: 5px 2px 2px 5px;
+}
+
+.f-spine {
+  width: var(--T);
+  height: 100%;
+  left: calc((var(--W) - var(--T)) / 2);
+  transform: rotateY(-90deg) translateZ(calc(var(--W) / 2));
+  background:
+    linear-gradient(
+      90deg,
+      rgb(0 0 0 / 0.22),
+      rgb(255 255 255 / 0.1) 28%,
+      transparent 55%,
+      rgb(0 0 0 / 0.2)
+    ),
+    var(--spine);
+  color: var(--spine-ink);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: calc(var(--H) * 0.07) 0;
+  overflow: hidden;
+}
+
+.spine-title {
+  writing-mode: vertical-rl;
+  font-weight: 700;
+  font-size: clamp(8px, calc(var(--T) * 0.36), 14px);
+  letter-spacing: 0.02em;
+  line-height: 1;
+  max-height: 72%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.spine-author {
+  writing-mode: vertical-rl;
+  font-size: clamp(7px, calc(var(--T) * 0.26), 10px);
+  opacity: 0.75;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.f-pages,
+.f-top,
+.f-bottom {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgb(0 0 0 / 0.07) 0 1px,
+      transparent 1px 3px
+    ),
+    #efe8d8;
+}
+
+.f-pages {
+  width: var(--T);
+  height: 100%;
+  left: calc((var(--W) - var(--T)) / 2);
+  transform: rotateY(90deg) translateZ(calc(var(--W) / 2));
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgb(0 0 0 / 0.07) 0 1px,
+      transparent 1px 3px
+    ),
+    #efe8d8;
+}
+
+.f-top,
+.f-bottom {
+  width: 100%;
+  height: var(--T);
+  top: calc((var(--H) - var(--T)) / 2);
+}
+
+.f-top {
+  transform: rotateX(90deg) translateZ(calc(var(--H) / 2));
+}
+
+.f-bottom {
+  transform: rotateX(-90deg) translateZ(calc(var(--H) / 2));
+}
+
+/* --- KSIĄŻKI STOJĄCE -------------------------------------------------- */
+.book.standing {
+  width: calc(var(--T) * sin(var(--yaw)) + 1px);
+  perspective: 900px;
+  perspective-origin: 0 50%;
+}
+
+.book.standing .book-box {
+  left: calc(var(--T) * sin(var(--yaw)) / 2);
+  transform-origin: 0 50%;
+  transform: rotateY(var(--yaw));
+}
+
+.book.standing::after {
+  /* cień przy podłożu */
+  content: "";
+  position: absolute;
+  left: 0;
+  right: -6px;
+  bottom: -3px;
+  height: 6px;
+  background: radial-gradient(
+    ellipse at center,
+    rgb(0 0 0 / 0.35),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.book.standing:hover,
+.book.standing:focus-visible {
+  z-index: 3;
+}
+
+.book.standing:hover .book-box,
+.book.standing:focus-visible .book-box {
+  transform: translateY(-14px) rotateY(calc(var(--yaw) - 26deg));
+}
+
+.book:focus-visible .face.f-front {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* --- KSIĄŻKI LEŻĄCE (stos po prawej) --------------------------------- */
+.lying-stack {
+  position: relative;
+  flex: none;
+  width: calc(var(--bh) * 0.95px);
+  height: calc(var(--bh) * 0.62px);
+  perspective: 1100px;
+  perspective-origin: 50% -40%;
+}
+
+.book.lying {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  /* środek książki leży na grzbiecie książki poniżej (--below = jej grubość) */
+  --lift: calc((var(--below, 0) + var(--t) / 2) * var(--bh) / 220 * 1px);
+}
+
+.book.lying .book-box {
+  left: calc(var(--W) / -2);
+  bottom: calc(var(--H) * -0.5 * (1 - cos(var(--lie-tilt))));
+  transform-origin: 50% 50%;
+  transform: rotateX(var(--lie-tilt)) rotateZ(var(--rz, 0deg))
+    translateZ(var(--lift, 0px));
+}
+
+.book.lying:hover .book-box,
+.book.lying:focus-visible .book-box {
+  transform: rotateX(var(--lie-tilt)) rotateZ(var(--rz, 0deg))
+    translateZ(calc(var(--lift, 0px) + 14px));
+}
+
+.book.lying:hover,
+.book.lying:focus-visible {
+  z-index: 3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .book-box {
+    transition: none;
+  }
+}
+
+/* --- MOBILE ------------------------------------------------------------ */
+@media (max-width: 768px) {
+  .bento-books {
+    grid-column: span 1;
+    grid-template-columns: 1fr;
+    --bh: 150;
+  }
+}
