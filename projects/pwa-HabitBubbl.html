@@ -790,14 +790,7 @@
             5. Systematyzacja Komponentów: Storybook
           </h2>
           <p data-i18n="project_habitbubbl_storybook_p1">
-            Po ukończeniu głównej wersji aplikacji chciałem usystematyzować
-            swoją pracę i jeszcze mocniej skupić się na komponentach
-            interfejsu — dlatego wdrożyłem Storybook (26 stories dla 5
-            komponentów) do istniejącej aplikacji vanilla JS/HTML/CSS, bez
-            kroku budowania. Zamiast wymuszać framework, dobrałem narzędzie
-            (@storybook/html-vite) do faktycznej architektury kodu — funkcje
-            zwracające węzły DOM, które aplikacja już traktowała jak
-            komponenty.
+            Po ukończeniu głównej wersji aplikacji chciałem usystematyzować swoją pracę i jeszcze mocniej skupić się na komponentach interfejsu — dlatego do istniejącej aplikacji w czystym HTML/CSS/JS, bez frameworka, dodałem Storybook (@storybook/html-vite): 31 stories dla 9 komponentów (pierścień postępu XP, siatka aktywności nawyków, bąbelek zadania/nawyku/celu, modal dodawania, wybór typu, przełącznik, kalendarz tygodniowy, stany puste i powiadomienia). Dostałem środowisko do pracy nad komponentami, automatyczne kontrole i regresję wizualną — bez przepisywania aplikacji na komponenty.
           </p>
           <ul>
             <li data-i18n="project_habitbubbl_storybook_item1">
@@ -807,13 +800,8 @@
               rzeczywistą czystością funkcji albo potwierdzonym powielaniem
               tego samego znacznika na 4 podstronach.
             </li>
-            <li data-i18n="project_habitbubbl_storybook_item2">
-              <strong>Izolacja komponentów ujawniła realne błędy:</strong>
-              animacja pierścienia postępu była martwa przez niedopasowaną
-              nazwę klasy CSS (naprawione), a dodatek do testowania
-              dostępności wykrył brakujące atrybuty „for" w etykietach
-              formularza — po znalezieniu 2 z 8 przypadków, przejrzałem cały
-              modal i naprawiłem wszystkie osiem.
+            <li data-i18n="project_habitbubbl_storybook_item4">
+              <strong>Dwa wzorce integracji, dobrane do komponentu:</strong> (1) bezpośrednie użycie — stories importują prawdziwe funkcje renderujące z js/ui.js, więc story uruchamia dokładnie ten kod, który trafia do użytkowników; (2) wersje prezentacyjne — interfejs związany z globalnym stanem (modal dodawania, siatka aktywności) renderuję lokalnymi funkcjami odwzorowującymi prawdziwy znacznik, klasy i ID, dzięki czemu realne problemy z CSS i dostępnością ujawniają się tak samo.
             </li>
             <li data-i18n="project_habitbubbl_storybook_item3">
               <strong>Redesign „premium glass" bez nowych wartości:</strong>
@@ -823,6 +811,67 @@
               nowa.
             </li>
           </ul>
+
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_habitbubbl_storybook_bugs_h3"
+          >
+            Realne błędy ujawnione przez Storybook
+          </h3>
+          <p data-i18n="project_habitbubbl_storybook_bugs_p">
+            Każdy z pięciu ma osobny commit:
+          </p>
+          <ul>
+            <li data-i18n="project_habitbubbl_storybook_bug1">
+              <strong>Animacja pierścienia postępu nigdy nie działała:</strong> JS ustawiał jedną nazwę klasy, a CSS celował w inną. Wyszło po odizolowaniu komponentu.
+            </li>
+            <li data-i18n="project_habitbubbl_storybook_bug2">
+              <strong>Przeterminowane zadania nie dostawały czerwonego tekstu:</strong> selektor .item-title nie pasował do niczego, a prawdziwy element to .taskNodeName. Wyszło w story bąbelka zadania.
+            </li>
+            <li data-i18n="project_habitbubbl_storybook_bug3">
+              <strong>Czytniki ekranu czytały większość pól modala dodawania bez nazwy:</strong> sześć etykiet nie miało atrybutu for, powielonych na 4 podstronach HTML. Wykrył to addon-a11y.
+            </li>
+            <li data-i18n="project_habitbubbl_storybook_bug4">
+              <strong>Przewijanych list rozwijanych nie dało się obsłużyć klawiaturą:</strong> axe oceniło to jako „serious"; naprawione przez tabindex.
+            </li>
+            <li data-i18n="project_habitbubbl_storybook_bug5">
+              <strong>Ikony powiadomień były odwrócone:</strong> rutynowe „Zadanie usunięte" pokazywało czerwony krzyżyk, a prawdziwe błędy łagodne ostrzeżenie. Naprawione i zweryfikowane nowymi story powiadomień.
+            </li>
+          </ul>
+
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_habitbubbl_storybook_ci_h3"
+          >
+            Automatyczne testy i CI
+          </h3>
+          <ul>
+            <li data-i18n="project_habitbubbl_storybook_ci1">
+              <strong>Każda story jest testem:</strong> Vitest i Playwright uruchamiają wszystkie stories, w tym test klikany na checkboxie zadania.
+            </li>
+            <li data-i18n="project_habitbubbl_storybook_ci2">
+              <strong>CI przy każdym pushu i PR do main:</strong> GitHub Actions najpierw odpala testy stories, potem publikuje do Chromatic, gdzie sprawdzam regresję wizualną. Działający Storybook i status CI są podlinkowane w README.
+            </li>
+            <li data-i18n="project_habitbubbl_storybook_ci3">
+              <strong>Dostępność na każdej story:</strong> addon-a11y (axe) sprawdza każdą story pod kątem zasad WCAG.
+            </li>
+          </ul>
+
+          <h3
+            style="padding-top: 3vh; margin-bottom: 1vh"
+            data-i18n="project_habitbubbl_storybook_limits_h3"
+          >
+            Czego nauczyły mnie ograniczenia narzędzia
+          </h3>
+          <ul>
+            <li data-i18n="project_habitbubbl_storybook_lim1">
+              <strong>Testuj też to, co faktycznie trafia do użytkowników:</strong> Storybook importuje źródłowy CSS/JS, a produkcja ładuje pliki zminifikowane. Te zostały kiedyś zrobione ręcznie i nigdy nie były regenerowane, więc poprawki wyglądające dobrze w Storybooku po cichu nie docierały do użytkowników. Dodałem krok esbuild, żeby pliki nie mogły się już rozjechać.
+            </li>
+            <li data-i18n="project_habitbubbl_storybook_lim2">
+              <strong>Stories nie pokrywają wąskich ekranów prawdziwych urządzeń:</strong> bez addonu viewport kolizja paska tygodnia przy 320 px wyszła dopiero na prawdziwym telefonie, nie w Storybooku.
+            </li>
+          </ul>
+
           <a
             href="https://main--6a931571e9ffd13d5bff96d2.chromatic.com"
             target="_blank"
@@ -831,15 +880,6 @@
             data-i18n="project_habitbubbl_storybook_link"
           >
             Zobacz Storybook →
-          </a>
-          <span style="color: var(--text-muted, #888888)"> · </span>
-          <a
-            href="https://main--6a931571e9ffd13d5bff96d2.chromatic.com"
-            target="_blank"
-            rel="noopener"
-            class="siteLink"
-          >
-            Chromatic
           </a>
         </section>
 
