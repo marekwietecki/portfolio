@@ -382,6 +382,10 @@ const translations = {
     projects_habitbubbl_title: "Progresywna Aplikacja Habit Bubbl",
     projects_habitbubbl_subtitle:
       "Jak stworzyłem aplikację, która pomaga, ludziom pokochać produktywność?",
+    projects_mwords_title:
+      "Progresywna Aplikacja mWords",
+    projects_mwords_subtitle:
+      "Jak zbudowałem aplikację, która obniża barierę wejścia w naukę angielskiego dla jednej uczennicy?",
     projects_planetroad_visualidentity_title:
       "Identyfikacja Wizualna PlanetRoad",
     projects_planetroad_visualidentity_subtitle:
@@ -1272,6 +1276,7 @@ const translations = {
     side_nav_storybook: "Storybook",
     side_nav_final_effect: "Efekt Końcowy",
     side_nav_post_project: "Po Projekcie",
+    side_nav_process: "Proces",
 
     // PROJECT APP MONEXO
     project_app_monexo_title: "Aplikacja Mobilna",
@@ -2019,7 +2024,141 @@ const translations = {
     project_habitbubbl_roadmap_item3:
       "🔜 <strong>Optymalizacja UX i danych:</strong> system flag do kategoryzacji i filtrowania zadań, zaawansowane sortowanie celów wg terminu realizacji, zapamiętywanie ulubionych lokalizacji dla szybszego planowania.",
     project_habitbubbl_navloop_text: "Zobacz kolejny projekt:",
-    project_habitbubbl_navloop_link: "Audyt WKDZIK.PL",
+    project_habitbubbl_navloop_link: "Aplikacja mWords",
+
+    // PROJECT MWORDS
+    project_mwords_badge:
+      "mWords",
+    project_mwords_title:
+      "Aplikacja do Nauki Słownictwa",
+    project_mwords_desc:
+      "Progresywna aplikacja mobilna (PWA) do nauki angielskiego dla jednej uczennicy i jej nauczyciela — dwa nowe słowa dziennie, testy, oceny w skali 0–8 i panel nauczyciela do kontroli postępów.",
+    project_mwords_role_label:
+      "Rola:",
+    project_mwords_role_val:
+      "Product Owner & UX Designer",
+    project_mwords_scope_label:
+      "Zakres odpowiedzialności:",
+    project_mwords_scope_val:
+      "Definicja problemu i wymagań, przepływy użytkownika, projekt interfejsu mobilnego, system ocen i poziomów, iteracje na podstawie własnego użytkowania",
+    project_mwords_duration_label:
+      "Czas trwania:",
+    project_mwords_duration_val:
+      "2 tygodnie",
+    project_mwords_methodology_label:
+      "Metodyka:",
+    project_mwords_methodology_val:
+      "Krótkie cykle iteracyjne: pomysł → wersja w aplikacji → użycie → poprawka. Podejście mobile-first, aplikacja zbudowana w narzędziu Base44.",
+    project_mwords_about_h2:
+      "1. O Projekcie",
+    project_mwords_context_title:
+      "Kontekst",
+    project_mwords_about_p1:
+      "<strong>mWords</strong> to progresywna aplikacja (PWA) do nauki angielskiego. Jestem korepetytorem języka angielskiego i stworzyłem ją dla siebie i mojej uczennicy: uczymy się po dwa nowe słowa dziennie, uczennica dodaje je z własnym zdaniem, a ja widzę jej postępy i mogę korygować to, co napisała.",
+    project_mwords_about_p2:
+      "Aplikację zbudowałem w narzędziu <strong>Base44</strong>, które generuje działający produkt na podstawie opisu. Moją rolą było zdefiniowanie wymagań, kierowanie iteracjami i weryfikacja efektu — jak Product Owner. Przy okazji sprawdzałem, na ile takie narzędzie nadaje się do zbudowania realnego produktu dla realnej użytkowniczki.",
+    project_mwords_problem_title:
+      "Problem",
+    project_mwords_problem_p:
+      "Wraz z kolejnymi lekcjami zacząłem tracić kontrolę nad naszą nauką dwóch słówek dziennie. Brakowało mi bazy, w której mógłbym zbierać słówka, sprawdzać progres i pilnować, żeby uczennica nie „uczyła się” dwa razy tych samych słówek. Nie widziałem też, które słowa faktycznie zapamiętała ani jak układa zdania z nowymi słowami. Uczennica z kolei trafiała na barierę poznawczą: gdy nie znała słowa, musiała szukać tłumaczenia poza aplikacją, co zabierało czas i zniechęcało.",
+    project_mwords_goals_title:
+      "Cel",
+    project_mwords_goal1:
+      "🎯 <b>Regularność:</b> dwa nowe słowa każdego dnia roboczego, a weekend na powtórki i testy.",
+    project_mwords_goal2:
+      "🎯 <b>Widoczny postęp:</b> ocena każdego słowa w skali 0–8 i poziom słownictwa (A0 → C2) jako długoterminowy cel.",
+    project_mwords_goal3:
+      "🎯 <b>Kontrola nauczyciela:</b> wspólna baza słówek, która odrzuca duplikaty, wgląd w zdania uczennicy oraz możliwość ich poprawiania i przyznawania punktów.",
+    project_mwords_goal4:
+      "🎯 <b>Jak najniższa bariera poznawcza:</b> tłumaczenie zawsze o jedno tapnięcie od słowa.",
+    project_mwords_constraints_title:
+      "Ograniczenia",
+    project_mwords_constraint1:
+      "⚠️ <b>Jedna użytkowniczka i jeden nauczyciel</b> — brak próby do uogólnień, decyzje opierają się na obserwacji jednej osoby.",
+    project_mwords_constraint2:
+      "⚠️ <b>Zdania pisze uczennica sama</b> — aplikacja nie może ich generować, może tylko zachęcać do ich napisania (minimum 6 słów) i pozwalać nauczycielowi je korygować.",
+    project_mwords_constraint3:
+      "⚠️ <b>Użycie głównie na telefonie</b> — interfejs musiał działać jak natywna aplikacja: dolna nawigacja, bezpieczne strefy ekranu, duże pola dotyku i tryb ciemny.",
+    project_mwords_constraint4:
+      "⚠️ <b>Realizacja solo, narzędzie sterowane opisem</b> — każdą zmianę zlecałem narzędziu słowami, więc jakość efektu zależała od precyzji wymagań.",
+    project_mwords_process_h2:
+      "2. Proces Projektowy",
+    project_mwords_process_p1:
+      "W mWords nie było osobnej fazy badań. Projekt powstawał w krótkich cyklach, a każda zmiana wynikała z obserwacji, jak naprawdę wygląda nauka — nie z założeń sprzed startu.",
+    project_mwords_process_start_h3:
+      "Założenia wyjściowe",
+    project_mwords_process_start_p:
+      "Pierwsza wersja wynikała z jasno opisanego procesu nauki: dwa słowa dziennie w dni robocze, weekend na testy, punkty +1 / 0 / −1 sumowane do oceny w skali 0–8 w trzech kolorach (czerwony 0–2, żółty 3–5, zielony 6–8). Styl minimalistyczny: skala szarości z jednym różowym akcentem.",
+    project_mwords_process_decisions_h3:
+      "Kluczowe decyzje i iteracje",
+    project_mwords_dec1:
+      "<strong>Test pisemny i ustny na zmianę:</strong> pierwotnie test był tylko pisemny. Zmieniłem go tak, by każde słowo losowo wymagało napisania odpowiedzi albo powiedzenia jej na głos. Brak odpowiedzi (−1) ma sens tylko przy pisaniu, a instrukcja po polsku stoi pod angielską, w jaśniejszym kolorze.",
+    project_mwords_dec2:
+      "<strong>Osobna wersja uczennicy:</strong> uczennica ma tylko Today, Learn, Test i Words, z plakietką STUDENT przy logo. Panel nauczyciela jest dostępny wyłącznie dla jego konta.",
+    project_mwords_dec3:
+      "<strong>Widoczny licznik „1/2 dodane”:</strong> z drobnego tekstu zamieniony w różową pigułkę z kropkami postępu, żeby od razu było widać, ile zostało do zrobienia dziś.",
+    project_mwords_dec4:
+      "<strong>Tłumaczenie na tapnięcie, jak w Duolingo:</strong> polskie znaczenie jest ukryte, dopóki uczennica nie dotknie słowa — wtedy pojawia się dymek nad słowem. W teście znaczenie nigdy się nie pokazuje, bo zdradziłoby odpowiedź.",
+    project_mwords_dec5:
+      "<strong>Minimum sześć słów w zdaniu:</strong> licznik słów pod polem działa na żywo, więc uczennica od razu wie, ile jeszcze brakuje.",
+    project_mwords_dec6:
+      "<strong>Poziomy CEFR jako cel:</strong> karta „Words in database” pokazuje liczbę słów, pasek postępu i próg następnego poziomu (A1 — 700, A2 — 1500, B1 — 2500, B2 — 5000, C1 — 10 000, C2 — 20 000+). Znaczek A0 jest aktywny, A1 przygaszony, a strzałka między nimi pokazuje kierunek.",
+    project_mwords_dec7:
+      "<strong>Sprawdzanie zdań przez nauczyciela:</strong> w panelu nauczyciel widzi tylko dwa zdania naraz, a kolejne pojawiają się, gdy oczyści te wcześniejsze. Poprawiona wersja zastępuje oryginał u uczennicy, a zmiany są podkreślone.",
+    project_mwords_dec8:
+      "<strong>Bank słownictwa:</strong> nauczyciel dodaje słowa, których uczennica nie pamiętała. Dwa najnowsze widzi na swojej stronie głównej, żeby mogła ich użyć w zdaniach i spędzić mniej czasu na szukaniu.",
+    project_mwords_dec9:
+      "<strong>Prostsza strona główna:</strong> usunąłem kartę z testem weekendowym, połączyłem „Learned” i „Average mark” w jedną kartę, a bank słownictwa przeniosłem wyżej.",
+    project_mwords_dec10:
+      "<strong>Natywne odczucie na telefonie:</strong> dolna nawigacja (tylko na mobile), tryb ciemny zgodny z systemem, bezpieczne strefy ekranu, odświeżanie przeciągnięciem, pamięć ostatniego ekranu w każdej zakładce, natychmiastowe zapisy i kierunkowe przejścia między ekranami.",
+    project_mwords_final_h2:
+      "3. Efekt Końcowy",
+    project_mwords_final_p1:
+      "Aplikacja składa się z czterech ekranów uczennicy i panelu nauczyciela:",
+    project_mwords_final_item1:
+      "<strong>Today:</strong> dwa słowa dnia, licznik dodanych słów, poziom słownictwa z paskiem postępu, bank słownictwa i podsumowanie ocen.",
+    project_mwords_final_item2:
+      "<strong>Learn:</strong> karty słów z przykładowym zdaniem, tłumaczenie po tapnięciu i odhaczanie słów, które uczennica już zna.",
+    project_mwords_final_item3:
+      "<strong>Test:</strong> pojedyncze słowo, odpowiedź pisemna lub ustna i punktacja +1 / 0 / −1.",
+    project_mwords_final_item4:
+      "<strong>Words:</strong> wszystkie słowa z ocenami, wyszukiwanie po angielsku lub po polsku oraz sortowanie od A do Z, od Z do A i według ocen.",
+    project_mwords_final_item5:
+      "<strong>Panel nauczyciela:</strong> bank słownictwa, sprawdzanie zdań, przyznawanie punktów, dodawanie słów, import z pliku CSV i zaproszenie uczennicy.",
+    project_mwords_after_h2:
+      "4. Po Projekcie",
+    project_mwords_takeaways_h3:
+      "Kluczowe Wnioski",
+    project_mwords_after_p1:
+      "🧠 Największą różnicę dla bariery poznawczej zrobiło <strong>ukrycie tłumaczenia za tapnięciem</strong>, a nie jego usunięcie: uczennica sama decyduje, kiedy potrzebuje pomocy.",
+    project_mwords_after_p2:
+      "🔁 Aplikacja powstawała w krótkich cyklach, a każda zmiana wynikała z obserwacji, jak naprawdę wygląda nauka, a nie z założeń na starcie.",
+    project_mwords_after_p3:
+      "🧩 Rozdzielenie roli ucznia i nauczyciela uprościło oba interfejsy: uczennica widzi tylko to, czego potrzebuje do nauki, a nauczyciel ma własny panel do kontroli.",
+    project_mwords_roadmap_h3:
+      "Perspektywy Rozwoju",
+    project_mwords_roadmap_p1:
+      "Kierunek, w który rozwijałbym mWords dalej:",
+    project_mwords_roadmap_item1:
+      "🔜 <strong>Aspekt gamifikacyjny (priorytet):</strong> mechanizmy, dzięki którym uczennica sama będzie chciała wracać do nauki — np. serie dni, nagrody za kolejne poziomy słownictwa i cele tygodniowe.",
+    project_mwords_hero_alt:
+      "mWords - baner projektu",
+    project_mwords_today_alt:
+      "Ekrany Today aplikacji mWords",
+    project_mwords_today_caption:
+      "Today: poziom słownictwa z paskiem postępu, bank słownictwa i podsumowanie ocen",
+    project_mwords_student_alt:
+      "Ekrany nauki w mWords: Learn, Test i Words",
+    project_mwords_student_caption:
+      "Ekrany nauki: Learn (tłumaczenie po tapnięciu), Test oraz Words",
+    project_mwords_teacher_alt:
+      "Panel nauczyciela mWords",
+    project_mwords_teacher_caption:
+      "Panel nauczyciela: bank słownictwa, sprawdzanie zdań, przyznawanie punktów oraz import i zaproszenie",
+    project_mwords_navloop_text:
+      "Zobacz kolejny projekt:",
+    project_mwords_navloop_link:
+      "Audyt WKDZIK.PL",
 
     // PROJECT VI PLANETROAD
     // Identyfikacja Wizualna - PlanetRoad
@@ -2554,6 +2693,10 @@ const translations = {
     projects_habitbubbl_title: "Habit Bubbl Progressive App",
     projects_habitbubbl_subtitle:
       "How i build an app, which helps people love productivity?",
+    projects_mwords_title:
+      "mWords Progressive App",
+    projects_mwords_subtitle:
+      "How I built an app that lowers the barrier to learning English for one student?",
     projects_planetroad_visualidentity_title: "PlanetRoad Visual Identity",
     projects_planetroad_visualidentity_subtitle:
       "How i introduced PlanetRoad to the digital world, creating a coherent visual identity?",
@@ -3433,6 +3576,7 @@ const translations = {
     side_nav_storybook: "Storybook",
     side_nav_final_effect: "Final Result",
     side_nav_post_project: "Post-Project",
+    side_nav_process: "Process",
 
     // PROJECT APP MONEXO
     project_app_monexo_title: "Mobile App",
@@ -4166,7 +4310,141 @@ const translations = {
     project_habitbubbl_roadmap_item3:
       "🔜 <strong>UX & data optimization:</strong> a flag system for categorizing and filtering tasks, advanced goal sorting by deadline, and remembering favorite locations for faster task planning.",
     project_habitbubbl_navloop_text: "See next project:",
-    project_habitbubbl_navloop_link: "WKDZIK.PL Audit",
+    project_habitbubbl_navloop_link: "mWords App",
+
+    // PROJECT MWORDS
+    project_mwords_badge:
+      "mWords",
+    project_mwords_title:
+      "Vocabulary Learning App",
+    project_mwords_desc:
+      "A progressive mobile app (PWA) for learning English, built for one student and her teacher — two new words a day, tests, marks on a 0–8 scale and a teacher panel for tracking progress.",
+    project_mwords_role_label:
+      "Role:",
+    project_mwords_role_val:
+      "Product Owner & UX Designer",
+    project_mwords_scope_label:
+      "Scope of responsibility:",
+    project_mwords_scope_val:
+      "Problem and requirements definition, user flows, mobile interface design, grading and level system, iterations based on hands-on use",
+    project_mwords_duration_label:
+      "Duration:",
+    project_mwords_duration_val:
+      "2 weeks",
+    project_mwords_methodology_label:
+      "Methodology:",
+    project_mwords_methodology_val:
+      "Short iterative cycles: idea → version in the app → use → fix. Mobile-first approach, the app built in Base44.",
+    project_mwords_about_h2:
+      "1. About the Project",
+    project_mwords_context_title:
+      "Context",
+    project_mwords_about_p1:
+      "<strong>mWords</strong> is a progressive web app (PWA) for learning English. I am an English tutor, and I built it for myself and my student: we learn two new words a day, she adds them with a sentence of her own, and I can see her progress and correct what she wrote.",
+    project_mwords_about_p2:
+      "I built the app in <strong>Base44</strong>, a tool that generates a working product from a description. My role was to define the requirements, steer the iterations and verify the result — as a Product Owner. Along the way I tested how far such a tool can go in building a real product for a real user.",
+    project_mwords_problem_title:
+      "Problem",
+    project_mwords_problem_p:
+      "Over the course of our lessons I started to lose control of our learning of two words a day. I lacked a database where I could collect the words, check progress and make sure the student did not “learn” the same words twice. I also could not see which words she had actually remembered, or how she built sentences with them. The student, in turn, hit a cognitive barrier: when she did not know a word, she had to look up the translation elsewhere, which cost time and discouraged her.",
+    project_mwords_goals_title:
+      "Goals",
+    project_mwords_goal1:
+      "🎯 <b>Consistency:</b> two new words every weekday, with weekends reserved for review and tests.",
+    project_mwords_goal2:
+      "🎯 <b>Visible progress:</b> a 0–8 mark for every word and a vocabulary level (A0 → C2) as a long-term goal.",
+    project_mwords_goal3:
+      "🎯 <b>Teacher control:</b> a shared word bank that rejects duplicates, insight into the student's sentences, and the option to correct them and award points.",
+    project_mwords_goal4:
+      "🎯 <b>The lowest possible cognitive barrier:</b> the translation is always one tap away from the word.",
+    project_mwords_constraints_title:
+      "Constraints",
+    project_mwords_constraint1:
+      "⚠️ <b>One student and one teacher</b> — no sample to generalise from, so decisions rest on observing a single person.",
+    project_mwords_constraint2:
+      "⚠️ <b>The student writes the sentences herself</b> — the app cannot generate them; it can only encourage her to write them (at least 6 words) and let the teacher correct them.",
+    project_mwords_constraint3:
+      "⚠️ <b>Mostly used on a phone</b> — the interface had to feel like a native app: bottom navigation, safe screen areas, large touch targets and a dark mode.",
+    project_mwords_constraint4:
+      "⚠️ <b>Solo work with a prompt-driven tool</b> — I requested every change in words, so the quality of the result depended on how precise my requirements were.",
+    project_mwords_process_h2:
+      "2. Design Process",
+    project_mwords_process_p1:
+      "mWords had no separate research phase. The project grew in short cycles, and every change came from observing how learning actually works — not from assumptions made before the start.",
+    project_mwords_process_start_h3:
+      "Starting Assumptions",
+    project_mwords_process_start_p:
+      "The first version came from a clearly described learning process: two words a day on weekdays, weekends for tests, and points of +1 / 0 / −1 summed into a 0–8 mark in three colours (red 0–2, yellow 3–5, green 6–8). The style was minimalist: a greyscale palette with a single pink accent.",
+    project_mwords_process_decisions_h3:
+      "Key Decisions and Iterations",
+    project_mwords_dec1:
+      "<strong>Written and spoken test, mixed:</strong> the test was originally written only. I changed it so that each word randomly asks for a written answer or one said out loud. “No answer” (−1) only makes sense in writing, and the Polish instruction sits below the English one in a lighter colour.",
+    project_mwords_dec2:
+      "<strong>A separate student version:</strong> the student only sees Today, Learn, Test and Words, with a STUDENT badge next to the logo. The teacher panel is available only to the teacher's account.",
+    project_mwords_dec3:
+      "<strong>A visible “1/2 added” counter:</strong> turned from small text into a pink pill with progress dots, so it is obvious at a glance how much is left to do today.",
+    project_mwords_dec4:
+      "<strong>Tap to translate, as in Duolingo:</strong> the Polish meaning stays hidden until the student taps the word, and then a bubble appears above it. In the test the meaning never shows, because it would give the answer away.",
+    project_mwords_dec5:
+      "<strong>At least six words in a sentence:</strong> a live word counter under the field tells the student straight away how many are still missing.",
+    project_mwords_dec6:
+      "<strong>CEFR levels as the goal:</strong> the “Words in database” card shows the word count, a progress bar and the threshold of the next level (A1 — 700, A2 — 1,500, B1 — 2,500, B2 — 5,000, C1 — 10,000, C2 — 20,000+). The A0 badge is active, A1 is dimmed, and an arrow between them shows the direction.",
+    project_mwords_dec7:
+      "<strong>Sentence review by the teacher:</strong> the panel shows only two sentences at a time, and the next ones appear as the earlier ones are cleared. The corrected version replaces the original on the student's side, with the changes underlined.",
+    project_mwords_dec8:
+      "<strong>Vocabulary bank:</strong> the teacher adds words the student did not remember. The two newest show on her home page, so she can use them in her sentences and spend less time searching.",
+    project_mwords_dec9:
+      "<strong>A simpler home page:</strong> I removed the weekend test card, merged “Learned” and “Average mark” into one card and moved the vocabulary bank higher.",
+    project_mwords_dec10:
+      "<strong>A native feel on a phone:</strong> bottom navigation (mobile only), a system-driven dark mode, safe screen areas, pull-to-refresh, each tab remembering its last screen, instant saves and directional transitions between screens.",
+    project_mwords_final_h2:
+      "3. Final Result",
+    project_mwords_final_p1:
+      "The app consists of four student screens and a teacher panel:",
+    project_mwords_final_item1:
+      "<strong>Today:</strong> the two words of the day, a counter of added words, the vocabulary level with a progress bar, the vocabulary bank and a summary of marks.",
+    project_mwords_final_item2:
+      "<strong>Learn:</strong> word cards with an example sentence, tap-to-translate and checking off the words the student already knows.",
+    project_mwords_final_item3:
+      "<strong>Test:</strong> one word at a time, a written or spoken answer, and scoring of +1 / 0 / −1.",
+    project_mwords_final_item4:
+      "<strong>Words:</strong> all words with their marks, search in English or Polish, and sorting from A to Z, Z to A and by mark.",
+    project_mwords_final_item5:
+      "<strong>Teacher panel:</strong> the vocabulary bank, sentence review, awarding points, adding words, importing from a CSV file and inviting the student.",
+    project_mwords_after_h2:
+      "4. After the Project",
+    project_mwords_takeaways_h3:
+      "Key Takeaways",
+    project_mwords_after_p1:
+      "🧠 What did the most for the cognitive barrier was <strong>hiding the translation behind a tap</strong> rather than removing it: the student decides for herself when she needs help.",
+    project_mwords_after_p2:
+      "🔁 The app grew in short cycles, and every change came from observing how learning really works, not from assumptions made at the start.",
+    project_mwords_after_p3:
+      "🧩 Separating the student and teacher roles simplified both interfaces: the student sees only what she needs to learn, and the teacher has a panel of their own for control.",
+    project_mwords_roadmap_h3:
+      "Future Directions",
+    project_mwords_roadmap_p1:
+      "The direction in which I would take mWords next:",
+    project_mwords_roadmap_item1:
+      "🔜 <strong>A gamification layer (priority):</strong> mechanics that make the student want to come back to learning on her own — for example daily streaks, rewards for reaching the next vocabulary level and weekly goals.",
+    project_mwords_hero_alt:
+      "mWords - project banner",
+    project_mwords_today_alt:
+      "Today screens of the mWords app",
+    project_mwords_today_caption:
+      "Today: the vocabulary level with a progress bar, the vocabulary bank and a summary of marks",
+    project_mwords_student_alt:
+      "mWords learning screens: Learn, Test and Words",
+    project_mwords_student_caption:
+      "Learning screens: Learn (tap to translate), Test and Words",
+    project_mwords_teacher_alt:
+      "mWords teacher panel",
+    project_mwords_teacher_caption:
+      "Teacher panel: the vocabulary bank, sentence review, awarding points, import and invitation",
+    project_mwords_navloop_text:
+      "See next project:",
+    project_mwords_navloop_link:
+      "WKDZIK.PL Audit",
 
     // PROJECT VI PLANETROAD
     project_vi_planetroad_title: "Visual Identity",

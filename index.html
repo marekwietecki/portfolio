@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
   <head>
     <!-- Google Tag Manager 
@@ -160,7 +160,8 @@
         margin-left: 0;
         width: 0;
 
-        animation: typing 2s steps(11) forwards,
+        animation:
+          typing 2s steps(11) forwards,
           blink-caret 0.5s step-end 5 forwards;
       }
 
@@ -280,8 +281,10 @@
         will-change: transform;
         transform: translateZ(0);
 
-        transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-          box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
+        transition:
+          transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+          opacity 0.3s ease;
 
         box-shadow: 0 4px 12px rgba(30, 110, 214, 0.2);
       }
@@ -348,7 +351,9 @@
         background-color: transparent;
         border: none;
         font-size: clamp(0.5rem, calc(1vw + 0.5rem), 2rem);
-        transition: transform 0.2s ease, opacity 0.3s;
+        transition:
+          transform 0.2s ease,
+          opacity 0.3s;
         cursor: pointer;
       }
 
@@ -421,7 +426,9 @@
         box-shadow: var(--shadow-header);
         cursor: pointer;
         font-family: "Outfit", sans-serif;
-        transition: transform 0.25s ease, box-shadow 0.25s ease,
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease,
           border-color 0.25s ease;
       }
 
@@ -547,7 +554,9 @@
         color: var(--text-heading);
         font-size: 24px;
         cursor: pointer;
-        transition: color 0.2s ease, transform 0.2s ease;
+        transition:
+          color 0.2s ease,
+          transform 0.2s ease;
       }
 
       .fa-chevron-down:hover {
@@ -571,8 +580,11 @@
         overflow: hidden;
         padding: 16px;
         margin: 16px auto;
-        transition: transform 0.3s ease, box-shadow 0.3s ease,
-          background-color 0.25s ease, opacity 0.3s ease;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease,
+          background-color 0.25s ease,
+          opacity 0.3s ease;
         opacity: 0.88;
         box-shadow: var(--shadow-header);
         border-radius: 32px;
@@ -920,7 +932,9 @@
         text-align: center;
         border: 1px solid var(--border-subtle);
         box-shadow: var(--shadow-header);
-        transition: background-color 0.25s ease, border-color 0.25s ease;
+        transition:
+          background-color 0.25s ease,
+          border-color 0.25s ease;
       }
       .contact-header {
         display: flex;
@@ -957,7 +971,9 @@
         border-radius: 32px;
         font-weight: 600;
         text-decoration: none;
-        transition: transform 0.3s, opacity 0.3s ease;
+        transition:
+          transform 0.3s,
+          opacity 0.3s ease;
       }
       .btn-primary:hover {
         transform: translateY(-2px);
@@ -974,7 +990,9 @@
         border-radius: 32px;
         font-weight: 600;
         text-decoration: none;
-        transition: transform 0.3s, opacity 0.3s ease;
+        transition:
+          transform 0.3s,
+          opacity 0.3s ease;
       }
       .btn-secondary-icon {
         flex-shrink: 0;
@@ -1183,7 +1201,12 @@
         </button>
       </div>
       <div class="headerLinks">
-        <a class="headerLink" href="oferta.html" data-i18n="nav_offer" data-business-href="oferta.html" data-recruiter-href="index.html#projects"
+        <a
+          class="headerLink"
+          href="oferta.html"
+          data-i18n="nav_offer"
+          data-business-href="oferta.html"
+          data-recruiter-href="index.html#projects"
           >Oferta</a
         >
         <a class="headerLink" href="o-mnie.html" data-i18n="nav_about"
@@ -1311,14 +1334,11 @@
               <span class="forkCard__tag" data-i18n="hero_fork_business_tag"
                 >Dla biznesu</span
               >
-              <span
-                class="forkCard__title"
-                data-i18n="hero_fork_business_title"
+              <span class="forkCard__title" data-i18n="hero_fork_business_title"
                 >Szukam designera</span
               >
               <span class="forkCard__desc" data-i18n="hero_fork_business_desc"
-                >Zobacz ofertę, proces i jak mogę pomóc Twojemu
-                biznesowi.</span
+                >Zobacz ofertę, proces i jak mogę pomóc Twojemu biznesowi.</span
               >
               <span class="forkCard__cta" data-i18n="hero_fork_business_cta"
                 >Zobacz jak mogę pomóc →</span
@@ -1337,11 +1357,8 @@
                 data-i18n="hero_fork_recruiter_title"
                 >Oglądam portfolio</span
               >
-              <span
-                class="forkCard__desc"
-                data-i18n="hero_fork_recruiter_desc"
-                >Zobacz moje projekty, doświadczenie i poznaj mnie
-                lepiej.</span
+              <span class="forkCard__desc" data-i18n="hero_fork_recruiter_desc"
+                >Zobacz moje projekty, doświadczenie i poznaj mnie lepiej.</span
               >
               <span class="forkCard__cta" data-i18n="hero_fork_recruiter_cta"
                 >Zobacz moje projekty →</span
@@ -1352,7 +1369,12 @@
             <span data-i18n="hero_fork_skip_prefix"
               >Wolisz rozejrzeć się sam?</span
             >
-            <a href="#" onclick="setAudience('general'); return false"
+            <a
+              href="#"
+              onclick="
+                setAudience('general');
+                return false;
+              "
               ><span data-i18n="hero_fork_skip_link"
                 >Zobacz stronę bez podziału</span
               ></a
@@ -1368,7 +1390,12 @@
             <strong id="audienceChipLabel" data-i18n="hero_fork_business_tag"
               >Dla biznesu</strong
             >
-            <a href="#" onclick="setAudience('unset'); return false"
+            <a
+              href="#"
+              onclick="
+                setAudience('unset');
+                return false;
+              "
               ><span data-i18n="hero_fork_switch_short">Zmień</span></a
             >
           </div>
@@ -1560,6 +1587,28 @@
           </div>
         </a>
 
+        <a href="projects/pwa-mWords.html">
+          <div class="projectContainer">
+            <img
+              src="assets/index/mwords.png"
+              alt="Zdjęcie przedstawia Progresywną Aplikację mWords"
+            />
+            <div class="descriptionWrapper">
+              <p class="title" data-i18n="projects_mwords_title">
+                Progresywna Aplikacja mWords
+              </p>
+              <p class="subtitle" data-i18n="projects_mwords_subtitle">
+                Jak zbudowałem aplikację, która obniża barierę wejścia w naukę angielskiego dla jednej uczennicy?
+              </p>
+              <div class="tagWrapper">
+                <p class="tag">#Product Design</p>
+                <p class="tag">#Progressive web app</p>
+                <p class="tag">#EdTech</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
         <a href="projects/customer-journey-betfan.html">
           <div class="projectContainer">
             <img
@@ -1725,10 +1774,7 @@
               <span data-i18n="btn_linkedin">Napisz na LinkedIn</span>
             </a>
 
-            <a
-              class="btn-secondary"
-              href="cv.html"
-            >
+            <a class="btn-secondary" href="cv.html">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -1747,7 +1793,7 @@
                 />
                 <circle cx="12" cy="12" r="3" />
               </svg>
-              <span data-i18n="btn_cv">Zobacz CV (PDF)</span>
+              <span data-i18n="btn_cv">Zobacz CV</span>
             </a>
           </div>
 
@@ -1980,10 +2026,7 @@
           <span data-i18n="footer_link_contact">&nbsp;Kontakt</span>
         </a>
 
-        <a
-          href="cv.html"
-          class="navLinks"
-        >
+        <a href="cv.html" class="navLinks">
           <!-- <svg
             class="icons size-5"
             xmlns="http://www.w3.org/2000/svg"
@@ -2106,7 +2149,7 @@
             "wrapper:",
             wrapperWidth,
             "→",
-            wrapper.style.justifyContent
+            wrapper.style.justifyContent,
           );
         }
 
@@ -2215,7 +2258,7 @@
                 }
               });
             },
-            { threshold: 0.4 }
+            { threshold: 0.4 },
           );
 
           observer.observe(section);
@@ -2268,7 +2311,7 @@
         },
         {
           threshold: 0.64,
-        }
+        },
       );
 
       observer.observe(contactCard);
