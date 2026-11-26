@@ -152,6 +152,9 @@ const translations = {
     cv_skill_mobile_design: "Mobile Design (iOS i Android)",
     cv_skill_motion_design: "Motion Design",
     cv_skill_axure: "Axure",
+    cv_skill_rwd: "Responsive Design (Mobile First)",
+    cv_skill_web_performance: "Web Performance (Lighthouse)",
+    cv_skill_accessibility_wcag: "Accessibility (WCAG)",
 
     cv_languages_h2: "Języki",
     cv_lang_polish_name: "Polski",
@@ -2325,6 +2328,9 @@ const translations = {
     cv_skill_mobile_design: "Mobile Design (iOS & Android)",
     cv_skill_motion_design: "Motion Design",
     cv_skill_axure: "Axure",
+    cv_skill_rwd: "Responsive Design (Mobile First)",
+    cv_skill_web_performance: "Web Performance (Lighthouse)",
+    cv_skill_accessibility_wcag: "Accessibility (WCAG)",
 
     cv_languages_h2: "Languages",
     cv_lang_polish_name: "Polish",
