@@ -19,25 +19,31 @@
         dataLayer.push(arguments);
       }
 
-      // 🔴 DOMYŚLNA ZGODA (BRAK ZGODY)
+      // Zgoda: domyślnie brak, chyba że odwiedzający zaakceptował ją wcześniej.
+      // Odczyt jest tu (przed gtag("config")), żeby pierwszy page_view miał
+      // właściwy stan zgody. Kliknięcia banera obsługuje js/cookie.js.
+      var savedConsent = "denied";
+      try {
+        if (localStorage.getItem("cookieConsent") === "accepted") {
+          savedConsent = "granted";
+        }
+      } catch (e) {}
       gtag("consent", "default", {
-        ad_storage: "denied",
-        analytics_storage: "denied",
-        ad_user_data: "denied",
-        ad_personalization: "denied",
+        ad_storage: savedConsent,
+        analytics_storage: savedConsent,
+        ad_user_data: savedConsent,
+        ad_personalization: savedConsent,
       });
 
       gtag("js", new Date());
 
       // GA4
-      gtag("config", "G-5WEZ1GN7W6", {
-        anonymize_ip: true,
-      });
+      gtag("config", "G-5WEZ1GN7W6");
 
       // Google Ads
       gtag("config", "AW-17997930573");
     </script>
-    <!-- CLARITY -->
+    <!-- CLARITY (wyłączone: brak sygnału zgody; przy przywróceniu dodać clarity("consentv2") w cookie.js)
     <script type="text/javascript">
       (function (c, l, a, r, i, t, y) {
         c[a] =
@@ -52,6 +58,7 @@
         y.parentNode.insertBefore(t, y);
       })(window, document, "clarity", "script", "xpif7gh2qb");
     </script>
+    -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Creative Playground | Marek Wietecki</title>
@@ -59,7 +66,7 @@
       name="description"
       content="Creative Playground Marka Wieteckiego - branding, grafika i motion design: identyfikacja wizualna, animacje i eksperymenty graficzne."
     />
-    <link rel="canonical" href="https://www.marekwietecki.pl/creative.html" />
+    <link rel="canonical" href="https://marekwietecki.pl/creative.html" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Marek Wietecki" />
     <meta property="og:locale" content="pl_PL" />
@@ -70,11 +77,11 @@
     />
     <meta
       property="og:url"
-      content="https://www.marekwietecki.pl/creative.html"
+      content="https://marekwietecki.pl/creative.html"
     />
     <meta
       property="og:image"
-      content="https://www.marekwietecki.pl/assets/playground/simple-animation-poster.jpg"
+      content="https://marekwietecki.pl/assets/playground/simple-animation-poster.jpg"
     />
     <meta property="og:image:width" content="1280" />
     <meta property="og:image:height" content="720" />
@@ -90,7 +97,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://www.marekwietecki.pl/assets/playground/simple-animation-poster.jpg"
+      content="https://marekwietecki.pl/assets/playground/simple-animation-poster.jpg"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
