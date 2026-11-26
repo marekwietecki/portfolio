@@ -230,6 +230,10 @@ const translations = {
     cv_proj5_desc:
       "Redesign i optymalizacja strony marki behawiorystycznej - migracja hostingu i 3-krotna redukcja kosztów, przebudowa strony internetowej pod kątem użyteczności, estetyki oraz nowej kolorystyki, poprawa wydajności (Lighthouse mobile 42→85) oraz wsparcie strategii social media, która przyniosła pierwszy viral.",
     cv_proj5_tag: "UX Design · Web Performance · Growth",
+    cv_proj6_title: "mWords - Aplikacja do Nauki Słownictwa",
+    cv_proj6_desc:
+      "Progresywna aplikacja do nauki angielskiego zbudowana dla mojej uczennicy - dwa słówka dziennie, oceny postępów, poziomy CEFR i panel korepetytora do sprawdzania zdań. Projekt prowadzony jako Product Owner w Base44.",
+    cv_proj6_tag: "PWA · EdTech · Product Design",
 
     cv_education_h2: "Wykształcenie",
 
@@ -2572,6 +2576,10 @@ const translations = {
     cv_proj5_desc:
       "Redesign and optimization of a dog-behaviorist brand's website - hosting migration and a 3x cost cut, a site rebuild focused on usability, aesthetics, and a new color palette, performance gains (Lighthouse mobile 42→85), and support for a social media strategy that landed its first viral hit.",
     cv_proj5_tag: "UX Design · Web Performance · Growth",
+    cv_proj6_title: "mWords - Vocabulary Learning App",
+    cv_proj6_desc:
+      "A progressive app for learning English, built for my student - two words a day, progress marks, CEFR levels and a tutor panel for reviewing sentences. Led as Product Owner in Base44.",
+    cv_proj6_tag: "PWA · EdTech · Product Design",
 
     cv_education_h2: "Education",
 
