@@ -1035,7 +1035,33 @@ const translations = {
     form_message: "Wiadomość:",
     form_message_placeholder:
       "Chciał(a)bym zlecić projekt strony internetowej dla mojej firmy...",
-    form_button: "Wyślij wiadomość",
+    form_button: "Umów darmową konsultację",
+    form_lead:
+      "Darmowa, 20-minutowa konsultacja online. Odpowiem w ciągu 24 godzin.",
+    form_step: "Krok",
+    form_step_of: "z",
+    form_step1_title: "Czego potrzebujesz?",
+    form_service_web: "Strona internetowa",
+    form_service_ads: "Google Ads i SEO",
+    form_service_ux: "Audyt UX / redesign",
+    form_service_brand: "Identyfikacja wizualna",
+    form_service_other: "Coś innego",
+    form_next: "Dalej",
+    form_back: "Wstecz",
+    form_step2_title: "Kiedy chcesz zacząć?",
+    form_time_asap: "Jak najszybciej",
+    form_time_week: "W ciągu tygodnia",
+    form_time_later: "Jeszcze się rozglądam",
+    form_message_optional: "Opisz krótko, o co chodzi (opcjonalnie):",
+    form_step3_title: "Gdzie mam odpowiedzieć?",
+    form_consent:
+      "Wyrażam zgodę na przetwarzanie podanych danych w celu odpowiedzi na moje zapytanie.",
+    form_privacy_link: "Polityka prywatności",
+    form_error:
+      "Nie udało się wysłać formularza. Spróbuj jeszcze raz albo napisz na",
+    form_done_title: "Gol! Wiadomość doleciała.",
+    form_done_text:
+      "Dzięki! Odpowiem w ciągu 24 godzin i zaproponuję termin 20-minutowej konsultacji.",
 
     // ABOUT
     about_breadcrumbs_main: "Strona Główna",
@@ -3371,7 +3397,33 @@ const translations = {
     form_message: "Message:",
     form_message_placeholder:
       "I would like a design project of my company's website...",
-    form_button: "Send a message",
+    form_button: "Book a free consultation",
+    form_lead:
+      "A free 20-minute online consultation. I'll reply within 24 hours.",
+    form_step: "Step",
+    form_step_of: "of",
+    form_step1_title: "What do you need?",
+    form_service_web: "Website",
+    form_service_ads: "Google Ads & SEO",
+    form_service_ux: "UX audit / redesign",
+    form_service_brand: "Visual identity",
+    form_service_other: "Something else",
+    form_next: "Next",
+    form_back: "Back",
+    form_step2_title: "When do you want to start?",
+    form_time_asap: "As soon as possible",
+    form_time_week: "Within a week",
+    form_time_later: "Just exploring",
+    form_message_optional: "Briefly describe what it's about (optional):",
+    form_step3_title: "Where should I reply?",
+    form_consent:
+      "I agree to my data being processed in order to reply to my enquiry.",
+    form_privacy_link: "Privacy policy",
+    form_error:
+      "Sending failed. Please try again or write to",
+    form_done_title: "Goal! Your message got through.",
+    form_done_text:
+      "Thanks! I'll reply within 24 hours and suggest a time for a 20-minute consultation.",
 
     // ABOUT
     about_breadcrumbs_main: "Home",

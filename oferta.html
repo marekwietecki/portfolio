@@ -1386,6 +1386,321 @@
         }
       }
 
+      /* ---------- FORMULARZ WIELOETAPOWY ---------- */
+      .form-lead {
+        margin: -20px 0 24px;
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      fieldset.form-step {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        min-width: 0;
+        outline: none;
+      }
+
+      .form-step legend {
+        padding: 0;
+        margin-bottom: 14px;
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--text-heading);
+      }
+
+      /* Z JS pokazujemy jeden krok naraz; bez JS wszystkie są widoczne i
+         formularz wysyła się zwykłym POST-em. */
+      .is-stepped .form-step {
+        display: none;
+      }
+
+      .is-stepped .form-step.is-active {
+        display: block;
+        animation: stepIn 0.3s ease both;
+      }
+
+      @keyframes stepIn {
+        from {
+          opacity: 0;
+          transform: translateX(12px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      .form-step + .form-step {
+        margin-top: 24px;
+      }
+
+      .is-stepped .form-step + .form-step {
+        margin-top: 0;
+      }
+
+      [data-js-only] {
+        display: none;
+      }
+
+      .is-stepped [data-js-only] {
+        display: flex;
+      }
+
+      .form-progress {
+        margin-bottom: 20px;
+      }
+
+      .stepper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+      }
+
+      .stepper span {
+        height: 4px;
+        border-radius: 4px;
+        background: var(--border-subtle);
+        transition: background-color 0.3s ease;
+      }
+
+      .stepper span.is-done {
+        background: var(--accent);
+      }
+
+      .step-count {
+        margin: 8px 0 0;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+      }
+
+      /* Kafelki wyboru (radio) */
+      .choice-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .choice-grid-row {
+        grid-template-columns: 1fr;
+      }
+
+      .choice-wide {
+        grid-column: 1 / -1;
+      }
+
+      .choice {
+        position: relative;
+        display: block;
+        margin: 0;
+        cursor: pointer;
+      }
+
+      .choice input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+        width: 1px;
+        height: 1px;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        pointer-events: none;
+      }
+
+      .choice-text {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        height: 100%;
+        padding: 12px 14px;
+        border: 1px solid var(--border-subtle);
+        border-radius: 16px;
+        background: var(--bg-card);
+        color: var(--text-primary);
+        font-size: 0.95rem;
+        font-weight: 500;
+        line-height: 1.3;
+        transition: border-color 0.2s ease, background-color 0.2s ease,
+          transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .choice:hover .choice-text {
+        border-color: var(--accent);
+        transform: translateY(-1px);
+      }
+
+      .choice input:checked + .choice-text {
+        border-color: var(--accent);
+        background: color-mix(in srgb, var(--accent) 9%, var(--bg-card));
+        color: var(--text-heading);
+        box-shadow: 0 0 0 1px var(--accent);
+      }
+
+      .choice input:focus-visible + .choice-text {
+        outline: 3px solid color-mix(in srgb, var(--accent) 35%, transparent);
+        outline-offset: 2px;
+      }
+
+      .choice-emoji {
+        font-size: 1.25rem;
+        line-height: 1;
+        flex-shrink: 0;
+      }
+
+      .form-actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 8px;
+      }
+
+      .form-actions-end {
+        justify-content: flex-end;
+      }
+
+      .form-actions .form-button {
+        margin-top: 0;
+        max-width: none;
+        align-self: auto;
+      }
+
+      .form-back {
+        background: none;
+        border: 0;
+        padding: 12px 8px;
+        font: inherit;
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+        cursor: pointer;
+        border-radius: 12px;
+      }
+
+      .form-back:hover {
+        color: var(--text-heading);
+        text-decoration: underline;
+        text-decoration-color: var(--accent);
+      }
+
+      .form-back:focus-visible {
+        outline: 3px solid color-mix(in srgb, var(--accent) 35%, transparent);
+        outline-offset: 2px;
+      }
+
+      .form-consent {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin: 4px 0 8px;
+        font-size: 0.85rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: var(--text-secondary);
+        cursor: pointer;
+      }
+
+      .form-consent input[type="checkbox"] {
+        flex: none;
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+        margin: 1px 0 0;
+        padding: 0;
+        box-shadow: none;
+        accent-color: var(--accent);
+        cursor: pointer;
+      }
+
+      .form-consent input[type="checkbox"]:focus-visible {
+        outline: 3px solid color-mix(in srgb, var(--accent) 35%, transparent);
+        outline-offset: 2px;
+      }
+
+      .form-consent a,
+      .form-error a {
+        color: var(--accent);
+        text-decoration: underline;
+      }
+
+      .form-error {
+        margin: 12px 0 0;
+        padding: 12px 16px;
+        border-radius: 14px;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        color: var(--text-heading);
+        background: color-mix(in srgb, #d4402a 12%, var(--bg-card));
+        border: 1px solid color-mix(in srgb, #d4402a 45%, var(--border-subtle));
+      }
+
+      .form-trap {
+        position: absolute;
+        left: -9999px;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+      }
+
+      .form-done {
+        text-align: center;
+        padding: 24px 0 8px;
+        outline: none;
+        animation: stepIn 0.4s ease both;
+      }
+
+      .form-done-emoji {
+        font-size: 2.6rem;
+        margin: 0 0 8px;
+      }
+
+      .form-done h3 {
+        margin: 0 0 8px;
+        font-size: 1.3rem;
+        color: var(--text-heading);
+      }
+
+      .form-done p {
+        margin: 0;
+        color: var(--text-secondary);
+        line-height: 1.5;
+      }
+
+      form.is-sent > :not(.form-done):not(.headingWrapper) {
+        display: none;
+      }
+
+      form.is-sent .form-lead {
+        display: none;
+      }
+
+      form.is-sending .form-button[type="submit"] {
+        opacity: 0.65;
+        pointer-events: none;
+      }
+
+      @media (max-width: 480px) {
+        .choice-grid {
+          grid-template-columns: 1fr;
+        }
+        .form-lead {
+          margin-top: -24px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .is-stepped .form-step.is-active,
+        .form-done {
+          animation: none;
+        }
+        .choice-text,
+        .stepper span {
+          transition: none;
+        }
+      }
+
       @media (max-width: 740px) {
         .titleWrapper {
           margin-top: 8vw;
@@ -1957,7 +2272,11 @@
       <!-- FORM -->
       <section id="form" style="margin-bottom: 6shv; padding-top: 4svh">
         <div class="formWrapper">
-          <form action="https://formspree.io/f/mzzeyjbd" method="POST">
+          <form
+            id="consultForm"
+            action="https://formspree.io/f/mzzeyjbd"
+            method="POST"
+          >
             <div class="headingWrapper">
               <h2 class="formHeading">
                 <span data-i18n="form_title">Masz pomysł na projekt?</span>
@@ -1969,61 +2288,202 @@
                   ><span class="form-goal">🥅</span></span
                 >
               </h2>
+              <p class="form-lead" data-i18n="form_lead">
+                Darmowa, 20-minutowa konsultacja online. Odpowiem w ciągu 24
+                godzin.
+              </p>
             </div>
 
-            <label for="name" data-i18n="form_name">Imię / Nazwa:</label>
+            <div class="form-progress" id="formProgress" hidden>
+              <div class="stepper" aria-hidden="true">
+                <span class="is-done"></span><span></span><span></span>
+              </div>
+              <p class="step-count">
+                <span data-i18n="form_step">Krok</span>
+                <span id="stepNow">1</span>
+                <span data-i18n="form_step_of">z</span> 3
+              </p>
+            </div>
+
+            <!-- Pole przeciw botom (Formspree ignoruje wiadomości z wypełnionym _gotcha) -->
             <input
               type="text"
-              id="name"
-              name="name"
-              data-i18n="[placeholder]form_name_placeholder"
-              placeholder="Jan Kowalski"
-              required
+              name="_gotcha"
+              tabindex="-1"
+              autocomplete="off"
+              class="form-trap"
+              aria-hidden="true"
             />
-
-            <label for="email" data-i18n="form_email">Adres e-mail:</label>
             <input
-              type="email"
-              id="email"
-              name="email"
-              data-i18n="[placeholder]form_email_placeholder"
-              placeholder="jan.kowalski@example.com"
-              required
+              type="hidden"
+              name="_subject"
+              value="Zapytanie o darmową konsultację (marekwietecki.pl)"
             />
 
-            <label for="message" data-i18n="form_message">Wiadomość:</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="6"
-              data-i18n="[placeholder]form_message_placeholder"
-              placeholder="Chciał(a)bym zlecić projekt strony internetowej dla mojej firmy..."
-              required
-            ></textarea>
-            <button
-              class="form-button"
-              type="submit"
-              onclick="trackAdsConversion()"
-              data-i18n="form_button"
-            >
-              <span data-i18n="form_button">Wyślij wiadomość</span>
+            <!-- KROK 1: czego potrzebujesz -->
+            <fieldset class="form-step is-active" data-step="1" data-step-name="service" tabindex="-1">
+              <legend data-i18n="form_step1_title">Czego potrzebujesz?</legend>
+              <div class="choice-grid">
+                <label class="choice">
+                  <input type="radio" name="service" value="Strona internetowa" required />
+                  <span class="choice-text"
+                    ><span class="choice-emoji" aria-hidden="true">🌐</span
+                    ><span data-i18n="form_service_web">Strona internetowa</span></span
+                  >
+                </label>
+                <label class="choice">
+                  <input type="radio" name="service" value="Google Ads i SEO" />
+                  <span class="choice-text"
+                    ><span class="choice-emoji" aria-hidden="true">📈</span
+                    ><span data-i18n="form_service_ads">Google Ads i SEO</span></span
+                  >
+                </label>
+                <label class="choice">
+                  <input type="radio" name="service" value="Audyt UX / redesign" />
+                  <span class="choice-text"
+                    ><span class="choice-emoji" aria-hidden="true">🔍</span
+                    ><span data-i18n="form_service_ux">Audyt UX / redesign</span></span
+                  >
+                </label>
+                <label class="choice">
+                  <input type="radio" name="service" value="Identyfikacja wizualna" />
+                  <span class="choice-text"
+                    ><span class="choice-emoji" aria-hidden="true">🎨</span
+                    ><span data-i18n="form_service_brand">Identyfikacja wizualna</span></span
+                  >
+                </label>
+                <label class="choice choice-wide">
+                  <input type="radio" name="service" value="Coś innego" />
+                  <span class="choice-text"
+                    ><span class="choice-emoji" aria-hidden="true">💬</span
+                    ><span data-i18n="form_service_other">Coś innego</span></span
+                  >
+                </label>
+              </div>
+              <div class="form-actions form-actions-end" data-js-only>
+                <button type="button" class="form-button" data-next>
+                  <span data-i18n="form_next">Dalej</span>
+                </button>
+              </div>
+            </fieldset>
 
-              <svg
-                class="form-button-plane"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
+            <!-- KROK 2: termin i szczegóły (opcjonalne) -->
+            <fieldset class="form-step" data-step="2" data-step-name="details" tabindex="-1">
+              <legend data-i18n="form_step2_title">Kiedy chcesz zacząć?</legend>
+              <div class="choice-grid choice-grid-row">
+                <label class="choice">
+                  <input type="radio" name="timeline" value="Jak najszybciej" />
+                  <span class="choice-text"
+                    ><span data-i18n="form_time_asap">Jak najszybciej</span></span
+                  >
+                </label>
+                <label class="choice">
+                  <input type="radio" name="timeline" value="W ciągu tygodnia" />
+                  <span class="choice-text"
+                    ><span data-i18n="form_time_week">W ciągu tygodnia</span></span
+                  >
+                </label>
+                <label class="choice">
+                  <input type="radio" name="timeline" value="Jeszcze się rozglądam" />
+                  <span class="choice-text"
+                    ><span data-i18n="form_time_later">Jeszcze się rozglądam</span></span
+                  >
+                </label>
+              </div>
+
+              <label for="message" data-i18n="form_message_optional"
+                >Opisz krótko, o co chodzi (opcjonalnie):</label
               >
-                <path d="M22 2 11 13"></path>
-                <path d="m22 2-7 20-4-9-9-4Z"></path>
-              </svg>
-            </button>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                data-i18n="[placeholder]form_message_placeholder"
+                placeholder="Chciał(a)bym zlecić projekt strony internetowej dla mojej firmy..."
+              ></textarea>
+              <div class="form-actions" data-js-only>
+                <button type="button" class="form-back" data-back>
+                  <span data-i18n="form_back">Wstecz</span>
+                </button>
+                <button type="button" class="form-button" data-next>
+                  <span data-i18n="form_next">Dalej</span>
+                </button>
+              </div>
+            </fieldset>
+
+            <!-- KROK 3: kontakt -->
+            <fieldset class="form-step" data-step="3" data-step-name="contact" tabindex="-1">
+              <legend data-i18n="form_step3_title">Gdzie mam odpowiedzieć?</legend>
+
+              <label for="name" data-i18n="form_name">Imię / Nazwa:</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                autocomplete="name"
+                data-i18n="[placeholder]form_name_placeholder"
+                placeholder="Jan Kowalski"
+                required
+              />
+
+              <label for="email" data-i18n="form_email">Adres e-mail:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                data-i18n="[placeholder]form_email_placeholder"
+                placeholder="jan.kowalski@example.com"
+                required
+              />
+
+              <label class="form-consent">
+                <input type="checkbox" name="consent" value="Tak" required />
+                <span>
+                  <span data-i18n="form_consent">Wyrażam zgodę na przetwarzanie podanych danych w celu odpowiedzi na moje zapytanie.</span>
+                  <a href="polityka-prywatnosci.html" target="_blank" rel="noopener" data-i18n="form_privacy_link">Polityka prywatności</a>
+                </span>
+              </label>
+
+              <div class="form-actions">
+                <button type="button" class="form-back" data-back data-js-only>
+                  <span data-i18n="form_back">Wstecz</span>
+                </button>
+                <button class="form-button" type="submit">
+                  <span data-i18n="form_button">Umów darmową konsultację</span>
+
+                  <svg
+                    class="form-button-plane"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M22 2 11 13"></path>
+                    <path d="m22 2-7 20-4-9-9-4Z"></path>
+                  </svg>
+                </button>
+              </div>
+            </fieldset>
+
+            <p class="form-error" id="formError" role="alert" hidden>
+              <span data-i18n="form_error">Nie udało się wysłać formularza. Spróbuj jeszcze raz albo napisz na</span>
+              <a href="mailto:kontakt@marekwietecki.pl">kontakt@marekwietecki.pl</a>
+            </p>
+
+            <div class="form-done" id="formDone" role="status" tabindex="-1" hidden>
+              <p class="form-done-emoji" aria-hidden="true">⚽️</p>
+              <h3 data-i18n="form_done_title">Gol! Wiadomość doleciała.</h3>
+              <p data-i18n="form_done_text">
+                Dzięki! Odpowiem w ciągu 24 godzin i zaproponuję termin
+                20-minutowej konsultacji.
+              </p>
+            </div>
           </form>
         </div>
       </section>
@@ -2192,6 +2652,7 @@
         });
       });
     </script>
+    <script src="js/consult-form.js"></script>
     <script src="js/header.js"></script>
     <script src="js/settings.js"></script>
     <script src="js/cursor.js"></script>
